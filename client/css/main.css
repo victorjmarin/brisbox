@@ -88,12 +88,39 @@ footer p {
     .team-name {clear:right;}
 }
 
-
-#faqs_questions{
-    margin-top: 40px;
-}
-
-.faqs_question_block{
+.faqs-question-block{
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.faqs-question{
+    font-weight: bold;
+
+}
+
+.faqs-question-icon{
+    vertical-align: middle;
+    cursor: pointer;
+}
+.faqs-question-icon:hover{
+    color: #b39ddb !important;
+}
+
+.faqs-question-text{
+    vertical-align: middle;
+}
+
+.faqs-purple_line{
+    background-color: #7e57c2;
+    height: 2px;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border-radius: 10%;
+}
+
+.faqs-answer{
+    display: none;
 }
