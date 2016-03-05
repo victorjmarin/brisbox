@@ -49,3 +49,41 @@ footer p {
 .Site-content {
     flex: 1;
 }
+
+@media(max-width: 601px){
+    .header {text-align: center;}
+}
+
+.team-name{
+    font-size: 2.0rem;
+    line-height: 110%;
+    font-weight: 300;
+    margin-right: 2%;
+}
+
+.team-role{
+    font-size: 1.5rem;
+    line-height: 110%;
+    font-weight: 300;
+    color: #616161 ;
+}
+
+.team-row{
+    padding: 1%;
+}
+
+.team-purple_line{
+   background-color: #7e57c2;
+   height: 3px;
+   width: 25%;
+   margin-right: auto;
+   margin-top: 2%;
+   margin-bottom: 2%;
+   border-radius: 10%;
+}
+@media(max-width: 601px){
+    .team-name-row{text-align: center}
+    .team-purple_line {margin-left: auto}
+    .team-img {margin-left:auto; margin-right: auto; display:block;}
+    .team-name {clear:right;}
+}
