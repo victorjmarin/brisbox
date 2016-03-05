@@ -1,1 +1,51 @@
-/* CSS declarations go here */
+.table td {
+    text-align: center;
+}
+
+.table th {
+    text-align: center;
+}
+
+footer div {
+    margin-top: 0.5%;
+}
+
+footer h4 {
+    color: white;
+}
+
+footer a {
+    color: #bbbbbb;
+}
+
+footer a:visited {
+    color: #bbbbbb;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #dddddd;
+    text-decoration: none;
+}
+
+footer p {
+    color: white;
+}
+
+.customizedNavigation {
+    background-color: #7e57c2;
+}
+
+.customizedFooter {
+    background-color: #555555;
+}
+
+.Site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.Site-content {
+    flex: 1;
+}

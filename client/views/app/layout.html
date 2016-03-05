@@ -1,0 +1,36 @@
+<template name="ApplicationLayout">
+    <div class="Site">
+        <header>
+            <nav class="customizedNavigation" role="navigation">
+                <div class="nav-wrapper container">
+
+                    <a href="/" class="center brand-logo">estu<b>force</b></a>
+
+                    <a href="/" data-activates="mobile" class="button-collapse" style="margin-left:20px;"><i
+                            class="mdi-navigation-menu black-text" style="font-size:2.2em;"></i></a>
+
+                    <ul id="nav-mobile" class="left hide-on-med-and-down">
+                        {{> menu}}
+                    </ul>
+
+                    <ul class="side-nav" id="mobile">
+                        {{> menu}}
+                    </ul>
+
+                    <ul id="nav-mobile" class="right">
+                        <li>{{> langSelector}}</li>
+                    </ul>
+
+                </div>
+            </nav>
+        </header>
+
+        <main class="Site-content">
+            <div class="container">
+                {{> yield}}
+            </div>
+        </main>
+
+        {{> pageFooter}}
+    </div>
+</template>
