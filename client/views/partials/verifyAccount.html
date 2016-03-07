@@ -1,0 +1,22 @@
+<template name="verifyAccount">
+    <script>
+        //Funcion que compruieba si el link es valido o no
+        var validate=false;
+    </script>
+    <div class="container">
+        <div id="team" class="section scrollspy">
+            <div class="row">
+                <h4 class="header">{{_ "about_us_header"}}</h4>
+            </div>
+            <div class="row hoverable z-depth-1 team-row">
+                <script>
+                    if(validate==true)
+                        document.write('<p>{{_ "verification_ok"}}</p>');
+                    else
+                        document.write('<p>{{_ "verification_error"}}</p>');
+                </script>
+
+            </div>
+        </div>
+    </div>
+</template>
