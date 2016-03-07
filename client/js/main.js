@@ -13,7 +13,7 @@ Template.menu.onRendered(function () {
             closeOnClick: true
         });
     }
-)
+);
 
 
 getUserLanguage = function () {
