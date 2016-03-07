@@ -2,28 +2,30 @@
 
     <div class="Site">
         <header>
-            <nav class="customizedNavigation" role="navigation">
-                <div class="nav-wrapper container">
+            <div class="navbar-fixed">
+                <nav class="customizedNavigation" role="navigation">
+                    <div class="nav-wrapper container">
 
-                    <a href="/" class="center brand-logo">estu<b>force</b></a>
+                        <a href="/" class="center brand-logo">estu<b>force</b></a>
 
-                    <a href="/" data-activates="mobile" class="button-collapse" style="margin-left:20px;"><i
-                            class="mdi-navigation-menu white-text" style="font-size:2.2em;"></i></a>
+                        <a href="/" data-activates="mobile" class="button-collapse" style="margin-left:20px;"><i
+                                class="mdi-navigation-menu white-text" style="font-size:2.2em;"></i></a>
 
-                    <ul class="left hide-on-med-and-down">
-                        {{> menu}}
-                    </ul>
+                        <ul class="left hide-on-med-and-down">
+                            {{> menu}}
+                        </ul>
 
-                    <ul class="side-nav" id="mobile">
-                        {{> menu}}
-                    </ul>
+                        <ul class="side-nav" id="mobile">
+                            {{> menu}}
+                        </ul>
 
-                    <ul id="nav-mobile" class="right">
-                        <li>{{> langSelector}}</li>
-                    </ul>
+                        <ul id="nav-mobile" class="right">
+                            <li>{{> langSelector}}</li>
+                        </ul>
 
-                </div>
-            </nav>
+                    </div>
+                </nav>
+            </div>
         </header>
 
         <main class="Site-content">
