@@ -6,38 +6,13 @@
     text-align: center;
 }
 
-footer div {
-    margin-top: 0.5%;
-}
-
-footer h4 {
-    color: white;
-}
-
-footer a {
-    color: #bbbbbb;
-}
-
-footer a:visited {
-    color: #bbbbbb;
-    text-decoration: none;
-}
-
-footer a:hover {
-    color: #dddddd;
-    text-decoration: none;
-}
-
-footer p {
-    color: white;
-}
-
 .customizedNavigation {
     background-color: #7e57c2;
 }
 
-.customizedFooter {
-    background-color: #555555;
+.cardbg {
+    background-image: url("/home-background.png");
+    background-size:cover;
 }
 
 .Site {
@@ -50,68 +25,89 @@ footer p {
     flex: 1;
 }
 
-@media(max-width: 601px){
-    .header {text-align: center;}
+@media (max-width: 601px) {
+    .header {
+        text-align: center;
+    }
 }
 
-.team-name{
+.team-name {
     font-size: 2.0rem;
     line-height: 110%;
     font-weight: 300;
     margin-right: 2%;
 }
 
-.team-role{
+.team-role {
     font-size: 1.25rem;
     line-height: 110%;
     font-weight: 300;
-    color: #616161 ;
+    color: #616161;
 }
 
-.team-row{
+.team-row {
     padding: 1%;
 }
 
-.team-purple_line{
-   background-color: #7e57c2;
-   height: 2px;
-   width: 25%;
-   margin-right: auto;
-   margin-top: 2%;
-   margin-bottom: 2%;
-   border-radius: 10%;
-}
-@media(max-width: 601px){
-    .team-name-row{text-align: center}
-    .team-purple_line {margin-left: auto}
-    .team-img {margin-left:auto; margin-right: auto; display:block; width: 75%; height: 75%; margin-top: 2%; margin-bottom: 2%}
-    .team-name {clear:right;}
+.team-purple_line {
+    background-color: #7e57c2;
+    height: 2px;
+    width: 25%;
+    margin-right: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border-radius: 10%;
 }
 
-.faqs-question-block{
+@media (max-width: 601px) {
+    .team-name-row {
+        text-align: center
+    }
+
+    .team-purple_line {
+        margin-left: auto
+    }
+
+    .team-img {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: 75%;
+        height: 75%;
+        margin-top: 2%;
+        margin-bottom: 2%
+    }
+
+    .team-name {
+        clear: right;
+    }
+}
+
+.faqs-question-block {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.faqs-question{
+.faqs-question {
     font-weight: bold;
 
 }
 
-.faqs-question-icon{
+.faqs-question-icon {
     vertical-align: middle;
     cursor: pointer;
     font-size: 2.2rem !important;
 }
-.faqs-question-icon:hover{
+
+.faqs-question-icon:hover {
     color: #b39ddb !important;
 }
 
-.faqs-question-text{
+.faqs-question-text {
     vertical-align: middle;
 }
 
-.faqs-purple_line{
+.faqs-purple_line {
     background-color: #7e57c2;
     height: 2px;
     width: 50%;
@@ -122,6 +118,6 @@ footer p {
     border-radius: 10%;
 }
 
-.faqs-answer{
+.faqs-answer {
     display: none;
 }

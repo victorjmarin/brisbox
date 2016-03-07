@@ -1,0 +1,29 @@
+footer div {
+    margin-top: 0.5%;
+}
+
+footer h4 {
+    color: white;
+}
+
+footer a {
+    color: #bbbbbb;
+}
+
+footer a:visited {
+    color: #bbbbbb;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #dddddd;
+    text-decoration: none;
+}
+
+footer p {
+    color: white;
+}
+
+.customizedFooter {
+    background-color: #555555;
+}
