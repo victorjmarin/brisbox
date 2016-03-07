@@ -115,4 +115,7 @@
 
 .faqs-answer {
     display: none;
+    font-style: italic;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
