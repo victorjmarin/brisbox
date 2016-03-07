@@ -3,13 +3,15 @@ Template.menu.onRendered(function () {
                 inDuration: 300,
                 outDuration: 225,
                 constrain_width: false, // Does not change width of dropdown to that of the activator
-                hover: true, // Activate on hover
+                hover: false, // Activate on hover
                 gutter: 0, // Spacing from edge
-                belowOrigin: false, // Displays dropdown below the button
+                belowOrigin: true, // Displays dropdown below the button
                 alignment: 'left' // Displays dropdown with edge aligned to the left of button
             }
         );
-        $(".button-collapse").sideNav();
+        $(".button-collapse").sideNav({
+            closeOnClick: true
+        });
     }
 )
 
@@ -19,7 +21,7 @@ getUserLanguage = function () {
 };
 
 Meteor.startup(function () {
-        TAPi18n.setLanguage(getUserLanguage())
+    TAPi18n.setLanguage(getUserLanguage())
         .done(function () {
             Session.set("showLoadingIndicator", false);
         })
