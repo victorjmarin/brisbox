@@ -10,11 +10,6 @@
     background-color: #7e57c2;
 }
 
-.cardbg {
-    background-image: url("/home-background.png");
-    background-size:cover;
-}
-
 .Site {
     display: flex;
     min-height: 100vh;
