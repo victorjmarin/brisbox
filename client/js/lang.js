@@ -1,7 +1,7 @@
 Template.langSelector.events({
 
     'click .changes-lang': function (e) {
-        var toLocale = jQuery(e.toElement).attr('data-lang');
+        var toLocale = $(e.target).attr('data-lang');
         changeLang(toLocale);
     }
 
@@ -10,6 +10,7 @@ Template.langSelector.events({
 changeLang = function (toLocale) {
 
     var currentLocale = TAPi18n.getLanguage();
+    console.log(currentLocale);
 
     TAPi18n.setLanguage(toLocale).done(function () {
         if (currentLocale != toLocale) {
