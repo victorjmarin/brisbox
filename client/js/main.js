@@ -1,4 +1,4 @@
-Template.menu.onRendered(function () {
+Template.ApplicationLayout.onRendered(function () {
         $('.dropdown-button').dropdown({
                 inDuration: 300,
                 outDuration: 225,
@@ -11,6 +11,9 @@ Template.menu.onRendered(function () {
         );
         $(".button-collapse").sideNav({
             closeOnClick: true
+        });
+        $(document).ready(function () {
+            $('.parallax').parallax();
         });
     }
 );

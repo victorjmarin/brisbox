@@ -1,4 +1,5 @@
 <template name="ApplicationLayout">
+
     <div class="Site">
         <header>
             <nav class="customizedNavigation" role="navigation">
@@ -26,11 +27,10 @@
         </header>
 
         <main class="Site-content">
-            <div class="container">
-                {{> yield}}
-            </div>
+            {{> yield}}
         </main>
 
         {{> pageFooter}}
     </div>
+
 </template>
