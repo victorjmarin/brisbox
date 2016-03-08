@@ -25,3 +25,15 @@
     right: 0;
     z-index: -1;
 }
+
+.lang-english {
+    background-image: url("/English.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.lang-spanish {
+    background-image: url("/Spanish.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
