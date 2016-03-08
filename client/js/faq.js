@@ -1,4 +1,4 @@
-Template.Faqs.events({
+Template.Faq.events({
 	'click .faqs-question-icon': function(event){
 		var question = $(event.target);
 		var answer = question.parent().parent().next();
