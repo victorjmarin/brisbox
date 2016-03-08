@@ -4,7 +4,7 @@
     display: block;
     filter: blur(1px);
     -webkit-filter: blur(1px);
-    height: 700px;
+    height: 100%;
     left: 0;
     position: fixed;
     right: 0;
