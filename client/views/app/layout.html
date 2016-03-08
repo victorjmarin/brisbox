@@ -23,11 +23,19 @@
                             <li>{{> langSelector}}</li>
                         </ul>
 
+                        <ul id="showLoginModal" class="right" style="margin-right: 5%; cursor: pointer;">
+                            <li>{{_ "layout_login_link"}}</li>
+                        </ul>
+
                     </div>
                 </nav>
             </div>
         </header>
-
+        
+        {{#if showLoginModal }}         
+            {{> login}}
+        {{/if}}
+        
         <main class="Site-content">
             {{> yield}}
         </main>
