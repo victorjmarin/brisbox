@@ -4,6 +4,12 @@
 
   "home_title": "Affordable, convenient moving help",
   "home_order": "Book a move",
+  "home_loading": "Loading",
+  "home_unloading": "Unloading",
+  "home_placing": "Placing",
+  "home_loading_text": "We can help you moving or loading your stuff",
+  "home_unloading_text": "we can help you unloading your stuff too",
+  "home_placing_text": "or even we can help you placing it",
 
   "footer_company": "COMPANY",
   "footer_services": "Services",

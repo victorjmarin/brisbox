@@ -4,6 +4,12 @@
 
   "home_title": "Ayuda económica y práctica para tus traslados",
   "home_order": "Reservar un traslado",
+  "home_loading": "Carga",
+  "home_unloading": "Descarga",
+  "home_placing": "Colocación",
+  "home_loading_text": "Podemos ayudarte cargando o trasladando tus cosas",
+  "home_unloading_text": "ayudarte descargandolas también",
+  "home_placing_text": "o incluso podemos ayudarte a colocarlas",
 
   "footer_company": "COMPAÑIA",
   "footer_services": "Servicios",
