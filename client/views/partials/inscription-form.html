@@ -5,12 +5,19 @@
             {{#autoForm collection="Inscription" id="insertInscriptionForm" type="insert"}}
                 <fieldset>
                     <legend>Acount Information</legend>
+                    <div class="row">
+                    <div class="input-field col s6">
                     {{> afQuickField name='name'}}
+                    </div>
+                    <div class="input-field col s6">
                     {{> afQuickField name='surname'}}
+                    </div>
+                    </div>
                     {{> afQuickField name='phone'}}
                     {{> afQuickField name='email' type='email'}}
                     {{> afQuickField name='password' type='password'}}
                     {{> afQuickField name='confirmPass' type='password'}}
+
                 </fieldset>
                 <fieldset>
                     <legend>Personal Information</legend>
