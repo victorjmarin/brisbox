@@ -1,30 +1,31 @@
 <template name="pageFooter">
-    <footer class="customizedFooter">
+    <footer class="grey darken-3">
         <div class="container">
             <div class="row">
                 <div class="col s4 center-align">
-                    <h4 class="flow-text">{{_ "footer_company"}}</h4>
+                    <h4 class="flow-text white-text">{{_ "footer_company"}}</h4>
                     <ul class="">
-                        <li><a href="#">{{_ "footer_services"}}</a></li>
-                        <li><a href="#">{{_ "footer_prices"}}</a></li>
+                        <li><a href="#" class="grey-text text-lighten-1">{{_ "footer_services"}}</a></li>
+                        <li><a href="#" class="grey-text text-lighten-1">{{_ "footer_prices"}}</a></li>
                     </ul>
                 </div>
                 <div class="col s4 center-align">
-                    <h4 class="flow-text">{{_ "footer_team"}}</h4>
+                    <h4 class="flow-text white-text">{{_ "footer_team"}}</h4>
                     <ul class="">
-                        <li><a href="{{pathFor 'AboutUs'}}">{{_ "footer_about"}}</a></li>
+                        <li><a href="{{pathFor 'AboutUs'}}" class="grey-text text-lighten-1">{{_ "footer_about"}}</a></li>
                     </ul>
                 </div>
                 <div class="col s4 center-align">
-                    <h4 class="flow-text">{{_ "footer_legal"}}</h4>
+                    <h4 class="flow-text white-text">{{_ "footer_legal"}}</h4>
                     <ul class="collection-item">
-                        <li><a href="#">{{_ "footer_privacy"}}</a></li>
-                        <li><a href="#">{{_ "footer_terms"}}</a></li>
+                        <li><a href="#" class="grey-text text-lighten-1">{{_ "footer_privacy"}}</a></li>
+                        <li><a href="#" class="grey-text text-lighten-1">{{_ "footer_terms"}}</a></li>
                     </ul>
                 </div>
                 <div class="center-align" style="margin-top: 1%; margin-bottom: 1%">
-                    <p>
-                        &copy; 2016 estuforce &middot; <a href="#">{{_ "footer_contact"}}</a>
+                    <p class="white-text">
+                        &copy; 2016 bris<b>box</b> &middot; <a href="#" class="grey-text text-lighten-1">
+                        {{_ "footer_contact"}}</a>
                     </p>
                 </div>
             </div>

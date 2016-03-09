@@ -5,8 +5,8 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     display: block;
-    filter: blur(1px);
-    -webkit-filter: blur(1px);
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
     min-height: 1000px;
     left: 0;
     position: fixed;
@@ -17,8 +17,8 @@
 .cardbg-mobile {
     background-image: url("/home-background.png");
     display: block;
-    filter: blur(1px);
-    -webkit-filter: blur(1px);
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
     min-height: 100%;
     left: 0;
     position: fixed;
@@ -26,18 +26,5 @@
     z-index: -1;
 }
 
-.lang-english {
-    background-image: url("/English.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-
-.lang-spanish {
-    background-image: url("/Spanish.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-
 .login-link{
     margin-right: 5%;
-}

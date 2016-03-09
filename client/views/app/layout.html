@@ -2,34 +2,33 @@
 
     <div class="Site">
         <header>
-            <div class="navbar-fixed">
-                <nav class="customizedNavigation" role="navigation">
-                    <div class="nav-wrapper container">
+            <nav class="transparent z-depth-0" role="navigation" style="position: absolute">
+                <div class="nav-wrapper container">
 
-                        <a href="/" class="center brand-logo">estu<b>force</b></a>
+                    <a href="/" class="center brand-logo brand-font"
+                       style="text-shadow: 0px 1px 0px #000;font-size: 300%">bris<b>box</b></a>
 
-                        <a href="/" data-activates="mobile" class="button-collapse" style="margin-left:20px;"><i
-                                class="mdi-navigation-menu white-text" style="font-size:2.2em;"></i></a>
+                    <a href="/" data-activates="mobile" class="button-collapse" style="margin-left:20px;"><i
+                            class="mdi-navigation-menu white-text" style="font-size:2.2em;"></i></a>
 
-                        <ul class="left hide-on-med-and-down">
-                            {{> menu}}
-                        </ul>
+                    <ul class="left hide-on-med-and-down">
+                        {{> menu}}
+                    </ul>
 
-                        <ul class="side-nav" id="mobile">
-                            {{> menu}}
-                        </ul>
+                    <ul class="side-nav" id="mobile">
+                        {{> menu}}
+                    </ul>
 
-                        <ul id="nav-mobile" class="right">
-                            <li>{{> langSelector}}</li>
-                        </ul>
+                    <ul id="nav-mobile" class="right">
+                        <li>{{> langSelector}}</li>
+                    </ul>
 
-                        <ul id="showLoginModal" class="right" style="margin-right: 5%; cursor: pointer;">
-                            <li>{{_ "layout_login_link"}}</li>
-                        </ul>
+                    <ul id="showLoginModal" class="right" style="margin-right: 5%; cursor: pointer;">
+                        <li>{{_ "layout_login_link"}}</li>
+                    </ul>
 
                     </div>
                 </nav>
-            </div>
         </header>
         
         {{#if showLoginModal }}         
