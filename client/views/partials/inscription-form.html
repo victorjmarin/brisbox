@@ -8,16 +8,18 @@
                     {{> afQuickField name='name'}}
                     {{> afQuickField name='surname'}}
                     {{> afQuickField name='phone'}}
-                    <!-- {{> afQuickField name='email'}}
-                        {{> afQuickField name='password'}}
-                        {{> afQuickField name='confirmPass'}}
-
-            <legend>Personal Information</legend>
-            {{> afQuickField name='zip'}}
-                        {{> afQuickField name='emailSchool'}}
-                        {{> afQuickField name='howHearAboutUs'}}  -->
+                    {{> afQuickField name='email' type='email'}}
+                    {{> afQuickField name='password' type='password'}}
+                    {{> afQuickField name='confirmPass' type='password'}}
                 </fieldset>
-                <button type="submit" class="btn btn-primary">Submit Application</button>
+                <fieldset>
+                    <legend>Personal Information</legend>
+                   <!--{{> afQuickField name='zip'}}-->
+                    <label class="control-label">{{afFieldLabelText name='firstName'}}</label>
+                    {{> afQuickField name='emailSchool' type='email'}}
+                    {{> afQuickField name='howHearAboutUs'}}
+                </fieldset>
+                <button type="submit" class="btn btn-primary waves-button-input">Submit Application</button>
             {{/autoForm}}
         </div>
     </div>
