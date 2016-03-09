@@ -1,0 +1,24 @@
+<template name="inscriptionForm">
+
+    <div class="container">
+        <div class="section">
+            {{#autoForm collection="Inscription" id="insertInscriptionForm" type="insert"}}
+                <fieldset>
+                    <legend>Acount Information</legend>
+                    {{> afQuickField name='name'}}
+                    {{> afQuickField name='surname'}}
+                    {{> afQuickField name='phone'}}
+                    <!-- {{> afQuickField name='email'}}
+                        {{> afQuickField name='password'}}
+                        {{> afQuickField name='confirmPass'}}
+
+            <legend>Personal Information</legend>
+            {{> afQuickField name='zip'}}
+                        {{> afQuickField name='emailSchool'}}
+                        {{> afQuickField name='howHearAboutUs'}}  -->
+                </fieldset>
+                <button type="submit" class="btn btn-primary">Submit Application</button>
+            {{/autoForm}}
+        </div>
+    </div>
+</template>
