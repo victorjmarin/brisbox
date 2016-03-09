@@ -6,10 +6,6 @@
     text-align: center;
 }
 
-.customizedNavigation {
-    background-color: #7e57c2;
-}
-
 .Site {
     display: flex;
     min-height: 100vh;
@@ -18,6 +14,10 @@
 
 .Site-content {
     flex: 1;
+}
+
+.brand-font {
+    font-family: 'Quicksand';
 }
 
 @media (max-width: 601px) {
