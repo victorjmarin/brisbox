@@ -47,5 +47,44 @@
   "faqs_question_five": "¿Que cantidad de cosas podeis trasladar?",
   "faqs_answer_five": "Nuestros estuforces son perfectos para el traslado de pequeñas y medianas cosas. Ellos podrán ayudarte en todo el proceso, pero si lo que necesita es un traslado de una casa llena de antiguedades del siglo 15, quizá deberia de contactar con otra empresa menos flexible especializada.",
   "faqs_question_six": "¿Con cuanta antelacion debo realizar una reserva?",
-  "faqs_answer_six": "Lo normal en las mudanzas es de 5 dias. ¡Pero esto es muy inflexible! ¡Si necesita ayuda mañana para descargar o cargar cosas no le serviria! Con nosotros, con un minimo de 24 horas podras tener a un estuforce listo para ayudarte en tu tarea."
+  "faqs_answer_six": "Lo normal en las mudanzas es de 5 dias. ¡Pero esto es muy inflexible! ¡Si necesita ayuda mañana para descargar o cargar cosas no le serviria! Con nosotros, con un minimo de 24 horas podras tener a un estuforce listo para ayudarte en tu tarea.",
+
+  "account-info": "Información de la cuenta",
+  "personal-info": "Información personal",
+  "submit": "Enviar",
+
+  "schemas": {
+    "inscription": {
+      "name": {
+        "label": "Nombre"
+      },
+      "surname": {
+        "label": "Apellidos"
+      },
+      "phone": {
+        "label": "Teléfono"
+      },
+      "email": {
+        "label": "Correo electrónico"
+      },
+      "password": {
+        "label": "Contraseña"
+      },
+      "confirmPass": {
+        "label": "Confirmar contraseña"
+      },
+      "zip": {
+        "label": "Código postal"
+      },
+      "emailSchool": {
+        "label": "Correo electrónico universitario"
+      },
+      "howHearAboutUs": {
+        "label": "¿Cómo nos has encontrado?"
+      },
+      "image": {
+        "label": "Imagen de perfil"
+      }
+    }
+  }
 }

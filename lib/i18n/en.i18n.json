@@ -47,5 +47,45 @@
   "faqs_question_five": "How much you can move things?",
   "faqs_answer_five": "Our estuforces are perfect for moving small and medium-sized things. They can help you throughout the process, but if you need is a transfer of a house full of antiques from the 15th century, perhaps should contact with other less flexible company specialized.",
   "faqs_question_six": "How far in advance should I make a reservation?",
-  "faqs_answer_six": "Normal in removals is 5 days. But this is very inflexible! If you need help to load or unload your things tomorrow it wouldn't serve you! With us, with a minimum 24 hours you can have a estuforce ready to help you in your task."
+  "faqs_answer_six": "Normal in removals is 5 days. But this is very inflexible! If you need help to load or unload your things tomorrow it wouldn't serve you! With us, with a minimum 24 hours you can have a estuforce ready to help you in your task.",
+
+  "account-info": "Account information",
+  "personal-info": "Personal information",
+  "submit": "Submit",
+
+  "schemas": {
+    "inscription": {
+      "name": {
+        "label": "Name"
+      },
+      "surname": {
+        "label": "Last Name"
+      },
+      "phone": {
+        "label": "Phone"
+      },
+      "email": {
+        "label": "Email Address"
+      },
+      "password": {
+        "label": "Password"
+      },
+      "confirmPass": {
+        "label": "Confirm password"
+      },
+      "zip": {
+        "label": "Hometown ZIP Code"
+      },
+      "emailSchool": {
+        "label": "Your School's Email"
+      },
+      "howHearAboutUs": {
+        "label": "How did you hear about BrisBox?"
+      },
+      "image": {
+        "label": "Image profile"
+      }
+    }
+  }
+
 }
