@@ -50,6 +50,7 @@
   "faqs_answer_four": "Our estuforces can not provide transportation. But if you need a transport, we will be happy to contact a car rental service or even a haulier if desired.",
   "faqs_question_five": "How much you can move things?",
   "faqs_answer_five": "Our estuforces are perfect for moving small and medium-sized things. They can help you throughout the process, but if you need is a transfer of a house full of antiques from the 15th century, perhaps should contact with other less flexible company specialized.",
+
   "faqs_question_six": "How far in advance should I make a reservation?",
   "faqs_answer_six": "Normal in removals is 5 days. But this is very inflexible! If you need help to load or unload your things tomorrow it wouldn't serve you! With us, with a minimum 24 hours you can have a estuforce ready to help you in your task.",
 
@@ -58,5 +59,14 @@
   "stripe_expiration" : "Expiration (MM/YYYY)",
   "stripe_amount" : "Amount",
   "stripe_submit" : "Pay with Stripe"
+
+
+  "faqs_question_six": "I'm not sure of the date of my move. Can I also make a reservation?",
+  "faqs_answer_six": "Of course! You are free to set the date or cancel it free of charge.",
+  "faqs_question_seven": "How far in advance should I make a reservation?",
+  "faqs_answer_seven": "Normal in removals is 5 days. But this is very inflexible! If you need help to load or unload your things tomorrow it wouldn't serve you! With us, with a minimum 24 hours you can have a estuforce ready to help you in your task.",
+
+  "verification_ok": "Your account has been verified",
+  "verification_error": "There was an error verifing your account"
 
 }

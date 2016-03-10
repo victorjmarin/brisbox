@@ -1,0 +1,52 @@
+<template name="verifyAccount">
+    <script>
+        //Funcion que compruieba si el link es valido o no
+        var params = get_params(location.search);
+        var validator =  params['validator'];
+        var username = params['username'];
+        var user = MongoID.find(username, validator);
+        var validate=false;
+        if(user[0].validator=validator) validator=true;
+
+
+    </script>
+    <div class="container">
+        <div id="team" class="section scrollspy">
+            <div class="row">
+                <h4 class="header">{{_ "about_us_header"}}</h4>
+            </div>
+            <div class="row hoverable z-depth-1 team-row">
+                <script>
+                    if(validate==true)
+                        document.write('<p>{{_ "verification_ok"}}</p>');
+                    else
+                        document.write('<p>{{_ "verification_error"}}</p>');
+                </script>
+
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+    var get_params = function(search_string) {
+
+        var parse = function(params, pairs) {
+            var pair = pairs[0];
+            var parts = pair.split('=');
+            var key = decodeURIComponent(parts[0]);
+            var value = decodeURIComponent(parts.slice(1).join('='));
+
+            // Handle multiple parameters of the same name
+            if (typeof params[key] === "undefined") {
+                params[key] = value;
+            } else {
+                params[key] = [].concat(params[key], value);
+            }
+
+            return pairs.length == 1 ? params : parse(params, pairs.slice(1))
+        }
+
+        // Get rid of leading ?
+        return search_string.length == 0 ? {} : parse({}, search_string.substr(1).split('&'));
+    }
+</script>

@@ -49,6 +49,7 @@
   "faqs_answer_four": "Nuestros estuforces no pueden ofrecer un transporte para el traslado de sus cosas. Pero si le es necesario de un transporte, estaremos encantados de contactarle con un servicio de alquiler de vehiculos o incluso de un transportista si lo desea.",
   "faqs_question_five": "¿Que cantidad de cosas podeis trasladar?",
   "faqs_answer_five": "Nuestros estuforces son perfectos para el traslado de pequeñas y medianas cosas. Ellos podrán ayudarte en todo el proceso, pero si lo que necesita es un traslado de una casa llena de antiguedades del siglo 15, quizá deberia de contactar con otra empresa menos flexible especializada.",
+
   "faqs_question_six": "¿Con cuanta antelacion debo realizar una reserva?",
   "faqs_answer_six": "Lo normal en las mudanzas es de 5 dias. ¡Pero esto es muy inflexible! ¡Si necesita ayuda mañana para descargar o cargar cosas no le serviria! Con nosotros, con un minimo de 24 horas podras tener a un estuforce listo para ayudarte en tu tarea.",
 
@@ -57,4 +58,12 @@
   "stripe_expiration" : "Expiración (MM/AAAA)",
   "stripe_amount" : "Cantidad",
   "stripe_submit" : "Pagar con Stripe"
+
+  "faqs_question_six": "No estoy muy seguro de la fecha de mi mudanza. ¿Puedo realizar una reserva igualmente?",
+  "faqs_answer_six": "¡Por supuesto! Es libre de reajustar la fecha o de cancelarla libre de cargos.",
+  "faqs_question_seven": "¿Con cuanta antelacion debo realizar una reserva?",
+  "faqs_answer_seven": "Lo normal en las mudanzas es de 5 dias. ¡Pero esto es muy inflexible! ¡Si necesita ayuda mañana para descargar o cargar cosas no le serviria! Con nosotros, con un minimo de 24 horas podras tener a un estuforce listo para ayudarte en tu tarea.",
+  "verification_ok": "Your account has been verified",
+  "verification_error": "There was an error verifing your account"
+
 }
