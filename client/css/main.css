@@ -121,6 +121,30 @@
 }
 
 .inscription-form {
-    width: 40%;
-    align-content: center;
+    width: 45%;
+    margin: 0 auto;
+}
+
+.account-info {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+}
+
+.image-profile {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+    margin-right: 0;
+}
+
+legend {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.help-block {
+    color: #F44336;
 }

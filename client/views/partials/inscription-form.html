@@ -1,31 +1,52 @@
 <template name="inscriptionForm">
 
-    <div class="container">
+    <div class="inscription-form">
         <div class="section">
             {{#autoForm collection="Inscription" id="insertInscriptionForm" type="insert"}}
                 <fieldset>
                     <legend>Acount Information</legend>
-                    <div class="row">
-                    <div class="input-field col s6">
-                    {{> afQuickField name='name'}}
+                    <div class="account-info">
+                        <div class="input-field col s6">
+                            {{> afQuickField name='name' class="validate"}}
+                        </div>
+                        <div class="input-field col s6">
+                            {{> afQuickField name='surname' class="validate"}}
+                        </div>
+                        <div class="input-field col s6">
+                            {{> afQuickField name='phone' type="tel" class="validate"}}
+                        </div>
+                        <div class="input-field col s6">
+                            {{> afQuickField name='email' type='email' class="validate"}}
+                        </div>
+                        <div class="input-field col s6">
+                            {{> afQuickField name='password' type='password' class="validate"}}
+                        </div>
+                        <div class="input-field col s6">
+                            {{> afQuickField name='confirmPass' type='password' class="validate"}}
+                        </div>
                     </div>
-                    <div class="input-field col s6">
-                    {{> afQuickField name='surname'}}
+                    <div class="image-profile">
+                        <div class="">
+                            <div class="">
+                                {{> afQuickField name='image' type="file" class=""}}
+                            </div>
+                        </div>
                     </div>
-                    </div>
-                    {{> afQuickField name='phone'}}
-                    {{> afQuickField name='email' type='email'}}
-                    {{> afQuickField name='password' type='password'}}
-                    {{> afQuickField name='confirmPass' type='password'}}
-
                 </fieldset>
+                <br>
                 <fieldset>
                     <legend>Personal Information</legend>
-                   <!--{{> afQuickField name='zip'}}-->
-                    <label class="control-label">{{afFieldLabelText name='firstName'}}</label>
-                    {{> afQuickField name='emailSchool' type='email'}}
-                    {{> afQuickField name='howHearAboutUs'}}
+                    <div class="input-field col s6">
+                        {{> afQuickField name='zip' class="validate"}}
+                    </div>
+                    <div class="input-field col s6">
+                        {{> afQuickField name='emailSchool' type='email' class="validate"}}
+                    </div>
+                    <div class="input-field col s6">
+                        {{> afQuickField name='howHearAboutUs' class="validate"}}
+                    </div>
                 </fieldset>
+                <br>
                 <button type="submit" class="btn btn-primary waves-button-input">Submit Application</button>
             {{/autoForm}}
         </div>
