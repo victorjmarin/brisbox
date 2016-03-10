@@ -1,0 +1,77 @@
+@-webkit-keyframes anim-open {
+    0% { opacity: 0; -webkit-transform: scale3d(1.1, 1.1, 1); }
+    100% { opacity: 1; -webkit-transform: scale3d(1, 1, 1); }
+}
+
+@-moz-keyframes anim-open {
+    0% { opacity: 0; -moz-transform: scale3d(1.1, 1.1, 1); }
+    100% { opacity: 1; -moz-transform: scale3d(1, 1, 1); }
+}
+@keyframes anim-open {
+    0% { opacity: 0; -webkit-transform: scale3d(1.1, 1.1, 1); transform: scale3d(1.1, 1.1, 1); -moz-transform: scale3d(1.1, 1.1, 1); }
+    100% { opacity: 1; -webkit-transform: scale3d(1, 1, 1); transform: scale3d(1, 1, 1); -moz-transform: scale3d(1, 1, 1); }
+}
+
+@-webkit-keyframes anim-close {
+    0% { opacity: 1; }
+    100% { opacity: 0; -webkit-transform: scale3d(0.9, 0.9, 1); }
+}
+@-moz-keyframes anim-close {
+    0% { opacity: 1; }
+    100% { opacity: 0; -moz-transform: scale3d(0.9, 0.9, 1); }
+}
+@keyframes anim-close {
+    0% { opacity: 1; }
+    100% { opacity: 0; -webkit-transform: scale3d(0.9, 0.9, 1); transform: scale3d(0.9, 0.9, 1); -moz-transform: scale3d(0.9, 0.9, 1); }
+}
+
+
+#login-overlay{
+	background: url(lgnoverlyback.png) repeat,-webkit-linear-gradient(80deg, #612301, #000000);
+	background: url(lgnoverlyback.png) repeat,-o-linear-gradient(80deg, #612301, #000000);
+	background: url(lgnoverlyback.png) repeat,linear-gradient(170deg, #612301, #000000);
+	opacity: 0.9;
+	z-index: 998;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	will-change: opacity;
+	display: none;
+}
+
+#login-main{
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	display: none;
+}
+#login-access{
+	animation-name: anim-open;
+	animation-duration: 0.5s;
+	display: none;
+	background-color: white;
+	margin: 15% auto;
+	width: 50%;
+	z-index: 1050;
+}
+/*
+#login-access{
+	position: fixed;
+	z-index: 2000;
+	animation-name: anim-open;
+	animation-duration: 0.5s;
+	height: auto;
+	width: auto;
+	top: 0px;
+	left: 0px;
+	display: none;
+	background-color: white;
+}
+*/
