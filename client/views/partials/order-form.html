@@ -1,0 +1,72 @@
+    <template name="Order-form">
+    <div class="container" >
+        <div id="order-form-id">
+            <div class="row">
+                <h4>{{_ "order-form_header"}}</h4>
+            <div id="form-information" class="section">
+                <form role="form" method="post" id="order-form" autocomplete="off">
+                    <div id="form-address-zip">
+                        <div class="form-localization">
+                            <label for="localization" class="sr-only"></label>
+                            <input type="text" name="localization" id="localization" class="form-localization" placeholder="{{_ "order-form_address"}}">
+                        </div>
+                        <div class="form-number">
+                            <label for="number" class="sr-only"></label>
+                            <input type="text" name="number" id="number" class="form-number" placeholder="{{_ "order-form_number"}}">
+                        </div>
+                        <input type="radio" name="type_move" value="1">{{_ "order-loading"}}
+                        <br>
+                        <input type="radio" name="transporte" value="2">{{_ "order-unloading"}}
+                        <br>
+                        <input class="btn btn-large orange darken-3 lighten-1-text form-more-info waves-effect waves-light" type="text" value="
+                            {{_ "order-form_ready"}}"/>
+
+                    </div>
+                    <div id="form-more-info">
+                        <h5>{{_ "order-form_more-info-header"}}</h5>
+                        <div class="form-comments">
+                            <label for="comments" class="sr-only"></label>
+                            <textarea name="comments" rows="5" cols="20" placeholder="{{_ "order-form_comments"}}"></textarea>
+                        </div>
+                        <div class="form-number-brisboxer">
+                            <label for="number-brisboxer" class="sr-only"></label>
+                            <input type="text" name="number-brisboxer" id="number-brisboxer" class="form-number-brisboxer" placeholder="{{_ "order-form_number-brisboxer"}}">
+                        </div>
+                        <h5>{{_ "order-form_more-info-hour"}}</h5>
+                        <div class="form-hours">
+                            <label for="hours" class="sr-only"></label>
+                            <input type="text" name="hours" id="hours" class="form-hours" placeholder="{{_ "order-form_hours"}}">
+                        </div>
+                        <input class="btn btn-large orange darken-3 lighten-1-text form-more-info waves-effect waves-light" type="text" value="
+                            {{_ "order-form_ready"}}"/>
+                    </div>
+                    <div id="contact-info">
+                        <h5>{{_ "order-form_contact-info"}}</h5>
+                        <div class="form-contact-first-name">
+                            <label for="first-name" class="sr-only"></label>
+                            <input type="text" name="first-name" id="first-name" class="form-first-name" placeholder="{{_ "order-form_first-name"}}">
+                        </div>
+                        <div class="form-contact-second-name">
+                            <label for="second-name" class="sr-only"></label>
+                            <input type="text" name="second-name" id="second-name" class="form-second-name" placeholder="{{_ "order-form_second-name"}}">
+                        </div>
+                        <div class="form-contact-email">
+                            <label for="email" class="sr-only"></label>
+                            <input type="text" name="email" id="email" class="form-email" placeholder="{{_ "order-form_email"}}">
+                        </div>
+                        <div class="form-contact-tel">
+                            <label for="tel" class="sr-only"></label>
+                            <input type="tel" name="tel" id="tel" class="form-tel" placeholder="{{_ "order-form_tel"}}">
+                        </div>
+                        <input class="btn btn-large orange darken-3 lighten-1-text form-more-info waves-effect waves-light" type="text" value="
+                            {{_ "order-form_ready"}}"/>
+                        <input type="checkbox" name="book" value="1">{{_ "order-form-book"}}
+                    </div>
+                </form>
+            </div>
+
+
+            </div>
+        </div>
+    </div>
+</template>

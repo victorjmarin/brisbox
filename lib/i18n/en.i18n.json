@@ -28,7 +28,7 @@
   "menu_faq": "FAQ",
   "menu_apply": "Join us",
   "menu_stripe": "Stripe",
-  "menu_apply": "Join estuforce",
+  "menu_apply": "Join brisboxer",
 
   "about_us_header": "About us",
   "about_us_vjm": "Student at the University of Seville",
@@ -58,7 +58,7 @@
   "stripe_cvc" : "CVC",
   "stripe_expiration" : "Expiration (MM/YYYY)",
   "stripe_amount" : "Amount",
-  "stripe_submit" : "Pay with Stripe"
+  "stripe_submit" : "Pay with Stripe",
 
 
   "faqs_question_six": "I'm not sure of the date of my move. Can I also make a reservation?",
@@ -66,7 +66,23 @@
   "faqs_question_seven": "How far in advance should I make a reservation?",
   "faqs_answer_seven": "Normal in removals is 5 days. But this is very inflexible! If you need help to load or unload your things tomorrow it wouldn't serve you! With us, with a minimum 24 hours you can have a estuforce ready to help you in your task.",
 
-  "verification_ok": "Your account has been verified",
-  "verification_error": "There was an error verifing your account"
+  "order-form_header": "Do you need do a move?",
+  "order-form_address": "Address...",
+  "order-form_number": "ZIP code...",
+  "order-loading": "Loading",
+  "order-unloading": "Unloading",
+  "order-form_help": "How can we help?",
+  "order-form_ready": "Next",
+  "order-form_more-info-header": "Details about your move",
+  "order-form_comments": "Comments for our brisboxers...",
+  "order-form_number-brisboxer": "Number brisboxers",
+  "order-form_hours": "Hours",
+  "order-form_more-info-hour": "¿How long will you need them (in total)?",
+  "order-form_contact-info": "Contact info",
+  "order-form_first-name": "First name",
+  "order-form_second-name": "Second name",
+  "order-form_email": "Email",
+  "order-form_tel": "Telephone",
+  "order-form-book": "1€"
 
 }
