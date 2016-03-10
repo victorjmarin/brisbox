@@ -3,25 +3,29 @@
         <div class="section">
             {{#autoForm collection="Order" id="insertOrderForm" type="insert"}}
             <form>
-                <fieldset>
+                <div>
                     <legend>{{_ "order-form_header"}}</legend>
-                    <div class="account-info">
+                    <div class="order-info">
                         <div class="input-field col s6">
                             {{> afQuickField name='address' class="validate"}}
                         </div>
                         <div class="input-field col s6">
                             {{> afQuickField name='zip' class="validate"}}
                         </div>
-                        <input type="radio" name="type_move" value="1">{{_ "order-loading"}}
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="checkboxEnLinea1" value="loading"> {{_ "order-loading"}}
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="checkboxEnLinea2" value="unloading"> {{_ "order-unloading"}}
+                        </label>
                         <br>
-                        <input type="radio" name="transport" value="2">{{_ "order-unloading"}}
-                        <br>
-                        <input class="btn btn-large orange darken-3 lighten-1-text form-more-info waves-effect waves-light" type="text" value="
-                            {{_ "order-form_ready"}}"/>
+                        <button id="buttom-next" class="btn btn-large orange darken-3 lighten-1-text form-more-info waves-effect waves-light" type="button">
+                            {{_ "order-form_ready"}}
+                        </button>
                     </div>
-                </fieldset>
-                <br>
-                <fieldset>
+                </div>
+                <div>
+                    <div class="order-info">
                     <legend>{{_ "order-form_more-info-header"}}</legend>
                     <div class="input-field col s6">
                         <label for="comments" class="sr-only"></label>
@@ -33,25 +37,28 @@
                     <div class="input-field col s6">
                         {{> afQuickField name='hours' class="validate"}}
                     </div>
-                    <input class="btn btn-large orange darken-3 lighten-1-text form-more-info waves-effect waves-light" type="text" value="
-                            {{_ "order-form_ready"}}"/>
-                </fieldset>
-                <br>
-                <fieldset>
-                    <legend>{{_ "order-form_contact-info"}}</legend>
-                    <div class="input-field col s6">
-                        {{> afQuickField name='name' class="validate"}}
+                    <button id="buttom-next"  class="btn btn-large orange darken-3 lighten-1-text form-more-info waves-effect waves-light" type="button">
+                        {{_ "order-form_ready"}}
+                    </button>
                     </div>
-                    <div class="input-field col s6">
-                        {{> afQuickField name='surname'  class="validate"}}
+                </div>
+                <div>
+                    <div class="order-info">
+                        <legend>{{_ "order-form_contact-info"}}</legend>
+                        <div class="input-field col s6">
+                            {{> afQuickField name='name' class="validate"}}
+                        </div>
+                        <div class="input-field col s6">
+                            {{> afQuickField name='surname'  class="validate"}}
+                        </div>
+                        <div class="input-field col s6">
+                            {{> afQuickField name='email' type='email' class="validate"}}
+                        </div>
+                        <div class="input-field col s6">
+                            {{> afQuickField name='tel' type='tel' class="validate"}}
+                        </div>
                     </div>
-                    <div class="input-field col s6">
-                        {{> afQuickField name='email' type='email' class="validate"}}
-                    </div>
-                    <div class="input-field col s6">
-                        {{> afQuickField name='tel' type='tel' class="validate"}}
-                    </div>
-                </fieldset>
+                </div>
                 <br>
                 <button type="submit" class="btn btn-primary waves-button-input">Submit Application</button>
             </form>

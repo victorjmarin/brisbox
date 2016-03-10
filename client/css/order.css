@@ -1,0 +1,27 @@
+.order-info {
+    display: block;
+}
+
+#form-address-zip{
+    margin-top:5%;
+}
+
+.order-form{
+    margin-left: 5%;
+    margin-top:10%;
+    margin-right: 60%;
+}
+
+.section{
+    border-right: 20px;
+    border-left: 20px;
+}
+
+.checkbox-inline{
+    visibility: visible !important;
+    font-size:16px;
+}
+
+#button-next{
+    margin: 5%;
+}
