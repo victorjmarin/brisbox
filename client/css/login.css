@@ -61,6 +61,11 @@
 	width: 50%;
 	z-index: 1050;
 }
+
+
+@media (max-width: 601px) {
+	#login-access{width: 85%;}
+}
 /*
 #login-access{
 	position: fixed;

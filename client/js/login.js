@@ -18,4 +18,6 @@ Template.login.onRendered(function(){
 	$('#login-overlay').css('display', 'block');
 	$('#login-main').css('display', 'block');
 	$('#login-access').css('display', 'block');
+
+    $('#login-content').delay(150).slideDown("slow");
 })
