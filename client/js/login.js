@@ -9,7 +9,9 @@ Template.login.events({
         Session.set('showLoginModal', false);
     },
     'click #login-main': function(event){
-        Session.set('showLoginModal', false);
+        if(event.target.id==="login-main"){
+            Session.set('showLoginModal', false);
+        }
     }
 });
 Template.login.onRendered(function(){

@@ -27,9 +27,9 @@
 
 
 #login-overlay{
-	background: url(lgnoverlyback.png) repeat,-webkit-linear-gradient(80deg, #2e1f49, #000000);
-	background: url(lgnoverlyback.png) repeat,-o-linear-gradient(80deg, #2e1f49, #000000);
-	background: url(lgnoverlyback.png) repeat,linear-gradient(170deg, #2e1f49, #000000);
+	background: url(lgnoverlyback.png) repeat,-webkit-linear-gradient(80deg, #612301, #000000);
+	background: url(lgnoverlyback.png) repeat,-o-linear-gradient(80deg, #612301, #000000);
+	background: url(lgnoverlyback.png) repeat,linear-gradient(170deg, #612301, #000000);
 	opacity: 0.9;
 	z-index: 998;
 	position: fixed;
@@ -49,6 +49,7 @@
 	left: 0;
 	right: 0;
 	height: 100%;
+	width: 100%;
 	display: none;
 }
 #login-access{
@@ -56,6 +57,9 @@
 	animation-duration: 0.5s;
 	display: none;
 	background-color: white;
+	margin: 15% auto;
+	width: 50%;
+	z-index: 1050;
 }
 /*
 #login-access{
