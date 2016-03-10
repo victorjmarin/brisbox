@@ -27,6 +27,8 @@
   "menu_about": "About us",
   "menu_faq": "FAQ",
   "menu_apply": "Join us",
+  "menu_stripe": "Stripe",
+  "menu_apply": "Join estuforce",
 
   "about_us_header": "About us",
   "about_us_vjm": "Student at the University of Seville",
@@ -49,5 +51,12 @@
   "faqs_question_five": "How much you can move things?",
   "faqs_answer_five": "Our estuforces are perfect for moving small and medium-sized things. They can help you throughout the process, but if you need is a transfer of a house full of antiques from the 15th century, perhaps should contact with other less flexible company specialized.",
   "faqs_question_six": "How far in advance should I make a reservation?",
-  "faqs_answer_six": "Normal in removals is 5 days. But this is very inflexible! If you need help to load or unload your things tomorrow it wouldn't serve you! With us, with a minimum 24 hours you can have a estuforce ready to help you in your task."
+  "faqs_answer_six": "Normal in removals is 5 days. But this is very inflexible! If you need help to load or unload your things tomorrow it wouldn't serve you! With us, with a minimum 24 hours you can have a estuforce ready to help you in your task.",
+
+  "stripe_card_number" : "Card Number",
+  "stripe_cvc" : "CVC",
+  "stripe_expiration" : "Expiration (MM/YYYY)",
+  "stripe_amount" : "Amount",
+  "stripe_submit" : "Pay with Stripe"
+
 }

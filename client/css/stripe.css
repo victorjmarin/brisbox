@@ -1,0 +1,10 @@
+.stripe-form {
+    margin: auto;
+    width: 25%;
+    margin-bottom: 10px;
+    margin-top: 85px;
+}
+
+.stripe-form .stripe-submit{
+    text-align: center;
+}
