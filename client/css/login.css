@@ -69,7 +69,6 @@
 }
 #login-access{
 	display: none;
-	background-color: white;
 	margin: 15% auto;
 	width: 50%;
 	z-index: 1050;
@@ -84,6 +83,15 @@
 
 }
 
+#login-content{
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+#login-title{
+	margin-bottom: 0 !important;
+}
+
 #login-title-header{
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
@@ -94,22 +102,21 @@
 	#login-access{width: 85%;}
 }
 
-#arrow-down-left{
-	content: "";
-	position: relative;
-	top: 17px;
-	z-index: -100;
-	width: 0; 
-	height: 0; 
-	border-left: 20px solid transparent;
-	border-right: 20px solid transparent;
-	border-top: 20px solid #923300;
-	animation-name: anim-opena;
-	animation-duration: 0.5s;
-}
-
 #login-form{
 	z-index: 50;
+}
+
+#login-input-fields{
+	background-color: white;
+	margin-top: 0 !important;
+	-webkit-border-bottom-right-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-bottomright: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	padding-top: 10px;
+	padding-bottom: 15px;
 }
 /*
 #login-access{

@@ -10,23 +10,26 @@
         <div id="login-access">
             <div class="row">
                 <form class="col s12" id="login-form">
-                    <div class="row" id="login-title">
+                    <div class="row z-depth-3" id="login-title">
                         <div class="col s12 orange darken-3 white-text center-align" id="login-title-header">
-                            <h4>Login</h4>
+                            <h4>{{_ "login_title"}}</h4>
                         </div>
-                        <span id="arrow-down-left"></span>
                     </div>
                     <div class="row" id="login-content" style="display: none;">
-                        <div class="input-field col s12">
+                        <div class="input-field col s12 z-depth-3" id="login-input-fields">
                           <div class="input-field col s12">
                               <i class="material-icons prefix">account_circle</i>
                               <input id="username" type="text" class="validate">
-                              <label for="username">Username</label>
+                              <label for="username">{{_ "login_username"}}</label>
                           </div>
                           <div class="input-field col s12">
-                              <i class="material-icons prefix">vpn_key</i>
+                              <i class="material-icons prefix">lock_outline</i>
                               <input id="password" type="password" class="validate">
-                              <label for="password">Password</label>
+                              <label for="password">{{_ "login_password"}}</label>
+                          </div>
+                          <div class="input-field col s12 center-align">
+                            <button name="submit" type="submit" class="waves-effect waves-light btn orange darken-3"><i class="material-icons right">lock_open</i>{{_ "login_title"}}
+                            </button>
                           </div>
                         </div>
                     </div>
