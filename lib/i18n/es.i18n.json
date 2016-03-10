@@ -57,13 +57,30 @@
   "stripe_cvc" : "CVC",
   "stripe_expiration" : "Expiración (MM/AAAA)",
   "stripe_amount" : "Cantidad",
-  "stripe_submit" : "Pagar con Stripe"
+  "stripe_submit" : "Pagar con Stripe",
 
   "faqs_question_six": "No estoy muy seguro de la fecha de mi mudanza. ¿Puedo realizar una reserva igualmente?",
   "faqs_answer_six": "¡Por supuesto! Es libre de reajustar la fecha o de cancelarla libre de cargos.",
   "faqs_question_seven": "¿Con cuanta antelacion debo realizar una reserva?",
   "faqs_answer_seven": "Lo normal en las mudanzas es de 5 dias. ¡Pero esto es muy inflexible! ¡Si necesita ayuda mañana para descargar o cargar cosas no le serviria! Con nosotros, con un minimo de 24 horas podras tener a un estuforce listo para ayudarte en tu tarea.",
-  "verification_ok": "Your account has been verified",
-  "verification_error": "There was an error verifing your account"
+
+  "order-form_header": "¿Necesitas hacer un pedido?",
+  "order-form_address": "Dirección postal...",
+  "order-form_number": "Código postal...",
+  "order-loading": "Carga",
+  "order-unloading": "Descarga",
+  "order-form_help": "¿Cómo podemos ayudarte?",
+  "order-form_ready": "Siguiente",
+  "order-form_more-info-header": "Detalles sobre la mudanza",
+  "order-form_comments": "Comentarios para nuestros brisboxers...",
+  "order-form_number-brisboxer": "Número de brisboxers",
+  "order-form_hours": "Horas",
+  "order-form_more-info-hour": "¿Cuántas horas en total vas a necesitar?",
+  "order-form_contact-info": "Información de contacto",
+  "order-form_first-name": "Nombre",
+  "order-form_second-name": "Apellidos",
+  "order-form_email": "Correo electrónico",
+  "order-form_tel": "Teléfono",
+  "order-form-book": "1€"
 
 }
