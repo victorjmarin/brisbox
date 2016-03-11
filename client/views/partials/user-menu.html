@@ -2,11 +2,11 @@
 	{{#if currentUser }}
 		<div id="usermenu-content">
 			{{#if isInRole 'brisboxer'}}
-				<i class="material-icons green-text dropdown-button img-user">stars</i>
+				<i class="material-icons orange-text dropdown-button img-user">stars</i>
 			{{/if}}
 
 			{{#if isInRole 'admin'}}
-				<i class="material-icons green-text dropdown-button img-user">verified_user</i>
+				<i class="material-icons orange-text dropdown-button img-user">verified_user</i>
 			{{/if}}
 			<span class="hide-on-med-and-down">{{_ "welcome"}}, <b>{{currentUser.username}}</b></span>
 		</div>
