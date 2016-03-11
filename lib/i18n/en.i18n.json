@@ -1,6 +1,7 @@
 {
   "lang_changed": "Language changed",
   "undo": "Undo",
+  "welcome": "Welcome",
 
   "layout_login_link": "Login",
 
@@ -53,5 +54,6 @@
 
   "login_title": "Login",
   "login_username": "Username",
-  "login_password": "Password"
+  "login_password": "Password",
+  "login_error_credentials_wrong": "Wrong username or password "
 }

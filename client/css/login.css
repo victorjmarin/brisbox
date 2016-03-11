@@ -12,21 +12,6 @@
     100% { opacity: 1; -webkit-transform: scale3d(1, 1, 1); transform: scale3d(1, 1, 1); -moz-transform: scale3d(1, 1, 1);z-index: 2; }
 }
 
-@-webkit-keyframes anim-opena {
-    0% { opacity: 0; -webkit-transform: scale3d(1.1, 1.1, 0.9); z-index: -2; }
-    100% { opacity: 1; -webkit-transform: scale3d(1.1, 1.1, 0.9); z-index: -2;}
-}
-
-@-moz-keyframes anim-opena {
-    0% { opacity: 0; -moz-transform: scale3d(1.1, 1.1, 0.9); z-index: -2;}
-    100% { opacity: 1; -moz-transform: scale3d(1.1, 1.1, 0.9); z-index: -2;}
-}
-@keyframes anim-opena {
-    0% { opacity: 0; -webkit-transform: scale3d(1.1, 1.1, 0.9); transform: scale3d(1.1, 1.1, 0.9); -moz-transform: scale3d(1.1, 1.1, 0.9); z-index: -2;}
-    100% { opacity: 1; -webkit-transform: scale3d(1, 1, 0.9); transform: scale3d(1, 1, 0.9); -moz-transform: scale3d(1, 1, 0.9); z-index: -2;}
-}
-
-
 @-webkit-keyframes anim-close {
     0% { opacity: 1; }
     100% { opacity: 0; -webkit-transform: scale3d(0.9, 0.9, 1); }
@@ -72,8 +57,6 @@
 	margin: 15% auto;
 	width: 50%;
 	z-index: 1050;
-	animation-name: anim-open;
-	animation-duration: 0.5s;
 	-webkit-border-bottom-right-radius: 5px;
 	-webkit-border-bottom-left-radius: 5px;
 	-moz-border-radius-bottomright: 5px;
@@ -81,6 +64,14 @@
 	border-bottom-right-radius: 5px;
 	border-bottom-left-radius: 5px;
 
+}
+.login-open{
+	animation-name: anim-open;
+	animation-duration: 0.5s;
+}
+.login-close{
+	animation-name: anim-close;
+	animation-duration: 0.3s;
 }
 
 #login-content{
@@ -102,7 +93,7 @@
 	#login-access{width: 85%;}
 }
 
-#login-form{
+#loginform{
 	z-index: 50;
 }
 
@@ -115,8 +106,22 @@
 	-moz-border-radius-bottomleft: 3px;
 	border-bottom-right-radius: 3px;
 	border-bottom-left-radius: 3px;
-	padding-top: 10px;
-	padding-bottom: 15px;
+	padding-top: 20px;
+	padding-bottom: 25px;
+}
+#login-error{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: white;
+	animation-name: anim-open;
+	animation-duration: 0.4s;
+	-webkit-border-bottom-right-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-bottomright: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+
 }
 /*
 #login-access{
