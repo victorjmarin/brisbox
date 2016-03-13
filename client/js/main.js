@@ -19,7 +19,7 @@ Template.layout.onRendered(function () {
 );
 
 Template.stripe_form.events({
-    'submit #payment-form': function(e) {
+    'submit #payment-form': function (e) {
         e.preventDefault();
 
         ccNum = $('#number').val();
@@ -33,7 +33,7 @@ Template.stripe_form.events({
             cvc: cvc,
             exp_month: expMo,
             exp_year: expYr
-        }, function(status, response) {
+        }, function (status, response) {
             stripeToken = response.id;
             Meteor.call('chargeCard', stripeToken, amountForm);
         });
@@ -47,14 +47,7 @@ getUserLanguage = function () {
 
 
 Meteor.startup(function () {
-    var stripeKey = Meteor.settings.public.stripe.testPublishableKey;
-    Stripe.setPublishableKey(stripeKey);
-
-    var handler = StripeCheckout.configure({
-        key: stripeKey,
-        token: function(token) {}
-    });
-
+    
     TAPi18n.setLanguage(getUserLanguage())
         .done(function () {
             Session.set("showLoadingIndicator", false);
@@ -63,4 +56,15 @@ Meteor.startup(function () {
             // Handle the situation
             console.log(error_message);
         });
+
+    var stripeKey = Meteor.settings.public.stripe.testPublishableKey;
+    Stripe.setPublishableKey(stripeKey);
+
+    var handler = StripeCheckout.configure({
+        key: stripeKey,
+        token: function (token) {
+        }
+    });
+
+
 });
