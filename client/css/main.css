@@ -6,18 +6,6 @@
     text-align: center;
 }
 
-.site-orange {
-
-}
-
-.site-dark-orange {
-    background-color: #7D6331
-}
-
-.site-darker-orange {
-    background-color: #594B31;
-}
-
 .Site {
     display: flex;
     min-height: 100vh;

@@ -1,4 +1,4 @@
-Template.layout.onRendered(function () {
+Template.menu.onRendered(function () {
         $('.dropdown-button').dropdown({
                 inDuration: 300,
                 outDuration: 225,
@@ -47,7 +47,7 @@ getUserLanguage = function () {
 
 
 Meteor.startup(function () {
-    
+
     TAPi18n.setLanguage(getUserLanguage())
         .done(function () {
             Session.set("showLoadingIndicator", false);
