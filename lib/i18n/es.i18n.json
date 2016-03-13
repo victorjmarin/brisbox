@@ -1,8 +1,9 @@
 {
   "lang_changed": "Idioma cambiado",
   "undo": "Deshacer",
+  "welcome": "Bienvenido",
 
-  "layout_login_link": "Ingresa",
+  "layout_login_link": "Ingreso",
 
   "home_title": "Ayuda económica y práctica para tus traslados",
   "home_order": "Reservar un traslado",
@@ -120,5 +121,10 @@
         "label": "Imagen de perfil"
       }
     }
-  }
+  },
+
+  "login_title": "Entrar",
+  "login_username": "Usuario",
+  "login_password": "Contraseña",
+  "login_error_credentials_wrong": "Usuario y/o contraseña erronea"
 }
