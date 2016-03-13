@@ -81,5 +81,44 @@
   "order-form_second-name": "Apellidos",
   "order-form_email": "Correo electrónico",
   "order-form_tel": "Teléfono",
-  "order-form-book": "1€"
+  "order-form-book": "1€",
+
+  "account-info": "Información de la cuenta",
+  "personal-info": "Información personal",
+  "submit": "Enviar",
+
+  "schemas": {
+    "inscription": {
+      "name": {
+        "label": "Nombre"
+      },
+      "surname": {
+        "label": "Apellidos"
+      },
+      "phone": {
+        "label": "Teléfono"
+      },
+      "email": {
+        "label": "Correo electrónico"
+      },
+      "password": {
+        "label": "Contraseña"
+      },
+      "confirmPass": {
+        "label": "Confirmar contraseña"
+      },
+      "zip": {
+        "label": "Código postal"
+      },
+      "emailSchool": {
+        "label": "Correo electrónico universitario"
+      },
+      "howHearAboutUs": {
+        "label": "¿Cómo nos has encontrado?"
+      },
+      "image": {
+        "label": "Imagen de perfil"
+      }
+    }
+  }
 }

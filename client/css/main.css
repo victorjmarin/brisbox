@@ -135,7 +135,6 @@
 .image-profile {
     float: left;
     display: block;
-    margin-right: 2.35765%;
     width: 48.82117%;
     margin-right: 0;
 }
@@ -147,4 +146,13 @@ legend {
 
 .help-block {
     color: #F44336;
+}
+
+@media(max-width: 601px){
+    .image-profile{
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 48.82117%;
+    }
 }

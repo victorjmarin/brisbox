@@ -4,7 +4,7 @@
         <div class="section">
             {{#autoForm collection="Inscription" id="insertInscriptionForm" type="insert"}}
                 <fieldset>
-                    <legend>Acount Information</legend>
+                    <legend>{{_ "account-info"}}</legend>
                     <div class="account-info">
                         <div class="input-field col s6">
                             {{> afQuickField name='name' class="validate"}}
@@ -35,7 +35,7 @@
                 </fieldset>
                 <br>
                 <fieldset>
-                    <legend>Personal Information</legend>
+                    <legend>{{_ "personal-info"}}</legend>
                     <div class="input-field col s6">
                         {{> afQuickField name='zip' class="validate"}}
                     </div>
@@ -47,7 +47,7 @@
                     </div>
                 </fieldset>
                 <br>
-                <button type="submit" class="btn btn-primary waves-button-input">Submit Application</button>
+                <button type="submit" class="btn btn-primary waves-button-input">{{_ "submit"}}</button>
             {{/autoForm}}
         </div>
     </div>

@@ -83,6 +83,44 @@
   "order-form_second-name": "Second name",
   "order-form_email": "Email",
   "order-form_tel": "Telephone",
-  "order-form-book": "1€"
+  "order-form-book": "1€",
 
+  "account-info": "Account information",
+  "personal-info": "Personal information",
+  "submit": "Submit",
+
+  "schemas": {
+    "inscription": {
+      "name": {
+        "label": "Name"
+      },
+      "surname": {
+        "label": "Last Name"
+      },
+      "phone": {
+        "label": "Phone"
+      },
+      "email": {
+        "label": "Email Address"
+      },
+      "password": {
+        "label": "Password"
+      },
+      "confirmPass": {
+        "label": "Confirm password"
+      },
+      "zip": {
+        "label": "Hometown ZIP Code"
+      },
+      "emailSchool": {
+        "label": "Your School's Email"
+      },
+      "howHearAboutUs": {
+        "label": "How did you hear about BrisBox?"
+      },
+      "image": {
+        "label": "Image profile"
+      }
+    }
+  }
 }
