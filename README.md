@@ -1,7 +1,5 @@
-# brisbox
+# brisbox.com
 
-Web information system powered by https://www.meteor.com/
+Platform where people can find local people to help them move.
 
-It's purpose is to ease moves by providing a platform where people can find estuforcers who can help them.
-
-It's deployed at http://www.brisbox.com/
+http://www.brisbox.com/
