@@ -1,4 +1,4 @@
-Template.Order.events({
+Template.orderForm.events({
 	'click .form-more-info': function(event){
 		var info = $(event.target);
 		var more_info = info.parent().parent().next();

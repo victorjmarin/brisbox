@@ -1,10 +1,10 @@
-Template.ApplicationLayout.helpers({
+Template.layout.helpers({
 	'showLoginModal': function(){
         return Session.get('showLoginModal');
     }
 
 });
-Template.ApplicationLayout.events({
+Template.layout.events({
 	'click #showLoginModal': function(){
         Session.set('showLoginModal', true);
     }
