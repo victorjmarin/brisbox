@@ -24,5 +24,7 @@ materialize:materialize
 aldeed:collection2
 tap:i18n
 aldeed:autoform
+gwendall:autoform-i18n
+alanning:roles
 mrgalaxy:stripe
 zimme:active-route

@@ -1,5 +1,6 @@
 accounts-base@1.2.2
 accounts-password@1.1.4
+alanning:roles@1.2.15
 aldeed:autoform@5.8.1
 aldeed:collection2@2.9.0
 aldeed:collection2-core@1.1.0
@@ -36,6 +37,7 @@ email@1.0.8
 es5-shim@4.1.14
 fastclick@1.0.7
 geojson-utils@1.0.4
+gwendall:autoform-i18n@0.1.9_1
 hot-code-push@1.0.0
 html-tools@1.0.5
 htmljs@1.0.5
