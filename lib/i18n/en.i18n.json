@@ -1,6 +1,7 @@
 {
   "lang_changed": "Language changed",
   "undo": "Undo",
+  "welcome": "Welcome",
 
   "layout_login_link": "Login",
 
@@ -96,13 +97,16 @@
       }
     }
   },
+  "login_title": "Login",
+  "login_username": "Username",
+  "login_password": "Password",
+  "login_error_credentials_wrong": "Wrong username or password ",
 
   "stripe_card_number" : "Card Number",
   "stripe_cvc" : "CVC",
   "stripe_expiration" : "Expiration (MM/YYYY)",
   "stripe_amount" : "Amount",
   "stripe_submit" : "Pay with Stripe",
-
 
   "faqs_question_six": "I'm not sure of the date of my move. Can I also make a reservation?",
   "faqs_answer_six": "Of course! You are free to set the date or cancel it free of charge.",
