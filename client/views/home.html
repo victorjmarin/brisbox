@@ -3,19 +3,27 @@
     <div>
         <div class="cardbg hide-on-med-and-down" style="margin-top: -20%"></div>
         <div class="cardbg-mobile hide-on-large-only" style="margin-top: -20%"></div>
-        <div class="container" style="margin-top: 10%; margin-bottom: 20%">
+        <div class="container" style="margin-top: 15%; margin-bottom: 20%">
             <div class="row">
                 <div class="col s12 center-align">
                     <h3 class="white-text" style="text-shadow: 2px 2px 2px #000;">{{_ "home_title"}}</h3>
-                    <a class="btn btn-large orange darken-3">{{_ "home_order"}}</a>
+                    <a href="{{pathFor 'orderForm'}}" class="btn btn-large orange darken-3">{{_ "home_order"}}</a>
                 </div>
+                <!-- ADDED FOR LOGIN -->
+                <!--<div class="col s12 center-align">
+                    {{#if currentUser}}  
+                        <h3 class="white-text" style="text-shadow: 2px 2px 2px #000;">You're login in.</h3>
+                    {{else}}
+                    {{> login}}
+                {{/if}}
+                </div>-->
+                <!-- END ADDED FOR LOGIN -->
             </div>
         </div>
     </div>
 
     <div class="white">
-        <div class="amber darken-3">
-            <br>
+        <div class="amber darken-3" style="padding: 0.1px">
             <div class="container">
                 <div class="row">
                     <h4 class="center-align white-text">{{_ "home_help"}}</h4>
@@ -23,53 +31,99 @@
             </div>
         </div>
 
-        <div class="white">
-            <br>
+        <div class="white" style="margin-top: 15px">
             <div class="container">
                 <div class="row">
 
                     <!-- Services high resolution screens -->
                     <div class="hide-on-med-and-down">
-                        <div class="col s4 center-align">
-                            <h4>{{_ "home_loading"}}</h4>
-                            <img src="/loading.png" style="height: 220px; width: 220px">
-                            <p class="center-align">{{_ "home_loading_text"}}</p>
-                        </div>
-                        <div class="col s4 center-align">
-                            <h4>{{_ "home_unloading"}}</h4>
-                            <img src="/unloading.png" style="height: 220px; width: 220px">
-                            <p class="center-align">{{_ "home_unloading_text"}}</p>
-                        </div>
-                        <div class="col s4 center-align">
-                            <h4>{{_ "home_placing"}}</h4>
-                            <img src="/placing.png" style="height: 220px; width: 220px">
-                            <p class="center-align">{{_ "home_placing_text"}}</p>
-                        </div>
+                        {{> homeServicesHR}}
                     </div>
-                    <!-- End services high resolution screens -->
 
                     <!-- Services low resolution screens -->
                     <div class="hide-on-large-only">
-                        <div class="col s12 center-align">
-                            <h4>{{_ "home_loading"}}</h4>
-                            <img src="/loading.png" class="responsive-img">
-                            <p class="center-align">{{_ "home_loading_text"}}</p>
-                            <hr>
-                            <h4>{{_ "home_unloading"}}</h4>
-                            <img src="/unloading.png" class="responsive-img">
-                            <p class="center-align">{{_ "home_unloading_text"}}</p>
-                            <hr>
-                            <h4>{{_ "home_placing"}}</h4>
-                            <img src="/placing.png" class="responsive-img">
-                            <p class="center-align">{{_ "home_placing_text"}}</p>
-                        </div>
+                        {{> homeServicesLR}}
                     </div>
-                    <!-- End services low resolution screens -->
 
                 </div>
             </div>
-            <br>
+        </div>
+
+        <div class="grey darken-2 white-text" style="padding: 1px">
+            <div class="container">
+                <div class="row center-align">
+                    <div class="hide-on-med-and-down">
+                        {{> priceHR}}
+                    </div>
+
+                    <!-- Services low resolution screens -->
+                    <div class="hide-on-large-only">
+                        {{> priceLR}}
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
+
+</template>
+
+<template name="homeServicesHR">
+
+    <div class="col s4 center-align">
+        <h4>{{_ "home_loading"}}</h4>
+        <img src="/loading.png" style="height: 220px; width: 220px">
+        <p class="center-align">{{_ "home_loading_text"}}</p>
+    </div>
+    <div class="col s4 center-align">
+        <h4>{{_ "home_unloading"}}</h4>
+        <img src="/unloading.png" style="height: 220px; width: 220px">
+        <p class="center-align">{{_ "home_unloading_text"}}</p>
+    </div>
+    <div class="col s4 center-align">
+        <h4>{{_ "home_placing"}}</h4>
+        <img src="/placing.png" style="height: 220px; width: 220px">
+        <p class="center-align">{{_ "home_placing_text"}}</p>
+    </div>
+
+</template>
+
+<template name="homeServicesLR">
+
+    <div class="col s12 center-align">
+        <h4>{{_ "home_loading"}}</h4>
+        <img src="/loading.png" class="responsive-img">
+        <p class="center-align">{{_ "home_loading_text"}}</p>
+        <hr>
+        <h4>{{_ "home_unloading"}}</h4>
+        <img src="/unloading.png" class="responsive-img">
+        <p class="center-align">{{_ "home_unloading_text"}}</p>
+        <hr>
+        <h4>{{_ "home_placing"}}</h4>
+        <img src="/placing.png" class="responsive-img">
+        <p class="center-align">{{_ "home_placing_text"}}</p>
+    </div>
+
+</template>
+
+<template name="priceHR">
+
+    <div class="col s8 offset-s2">
+        <span class="orange-text" style="font-size: 1000%">
+                <sup style="font-size: 50px">&euro;</sup>20<sub style="font-size: 50px">/H</sub></span><br>
+        {{_ "home_price_1"}}
+
+        <p>{{_ "home_price_2"}}</p>
+    </div>
+
+</template>
+
+<template name="priceLR">
+
+        <span class="orange-text" style="font-size: 1000%">
+                <sup style="font-size: 50px">&euro;</sup>20<sub style="font-size: 50px">/H</sub></span><br>
+    {{_ "home_price_1"}}
+
+    <p>{{_ "home_price_2"}}</p>
 
 </template>

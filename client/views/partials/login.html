@@ -1,0 +1,31 @@
+<template name="login">
+    <!--
+     <form>
+        <input type="text" name="loginUsername">
+        <input type="password" name="loginPassword">
+        <input type="submit" value="Login">
+    </form> -->
+    <div id="login-overlay"></div>
+    <div id="login-main" class="container">
+        <div id="login-access">
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                          <div class="input-field col s12">
+                              <i class="material-icons prefix">account_circle</i>
+                              <input id="username" type="text" class="validate">
+                              <label for="username">Username</label>
+                          </div>
+                          <div class="input-field col s12">
+                              <i class="material-icons prefix">lock_outline</i>
+                              <input id="password" type="password" class="validate">
+                              <label for="password">Password</label>
+                          </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</template>

@@ -25,3 +25,7 @@
     right: 0;
     z-index: -1;
 }
+
+.login-link{
+    margin-right: 5%;
+}

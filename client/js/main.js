@@ -1,4 +1,4 @@
-Template.ApplicationLayout.onRendered(function () {
+Template.menu.onRendered(function () {
         $('.dropdown-button').dropdown({
                 inDuration: 300,
                 outDuration: 225,
@@ -18,12 +18,36 @@ Template.ApplicationLayout.onRendered(function () {
     }
 );
 
+Template.stripe_form.events({
+    'submit #payment-form': function (e) {
+        e.preventDefault();
+
+        ccNum = $('#number').val();
+        cvc = $('#cvc').val();
+        expMo = $('#exp-month').val();
+        expYr = $('#exp-year').val();
+        amountForm = $('#amount').val();
+
+        Stripe.card.createToken({
+            number: ccNum,
+            cvc: cvc,
+            exp_month: expMo,
+            exp_year: expYr
+        }, function (status, response) {
+            stripeToken = response.id;
+            Meteor.call('chargeCard', stripeToken, amountForm);
+        });
+    }
+});
+
 
 getUserLanguage = function () {
     return "es";
 };
 
+
 Meteor.startup(function () {
+
     TAPi18n.setLanguage(getUserLanguage())
         .done(function () {
             Session.set("showLoadingIndicator", false);
@@ -32,4 +56,15 @@ Meteor.startup(function () {
             // Handle the situation
             console.log(error_message);
         });
+
+    var stripeKey = Meteor.settings.public.stripe.testPublishableKey;
+    Stripe.setPublishableKey(stripeKey);
+
+    var handler = StripeCheckout.configure({
+        key: stripeKey,
+        token: function (token) {
+        }
+    });
+
+
 });
