@@ -121,26 +121,53 @@
 }
 
 .inscription-form {
-    width: 45%;
+    width: 50%;
     margin: 0 auto;
+    margin-top: 150px; /*TODO: quitar cuando esté corregido el bug de la cabecera*/
 }
 
-.account-info {
+.inscription-form fieldset{
+    padding: 8px 15px 12px 15px;
+}
+
+.inscription-form fieldset div {
+    width: 100%;
+}
+
+/* Bloques responsive design */
+
+.block-izquierda {
     float: left;
     display: block;
+    width: 48.82117% !important;
     margin-right: 2.35765%;
-    width: 48.82117%;
 }
 
-.image-profile {
+.block-derecha {
     float: left;
     display: block;
-    width: 48.82117%;
+    width: 48.82117% !important;
     margin-right: 0;
 }
 
+.block-debajo {
+    clear: left;
+}
+
+@media(max-width: 601px){
+    .block-derecha{
+        clear:left !important;
+        width: 100% !important;
+    }
+    .block-izquierda {
+        width: 100% !important;
+    }
+}
+
+/* ----------------------------- */
+
 legend {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
 }
 
@@ -148,11 +175,38 @@ legend {
     color: #F44336;
 }
 
-@media(max-width: 601px){
-    .image-profile{
-        float: left;
-        display: block;
-        margin-right: 2.35765%;
-        width: 48.82117%;
-    }
+.obligatory label:after {
+    content: "*";
+}
+
+.input-field label {
+    left: 0rem !important;
+}
+
+.info-text {
+    text-align: center;
+    font-size: 0.8em;
+}
+
+.image-input {
+    margin-top: 1rem;
+}
+
+.fix-textarea-margin label {
+    margin-top: 20px;
+}
+
+fieldset {
+    border-top: 1px solid #ef6c00;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
+}
+
+.form-control {
+    border-bottom: 1px solid #ef6c00 !important;
+}
+
+.centrar {
+    text-align: center;
 }

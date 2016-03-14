@@ -5,49 +5,60 @@
             {{#autoForm collection="Inscription" id="insertInscriptionForm" type="insert"}}
                 <fieldset>
                     <legend>{{_ "account-info"}}</legend>
-                    <div class="account-info">
-                        <div class="input-field col s6">
-                            {{> afQuickField name='name' class="validate"}}
+                    <div class="block-izquierda">
+                        <div class="info-text">
+                            {{_ "account-info-text"}}
                         </div>
-                        <div class="input-field col s6">
+                        <div class="input-field col s6 obligatory">
+                            {{> afQuickField name='name' class="validate obligatory"}}
+                        </div>
+                        <div class="input-field col s6 obligatory">
                             {{> afQuickField name='surname' class="validate"}}
                         </div>
-                        <div class="input-field col s6">
+                        <div class="input-field col s6 obligatory">
                             {{> afQuickField name='phone' type="tel" class="validate"}}
                         </div>
-                        <div class="input-field col s6">
+                        <div class="input-field col s6 obligatory">
                             {{> afQuickField name='email' type='email' class="validate"}}
                         </div>
-                        <div class="input-field col s6">
+                        <div class="input-field col s6 obligatory">
                             {{> afQuickField name='password' type='password' class="validate"}}
                         </div>
-                        <div class="input-field col s6">
+                        <div class="input-field col s6 obligatory">
                             {{> afQuickField name='confirmPass' type='password' class="validate"}}
                         </div>
                     </div>
-                    <div class="image-profile">
-                        <div class="">
-                            <div class="">
-                                {{> afQuickField name='image' type="file" class=""}}
-                            </div>
+                    <div class="block-derecha">
+                        <div class="info-text">
+                            {{_ "image-profile-text"}}
+                        </div>
+                        <div class="image-input">
+
                         </div>
                     </div>
                 </fieldset>
                 <br>
                 <fieldset>
                     <legend>{{_ "personal-info"}}</legend>
-                    <div class="input-field col s6">
-                        {{> afQuickField name='zip' class="validate"}}
+                    <div class="block-izquierda">
+                        <div class="input-field col s6 obligatory">
+                            {{> afQuickField name='zip' class="validate"}}
+                        </div>
                     </div>
-                    <div class="input-field col s6">
-                        {{> afQuickField name='emailSchool' type='email' class="validate"}}
+                    <div class="block-derecha">
+                        <div class="input-field col s6 obligatory">
+                            {{> afQuickField name='emailSchool' type='email' class="validate"}}
+                        </div>
                     </div>
-                    <div class="input-field col s6">
-                        {{> afQuickField name='howHearAboutUs' class="validate"}}
+                    <div class="block-debajo">
+                        <div class="input-field col s6 fix-textarea-margin">
+                            {{> afQuickField type="textarea" name='howHearAboutUs' class="validate materialize-textarea"}}
+                        </div>
                     </div>
                 </fieldset>
-                <br>
-                <button type="submit" class="btn btn-primary waves-button-input">{{_ "submit"}}</button>
+                <div class="centrar">
+                    <button type="submit" class="btn btn-primary orange darken-3 waves-button-input">{{_ "submit"}}</button>
+                </div>
             {{/autoForm}}
         </div>
     </div>

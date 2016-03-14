@@ -52,6 +52,8 @@
   "account-info": "Account information",
   "personal-info": "Personal information",
   "submit": "Submit",
+  "account-info-text": "We will share your name with customers and use your email address and phone number to stay in touch with you.",
+  "image-profile-text": "Be sure to choose a professional photo of you alone. If accepted, this picture will be sent to your customers, so make sure it's a good one!",
 
   "schemas": {
     "inscription": {

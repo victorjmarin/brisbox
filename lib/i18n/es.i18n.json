@@ -52,6 +52,8 @@
   "account-info": "Información de la cuenta",
   "personal-info": "Información personal",
   "submit": "Enviar",
+  "account-info-text": "Compartiremos su nombre con los clientes y usaremos su dirección de correo electrónico y teléfono para mantener el contacto con usted.",
+  "image-profile-text": "Asegúrese de elegir una foto profesional en la que esté solo. Esta foto será enviada a sus clientes, ¡asegúrese de elegir la mejor!",
 
   "schemas": {
     "inscription": {
@@ -77,7 +79,7 @@
         "label": "Código postal"
       },
       "emailSchool": {
-        "label": "Correo electrónico universitario"
+        "label": "Correo universitario"
       },
       "howHearAboutUs": {
         "label": "¿Cómo nos has encontrado?"
