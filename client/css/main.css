@@ -44,8 +44,8 @@
     padding: 1%;
 }
 
-.team-purple_line {
-    background-color: #7e57c2;
+.team-orange_line {
+    background-color: #f9a825;
     height: 2px;
     width: 25%;
     margin-right: auto;
@@ -59,7 +59,7 @@
         text-align: center
     }
 
-    .team-purple_line {
+    .team-orange_line {
         margin-left: auto
     }
 
@@ -95,15 +95,15 @@
 }
 
 .faqs-question-icon:hover {
-    color: #b39ddb !important;
+    color: #fbc02d  !important;
 }
 
 .faqs-question-text {
     vertical-align: middle;
 }
 
-.faqs-purple_line {
-    background-color: #7e57c2;
+.faqs-orange_line {
+    background-color: #f9a825;
     height: 2px;
     width: 50%;
     margin-right: auto;
