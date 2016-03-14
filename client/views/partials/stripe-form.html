@@ -1,0 +1,39 @@
+<template name="stripe_form">
+
+        <form action="" method="POST" id="payment-form" class="stripe-form">
+            <span class="payment-errors"></span>
+
+            <div class="form-row">
+                <label>
+                    <span>{{_ "stripe_card_number"}}</span>
+                    <input class="input-field col s4" type="text" size="20" data-stripe="number" id="number"/>
+                </label>
+            </div>
+
+            <div class="form-row">
+                <label>
+                    <span>{{_ "stripe_cvc"}}</span>
+                    <input class="input-field col s4" type="text" size="4" data-stripe="cvc" id="cvc"/>
+                </label>
+            </div>
+
+            <div class="form-row">
+                <label>
+                    <span>{{_ "stripe_expiration"}}</span>
+                    <input class="input-field col s4" type="text" size="2" data-stripe="exp-month" id="exp-month"/>
+                </label>
+                <span> / </span>
+                <input class="input-field col s4" type="text" size="4" data-stripe="exp-year" id="exp-year"/>
+            </div>
+
+            <div class="form-row">
+                <label>
+                    <span>{{_ "stripe_amount"}}</span>
+                    <input class="input-field col s4" type="text" size="9" data-stripe="amount" id="amount"/>
+                </label>
+            </div>
+            <div class="stripe-submit">
+                <button type="submit" class="btn waves-effect waves-light orange darken-3 white-text">{{_ "stripe_submit"}}</button>
+            </div>
+        </form>
+</template>

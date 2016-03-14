@@ -1,0 +1,54 @@
+<template name="inscriptionForm">
+
+    <div class="inscription-form">
+        <div class="section">
+            {{#autoForm collection="Inscription" id="insertInscriptionForm" type="insert"}}
+                <fieldset>
+                    <legend>Acount Information</legend>
+                    <div class="account-info">
+                        <div class="input-field col s6">
+                            {{> afQuickField name='name' class="validate"}}
+                        </div>
+                        <div class="input-field col s6">
+                            {{> afQuickField name='surname' class="validate"}}
+                        </div>
+                        <div class="input-field col s6">
+                            {{> afQuickField name='phone' type="tel" class="validate"}}
+                        </div>
+                        <div class="input-field col s6">
+                            {{> afQuickField name='email' type='email' class="validate"}}
+                        </div>
+                        <div class="input-field col s6">
+                            {{> afQuickField name='password' type='password' class="validate"}}
+                        </div>
+                        <div class="input-field col s6">
+                            {{> afQuickField name='confirmPass' type='password' class="validate"}}
+                        </div>
+                    </div>
+                    <div class="image-profile">
+                        <div class="">
+                            <div class="">
+                                {{> afQuickField name='image' type="file" class=""}}
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <div class="input-field col s6">
+                        {{> afQuickField name='zip' class="validate"}}
+                    </div>
+                    <div class="input-field col s6">
+                        {{> afQuickField name='emailSchool' type='email' class="validate"}}
+                    </div>
+                    <div class="input-field col s6">
+                        {{> afQuickField name='howHearAboutUs' class="validate"}}
+                    </div>
+                </fieldset>
+                <br>
+                <button type="submit" class="btn btn-primary waves-button-input">Submit Application</button>
+            {{/autoForm}}
+        </div>
+    </div>
+</template>

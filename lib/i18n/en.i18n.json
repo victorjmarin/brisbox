@@ -14,6 +14,8 @@
   "home_loading_text": "We can help you moving or loading your stuff",
   "home_unloading_text": "we can help you unloading your stuff too",
   "home_placing_text": "or even we can help you placing it",
+  "home_price_1":"per brisboxer, 1 hour minimum",
+  "home_price_2":"It takes just 5€ down to book us. At the end of the job, you'll confirm the exact time your brisboxer worked, and we'll charge your card for that time. A travel charge of 2€, regardless of traffic, weather, or really long red lights.",
 
   "footer_company": "COMPANY",
   "footer_services": "Services",
@@ -27,7 +29,9 @@
 
   "menu_about": "About us",
   "menu_faq": "FAQ",
-  "menu_apply": "Join estuforce",
+  "menu_apply": "Join us",
+  "menu_stripe": "Stripe",
+  "menu_apply": "Join us",
 
   "about_us_header": "About us",
   "about_us_vjm": "Student at the University of Seville",
@@ -49,11 +53,43 @@
   "faqs_answer_four": "Our estuforces can not provide transportation. But if you need a transport, we will be happy to contact a car rental service or even a haulier if desired.",
   "faqs_question_five": "How much you can move things?",
   "faqs_answer_five": "Our estuforces are perfect for moving small and medium-sized things. They can help you throughout the process, but if you need is a transfer of a house full of antiques from the 15th century, perhaps should contact with other less flexible company specialized.",
+
   "faqs_question_six": "How far in advance should I make a reservation?",
   "faqs_answer_six": "Normal in removals is 5 days. But this is very inflexible! If you need help to load or unload your things tomorrow it wouldn't serve you! With us, with a minimum 24 hours you can have a estuforce ready to help you in your task.",
 
   "login_title": "Login",
   "login_username": "Username",
   "login_password": "Password",
-  "login_error_credentials_wrong": "Wrong username or password "
+  "login_error_credentials_wrong": "Wrong username or password ",
+
+  "stripe_card_number" : "Card Number",
+  "stripe_cvc" : "CVC",
+  "stripe_expiration" : "Expiration (MM/YYYY)",
+  "stripe_amount" : "Amount",
+  "stripe_submit" : "Pay with Stripe",
+
+  "faqs_question_six": "I'm not sure of the date of my move. Can I also make a reservation?",
+  "faqs_answer_six": "Of course! You are free to set the date or cancel it free of charge.",
+  "faqs_question_seven": "How far in advance should I make a reservation?",
+  "faqs_answer_seven": "Normal in removals is 5 days. But this is very inflexible! If you need help to load or unload your things tomorrow it wouldn't serve you! With us, with a minimum 24 hours you can have a estuforce ready to help you in your task.",
+
+  "order-form_header": "Do you need do a move?",
+  "order-form_address": "Address...",
+  "order-form_number": "ZIP code...",
+  "order-loading": "Loading",
+  "order-unloading": "Unloading",
+  "order-form_help": "How can we help?",
+  "order-form_ready": "Next",
+  "order-form_more-info-header": "Details about your move",
+  "order-form_comments": "Comments for our brisboxers...",
+  "order-form_number-brisboxer": "Number brisboxers",
+  "order-form_hours": "Hours",
+  "order-form_more-info-hour": "¿How long will you need them (in total)?",
+  "order-form_contact-info": "Contact info",
+  "order-form_first-name": "First name",
+  "order-form_second-name": "Second name",
+  "order-form_email": "Email",
+  "order-form_tel": "Telephone",
+  "order-form-book": "1€"
+
 }

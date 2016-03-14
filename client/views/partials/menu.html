@@ -1,7 +1,49 @@
-<template name="menu">
+<template name="homeMenuStyle">
+    <nav class="transparent z-depth-0" role="navigation" style="position: absolute">
+        {{> menu}}
+    </nav>
+</template>
 
-    <li><a href="{{ pathFor 'AboutUs' }}" class="customized-navbar">{{_ "menu_about"}}</a></li>
-    <li><a href="{{ pathFor 'Faq' }}" class="customized-navbar">{{_ "menu_faq"}}</a></li>
-    <li><a class="btn waves-effect waves-light orange darken-3 white-text" href="#">{{_ "menu_apply"}}</a></li>
+<template name="noHomeMenuStyle">
+    <nav class="z-depth-0 amber darken-3" role="navigation">
+        {{> menu}}
+    </nav>
+</template>
+
+<template name="menu">
+    <div class="nav-wrapper" style="margin-left: 15px; margin-right: 15px;">
+
+        <a href="/" class="center brand-logo brand-font"
+           style="text-shadow: 0px 1px 0px #000;font-size: 300%">bris<b>box</b></a>
+
+        <a href="/" data-activates="mobile" class="button-collapse" style="margin-left:20px;"><i
+                class="mdi-navigation-menu white-text" style="font-size:2.2em;"></i></a>
+
+        <ul class="left hide-on-med-and-down">
+            {{> links}}
+        </ul>
+
+        <ul class="side-nav" id="mobile">
+            {{> links}}
+        </ul>
+
+        <ul class="right">
+            <li>{{> langSelector}}</li>
+        </ul>
+
+        <ul id="usermenu-link" class="right" style="margin-right: 5%; cursor: pointer;">
+            <li>{{> userMenu}}</li>
+        </ul>
+
+    </div>
+</template>
+
+<template name="links">
+
+    <li><a class="transparent" href="{{ pathFor 'AboutUs' }}">{{_ "menu_about"}}</a></li>
+    <li><a class="transparent" href="{{ pathFor 'Faq' }}">{{_ "menu_faq"}}</a></li>
+    <li><a class="btn waves-effect waves-light orange darken-3 white-text"
+           href="{{ pathFor 'inscription-form' }}">{{_ "menu_apply"}}</a></li>
+    <li><a class="transparent" href="{{ pathFor 'stripe_form' }}">{{_ "menu_stripe"}}</a></li>
 
 </template>
