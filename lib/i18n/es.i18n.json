@@ -66,23 +66,15 @@
   "faqs_answer_seven": "Lo normal en las mudanzas es de 5 dias. ¡Pero esto es muy inflexible! ¡Si necesita ayuda mañana para descargar o cargar cosas no le serviria! Con nosotros, con un minimo de 24 horas podras tener a un estuforce listo para ayudarte en tu tarea.",
 
   "order-form_header": "¿Necesitas hacer un pedido?",
-  "order-form_address": "Dirección postal...",
-  "order-form_number": "Código postal...",
+  "order-form_next": "Siguiente",
+  "order-more-info_header": "Detalles del pedido",
+  "order-help":"¿Cómo podemos ayudarte?",
+  "order-book":"5€",
+  "order-form-info_contact":"Información de contacto",
+  "order-submit": "Enviar",
   "order-loading": "Carga",
-  "order-unloading": "Descarga",
-  "order-form_help": "¿Cómo podemos ayudarte?",
-  "order-form_ready": "Siguiente",
-  "order-form_more-info-header": "Detalles sobre la mudanza",
-  "order-form_comments": "Comentarios para nuestros brisboxers...",
-  "order-form_number-brisboxer": "Número de brisboxers",
-  "order-form_hours": "Horas",
-  "order-form_more-info-hour": "¿Cuántas horas en total vas a necesitar?",
-  "order-form_contact-info": "Información de contacto",
-  "order-form_first-name": "Nombre",
-  "order-form_second-name": "Apellidos",
-  "order-form_email": "Correo electrónico",
-  "order-form_tel": "Teléfono",
-  "order-form-book": "1€",
+  "order-unloading": "Descargar",
+  "order-choose_option":"Elige tu opción",
 
   "account-info": "Información de la cuenta",
   "personal-info": "Información personal",
@@ -120,11 +112,47 @@
       "image": {
         "label": "Imagen de perfil"
       }
+    },
+    "order": {
+      "name": {
+        "label": "Nombre"
+      },
+      "surname": {
+        "label": "Apellidos"
+      },
+      "phone": {
+        "label": "Teléfono"
+      },
+      "email": {
+        "label": "Correo electrónico"
+      },
+      "zip": {
+        "label": "Código postal"
+      },
+      "address": {
+        "label": "Dirección postal"
+      },
+      "hours": {
+        "label": "Horas"
+      },
+      "numberBrisboxers": {
+        "label": "Número de brisboxers"
+      },
+      "comments": {
+        "label": "Comentarios para nuestros brisboxers..."
+      },
+      "typeMove":{
+        "label": "Tipo de encargo"
+      },
+      "day":{
+        "label": "Día de mudanza"
+      }
     }
   },
 
   "login_title": "Entrar",
   "login_username": "Usuario",
   "login_password": "Contraseña",
-  "login_error_credentials_wrong": "Usuario y/o contraseña erronea"
+  "login_error_credentials_wrong": "Usuario y/o contraseña erronea",
+  "order-form-book": "1€"
 }

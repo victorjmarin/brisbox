@@ -16,7 +16,6 @@ standard-minifiers      # JS/CSS minifiers run for production mode
 es5-shim                # ECMAScript 5 compatibility for older browsers.
 ecmascript              # Enable ECMAScript2015+ syntax in app code
 
-autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
 iron:router
 accounts-password
@@ -26,5 +25,5 @@ tap:i18n
 aldeed:autoform
 mrgalaxy:stripe
 gwendall:autoform-i18n
-gwendall:autoform-i18n
 alanning:roles
+dburles:google-maps

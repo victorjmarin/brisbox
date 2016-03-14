@@ -68,23 +68,15 @@
   "faqs_answer_seven": "Normal in removals is 5 days. But this is very inflexible! If you need help to load or unload your things tomorrow it wouldn't serve you! With us, with a minimum 24 hours you can have a estuforce ready to help you in your task.",
 
   "order-form_header": "Do you need do a move?",
-  "order-form_address": "Address...",
-  "order-form_number": "ZIP code...",
+  "order-form_next": "Next",
+  "order-more-info_header": "Details about your move",
+  "order-help":"How can we help?",
+  "order-book":"5€",
+  "order-form-info_contact" : "Contact info",
+  "order-submit": "Submit",
   "order-loading": "Loading",
   "order-unloading": "Unloading",
-  "order-form_help": "How can we help?",
-  "order-form_ready": "Next",
-  "order-form_more-info-header": "Details about your move",
-  "order-form_comments": "Comments for our brisboxers...",
-  "order-form_number-brisboxer": "Number brisboxers",
-  "order-form_hours": "Hours",
-  "order-form_more-info-hour": "¿How long will you need them (in total)?",
-  "order-form_contact-info": "Contact info",
-  "order-form_first-name": "First name",
-  "order-form_second-name": "Second name",
-  "order-form_email": "Email",
-  "order-form_tel": "Telephone",
-  "order-form-book": "1€",
+  "order-choose_option":"Choose your option",
 
   "account-info": "Account information",
   "personal-info": "Personal information",
@@ -121,6 +113,41 @@
       },
       "image": {
         "label": "Image profile"
+      }
+    },
+    "order": {
+      "name": {
+        "label": "Name"
+      },
+      "surname": {
+        "label": "Last Name"
+      },
+      "phone": {
+        "label": "Phone"
+      },
+      "email": {
+        "label": "Email Address"
+      },
+      "zip": {
+        "label": "Hometown ZIP Code"
+      },
+      "address": {
+        "label": "Address"
+      },
+      "hours": {
+        "label": "How long will you need them (in total)?"
+      },
+      "numberBrisboxers": {
+        "label": "Number brisboxers"
+      },
+      "comments": {
+        "label": "Comments for our brisboxers..."
+      },
+      "typeMove":{
+        "label": "Type move"
+      },
+      "day":{
+        "label": "Day move"
       }
     }
   },

@@ -7,7 +7,6 @@ aldeed:collection2-core@1.1.0
 aldeed:schema-deny@1.0.1
 aldeed:schema-index@1.0.1
 aldeed:simple-schema@1.5.3
-autopublish@1.0.4
 autoupdate@1.2.4
 babel-compiler@5.8.24_1
 babel-runtime@0.1.4
@@ -23,6 +22,7 @@ callback-hook@1.0.4
 cfs:http-methods@0.0.30
 check@1.1.0
 coffeescript@1.0.11
+dburles:google-maps@1.1.5
 ddp@1.2.2
 ddp-client@1.2.1
 ddp-common@1.2.2
