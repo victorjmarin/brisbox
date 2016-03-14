@@ -153,6 +153,5 @@
   "login_title": "Entrar",
   "login_username": "Usuario",
   "login_password": "Contraseña",
-  "login_error_credentials_wrong": "Usuario y/o contraseña erronea",
-  "order-form-book": "1€"
+  "login_error_credentials_wrong": "Usuario y/o contraseña erronea"
 }
