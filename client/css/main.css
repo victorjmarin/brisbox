@@ -123,7 +123,8 @@
 .inscription-form {
     width: 50%;
     margin: 0 auto;
-    margin-top: 150px; /*TODO: quitar cuando esté corregido el bug de la cabecera*/
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 
 .inscription-form fieldset{
