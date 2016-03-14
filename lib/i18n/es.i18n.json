@@ -1,8 +1,9 @@
 {
   "lang_changed": "Idioma cambiado",
   "undo": "Deshacer",
+  "welcome": "Bienvenido",
 
-  "layout_login_link": "Ingresa",
+  "layout_login_link": "Ingreso",
 
   "home_title": "Ayuda económica y práctica para tus traslados",
   "home_order": "Reservar un traslado",
@@ -54,6 +55,11 @@
 
   "faqs_question_six": "¿Con cuanta antelacion debo realizar una reserva?",
   "faqs_answer_six": "Lo normal en las mudanzas es de 5 dias. ¡Pero esto es muy inflexible! ¡Si necesita ayuda mañana para descargar o cargar cosas no le serviria! Con nosotros, con un minimo de 24 horas podras tener a un estuforce listo para ayudarte en tu tarea.",
+
+  "login_title": "Entrar",
+  "login_username": "Usuario",
+  "login_password": "Contraseña",
+  "login_error_credentials_wrong": "Usuario y/o contraseña erronea",
 
   "stripe_card_number" : "Número de Tarjeta",
   "stripe_cvc" : "CVC",

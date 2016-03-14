@@ -1,6 +1,7 @@
 {
   "lang_changed": "Language changed",
   "undo": "Undo",
+  "welcome": "Welcome",
 
   "layout_login_link": "Login",
 
@@ -56,12 +57,16 @@
   "faqs_question_six": "How far in advance should I make a reservation?",
   "faqs_answer_six": "Normal in removals is 5 days. But this is very inflexible! If you need help to load or unload your things tomorrow it wouldn't serve you! With us, with a minimum 24 hours you can have a estuforce ready to help you in your task.",
 
+  "login_title": "Login",
+  "login_username": "Username",
+  "login_password": "Password",
+  "login_error_credentials_wrong": "Wrong username or password ",
+
   "stripe_card_number" : "Card Number",
   "stripe_cvc" : "CVC",
   "stripe_expiration" : "Expiration (MM/YYYY)",
   "stripe_amount" : "Amount",
   "stripe_submit" : "Pay with Stripe",
-
 
   "faqs_question_six": "I'm not sure of the date of my move. Can I also make a reservation?",
   "faqs_answer_six": "Of course! You are free to set the date or cancel it free of charge.",
