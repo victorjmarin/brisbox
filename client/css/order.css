@@ -2,14 +2,16 @@
     display: block;
 }
 
+.row-order-form{
+    margin-right: -300px !important;
+}
+
 #form-address-zip{
     margin-top:5%;
 }
 
 .order-form{
-    margin-left: 5%;
-    margin-top:10%;
-    margin-right: 65%;
+    margin-top: 10px;
 }
 
 .section{
@@ -17,22 +19,17 @@
     border-left: 20px;
 }
 
-.checkbox-inline{
-    font-size: 1rem;
+#legend{
+    padding-top: 15px;
 }
 
-#checkboxEnLinea1{
-    visibility: visible !important;
-    left: 10% !important;
+#buttom-next{
+    margin-left: 30px !important;
 }
 
-#checkboxEnLinea2{
-    visibility: visible !important;
-    left: 15% !important;
-}
-
-#button-next{
-    margin: 10% !important;
+.fix-textarea-margin{
+    padding-left:0px !important;
+    left:0px !important;
 }
 
 .map-container {
@@ -49,3 +46,43 @@
     margin-top:5%;
     display: none;
 }
+
+.picker { outline: none; } /* Optional feature */
+/* Header - Day of the week */
+.picker__weekday-display { background-color: #f57c00; }
+/* Body - Today info */
+.picker__date-display { background-color: #ff9800; }
+/* Buttons of actions */
+.picker__nav--prev:hover { background-color: #fff3e0; }
+.picker__nav--next:hover { background-color: #fff3e0; }
+.picker__nav--prev:before {
+    border-left: 0;
+    border-right: 0.75em solid #ffb74d;
+}
+.picker__nav--next:before {
+    border-right: 0;
+    border-left: 0.75em solid #ffb74d;
+}
+.picker__today { color: #fb8c00; }
+.picker__clear { /* If you want to customize */ }
+.picker__close { color: #fb8c00; }
+.btn-flat.picker__today:active { background-color: #fff3e0; }
+.btn-flat.picker__close:active { background-color: #fff3e0; }
+.btn-flat.picker__clear:active { background-color: #fff3e0; }
+/* Select months of the year */
+.picker__select--month.browser-default {
+    display: inline;
+    background-color: #FFFFFF;
+    width: 34%;
+    border: none;
+    outline: none;
+}
+/* Every month of the year except: today */
+.picker__day { /* If you want to customize */ }
+.picker__day:hover { /* If you want to customize */ }
+.picker__day--infocus:hover { color: #f57c00; }
+.picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected { color: #f57c00; }
+.picker__day.picker__day--infocus.picker__day--selected.picker__day--highlighted { background-color: #ffcc80; }
+/* Today */
+.picker__day.picker__day--infocus.picker__day--today.picker__day--selected.picker__day--highlighted { background-color: #ff9800; }
+.picker__day.picker__day--today { color: #f57c00; }

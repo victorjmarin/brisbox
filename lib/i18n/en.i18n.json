@@ -14,6 +14,8 @@
   "home_loading_text": "We can help you moving or loading your stuff",
   "home_unloading_text": "we can help you unloading your stuff too",
   "home_placing_text": "or even we can help you placing it",
+  "home_price_1":"per brisboxer, 1 hour minimum",
+  "home_price_2":"It takes just 5€ down to book us. At the end of the job, you'll confirm the exact time your brisboxer worked, and we'll charge your card for that time. A travel charge of 2€, regardless of traffic, weather, or really long red lights.",
 
   "footer_company": "COMPANY",
   "footer_services": "Services",
@@ -29,7 +31,7 @@
   "menu_faq": "FAQ",
   "menu_apply": "Join us",
   "menu_stripe": "Stripe",
-  "menu_apply": "Join brisboxer",
+  "menu_apply": "Join us",
 
   "about_us_header": "About us",
   "about_us_vjm": "Student at the University of Seville",
@@ -57,9 +59,10 @@
 
   "stripe_card_number" : "Card Number",
   "stripe_cvc" : "CVC",
-  "stripe_expiration" : "Expiration (MM/YYYY)",
+  "stripe_expiration_month" : "Expiration MM",
+  "stripe_expiration_year": "Expiration YEAR",
   "stripe_amount" : "Amount",
-  "stripe_submit" : "Pay with Stripe",
+  "stripe_submit" : "Complete order",
 
 
   "faqs_question_six": "I'm not sure of the date of my move. Can I also make a reservation?",
@@ -77,6 +80,17 @@
   "order-loading": "Loading",
   "order-unloading": "Unloading",
   "order-choose_option":"Choose your option",
+
+  "order-checkout_header": "Final budget",
+  "order-checkout_totalMoney": "Estimated Total",
+  "order-checkout_address": "Due Now",
+  "order-checkout_hour": "Hour",
+  "order-checkout_day": "Day",
+  "order-checkout_stripe": "Data bank",
+  "info_money": "To order will be charged an amount equal to 5 €. This amount will be deducted later the total cost of the service.",
+  "info_book": "Cost 5 € / order",
+  "why_stripe": " Why do you use Stripe?",
+  "info_stripe": "We decided to use as payment gateway as this service Stripe charges less interest to our customers. It is planned to use Paypal",
 
   "account-info": "Account information",
   "personal-info": "Personal information",
@@ -135,7 +149,7 @@
         "label": "Address"
       },
       "hours": {
-        "label": "How long will you need them (in total)?"
+        "label": "How long will you need them?"
       },
       "numberBrisboxers": {
         "label": "Number brisboxers"

@@ -1,83 +1,74 @@
 <template name="orderForm">
-    <div class="order-form">
-        <div class="section">
-            {{#autoForm collection="Order" id="insertOrderForm" type="insert"}}
-                <form>
-                    <div>
-                        <legend>{{_ "order-form_header"}}</legend>
-                        <div class="order-info">
-                            <div class="input-field col s6">
-                                {{> afQuickField name='address' class="validate"}}
-                            </div>
-                            <div class="input-field col s6">
-                                {{> afQuickField name='zip' class="validate"}}
-                            </div>
-                            <div id="selectType" class="input-field col s12">
-                                <select multiple>
-                                    <option value="" disabled selected>{{_ "order-choose_option"}}</option>
-                                    <option value="1">{{_ "order-loading"}}</option>
-                                    <option value="2">{{_ "order-unloading"}}</option>
-                                </select>
-                                <label id="order-type-label">Type move</label>
-                            </div>
-                            <script>
-                                $(selectType).ready(function() {
-                                    $('select').material_select();
-                                });
-                            </script>
-                            <br>
-                            <button id="buttom-next" class="btn btn-large orange darken-3 lighten-1-text form-more-info waves-effect waves-light" type="button">
-                                {{_ "order-form_next"}}
-                            </button>
-                        </div>
-                    </div>
-                    <div id="more-info">
-                        <div class="order-info">
-                            <legend>{{_ "order-more-info_header"}}</legend>
-                            <div class="input-field col s6">
-                                <label for="comments" class="sr-only"></label>
-                                <textarea name="comments" class="materialize-textarea" length="120"></textarea>
-                            </div>
-                            <div class="input-field col s6">
-                                {{> afQuickField name='numberBrisboxers' class="validate"}}
-                            </div>
-                            <div class="input-field col s6">
-                                {{> afQuickField name='hours' class="validate"}}
-                            </div>
-                            <div class="input-field col s6">
-                                {{> afQuickField name='day' class="datepicker"}}
-                            </div>
-                            <script>
-                                $('.datepicker').pickadate({
-                                    selectMonths: true, // Creates a dropdown to control month
-                                    selectYears: 15 // Creates a dropdown of 15 years to control year
-                                });
-                            </script>
-                        </div>
-                        <div class="order-info">
-                            <legend>{{_ "order-form-info_contact"}}</legend>
-                            <div class="input-field col s6">
-                                {{> afQuickField name='name' class="validate"}}
-                            </div>
-                            <div class="input-field col s6">
-                                {{> afQuickField name='surname'  class="validate"}}
-                            </div>
-                            <div class="input-field col s6">
-                                {{> afQuickField name='email' type='email' class="validate"}}
-                            </div>
-                            <div class="input-field col s6">
-                                {{> afQuickField name='phone' type='tel' class="validate"}}
+    <div class="order-form container">
+        <div class="row row-order-form">
+            <div class="col s4 m4">
+                {{#autoForm collection="Order" id="insertOrderForm" type="insert"}}
+                        <div>
+                            <legend>{{_ "order-form_header"}}</legend>
+                            <div class="order-info">
+                                <div class="input-field col s12 m12">
+                                    {{> afQuickField name='address' class="validate"}}
+                                </div>
+                                <div class="input-field col s12 m12">
+                                    {{> afQuickField name='zip' class="validate"}}
+                                </div>
+                                <div class="input-field col s6 m6">
+                                    <div class="col s6 m6">
+                                        <input type="checkbox" class="filled-in" id="loading"/>
+                                        <label for="loading">{{_ "order-loading"}}</label>
+                                    </div>
+                                    <div class="col s6 m6">
+                                        <input type="checkbox" class="filled-in" id="unloading"/>
+                                         <label for="unloading">{{_ "order-unloading"}}</label>
+                                    </div>
+                                </div>
+                                <button id="buttom-next" class="btn btn-large orange darken-3 lighten-1-text form-more-info waves-effect waves-light col s4 m4" type="button">
+                                    {{_ "order-form_next"}}
+                                </button>
                             </div>
                         </div>
-                        <a href="{{ pathFor 'Order-checkout' }}" class="customized-navbar">
-                            <button type="submit" class="btn btn-primary waves-button-input"><i class="material-icons right">send</i>{{_ "order-submit"}}</button>
-                        </a>
-                    </div>
-                </form>
-            {{/autoForm}}
+                        <div id="more-info">
+                            <div class="order-info">
+                                <legend id="legend">{{_ "order-more-info_header"}}</legend>
+                                <div class="input-field col s12 m12">
+                                    <div class="input-field col s12 m12 fix-textarea-margin">
+                                        {{> afQuickField type="textarea" name='comments' class="validate materialize-textarea"}}
+                                    </div>
+                                </div>
+                                <div class="input-field col s12 m12">
+                                    {{> afQuickField name='numberBrisboxers' class="validate"}}
+                                </div>
+                                <div class="input-field col s6 m6">
+                                    {{> afQuickField name='hours' class="validate"}}
+                                </div>
+                                <div class="input-field col s6 m6">
+                                    {{> afQuickField name='day' class="datepicker"}}
+                                </div>
+                            </div>
+                            <div class="order-info">
+                                <legend>{{_ "order-form-info_contact"}}</legend>
+                                <div class="input-field col s12 m12">
+                                    {{> afQuickField name='name' class="validate"}}
+                                </div>
+                                <div class="input-field col s12 m12">
+                                    {{> afQuickField name='surname'  class="validate"}}
+                                </div>
+                                <div class="input-field col s12 m12">
+                                    {{> afQuickField name='email' type='email' class="validate"}}
+                                </div>
+                                <div class="input-field col s12 m12">
+                                    {{> afQuickField name='phone' type='tel' class="validate"}}
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary waves-button-input orange"><i class="material-icons right">send</i>{{_ "order-submit"}}</button>
+                        </div>
+                {{/autoForm}}
+            </div>
+
+            <div class="map-container col s8 m8">
+                {{> googleMap name="exampleMap" options=exampleMapOptions}}
+            </div>
         </div>
     </div>
-    <div class="map-container">
-        {{> googleMap name="exampleMap" options=exampleMapOptions}}
-    </div>
+
 </template>

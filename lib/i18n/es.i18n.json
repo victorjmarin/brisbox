@@ -14,6 +14,8 @@
   "home_loading_text": "Podemos ayudarte cargando o trasladando tus cosas",
   "home_unloading_text": "ayudarte descargandolas también",
   "home_placing_text": "o incluso podemos ayudarte a colocarlas",
+  "home_price_1":"por brisboxer, 1 hora mínimo",
+  "home_price_2":"Sólo cuesta 5€ reservar el encargo. Al final del trabajo, confirmarás el tiempo exacto que tu brisboxer estuvo trabajando, y te cobraremos. Coste adicional de 2€ por desplazamiento, independientemente del tráfico, el clima o inconvenientes.",
 
   "footer_company": "COMPAÑIA",
   "footer_services": "Servicios",
@@ -58,7 +60,7 @@
   "stripe_cvc" : "CVC",
   "stripe_expiration" : "Expiración (MM/AAAA)",
   "stripe_amount" : "Cantidad",
-  "stripe_submit" : "Pagar con Stripe",
+  "stripe_submit" : "Completar pedido",
 
   "faqs_question_six": "No estoy muy seguro de la fecha de mi mudanza. ¿Puedo realizar una reserva igualmente?",
   "faqs_answer_six": "¡Por supuesto! Es libre de reajustar la fecha o de cancelarla libre de cargos.",
@@ -73,8 +75,19 @@
   "order-form-info_contact":"Información de contacto",
   "order-submit": "Enviar",
   "order-loading": "Carga",
-  "order-unloading": "Descargar",
+  "order-unloading": "Descarga",
   "order-choose_option":"Elige tu opción",
+
+  "order-checkout_header": "Presupuesto final",
+  "order-checkout_totalMoney": "Total estimado",
+  "order-checkout_address": "Dirección",
+  "order-checkout_hour": "Hora",
+  "order-checkout_day": "Día",
+  "order-checkout_stripe": "Datos bancarios",
+  "info_money": "Para realizar el pedido se le cobrará una cantidad igual a 5 €. Esta cantidad será descontada posteriormente del coste total del servicio.",
+  "info_book": "Coste de 5 € / pedido",
+  "why_stripe": " ¿Por qué utilizaís Stripe?",
+  "info_stripe": "Hemos decidido utilizar como pasarela de pago Stripe ya que este servicio cobra menos intereses a nuestros clientes. Se prevee utilizar Paypal",
 
   "account-info": "Información de la cuenta",
   "personal-info": "Información personal",

@@ -1,13 +1,34 @@
 <template name="orderCheckout">
-    <div class="order-checkout">
-        <p>
-            Prueba
-        </p>
-    </div>
+    <div class="order-checkout container">
+        <div class="row row-order-checkout">
+            <div class="col s6 m6">
+                    <div>
+                        <legend>{{_ "order-checkout_header"}}</legend>
+                        <div class="order-info">
+                            <div class="input-field col s12 m12">
+                                <i class="small material-icons">query_builder</i>
+                            </div>
+                            <div class="input-field col s12 m12">
+                                <i class="small material-icons">location_on</i>
+                            </div>
+                            <div class="input-field col s12 m12">
+                                <i class="small material-icons">call</i>
+                            </div>
+                            <div class="input-field col s12 m12">
+                                <i class="small material-icons">shopping_cart</i>
+                            </div>
+                            <br>
+                            <button id="buttom-next" class="btn waves-effect waves-light orange darken-3 white-text" type="button">
+                                {{_ "order-form_next"}}
+                            </button>
+                        </div>
+                    </div>
+            </div>
 
-    <div>
-        {{>stripe_form}}
+            <div class="stripeForm col s6 m6">
+                {{>stripe_form}}
+            </div>
+        </div>
     </div>
-
 
 </template>
