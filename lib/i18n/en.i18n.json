@@ -29,7 +29,6 @@
 
   "menu_about": "About us",
   "menu_faq": "FAQ",
-  "menu_apply": "Join us",
   "menu_stripe": "Stripe",
   "menu_apply": "Join us",
 
@@ -56,6 +55,9 @@
 
   "faqs_question_six": "How far in advance should I make a reservation?",
   "faqs_answer_six": "Normal in removals is 5 days. But this is very inflexible! If you need help to load or unload your things tomorrow it wouldn't serve you! With us, with a minimum 24 hours you can have a estuforce ready to help you in your task.",
+
+  "privacy_header": "Privacy Policy",
+
 
   "account-info": "Account information",
   "personal-info": "Personal information",
