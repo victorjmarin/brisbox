@@ -211,3 +211,12 @@ fieldset {
 .centrar {
     text-align: center;
 }
+
+@media(max-width: 601px){
+    .image-profile{
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 48.82117%;
+    }
+}
