@@ -18,41 +18,12 @@ Template.ApplicationLayout.onRendered(function () {
     }
 );
 
-Template.stripe_form.events({
-    'submit #payment-form': function(e) {
-        e.preventDefault();
-
-        ccNum = $('#number').val();
-        cvc = $('#cvc').val();
-        expMo = $('#exp-month').val();
-        expYr = $('#exp-year').val();
-        amountForm = $('#amount').val();
-
-        Stripe.card.createToken({
-            number: ccNum,
-            cvc: cvc,
-            exp_month: expMo,
-            exp_year: expYr
-        }, function(status, response) {
-            stripeToken = response.id;
-            Meteor.call('chargeCard', stripeToken, amountForm);
-        });
-    }
-});
-
 
 getUserLanguage = function () {
     return "es";
 };
 
 Meteor.startup(function () {
-    var stripeKey = Meteor.settings.public.stripe.testPublishableKey;
-    Stripe.setPublishableKey(stripeKey);
-
-    var handler = StripeCheckout.configure({
-        key: stripeKey,
-        token: function(token) {}
-    });
 
     TAPi18n.setLanguage(getUserLanguage())
         .done(function () {
