@@ -1,5 +1,4 @@
 .cardbg {
-    background-image: url("/home-background.png");
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -15,7 +14,6 @@
 }
 
 .cardbg-mobile {
-    background-image: url("/home-background.png");
     display: block;
     filter: blur(2px);
     -webkit-filter: blur(2px);
