@@ -2,17 +2,13 @@
 
     <div>
 
-        <div class="cardbg" style="margin-top: -20%">
-            {{> coverr }}
-        </div>
-       <!-- Mobile
-        <div class="cardbg-mobile hide-on-large-only" style="margin-top: -20%"></div>
-        -->
+        {{> coverr }}
+
         <div class="container" style="margin-top: 15%; margin-bottom: 20%">
             <div class="row">
                 <div class="col s12 center-align">
-                    <h3 class="white-text" style="text-shadow: 0px 1px 0px #757575;">{{_ "home_title"}}</h3>
-                    <a href="{{pathFor 'Order-form'}}" class="btn btn-large orange darken-3">{{_ "home_order"}}</a>
+                    <h3 class="white-text" style="text-shadow: 2px 2px 2px #000;">{{_ "home_title"}}</h3>
+                    <a href="{{pathFor 'orderForm'}}" class="btn btn-large orange darken-3">{{_ "home_order"}}</a>
                 </div>
                 <!-- ADDED FOR LOGIN -->
                 <!--<div class="col s12 center-align">
