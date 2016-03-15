@@ -29,7 +29,6 @@
 
   "menu_about": "About us",
   "menu_faq": "FAQ",
-  "menu_apply": "Join us",
   "menu_stripe": "Stripe",
   "menu_apply": "Join us",
 
@@ -56,6 +55,29 @@
 
   "faqs_question_six": "How far in advance should I make a reservation?",
   "faqs_answer_six": "Normal in removals is 5 days. But this is very inflexible! If you need help to load or unload your things tomorrow it wouldn't serve you! With us, with a minimum 24 hours you can have a estuforce ready to help you in your task.",
+
+  "privacy_header": "Privacy Policy",
+  "privacy_one": "Visiting this website does not imply that the user is obliged to provide any information.",
+  "privacy_two": "In the event that the user provides any personal information , the data collected on this website will be processed fairly and lawfully at all times subject to the principles and rights enshrined in Law 15/1999 of 13 December, Protection of Personal data (LOPD ) and other regulations.",
+  "privacy_header_one": "People under 18",
+  "privacy_three": "Our site is not intended for persons under 18 years. We will not collect personal information from anyone under this age.",
+  "privacy_four": "If you are under 18 , you can perform by an adult performing the whole process through the web.",
+  "privacy_header_two": "Information to users",
+  "privacy_five": "Section 'Orders'",
+  "privacy_six": "According to the Organic Law 15/1999 of December 13 , Protection of Personal Data (LOPD ) , we inform you that by filling in the forms, your personal data are incorporated and will be treated in files Brisbox.",
+  "privacy_seven": "The main purpose of this file is the management of orders registered on our website, as well as providing contact details to brisboxer to choose the order that they be more optimal.",
+  "privacy_eight": "On the occasion of the purchase data can be communicated to the following recipients:",
+  "privacy_nine": "banks for payment by card purchases .",
+  "privacy_ten": "The Office of consumers and users in the event of any claim.",
+  "privacy_eleven": "The office of Insurance in case of damage.",
+  "privacy_twelve": "Brisbox ensures confidentiality of data and guarantees that in no case be transferred to any other use without prior express consent of our users. Just ask those data necessary to provide the service required and will only be used for this purpose.",
+  "privacy_header_three": "Using tracking links",
+  "privacy_thirteen": "Each user can access the tracking link through the link provided in the mail . Tracking links are personalesde their uses and non-transferable and the user is responsible for their use and disclosure to third parties . The information contained in the links is confidential . Brisbox prohibits the publication of links to third parties and disclosure in forums, social networks and any we.",
+  "privacy_header_four": "Feelingly",
+  "privacy_fourteen": "By sending the forms understand that the user gives consent to process data in accordance with the purposes provided each of the forms. Brisbox not communicate the data to third parties except in the cases legally established or authorized by the applicant. Brisbox communicates data holders its intention to send commercial communications by e -mail or any other means of electronic communication. holders also expressed know this intention and give their express consent to receive such communications. The consent here provided by the Holder for data communication to third parties is revocable at any time , without retroactive effect .",
+  "privacy_header_five": "Data Quality",
+  "privacy_fifteen": "Users must ensure the truthfulness, accuracy , authenticity and validity of the personal data that have been collected them.",
+  
 
   "account-info": "Account information",
   "personal-info": "Personal information",

@@ -1,0 +1,18 @@
+#privacy-main{
+	background-color: #eceff1;
+	width: 100%;
+	height: 100%;
+}
+
+#privacy-container{
+	height: 100%;
+	background-color: white;
+	margin-top: 0px !important;
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+.privacy_row{
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
