@@ -22,6 +22,7 @@ materialize:materialize
 aldeed:collection2
 tap:i18n
 aldeed:autoform
+gwendall:simple-schema-i18n
 gwendall:autoform-i18n
 alanning:roles
 mrgalaxy:stripe
