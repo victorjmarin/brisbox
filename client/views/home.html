@@ -8,7 +8,8 @@
             <div class="row">
                 <div class="col s12 center-align">
                     <h3 class="white-text proxima" style="text-shadow: 0px 1px 0px #757575;">{{_ "home_title"}}</h3>
-                    <a href="{{pathFor 'order'}}" class="btn btn-large proxima bold orange darken-3">{{_ "home_order"}}</a>
+                    <a href="{{pathFor 'order'}}"
+                       class="btn btn-large proxima bold orange darken-3">{{_ "home_order"}}</a>
                 </div>
                 <!-- ADDED FOR LOGIN -->
                 <!--<div class="col s12 center-align">
@@ -24,7 +25,7 @@
     </div>
 
     <div class="white">
-        <div class="amber darken-3" style="padding: 0.1px">
+        <div class="amber darken-3" style="padding: 20px">
             <div class="container">
                 <div class="row">
                     <h4 class="center-align white-text">{{_ "home_help"}}</h4>
@@ -32,12 +33,11 @@
             </div>
         </div>
 
-        <div class="white" style="margin-top: 15px">
+        <div class="white" style="padding-top: 50px; padding-bottom: 50px">
             <div class="container">
                 <div class="row">
-
                     <!-- Services high resolution screens -->
-                    <div class="hide-on-med-and-down">
+                    <div class="hide-on-med-and-down" style="margin-left: -15%; margin-right: -15% ">
                         {{> homeServicesHR}}
                     </div>
 
@@ -45,7 +45,6 @@
                     <div class="hide-on-large-only">
                         {{> homeServicesLR}}
                     </div>
-
                 </div>
             </div>
         </div>
@@ -72,18 +71,21 @@
 <template name="homeServicesHR">
 
     <div class="col s4 center-align">
-        <h4>{{_ "home_loading"}}</h4>
         <img src="/loading.png" style="height: 220px; width: 220px">
+        <h6 class="orange-text text-darken-1"
+            style="font-weight: 800; font-size: 120%;">{{_ "home_loading"}}</h6>
         <p class="center-align">{{_ "home_loading_text"}}</p>
     </div>
     <div class="col s4 center-align">
-        <h4>{{_ "home_unloading"}}</h4>
         <img src="/unloading.png" style="height: 220px; width: 220px">
+        <h6 class="orange-text text-darken-1"
+            style="font-weight: 800; font-size: 120%;">{{_ "home_unloading"}}</h6>
         <p class="center-align">{{_ "home_unloading_text"}}</p>
     </div>
     <div class="col s4 center-align">
-        <h4>{{_ "home_placing"}}</h4>
         <img src="/placing.png" style="height: 220px; width: 220px">
+        <h6 class="orange-text text-darken-1"
+            style="font-weight: 800; font-size: 120%;">{{_ "home_placing"}}</h6>
         <p class="center-align">{{_ "home_placing_text"}}</p>
     </div>
 
@@ -92,17 +94,18 @@
 <template name="homeServicesLR">
 
     <div class="col s12 center-align">
-        <h4>{{_ "home_loading"}}</h4>
         <img src="/loading.png" class="responsive-img">
-        <p class="center-align">{{_ "home_loading_text"}}</p>
+        <h6 class="orange-text text-darken-1 flow-text"
+            style="font-weight: 800;">{{_ "home_loading"}}</h6>
+        <p class="center-align flow-text">{{_ "home_loading_text"}}</p>
         <hr>
-        <h4>{{_ "home_unloading"}}</h4>
         <img src="/unloading.png" class="responsive-img">
-        <p class="center-align">{{_ "home_unloading_text"}}</p>
+        <h6 class="orange-text text-darken-1 flow-text" style="font-weight: 800;">{{_ "home_unloading"}}</h6>
+        <p class="center-align flow-text">{{_ "home_unloading_text"}}</p>
         <hr>
-        <h4>{{_ "home_placing"}}</h4>
         <img src="/placing.png" class="responsive-img">
-        <p class="center-align">{{_ "home_placing_text"}}</p>
+        <h6 class="orange-text text-darken-1 flow-text" style="font-weight: 800;">{{_ "home_placing"}}</h6>
+        <p class="center-align flow-text">{{_ "home_placing_text"}}</p>
     </div>
 
 </template>
@@ -111,8 +114,10 @@
 
     <div class="col s8 offset-s2">
         <span class="orange-text" style="font-size: 1000%">
-                <sup style="font-size: 50px">&euro;</sup><span class="bold">20</span><sub style="font-size: 50px">/h</sub></span><br>
-        {{_ "home_price_1"}}
+                <sup style="font-size: 50px">&euro;</sup><span class="bold">20</span><sub
+                style="font-size: 50px">/h</sub></span><br>
+        {{_ "home_price_11"}} <span class="tooltipped" data-position="top" data-delay="50"
+                                    data-tooltip="{{_ "home_brisboxer"}}">brisboxer</span>{{_ "home_price_12"}}
 
         <p>{{_ "home_price_2"}}</p>
     </div>
@@ -121,10 +126,15 @@
 
 <template name="priceLR">
 
-        <span class="orange-text" style="font-size: 1000%">
-                <sup style="font-size: 50px">&euro;</sup>20<sub style="font-size: 50px">/H</sub></span><br>
-    {{_ "home_price_1"}}
+    <span class="orange-text" style="font-size: 1000%;"> <sup style="font-size: 50px">&euro;</sup><span
+            style=" font-weight: 500;">20</span><sub style="font-size: 50px">/h</sub></span><br>
 
-    <p>{{_ "home_price_2"}}</p>
+    <div class="flow-text" style="margin-top: -6%">
+        {{_ "home_price_11"}} <span class="tooltipped" data-position="top" data-delay="50"
+                                    data-tooltip="{{_ "home_brisboxer"}}">brisboxer</span>{{_ "home_price_12"}}
+
+        <h5 class="orange-text" style="margin-top: 6%">{{_ "home_our_pricing"}}</h5>
+        <p>{{_ "home_price_2"}}</p>
+    </div>
 
 </template>
