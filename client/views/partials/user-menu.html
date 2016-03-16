@@ -2,7 +2,13 @@
 	{{#if currentUser }}
 		<div class="fixed-action-btn" id="user-menu">
 			<a class="btn-floating btn-large red">
-            	<i class="material-icons">mode_edit</i>
+            	{{#if isInRole 'brisboxer'}}
+					<i class="material-icons">stars</i>
+				{{/if}}
+
+				{{#if isInRole 'admin'}}
+					<i class="material-icons">verified_user</i>
+				{{/if}}
           	</a>
           	<ul>
             <li>
