@@ -1,14 +1,29 @@
 <Template name="userMenu">
 	{{#if currentUser }}
-		<div id="usermenu-content">
-			{{#if isInRole 'brisboxer'}}
-				<i class="material-icons orange-text dropdown-button img-user">stars</i>
-			{{/if}}
+		<div class="fixed-action-btn" id="user-menu">
+			<a class="btn-floating btn-large red">
+            	{{#if isInRole 'brisboxer'}}
+					<i class="material-icons">stars</i>
+				{{/if}}
 
-			{{#if isInRole 'admin'}}
-				<i class="material-icons orange-text dropdown-button img-user">verified_user</i>
-			{{/if}}
-			<span class="hide-on-med-and-down">{{_ "welcome"}}, <b>{{currentUser.username}}</b></span>
+				{{#if isInRole 'admin'}}
+					<i class="material-icons">verified_user</i>
+				{{/if}}
+          	</a>
+          	<ul>
+            <li>
+	            <a id="logout" class="btn-floating btn-large blue">
+		            {{#if isInRole 'brisboxer'}}
+						<!-- brisboxer's routes -->
+					{{/if}}
+
+					{{#if isInRole 'admin'}}
+						<!-- admin's routes -->
+					{{/if}}
+	            	<i class="material-icons">power_settings_new</i>
+	            </a>
+            </li>
+          </ul>
 		</div>
     {{else}}
 		<ul id="showLoginModal">
