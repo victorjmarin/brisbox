@@ -73,19 +73,19 @@
     <div class="col s4 center-align">
         <img src="/loading.png" style="height: 220px; width: 220px">
         <h6 class="orange-text text-darken-1"
-            style="font-weight: 800; font-size: 120%;">{{_ "home_loading"}}</h6>
+            style="font-size: 120%;">{{_ "home_loading"}}</h6>
         <p class="center-align">{{_ "home_loading_text"}}</p>
     </div>
     <div class="col s4 center-align">
         <img src="/unloading.png" style="height: 220px; width: 220px">
         <h6 class="orange-text text-darken-1"
-            style="font-weight: 800; font-size: 120%;">{{_ "home_unloading"}}</h6>
+            style="font-weight: 700; font-size: 120%;">{{_ "home_unloading"}}</h6>
         <p class="center-align">{{_ "home_unloading_text"}}</p>
     </div>
     <div class="col s4 center-align">
         <img src="/placing.png" style="height: 220px; width: 220px">
         <h6 class="orange-text text-darken-1"
-            style="font-weight: 800; font-size: 120%;">{{_ "home_placing"}}</h6>
+            style="font-weight: 700; font-size: 120%;">{{_ "home_placing"}}</h6>
         <p class="center-align">{{_ "home_placing_text"}}</p>
     </div>
 
@@ -95,16 +95,15 @@
 
     <div class="col s12 center-align">
         <img src="/loading.png" class="responsive-img">
-        <h6 class="orange-text text-darken-1 flow-text"
-            style="font-weight: 800;">{{_ "home_loading"}}</h6>
+        <h6 class="orange-text text-darken-1 flow-text bold">{{_ "home_loading"}}</h6>
         <p class="center-align flow-text">{{_ "home_loading_text"}}</p>
         <hr>
         <img src="/unloading.png" class="responsive-img">
-        <h6 class="orange-text text-darken-1 flow-text" style="font-weight: 800;">{{_ "home_unloading"}}</h6>
+        <h6 class="orange-text text-darken-1 flow-text" style="font-weight: 700;">{{_ "home_unloading"}}</h6>
         <p class="center-align flow-text">{{_ "home_unloading_text"}}</p>
         <hr>
         <img src="/placing.png" class="responsive-img">
-        <h6 class="orange-text text-darken-1 flow-text" style="font-weight: 800;">{{_ "home_placing"}}</h6>
+        <h6 class="orange-text text-darken-1 flow-text" style="font-weight: 700;">{{_ "home_placing"}}</h6>
         <p class="center-align flow-text">{{_ "home_placing_text"}}</p>
     </div>
 
@@ -116,10 +115,12 @@
         <span class="orange-text" style="font-size: 1000%">
                 <sup style="font-size: 50px">&euro;</sup><span class="bold">20</span><sub
                 style="font-size: 50px">/h</sub></span><br>
-        {{_ "home_price_11"}} <span class="tooltipped" data-position="top" data-delay="50"
-                                    data-tooltip="{{_ "home_brisboxer"}}">brisboxer</span>{{_ "home_price_12"}}
-
-        <p>{{_ "home_price_2"}}</p>
+        <div style="margin-top: -8%">
+            {{_ "home_price_11"}} <span class="tooltipped" data-position="top" data-delay="50"
+                                        data-tooltip="{{_ "home_brisboxer"}}">brisboxer</span>{{_ "home_price_12"}}
+            <h5 class="orange-text" style="margin-top: 6%">{{_ "home_our_pricing"}}</h5>
+            <p>{{_ "home_price_2"}}</p>
+        </div>
     </div>
 
 </template>
@@ -127,7 +128,7 @@
 <template name="priceLR">
 
     <span class="orange-text" style="font-size: 1000%;"> <sup style="font-size: 50px">&euro;</sup><span
-            style=" font-weight: 500;">20</span><sub style="font-size: 50px">/h</sub></span><br>
+            class="bold">20</span><sub style="font-size: 50px">/h</sub></span><br>
 
     <div class="flow-text" style="margin-top: -6%">
         {{_ "home_price_11"}} <span class="tooltipped" data-position="top" data-delay="50"
