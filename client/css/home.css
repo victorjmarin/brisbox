@@ -4,19 +4,15 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     display: block;
-    filter: blur(2px);
-    -webkit-filter: blur(2px);
     min-height: 1000px;
-    left: 0;
     position: fixed;
+    left: 0;
     right: 0;
     z-index: -1;
 }
 
 .cardbg-mobile {
-    display: block;
-    filter: blur(2px);
-    -webkit-filter: blur(2px);
+    display: block;;
     min-height: 100%;
     left: 0;
     position: fixed;
