@@ -1,3 +1,15 @@
+body {
+  font-family: 'Proxima Nova';
+}
+
+a {
+  font-weight: 600;
+}
+
+.text-shadow {
+  text-shadow: 0px .5px 0px rgba(117, 117, 117, 0.58);
+}
+
 .table td {
     text-align: center;
 }
