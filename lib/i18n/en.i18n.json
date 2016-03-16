@@ -85,6 +85,9 @@
   "order-form_second-name": "Second name",
   "order-form_email": "Email",
   "order-form_tel": "Telephone",
-  "order-form-book": "1€"
+  "order-form-book": "1€",
+
+  "error_Verifing": "Error verifying account",
+  "error_VerifingAccount": "There was an error verifying your account, please try again later."
 
 }

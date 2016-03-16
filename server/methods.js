@@ -1,5 +1,5 @@
 Meteor.methods({
-    'chargeCard': function(stripeToken, amountForm) {
+    'chargeCard': function (stripeToken, amountForm) {
         var stripeKey = Meteor.settings.private.stripe.testSecretKey;
         var Stripe = StripeAPI(stripeKey);
 
@@ -7,7 +7,7 @@ Meteor.methods({
             amount: amountForm,
             currency: 'eur',
             source: stripeToken
-        }, function(err, charge) {
+        }, function (err, charge) {
             console.log(err, charge);
         });
     }
