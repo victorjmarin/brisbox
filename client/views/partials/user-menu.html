@@ -12,9 +12,14 @@
 		</div>
     {{else}}
 		<ul id="showLoginModal">
-             <a class="bold caret text-shadow smaller-font" style="display: inline;padding: 6px 10px 6px 10px; border: 1px solid white; border-radius: 4px;">
-            	{{_ "layout_login_link"}}
-	     </a>
+			<div class="hide-on-small-only">
+	             <a class="bold caret text-shadow smaller-font" style="display: inline;padding: 6px 10px 6px 10px; border: 1px solid white; border-radius: 4px;">
+	            	{{_ "layout_login_link"}}
+           	 	</a>
+	   		</div>
+	   		<div class="hide-on-med-and-up">
+				<i class="material-icons text-shadow smaller-font">account_circle</i>
+	   		</div>
         </ul>
 	{{/if}}
 
