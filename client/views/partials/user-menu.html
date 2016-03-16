@@ -1,14 +1,16 @@
 <Template name="userMenu">
 	{{#if currentUser }}
-		<div id="usermenu-content">
-			{{#if isInRole 'brisboxer'}}
-				<i class="material-icons orange-text dropdown-button img-user">stars</i>
-			{{/if}}
-
-			{{#if isInRole 'admin'}}
-				<i class="material-icons orange-text dropdown-button img-user">verified_user</i>
-			{{/if}}
-			<span class="hide-on-med-and-down">{{_ "welcome"}}, <b>{{currentUser.username}}</b></span>
+		<div class="fixed-action-btn" id="user-menu">
+			<a class="btn-floating btn-large red">
+            	<i class="material-icons">mode_edit</i>
+          	</a>
+          	<ul>
+            <li>
+	            <a id="logout" class="btn-floating btn-large blue">
+	            	<i class="material-icons">power_settings_new</i>
+	            </a>
+            </li>
+          </ul>
 		</div>
     {{else}}
 		<ul id="showLoginModal">
