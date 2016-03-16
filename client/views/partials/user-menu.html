@@ -13,6 +13,13 @@
           	<ul>
             <li>
 	            <a id="logout" class="btn-floating btn-large blue">
+		            {{#if isInRole 'brisboxer'}}
+						<!-- brisboxer's routes -->
+					{{/if}}
+
+					{{#if isInRole 'admin'}}
+						<!-- admin's routes -->
+					{{/if}}
 	            	<i class="material-icons">power_settings_new</i>
 	            </a>
             </li>
