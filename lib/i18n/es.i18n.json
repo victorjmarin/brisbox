@@ -83,7 +83,6 @@
   "order-form_second-name": "Apellidos",
   "order-form_email": "Correo electrónico",
   "order-form_tel": "Teléfono",
-  "order-form-book": "1€",
 
   "error_Verifing": "Error verificando la cuenta",
   "error_VerifingAccount": "Se ha producido un error al verificar la cuenta, por favor inténtelo de nuevo más tarde."
