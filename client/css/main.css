@@ -6,8 +6,20 @@ a {
   font-weight: 600;
 }
 
+.caret:after {
+  content: " \203A"
+}
+
+.smaller-font {
+  font-size:99%;
+}
+
+.uppercase {
+ text-transform: uppercase;
+}
+
 .text-shadow {
-  text-shadow: 0px .5px 0px rgba(117, 117, 117, 0.58);
+  text-shadow: 1px 1px 1px #777;
 }
 
 .table td {
