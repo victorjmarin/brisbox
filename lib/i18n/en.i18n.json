@@ -111,22 +111,10 @@
   "login_password": "Password",
   "login_error_credentials_wrong": "Wrong username or password ",
 
-  "stripe_card_number" : "Card Number",
-  "stripe_cvc" : "CVC",
   "stripe_expiration" : "Expiration (MM/YYYY)",
-  "stripe_amount" : "Amount",
-  "stripe_submit" : "Pay with Stripe",
 
-  "faqs_question_six": "I'm not sure of the date of my move. Can I also make a reservation?",
-  "faqs_answer_six": "Of course! You are free to set the date or cancel it free of charge.",
-  "faqs_question_seven": "How far in advance should I make a reservation?",
-  "faqs_answer_seven": "Normal in removals is 5 days. But this is very inflexible! If you need help to load or unload your things tomorrow it wouldn't serve you! With us, with a minimum 24 hours you can have a estuforce ready to help you in your task.",
-
-  "order-form_header": "Do you need do a move?",
   "order-form_address": "Address...",
   "order-form_number": "ZIP code...",
-  "order-loading": "Loading",
-  "order-unloading": "Unloading",
   "order-form_help": "How can we help?",
   "order-form_ready": "Next",
   "order-form_more-info-header": "Details about your move",
@@ -141,7 +129,26 @@
   "order-form_tel": "Telephone",
   "order-form-book": "1€",
 
-  //INTERNATIONALIZATION FOR 'SIMPLE-SCHEMA' LABELS:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   "schemas": {
     "inscription": {
       "name": {
@@ -212,14 +219,12 @@
       }
     }
   },
-  //---------------------------------------------------------------
 
-  //INTERNATIONALIZATION FOR 'SIMPLE-SCHEMA' MESSAGES ERRORS:
   "simpleschema": {
     "messages": {
       "regEx phone": "Invalid Phone",
       "wrongPassword": "Passwords mismatch",
-      "required": "[label] is required",
+      "required": "[label] is required2",
       "minString": "[label] must be at least [min] characters",
       "maxString": "[label] cannot exceed [max] characters",
       "minNumber": "[label] must be at least [min]",
@@ -283,27 +288,6 @@
         }
       }
     }
-  },
-  //----------------------------------------------------------------------
+  }
 
-
-  "login_title": "Login",
-  "login_username": "Username",
-  "login_password": "Password",
-  "login_error_credentials_wrong": "Wrong username or password ",
-  "order-form_address": "Address...",
-  "order-form_number": "ZIP code...",
-  "order-form_help": "How can we help?",
-  "order-form_ready": "Next",
-  "order-form_more-info-header": "Details about your move",
-  "order-form_comments": "Comments for our brisboxers...",
-  "order-form_number-brisboxer": "Number brisboxers",
-  "order-form_hours": "Hours",
-  "order-form_more-info-hour": "¿How long will you need them (in total)?",
-  "order-form_contact-info": "Contact info",
-  "order-form_first-name": "First name",
-  "order-form_second-name": "Second name",
-  "order-form_email": "Email",
-  "order-form_tel": "Telephone",
-  "order-form-book": "1€"
 }
