@@ -2,7 +2,10 @@ Template.userMenu.events({
 	'click #showLoginModal': function(){
         Session.set('showLoginModal', true);
     },
-    'click #usermenu-content': function(){
-    	Meteor.logout();
+    'click #logout': function(event){
+  		$('#user-menu').trigger('mouseleave');
+  		setTimeout(function(){
+  			Meteor.logout();
+		}, 180); 
     }
 });
