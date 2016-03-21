@@ -12,14 +12,18 @@
           	</a>
           	<ul>
             <li>
-	            <a id="logout" class="btn-floating btn-large blue">
-		            {{#if isInRole 'brisboxer'}}
-						<!-- brisboxer's routes -->
-					{{/if}}
+	            
+		        {{#if isInRole 'brisboxer'}}
+					<!-- brisboxer's routes -->
+				{{/if}}
 
-					{{#if isInRole 'admin'}}
-						<!-- admin's routes -->
-					{{/if}}
+				{{#if isInRole 'admin'}}
+					<!-- admin's routes -->
+					<a id="accept-brisboxers" class="btn-floating btn-large yellow" href="{{ pathFor 'accept-brisboxers'}}">
+			         	<i class="material-icons">recent_actors</i>
+			    	</a>
+				{{/if}}
+				<a id="logout" class="btn-floating btn-large blue">
 	            	<i class="material-icons">power_settings_new</i>
 	            </a>
             </li>
