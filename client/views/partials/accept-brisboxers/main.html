@@ -1,5 +1,12 @@
-<Template name="accept-brisboxers">
-	<div class="section blue-grey" style="width: 100%; height: 100%;">
-		<h4> Accept brisboxers! </h4>
+<Template name="acceptBrisboxers">
+	<div id="ab-main" class="section blue-grey">
+		<h4 class="header">Accept brisboxer</h4>
+		<div class="container">
+				<div id="brisboxer-list">
+					{{#each brisboxers}}
+						{{> acceptBrisboxerRow}}
+					{{/each}}
+				</div>
+		</div>
 	</div>
 </Template>
