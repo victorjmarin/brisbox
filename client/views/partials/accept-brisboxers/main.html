@@ -3,9 +3,22 @@
 		<h4 class="header">Accept brisboxer</h4>
 		<div class="container">
 				<div id="brisboxer-list">
-					{{#each brisboxers}}
-						{{> acceptBrisboxerRow}}
-					{{/each}}
+					<table class="responsive-table">
+						<thead>
+							<tr>
+								<th>Id</th>
+					            <th>Username</th>
+					        	<th>Email</th>
+					        	<th>Verified</th>
+					        	<th>Accepted</th>
+					        </tr>
+						</thead>
+						<tbody>
+							{{#each brisboxers}}
+								{{> acceptBrisboxerRow}}
+							{{/each}}
+						</tbody>
+					</table>
 				</div>
 		</div>
 	</div>
