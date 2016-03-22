@@ -1,12 +1,11 @@
 <Template name="acceptBrisboxerRow">
 	<tr>
-        <td>{{_id}}</td>
         <td>{{username}}</td>
 		<td>{{email}}</td>
 		<td>
-			<div class="white circle verified-div">
+			<div class="white circle z-depth-1 verified-div">
 			{{#if verified}}
-				<i class="material-icons green-text verified-i">verified_user</i>
+				<i class="material-icons green-text verified-i ">verified_user</i>
 			{{else}}
 				<i class="material-icons red-text verified-i">verified_user</i>
 			{{/if}}
@@ -16,11 +15,15 @@
 		<div class="switch">
 		    <label>
 		    	Off
-		      	{{#if accepted}}
-					<input type="checkbox" id="{{_id}}" checked>
-		      	{{else}}
-					<input type="checkbox" id="{{_id}}">
-		      	{{/if}}
+		    	{{#if verified}}
+					{{#if accepted}}
+						<input type="checkbox" id="{{_id}}" checked>
+			      	{{else}}
+						<input type="checkbox" id="{{_id}}">
+			      	{{/if}}
+		    	{{else}}
+					<input type="checkbox" disabled id="{{_id}}">
+		    	{{/if}}
 		      	<span class="lever"></span>
 		      	On
 		    </label>

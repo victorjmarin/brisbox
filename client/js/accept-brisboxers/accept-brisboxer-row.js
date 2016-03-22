@@ -6,10 +6,8 @@ Template.acceptBrisboxerRow.helpers({
 
 Template.acceptBrisboxerRow.events({
 	'change input': function(event) {
-		Meteor.call("changeAcceptedStatus", this._id, event.target.checked);
-		/*Meteor.users.update(this._id, {
-        	$set: {accepted: true}
-      	});*/
-
+		if(this.verified){
+			Meteor.call("changeAcceptedStatus", this._id, event.target.checked);
+		}
 	}
 })
