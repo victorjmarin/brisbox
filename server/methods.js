@@ -11,6 +11,12 @@ Meteor.methods({
             console.log(err, charge);
         });
     },
+    'changeAcceptedStatus': function(brisbox_id, accepted){
+        Meteor.users.update(brisbox_id, {
+            $set: {accepted: accepted}
+        });
+    },
+
     'sendEmailToBrisbox': function (correo, subject, text) {
         this.unblock();
         console.log("*** sendEmailToBrisbox ***");

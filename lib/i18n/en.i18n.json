@@ -129,7 +129,10 @@
   "order-form_tel": "Telephone",
   "order-form-book": "1€",
 
-
+  "brisboxer_username": "Username",
+  "brisboxer_email": "Email address",
+  "brisboxer_verified": "Verified",
+  "brisboxer_accepted": "Accepted",
 
 
 
