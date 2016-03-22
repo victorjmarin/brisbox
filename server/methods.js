@@ -1,5 +1,5 @@
 Meteor.methods({
-    'chargeCard': function(stripeToken, amountForm) {
+    'chargeCard': function (stripeToken, amountForm) {
         var stripeKey = Meteor.settings.private.stripe.testSecretKey;
         var Stripe = StripeAPI(stripeKey);
 
@@ -7,8 +7,28 @@ Meteor.methods({
             amount: amountForm,
             currency: 'eur',
             source: stripeToken
-        }, function(err, charge) {
+        }, function (err, charge) {
             console.log(err, charge);
+        });
+    },
+    'sendEmailToBrisbox': function (correo, subject, text) {
+        this.unblock();
+        console.log("*** sendEmailToBrisbox ***");
+        Email.send({
+            from: 'hello@brisbox.com',
+            subject: "[" + correo + "] " + subject,
+            text: "[" + correo + "] "+text,
+            to: 'hello@brisbox.com'
+        });
+    },
+    'sendEmailToUser': function (correo, subject, text) {
+        this.unblock();
+        console.log("*** sendEmailToUser ***");
+        Email.send({
+            from: 'hello@brisbox.com',
+            subject: subject,
+            text: text,
+            to: correo
         });
     }
 });
