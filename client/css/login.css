@@ -84,6 +84,11 @@
 }
 
 #login-title-header{
+	background: #ee6c00; /* Old browsers */
+	background: -moz-linear-gradient(-45deg, #ee6c00 0%, #dd6000 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg, #ee6c00 0%,#dd6000 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg, #ee6c00 0%,#dd6000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee6c00', endColorstr='#dd6000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
