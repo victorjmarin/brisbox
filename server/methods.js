@@ -10,5 +10,10 @@ Meteor.methods({
         }, function(err, charge) {
             console.log(err, charge);
         });
+    },
+    'changeAcceptedStatus': function(brisbox_id, accepted){
+        Meteor.users.update(brisbox_id, {
+            $set: {accepted: accepted}
+        });
     }
 });

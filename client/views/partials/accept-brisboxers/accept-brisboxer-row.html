@@ -3,7 +3,28 @@
         <td>{{_id}}</td>
         <td>{{username}}</td>
 		<td>{{email}}</td>
-		<td>{{verified}}</td>
-		<td>{{accepted}}</td>
+		<td>
+			<div class="white circle verified-div">
+			{{#if verified}}
+				<i class="material-icons green-text verified-i">verified_user</i>
+			{{else}}
+				<i class="material-icons red-text verified-i">verified_user</i>
+			{{/if}}
+			</div>
+		</td>
+		<td>
+		<div class="switch">
+		    <label>
+		    	Off
+		      	{{#if accepted}}
+					<input type="checkbox" id="{{_id}}" checked>
+		      	{{else}}
+					<input type="checkbox" id="{{_id}}">
+		      	{{/if}}
+		      	<span class="lever"></span>
+		      	On
+		    </label>
+		  </div>
+		</td>
 	</tr>
 </Template>

@@ -16,7 +16,8 @@ Meteor.startup(function () {
         Roles.addUsersToRoles(id_brisboxer1, ['brisboxer']);
         Meteor.users.update(id_brisboxer1, {
             $set: {
-                accepted: true
+                accepted: true,
+                verified: true,
             }
         });
 
@@ -28,7 +29,8 @@ Meteor.startup(function () {
         Roles.addUsersToRoles(id_brisboxer2, ['brisboxer']);
         Meteor.users.update(id_brisboxer2, {
             $set: {
-                accepted: false
+                accepted: false,
+                verified: true,
             }
         });
 
@@ -40,7 +42,8 @@ Meteor.startup(function () {
         Roles.addUsersToRoles(id_brisboxer3, ['brisboxer']);
         Meteor.users.update(id_brisboxer3, {
             $set: {
-                accepted: false
+                accepted: true,
+                verified: true,
             }
         });
 
