@@ -1,7 +1,11 @@
 <template name="stripe_form">
 
         <form action="" method="POST" id="payment-form" class="stripe-form">
-            <span class="payment-errors"></span>
+            <span class="payment-errors">
+                {{#if stripe_error}}
+                    {{_ stripe_error}}
+                {{/if}}
+            </span>
 
             <div class="form-row">
                 <label>

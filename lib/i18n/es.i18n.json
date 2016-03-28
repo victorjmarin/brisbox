@@ -54,5 +54,16 @@
   "stripe_cvc" : "CVC",
   "stripe_expiration" : "Expiración (MM/AAAA)",
   "stripe_amount" : "Cantidad",
-  "stripe_submit" : "Pagar con Stripe"
+  "stripe_submit" : "Pagar con Stripe",
+
+  "invalid_amount" : "La cantidad debe de superar los 50 céntimos",
+  "invalid_expiry_month" : "Mes de expiración inválido",
+  "invalid_expiry_year" : "Año de expiracón inválido",
+  "invalid_number" : "Número de tarjeta de crédito inválido",
+  "invalid_cvc" : "El CVC no es válido",
+  "incorrect_number" : "El número de la tarjeta de crédito es incorrecto",
+  "expired_card" : "La tarjeta de crédito ha expirado",
+  "incorrect_cvc" : "El CVC es incorrecto",
+  "card_declined" : "La tarjeta de crédito ha sido denegada",
+  "processing_error" : "Se ha producido un error al procesar la tarjeta"
 }
