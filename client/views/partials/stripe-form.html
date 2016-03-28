@@ -5,6 +5,11 @@
         <div id="stripe-access">
             <div class="row">
                 <form class="stripe-form col s12 m12" id="payment-form">
+                        <span class="payment-errors">
+                            {{#if stripe_error}}
+                                {{_ stripe_error}}
+                            {{/if}}
+                        </span>
                         <div class="col s12" id="stripe-input-fields">
                             <div class="stripe-form-field col s12 m12">
                                 <label for="number">{{_ "stripe_card_number"}}</label>
