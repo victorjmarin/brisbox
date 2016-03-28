@@ -43,18 +43,8 @@ Template.stripe_form.events({
                 stripeToken = response.id;
                 Meteor.call('chargeCard', stripeToken, amountForm, function(error, succeed){
                     if(error){
-                        console.log(error);
-                    }else {
-                        var status = succeed.statusCode;
-                        if(status == null){
-                            status = succeed.status;
-                        }
-                            if(status != "succeeded"){
-                                var code = succeed.raw.code;
-                                Session.set("stripe_error", code);
-                            }else {
-                                alert("El pago se ha realizado correctamente.");
-                            }
+                        var code = error.reason;
+                        Session.set("stripe_error", code);
                     }
                 });
             }

@@ -13,7 +13,7 @@ Meteor.methods({
             source: stripeToken
         },function(err, charge){
             if(err){
-                future.return(err);
+                future.throw(new Meteor.Error(err.statusCode , err.code));
             }else{
                 future.return(charge);
             }
