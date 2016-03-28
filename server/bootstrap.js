@@ -1,5 +1,6 @@
 Meteor.startup(function () {
     // code to run on server at startup
+    process.env.MAIL_URL = 'smtp://hello@brisbox.com:Estuforce2.0@smtp.1and1.com:587'
     if (Meteor.users.find().count() === 0) {
         loadAdmins();
         loadBrisboxers();
