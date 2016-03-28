@@ -96,18 +96,15 @@
   "submit": "Enviar",
   "account-info-text": "Compartiremos su nombre con los clientes y usaremos su dirección de correo electrónico y teléfono para mantener el contacto con usted.",
   "image-profile-text": "Asegúrese de elegir una foto profesional en la que esté solo. Esta foto será enviada a sus clientes, ¡asegúrese de elegir la mejor!",
-
   "login_title": "Entrar",
   "login_username": "Usuario",
   "login_password": "Contraseña",
   "login_error_credentials_wrong": "Usuario y/o contraseña erronea",
-
-  "stripe_card_number" : "Número de Tarjeta",
-  "stripe_cvc" : "CVC",
-  "stripe_expiration" : "Expiración (MM/AAAA)",
-  "stripe_amount" : "Cantidad",
-  "stripe_submit" : "Pagar con Stripe",
-
+  "stripe_card_number": "Número de Tarjeta",
+  "stripe_cvc": "CVC",
+  "stripe_expiration": "Expiración (MM/AAAA)",
+  "stripe_amount": "Cantidad",
+  "stripe_submit": "Pagar con Stripe",
   "order-form_header": "¿Necesitas hacer un pedido?",
   "order-form_address": "Dirección postal...",
   "order-form_number": "Código postal...",
@@ -126,22 +123,21 @@
   "order-form_email": "Correo electrónico",
   "order-form_tel": "Teléfono",
   "order-form-book": "1€",
-
   "brisboxer_username": "Usuario",
   "brisboxer_email": "Correo electrónico",
   "brisboxer_verified": "Verificado",
   "brisboxer_accepted": "Aceptado",
-
-
-
-
-
-
-
-
-
-
-
+  "contact_us_header": "Contacto",
+  "contact_us_body": "El equipo de brisbox está formado por alumnos de la universidad de Sevilla.",
+  "contact_us_mailto": "¡Envíenos un email AHORA!",
+  "contact_us_form": "Si no dispone de un cliente de correo, no se preocupe, también puede completar el siguiente formulario y nos pondremos en contacto lo mas rápido posible",
+  "thanks_Email": "Correo enviado.",
+  "thanks_Email_body": "Gracias por enviarnos un email. Recibirás una respuesta lo antes posible.",
+  "contact_us_form_name": "Nombre: ",
+  "contact_us_form_email": "Email: ",
+  "contact_us_form_subject": "Asunto: ",
+  "contact_us_form_content": "Contenido: ",
+  "contact_us_form_send": "Enviar",
   "schemas": {
     "inscription": {
       "name": {
@@ -212,8 +208,6 @@
       }
     }
   },
-
-
   "simpleschema": {
     "messages": {
       "regEx phone": "Teléfono invalido",

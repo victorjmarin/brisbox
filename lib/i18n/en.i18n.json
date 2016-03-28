@@ -105,14 +105,11 @@
   "submit": "Submit",
   "account-info-text": "We will share your name with customers and use your email address and phone number to stay in touch with you.",
   "image-profile-text": "Be sure to choose a professional photo of you alone. If accepted, this picture will be sent to your customers, so make sure it's a good one!",
-
   "login_title": "Login",
   "login_username": "Username",
   "login_password": "Password",
   "login_error_credentials_wrong": "Wrong username or password ",
-
-  "stripe_expiration" : "Expiration (MM/YYYY)",
-
+  "stripe_expiration": "Expiration (MM/YYYY)",
   "order-form_address": "Address...",
   "order-form_number": "ZIP code...",
   "order-form_help": "How can we help?",
@@ -128,30 +125,21 @@
   "order-form_email": "Email",
   "order-form_tel": "Telephone",
   "order-form-book": "1€",
-
   "brisboxer_username": "Username",
   "brisboxer_email": "Email address",
   "brisboxer_verified": "Verified",
   "brisboxer_accepted": "Accepted",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  "contact_us_header": "Contact Us",
+  "contact_us_body": "Brisbox Team is composed by few alums of Sevilla's University.",
+  "contact_us_mailto": "Send us an email!",
+  "contact_us_form": "If you don't have an email client, don't worry, you can also complete this form and we will contact you as soon as possible",
+  "thanks_Email": "Email sended.",
+  "thanks_Email_body": "Thanks you for sending us an email. You will receive response as fast as posible",
+  "contact_us_form_name": "Name: ",
+  "contact_us_form_email": "Email: ",
+  "contact_us_form_subject": "Subject: ",
+  "contact_us_form_content": "Content: ",
+  "contact_us_form_send": "Send",
   "schemas": {
     "inscription": {
       "name": {
@@ -222,7 +210,6 @@
       }
     }
   },
-
   "simpleschema": {
     "messages": {
       "regEx phone": "Invalid Phone",
@@ -292,5 +279,4 @@
       }
     }
   }
-
 }

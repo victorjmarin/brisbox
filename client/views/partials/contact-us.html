@@ -1,0 +1,26 @@
+<template name="ContactUs">
+
+    <div class="container">
+        <div class="section scrollspy">
+            <div class="row">
+                <h4 class="header">{{_ "contact_us_header"}}</h4>
+            </div>
+            <div class="row">
+               <p>{{_ "contact_us_body"}}</p>
+                <a href="mailto:hello@brisbox.com">{{_ "contact_us_mailto"}}</a>
+            </div>
+
+            <div class="row">
+                <div class="col s12 m9">
+                  <p>{{_ "contact_us_form"}}</p><br/>
+                  <p><label>{{_ "contact_us_form_name"}}<input type="text" id="nombre" name="nombre" /></label></p><br>
+                  <p><label>{{_ "contact_us_form_email"}}<input type="email" id="correo" name="correo" /></label></p><br>
+                  <p><label>{{_ "contact_us_form_subject"}}<input type="text" id="asunto" name="asunto" /></label></p><br>
+                  <p><label>{{_ "contact_us_form_content"}}<input type="text" id="contenido" name="contenido" /></label></p><br>
+                  <input type="button" id="send" name="send" value="{{_ "contact_us_form_send"}}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>
