@@ -1,4 +1,4 @@
-Template.ApplicationLayout.onRendered(function () {
+Template.menu.onRendered(function () {
         $('.dropdown-button').dropdown({
                 inDuration: 300,
                 outDuration: 225,
