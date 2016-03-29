@@ -5,6 +5,11 @@ Meteor.startup(function () {
         loadAdmins();
         loadBrisboxers();
     }
+    if(Order.find().count() === 0){
+        loadOrders();
+    }
+
+
 });
 
 
@@ -145,4 +150,55 @@ function loadBrisboxers(){
                 accepted: true,
             }
         });
+}
+
+function loadOrders(){
+    var order1_id = Order.insert({
+        name: 'nameTest',
+        surname: 'surnameTest',
+        phone: '000000000',
+        email: 'email1@gmail.com',
+        numberBrisboxers: 2,
+        zip: '41900',
+        address: 'Test1',
+        hours: 2,
+        comments: 'comments1',
+        typeMove: 'loading',
+    });
+    var order2_id = Order.insert({
+        name: 'nameTest',
+        surname: 'surnameTest',
+        phone: '333333333',
+        email: 'email2@gmail.com',
+        numberBrisboxers: 3,
+        zip: '41900',
+        address: 'Test2',
+        hours: 1,
+        comments: 'comments2',
+        typeMove: 'loading',
+    });
+    var order3_id = Order.insert({
+        name: 'nameTest',
+        surname: 'surnameTest',
+        phone: '111111111',
+        email: 'email3@gmail.com',
+        numberBrisboxers: 1,
+        zip: '41900',
+        address: 'Test3',
+        hours: 2,
+        comments: 'comments3',
+        typeMove: 'unloading',
+    });
+     var order4_id = Order.insert({
+        name: 'nameTest',
+        surname: 'surnameTest',
+        phone: '222222222',
+        email: 'email4@gmail.com',
+        numberBrisboxers: 1,
+        zip: '41900',
+        address: 'Test3',
+        hours: 1,
+        comments: 'comments4',
+        typeMove: 'unloading',
+    });
 }
