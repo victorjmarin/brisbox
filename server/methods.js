@@ -10,5 +10,8 @@ Meteor.methods({
         }, function(err, charge) {
             console.log(err, charge);
         });
-    }
+    },
+    'saveOrder': function(orderForm){
+        Orders.insert(orderForm);
+    },
 });

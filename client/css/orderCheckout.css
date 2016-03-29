@@ -9,3 +9,51 @@
 #legend-checkout{
     margin-left:25%;
 }
+#info-budget{
+    margin-top:8%;
+}
+
+#text-budget{
+    font-size: 1.1rem;
+}
+
+#address-budget, #day-budget, #phone-budget, #cost-budget{
+    text-align:center !important;
+    border: 1px solid #DBE1EB;
+    font-size: 1.1rem;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -o-border-radius: 4px;
+    background: #FFFFFF;
+    background: linear-gradient(left, #FFFFFF, #F7F9FA);
+    background: -moz-linear-gradient(left, #FFFFFF, #F7F9FA);
+    background: -webkit-linear-gradient(left, #FFFFFF, #F7F9FA);
+    background: -o-linear-gradient(left, #FFFFFF, #F7F9FA);
+    color: #2E3133;
+}
+
+#form-stripe{
+    background: url(lgnoverlyback.png) repeat,-webkit-linear-gradient(80deg, #612301, #000000);
+    background: url(lgnoverlyback.png) repeat,-o-linear-gradient(80deg, #612301, #000000);
+    background: url(lgnoverlyback.png) repeat,linear-gradient(170deg, #612301, #000000);
+    opacity: 0.9;
+    z-index: 998;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    will-change: opacity;
+    padding-bottom:8.65%;
+}
+
+#info-pay{
+    display: none;
+}
+
+.row-order-checkout{
+    margin-bottom:0px !important;
+}

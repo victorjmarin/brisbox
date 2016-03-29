@@ -8,10 +8,26 @@ Template.orderForm.events({
 			more_info.slideUp("fast");
 		}
 	},
-	'submit #insertOrderForm': function(event){
-
+	'submit .order_form' : function (event) {
+		e.preventDefault();
+		var orderForm =
+			({
+			address: $(".address").value,
+			zip: $(".zip").value,
+			loading: $(".loading").value,
+			unloading: $(".unloading").value,
+			comments: $(".comments").value,
+			numberBrisboxers: $(".numberBrisboxers").value,
+			hours: $(".hours").value,
+			day: $(".day").value,
+			name: $(".name").value,
+			surname: $(".surname").value,
+			phone: $(".phone").value,
+			email: $(".email").value
+		});
 	}
 });
+
 
 Template.orderForm.onRendered(function() {
 	GoogleMaps.load();

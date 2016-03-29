@@ -2,24 +2,45 @@
     <div class="order-form container">
         <div class="row row-order-form">
             <div class="col s4 m4">
-                {{#autoForm collection="Order" id="insertOrderForm" type="insert"}}
-                        <div>
-                            <legend>{{_ "order-form_header"}}</legend>
-                            <div class="order-info">
+                <form class="order_form col s12" id="order-form" method="get" action="{{ pathFor 'order-checkout' }}">
+                        <div class="col s12 m12">
+                            <legend class="col s12 m12">{{_ "order-form_header"}}</legend>
+                            <div class="order-info col s12 m12">
                                 <div class="input-field col s12 m12">
-                                    {{> afQuickField name='address' class="validate"}}
+                                    <input id="address" name="address" required type="text" class="address">
+                                    <label for="address">{{_ "order-form_address"}}</label>
                                 </div>
+                                <script>
+                                    function getParameterByName(variable) {
+                                        var query = window.location.search.substring(1);
+                                        var vars = query.split("&");
+                                        for (var i=0; i < vars.length; i++) {
+                                            var pair = vars[i].split("=");
+                                            if(pair[0] == variable) {
+                                                if(pair[1] != ""){
+                                                    return pair[1];
+                                                }
+                                            }
+                                        }
+                                        return false;
+                                    }
+                                </script>
                                 <div class="input-field col s12 m12">
-                                    {{> afQuickField name='zip' class="validate"}}
+                                    <input id="zip" required  name="zip" type="text" class="zip">
+                                    <script type="text/javascript">document.getElementById("zip").innerHTML = getParameterByName("zip");</script>
+                                    <label for="zip">{{_ "order-form_zip"}}</label>
+                                </div>
+                                <div class="col s12 m12">
+                                    <label id="label_zip" for="zip">{{_ "order-form_typeMove"}}</label>
                                 </div>
                                 <div class="input-field col s6 m6">
                                     <div class="col s6 m6">
-                                        <input type="checkbox" class="filled-in" id="loading"/>
+                                        <input type="checkbox"  name="loading"  class="loading filled-in" id="loading"/>
                                         <label for="loading">{{_ "order-loading"}}</label>
                                     </div>
                                     <div class="col s6 m6">
-                                        <input type="checkbox" class="filled-in" id="unloading"/>
-                                         <label for="unloading">{{_ "order-unloading"}}</label>
+                                        <input type="checkbox"  name="unloading"  class="unloading filled-in" id="unloading"/>
+                                        <label for="unloading">{{_ "order-unloading"}}</label>
                                     </div>
                                 </div>
                                 <button id="buttom-next" class="btn btn-large orange darken-3 lighten-1-text form-more-info waves-effect waves-light col s4 m4" type="button">
@@ -27,44 +48,50 @@
                                 </button>
                             </div>
                         </div>
-                        <div id="more-info">
-                            <div class="order-info">
+                        <div class="col s12 m12" id="more-info">
+                            <div class="order-info col s12 m12">
                                 <legend id="legend">{{_ "order-more-info_header"}}</legend>
                                 <div class="input-field col s12 m12">
-                                    <div class="input-field col s12 m12 fix-textarea-margin">
-                                        {{> afQuickField type="textarea" name='comments' class="validate materialize-textarea"}}
-                                    </div>
+                                    <textarea type="text" rows="4" cols="50" class="comments col s12 m12"></textarea>
+                                    <label class="col s12 m12" for="comments">{{_ "order-form_comments"}}</label>
                                 </div>
                                 <div class="input-field col s12 m12">
-                                    {{> afQuickField name='numberBrisboxers' class="validate"}}
+                                    <input id="numberBrisboxers" required  name="numberBrisboxers" type="number" min="1" class="numberBrisboxers">
+                                    <label class="col s12 m12" for="numberBrisboxers">{{_ "order-form_numberBrisboxers"}}</label>
                                 </div>
-                                <div class="input-field col s6 m6">
-                                    {{> afQuickField name='hours' class="validate"}}
+                                <div class="input-field col s12 m12">
+                                    <input id="hours" type="number" required  name="hours" min="1" class="hours">
+                                    <label class="col s12 m12" for="hours">{{_ "order-form_hours"}}</label>
                                 </div>
-                                <div class="input-field col s6 m6">
-                                    {{> afQuickField name='day' class="datepicker"}}
+                                <div class="input-field col s12 m12">
+                                    <input id="day" type="text"  name="day" class="required datepicker">
+                                    <label class="col s12 m12" for="day">{{_ "order-form_day"}}</label>
                                 </div>
                             </div>
-                            <div class="order-info">
+                            <div class="order-info col s12 m12">
                                 <legend>{{_ "order-form-info_contact"}}</legend>
                                 <div class="input-field col s12 m12">
-                                    {{> afQuickField name='name' class="validate"}}
+                                    <input id="name" type="text" required class="name">
+                                    <label for="name">{{_ "order-form_name"}}</label>
                                 </div>
                                 <div class="input-field col s12 m12">
-                                    {{> afQuickField name='surname'  class="validate"}}
+                                    <input type="text" id="surname" required class="surname">
+                                    <label for="surname">{{_ "order-form_surname"}}</label>
                                 </div>
                                 <div class="input-field col s12 m12">
-                                    {{> afQuickField name='email' type='email' class="validate"}}
+                                    <input id="phone" type="tel"  name="phone" required class="phone">
+                                    <label for="phone">{{_ "order-form_phone"}}</label>
                                 </div>
                                 <div class="input-field col s12 m12">
-                                    {{> afQuickField name='phone' type='tel' class="validate"}}
+                                    <input  id="email" type="email" required class="email">
+                                    <label for="email">{{_ "order-form_email"}}</label>
                                 </div>
                             </div>
                             <div class="input-field col s12 center-align">
                                 <button type="submit" class="btn btn-primary waves-button-input orange"><i class="material-icons right">send</i>{{_ "order-submit"}}</button>
                             </div>
                         </div>
-                {{/autoForm}}
+                </form>
             </div>
 
             <div class="map-container col s8 m8">

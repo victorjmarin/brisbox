@@ -38,7 +38,7 @@ Template.login.helpers({
 })
 Template.login.onRendered(function(){
     $('#login-access').addClass('login-open');
-	$('#login-overlay').css('display', 'block');
+    $('#login-overlay').css('display', 'block');
 	$('#login-main').css('display', 'block');
 	$('#login-access').css('display', 'block');
 

@@ -6,6 +6,6 @@
     margin:inherit;
 }
 
-.stripe-form-field{
-    padding: 1px !important;
+#number-stripe, #cvc-stripe, #expMonth-stripe, #expYear-stripe, #amount-stripe{
+    font-size: 1.1rem;
 }
