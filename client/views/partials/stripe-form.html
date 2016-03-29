@@ -5,7 +5,12 @@
         <div id="stripe-access">
             <div class="row">
                 <form method="post" class="stripe-form col s12 m12" id="payment-form">
-                        <div class="input-field col s12" id="stripe-input-fields">
+                       <span class="payment-errors">
+                           {{#if stripe_error}}
+                               {{_ stripe_error}}
+                           {{/if}}
+                       </span>
+                    <div class="input-field col s12" id="stripe-input-fields">
                             <div id="info-stripe" class="input-field col s12 m12">
                                 <label id="number-stripe" for="number">{{_ "stripe_card_number"}}</label>
                                 <input class="validate" readonly="true" type="text" maxlength="20" data-stripe="number" id="number"/>
@@ -32,7 +37,7 @@
                                 <button name="submit" type="submit" class="btn waves-effect waves-light orange darken-3 white-text">{{_ "stripe_submit"}}
                                 </button>
                             </div>
-                        </div>
+                    </div>
                 </form>
             </div>
             <ul id="info-pay" class="collapsible" >

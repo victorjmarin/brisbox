@@ -92,12 +92,10 @@
   "submit": "Enviar",
   "account-info-text": "Compartiremos su nombre con los clientes y usaremos su dirección de correo electrónico y teléfono para mantener el contacto con usted.",
   "image-profile-text": "Asegúrese de elegir una foto profesional en la que esté solo. Esta foto será enviada a sus clientes, ¡asegúrese de elegir la mejor!",
-
   "login_title": "Entrar",
   "login_username": "Usuario",
   "login_password": "Contraseña",
   "login_error_credentials_wrong": "Usuario y/o contraseña erronea",
-
   "stripe_card_number" : "Número de Tarjeta",
   "stripe_cvc" : "CVC",
   "stripe_expiration_month": "Expiración MM",
@@ -105,6 +103,16 @@
   "stripe_amount" : "Cantidad",
   "stripe_submit" : "Pagar con Stripe",
 
+  "invalid_amount" : "La cantidad debe de superar los 50 céntimos",
+  "invalid_expiry_month" : "Mes de expiración inválido",
+  "invalid_expiry_year" : "Año de expiracón inválido",
+  "invalid_number" : "Número de tarjeta de crédito inválido",
+  "invalid_cvc" : "El CVC no es válido",
+  "incorrect_number" : "El número de la tarjeta de crédito es incorrecto",
+  "expired_card" : "La tarjeta de crédito ha expirado",
+  "incorrect_cvc" : "El CVC es incorrecto",
+  "card_declined" : "La tarjeta de crédito ha sido denegada",
+  "processing_error" : "Se ha producido un error al procesar la tarjeta",
   "order-form_header": "¿Necesitas hacer un pedido?",
   "order-form_number": "Código postal...",
   "order-form_help": "¿Cómo podemos ayudarte?",
@@ -113,6 +121,7 @@
   "order-form_more-info-hour": "¿Cuántas horas en total vas a necesitar?",
   "order-form_contact-info": "Información de contacto",
   "order-form-book": "1€",
+
   "order-form_name": "Nombre",
   "order-form_surname": "Apellidos",
   "order-form_phone": "Teléfono",
@@ -128,6 +137,21 @@
   "order-unloading": "Descarga",
   "order-form_day": "Día",
 
+  "brisboxer_username": "Usuario",
+  "brisboxer_email": "Correo electrónico",
+  "brisboxer_verified": "Verificado",
+  "brisboxer_accepted": "Aceptado",
+  "contact_us_header": "Contacto",
+  "contact_us_body": "El equipo de brisbox está formado por alumnos de la universidad de Sevilla.",
+  "contact_us_mailto": "¡Envíenos un email AHORA!",
+  "contact_us_form": "Si no dispone de un cliente de correo, no se preocupe, también puede completar el siguiente formulario y nos pondremos en contacto lo mas rápido posible",
+  "thanks_Email": "Correo enviado.",
+  "thanks_Email_body": "Gracias por enviarnos un email. Recibirás una respuesta lo antes posible.",
+  "contact_us_form_name": "Nombre: ",
+  "contact_us_form_email": "Email: ",
+  "contact_us_form_subject": "Asunto: ",
+  "contact_us_form_content": "Contenido: ",
+  "contact_us_form_send": "Enviar",
 
   "schemas": {
     "inscription": {
@@ -163,71 +187,72 @@
       },
       "wrongPassword": "las constraseñas no coinciden"
     },
-    "simpleschema": {
-      "messages": {
-        "regEx phone": "Teléfono invalido",
-        "wrongPassword": "Las contraseñas no coinciden",
-        "required": "[label] es obligatorio",
-        "minString": "[label] tiene que tener por lo menos [min] caracteres",
-        "maxString": "[label] no puede tener mas de [max] caracteres",
-        "minNumber": "[label] tiene que ser por lo menos [min]",
-        "maxNumber": "[label] no puede exceder [max]",
-        "minNumberExclusive": "[label] tiene que ser mas grande que [min]",
-        "maxNumberExclusive": "[label] tiene que ser mas chico que [max]",
-        "minDate": "[label] tiene que ser antes de [min]",
-        "maxDate": "[label] no puede ser despues de [max]",
-        "badDate": "[label] no es una fecha válida",
-        "minCount": "Tiene que especificar por lo menos [minCount] valores",
-        "maxCount": "No puede especificar mas de [maxCount] valores",
-        "noDecimal": "[label] tiene que ser un numero entero",
-        "notAllowed": "[value] no es un valor permitido",
-        "expectedString": "[label] tiene que ser una cadena de caracteres",
-        "expectedNumber": "[label] tiene que ser un numero",
-        "expectedBoolean": "[label] tiene que ser de tipo 'si/no'",
-        "expectedArray": "[label] tiene que ser un vector",
-        "expectedObject": "[label] tiene que ser un objeto",
-        "expectedConstructor": "[label] tiene que ser de tipo [type]",
-        "keyNotInSchema": "[key] no esta permitido por el esquema",
-        "regEx": {
-          "0": {
-            "msg": "[label] falló la validación por Expresión Regular (Regex)"
-          },
-          "1": {
-            "exp": "SimpleSchema.RegEx.Email",
-            "msg": "[label] tiene que ser una direccion de correo electronico válida"
-          },
-          "2": {
-            "exp": "SimpleSchema.RegEx.WeakEmail",
-            "msg": "[label] tiene que ser una direccion de correo electronico válida"
-          },
-          "3": {
-            "exp": "SimpleSchema.RegEx.Domain",
-            "msg": "[label] tiene que ser un nombre de dominio válido"
-          },
-          "4": {
-            "exp": "SimpleSchema.RegEx.WeakDomain",
-            "msg": "[label] tiene que ser un nombre de dominio válido"
-          },
-          "5": {
-            "exp": "SimpleSchema.RegEx.IP",
-            "msg": "[label] tiene que ser una dirreción de IPv4 o IPv6 válida"
-          },
-          "6": {
-            "exp": "SimpleSchema.RegEx.IPv4",
-            "msg": "[label] tiene que ser una dirreción de IPv4 válida"
-          },
-          "7": {
-            "exp": "SimpleSchema.RegEx.IPv6",
-            "msg": "[label] tiene que ser una dirreción de IPv6 válida"
-          },
-          "8": {
-            "exp": "SimpleSchema.RegEx.Url",
-            "msg": "[label] tiene que ser una URL válida"
-          },
-          "9": {
-            "exp": "SimpleSchema.RegEx.Id",
-            "msg": "[label] tiene que ser un ID alfanumerico"
-          }
+
+  "simpleschema": {
+    "messages": {
+      "regEx phone": "Teléfono invalido",
+      "wrongPassword": "Las contraseñas no coinciden",
+      "required": "[label] es obligatorio",
+      "minString": "[label] tiene que tener por lo menos [min] caracteres",
+      "maxString": "[label] no puede tener mas de [max] caracteres",
+      "minNumber": "[label] tiene que ser por lo menos [min]",
+      "maxNumber": "[label] no puede exceder [max]",
+      "minNumberExclusive": "[label] tiene que ser mas grande que [min]",
+      "maxNumberExclusive": "[label] tiene que ser mas chico que [max]",
+      "minDate": "[label] tiene que ser antes de [min]",
+      "maxDate": "[label] no puede ser despues de [max]",
+      "badDate": "[label] no es una fecha válida",
+      "minCount": "Tiene que especificar por lo menos [minCount] valores",
+      "maxCount": "No puede especificar mas de [maxCount] valores",
+      "noDecimal": "[label] tiene que ser un numero entero",
+      "notAllowed": "[value] no es un valor permitido",
+      "expectedString": "[label] tiene que ser una cadena de caracteres",
+      "expectedNumber": "[label] tiene que ser un numero",
+      "expectedBoolean": "[label] tiene que ser de tipo 'si/no'",
+      "expectedArray": "[label] tiene que ser un vector",
+      "expectedObject": "[label] tiene que ser un objeto",
+      "expectedConstructor": "[label] tiene que ser de tipo [type]",
+      "keyNotInSchema": "[key] no esta permitido por el esquema",
+      "regEx": {
+        "0": {
+          "msg": "[label] falló la validación por Expresión Regular (Regex)"
+        },
+        "1": {
+          "exp": "SimpleSchema.RegEx.Email",
+          "msg": "[label] tiene que ser una direccion de correo electronico válida"
+        },
+        "2": {
+          "exp": "SimpleSchema.RegEx.WeakEmail",
+          "msg": "[label] tiene que ser una direccion de correo electronico válida"
+        },
+        "3": {
+          "exp": "SimpleSchema.RegEx.Domain",
+          "msg": "[label] tiene que ser un nombre de dominio válido"
+        },
+        "4": {
+          "exp": "SimpleSchema.RegEx.WeakDomain",
+          "msg": "[label] tiene que ser un nombre de dominio válido"
+        },
+        "5": {
+          "exp": "SimpleSchema.RegEx.IP",
+          "msg": "[label] tiene que ser una dirreción de IPv4 o IPv6 válida"
+        },
+        "6": {
+          "exp": "SimpleSchema.RegEx.IPv4",
+          "msg": "[label] tiene que ser una dirreción de IPv4 válida"
+        },
+        "7": {
+          "exp": "SimpleSchema.RegEx.IPv6",
+          "msg": "[label] tiene que ser una dirreción de IPv6 válida"
+        },
+        "8": {
+          "exp": "SimpleSchema.RegEx.Url",
+          "msg": "[label] tiene que ser una URL válida"
+        },
+        "9": {
+          "exp": "SimpleSchema.RegEx.Id",
+          "msg": "[label] tiene que ser un ID alfanumerico"
+
         }
       }
     }

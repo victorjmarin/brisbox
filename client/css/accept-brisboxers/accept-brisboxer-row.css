@@ -1,0 +1,13 @@
+.verified-div{
+	width: 30px;
+	height: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+
+.verified-i{
+	vertical-align: middle;
+	margin-top: 3px;
+}
