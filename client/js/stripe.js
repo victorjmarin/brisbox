@@ -31,6 +31,9 @@ Template.stripe_form.events({
         expYr = $('#exp-year').val();
         amountForm = $('#amount').val();
 
+        if(!amountForm){
+            amountForm = Meteor.settings.public.reserveAmount;
+        }
         Session.set("stripe_error", null);
 
         Stripe.card.createToken({

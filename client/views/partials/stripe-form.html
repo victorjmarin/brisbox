@@ -29,8 +29,8 @@
                                         <label id="expYear-stripe" for="exp-year">{{_ "stripe_expiration_year"}}</label>
                                     </div>
                                 </div>
-                                <div id="info-stripe" class="input-field col s12 m12">
-                                    <input  type="text" value="5" readonly="true" data-stripe="amount" id="amount" {{disabled}}/>
+                                <div id="info-stripe" class="input-field col s12 m12" style="display:none">
+                                    <input  type="text" readonly="true" data-stripe="amount" id="amount" {{disabled}}/>
                                     <label class="active" id="amount-stripe" for="amount">{{_ "stripe_amount"}}</label>
                                 </div>
                                 <div id="info-stripe" class="input-field col s12 center-align">

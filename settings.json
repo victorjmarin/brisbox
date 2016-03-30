@@ -3,7 +3,8 @@
     "stripe": {
       "testPublishableKey": "pk_test_xxxxxxxxxxxxxxxxxxxxxxxx",
       "livePublishableKey": "pk_live_xxxxxxxxxxxxxxxxxxxxxxxx"
-    }
+    },
+    "reserveAmount": 500
   },
   "private": {
     "stripe": {
