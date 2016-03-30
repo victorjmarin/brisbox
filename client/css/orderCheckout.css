@@ -37,23 +37,16 @@
     color: #2E3133;
 }
 
-#form-stripe{
-    background: url(lgnoverlyback.png) repeat,-webkit-linear-gradient(80deg, #612301, #000000);
-    background: url(lgnoverlyback.png) repeat,-o-linear-gradient(80deg, #612301, #000000);
-    background: url(lgnoverlyback.png) repeat,linear-gradient(170deg, #612301, #000000);
-    opacity: 0.9;
-    z-index: 998;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    will-change: opacity;
-    padding-bottom:8.65%;
+#prueba{
+    z-index: 997;
+    background-color:#c2c1c0;
+    visibitity: visible;
+    opacity: 0.8;
 }
 
-#info-pay{
-    display: none;
-}
-
-.row-order-checkout{
-    margin-bottom:0px !important;
+#prueba2{
+    z-index: 997;
+    background-color:#c2c1c0;
+    visibitity: visible;
+    opacity: 0.8;
 }

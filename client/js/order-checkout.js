@@ -13,12 +13,11 @@ Template.orderCheckout.events({
         $('#budget').css('right','0');
         $('#budget').css('background-color','rgba(0, 0, 0, 0.5)');
         $('#budget').css('will-change','opacity');
-        $('#form-stripe').css('background-color','white');
         $('#form-stripe').css('transition', '2s');
-        $('#form-stripe').css('background','none');
-        $('#info-pay').css('display','block');
-        $('#info-pay').css('transition', '2s');
-        $('#form-stripe').css('padding-bottom', '0px');
+        $('#prueba').css('background-color','white');
+        $('#prueba').css('transition', '2s');
+        $('#prueba').css('background','none');
+        $('#prueba').css('padding-bottom', '0px');
         $('#number').css(readonly,false);
         $('#cvc').css(readonly,false);
         $('#exp-month').css('readonly','false');

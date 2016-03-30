@@ -99,6 +99,10 @@
   "order-submit": "Submit",
   "order-choose_option": "Choose your option",
   "order-checkout_header": "Final budget",
+  "order-checkout_totalMoney": "Estimated Total",
+  "order-checkout_address": "Due Now",
+  "order-checkout_hour": "Hour",
+  "order-checkout_day": "Day",
   "order-checkout_stripe": "Data bank",
   "info_money": "To order will be charged an amount equal to 5 €. This amount will be deducted later the total cost of the service.",
   "info_book": "Cost 5 € / order",
@@ -113,8 +117,6 @@
   "login_username": "Username",
   "login_password": "Password",
   "login_error_credentials_wrong": "Wrong username or password ",
-
-  "order-form_address": "Address...",
   "order-form_number": "ZIP code...",
 
   "order-form_help": "How can we help?",
@@ -157,7 +159,6 @@
   "contact_us_form_subject": "Subject: ",
   "contact_us_form_content": "Content: ",
   "contact_us_form_send": "Send",
-
   "schemas": {
     "inscription": {
       "name": {

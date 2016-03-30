@@ -1,7 +1,7 @@
 <template name="orderCheckout">
         <div class="col s12 m12 row row-order-checkout">
-            <div id="budget" class="col s6 m6">
-                    <div class="col s12 m12">
+            <div id="budget" class="row col s6 m6">
+                    <div class="col s12 m6">
                         <legend id="legend-checkout">{{_ "order-checkout_header"}}</legend>
                         <div class="order-info col s12 m12">
                             <script>
@@ -36,7 +36,7 @@
                             </script>
                             <div id="info-budget" class="col s12 m12">
                                 <i class="small material-icons col s2 m2">query_builder</i>
-                                <label id="text-budget" class="col s4 m4" for="address">{{_ "order-form_day"}}</label>
+                                <label id="text-budget" class="col s4 m4" for="day">{{_ "order-form_day"}}</label>
                                 <div class="col s6 m6" id="day-budget" >
                                     <script type="text/javascript">document.getElementById("day-budget").innerHTML = getParameterByName("day");</script>
                                 </div>
@@ -50,14 +50,14 @@
                             </div>
                             <div id="info-budget" class="col s12 m12">
                                 <i class="small material-icons col s2 m2">call</i>
-                                <label  id="text-budget" class="col s4 m4" for="address">{{_ "order-form_phone"}}</label>
+                                <label  id="text-budget" class="col s4 m4" for="phone">{{_ "order-form_phone"}}</label>
                                 <div class="col s6 m6" id="phone-budget">
                                     <script type="text/javascript">document.getElementById("phone-budget").innerHTML = getParameterByName("phone");</script>
                                 </div>
                             </div>
                             <div id="info-budget" class="col s12 m12">
                                 <i class="small material-icons col s2 m2">shopping_cart</i>
-                                <label  id="text-budget" class="col s4 m4" for="address">{{_ "order-form_cost"}}</label>
+                                <label  id="text-budget" class="col s4 m4" for="cost">{{_ "order-form_cost"}}</label>
                                 <div class="col s6 m6" id="cost-budget">
                                     <script type="text/javascript">document.getElementById("cost-budget").innerHTML = getCost();</script>
                                 </div>
@@ -72,9 +72,10 @@
                     </div>
             </div>
 
-            <div id="form-stripe" class="stripeForm col s6 m6">
-                {{>stripe_form}}
-            </div>
+                <div id="form-stripe" class="stripeForm col s12 m6">
+                    {{>stripe_form}}
+                </div>
+
         </div>
 
 </template>

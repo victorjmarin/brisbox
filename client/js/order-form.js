@@ -8,23 +8,22 @@ Template.orderForm.events({
 			more_info.slideUp("fast");
 		}
 	},
-	'submit .order_form' : function (event) {
-		e.preventDefault();
-		var orderForm =
-			({
-			address: $(".address").value,
-			zip: $(".zip").value,
-			loading: $(".loading").value,
-			unloading: $(".unloading").value,
-			comments: $(".comments").value,
-			numberBrisboxers: $(".numberBrisboxers").value,
-			hours: $(".hours").value,
-			day: $(".day").value,
-			name: $(".name").value,
-			surname: $(".surname").value,
-			phone: $(".phone").value,
-			email: $(".email").value
+	'submit .order_form ' : function (event) {
+		var orderForm = ({
+			address: document.getElementById("address").value,
+			zip: document.getElementById("zip").value,
+			loading: document.getElementById("loading").value,
+			unloading: document.getElementById("unloading").value,
+			comments: document.getElementById("comments").value,
+			numberBrisboxers: document.getElementById("numberBrisboxers").value,
+			hours: document.getElementById("hours").value,
+			day: document.getElementById("day").value,
+			name: document.getElementById("name").value,
+			surname: document.getElementById("surname").value,
+			phone: document.getElementById("phone").value,
+			email: document.getElementById("email").value
 		});
+		Meteor.call("saveOrder", orderForm);
 	}
 });
 

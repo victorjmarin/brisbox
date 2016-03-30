@@ -1,7 +1,7 @@
 <template name="orderForm">
     <div class="order-form container">
-        <div class="row row-order-form">
-            <div class="col s4 m4">
+        <div class="row col s12 m12 row-order-form">
+            <div class="col s12 m6">
                 <form class="order_form col s12" id="order-form" method="get" action="{{ pathFor 'order-checkout' }}">
                         <div class="col s12 m12">
                             <legend class="col s12 m12">{{_ "order-form_header"}}</legend>
@@ -26,20 +26,37 @@
                                     }
                                 </script>
                                 <div class="input-field col s12 m12">
-                                    <input id="zip" required  name="zip" type="text" class="zip">
-                                    <script type="text/javascript">document.getElementById("zip").innerHTML = getParameterByName("zip");</script>
-                                    <label for="zip">{{_ "order-form_zip"}}</label>
+                                    <input id="zip" required value="" name="zip" type="text" class="zip">
+                                    <label id="label-zip" for="zip">{{_ "order-form_zip"}}</label>
                                 </div>
+                                <script>
+                                    function getZIP(){
+                                        var query = window.location.search.substring(1);
+                                        var isValue = false;
+                                        var vars = query.split("&");
+                                        var resultZIP = "";
+                                        for (var i = 0; i<vars.length; i++){
+                                            var pair = vars[i].split("=");
+                                            if(pair[1] != ""){
+                                                resultZIP = pair[1];
+                                                isValue = true;
+                                            }
+                                        }
+                                        return resultZIP;
+                                    }
+                                    document.getElementById("zip").value = getZIP();
+                                    document.getElementById("label-zip").className = "active";
+                                </script>
                                 <div class="col s12 m12">
-                                    <label id="label_zip" for="zip">{{_ "order-form_typeMove"}}</label>
+                                    <label id="label_typeMove" for="typeMove">{{_ "order-form_typeMove"}}</label>
                                 </div>
                                 <div class="input-field col s6 m6">
                                     <div class="col s6 m6">
-                                        <input type="checkbox"  name="loading"  class="loading filled-in" id="loading"/>
+                                        <input type="checkbox"  id="loading" name="loading"  class="loading filled-in"/>
                                         <label for="loading">{{_ "order-loading"}}</label>
                                     </div>
                                     <div class="col s6 m6">
-                                        <input type="checkbox"  name="unloading"  class="unloading filled-in" id="unloading"/>
+                                        <input type="checkbox"  id="unloading" name="unloading"  class="unloading filled-in"/>
                                         <label for="unloading">{{_ "order-unloading"}}</label>
                                     </div>
                                 </div>
@@ -52,39 +69,39 @@
                             <div class="order-info col s12 m12">
                                 <legend id="legend">{{_ "order-more-info_header"}}</legend>
                                 <div class="input-field col s12 m12">
-                                    <textarea type="text" rows="4" cols="50" class="comments col s12 m12"></textarea>
-                                    <label class="col s12 m12" for="comments">{{_ "order-form_comments"}}</label>
+                                    <textarea type="text" id="comments" rows="4" cols="50" class="comments materialize-textarea col s12 m12"></textarea>
+                                    <label id="label_comments" class="col s12 m12" for="comments">{{_ "order-form_comments"}}</label>
                                 </div>
                                 <div class="input-field col s12 m12">
                                     <input id="numberBrisboxers" required  name="numberBrisboxers" type="number" min="1" class="numberBrisboxers">
-                                    <label class="col s12 m12" for="numberBrisboxers">{{_ "order-form_numberBrisboxers"}}</label>
+                                    <label id="label_numberBrisboxers" class="col s12 m12" for="numberBrisboxers">{{_ "order-form_numberBrisboxers"}}</label>
                                 </div>
                                 <div class="input-field col s12 m12">
                                     <input id="hours" type="number" required  name="hours" min="1" class="hours">
-                                    <label class="col s12 m12" for="hours">{{_ "order-form_hours"}}</label>
+                                    <label id="label_hours" class="col s12 m12" for="hours">{{_ "order-form_hours"}}</label>
                                 </div>
                                 <div class="input-field col s12 m12">
                                     <input id="day" type="text"  name="day" class="required datepicker">
-                                    <label class="col s12 m12" for="day">{{_ "order-form_day"}}</label>
+                                    <label id="label_day" class="col s12 m12" for="day">{{_ "order-form_day"}}</label>
                                 </div>
                             </div>
                             <div class="order-info col s12 m12">
                                 <legend>{{_ "order-form-info_contact"}}</legend>
                                 <div class="input-field col s12 m12">
                                     <input id="name" type="text" required class="name">
-                                    <label for="name">{{_ "order-form_name"}}</label>
+                                    <label id="label_name" for="name">{{_ "order-form_name"}}</label>
                                 </div>
                                 <div class="input-field col s12 m12">
                                     <input type="text" id="surname" required class="surname">
-                                    <label for="surname">{{_ "order-form_surname"}}</label>
+                                    <label id="label_surname" for="surname">{{_ "order-form_surname"}}</label>
                                 </div>
                                 <div class="input-field col s12 m12">
                                     <input id="phone" type="tel"  name="phone" required class="phone">
-                                    <label for="phone">{{_ "order-form_phone"}}</label>
+                                    <label id="label_phone" for="phone">{{_ "order-form_phone"}}</label>
                                 </div>
                                 <div class="input-field col s12 m12">
                                     <input  id="email" type="email" required class="email">
-                                    <label for="email">{{_ "order-form_email"}}</label>
+                                    <label id="label_email" for="email">{{_ "order-form_email"}}</label>
                                 </div>
                             </div>
                             <div class="input-field col s12 center-align">
@@ -94,7 +111,7 @@
                 </form>
             </div>
 
-            <div class="map-container col s8 m8">
+            <div class="map-container col s12 m6">
                 {{> googleMap name="exampleMap" options=exampleMapOptions}}
             </div>
         </div>

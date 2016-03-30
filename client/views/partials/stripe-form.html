@@ -1,42 +1,63 @@
 <template name="stripe_form">
-    <div id="stripe"></div>
     <div id="stripe-main" class="container">
         <legend id="legend-stripe">{{_ "order-checkout_stripe"}}</legend>
         <div id="stripe-access">
-            <div class="row">
-                <form method="post" class="stripe-form col s12 m12" id="payment-form">
+            <div class="row row-stripe-form">
+                <form class="stripe-form col s12 m12" id="payment-form">
                        <span class="payment-errors">
                            {{#if stripe_error}}
                                {{_ stripe_error}}
                            {{/if}}
                        </span>
-                    <div class="input-field col s12" id="stripe-input-fields">
-                            <div id="info-stripe" class="input-field col s12 m12">
-                                <label id="number-stripe" for="number">{{_ "stripe_card_number"}}</label>
-                                <input class="validate" readonly="true" type="text" maxlength="20" data-stripe="number" id="number"/>
-                            </div>
-                            <div id="info-stripe" class="input-field col s12 m12">
-                                <label id="cvc-stripe" for="cvc">{{_ "stripe_cvc"}}</label>
-                                <input class="validate" readonly="true" type="text" maxlength="4" data-stripe="cvc" id="cvc"/>
-                            </div>
-                            <div id="info-stripe" class="input-field col s12 m12">
-                                <div class="input-field col s6 m6">
-                                    <label id="expMonth-stripe" for="exp-month">{{_ "stripe_expiration_month"}}</label>
-                                    <input class="validate" readonly="true" type="text" maxlength="4" data-stripe="exp-month" id="exp-month"/>
+                    <div clas="row">
+                        <div class="input-field col s12" id="stripe-input-fields">
+                                <div id="info-stripe" class="input-field col s12 m12">
+                                    <input class="validate" required type="text" maxlength="20" data-stripe="number" id="number"/>
+                                    <label id="number-stripe" for="number">{{_ "stripe_card_number"}}</label>
                                 </div>
-                                <div class="input-field col s6 m6">
-                                    <label id="expYear-stripe" for="exp-year">{{_ "stripe_expiration_year"}}</label>
-                                    <input class="validate" readonly="true" type="text" maxlength="4" data-stripe="exp-year" id="exp-year"/>
+                                <div id="info-stripe" class="input-field col s12 m12">
+                                    <input class="validate" required type="text" maxlength="3" data-stripe="cvc" id="cvc"/>
+                                    <label id="cvc-stripe" for="cvc">{{_ "stripe_cvc"}}</label>
                                 </div>
-                            </div>
-                            <div id="info-stripe" class="input-field col s12 m12">
-                                <label id="amount-stripe" for="amount">{{_ "stripe_amount"}}</label>
-                                <input class="validate" readonly="true" type="text" maxlength="4" data-stripe="amount" id="amount"/>
-                            </div>
-                            <div id="info-stripe" class="input-field col s12 center-align">
-                                <button name="submit" type="submit" class="btn waves-effect waves-light orange darken-3 white-text">{{_ "stripe_submit"}}
-                                </button>
-                            </div>
+                                <div id="info-stripe" class="input-field col s12 m12">
+                                    <div class="input-field col s6 m6">
+                                        <input class="validate" required type="number" min="1" max="12" maxlength="2" data-stripe="exp-month" id="exp-month"/>
+                                        <label id="expMonth-stripe" for="exp-month">{{_ "stripe_expiration_month"}}</label>
+                                    </div>
+                                    <div class="input-field col s6 m6">
+                                        <input class="validate" required type="number" min="2016" max="2030" maxlength="4" data-stripe="exp-year" id="exp-year"/>
+                                        <label id="expYear-stripe" for="exp-year">{{_ "stripe_expiration_year"}}</label>
+                                    </div>
+                                </div>
+                                <div id="info-stripe" class="input-field col s12 m12">
+                                    <input  type="text" value="" readonly="true" data-stripe="amount" id="amount"/>
+                                    <label class="active" id="amount-stripe" for="amount">{{_ "stripe_amount"}}</label>
+                                </div>
+                            <script>
+                                function getCost(){
+                                    var query = window.location.search.substring(1);
+                                    var vars = query.split("&");
+                                    var hours = 1;
+                                    var numberBrisboxers = 1;
+                                    for (var i = 0; i<vars.length; i++){
+                                        var pair = vars[i].split("=");
+                                        if(pair[0] == "hours"){
+                                            hours = parseInt(pair[1]);
+                                        }
+                                        if(pair[0] == "numberBrisboxers"){
+                                            numberBrisboxers = parseInt(pair[1]);
+                                        }
+                                    }
+                                    return hours*numberBrisboxers*20+5+" €";
+                                }
+
+                                document.getElementById("amount").value = getCost();
+                            </script>
+                                <div id="info-stripe" class="input-field col s12 center-align">
+                                    <button name="submit" type="submit" class="btn waves-effect waves-light orange darken-3 white-text">{{_ "stripe_submit"}}
+                                    </button>
+                                </div>
+                        </div>
                     </div>
                 </form>
             </div>

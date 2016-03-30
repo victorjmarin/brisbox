@@ -5,7 +5,3 @@
 #legend-stripe{
     margin:inherit;
 }
-
-#number-stripe, #cvc-stripe, #expMonth-stripe, #expYear-stripe, #amount-stripe{
-    font-size: 1.1rem;
-}

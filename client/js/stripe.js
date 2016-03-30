@@ -6,10 +6,6 @@ Template.stripe_form.onRendered(function () {
     Stripe.setPublishableKey(stripeKey);
 
     Session.set("stripe_error", null);
-
-    $('.collapsible').collapsible({
-        accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-    });
 });
 
 Template.stripe_form.helpers({
@@ -52,6 +48,13 @@ Template.stripe_form.events({
                     }
                 });
             }
+        });
+    },
+    'click #info-pay ':function(e){
+        $(document).ready(function(){
+            $('.collapsible').collapsible({
+                accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+            });
         });
     }
 });

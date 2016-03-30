@@ -3,7 +3,7 @@
 }
 
 .row-order-form{
-    margin-right: -300px !important;
+    margin-right: -100px !important;
 }
 
 #form-address-zip{
@@ -33,9 +33,8 @@
 }
 
 .map-container {
-    width: 800px;
-    max-width: 100%;
-    height: 500px;
+    width: 100%;
+    height: 800px;
 }
 
 #order-type-label{
@@ -87,9 +86,13 @@
 .picker__day.picker__day--infocus.picker__day--today.picker__day--selected.picker__day--highlighted { background-color: #ff9800; }
 .picker__day.picker__day--today { color: #f57c00; }
 
-#label_zip{
+#label_typeMove{
     font-size:1rem;
     margin-left:-10px;
+}
+
+#label_day{
+    margin-left: 2px;
 }
 
 #day{
