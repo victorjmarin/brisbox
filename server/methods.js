@@ -50,6 +50,8 @@ Meteor.methods({
     'createBrisboxer': function(doc) {
 
         check(doc, SchemaInscription);
+
+        throw new Meteor.Error()
         var user = Accounts.createUser( {username: doc.username, password: doc.password, email: doc.email,
             profile: {
                 name: doc.name,
