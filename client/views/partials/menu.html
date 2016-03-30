@@ -39,9 +39,10 @@
 </template>
 
 <template name="links">
-
     <li><a class="transparent text-shadow uppercase" href="{{ pathFor 'AboutUs' }}">{{_ "menu_about"}}</a></li>
     <li><a class="transparent text-shadow" href="{{ pathFor 'Faq' }}">{{_ "menu_faq"}}</a></li>
+    {{#unless currentUser}}
     <li><a class="btn waves-effect waves-light orange darken-3 white-text caret" style="padding: 0 15px;text-transform:none;"
            href="{{ pathFor 'join-us' }}">{{_ "menu_apply"}}</a></li>
+    {{/unless}}
 </template>

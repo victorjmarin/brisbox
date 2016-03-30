@@ -53,7 +53,7 @@
   "privacy_one": "Visiting this website does not imply that the user is obliged to provide any information.",
   "privacy_two": "In the event that the user provides any personal information , the data collected on this website will be processed fairly and lawfully at all times subject to the principles and rights enshrined in Law 15/1999 of 13 December, Protection of Personal data (LOPD ) and other regulations.",
   "privacy_header_one": "People under 18",
-  "privacy_three": "Our site is not intended for persons under 18 years. We will not collect personal information from anyone under this age.",
+  "privacy_three": "Our site is not intended for people under 18 years. We will not collect personal information from anyone under this age.",
   "privacy_four": "If you are under 18 , you can perform by an adult performing the whole process through the web.",
   "privacy_header_two": "Information to users",
   "privacy_five": "Section 'Orders'",
@@ -147,7 +147,7 @@
   "brisboxer_username": "Username",
   "brisboxer_email": "Email address",
   "brisboxer_verified": "Verified",
-  "brisboxer_accepted": "Accepted",
+  "brisboxer_accepted": "Active",
   "contact_us_header": "Contact Us",
   "contact_us_body": "Brisbox Team is composed by few alums of Sevilla's University.",
   "contact_us_mailto": "Send us an email!",
@@ -191,7 +191,7 @@
         "label": "Your School's Email"
       },
       "howHearAboutUs": {
-        "label": "How did you hear about BrisBox?"
+        "label": "How did you hear about Brisbox?"
       },
       "image": {
         "label": "Image profile"
