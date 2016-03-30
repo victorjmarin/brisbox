@@ -15,6 +15,11 @@
 	            
 		        {{#if isInRole 'brisboxer'}}
 					<!-- brisboxer's routes -->
+					{{#if brisboxerAccepted}}
+						<a id="accept-brisboxers" class="btn-floating btn-large green" href="{{ pathFor 'list-all-orders'}}">
+			         		<i class="material-icons">search</i>
+			    		</a>
+					{{/if}}
 				{{/if}}
 
 				{{#if isInRole 'admin'}}

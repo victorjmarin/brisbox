@@ -5,6 +5,11 @@ Meteor.startup(function () {
         loadAdmins();
         loadBrisboxers();
     }
+    if(Order.find().count() === 0){
+        loadOrders();
+    }
+
+
 });
 
 
@@ -145,4 +150,66 @@ function loadBrisboxers(){
                 accepted: true,
             }
         });
+}
+
+function loadOrders(){
+    var brisboxer1 = Meteor.users.findOne({username: 'brisboxer1'});
+    var brisboxer2 = Meteor.users.findOne({username: 'brisboxer2'});
+    var brisboxer3 = Meteor.users.findOne({username: 'brisboxer3'});
+    var brisboxer4 = Meteor.users.findOne({username: 'brisboxer4'});
+    var brisboxer5 = Meteor.users.findOne({username: 'brisboxer5'});
+
+
+    var order1_id = Order.insert({
+        name: 'nameTest',
+        surname: 'surnameTest',
+        phone: '000000000',
+        email: 'email1@gmail.com',
+        numberBrisboxers: 2,
+        zip: '41900',
+        address: 'Test1',
+        hours: 2,
+        comments: 'comments1',
+        typeMove: 'loading',
+        brisboxers: [{_id: brisboxer2._id, username: brisboxer2.username}]
+    });
+    var order2_id = Order.insert({
+        name: 'nameTest',
+        surname: 'surnameTest',
+        phone: '333333333',
+        email: 'email2@gmail.com',
+        numberBrisboxers: 3,
+        zip: '41900',
+        address: 'Test2',
+        hours: 1,
+        comments: 'comments2',
+        typeMove: 'loading',
+        brisboxers: [{_id: brisboxer2._id, username: brisboxer2.username}, {_id: brisboxer3._id, username: brisboxer3.username}]
+    });
+    var order3_id = Order.insert({
+        name: 'nameTest',
+        surname: 'surnameTest',
+        phone: '111111111',
+        email: 'email3@gmail.com',
+        numberBrisboxers: 1,
+        zip: '41900',
+        address: 'Test3',
+        hours: 2,
+        comments: 'comments3',
+        typeMove: 'unloading',
+        brisboxers: [{_id: brisboxer1._id, username: brisboxer1.username}]
+    });
+     var order4_id = Order.insert({
+        name: 'nameTest',
+        surname: 'surnameTest',
+        phone: '222222222',
+        email: 'email4@gmail.com',
+        numberBrisboxers: 4,
+        zip: '41900',
+        address: 'Test3',
+        hours: 1,
+        comments: 'comments4',
+        typeMove: 'unloading',
+        brisboxers: [{_id: brisboxer2._id, username: brisboxer2.username}, {_id: brisboxer3._id, username: brisboxer3.username}, {_id: brisboxer4._id, username: brisboxer4.username}, {_id: brisboxer5._id, username: brisboxer5.username}]
+    });
 }

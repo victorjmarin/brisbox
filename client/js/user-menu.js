@@ -10,3 +10,13 @@ Template.userMenu.events({
 		}, 180); 
     }
 });
+
+Template.userMenu.helpers({
+	brisboxerAccepted: function(){
+		var user = Meteor.user();
+		if(!user || !Roles.userIsInRole(user, ['brisboxer']) || !user.accepted){
+			return false;
+		}
+		return user.accepted;
+	}
+});

@@ -1,0 +1,34 @@
+#lao-main{
+	width: 100%;
+	height: 100%;
+	padding: 1%;
+	
+	color: gray;
+}
+
+.flatTable{
+	width:100%;
+	min-width:500px;
+  	border-collapse:collapse;  
+  	color:#6b6b6b;
+}
+
+.flatTable tr{
+    height:50px;
+    background:#f6f3f7;
+    border-bottom:rgba(0,0,0,.05) 1px solid;
+ }
+  
+.flatTable td{    
+    box-sizing:border-box;
+    padding-left:30px;
+}
+
+.flatTable .headingTr{
+    height:30px;
+    background:#ffb74d;
+    color: #eeeeee; 
+    font-size:8pt;
+    border:0px solid;
+  	font-weight:bold;
+}

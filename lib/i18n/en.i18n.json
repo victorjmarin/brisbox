@@ -150,8 +150,13 @@
   "contact_us_form_subject": "Subject: ",
   "contact_us_form_content": "Content: ",
   "contact_us_form_send": "Send",
+  "terms": "Terms and Conditions",
+
   "schemas": {
     "inscription": {
+      "username": {
+        "label": "Username"
+      },
       "name": {
         "label": "Name"
       },
@@ -182,7 +187,11 @@
       "image": {
         "label": "Image profile"
       },
-      "wrongPassword": "Passwords mismatch"
+      "checkTerms": {
+        "label": "Accept"
+      },
+      "wrongPassword": "Passwords mismatch",
+      "termsRequired": "Terms and conditions must be accepted"
     },
     "order": {
       "name": {

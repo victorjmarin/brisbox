@@ -149,8 +149,13 @@
   "contact_us_form_subject": "Asunto: ",
   "contact_us_form_content": "Contenido: ",
   "contact_us_form_send": "Enviar",
+  "terms": "Términos y Condiciones",
+
   "schemas": {
     "inscription": {
+      "username": {
+        "label": "Nombre de usuario"
+      },
       "name": {
         "label": "Nombre"
       },
@@ -181,7 +186,11 @@
       "image": {
         "label": "Imagen de perfil"
       },
-      "wrongPassword": "las constraseñas no coinciden"
+      "checkTerms": {
+        "label": "Aceptar"
+      },
+      "wrongPassword": "las constraseñas no coinciden",
+      "termsRequired": "Los términos y condiciones tienen que ser aceptados"
     },
     "order": {
       "name": {

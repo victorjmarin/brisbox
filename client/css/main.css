@@ -155,10 +155,6 @@ a {
     padding: 8px 15px 12px 15px;
 }
 
-.inscription-form fieldset div {
-    width: 100%;
-}
-
 /* Bloques responsive design */
 
 .block-izquierda {
@@ -243,4 +239,20 @@ fieldset {
         margin-right: 2.35765%;
         width: 48.82117%;
     }
+}
+
+.checkbox input {
+    visibility: visible !important;
+    left: auto !important;
+    position: relative !important;
+}
+
+.checkbox label{
+    position: relative !important;
+    top: 0.2em !important;
+    margin-bottom: 20px;
+}
+
+.checkTerms {
+    margin-bottom: 10px;
 }
