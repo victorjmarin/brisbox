@@ -2,7 +2,7 @@
 
     <div class="inscription-form">
         <div class="section">
-            {{#autoForm collection="Inscription" id="insertInscriptionForm" type="insert"}}
+            {{#autoForm schema="SchemaInscription" id="inscriptionForm" type="method" meteormethod="createBrisboxer"}}
                 <fieldset>
                     <legend>{{_ "account-info"}}</legend>
                     <div class="block-izquierda">
@@ -10,7 +10,10 @@
                             {{_ "account-info-text"}}
                         </div>
                         <div class="input-field col s6 obligatory">
-                            {{> afQuickField name='name' class="validate obligatory"}}
+                            {{> afQuickField name='username' class="validate"}}
+                        </div>
+                        <div class="input-field col s6 obligatory">
+                            {{> afQuickField name='name' class="validate"}}
                         </div>
                         <div class="input-field col s6 obligatory">
                             {{> afQuickField name='surname' class="validate"}}
@@ -55,6 +58,31 @@
                             {{> afQuickField type="textarea" name='howHearAboutUs' class="validate materialize-textarea"}}
                         </div>
                     </div>
+                    <div class="block-debajo">
+                        <div class="input-field col s6 checkTerms obligatory">
+                            <a class="modal-trigger" href="#checkModal">
+                                {{_ "terms"}}
+                            </a>
+                            {{> afFieldInput name='checkTerms' class="validate checkbox" type="boolean-checkbox"}}
+                        </div>
+                    </div>
+
+                    <script>
+                        $(document).ready(function(){
+                            $('.modal-trigger').leanModal();
+                        });
+                    </script>
+
+                    <div id="checkModal" class="modal">
+                        <div class="modal-content">
+                            <h4>Modal Header</h4>
+                            <p>A bunch of text</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                        </div>
+                    </div>
+
                 </fieldset>
                 <div class="centrar">
                     <button type="submit" class="btn btn-primary orange darken-3 waves-button-input">{{_ "submit"}}</button>
@@ -63,3 +91,5 @@
         </div>
     </div>
 </template>
+
+
