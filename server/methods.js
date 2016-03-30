@@ -46,5 +46,20 @@ Meteor.methods({
             text: text,
             to: correo
         });
+    },
+    'createBrisboxer': function(doc) {
+
+        check(doc, SchemaInscription);
+        var user = Accounts.createUser( {username: doc.username, password: doc.password, email: doc.email,
+            profile: {
+                name: doc.name,
+                surname: doc.surname,
+                phone: doc.phone,
+                zip: doc.zip,
+                emailSchool: doc.emailSchool,
+                howHearAboutUs: doc.howHearAboutUs
+            } });
+        Roles.addUsersToRoles(user, ['brisboxer']);
     }
+
 });
