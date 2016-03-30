@@ -3,6 +3,6 @@ AutoForm.addHooks(['inscriptionForm'], {
         Router.go("/");
     },
     onError: function(formType, result){
-
+        console.log("inscription-form error!")
     }
 })

@@ -56,8 +56,18 @@ Meteor.methods({
 
         check(doc, SchemaInscription);
 
-        throw new Meteor.Error()
-        var user = Accounts.createUser( {username: doc.username, password: doc.password, email: doc.email,
+        Meteor.call('createBrisboxerNoRole', doc, function(err, result) {
+            if (err) {
+                console.log(err);
+            }
+            Roles.addUsersToRoles(result, ['brisboxer']);
+        });
+
+    },
+
+    'createBrisboxerNoRole': function(doc) {
+
+        return Accounts.createUser( {username: doc.username, password: doc.password, email: doc.email,
             profile: {
                 name: doc.name,
                 surname: doc.surname,
@@ -66,6 +76,7 @@ Meteor.methods({
                 emailSchool: doc.emailSchool,
                 howHearAboutUs: doc.howHearAboutUs
             } });
-        Roles.addUsersToRoles(user, ['brisboxer']);
+
+
     }
 });
