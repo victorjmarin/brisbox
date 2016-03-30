@@ -26,9 +26,10 @@
 
 .form-zip{
     text-align: center;
-    height: 34px;
+    height: 54px;
+    width: 350px;
     padding: 6px 12px;
-    font-size: 14px;
+    font-size: 130%;
     line-height: 1.428571429;
     color: #555;
     vertical-align: middle;
@@ -42,6 +43,18 @@
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 
-#button-zip{
-    margin-top:1%;
+::-webkit-input-placeholder {
+    color: rgb(138, 140, 138);
+}
+
+:-moz-placeholder {
+    color: rgb(138, 140, 138);
+}
+
+::-moz-placeholder {
+    color: rgb(138, 140, 138);
+}
+
+:-ms-input-placeholder {
+    color: rgb(138, 140, 138);
 }

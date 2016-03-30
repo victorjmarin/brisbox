@@ -8,16 +8,11 @@
             <div class="row">
                 <form method="get" action="{{ pathFor 'order' }}">
                     <div class="col s12 center-align">
-                        <h3 class="white-text proxima" style="text-shadow: 0px 1px 0px #757575;">{{_ "home_title"}}</h3>
+                        <h3 class="white-text proxima" style="text-shadow: 0px 1px 0px #757575;margin-bottom: 35px;">{{_ "home_title"}}</h3>
                         <div class="col s12 center-align">
-                            <label for="zip" class="col-lg-2 control-label">
-                                <h5 class="white-text proxima"  style="text-shadow: 0px 1px 0px #757575;">{{_ "order-form_zip"}}</h5>
-                            </label>
-                            <div class="col-lg-10">
-                                <input pattern=".{5,}" required type="zip" maxlength="5" class="form-zip" name="zip" id="inputZip" aria-required="false" title="{{_ "order-form_zip"}}">
-                            </div>
+                            <div style="display:inline-block;margin-bottom: 10px;"><input pattern=".{5,}" required type="zip" maxlength="5" class="form-zip" name="zip" id="inputZip" aria-required="false" placeholder="{{_ 'order-form_zip'}}" title="{{_ 'order-form_zip'}}"></div>
+                            <input  id="button-zip" type="submit" value="{{_ 'home_order'}}" class="btn btn-large proxima bold orange darken-3">
                         </div>
-                        <input  id="button-zip" type="submit" value="{{_ "home_order"}}" class="btn btn-large proxima bold orange darken-3">
                     </div>
                     <!-- ADDED FOR LOGIN -->
                     <!--<div class="col s12 center-align">
