@@ -104,7 +104,7 @@
   "stripe_cvc" : "CVC",
   "stripe_expiration" : "Expiración (MM/AAAA)",
   "stripe_amount" : "Cantidad",
-  "stripe_submit" : "Pagar con Stripe",
+  "stripe_submit" : "Completar pedido",
 
   "invalid_amount" : "La cantidad debe de superar los 50 céntimos",
   "invalid_expiry_month" : "Mes de expiración inválido",
@@ -117,23 +117,29 @@
   "card_declined" : "La tarjeta de crédito ha sido denegada",
   "processing_error" : "Se ha producido un error al procesar la tarjeta",
   "order-form_header": "¿Necesitas hacer un pedido?",
-  "order-form_address": "Dirección postal...",
   "order-form_number": "Código postal...",
-  "order-loading": "Carga",
-  "order-unloading": "Descarga",
   "order-form_help": "¿Cómo podemos ayudarte?",
   "order-form_ready": "Siguiente",
   "order-form_more-info-header": "Detalles sobre la mudanza",
-  "order-form_comments": "Comentarios para nuestros brisboxers...",
-  "order-form_number-brisboxer": "Número de brisboxers",
-  "order-form_hours": "Horas",
   "order-form_more-info-hour": "¿Cuántas horas en total vas a necesitar?",
   "order-form_contact-info": "Información de contacto",
-  "order-form_first-name": "Nombre",
-  "order-form_second-name": "Apellidos",
-  "order-form_email": "Correo electrónico",
-  "order-form_tel": "Teléfono",
   "order-form-book": "1€",
+
+  "order-form_name": "Nombre",
+  "order-form_surname": "Apellidos",
+  "order-form_phone": "Teléfono",
+  "order-form_email": "Correo electrónico",
+  "order-form_zip": "Código postal",
+  "order-form_address": "Dirección postal",
+  "order-form_hours": "Horas",
+  "order-form_numberBrisboxers": "Números de Brisboxers",
+  "order-form_comments": "Comentarios",
+  "order-form_typeMove": "Tipo de encargo",
+  "order-form_cost": "Coste estimado",
+  "order-loading": "Carga",
+  "order-unloading": "Descarga",
+  "order-form_day": "Día",
+
   "brisboxer_username": "Usuario",
   "brisboxer_email": "Correo electrónico",
   "brisboxer_verified": "Verificado",
@@ -191,41 +197,6 @@
       },
       "wrongPassword": "las constraseñas no coinciden",
       "termsRequired": "Los términos y condiciones tienen que ser aceptados"
-    },
-    "order": {
-      "name": {
-        "label": "Nombre"
-      },
-      "surname": {
-        "label": "Apellidos"
-      },
-      "phone": {
-        "label": "Teléfono"
-      },
-      "email": {
-        "label": "Correo electrónico"
-      },
-      "zip": {
-        "label": "Código postal"
-      },
-      "address": {
-        "label": "Dirección postal"
-      },
-      "hours": {
-        "label": "Horas"
-      },
-      "numberBrisboxers": {
-        "label": "Número de brisboxers"
-      },
-      "comments": {
-        "label": "Comentarios para nuestros brisboxers..."
-      },
-      "typeMove": {
-        "label": "Tipo de encargo"
-      },
-      "day": {
-        "label": "Día de mudanza"
-      }
     }
   },
   "simpleschema": {

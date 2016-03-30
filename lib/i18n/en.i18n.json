@@ -97,8 +97,6 @@
   "order-book": "5€",
   "order-form-info_contact": "Contact info",
   "order-submit": "Submit",
-  "order-loading": "Loading",
-  "order-unloading": "Unloading",
   "order-choose_option": "Choose your option",
   "order-checkout_header": "Final budget",
   "order-checkout_totalMoney": "Estimated Total",
@@ -119,22 +117,33 @@
   "login_username": "Username",
   "login_password": "Password",
   "login_error_credentials_wrong": "Wrong username or password ",
-  "stripe_expiration": "Expiration (MM/YYYY)",
-  "order-form_address": "Address...",
   "order-form_number": "ZIP code...",
+
   "order-form_help": "How can we help?",
   "order-form_ready": "Next",
   "order-form_more-info-header": "Details about your move",
-  "order-form_comments": "Comments for our brisboxers...",
   "order-form_number-brisboxer": "Number brisboxers",
-  "order-form_hours": "Hours",
   "order-form_more-info-hour": "¿How long will you need them (in total)?",
   "order-form_contact-info": "Contact info",
   "order-form_first-name": "First name",
   "order-form_second-name": "Second name",
-  "order-form_email": "Email",
-  "order-form_tel": "Telephone",
   "order-form-book": "1€",
+
+  "order-form_name": "Name",
+  "order-form_surname": "Surname",
+  "order-form_phone": "Telephone",
+  "order-form_email": "Email",
+  "order-form_zip": "ZIP Code",
+  "order-form_address": "Address",
+  "order-form_hours": "Hours",
+  "order-form_numberBrisboxers": "Number Brisboxers",
+  "order-form_comments": "Comments",
+  "order-form_typeMove": "Type move",
+  "order-form_cost": "Estimated cost",
+  "order-loading": "Loading",
+  "order-unloading": "Unloading",
+  "order-form_day": "Day",
+
   "brisboxer_username": "Username",
   "brisboxer_email": "Email address",
   "brisboxer_verified": "Verified",
@@ -192,41 +201,6 @@
       },
       "wrongPassword": "Passwords mismatch",
       "termsRequired": "Terms and conditions must be accepted"
-    },
-    "order": {
-      "name": {
-        "label": "Name"
-      },
-      "surname": {
-        "label": "Last Name"
-      },
-      "phone": {
-        "label": "Phone"
-      },
-      "email": {
-        "label": "Email Address"
-      },
-      "zip": {
-        "label": "Hometown ZIP Code"
-      },
-      "address": {
-        "label": "Address"
-      },
-      "hours": {
-        "label": "How long will you need them?"
-      },
-      "numberBrisboxers": {
-        "label": "Number brisboxers"
-      },
-      "comments": {
-        "label": "Comments for our brisboxers..."
-      },
-      "typeMove": {
-        "label": "Type move"
-      },
-      "day": {
-        "label": "Day move"
-      }
     }
   },
   "simpleschema": {

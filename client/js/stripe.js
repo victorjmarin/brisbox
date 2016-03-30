@@ -6,15 +6,18 @@ Template.stripe_form.onRendered(function () {
     Stripe.setPublishableKey(stripeKey);
 
     Session.set("stripe_error", null);
-
-    $('.collapsible').collapsible({
-        accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-    });
 });
 
 Template.stripe_form.helpers({
     stripe_error: function() {
         return Session.get("stripe_error");
+    },
+    disabled: function(){
+        if (Session.get("enableStripeForm")){
+            return "";
+        }else{
+            return "disabled";
+        }
     }
 });
 
@@ -52,6 +55,13 @@ Template.stripe_form.events({
                     }
                 });
             }
+        });
+    },
+    'click #info-pay ':function(e){
+        $(document).ready(function(){
+            $('.collapsible').collapsible({
+                accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+            });
         });
     }
 });

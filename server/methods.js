@@ -47,6 +47,11 @@ Meteor.methods({
             to: correo
         });
     },
+
+    'saveOrder': function(orderForm){
+        Orders.insert(orderForm);
+    },
+
     'createBrisboxer': function(doc) {
 
         check(doc, SchemaInscription);
@@ -63,5 +68,4 @@ Meteor.methods({
             } });
         Roles.addUsersToRoles(user, ['brisboxer']);
     }
-
 });

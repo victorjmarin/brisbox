@@ -5,8 +5,8 @@ Meteor.startup(function () {
         loadAdmins();
         loadBrisboxers();
     }
-    if(Order.find().count() === 0){
-        loadOrders();
+    if(Orders.find().count() === 0){
+        loadOrderss();
     }
 
 
@@ -152,7 +152,7 @@ function loadBrisboxers(){
         });
 }
 
-function loadOrders(){
+function loadOrderss(){
     var brisboxer1 = Meteor.users.findOne({username: 'brisboxer1'});
     var brisboxer2 = Meteor.users.findOne({username: 'brisboxer2'});
     var brisboxer3 = Meteor.users.findOne({username: 'brisboxer3'});
@@ -160,7 +160,7 @@ function loadOrders(){
     var brisboxer5 = Meteor.users.findOne({username: 'brisboxer5'});
 
 
-    var order1_id = Order.insert({
+    var order1_id = Orders.insert({
         name: 'nameTest',
         surname: 'surnameTest',
         phone: '000000000',
@@ -173,7 +173,7 @@ function loadOrders(){
         typeMove: 'loading',
         brisboxers: [{_id: brisboxer2._id, username: brisboxer2.username}]
     });
-    var order2_id = Order.insert({
+    var order2_id = Orders.insert({
         name: 'nameTest',
         surname: 'surnameTest',
         phone: '333333333',
@@ -186,7 +186,7 @@ function loadOrders(){
         typeMove: 'loading',
         brisboxers: [{_id: brisboxer2._id, username: brisboxer2.username}, {_id: brisboxer3._id, username: brisboxer3.username}]
     });
-    var order3_id = Order.insert({
+    var order3_id = Orders.insert({
         name: 'nameTest',
         surname: 'surnameTest',
         phone: '111111111',
@@ -199,7 +199,7 @@ function loadOrders(){
         typeMove: 'unloading',
         brisboxers: [{_id: brisboxer1._id, username: brisboxer1.username}]
     });
-     var order4_id = Order.insert({
+     var order4_id = Orders.insert({
         name: 'nameTest',
         surname: 'surnameTest',
         phone: '222222222',

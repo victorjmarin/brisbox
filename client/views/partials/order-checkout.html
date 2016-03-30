@@ -1,21 +1,36 @@
 <template name="orderCheckout">
-    <div class="order-checkout container">
         <div class="row row-order-checkout">
-            <div class="col s6 m6">
-                    <div>
+            <div id="budget" class="col s12 m6">
+                    <div class="container">
                         <legend id="legend-checkout">{{_ "order-checkout_header"}}</legend>
-                        <div class="order-info">
-                            <div class="input-field col s12 m12">
-                                <i class="small material-icons">query_builder</i>
+                        <div class="order-info col s12 m12">
+                            <div id="info-budget" class="col s12 m12">
+                                <i class="small material-icons col s2 m2">query_builder</i>
+                                <label id="text-budget" class="col s10 m4" for="day">{{_ "order-form_day"}}</label>
+                                <div class="col s12 m6" id="day-budget" >
+                                    {{order.day}}
+                                </div>
                             </div>
-                            <div class="input-field col s12 m12">
-                                <i class="small material-icons">location_on</i>
+                            <div id="info-budget" class="col s12 m12">
+                                <i class="small material-icons col s2 m2">location_on</i>
+                                <label  id="text-budget" class="col s10 m4" for="address">{{_ "order-form_address"}}</label>
+                                <div class="col s12 m6" id="address-budget">
+                                    {{order.address}}
+                                </div>
                             </div>
-                            <div class="input-field col s12 m12">
-                                <i class="small material-icons">call</i>
+                            <div id="info-budget" class="col s12 m12">
+                                <i class="small material-icons col s2 m2">call</i>
+                                <label  id="text-budget" class="col s10 m4" for="phone">{{_ "order-form_phone"}}</label>
+                                <div class="col s12 m6" id="phone-budget">
+                                    {{order.phone}}
+                                </div>
                             </div>
-                            <div class="input-field col s12 m12">
-                                <i class="small material-icons">shopping_cart</i>
+                            <div id="info-budget" class="col s12 m12">
+                                <i class="small material-icons col s2 m2">shopping_cart</i>
+                                <label  id="text-budget" class="col s10 m4" for="cost">{{_ "order-form_cost"}}</label>
+                                <div class="col s12 m6" id="cost-budget">
+                                    {{cost}}
+                                </div>
                             </div>
                             <br>
                             <div class="input-field col s12 center-align">
@@ -27,10 +42,10 @@
                     </div>
             </div>
 
-            <div class="stripeForm col s6 m6">
+            <div id="form-stripe" class="stripeForm col s12 m6">
                 {{>stripe_form}}
             </div>
+
         </div>
-    </div>
 
 </template>

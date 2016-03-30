@@ -1,46 +1,47 @@
 <template name="stripe_form">
-    <div id="stripe"></div>
     <div id="stripe-main" class="container">
         <legend id="legend-stripe">{{_ "order-checkout_stripe"}}</legend>
         <div id="stripe-access">
-            <div class="row">
+            <div class="row row-stripe-form">
                 <form class="stripe-form col s12 m12" id="payment-form">
-                        <span class="payment-errors">
-                            {{#if stripe_error}}
-                                {{_ stripe_error}}
-                            {{/if}}
-                        </span>
-                        <div class="col s12" id="stripe-input-fields">
-                            <div class="stripe-form-field col s12 m12">
-                                <label for="number">{{_ "stripe_card_number"}}</label>
-                                <input class="validate" type="text" size="20" data-stripe="number" id="number"/>
-                            </div>
-                            <div class="stripe-form-field col s12 m12">
-                                <label for="cvc">{{_ "stripe_cvc"}}</label>
-                                <input class="validate" type="text" size="4" data-stripe="cvc" id="cvc"/>
-                            </div>
-                            <div class="stripe-form-field col s12 m12">
-                                <div class="stripe-form-field col s6 m6">
-                                    <label for="exp-month">{{_ "stripe_expiration_month"}}</label>
-                                    <input class="validate" type="text" size="4" data-stripe="exp-month" id="exp-month"/>
+                       <span class="payment-errors">
+                           {{#if stripe_error}}
+                               {{_ stripe_error}}
+                           {{/if}}
+                       </span>
+                    <div clas="row">
+                        <div class="input-field col s12" id="stripe-input-fields">
+                                <div id="info-stripe" class="input-field col s12 m12">
+                                    <input class="validate" required type="text" maxlength="20" data-stripe="number" id="number" {{disabled}}/>
+                                    <label id="number-stripe" for="number">{{_ "stripe_card_number"}}</label>
                                 </div>
-                                <div class="stripe-form-field col s6 m6">
-                                    <label for="exp-year">{{_ "stripe_expiration_year"}}</label>
-                                    <input class="validate" type="text" size="4" data-stripe="exp-year" id="exp-year"/>
+                                <div id="info-stripe" class="input-field col s12 m12">
+                                    <input class="validate" required type="text" maxlength="3" data-stripe="cvc" id="cvc" {{disabled}}/>
+                                    <label id="cvc-stripe" for="cvc">{{_ "stripe_cvc"}}</label>
                                 </div>
-                            </div>
-                            <div class="stripe-form-field col s12 m12">
-                                <label for="amount">{{_ "stripe_amount"}}</label>
-                                <input class="validate" type="text" size="4" data-stripe="amount" id="amount"/>
-                            </div>
-                            <div class="input-field col s12 center-align">
-                                <button name="submit" type="submit" class="btn waves-effect waves-light orange darken-3 white-text">{{_ "stripe_submit"}}
-                                </button>
-                            </div>
+                                <div id="info-stripe" class="input-field col s12 m12">
+                                    <div class="input-field col s6 m6">
+                                        <input class="validate" required type="number" min="1" max="12" maxlength="2" data-stripe="exp-month" id="exp-month" {{disabled}}/>
+                                        <label id="expMonth-stripe" for="exp-month">{{_ "stripe_expiration_month"}}</label>
+                                    </div>
+                                    <div class="input-field col s6 m6">
+                                        <input class="validate" required type="number" min="2016" max="2030" maxlength="4" data-stripe="exp-year" id="exp-year" {{disabled}}/>
+                                        <label id="expYear-stripe" for="exp-year">{{_ "stripe_expiration_year"}}</label>
+                                    </div>
+                                </div>
+                                <div id="info-stripe" class="input-field col s12 m12">
+                                    <input  type="text" value="5" readonly="true" data-stripe="amount" id="amount" {{disabled}}/>
+                                    <label class="active" id="amount-stripe" for="amount">{{_ "stripe_amount"}}</label>
+                                </div>
+                                <div id="info-stripe" class="input-field col s12 center-align">
+                                    <button name="submit" type="submit" class="btn waves-effect waves-light orange darken-3 white-text" {{disabled}}>{{_ "stripe_submit"}}
+                                    </button>
+                                </div>
                         </div>
+                    </div>
                 </form>
             </div>
-            <ul class="collapsible" data-collapsible="accordion">
+            <ul id="info-pay" class="collapsible" >
                 <li>
                     <div class="collapsible-header"><i class="material-icons">comment</i>{{_ "info_book"}}</div>
                     <div class="collapsible-body"><p>{{_ "info_money"}}.</p></div>
