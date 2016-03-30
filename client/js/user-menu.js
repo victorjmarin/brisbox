@@ -6,6 +6,7 @@ Template.userMenu.events({
   		$('#user-menu').trigger('mouseleave');
   		setTimeout(function(){
   			Meteor.logout();
+  			Router.go("/");
 		}, 180); 
     }
 });
