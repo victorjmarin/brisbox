@@ -1,27 +1,63 @@
+function getParameterByName(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i=0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+        if(pair[0] == variable) {
+            return pair[1];
+        }
+    }
+    return false;
+}
+
 Template.orderCheckout.events({
     'click #showStripeModal': function(){
         Session.set('showStripeModal', true);
     },
     'click #buttom-next': function(event){
-        $('#budget').css('transition', '2s');
-        $('#budget').css('background','url(lgnoverlyback.png) repeat,-webkit-linear-gradient(80deg, #612301, #000000)');
-        $('#budget').css('background','url(lgnoverlyback.png) repeat,-o-linear-gradient(80deg, #612301, #000000)');
-        $('#budget').css('background','url(lgnoverlyback.png) repeat,linear-gradient(170deg, #612301, #000000)');
-        $('#budget').css('opacity','0.9');
-        $('#budget').css('z-index','500');
-        $('#budget').css('left','0');
-        $('#budget').css('right','0');
-        $('#budget').css('background-color','rgba(0, 0, 0, 0.5)');
-        $('#budget').css('will-change','opacity');
-        $('#form-stripe').css('transition', '2s');
-        $('#prueba').css('background-color','white');
-        $('#prueba').css('transition', '2s');
-        $('#prueba').css('background','none');
-        $('#prueba').css('padding-bottom', '0px');
-        $('#number').css(readonly,false);
-        $('#cvc').css(readonly,false);
-        $('#exp-month').css('readonly','false');
-        $('#exp-year').css('readonly','false');
-        $('#amount').css('readonly','false');
+        Session.set("enableStripeForm", true);
     }
 });
+
+Template.orderCheckout.helpers({
+    order: function(){
+        return Session.get("order");
+    },
+    cost: function(){
+        var order = Session.get("order");
+        return order.numberBrisboxers * order.hours * 20 + " €";
+    }
+});
+
+
+
+Template.orderCheckout.onRendered(function() {
+    var address = getParameterByName("address");
+    var zip = getParameterByName("zip");
+    var loading = getParameterByName("loading");
+    var comments = getParameterByName("comments");
+    var numberBrisboxers = getParameterByName("numberBrisboxers");
+    var unloading = getParameterByName("unloading");
+    var hours = getParameterByName("hours");
+    var day = getParameterByName("day");
+    var name = getParameterByName("name");
+    var surname = getParameterByName("surname");
+    var phone = getParameterByName("phone");
+    var email = getParameterByName("email");
+    Session.set("order", {
+        address: address,
+        zip: zip,
+        loading: loading,
+        comments: comments,
+        numberBrisboxers: numberBrisboxers,
+        unloading: unloading,
+        hours: hours,
+        day: day,
+        name: name,
+        surname: surname,
+        phone: phone,
+        email: email
+    });
+});
+
+

@@ -36,17 +36,3 @@
     background: -o-linear-gradient(left, #FFFFFF, #F7F9FA);
     color: #2E3133;
 }
-
-#prueba{
-    z-index: 997;
-    background-color:#c2c1c0;
-    visibitity: visible;
-    opacity: 0.8;
-}
-
-#prueba2{
-    z-index: 997;
-    background-color:#c2c1c0;
-    visibitity: visible;
-    opacity: 0.8;
-}

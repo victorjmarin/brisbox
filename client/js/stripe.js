@@ -11,6 +11,13 @@ Template.stripe_form.onRendered(function () {
 Template.stripe_form.helpers({
     stripe_error: function() {
         return Session.get("stripe_error");
+    },
+    disabled: function(){
+        if (Session.get("enableStripeForm")){
+            return "";
+        }else{
+            return "disabled";
+        }
     }
 });
 

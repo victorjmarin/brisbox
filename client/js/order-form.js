@@ -1,3 +1,15 @@
+function getParameterByName(variable) {
+	var query = window.location.search.substring(1);
+	var vars = query.split("&");
+	for (var i=0; i < vars.length; i++) {
+		var pair = vars[i].split("=");
+		if(pair[0] == variable) {
+			return pair[1];
+		}
+	}
+	return false;
+}
+
 Template.orderForm.events({
 	'click .form-more-info': function(event){
 		var info = $(event.target);
@@ -34,6 +46,13 @@ Template.orderForm.onRendered(function() {
 		selectMonths: true, // Creates a dropdown to control month
 		selectYears: 15 // Creates a dropdown of 15 years to control year
 	});
+	var zip = getParameterByName("zip");
+	if(zip != null){
+		Session.set("zip", zip);
+		document.getElementById("label-zip").className = "active";
+	}else{
+		document.getElementById("label-zip").className = "";
+	}
 });
 
 Template.orderForm.helpers({
@@ -46,6 +65,10 @@ Template.orderForm.helpers({
 				zoom: 13
 			};
 		}
+	},
+	zip: function(){
+		var zip = Session.get("zip");
+		return zip;
 	}
 });
 

@@ -1,65 +1,35 @@
 <template name="orderCheckout">
-        <div class="col s12 m12 row row-order-checkout">
-            <div id="budget" class="row col s6 m6">
-                    <div class="col s12 m6">
+        <div class="row row-order-checkout">
+            <div id="budget" class="col s12 m6">
+                    <div class="container">
                         <legend id="legend-checkout">{{_ "order-checkout_header"}}</legend>
                         <div class="order-info col s12 m12">
-                            <script>
-                                function getParameterByName(variable) {
-                                    var query = window.location.search.substring(1);
-                                    var vars = query.split("&");
-                                    for (var i=0; i < vars.length; i++) {
-                                        var pair = vars[i].split("=");
-                                        if(pair[0] == variable) {
-                                            return pair[1];
-                                        }
-                                    }
-                                    return false;
-                                }
-
-                                function getCost(){
-                                    var query = window.location.search.substring(1);
-                                    var vars = query.split("&");
-                                    var hours = 1;
-                                    var numberBrisboxers = 1;
-                                    for (var i = 0; i<vars.length; i++){
-                                        var pair = vars[i].split("=");
-                                        if(pair[0] == "hours"){
-                                            hours = parseInt(pair[1]);
-                                        }
-                                        if(pair[0] == "numberBrisboxers"){
-                                            numberBrisboxers = parseInt(pair[1]);
-                                        }
-                                    }
-                                    return hours*numberBrisboxers*20+" €";
-                                }
-                            </script>
                             <div id="info-budget" class="col s12 m12">
                                 <i class="small material-icons col s2 m2">query_builder</i>
-                                <label id="text-budget" class="col s4 m4" for="day">{{_ "order-form_day"}}</label>
-                                <div class="col s6 m6" id="day-budget" >
-                                    <script type="text/javascript">document.getElementById("day-budget").innerHTML = getParameterByName("day");</script>
+                                <label id="text-budget" class="col s10 m4" for="day">{{_ "order-form_day"}}</label>
+                                <div class="col s12 m6" id="day-budget" >
+                                    {{order.day}}
                                 </div>
                             </div>
                             <div id="info-budget" class="col s12 m12">
                                 <i class="small material-icons col s2 m2">location_on</i>
-                                <label  id="text-budget" class="col s4 m4" for="address">{{_ "order-form_address"}}</label>
-                                <div class="col s6 m6" id="address-budget">
-                                    <script type="text/javascript">document.getElementById("address-budget").innerHTML = getParameterByName("address");</script>
+                                <label  id="text-budget" class="col s10 m4" for="address">{{_ "order-form_address"}}</label>
+                                <div class="col s12 m6" id="address-budget">
+                                    {{order.address}}
                                 </div>
                             </div>
                             <div id="info-budget" class="col s12 m12">
                                 <i class="small material-icons col s2 m2">call</i>
-                                <label  id="text-budget" class="col s4 m4" for="phone">{{_ "order-form_phone"}}</label>
-                                <div class="col s6 m6" id="phone-budget">
-                                    <script type="text/javascript">document.getElementById("phone-budget").innerHTML = getParameterByName("phone");</script>
+                                <label  id="text-budget" class="col s10 m4" for="phone">{{_ "order-form_phone"}}</label>
+                                <div class="col s12 m6" id="phone-budget">
+                                    {{order.phone}}
                                 </div>
                             </div>
                             <div id="info-budget" class="col s12 m12">
                                 <i class="small material-icons col s2 m2">shopping_cart</i>
-                                <label  id="text-budget" class="col s4 m4" for="cost">{{_ "order-form_cost"}}</label>
-                                <div class="col s6 m6" id="cost-budget">
-                                    <script type="text/javascript">document.getElementById("cost-budget").innerHTML = getCost();</script>
+                                <label  id="text-budget" class="col s10 m4" for="cost">{{_ "order-form_cost"}}</label>
+                                <div class="col s12 m6" id="cost-budget">
+                                    {{cost}}
                                 </div>
                             </div>
                             <br>
@@ -72,9 +42,9 @@
                     </div>
             </div>
 
-                <div id="form-stripe" class="stripeForm col s12 m6">
-                    {{>stripe_form}}
-                </div>
+            <div id="form-stripe" class="stripeForm col s12 m6">
+                {{>stripe_form}}
+            </div>
 
         </div>
 

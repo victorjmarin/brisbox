@@ -10,43 +10,10 @@
                                     <input id="address" name="address" required type="text" class="address">
                                     <label for="address">{{_ "order-form_address"}}</label>
                                 </div>
-                                <script>
-                                    function getParameterByName(variable) {
-                                        var query = window.location.search.substring(1);
-                                        var vars = query.split("&");
-                                        for (var i=0; i < vars.length; i++) {
-                                            var pair = vars[i].split("=");
-                                            if(pair[0] == variable) {
-                                                if(pair[1] != ""){
-                                                    return pair[1];
-                                                }
-                                            }
-                                        }
-                                        return false;
-                                    }
-                                </script>
                                 <div class="input-field col s12 m12">
-                                    <input id="zip" required value="" name="zip" type="text" class="zip">
-                                    <label id="label-zip" for="zip">{{_ "order-form_zip"}}</label>
+                                    <input id="zip" required value="{{zip}}" name="zip" type="text" class="zip">
+                                    <label id="label-zip" for="zip" class="active">{{_ "order-form_zip"}}</label>
                                 </div>
-                                <script>
-                                    function getZIP(){
-                                        var query = window.location.search.substring(1);
-                                        var isValue = false;
-                                        var vars = query.split("&");
-                                        var resultZIP = "";
-                                        for (var i = 0; i<vars.length; i++){
-                                            var pair = vars[i].split("=");
-                                            if(pair[1] != ""){
-                                                resultZIP = pair[1];
-                                                isValue = true;
-                                            }
-                                        }
-                                        return resultZIP;
-                                    }
-                                    document.getElementById("zip").value = getZIP();
-                                    document.getElementById("label-zip").className = "active";
-                                </script>
                                 <div class="col s12 m12">
                                     <label id="label_typeMove" for="typeMove">{{_ "order-form_typeMove"}}</label>
                                 </div>
