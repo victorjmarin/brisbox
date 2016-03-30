@@ -10,23 +10,24 @@ Accounts.emailTemplates.verifyEmail.subject = function (user) {
     var currentLocale = TAPi18next.lng();
     var respuesta;
     if (currentLocale == "en")
-        respuesta = "Welcome to BRISBOX, " + user.username + " active your account NOW! ";
+        respuesta = "Just one step away! ";
     if (currentLocale == "es")
-        respuesta = "Bienvenido a BRISBOX, " + user.username + " active su cuenta AHORA! ";
+        respuesta = "¡Sólo un paso más! ";
     return respuesta;
 };
 Accounts.emailTemplates.verifyEmail.text = function (user, url) {
     var currentLocale = TAPi18next.lng();
     var respuesta;
     if (currentLocale == "en")
-        respuesta = "Welcome " + user.username + ". The brisbox team wish give you thanks to register on the system.\n\n"
-            + "Just only one step to get all the BRISBOX's functions.\n\n"
-            + "To activate your account, please click on the next link.\n\n"
-            + url + "\n\nGreetings BRISBOX's Team";
+        respuesta = "Hi " + user.username + "!\n\n" +
+            "Thank you for your interest in helping make moves a little less stressing :)\n\n" +
+            "Click the link below to verify your email address" + url +". Once you've verified it, we will get in touch with you in order to activate your account. From that moment on, you will be able to see the moves available and start working on those which are convenient for you.\n\n" +
+            "Brisbox team";
     if (currentLocale == "es")
-        respuesta = "Bienvenido " + user.username + ". El equipo de BRISBOX desea darle las gracias por registrarse en el sistema.\n\n"
-            + "Ya solo queda un paso para acceder a todas las funcionalidades de BRISBOX.\n\n"
-            + "Para activar su cuenta, haga click en el siguiente enlace.\n\n"
-            + url + "\n\nUn saludo el equipo de BRISBOX";
+        respuesta = "¡Hola " + user.username + "!\n\n" +
+            "Gracias por tu interés en ayudar a hacer las mudanzas algo más llevaderas :)\n\n" +
+            "Haz click en el siguiente enlace para validar tu email" + url +". Una vez validado, nos pondremos en contacto contigo y procederemos a activar tu cuenta" +
+            " para que puedas ver las mudanzas disponibles y trabajar en las que te convenga.\n\n" +
+            "El equipo de Brisbox";
     return respuesta;
 };
