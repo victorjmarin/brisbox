@@ -27,7 +27,7 @@
 .form-zip{
     text-align: center;
     height: 54px;
-    width: 350px;
+    width: 100%;
     padding: 6px 12px;
     font-size: 130%;
     line-height: 1.428571429;
