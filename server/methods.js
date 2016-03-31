@@ -53,30 +53,28 @@ Meteor.methods({
     },
 
     'createBrisboxer': function(doc) {
-
         check(doc, SchemaInscription);
-
-        Meteor.call('createBrisboxerNoRole', doc, function(err, result) {
-            if (err) {
+        Meteor.call('createBrisboxerNoRole', doc, function(err, userId) {
+            if (err) { // TODO: Simulate transaction and delete inscription form
                 console.log(err);
+            } else {
+                Roles.addUsersToRoles(userId, ['brisboxer']);
+                Accounts.sendVerificationEmail(userId);
             }
-            Roles.addUsersToRoles(result, ['brisboxer']);
         });
 
     },
 
     'createBrisboxerNoRole': function(doc) {
-
         return Accounts.createUser( {username: doc.username, password: doc.password, email: doc.email,
             profile: {
                 name: doc.name,
                 surname: doc.surname,
                 phone: doc.phone,
                 zip: doc.zip,
-                emailSchool: doc.emailSchool,
+                contactEmail: doc.contactEmail,
                 howHearAboutUs: doc.howHearAboutUs
             } });
-
 
     }
 });

@@ -151,7 +151,7 @@
   "contact_us_body": "Brisbox Team is composed by few alums of Sevilla's University.",
   "contact_us_mailto": "Send us an email!",
   "contact_us_form": "If you don't have an email client, don't worry, you can also complete this form and we will contact you as soon as possible",
-  "thanks_Email": "Email sended.",
+  "thanks_Email": "Email sent.",
   "thanks_Email_body": "Thanks you for sending us an email. You will receive response as fast as posible",
   "contact_us_form_name": "Name: ",
   "contact_us_form_email": "Email: ",
@@ -175,7 +175,7 @@
         "label": "Phone"
       },
       "email": {
-        "label": "Email Address"
+        "label": "Contact Email"
       },
       "password": {
         "label": "Password"
@@ -186,7 +186,7 @@
       "zip": {
         "label": "Hometown ZIP Code"
       },
-      "emailSchool": {
+      "email": {
         "label": "Your School's Email"
       },
       "howHearAboutUs": {
