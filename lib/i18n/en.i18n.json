@@ -162,6 +162,12 @@
   "contact_us_form_send": "Send",
   "terms": "Terms and Conditions",
 
+  "assessment_header": "Did you enjoy the move?",
+  "assessment_body": "We want your opinion about our brisboxers and the company. Here you can express yourself, adding a few comments about how the move went, how did this brisboxer developed and the rating.",
+  "assessment_comments": "Your comments",
+  "assessment_rating": "Rating",
+  "assessment_send": "Send",
+
   "schemas": {
     "inscription": {
       "username": {

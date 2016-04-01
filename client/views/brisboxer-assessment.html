@@ -1,0 +1,34 @@
+<template name="BrisboxerAssessment">
+
+    <div class="container">
+        <div class="row">
+            <h4 style="padding-top: 3%">{{_ "assessment_header"}}</h4>
+
+            <p>{{_ "assessment_body"}}</p>
+
+            <form class="col s12" style="padding-bottom: 10%">
+
+                <div class="row">
+                    <div class="input-field col s7">
+                        <i class="material-icons prefix">mode_edit</i>
+                        <textarea rows="1" id="br-comments" name="comments" class="materialize-textarea"
+                                  length="140"></textarea>
+                        <label for="br-comments" style="padding-left: 2%">{{_ "assessment_comments"}}</label>
+                    </div>
+                    <div class="input-field col s2 offset-s1">
+                        <i class="material-icons">grade</i>
+                        <span for="rating">{{_ "assessment_rating"}}</span>
+                        <p class="range-field">
+                            <input type="range" id="rating" min="1" max="10" name="rating"/>
+                        </p>
+                    </div>
+                    <span class="col s7 custom-validation-error" id="errorComments"></span>
+                    <span class="col s2 offset-s1 custom-validation-error" id="errorRating"></span>
+                </div>
+                <input type="button" id="send" name="send" class="btn orange" value="{{_ "assessment_send"}}"
+                       style="margin-top: 3%; margin-left: 2%"/>
+            </form>
+        </div>
+    </div>
+
+</template>
