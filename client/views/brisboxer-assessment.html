@@ -2,28 +2,45 @@
 
     <div class="container">
         <div class="row">
-            <h4 style="padding-top: 3%">{{_ "assessment_header"}}</h4>
+            <h2 style="padding-top: 3%">{{_ "assessment_header"}}</h2>
 
-            <p>{{_ "assessment_body"}}</p>
+            <p class="flow-text">{{_ "assessment_body"}}</p>
 
             <form class="col s12" style="padding-bottom: 10%">
 
                 <div class="row">
                     <div class="input-field col s7">
-                        <i class="material-icons prefix">mode_edit</i>
-                        <textarea rows="1" id="br-comments" name="comments" class="materialize-textarea"
-                                  length="140"></textarea>
-                        <label for="br-comments" style="padding-left: 2%">{{_ "assessment_comments"}}</label>
+                        <div class="hide-on-small-only">
+                            <i class="material-icons prefix">mode_edit</i>
+                            <textarea rows="1" id="br-comments" name="comments" class="materialize-textarea"
+                                      length="140"></textarea>
+                            <label for="br-comments" style="padding-left: 2%">{{_ "assessment_comments"}}</label>
+                        </div>
+                        <div class="hide-on-med-and-up">
+                            <textarea rows="1" id="br-comments" name="comments" class="materialize-textarea"
+                                      length="140"></textarea>
+                            <label for="br-comments" style="padding-left: 2%">{{_ "assessment_comments"}}</label>
+                        </div>
                     </div>
-                    <div class="input-field col s2 offset-s1">
-                        <i class="material-icons">grade</i>
-                        <span for="rating">{{_ "assessment_rating"}}</span>
-                        <p class="range-field">
-                            <input type="range" id="rating" min="1" max="10" name="rating"/>
-                        </p>
+                    <div class="input-field col s5">
+                        <div class="hide-on-small-only offset-s1">
+                            <i class="material-icons">grade</i>
+                            <span class="flow-text" for="rating"
+                                  style="margin-left: 1%">{{_ "assessment_rating"}}</span>
+                            <p class="range-field">
+                                <input class="s5" type="range" id="rating" min="1" max="10" name="rating"/>
+                            </p>
+                        </div>
+                        <div class="hide-on-med-and-up">
+                            <span class="flow-text" for="rating"
+                                  style="margin-left: 1%">{{_ "assessment_rating"}}</span>
+                            <p class="range-field">
+                                <input class="s4" type="range" id="rating" min="1" max="10" name="rating"/>
+                            </p>
+                        </div>
                     </div>
                     <span class="col s7 custom-validation-error" id="errorComments"></span>
-                    <span class="col s2 offset-s1 custom-validation-error" id="errorRating"></span>
+                    <span class="col s4 offset-s1 custom-validation-error" id="errorRating"></span>
                 </div>
                 <input type="button" id="send" name="send" class="btn orange" value="{{_ "assessment_send"}}"
                        style="margin-top: 3%; margin-left: 2%"/>
