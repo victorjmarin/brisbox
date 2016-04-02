@@ -6,3 +6,9 @@ Template.listAllOrdersRow.helpers({
 		return this.date.toLocaleString();
 	}
 });
+
+Template.listAllOrdersRow.events({
+	'click .join': function(event) {
+		Meteor.call("joinOrder", this);
+	}
+});

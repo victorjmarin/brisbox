@@ -167,6 +167,7 @@
   "numberBrisboxers": "Number brisboxers",
   "left": "Left",
   "hours": "Hours",
+  "join": "Join",
 
   "schemas": {
     "inscription": {
