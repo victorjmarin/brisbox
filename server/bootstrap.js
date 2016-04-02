@@ -44,7 +44,7 @@ function loadBrisboxers(){
         Roles.addUsersToRoles(id_brisboxer2, ['brisboxer']);
         Meteor.users.update(id_brisboxer2, {
             $set: {
-                accepted: false,
+                accepted: true,
                 verified: true,
             }
         });
@@ -70,7 +70,8 @@ function loadBrisboxers(){
         Roles.addUsersToRoles(id_brisboxer4, ['brisboxer']);
         Meteor.users.update(id_brisboxer4, {
             $set: {
-                accepted: false
+                accepted: true,
+                verified: true,
             }
         });
 
@@ -96,7 +97,7 @@ function loadBrisboxers(){
         Meteor.users.update(id_brisboxer6, {
             $set: {
                 accepted: false,
-                verified: true,
+                verified: false,
             }
         });
 
@@ -134,7 +135,7 @@ function loadBrisboxers(){
         Meteor.users.update(id_brisboxer9, {
             $set: {
                 verified: true,
-                accepted: false,
+                accepted: true,
             }
         });
 
