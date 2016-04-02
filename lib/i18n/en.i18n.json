@@ -168,6 +168,13 @@
   "assessment_rating": "Rating",
   "assessment_send": "Send",
 
+  "address": "Address",
+  "date": "Date",
+  "numberBrisboxers": "Number brisboxers",
+  "left": "Left",
+  "hours": "Hours",
+  "join": "Join",
+
   "schemas": {
     "inscription": {
       "username": {

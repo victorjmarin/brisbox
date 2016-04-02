@@ -44,7 +44,7 @@ function loadBrisboxers(){
         Roles.addUsersToRoles(id_brisboxer2, ['brisboxer']);
         Meteor.users.update(id_brisboxer2, {
             $set: {
-                accepted: false,
+                accepted: true,
                 verified: true,
             }
         });
@@ -70,7 +70,8 @@ function loadBrisboxers(){
         Roles.addUsersToRoles(id_brisboxer4, ['brisboxer']);
         Meteor.users.update(id_brisboxer4, {
             $set: {
-                accepted: false
+                accepted: true,
+                verified: true,
             }
         });
 
@@ -96,7 +97,7 @@ function loadBrisboxers(){
         Meteor.users.update(id_brisboxer6, {
             $set: {
                 accepted: false,
-                verified: true,
+                verified: false,
             }
         });
 
@@ -134,7 +135,7 @@ function loadBrisboxers(){
         Meteor.users.update(id_brisboxer9, {
             $set: {
                 verified: true,
-                accepted: false,
+                accepted: true,
             }
         });
 
@@ -171,6 +172,7 @@ function loadOrderss(){
         hours: 2,
         comments: 'comments1',
         typeMove: 'loading',
+        date: new Date('2016-07-03'),
         brisboxers: [{_id: brisboxer2._id, username: brisboxer2.username}]
     });
     var order2_id = Orders.insert({
@@ -184,6 +186,7 @@ function loadOrderss(){
         hours: 1,
         comments: 'comments2',
         typeMove: 'loading',
+        date: new Date('2016-06-20'),
         brisboxers: [{_id: brisboxer2._id, username: brisboxer2.username}, {_id: brisboxer3._id, username: brisboxer3.username}]
     });
     var order3_id = Orders.insert({
@@ -197,6 +200,7 @@ function loadOrderss(){
         hours: 2,
         comments: 'comments3',
         typeMove: 'unloading',
+        date: new Date('2016-08-04'),
         brisboxers: [{_id: brisboxer1._id, username: brisboxer1.username}]
     });
      var order4_id = Orders.insert({
@@ -210,6 +214,7 @@ function loadOrderss(){
         hours: 1,
         comments: 'comments4',
         typeMove: 'unloading',
+        date: new Date('2016-07-01'),
         brisboxers: [{_id: brisboxer2._id, username: brisboxer2.username}, {_id: brisboxer3._id, username: brisboxer3.username}, {_id: brisboxer4._id, username: brisboxer4.username}, {_id: brisboxer5._id, username: brisboxer5.username}]
     });
 }
