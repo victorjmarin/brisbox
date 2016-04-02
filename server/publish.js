@@ -4,7 +4,6 @@ Meteor.publish('brisboxers', function(){
 
 Meteor.publish('ordersAvailable', function(){
 	var user_id = this.userId;
-	console.log("user_id: "+user_id);
 	if(!user_id){
 		user_id = -1;
 	}
