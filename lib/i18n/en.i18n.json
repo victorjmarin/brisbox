@@ -162,6 +162,12 @@
   "contact_us_form_send": "Send",
   "terms": "Terms and Conditions",
 
+  "address": "Address",
+  "date": "Date",
+  "numberBrisboxers": "Number brisboxers",
+  "left": "Left",
+  "hours": "Hours",
+
   "schemas": {
     "inscription": {
       "username": {

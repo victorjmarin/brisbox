@@ -1,5 +1,5 @@
 Template.listAllOrdersRow.helpers({
-	"remainds": function(){
+	"left": function(){
 		return this.numberBrisboxers - this.brisboxers.length ;
 	}
 });

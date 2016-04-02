@@ -158,6 +158,13 @@
   "contact_us_form_send": "Enviar",
   "terms": "Términos y Condiciones",
 
+  "address": "Dirección",
+  "date": "Fecha",
+  "numberBrisboxers": "Número de brisboxers",
+  "left": "Restantes",
+  "hours": "Horas",
+
+
   "schemas": {
     "inscription": {
       "username": {
