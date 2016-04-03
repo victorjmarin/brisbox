@@ -145,6 +145,10 @@
   "order-unloading": "Unloading",
   "order-form_day": "Day",
 
+  "email_verified": "Email validation",
+  "email_verified_Success": "Your email has been validated, in few days we'll contact you for the interview.",
+  "email_verified_Error": "Your email hasn't been validated, Please try again later.",
+
   "brisboxer_username": "Username",
   "brisboxer_email": "Email address",
   "brisboxer_verified": "Verified",
