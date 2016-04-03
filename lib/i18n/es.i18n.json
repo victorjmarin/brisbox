@@ -141,6 +141,10 @@
   "order-unloading": "Descarga",
   "order-form_day": "Día",
 
+  "email_verified": "Verificación de email",
+  "email_verified_Success": "Su email ha sido verificado, en pocos días contactaremos con usted para la entrevista.",
+  "email_verified_Error": "Si email, no ha podido ser verificado, por favor inténtelo de nuevo más tarde.",
+
   "brisboxer_username": "Usuario",
   "brisboxer_email": "Correo electrónico",
   "brisboxer_verified": "Verificado",
