@@ -6,7 +6,7 @@ Meteor.startup(function () {
         loadBrisboxers();
     }
     if(Orders.find().count() === 0){
-        loadOrderss();
+        loadOrders();
     }
 
 
@@ -153,7 +153,7 @@ function loadBrisboxers(){
         });
 }
 
-function loadOrderss(){
+function loadOrders(){
     var brisboxer1 = Meteor.users.findOne({username: 'brisboxer1'});
     var brisboxer2 = Meteor.users.findOne({username: 'brisboxer2'});
     var brisboxer3 = Meteor.users.findOne({username: 'brisboxer3'});
@@ -161,7 +161,7 @@ function loadOrderss(){
     var brisboxer5 = Meteor.users.findOne({username: 'brisboxer5'});
 
 
-    var order1_id = Orders.insert({
+    Orders.insert({
         name: 'nameTest',
         surname: 'surnameTest',
         phone: '000000000',
@@ -171,11 +171,11 @@ function loadOrderss(){
         address: 'Test1',
         hours: 2,
         comments: 'comments1',
-        typeMove: 'loading',
+        typeMove: 'load',
         date: new Date('2016-07-03'),
         brisboxers: [{_id: brisboxer2._id, username: brisboxer2.username}]
     });
-    var order2_id = Orders.insert({
+    Orders.insert({
         name: 'nameTest',
         surname: 'surnameTest',
         phone: '333333333',
@@ -185,11 +185,11 @@ function loadOrderss(){
         address: 'Test2',
         hours: 1,
         comments: 'comments2',
-        typeMove: 'loading',
+        typeMove: 'load',
         date: new Date('2016-06-20'),
         brisboxers: [{_id: brisboxer2._id, username: brisboxer2.username}, {_id: brisboxer3._id, username: brisboxer3.username}]
     });
-    var order3_id = Orders.insert({
+    Orders.insert({
         name: 'nameTest',
         surname: 'surnameTest',
         phone: '111111111',
@@ -199,11 +199,11 @@ function loadOrderss(){
         address: 'Test3',
         hours: 2,
         comments: 'comments3',
-        typeMove: 'unloading',
+        typeMove: 'unload',
         date: new Date('2016-08-04'),
         brisboxers: [{_id: brisboxer1._id, username: brisboxer1.username}]
     });
-     var order4_id = Orders.insert({
+    Orders.insert({
         name: 'nameTest',
         surname: 'surnameTest',
         phone: '222222222',
@@ -213,8 +213,83 @@ function loadOrderss(){
         address: 'Test3',
         hours: 1,
         comments: 'comments4',
-        typeMove: 'unloading',
+        typeMove: 'unload',
         date: new Date('2016-07-01'),
         brisboxers: [{_id: brisboxer2._id, username: brisboxer2.username}, {_id: brisboxer3._id, username: brisboxer3.username}, {_id: brisboxer4._id, username: brisboxer4.username}, {_id: brisboxer5._id, username: brisboxer5.username}]
+    });
+
+    Orders.insert({
+        name: 'testAlpha',
+        surname: 'surnameAlpha',
+        phone: '222222222',
+        email: 'emailalpha@gmail.com',
+        numberBrisboxers: 3,
+        zip: '41900',
+        address: 'alpha',
+        hours: 1,
+        comments: 'commentsAlpha',
+        typeMove: 'unload',
+        date: new Date('2016-07-01'),
+        brisboxers: [],
+    });
+
+    Orders.insert({
+        name: 'testBeta',
+        surname: 'surnameBeta',
+        phone: '222222222',
+        email: 'emailBeta@gmail.com',
+        numberBrisboxers: 1,
+        zip: '41900',
+        address: 'beta',
+        hours: 1,
+        comments: 'commentsBeta',
+        typeMove: 'unload',
+        date: new Date('2016-07-01'),
+        brisboxers: [],
+    });
+
+    Orders.insert({
+        name: 'testGamma',
+        surname: 'surnameGamma',
+        phone: '222222222',
+        email: 'emailGamma@gmail.com',
+        numberBrisboxers: 2,
+        zip: '41900',
+        address: 'gamma',
+        hours: 1,
+        comments: 'commentsGamma',
+        typeMove: 'load',
+        date: new Date('2016-07-01'),
+        brisboxers: [],
+    });
+
+    Orders.insert({
+        name: 'testTeta',
+        surname: 'surnameTeta',
+        phone: '441112223',
+        email: 'emailTeta@gmail.com',
+        numberBrisboxers: 3, 
+        zip: '41900',
+        address: 'teta',
+        hours: 1,
+        comments: 'commentsTeta',
+        typeMove: 'load',
+        date: new Date('2016-07-01'),
+        brisboxers: [],
+    });
+
+    Orders.insert({
+        name: 'testEpsilon',
+        surname: 'surnameEpsilon',
+        phone: '441112223',
+        email: 'emailEpsilon@gmail.com',
+        numberBrisboxers: 2, 
+        zip: '41900',
+        address: 'epsilon',
+        hours: 1,
+        comments: 'commentsEpsilon',
+        typeMove: 'load',
+        date: new Date('2016-07-01'),
+        brisboxers: [],
     });
 }
