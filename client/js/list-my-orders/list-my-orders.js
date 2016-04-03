@@ -1,7 +1,5 @@
-Meteor.subscribe("paco");
-
 Template.listMyOrders.helpers({
     orders: function(){
-    	return Orders.find();
+    	return Orders.find({name: "testAlpha"});
     }
 });
