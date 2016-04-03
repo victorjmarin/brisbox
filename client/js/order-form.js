@@ -33,7 +33,8 @@ Template.orderForm.events({
 			name: document.getElementById("name").value,
 			surname: document.getElementById("surname").value,
 			phone: document.getElementById("phone").value,
-			email: document.getElementById("email").value
+			email: document.getElementById("email").value,
+			brisboxers: [],
 		});
 		Meteor.call("saveOrder", orderForm);
 	}

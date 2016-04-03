@@ -145,6 +145,10 @@
   "order-unloading": "Unloading",
   "order-form_day": "Day",
 
+  "email_verified": "Email validation",
+  "email_verified_Success": "Your email has been validated, in few days we'll contact you for the interview.",
+  "email_verified_Error": "Your email hasn't been validated, Please try again later.",
+
   "brisboxer_username": "Username",
   "brisboxer_email": "Email address",
   "brisboxer_verified": "Verified",
@@ -161,6 +165,19 @@
   "contact_us_form_content": "Content: ",
   "contact_us_form_send": "Send",
   "terms": "Terms and Conditions",
+
+  "assessment_header": "Did you enjoy the move?",
+  "assessment_body": "We want your opinion about our brisboxers and the company. Here you can express yourself, adding a few comments about how the move went, how did this brisboxer developed and the rating.",
+  "assessment_comments": "Your comments",
+  "assessment_rating": "Rating",
+  "assessment_send": "Send",
+
+  "address": "Address",
+  "date": "Date",
+  "numberBrisboxers": "Number brisboxers",
+  "left": "Left",
+  "hours": "Hours",
+  "join": "Join",
 
   "schemas": {
     "inscription": {

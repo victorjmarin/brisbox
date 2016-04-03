@@ -24,7 +24,7 @@
   "footer_legal": "LEGAL",
   "footer_privacy": "Privacidad",
   "footer_terms": "Términos",
-  "footer_contact": "Contacto",
+  "footer_contact": "CONTACTO",
   "footer_join_us": "Hazte brisboxer",
   "footer_order": "Haz una reserva",
   "menu_about": "Nosotros",
@@ -131,7 +131,7 @@
   "order-form_phone": "Teléfono",
   "order-form_email": "Correo electrónico",
   "order-form_zip": "Código postal",
-  "order-form_address": "Dirección postal",
+  "order-form_address": "Dirección",
   "order-form_hours": "Horas",
   "order-form_numberBrisboxers": "Números de Brisboxers",
   "order-form_comments": "Comentarios",
@@ -140,6 +140,10 @@
   "order-loading": "Carga",
   "order-unloading": "Descarga",
   "order-form_day": "Día",
+
+  "email_verified": "Verificación de email",
+  "email_verified_Success": "Su email ha sido verificado, en pocos días contactaremos con usted para la entrevista.",
+  "email_verified_Error": "Si email, no ha podido ser verificado, por favor inténtelo de nuevo más tarde.",
 
   "brisboxer_username": "Usuario",
   "brisboxer_email": "Correo electrónico",
@@ -157,6 +161,19 @@
   "contact_us_form_content": "Contenido: ",
   "contact_us_form_send": "Enviar",
   "terms": "Términos y Condiciones",
+
+  "assessment_header": "¿Disfrutó la mudanza?",
+  "assessment_body": "Queremos su opinion sobre nuestra compañía y brisboxers. Aquí puedes expresarte, añadiendo unos cuantos comentarios sobre cómo fue la mudanza y cómo este brisboxer se desarrolló en ella, añadiendo una puntuación.",
+  "assessment_comments": "Tus comentarios",
+  "assessment_rating": "Valoración",
+  "assessment_send": "Enviar",
+
+  "address": "Dirección",
+  "date": "Fecha",
+  "numberBrisboxers": "Número de brisboxers",
+  "left": "Restantes",
+  "hours": "Horas",
+  "join": "Unirse",
 
   "schemas": {
     "inscription": {

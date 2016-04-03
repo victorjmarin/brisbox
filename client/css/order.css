@@ -1,9 +1,16 @@
 .order-info {
     display: block;
 }
+#button-next{
+    margin-left: 10px;
+}
+
+.typeMove{
+    padding-left: 10px;
+}
 
 .row-order-form{
-    margin-right: -100px !important;
+    padding-right: -100px !important;
 }
 
 #form-address-zip{
@@ -13,7 +20,17 @@
 .order-form{
     margin-top: 10px;
 }
+@media only screen {
+    .map-container{
+        display: none;
+    }
+}
+/*
+Tareas: Comprobar si está en Sevilla el código postal
+Coger la dirección y que te la ponga en el Mapa
+Arreglar los problemas en los datos reflejados de order checkout
 
+*/
 .section{
     border-right: 20px;
     border-left: 20px;
@@ -23,10 +40,6 @@
     padding-top: 15px;
 }
 
-#buttom-next{
-    margin-left: 30px !important;
-}
-
 .fix-textarea-margin{
     padding-left:0px !important;
     left:0px !important;
@@ -34,6 +47,7 @@
 
 .map-container {
     width: 100%;
+    margin-top: 20px;
     height: 800px;
 }
 
