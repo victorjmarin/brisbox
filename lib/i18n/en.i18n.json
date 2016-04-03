@@ -179,6 +179,8 @@
   "hours": "Hours",
   "join": "Join",
 
+  "my_orders": "My orders",
+
   "schemas": {
     "inscription": {
       "username": {
