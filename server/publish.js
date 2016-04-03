@@ -14,11 +14,11 @@ Meteor.publish('ordersAvailable', function(){
 		"brisboxers._id": {$not: {$eq: user_id}}});
 });
 
-Meteor.publish('myOrders', function(){
+Meteor.publish('paco', function(){
 	var user_id = this.userId;
 	console.log(user_id);
 	if(!user_id){
 		user_id = -1;
 	}
-	return Orders.find({"brisboxers._id": {$eq: user_id}});
+	return Orders.find(/*{"brisboxers._id": {$eq: user_id}}*/ {name: "testAlpha"});
 })

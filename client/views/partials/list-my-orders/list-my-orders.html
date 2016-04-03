@@ -9,9 +9,11 @@
 		    <td>{{_ "left"}}</td>
 		    <td>{{_ "hours"}}</td>
 		  </tr>
-		  
-		  
 
+		  {{#each orders}}
+		  	{{> listMyOrdersRow}}
+		  {{/each}}
+		  
 		</table>
 
 	</div>

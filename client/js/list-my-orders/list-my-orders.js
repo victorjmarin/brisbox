@@ -1,4 +1,4 @@
-Meteor.subscribe("myOrders");
+Meteor.subscribe("paco");
 
 Template.listMyOrders.helpers({
     orders: function(){
