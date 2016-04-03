@@ -175,6 +175,8 @@
   "hours": "Horas",
   "join": "Unirse",
 
+  "my_orders": "Mis pedidos",
+
   "schemas": {
     "inscription": {
       "username": {
