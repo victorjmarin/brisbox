@@ -2,8 +2,6 @@
  * Created by blezerd on 14/03/16.
  */
 Accounts.config({sendVerificationEmail: true, forbidClientAccountCreation: false, loginExpirationInDays: 10});
-
-
 Accounts.emailTemplates.siteName = "BRISBOX";
 Accounts.emailTemplates.from = "Brisbox <hello@brisbox.com>";
 Accounts.emailTemplates.verifyEmail.subject = function (user) {
@@ -16,6 +14,7 @@ Accounts.emailTemplates.verifyEmail.subject = function (user) {
     return respuesta;
 };
 Accounts.emailTemplates.verifyEmail.text = function (user, url) {
+    var url = url.replace('#/', '');
     var currentLocale = TAPi18next.lng();
     var respuesta;
     if (currentLocale == "en")
