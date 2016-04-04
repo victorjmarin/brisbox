@@ -81,7 +81,7 @@ a {
     border-radius: 10%;
 }
 
-@media (max-width: 601px) {
+@media (max-width: 800px) {
     .team-name-row {
         text-align: center
     }
@@ -178,7 +178,7 @@ a {
     clear: left;
 }
 
-@media(max-width: 601px){
+@media(max-width: 800px){
     .block-derecha{
         clear:left !important;
         width: 100% !important;
@@ -235,7 +235,7 @@ fieldset {
     text-align: center;
 }
 
-@media(max-width: 601px){
+@media(max-width: 800px){
     .image-profile{
         float: left;
         display: block;
