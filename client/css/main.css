@@ -1,28 +1,28 @@
 body {
-  font-family: 'Proxima Nova';
-  font-size: 20px;
-  font-weight: bold;
+    font-family: 'Proxima Nova';
+    font-size: 20px;
+    font-weight: bold;
 }
 
 a {
-  font-weight: 600;
+    font-weight: 600;
     font-size: 20px;
 }
 
 .caret:after {
-  content: " \203A"
+    content: " \203A"
 }
 
 .smaller-font {
-  font-size:99%;
+    font-size: 99%;
 }
 
 .uppercase {
- text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 .text-shadow {
-  text-shadow: 1px 1px 1px #707070;
+    text-shadow: 1px 1px 1px #707070;
 }
 
 .table td {
@@ -58,12 +58,14 @@ a {
     line-height: 110%;
     font-weight: 300;
     margin-right: 2%;
+    font-weight: bold;
 }
 
 .team-role {
     font-size: 1.25rem;
     line-height: 110%;
     font-weight: 300;
+    font-weight: bold;
     color: #616161;
 }
 
@@ -122,11 +124,12 @@ a {
 }
 
 .faqs-question-icon:hover {
-    color: #fbc02d  !important;
+    color: #fbc02d !important;
 }
 
 .faqs-question-text {
     vertical-align: middle;
+    font-weight: 600;
 }
 
 .faqs-orange_line {
@@ -145,6 +148,123 @@ a {
     font-style: italic;
     margin-top: 5px;
     margin-bottom: 5px;
+    font-weight: lighter;
 }
 
+.inscription-form {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
 
+.inscription-form fieldset {
+    padding: 8px 15px 12px 15px;
+}
+
+/* Bloques responsive design */
+
+.block-izquierda {
+    float: left;
+    display: block;
+    width: 48.82117% !important;
+    margin-right: 2.35765%;
+}
+
+.block-derecha {
+    float: left;
+    display: block;
+    width: 48.82117% !important;
+    margin-right: 0;
+}
+
+.block-debajo {
+    clear: left;
+}
+
+@media (max-width: 800px) {
+    .block-derecha {
+        clear: left !important;
+        width: 100% !important;
+    }
+
+    .block-izquierda {
+        width: 100% !important;
+    }
+}
+
+/* ----------------------------- */
+
+legend {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.help-block {
+    color: #F44336;
+}
+
+.obligatory label:after {
+    content: "*";
+}
+
+.input-field label {
+    left: 0rem !important;
+}
+
+.input-field {
+
+}
+
+.info-text {
+    text-align: center;
+    font-size: 0.8em;
+}
+
+.image-input {
+    margin-top: 1rem;
+}
+
+.fix-textarea-margin label {
+    margin-top: 10px;
+}
+
+fieldset {
+    border-top: 1px solid #ef6c00;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
+}
+
+.form-control {
+    border-bottom: 1px solid #ef6c00 !important;
+}
+
+.centrar {
+    text-align: center;
+}
+
+@media (max-width: 800px) {
+    .image-profile {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 48.82117%;
+    }
+}
+
+.checkbox input {
+    visibility: visible !important;
+    left: auto !important;
+    position: relative !important;
+
+}
+
+.checkbox label {
+    position: relative !important;
+    margin-bottom: 20px;
+}
+
+.checkTerms {
+    margin-bottom: 10px;
+}
