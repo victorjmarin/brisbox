@@ -6,10 +6,15 @@
                         <div class="col s12 m12">
                             <legend class="col s12 m12">{{_ "order-form_header"}}</legend>
                             <div class="order-info col s12 m12">
-                                <div class="input-field col s12 m12">
-                                    <input id="address" name="address" required type="text" class="address">
-                                    <label for="address">{{_ "order-form_address"}}</label>
+                                <div class="addressLoading input-field col s12 m12">
+                                    <input id="addressLoading" name="addressLoading" type="text">
+                                    <label for="addressLoading">{{_ "order-form_addressLoading"}}</label>
                                 </div>
+                                <div class="addressUnloading input-field col s12 m12">
+                                    <input id="addressUnloading" name="addressUnloading" type="text">
+                                    <label for="addressUnloading">{{_ "order-form_addressUnloading"}}</label>
+                                </div>
+                                <label class="errorAddress">{{_ "order-form_errorAddress"}}</label>
                                 <div class="input-field col s12 m12">
                                     <input id="zip" required value="{{zip}}" name="zip" type="text" class="zip">
                                     <label id="label-zip" for="zip" class="active">{{_ "order-form_zip"}}</label>
@@ -48,7 +53,7 @@
                                     <label id="label_hours" class="col s12 m12" for="hours">{{_ "order-form_hours"}}</label>
                                 </div>
                                 <div class="input-field col s12 m12">
-                                    <input id="day" type="text"  name="day" class="required datepicker">
+                                    <input id="day" type="time"  name="day" class="required datepicker">
                                     <label id="label_day" class="col s12 m8" for="day">{{_ "order-form_day"}}</label>
                                 </div>
                             </div>

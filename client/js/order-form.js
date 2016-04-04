@@ -11,6 +11,28 @@ function getParameterByName(variable) {
 }
 
 Template.orderForm.events({
+	'click #loading': function(event){
+		var loading = document.getElementById('loading').checked;
+		if(loading == true){
+			$('.addressLoading').css('visibility','visible');
+			$('#addressLoading').prop('required',true);
+		}
+		if(loading==false){
+			$('.addressLoading').css('visibility','hidden');
+			$('#addressLoading').prop('required',false);
+		}
+	},
+	'click #unloading': function(event){
+		var unloading = document.getElementById('unloading').checked;
+		if(unloading == true){
+			$('.addressUnloading').css('visibility','visible');
+			$('#addressUnloading').prop('required',true);
+		}
+		if(unloading == false){
+			$('.addressUnloading').css('visibility','hidden');
+			$('#addressUnloading').prop('required',false);
+		}
+	},
 	'click .form-more-info': function(event){
 		var info = $(event.target);
 		var more_info = info.parent().parent().next();
@@ -20,7 +42,13 @@ Template.orderForm.events({
 			more_info.slideUp("fast");
 		}
 	},
-	'submit .order_form ' : function (event) {
+	'submit .order_form ' : function (event){
+		var loading = document.getElementById('loading').checked;
+		var unloading = document.getElementById('unloading').checked;
+		if(loading == false && unloading == false){
+			$('.errorAddress').css('visibility','visible');
+			return false;
+		}
 		var orderForm = ({
 			address: document.getElementById("address").value,
 			zip: document.getElementById("zip").value,
@@ -36,6 +64,7 @@ Template.orderForm.events({
 			email: document.getElementById("email").value,
 			brisboxers: [],
 		});
+		Session.set("orderForm", orderForm);
 		Meteor.call("saveOrder", orderForm);
 	}
 });

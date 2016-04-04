@@ -23,16 +23,15 @@ Template.orderCheckout.helpers({
     order: function(){
         return Session.get("order");
     },
-    cost: function(){
+    cost: function() {
         var order = Session.get("order");
         return order.numberBrisboxers * order.hours * 20 + " €";
-    }
+    },
 });
 
-
-
 Template.orderCheckout.onRendered(function() {
-    var address = getParameterByName("address");
+    var addressLoading = getParameterByName("addressLoading");
+    var addressUnloading = getParameterByName("addressUnloading");
     var zip = getParameterByName("zip");
     var loading = getParameterByName("loading");
     var comments = getParameterByName("comments");
@@ -44,8 +43,15 @@ Template.orderCheckout.onRendered(function() {
     var surname = getParameterByName("surname");
     var phone = getParameterByName("phone");
     var email = getParameterByName("email");
+    if(addressLoading!=null){
+        $('.checkout-loading').css('visibility','visible');
+    }
+    if(addressUnloading!=null){
+        $('.checkout-unloading').css('visibility','visible');
+    }
     Session.set("order", {
-        address: address,
+        addressLoading: addressLoading,
+        addressUnloading: addressUnloading,
         zip: zip,
         loading: loading,
         comments: comments,

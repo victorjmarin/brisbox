@@ -137,3 +137,13 @@ Arreglar los problemas en los datos reflejados de order checkout
     -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
+
+.addressUnloading, .addressLoading{
+    visibility: hidden;
+}
+
+.errorAddress{
+    visibility:hidden;
+    color:red;
+    font-size: 1rem;
+}
