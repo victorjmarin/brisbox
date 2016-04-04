@@ -1,5 +1,6 @@
 Template.listMyOrders.helpers({
     orders: function(){
-    	return Orders.find({name: "testAlpha"});
+    	var user_id = Meteor.user()._id;
+    	return Orders.find({"brisboxers._id": user_id});
     }
 });

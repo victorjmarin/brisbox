@@ -5,7 +5,7 @@ Template.listAllOrders.helpers({
             user_id = -1;
         }
     	return Orders.find({
-            $where: "this.brisboxers.length < this.numberBrisboxers",
-            "brisboxers._id": {$not: {$eq: user_id}}});
+		$where: "this.brisboxers.length < this.numberBrisboxers",
+		"brisboxers._id": {$ne: user_id}});
     }
 });
