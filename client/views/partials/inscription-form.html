@@ -4,13 +4,10 @@
         <div class="section">
             {{#autoForm schema="SchemaInscription" id="inscriptionForm" type="method" meteormethod="createBrisboxer"}}
                 <fieldset>
-                    <legend>{{_ "account-info"}}</legend>
+                    <legend>{{_ "personal-info"}}</legend>
                     <div class="block-izquierda">
                         <div class="info-text">
                             {{_ "account-info-text"}}
-                        </div>
-                        <div class="input-field col s6 obligatory">
-                            {{> afQuickField name='username' class="validate"}}
                         </div>
                         <div class="input-field col s6 obligatory">
                             {{> afQuickField name='name' class="validate"}}
@@ -22,13 +19,10 @@
                             {{> afQuickField name='phone' type="tel" class="validate"}}
                         </div>
                         <div class="input-field col s6 obligatory">
-                            {{> afQuickField name='contactEmail' type='email' class="validate"}}
+                            {{> afQuickField name='email' type='email' class="validate"}}
                         </div>
                         <div class="input-field col s6 obligatory">
-                            {{> afQuickField name='password' type='password' class="validate"}}
-                        </div>
-                        <div class="input-field col s6 obligatory">
-                            {{> afQuickField name='confirmPass' type='password' class="validate"}}
+                            {{> afQuickField name='zip' class="validate"}}
                         </div>
                     </div>
                     <div class="block-derecha">
@@ -36,26 +30,27 @@
                             {{_ "image-profile-text"}}
                         </div>
                         <div class="image-input">
-
+                           <center><img src="/placeholder.png" height="auto" width="90%" style="max-width: 310px"></center>
                         </div>
                     </div>
                 </fieldset>
                 <br>
                 <fieldset>
-                    <legend>{{_ "personal-info"}}</legend>
+                    <legend>{{_ "account-info"}}</legend>
                     <div class="block-izquierda">
                         <div class="input-field col s6 obligatory">
-                            {{> afQuickField name='zip' class="validate"}}
+                            {{> afQuickField name='username' class="validate"}}
+                        </div>
+                        <div class="input-field col s6 obligatory">
+                            {{> afQuickField name='confirmPass' type='password' class="validate"}}
                         </div>
                     </div>
                     <div class="block-derecha">
                         <div class="input-field col s6 obligatory">
-                            {{> afQuickField name='email' type='email' class="validate"}}
+                            {{> afQuickField name='password' type='password' class="validate"}}
                         </div>
-                    </div>
-                    <div class="block-debajo">
-                        <div class="input-field col s6 fix-textarea-margin">
-                            {{> afQuickField type="textarea" name='howHearAboutUs' class="validate materialize-textarea"}}
+                        <div class="input-field col s6">
+                            {{> afQuickField type="text" name='howHearAboutUs' class="validate materialize-textarea"}}
                         </div>
                     </div>
                     <div class="block-debajo">

@@ -1,9 +1,12 @@
 body {
   font-family: 'Proxima Nova';
+  font-size: 20px;
+  font-weight: bold;
 }
 
 a {
   font-weight: 600;
+    font-size: 20px;
 }
 
 .caret:after {
@@ -19,7 +22,7 @@ a {
 }
 
 .text-shadow {
-  text-shadow: 1px 1px 1px #777;
+  text-shadow: 1px 1px 1px #707070;
 }
 
 .table td {
@@ -78,7 +81,7 @@ a {
     border-radius: 10%;
 }
 
-@media (max-width: 601px) {
+@media (max-width: 800px) {
     .team-name-row {
         text-align: center
     }
@@ -145,7 +148,7 @@ a {
 }
 
 .inscription-form {
-    width: 50%;
+    width: 70%;
     margin: 0 auto;
     margin-bottom: 50px;
     margin-top: 50px;
@@ -175,7 +178,7 @@ a {
     clear: left;
 }
 
-@media(max-width: 601px){
+@media(max-width: 800px){
     .block-derecha{
         clear:left !important;
         width: 100% !important;
@@ -232,7 +235,7 @@ fieldset {
     text-align: center;
 }
 
-@media(max-width: 601px){
+@media(max-width: 800px){
     .image-profile{
         float: left;
         display: block;
@@ -255,4 +258,5 @@ fieldset {
 
 .checkTerms {
     margin-bottom: 10px;
+
 }

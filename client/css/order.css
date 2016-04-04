@@ -20,11 +20,6 @@
 .order-form{
     margin-top: 10px;
 }
-@media only screen {
-    .map-container{
-        display: none;
-    }
-}
 /*
 Tareas: Comprobar si está en Sevilla el código postal
 Coger la dirección y que te la ponga en el Mapa
