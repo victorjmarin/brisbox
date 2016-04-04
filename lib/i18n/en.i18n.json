@@ -210,6 +210,10 @@
   "terms38": "Bellhops may, in Bellhops’s sole discretion, permit you from time to time to submit, upload, publish or otherwise make available to Bellhops through the Services, or otherwise, textual, audio and/or visual content and information, including commentary and feedback related to the Services, initiation of support requests and submissions of entries for competitions and promotions (“User Content”). Any User Content provided by you remains your property. However, by providing User Content to Bellhops, you grant Bellhops a worldwide, perpetual, irrevocable, transferable, royalty-free license, with the right to sublicense, to use, copy, modify, create derivative works of, distribute, publicly display, publicly perform, and otherwise exploit in any manner such User Content in all formats and distribution channels now known or hereafter devised (including in connection with the Services and Bellhops’s business and on third- party sites and services), without further notice to or consent from you, and without the requirement of payment to you or any other person or entity.",
   "termsFinal": "Thank you for visiting the Website.",
 
+  "welcome_header": "WELCOME, BRISBOXER!",
+  "welcome1": "You are now just one step away from completing your inscription with us. To do this go to your inbox and click the link to verify your email.",
+  "welcome2": "Then, we will contact with you to send a date for the selection process, after which it will activate your account so you can start using the application.",
+  "welcome3": "See you soon!",
 
   "schemas": {
     "inscription": {
