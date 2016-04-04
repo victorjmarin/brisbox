@@ -1,5 +1,4 @@
-{
- "public": {
+{"public": {
    "stripe": {
      "testPublishableKey": "pk_test_UgojMb09xbU7niULddCDsFKI",
      "livePublishableKey": "pk_live_xxxxxxxxxxxxxxxxxxxxxxxx"

@@ -36,3 +36,7 @@
     background: -o-linear-gradient(left, #FFFFFF, #F7F9FA);
     color: #2E3133;
 }
+
+.checkout-loading, .checkout-unloading{
+    visibility: hidden;
+}

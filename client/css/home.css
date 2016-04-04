@@ -63,3 +63,11 @@
 :-ms-input-placeholder {
     color: rgb(138, 140, 138);
 }
+
+.slider, .white{
+    padding:0 0 0 0 !important;
+}
+
+#slider_container{
+    max-width: 1442px;
+}

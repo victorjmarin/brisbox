@@ -21,3 +21,7 @@ Meteor.publish('myOrders', function(){
 	}
 	return Orders.find({"brisboxers._id": user_id});
 })
+
+Meteor.publish('zipsAll',function(){
+	return Zips.findAll();
+});

@@ -9,7 +9,33 @@
                         </li>
                         <li><a href="{{pathFor 'join-us'}}" class="grey-text text-darken-4">{{_ "footer_join_us"}}</a>
                         </li>
-                        <li><a href="{{pathFor 'order'}}" class="grey-text text-darken-4">{{_ "footer_order"}}</a></li>
+                        <script>
+                            $(document).ready(function(){
+                                $('.modal-trigger').leanModal();
+                            });
+                        </script>
+                        <li>
+                            <div class="block-debajo">
+                                <div class="col s12">
+                                    <a class="grey-text text-darken-4" href="#checkModal">
+                                        {{_ "footer_order"}}
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <div id="checkModal" class="modal">
+                            <form class="zip_form" method="get" action="{{ pathFor 'order' }}">
+                                <div class="col s12 center-align">
+                                    <h5 class="white-text proxima" style="color: black !important;margin-bottom: 35px;">{{_ "modal_order"}}</h5>
+                                    <div class="col s12 center-align">
+                                        <div style="display:inline-block;margin-bottom: 10px;"><input pattern=".{5,}" required type="zip" maxlength="5" class="form-zip" name="zip" id="inputZip" aria-required="false" placeholder="{{_ 'order-form_zip'}}" title="{{_ 'order-form_zip'}}"></div>
+                                        <br/>
+                                        <input style="margin-bottom:10px;" id="button-zip" type="submit" value="{{_ 'home_order'}}" class="btn btn-large proxima bold orange darken-3">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </ul>
                 </div>
                 <div class="col s4 center-align">
