@@ -1,0 +1,131 @@
+
+.inscription-form {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.inscription-form fieldset{
+    padding: 8px 15px 12px 15px;
+}
+
+/* Bloques responsive design */
+
+.block-izquierda {
+    float: left;
+    display: block;
+    width: 48.82117% !important;
+    margin-right: 2.35765%;
+}
+
+.block-derecha {
+    float: left;
+    display: block;
+    width: 48.82117% !important;
+    margin-right: 0;
+}
+
+.block-debajo {
+    clear: left;
+}
+
+@media(max-width: 800px){
+    .block-derecha{
+        clear:left !important;
+        width: 100% !important;
+    }
+    .block-izquierda {
+        width: 100% !important;
+    }
+}
+
+/* ----------------------------- */
+
+
+legend {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.help-block {
+    color: #F44336;
+}
+
+.obligatory label:after {
+    content: "*";
+}
+
+.input-field label {
+    left: 0rem !important;
+}
+
+.info-text {
+    text-align: center;
+    font-size: 0.8em;
+}
+
+.image-input {
+    margin-top: 1rem;
+}
+
+.fix-textarea-margin label {
+    margin-top: 20px;
+}
+
+fieldset {
+    border-top: 1px solid #ef6c00;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
+}
+
+.form-control {
+    border-bottom: 1px solid #ef6c00 !important;
+}
+
+.centrar {
+    text-align: center;
+}
+
+@media(max-width: 800px){
+    .image-profile{
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 48.82117%;
+    }
+}
+
+.checkbox input {
+    visibility: visible !important;
+    left: auto !important;
+    position: relative !important;
+}
+
+.checkbox label{
+    position: relative !important;
+    top: 0.2em !important;
+    margin-bottom: 20px;
+}
+
+.checkTerms {
+    margin-bottom: 10px;
+}
+
+.terms_header{
+    font-size: 1em !important;
+    font-weight: normal !important;
+    width: 80%;
+    margin-top: 60px;
+}
+
+.terms_body{
+    font-size: 0.8em !important;
+    font-weight: normal !important;
+    width: 75%;
+}
+
+.terms_body p{
+    text-align: justify !important;
+}
