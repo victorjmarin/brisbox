@@ -16,7 +16,6 @@ Meteor.publish('ordersAvailable', function(){
 
 Meteor.publish('myOrders', function(){
 	var user_id = this.userId;
-	console.log(user_id);
 	if(!user_id){
 		user_id = -1;
 	}
