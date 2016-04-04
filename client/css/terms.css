@@ -1,0 +1,28 @@
+#terms-main{
+    background-color: #eceff1;
+    width: 100%;
+    height: 100%;
+}
+
+#terms-container{
+    height: 100%;
+    background-color: white;
+    margin-top: 0px !important;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+#terms-container p {
+    text-align: justify;
+    font-weight: normal !important;
+    font-size: 0.8em !important;
+}
+
+#terms-container h6{
+    font-size: 1em !important;
+}
+
+.terms_row{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
