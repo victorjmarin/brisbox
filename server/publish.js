@@ -13,3 +13,7 @@ Meteor.publish('ordersAvailable', function(){
 		$where: "this.brisboxers.length < this.numberBrisboxers",
 		"brisboxers._id": {$not: {$eq: user_id}}});
 });
+
+Meteor.publish('zipsAll',function(){
+	return Zips.findAll();
+});

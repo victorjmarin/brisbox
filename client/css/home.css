@@ -64,6 +64,10 @@
     color: rgb(138, 140, 138);
 }
 
-.modal_order{
+.slider, .white{
+    padding:0 0 0 0 !important;
+}
 
+#slider_container{
+    max-width: 1442px;
 }

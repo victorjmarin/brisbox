@@ -38,8 +38,8 @@
         </div>
 
         <div class="white" style="padding-top: 50px; padding-bottom: 50px">
-            <div class="container">
-                <div class="row">
+            <div class="container" id="slider_container">
+                <div class="row col s12 m12">
                     <!-- Services high resolution screens -->
                     <div class="hide-on-med-and-down" style="margin-left: -15%; margin-right: -15% ">
                         {{> homeServicesHR}}
@@ -74,41 +74,65 @@
 
 <template name="homeServicesHR">
 
-    <div class="col s4 center-align">
-        <img src="/loading.png" style="height: 220px; width: 220px">
-        <h6 class="orange-text text-darken-1 bold"
-            style="font-size: 120%;">{{_ "home_loading"}}</h6>
-        <p class="center-align">{{_ "home_loading_text"}}</p>
-    </div>
-    <div class="col s4 center-align">
-        <img src="/unloading.png" style="height: 220px; width: 220px">
-        <h6 class="orange-text text-darken-1 bold"
-            style="font-size: 120%;">{{_ "home_unloading"}}</h6>
-        <p class="center-align">{{_ "home_unloading_text"}}</p>
-    </div>
-    <div class="col s4 center-align">
-        <img src="/placing.png" style="height: 220px; width: 220px">
-        <h6 class="orange-text text-darken-1 bold"
-            style="font-size: 120%;">{{_ "home_placing"}}</h6>
-        <p class="center-align">{{_ "home_placing_text"}}</p>
+    <script>
+        $(document).ready(function(){
+            $('.slider').slider({full_width: true});
+        });
+    </script>
+    <div class="slider">
+        <ul class="slides">
+            <li>
+                <img src="/slider1.png"/>
+                <div class="caption center-align">
+                    <h3>{{_ "home_loading"}}</h3>
+                    <h5 class="light grey-text text-lighten-3">{{_ "home_loading_text"}}</h5>
+                </div>
+            </li>
+            <li>
+                <img src="/slider2.jpg"/>
+                <div class="caption left-align">
+                    <h3>{{_ "home_unloading"}}</h3>
+                    <h5 class="light grey-text text-lighten-3">{{_ "home_unloading_text"}}</h5>
+                </div>
+            </li>
+            <li>
+                <img src="/slider3.jpg"/>
+                <div class="caption right-align">
+                    <h3>{{_ "home_placing"}}</h3>
+                    <h5 class="light grey-text text-lighten-3">{{_ "home_placing_text"}}</h5>
+                </div>
+            </li>
+        </ul>
     </div>
 
 </template>
 
 <template name="homeServicesLR">
 
-    <div class="col s12 center-align">
-        <img src="/loading.png" class="responsive-img">
-        <h6 class="orange-text text-darken-1 flow-text bold">{{_ "home_loading"}}</h6>
-        <p class="center-align flow-text">{{_ "home_loading_text"}}</p>
-        <hr>
-        <img src="/unloading.png" class="responsive-img">
-        <h6 class="orange-text text-darken-1 flow-text" style="font-weight: 700;">{{_ "home_unloading"}}</h6>
-        <p class="center-align flow-text">{{_ "home_unloading_text"}}</p>
-        <hr>
-        <img src="/placing.png" class="responsive-img">
-        <h6 class="orange-text text-darken-1 flow-text" style="font-weight: 700;">{{_ "home_placing"}}</h6>
-        <p class="center-align flow-text">{{_ "home_placing_text"}}</p>
+    <div class="slider">
+        <ul class="slides">
+            <li>
+                <img src="/slider1.png"/>
+                <div class="caption center-align">
+                    <h3>{{_ "home_loading"}}</h3>
+                    <h5 class="light grey-text text-lighten-3">{{_ "home_loading_text"}}</h5>
+                </div>
+            </li>
+            <li>
+                <img src="/slider2.jpg"/>
+                <div class="caption left-align">
+                    <h3>{{_ "home_unloading"}}</h3>
+                    <h5 class="light grey-text text-lighten-3">{{_ "home_unloading_text"}}</h5>
+                </div>
+            </li>
+            <li>
+                <img src="/slider3.jpg"/>
+                <div class="caption right-align">
+                    <h3>{{_ "home_placing"}}</h3>
+                    <h5 class="light grey-text text-lighten-3">{{_ "home_placing_text"}}</h5>
+                </div>
+            </li>
+        </ul>
     </div>
 
 </template>
