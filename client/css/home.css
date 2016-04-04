@@ -71,3 +71,7 @@
 #slider_container{
     max-width: 1442px;
 }
+
+.indicator-item{
+    background-color: #f57c00 !important;
+}
