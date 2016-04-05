@@ -212,10 +212,24 @@ legend {
     left: 0rem !important;
 }
 
-.input-field {
-
+.input-field input[type=text]:focus + label{
+    color: #ef6c00;
 }
-
+.input-field textarea[type=text]:focus + label{
+    color: #ef6c00;
+}
+.input-field input[type=number]:focus + label{
+    color: #ef6c00;
+}
+.input-field input[type=email]:focus + label{
+    color: #ef6c00;
+}
+.input-field input[type=tel]:focus + label{
+    color: #ef6c00;
+}
+.input-field input[type=time]:focus + label{
+    color: #ef6c00;
+}
 .info-text {
     text-align: center;
     font-size: 0.8em;
