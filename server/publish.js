@@ -11,14 +11,17 @@ Meteor.publish('ordersAvailable', function(){
 	//La unica forma de solucionar el rendimiento es añadir dato derivado persistido que indique que el order está ya asignado completamente.
 	return Orders.find({
 		$where: "this.brisboxers.length < this.numberBrisboxers",
-		"brisboxers._id": {$not: {$eq: user_id}}});
+		"brisboxers._id": {$ne: user_id}});
 });
 
-Meteor.publish('paco', function(){
+Meteor.publish('myOrders', function(){
 	var user_id = this.userId;
-	console.log(user_id);
 	if(!user_id){
 		user_id = -1;
 	}
-	return Orders.find(/*{"brisboxers._id": {$eq: user_id}}*/ {name: "testAlpha"});
-})
+	return Orders.find({"brisboxers._id": user_id});
+});
+
+Meteor.publish('zipsAll',function(){
+	return Zips.find();
+});

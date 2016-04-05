@@ -1,0 +1,43 @@
+.welcome_header{
+    font-size: 1em !important;
+    font-weight: normal !important;
+    width: 80%;
+    margin-top: 60px;
+}
+
+.welcome_body{
+    font-size: 0.8em !important;
+    font-weight: normal !important;
+    float: left;
+    width: 55%;
+}
+
+.welcome_body p{
+    text-align: justify;
+}
+
+@media(max-width: 600px){
+
+    .welcome_header{
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .welcome_body{
+        width: 75% !important;
+        float:none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .welcome_body p, .welcome_body h5{
+        text-align: center !important;
+    }
+
+    #welcome-container img{
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        float: none !important;
+    }
+}

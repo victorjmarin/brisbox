@@ -1,25 +1,28 @@
 body {
-  font-family: 'Proxima Nova';
+    font-family: 'Proxima Nova';
+    font-size: 20px;
+    font-weight: bold;
 }
 
 a {
-  font-weight: 600;
+    font-weight: 600;
+    font-size: 20px;
 }
 
 .caret:after {
-  content: " \203A"
+    content: " \203A"
 }
 
 .smaller-font {
-  font-size:99%;
+    font-size: 99%;
 }
 
 .uppercase {
- text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 .text-shadow {
-  text-shadow: 1px 1px 1px #777;
+    text-shadow: 1px 1px 1px #707070;
 }
 
 .table td {
@@ -55,12 +58,14 @@ a {
     line-height: 110%;
     font-weight: 300;
     margin-right: 2%;
+    font-weight: bold;
 }
 
 .team-role {
     font-size: 1.25rem;
     line-height: 110%;
     font-weight: 300;
+    font-weight: bold;
     color: #616161;
 }
 
@@ -78,7 +83,7 @@ a {
     border-radius: 10%;
 }
 
-@media (max-width: 601px) {
+@media (max-width: 800px) {
     .team-name-row {
         text-align: center
     }
@@ -119,11 +124,12 @@ a {
 }
 
 .faqs-question-icon:hover {
-    color: #fbc02d  !important;
+    color: #fbc02d !important;
 }
 
 .faqs-question-text {
     vertical-align: middle;
+    font-weight: 600;
 }
 
 .faqs-orange_line {
@@ -142,16 +148,17 @@ a {
     font-style: italic;
     margin-top: 5px;
     margin-bottom: 5px;
+    font-weight: lighter;
 }
 
 .inscription-form {
-    width: 50%;
+    width: 70%;
     margin: 0 auto;
     margin-bottom: 50px;
     margin-top: 50px;
 }
 
-.inscription-form fieldset{
+.inscription-form fieldset {
     padding: 8px 15px 12px 15px;
 }
 
@@ -175,11 +182,12 @@ a {
     clear: left;
 }
 
-@media(max-width: 601px){
-    .block-derecha{
-        clear:left !important;
+@media (max-width: 800px) {
+    .block-derecha {
+        clear: left !important;
         width: 100% !important;
     }
+
     .block-izquierda {
         width: 100% !important;
     }
@@ -204,6 +212,24 @@ legend {
     left: 0rem !important;
 }
 
+.input-field input[type=text]:focus + label{
+    color: #ef6c00;
+}
+.input-field textarea[type=text]:focus + label{
+    color: #ef6c00;
+}
+.input-field input[type=number]:focus + label{
+    color: #ef6c00;
+}
+.input-field input[type=email]:focus + label{
+    color: #ef6c00;
+}
+.input-field input[type=tel]:focus + label{
+    color: #ef6c00;
+}
+.input-field input[type=time]:focus + label{
+    color: #ef6c00;
+}
 .info-text {
     text-align: center;
     font-size: 0.8em;
@@ -214,7 +240,7 @@ legend {
 }
 
 .fix-textarea-margin label {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 fieldset {
@@ -232,8 +258,8 @@ fieldset {
     text-align: center;
 }
 
-@media(max-width: 601px){
-    .image-profile{
+@media (max-width: 800px) {
+    .image-profile {
         float: left;
         display: block;
         margin-right: 2.35765%;
@@ -245,11 +271,11 @@ fieldset {
     visibility: visible !important;
     left: auto !important;
     position: relative !important;
+
 }
 
-.checkbox label{
+.checkbox label {
     position: relative !important;
-    top: 0.2em !important;
     margin-bottom: 20px;
 }
 

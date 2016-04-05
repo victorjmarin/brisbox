@@ -1,6 +1,6 @@
 Meteor.startup(function () {
     // code to run on server at startup
-    process.env.MAIL_URL = 'smtp://hello@brisbox.com:Estuforce2.0@smtp.1and1.com:587'
+    process.env.MAIL_URL = 'smtp://hello@brisbox.com:Estuforce2.0@smtp.1and1.com:587';
     if (Meteor.users.find().count() === 0) {
         loadAdmins();
         loadBrisboxers();
@@ -8,8 +8,9 @@ Meteor.startup(function () {
     if(Orders.find().count() === 0){
         loadOrders();
     }
-
-
+    if(Zips.find().count() === 0){
+        loadZips();
+    }
 });
 
 
@@ -153,13 +154,84 @@ function loadBrisboxers(){
         });
 }
 
+function loadZips(){
+    Zips.insert({
+        code: "41000"
+    });
+    Zips.insert({
+        code: "41001"
+    });
+    Zips.insert({
+        code: "41002"
+    });
+    Zips.insert({
+        code: "41003"
+    });Zips.insert({
+        code: "41004"
+    });
+    Zips.insert({
+        code: "41005"
+    });
+    Zips.insert({
+        code: "41006"
+    });
+    Zips.insert({
+        code: "41007"
+    });
+    Zips.insert({
+        code: "41008"
+    });
+    Zips.insert({
+        code: "41009"
+    });
+    Zips.insert({
+        code: "41010"
+    });
+    Zips.insert({
+        code: "41011"
+    });Zips.insert({
+        code: "41012"
+    });
+    Zips.insert({
+        code: "41013"
+    });
+    Zips.insert({
+        code: "41014"
+    });
+    Zips.insert({
+        code: "41015"
+    });
+    Zips.insert({
+        code: "41016"
+    });
+
+    Zips.insert({
+        code: "41017"
+    });
+
+    Zips.insert({
+        code: "41018"
+    });
+
+    Zips.insert({
+        code: "41019"
+    });
+
+    Zips.insert({
+        code: "41020"
+    });
+
+    Zips.insert({
+        code: "41092"
+    });
+}
+
 function loadOrders(){
     var brisboxer1 = Meteor.users.findOne({username: 'brisboxer1'});
     var brisboxer2 = Meteor.users.findOne({username: 'brisboxer2'});
     var brisboxer3 = Meteor.users.findOne({username: 'brisboxer3'});
     var brisboxer4 = Meteor.users.findOne({username: 'brisboxer4'});
     var brisboxer5 = Meteor.users.findOne({username: 'brisboxer5'});
-
 
     Orders.insert({
         name: 'nameTest',
@@ -168,7 +240,8 @@ function loadOrders(){
         email: 'email1@gmail.com',
         numberBrisboxers: 2,
         zip: '41900',
-        address: 'Test1',
+        addressLoading: 'Test1',
+        addressUnloading: '',
         hours: 2,
         comments: 'comments1',
         typeMove: 'load',
@@ -182,7 +255,8 @@ function loadOrders(){
         email: 'email2@gmail.com',
         numberBrisboxers: 3,
         zip: '41900',
-        address: 'Test2',
+        addressLoading: 'Test2',
+        addressUnloading: '',
         hours: 1,
         comments: 'comments2',
         typeMove: 'load',
@@ -196,7 +270,8 @@ function loadOrders(){
         email: 'email3@gmail.com',
         numberBrisboxers: 1,
         zip: '41900',
-        address: 'Test3',
+        addressLoading: 'Test3',
+        addressUnloading: '',
         hours: 2,
         comments: 'comments3',
         typeMove: 'unload',
@@ -210,7 +285,8 @@ function loadOrders(){
         email: 'email4@gmail.com',
         numberBrisboxers: 4,
         zip: '41900',
-        address: 'Test3',
+        addressLoading: 'Test3',
+        addressUnloading: '',
         hours: 1,
         comments: 'comments4',
         typeMove: 'unload',
@@ -225,7 +301,8 @@ function loadOrders(){
         email: 'emailalpha@gmail.com',
         numberBrisboxers: 3,
         zip: '41900',
-        address: 'alpha',
+        addressLoading: 'alpha',
+        addressUnloading: '',
         hours: 1,
         comments: 'commentsAlpha',
         typeMove: 'unload',
@@ -240,7 +317,8 @@ function loadOrders(){
         email: 'emailBeta@gmail.com',
         numberBrisboxers: 1,
         zip: '41900',
-        address: 'beta',
+        addressLoading: 'beta',
+        addressUnloading: '',
         hours: 1,
         comments: 'commentsBeta',
         typeMove: 'unload',
@@ -255,7 +333,8 @@ function loadOrders(){
         email: 'emailGamma@gmail.com',
         numberBrisboxers: 2,
         zip: '41900',
-        address: 'gamma',
+        addressLoading: 'gamma',
+        addressUnloading: '',
         hours: 1,
         comments: 'commentsGamma',
         typeMove: 'load',
@@ -270,7 +349,8 @@ function loadOrders(){
         email: 'emailTeta@gmail.com',
         numberBrisboxers: 3, 
         zip: '41900',
-        address: 'teta',
+        addressLoading: 'teta',
+        addressUnloading: '',
         hours: 1,
         comments: 'commentsTeta',
         typeMove: 'load',
@@ -285,7 +365,8 @@ function loadOrders(){
         email: 'emailEpsilon@gmail.com',
         numberBrisboxers: 2, 
         zip: '41900',
-        address: 'epsilon',
+        addressLoading: 'epsilon',
+        addressUnloading: '',
         hours: 1,
         comments: 'commentsEpsilon',
         typeMove: 'load',

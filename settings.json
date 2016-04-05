@@ -1,15 +1,14 @@
-{
-  "public": {
-    "stripe": {
-      "testPublishableKey": "pk_test_xxxxxxxxxxxxxxxxxxxxxxxx",
-      "livePublishableKey": "pk_live_xxxxxxxxxxxxxxxxxxxxxxxx"
-    },
-    "reserveAmount": 500
-  },
-  "private": {
-    "stripe": {
-      "testSecretKey": "sk_test_xxxxxxxxxxxxxxxxxxxxxxxx",
-      "liveSecretKey": "sk_live_xxxxxxxxxxxxxxxxxxxxxxxx"
-    }
-  }
+{"public": {
+   "stripe": {
+     "testPublishableKey": "pk_test_UgojMb09xbU7niULddCDsFKI",
+     "livePublishableKey": "pk_live_xxxxxxxxxxxxxxxxxxxxxxxx"
+   },
+   "reserveAmount": 500
+ },
+ "private": {
+   "stripe": {
+     "testSecretKey": "sk_test_u6R8UmdlKfuIUYvpVWuWOkEx",
+     "liveSecretKey": "sk_live_xxxxxxxxxxxxxxxxxxxxxxxx"
+   }
+ }
 }

@@ -1,9 +1,6 @@
 .order-info {
     display: block;
 }
-#button-next{
-    margin-left: 10px;
-}
 
 .typeMove{
     padding-left: 10px;
@@ -19,6 +16,7 @@
 
 .order-form{
     margin-top: 10px;
+
 }
 /*
 Tareas: Comprobar si está en Sevilla el código postal
@@ -136,4 +134,14 @@ Arreglar los problemas en los datos reflejados de order checkout
     box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
     -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.addressUnloading, .addressLoading{
+    visibility: hidden;
+}
+
+.errorAddress{
+    visibility:hidden;
+    color:red;
+    font-size: 1rem;
 }

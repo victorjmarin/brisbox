@@ -1,0 +1,73 @@
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .main-container{
+        font-size: x-large;
+        font-weight: normal;
+        margin: 1% 5%;
+        height: auto;
+        color: rgba(0, 0, 0, 0.85);
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .main-container {
+        font-size: x-large;
+        font-weight: normal;
+        margin: 1% 5%;
+        height: 500px;
+        color: rgba(0, 0, 0, 0.85);
+    }
+}
+.customer-info{
+    height: 100%;
+}
+
+.customer-info span{
+	display: block;
+    padding: 1%;
+}
+
+.order-info{
+    height: 100%;
+}
+
+.order-info span{
+	display: block;
+	padding: 1%;
+}
+
+.brisboxers-info{
+    height: 100%;
+}
+
+.brisboxers-info span{
+	display: block;
+	padding: 1%;
+}
+.image-div{
+    vertical-align: top;
+	display: inline-block;
+}
+.image-div img{
+    max-height: 70px;
+    max-width: 70px;
+    vertical-align: text-top;
+}
+.name-and-vote-div{
+    vertical-align: top;
+	display: inline-block;
+}
+.order_dashboard_vote{
+    text-align: center;
+    font-weight: bold;
+    color: #6B6766;
+}
+.order_dashboard_section_title{
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+}
+.brisboxer-info{
+    padding-left: 2px;
+    margin-bottom: 5%;
+}

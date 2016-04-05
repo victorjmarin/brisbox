@@ -12,13 +12,6 @@
                                 </div>
                             </div>
                             <div id="info-budget" class="col s12 m12">
-                                <i class="small material-icons col s2 m2">location_on</i>
-                                <label  id="text-budget" class="col s10 m4" for="address">{{_ "order-form_address"}}</label>
-                                <div class="col s12 m6" id="address-budget">
-                                    {{order.address}}
-                                </div>
-                            </div>
-                            <div id="info-budget" class="col s12 m12">
                                 <i class="small material-icons col s2 m2">call</i>
                                 <label  id="text-budget" class="col s10 m4" for="phone">{{_ "order-form_phone"}}</label>
                                 <div class="col s12 m6" id="phone-budget">
@@ -30,6 +23,20 @@
                                 <label  id="text-budget" class="col s10 m4" for="cost">{{_ "order-form_cost"}}</label>
                                 <div class="col s12 m6" id="cost-budget">
                                     {{cost}}
+                                </div>
+                            </div>
+                            <div id="info-budget" class="checkout-loading col s12 m12">
+                                <i class="small material-icons col s2 m2">location_on</i>
+                                <label  id="text-budget" class="col s10 m4" for="addressLoading">{{_ "order-form_addressLoading"}}</label>
+                                <div class="col s12 m6" id="address-budget">
+                                    {{order.addressLoading}}
+                                </div>
+                            </div>
+                            <div id="info-budget" class="checkout-unloading col s12 m12">
+                                <i class="small material-icons col s2 m2">location_on</i>
+                                <label  id="text-budget" class="col s10 m4" for="addressUnloading">{{_ "order-form_addressUnloading"}}</label>
+                                <div class="col s12 m6" id="address-budget">
+                                    {{order.addressUnloading}}
                                 </div>
                             </div>
                             <br>

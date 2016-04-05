@@ -9,20 +9,47 @@ function getParameterByName(variable) {
 	}
 	return false;
 }
-
+Template.orderForm.onRendered(function (){
+	$('#divAddressUnLoading').css('display','none');
+	$('#divAddressLoading').css('display','none');
+});
 Template.orderForm.events({
-	'click .form-more-info': function(event){
-		var info = $(event.target);
-		var more_info = info.parent().parent().next();
-		if (more_info.css("display") == "none"){
-			more_info.slideDown("fast");
-		}else if(more_info.css("display") !== "none"){
-			more_info.slideUp("fast");
+	'click #loading': function(event){
+		var loading = document.getElementById('loading').checked;
+		if(loading == true){
+			$('#divAddressLoading').css('display','block');
+			$('#divAddressLoading').css('visibility','visible');
+			$('#addressLoading').prop('required',true);
+		}
+		if(loading==false){
+			$('#divAddressLoading').css('display','none');
+			$('#divAddressLoading').css('visibility','hidden');
+			$('#addressLoading').prop('required',false);
 		}
 	},
-	'submit .order_form ' : function (event) {
+	'click #unloading': function(event){
+		var unloading = document.getElementById('unloading').checked;
+		if(unloading == true){
+			$('#divAddressUnLoading').css('display','block');
+			$('#divAddressUnLoading').css('visibility','visible');
+			$('#addressUnloading').prop('required',true);
+		}
+		if(unloading == false){
+			$('#divAddressUnLoading').css('display','none');
+			$('#divAddressUnLoading').css('visibility','hidden');
+			$('#addressUnloading').prop('required',false);
+		}
+	},
+	'submit .order_form ' : function (event){
+		var loading = document.getElementById('loading').checked;
+		var unloading = document.getElementById('unloading').checked;
+		if(loading == false && unloading == false){
+			$('.errorAddress').css('visibility','visible');
+			return false;
+		}
 		var orderForm = ({
-			address: document.getElementById("address").value,
+			addressLoading: document.getElementById("addressLoading").value,
+			addressUnloading: document.getElementById("addressUnloading").value,
 			zip: document.getElementById("zip").value,
 			loading: document.getElementById("loading").value,
 			unloading: document.getElementById("unloading").value,
@@ -34,7 +61,7 @@ Template.orderForm.events({
 			surname: document.getElementById("surname").value,
 			phone: document.getElementById("phone").value,
 			email: document.getElementById("email").value,
-			brisboxers: [],
+			brisboxers: []
 		});
 		Meteor.call("saveOrder", orderForm);
 	}

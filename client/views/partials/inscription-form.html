@@ -1,16 +1,12 @@
 <template name="inscriptionForm">
-
     <div class="inscription-form">
         <div class="section">
             {{#autoForm schema="SchemaInscription" id="inscriptionForm" type="method" meteormethod="createBrisboxer"}}
                 <fieldset>
-                    <legend>{{_ "account-info"}}</legend>
+                    <legend>{{_ "personal-info"}}</legend>
                     <div class="block-izquierda">
                         <div class="info-text">
                             {{_ "account-info-text"}}
-                        </div>
-                        <div class="input-field col s6 obligatory">
-                            {{> afQuickField name='username' class="validate"}}
                         </div>
                         <div class="input-field col s6 obligatory">
                             {{> afQuickField name='name' class="validate"}}
@@ -22,13 +18,10 @@
                             {{> afQuickField name='phone' type="tel" class="validate"}}
                         </div>
                         <div class="input-field col s6 obligatory">
-                            {{> afQuickField name='contactEmail' type='email' class="validate"}}
+                            {{> afQuickField name='email' type='email' class="validate"}}
                         </div>
                         <div class="input-field col s6 obligatory">
-                            {{> afQuickField name='password' type='password' class="validate"}}
-                        </div>
-                        <div class="input-field col s6 obligatory">
-                            {{> afQuickField name='confirmPass' type='password' class="validate"}}
+                            {{> afQuickField name='zip' class="validate"}}
                         </div>
                     </div>
                     <div class="block-derecha">
@@ -36,26 +29,27 @@
                             {{_ "image-profile-text"}}
                         </div>
                         <div class="image-input">
-
+                           <center><img src="/placeholder.png" height="auto" width="90%" style="max-width: 310px"></center>
                         </div>
                     </div>
                 </fieldset>
                 <br>
                 <fieldset>
-                    <legend>{{_ "personal-info"}}</legend>
+                    <legend>{{_ "account-info"}}</legend>
                     <div class="block-izquierda">
                         <div class="input-field col s6 obligatory">
-                            {{> afQuickField name='zip' class="validate"}}
+                            {{> afQuickField name='username' class="validate"}}
+                        </div>
+                        <div class="input-field col s6 obligatory">
+                            {{> afQuickField name='confirmPass' type='password' class="validate"}}
                         </div>
                     </div>
                     <div class="block-derecha">
                         <div class="input-field col s6 obligatory">
-                            {{> afQuickField name='email' type='email' class="validate"}}
+                            {{> afQuickField name='password' type='password' class="validate"}}
                         </div>
-                    </div>
-                    <div class="block-debajo">
-                        <div class="input-field col s6 fix-textarea-margin">
-                            {{> afQuickField type="textarea" name='howHearAboutUs' class="validate materialize-textarea"}}
+                        <div class="input-field col s6">
+                            {{> afQuickField type="text" name='howHearAboutUs' class="validate materialize-textarea"}}
                         </div>
                     </div>
                     <div class="block-debajo">
@@ -74,12 +68,38 @@
                     </script>
 
                     <div id="checkModal" class="modal">
-                        <div class="modal-content">
-                            <h4>Modal Header</h4>
-                            <p>A bunch of text</p>
+                        <div class="row terms_header">
+                            <h4 class="header">{{_ "terms_header"}}</h4>
+                        </div>
+                        <div class="row terms_body">
+                            <h6>{{_ "terms1"}}</h6>
+                            <p>{{_ "terms11"}}</p>
+                            <p>{{_ "terms12"}}</p>
+                            <p>{{_ "terms13"}}</p>
+                            <p>{{_ "terms14"}}</p>
+                            <p>{{_ "terms15"}}</p>
+                            <h6>{{_ "terms2"}}</h6>
+                            <p>{{_ "terms21"}}</p>
+                            <p>{{_ "terms22"}}</p>
+                            <p>{{_ "terms23"}}</p>
+                            <h6>{{_ "terms24"}}</h6>
+                            <p>{{_ "terms241"}}</p>
+                            <h6>{{_ "terms25"}}</h6>
+                            <p>{{_ "terms26"}}</p>
+                            <h6>{{_ "terms3"}}</h6>
+                            <h6>{{_ "terms31"}}</h6>
+                            <p>{{_ "terms32"}}</p>
+                            <h6>{{_ "terms33"}}</h6>
+                            <p>{{_ "terms34"}}</p>
+                            <h6>{{_ "terms35"}}</h6>
+                            <p>{{_ "terms36"}}</p>
+                            <h6>{{_ "terms37"}}</h6>
+                            <p>{{_ "terms38"}}</p>
+                            <p> ... </p>
+                            <p>{{_ "termsFinal"}}</p>
                         </div>
                         <div class="modal-footer">
-                            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">{{_ "agree"}}</a>
                         </div>
                     </div>
 
