@@ -11,32 +11,36 @@
             </div>
             <div class="row">
                 <p>{{_ "contact_us_form"}}</p>
-                    <div class="section">
-                        <fieldset>
-                            <div class="input-field col s6 obligatory">
-                                <label>{{_ "contact_us_form_name"}}</label> <input type="text" id="nombre"
-                                                                                   name="nombre" class="form-control"/>
-                                <p id="errorName" style="float:left; color:red;"></p>
-                            </div>
-                            <div class="input-field col s6 obligatory">
-                                <label>{{_ "contact_us_form_email"}}</label><input type="email" id="correo"
-                                                                                   name="correo" class="form-control"/>
-                                <p id="errorEmail" style="float:left; color:red;"></p>
-                            </div>
-                            <div class="input-field col s6 obligatory">
-                                <label>{{_ "contact_us_form_subject"}}</label> <input type="text" id="asunto"
-                                                                                      name="asunto" class="form-control"/>
-                                <p id="errorSubject" style="float:left; color:red;"></p>
-                            </div>
-                            <div class="input-field col s6 obligatory">
-                                <label>{{_ "contact_us_form_content"}}</label> <input type="text" id="contenido"
-                                                                                      name="contenido" class="form-control"/>
-                                <p id="errorContent" style="float:left; color:red;"></p>
-                            </div>
-                            <input type="button" id="send" name="send" class="btn orange"
-                                   value="{{_ "contact_us_form_send"}}"/>
-                        </fieldset>
-                    </div>
+                <div class="section">
+                    <fieldset>
+                        <div class="input-field col s6 obligatory">
+                            <input type="text" id="nombre"
+                                   name="nombre" class="form-control"/>
+                            <label id="label_nombre" for="nombre">{{_ "contact_us_form_name"}}</label>
+                            <p id="errorName" style="float:left; color:red;"></p>
+                        </div>
+                        <div class="input-field col s6 obligatory">
+                            <input type="email" id="correo"
+                                   name="correo" class="form-control"/>
+                            <label id="label_correo" for="correo">{{_ "contact_us_form_email"}}</label>
+                            <p id="errorEmail" style="float:left; color:red;"></p>
+                        </div>
+                        <div class="input-field col s6 obligatory">
+                            <input type="text" id="asunto"
+                                   name="asunto" class="form-control"/>
+                            <label id="label_asunto" for="asunto">{{_ "contact_us_form_subject"}}</label>
+                            <p id="errorSubject" style="float:left; color:red;"></p>
+                        </div>
+                        <div class="input-field col s6 obligatory">
+                            <input type="text" id="contenido"
+                                   name="contenido" class="form-control"/>
+                            <label id="label_contenido" for="contenido">{{_ "contact_us_form_content"}}</label>
+                            <p id="errorContent" style="float:left; color:red;"></p>
+                        </div>
+                        <input type="button" id="send" name="send" class="btn orange"
+                               value="{{_ "contact_us_form_send"}}"/>
+                    </fieldset>
+                </div>
             </div>
         </div>
     </div>
