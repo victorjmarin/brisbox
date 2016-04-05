@@ -52,6 +52,25 @@ Meteor.methods({
         Orders.insert(orderForm);
     },
 
+    'prueba': function(text){
+        console.log(text);
+    },
+
+    'sendEmail': function (to, from, subject, text) {
+        check([to, from, subject, text], [String]);
+
+        // Let other method calls from the same client start running,
+        // without waiting for the email sending to complete.
+        this.unblock();
+
+        Email.send({
+            to: to,
+            from: from,
+            subject: subject,
+            text: text
+        });
+    },
+
     'createBrisboxer': function (doc) {
         check(doc, SchemaInscription);
         Meteor.call('createBrisboxerNoRole', doc, function (err, userId) {
@@ -100,24 +119,5 @@ Meteor.methods({
             verified: true
         }
     });
-    },
-
-    'sendEmail': function (to, from, subject, text) {
-        check([to, from, subject, text], [String]);
-
-        // Let other method calls from the same client start running,
-        // without waiting for the email sending to complete.
-        this.unblock();
-
-        Email.send({
-            to: to,
-            from: from,
-            subject: subject,
-            text: text
-        });
-    },
-
-    'getAllZips':function(){
-       return Zips.findAll();
     }
 });

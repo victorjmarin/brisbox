@@ -1,9 +1,9 @@
 <template name="stripe_form">
     <div id="stripe-main" class="container">
-        <legend id="legend-stripe">{{_ "order-checkout_stripe"}}</legend>
+        <legend id="legend-stripe">{{_ "order-checkout_stripe"}} </legend>
         <div id="stripe-access">
             <div class="row row-stripe-form">
-                <form class="stripe-form col s12 m12" id="payment-form">
+                <form class="stripe-form col s12 m12" id="payment-form" >
                        <span class="payment-errors">
                            {{#if stripe_error}}
                                {{_ stripe_error}}
