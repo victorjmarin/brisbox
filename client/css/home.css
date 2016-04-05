@@ -76,6 +76,10 @@
     background-color: #f57c00 !important;
 }
 
+.active{
+    background-color: #ffcc80  !important;
+}
+
 .filter{
     z-index: 100;
     position: absolute;
@@ -94,5 +98,6 @@
 
 .indicators{
     z-index: 50;
-    margin-bottom: 5px;
+    padding-bottom: 15px;
 }
+
