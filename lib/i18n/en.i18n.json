@@ -218,6 +218,21 @@
   "welcome2": "Then, we will contact with you to send a date for the selection process, after which it will activate your account so you can start using the application.",
   "welcome3": "See you soon!",
 
+  "order_dashboard_customer_info_title" : "Customer Info",
+  "order_dashboard_order_info_title" : "Order Info",
+  "order_dashboard_brisboxers_info_title" : "Brisboxers Info",
+  "order_dashboard_name": "Name",
+  "order_dashboard_surname": "Surname",
+  "order_dashboard_telephone": "Telephone",
+  "order_dashboard_email": "Email",
+  "order_dashboard_city": "City",
+  "order_dashboard_zip": "ZIP",
+  "order_dashboard_address": "Addres",
+  "order_dashboard_day": "Day",
+  "order_dashboard_hour": "Hour",
+  "order_dashboard_number_of_brisboxers": "Nº of brisboxers",
+  "order_dashboard_estimate_hours": "Estimate hours",
+
   "schemas": {
     "inscription": {
       "username": {

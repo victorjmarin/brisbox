@@ -1,0 +1,27 @@
+<template name="order_dashboard">
+    <div class="row main-container">
+        <div class="amber z-depth-3 col l3 s12 customer-info">
+            <span class="order_dashboard_section_title">{{_ "order_dashboard_customer_info_title"}}</span>
+            <span class="flow-text"> <b>{{_ "order_dashboard_name"}}:</b> Francisco</span>
+            <span class="flow-text"> <b>{{_ "order_dashboard_surname"}}:</b> Salado</span>
+            <span class="flow-text"> <b>{{_ "order_dashboard_telephone"}}:</b> 666666666</span>
+            <span class="flow-text"> <b>{{_ "order_dashboard_email"}}:</b> fransalado@correo.com</span>
+        </div>
+        <div class="col l1">&nbsp;</div>
+        <div class="amber darken-3 z-depth-3 col l4 s12 order-info left">
+            <span class="order_dashboard_section_title">{{_ "order_dashboard_order_info_title"}}</span>
+            <span class="flow-text"> <b>{{_ "order_dashboard_city"}}:</b> Sevilla</span>
+            <span class="flow-text"> <b>{{_ "order_dashboard_zip"}}:</b> 41005</span>
+            <span class="flow-text"> <b>{{_ "order_dashboard_address"}}:</b> Calle 1</span>
+            <span class="flow-text"> <b>{{_ "order_dashboard_day"}}:</b> 07/04/2016</span>
+            <span class="flow-text"> <b>{{_ "order_dashboard_hour"}}:</b> 15:30</span>
+            <span class="flow-text"> <b>{{_ "order_dashboard_number_of_brisboxers"}}:</b> 1</span>
+            <span class="flow-text"> <b>{{_ "order_dashboard_estimate_hours"}}:</b> 2</span>
+        </div>
+        <div class="col l1">&nbsp;</div>
+        <div class="amber z-depth-3 col l3 s12 brisboxers-info left">
+            <span class="order_dashboard_section_title">{{_ "order_dashboard_brisboxers_info_title"}}</span>
+            {{> brisboxers_list}}
+        </div>
+    </div>
+</template>
