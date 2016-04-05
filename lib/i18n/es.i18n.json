@@ -214,6 +214,21 @@
   "welcome2": "A partir de entonces, nos pondremos en contacto contigo para darte cita en el proceso de selección, tras el cual se activará tu cuenta para que puedas empezar a utilizar la aplicación.",
   "welcome3": "¡Nos vemos pronto!",
 
+  "order_dashboard_customer_info_title" : "Info del Cliente",
+  "order_dashboard_order_info_title" : "Info del Pedido",
+  "order_dashboard_brisboxers_info_title" : "Info de los Brisboxers",
+  "order_dashboard_name": "Nombre",
+  "order_dashboard_surname": "Apellidos",
+  "order_dashboard_telephone": "Teléfono",
+  "order_dashboard_email": "Email",
+  "order_dashboard_city": "Ciudad",
+  "order_dashboard_zip": "Código Postal",
+  "order_dashboard_address": "Dirección",
+  "order_dashboard_day": "Día",
+  "order_dashboard_hour": "Hora",
+  "order_dashboard_number_of_brisboxers": "Nº de brisboxers",
+  "order_dashboard_estimate_hours": "Horas estimadas",
+
   "schemas": {
     "inscription": {
       "username": {
