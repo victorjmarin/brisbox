@@ -87,3 +87,12 @@
 .up{
     z-index: 500;
 }
+
+.slider{
+    height: 100% !important!;
+}
+
+.indicators{
+    z-index: 50;
+    margin-bottom: 5px;
+}
