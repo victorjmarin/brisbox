@@ -75,3 +75,15 @@
 .indicator-item{
     background-color: #f57c00 !important;
 }
+
+.filter{
+    z-index: 100;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
+.up{
+    z-index: 500;
+}
