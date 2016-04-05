@@ -39,7 +39,7 @@
 
         <div class="white" style="padding-top: 50px; padding-bottom: 50px">
             <div class="container" id="slider_container">
-                <div class="row col s12 m12">
+                <div class="row col s12 m12" style="margin-bottom: 0;">
                     <!-- Services high resolution screens -->
                     <div class="hide-on-med-and-down" style="margin-left: -15%; margin-right: -15% ">
                         {{> homeServicesHR}}
@@ -77,10 +77,12 @@
     <script>
         $(document).ready(function(){
             $('.slider').slider({full_width: true});
+            $('.slider').attr('style','');
+            $('.slides').attr('style','');
         });
     </script>
-    <div class="slider">
-        <ul class="slides">
+    <div class="slider" style="height:100%;">
+        <ul class="slides" style="height:100%;">
             <li>
 
                 <div class="filter"></div>
