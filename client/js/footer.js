@@ -1,13 +1,11 @@
 Meteor.subscribe("zipsAll");
 
-Template.home.onRendered(function () {
-    $('.tooltipped').tooltip({delay: 50});
-});
-
-Template.home.events({
+Template.pageFooter.events({
     'submit .zip_form ' : function (event){
-        var zip = document.getElementById('inputZip').value;
+        var zip = document.getElementById('inputZipFooter').value;
+        console.log(zip);
         var zipResult = Zips.findOne({code: zip});
+        console.log(zipResult);
         if(zipResult == null){
             Materialize.toast("El código postal debe ser de Sevilla", 2000);
             return false;
