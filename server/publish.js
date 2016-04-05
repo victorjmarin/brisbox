@@ -20,8 +20,8 @@ Meteor.publish('myOrders', function(){
 		user_id = -1;
 	}
 	return Orders.find({"brisboxers._id": user_id});
-})
+});
 
 Meteor.publish('zipsAll',function(){
-	return Zips.findAll();
+	return Zips.find();
 });

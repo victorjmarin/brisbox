@@ -24,7 +24,7 @@ Template.stripe_form.helpers({
 });
 
 Template.stripe_form.events({
-    'submit #payment-form': function(e) {
+    'submit .stripe-form': function(e) {
         e.preventDefault();
 
         ccNum = $('#number').val();
@@ -63,24 +63,24 @@ Template.stripe_form.events({
         });
         if(Session.get("stripe_error") == null){
             var currentLocale = TAPi18next.lng();
+            var addressLoading = Session.get("order").addressLoading;
+            var addressUnloading = Session.get("order").addressUnloading;
+            var email = Session.get("order").email;
             if(currentLocale == "es"){
-                var emailSpanish = Session.get("order").email;
-                var addressLoading = Session.get("order").addressLoading;
-                var addressUnloading = Session.get("order").addressUnloading;
-                if(addressLoading!="on"){
-                    var addressLoading = "No se ha solicitado carga.";
+                if(Session.get("order").loading!="on"){
+                    addressLoading = "No se ha solicitado carga.";
                 }
-                if(addressUnloading!="on"){
-                    var addressUnloading = "No se ha solicitado descarga.";
+                if(Session.get("order").unloading!="on"){
+                    addressUnloading = "No se ha solicitado descarga.";
                 }
-                console.log(emailSpanish);
+                console.log(email);
                 var subjectSpanish = "Resumen pedido";
                 var textSpanish =
                     "¡Gracias por dejarnos ayudarte con la mudanza!\n\n" +
                     "En este correo se recoge un breve resumen de tu pedido." +
                     "\n\nCoste estimado: "+ cost() +
                     "\n\nDirección de carga: "+ addressLoading +
-                    "\n\nDirección de descarga: "+ addressLoading +
+                    "\n\nDirección de descarga: "+ addressUnloading +
                     "\n\nDía: "+ Session.get("order").day +
                     "\n\nNombre: "+ Session.get("order").name +
                     "\n\nApellidos: "+ Session.get("order").surname +
@@ -90,24 +90,22 @@ Template.stripe_form.events({
                     "\n\nSi hay algun problema con tu pedido, comunicanoslo respondiendo a este correo.\n\n" +
                     "Un saludo,¡y gracias de nuevo!\n" +
                     "El equipo de Brisbox";
-                Meteor.call("sendEmail", emailSpanish, "hello@brisbox.com", subjectSpanish, textSpanish);
+                Meteor.call("sendEmail", "cripolgon@gmail.com", "hello@brisbox.com", subjectSpanish, textSpanish);
+                Router.go('ThanksOrder');
             }else{
-                var emailSpanish = Session.get("order").email;
-                var addressLoading = Session.get("order").addressLoading;
-                var addressUnloading = Session.get("order").addressUnloading;
                 if(addressLoading!="on"){
-                    var addressLoading = "No request load.";
+                    addressLoading = "No request load.";
                 }
                 if(addressUnloading!="on"){
-                    var addressUnloading = "No request unload.";
+                    addressUnloading = "No request unload.";
                 }
-                var emailEnglish = Session.get("order").email;
-                var subjectEnglish = Session.get("order");
+                var subjectEnglish = "Summary order";
                 var textEnglish =
                     "Thanks for letting us help with the move!\n\n" +
                     "In this email a brief summary of your order is collected." +
                     "\n\nEstimated cost: "+ cost() +
-                    "\n\nAddress: "+ Session.get("order").address +
+                    "\n\nAddress loading: "+ addressLoading +
+                    "\n\nAddress unloading: "+ addressUnloading +
                     "\n\nDay: "+ Session.get("order").day +
                     "\n\nName: "+ Session.get("order").name +
                     "\n\nSurname: "+ Session.get("order").surname +
@@ -117,8 +115,8 @@ Template.stripe_form.events({
                     "\n\nIf there is a problem with your order, please let us know by responding to this email.\n\n" +
                     "Grettings,thanks again.!\n" +
                     "Brisbox Team";
-                Meteor.call("sendEmail", emailEnglish, "hello@brisbox.com", subjectEnglish,textEnglish);
-
+                Meteor.call("sendEmail", "cripolgon@gmail.com", "hello@brisbox.com", subjectEnglish,textEnglish);
+                Router.go('ThanksOrder');
             }
         }
     },

@@ -72,7 +72,7 @@
     max-width: 1442px;
 }
 
-.indicator-item{
+.indicator-item.active{
     background-color: #f57c00 !important;
 }
 

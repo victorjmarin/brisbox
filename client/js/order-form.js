@@ -50,7 +50,8 @@ Template.orderForm.events({
 			return false;
 		}
 		var orderForm = ({
-			address: document.getElementById("address").value,
+			addressLoading: document.getElementById("addressLoading").value,
+			addressUnloading: document.getElementById("addressUnloading").value,
 			zip: document.getElementById("zip").value,
 			loading: document.getElementById("loading").value,
 			unloading: document.getElementById("unloading").value,
@@ -62,9 +63,8 @@ Template.orderForm.events({
 			surname: document.getElementById("surname").value,
 			phone: document.getElementById("phone").value,
 			email: document.getElementById("email").value,
-			brisboxers: [],
+			brisboxers: []
 		});
-		Session.set("orderForm", orderForm);
 		Meteor.call("saveOrder", orderForm);
 	}
 });
