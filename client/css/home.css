@@ -76,6 +76,10 @@
     background-color: #f57c00 !important;
 }
 
+.active{
+    background-color: #ffcc80  !important;
+}
+
 .filter{
     z-index: 100;
     position: absolute;
@@ -87,3 +91,13 @@
 .up{
     z-index: 500;
 }
+
+.slider{
+    height: 100% !important!;
+}
+
+.indicators{
+    z-index: 50;
+    padding-bottom: 15px;
+}
+
