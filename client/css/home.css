@@ -76,10 +76,6 @@
     background-color: #f57c00 !important;
 }
 
-.active{
-    background-color: #ffcc80  !important;
-}
-
 .filter{
     z-index: 100;
     position: absolute;
