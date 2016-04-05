@@ -54,10 +54,17 @@
                     </div>
                     <div class="block-debajo">
                         <div class="input-field col s6 checkTerms obligatory">
-                            <a class="modal-trigger" href="#checkModal">
+                            <a class="waves-effect waves-light modal-trigger" href="#checkModal1">
                                 {{_ "terms"}}
                             </a>
-                            {{> afFieldInput name='checkTerms' class="validate checkbox" type="boolean-checkbox"}}
+                            <div class="col s6 m6">
+                                <input type="checkbox" name="checkTerms" id="checkTerms" required
+                                       class="checkTerms filled-in checkbox-orange col s12 m6"/>
+                                <label for="checkTerms">{{_ "agree"}}</label>
+                                <div class="col s6 m6"  id="errorTerms">
+                                <p class="custom-validation-error">{{_ "order-form_errorTerms"}}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -67,11 +74,11 @@
                         });
                     </script>
 
-                    <div id="checkModal" class="modal">
+                    <div id="checkModal1" class="modal">
                         <div class="row terms_header">
                             <h4 class="header">{{_ "terms_header"}}</h4>
                         </div>
-                        <div class="row terms_body">
+                        <div class="row terms_body modal-content modal-fixed-footer">
                             <h6>{{_ "terms1"}}</h6>
                             <p>{{_ "terms11"}}</p>
                             <p>{{_ "terms12"}}</p>
@@ -99,13 +106,13 @@
                             <p>{{_ "termsFinal"}}</p>
                         </div>
                         <div class="modal-footer">
-                            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">{{_ "agree"}}</a>
+                            <a href="#" class="modal-action modal-close waves-effect waves-orange btn-flat">{{_ "agree"}}</a>
                         </div>
                     </div>
 
                 </fieldset>
                 <div class="centrar">
-                    <button type="submit" class="btn btn-primary orange darken-3 waves-button-input">{{_ "submit"}}</button>
+                    <button type="submit" id="submit" class="btn btn-primary orange darken-3 waves-button-input">{{_ "submit"}}</button>
                 </div>
             {{/autoForm}}
         </div>

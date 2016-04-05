@@ -13,6 +13,8 @@ Template.orderForm.onRendered(function (){
 	$('#divAddressUnLoading').css('display','none');
 	$('#divAddressLoading').css('display','none');
 });
+
+
 Template.orderForm.events({
 	'click #loading': function(event){
 		var loading = document.getElementById('loading').checked;
@@ -53,7 +55,7 @@ Template.orderForm.events({
 			zip: document.getElementById("zip").value,
 			loading: document.getElementById("loading").value,
 			unloading: document.getElementById("unloading").value,
-			comments: document.getElementById("comments").value,
+			comments: document.getElementById("comments1").value,
 			numberBrisboxers: document.getElementById("numberBrisboxers").value,
 			hours: document.getElementById("hours").value,
 			day: document.getElementById("day").value,

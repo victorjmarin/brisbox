@@ -1,6 +1,6 @@
 body {
     font-family: 'Proxima Nova';
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -211,8 +211,10 @@ legend {
 .input-field label {
     left: 0rem !important;
 }
-
 .input-field input[type=text]:focus + label{
+    color: #ef6c00;
+}
+.input-field input[type=password]:focus + label{
     color: #ef6c00;
 }
 .input-field textarea[type=text]:focus + label{
