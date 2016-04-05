@@ -9,37 +9,35 @@ function getParameterByName(variable) {
 	}
 	return false;
 }
-
+Template.orderForm.onRendered(function (){
+	$('#divAddressUnLoading').css('display','none');
+	$('#divAddressLoading').css('display','none');
+});
 Template.orderForm.events({
 	'click #loading': function(event){
 		var loading = document.getElementById('loading').checked;
 		if(loading == true){
-			$('.addressLoading').css('visibility','visible');
+			$('#divAddressLoading').css('display','block');
+			$('#divAddressLoading').css('visibility','visible');
 			$('#addressLoading').prop('required',true);
 		}
 		if(loading==false){
-			$('.addressLoading').css('visibility','hidden');
+			$('#divAddressLoading').css('display','none');
+			$('#divAddressLoading').css('visibility','hidden');
 			$('#addressLoading').prop('required',false);
 		}
 	},
 	'click #unloading': function(event){
 		var unloading = document.getElementById('unloading').checked;
 		if(unloading == true){
-			$('.addressUnloading').css('visibility','visible');
+			$('#divAddressUnLoading').css('display','block');
+			$('#divAddressUnLoading').css('visibility','visible');
 			$('#addressUnloading').prop('required',true);
 		}
 		if(unloading == false){
-			$('.addressUnloading').css('visibility','hidden');
+			$('#divAddressUnLoading').css('display','none');
+			$('#divAddressUnLoading').css('visibility','hidden');
 			$('#addressUnloading').prop('required',false);
-		}
-	},
-	'click .form-more-info': function(event){
-		var info = $(event.target);
-		var more_info = info.parent().parent().next();
-		if (more_info.css("display") == "none"){
-			more_info.slideDown("fast");
-		}else if(more_info.css("display") !== "none"){
-			more_info.slideUp("fast");
 		}
 	},
 	'submit .order_form ' : function (event){
