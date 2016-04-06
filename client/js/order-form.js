@@ -42,7 +42,8 @@ Template.orderForm.events({
 			$('#addressUnloading').prop('required',false);
 		}
 	},
-	'submit .order_form ' : function (event){
+	'submit #order-form' : function (event){
+		event.preventDefault();
 		var loading = document.getElementById('loading').checked;
 		var unloading = document.getElementById('unloading').checked;
 		if(loading == false && unloading == false){
@@ -65,9 +66,8 @@ Template.orderForm.events({
 			email: document.getElementById("email").value,
 			brisboxers: []
 		};
-		Session.set("orderForm",'');
 		Session.set("orderForm",orderForm);
-		Meteor.call("saveOrder", orderForm);
+		Router.go("order-checkout");
 	}
 });
 

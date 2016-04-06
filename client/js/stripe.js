@@ -1,5 +1,5 @@
 function cost() {
-    var order = Session.get("order");
+    var order = Session.get("orderForm");
     return order.numberBrisboxers * order.hours * 20 + " €";
 }
 
@@ -63,14 +63,15 @@ Template.stripe_form.events({
         });
         if(Session.get("stripe_error") == null){
             var currentLocale = TAPi18next.lng();
-            var addressLoading = Session.get("order").addressLoading;
-            var addressUnloading = Session.get("order").addressUnloading;
-            var email = Session.get("order").email;
+            var addressLoading = Session.get("orderForm").addressLoading;
+            var addressUnloading = Session.get("orderForm").addressUnloading;
+            var email = Session.get("orderForm").email;
+            console.log(email);
             if(currentLocale == "es"){
-                if(Session.get("order").loading!="on"){
+                if(Session.get("orderForm").loading!="on"){
                     addressLoading = "No se ha solicitado carga.";
                 }
-                if(Session.get("order").unloading!="on"){
+                if(Session.get("orderForm").unloading!="on"){
                     addressUnloading = "No se ha solicitado descarga.";
                 }
                 console.log(email);
@@ -81,16 +82,16 @@ Template.stripe_form.events({
                     "\n\nCoste estimado: "+ cost() +
                     "\n\nDirección de carga: "+ addressLoading +
                     "\n\nDirección de descarga: "+ addressUnloading +
-                    "\n\nDía: "+ Session.get("order").day +
-                    "\n\nNombre: "+ Session.get("order").name +
-                    "\n\nApellidos: "+ Session.get("order").surname +
-                    "\n\nTeléfono: "+ Session.get("order").phone +
-                    "\n\nNumero de brisboxers: "+ Session.get("order").numberBrisboxers +
-                    "\n\nHoras: "+ Session.get("order").hours +
+                    "\n\nDía: "+ Session.get("orderForm").day +
+                    "\n\nNombre: "+ Session.get("orderForm").name +
+                    "\n\nApellidos: "+ Session.get("orderForm").surname +
+                    "\n\nTeléfono: "+ Session.get("orderForm").phone +
+                    "\n\nNumero de brisboxers: "+ Session.get("orderForm").numberBrisboxers +
+                    "\n\nHoras: "+ Session.get("orderForm").hours +
                     "\n\nSi hay algun problema con tu pedido, comunicanoslo respondiendo a este correo.\n\n" +
                     "Un saludo,¡y gracias de nuevo!\n" +
                     "El equipo de Brisbox";
-                Meteor.call("sendEmail", "cripolgon@gmail.com", "hello@brisbox.com", subjectSpanish, textSpanish);
+                Meteor.call("sendEmail", email, "hello@brisbox.com", subjectSpanish, textSpanish);
                 Router.go('ThanksOrder');
             }else{
                 if(addressLoading!="on"){
@@ -106,18 +107,20 @@ Template.stripe_form.events({
                     "\n\nEstimated cost: "+ cost() +
                     "\n\nAddress loading: "+ addressLoading +
                     "\n\nAddress unloading: "+ addressUnloading +
-                    "\n\nDay: "+ Session.get("order").day +
-                    "\n\nName: "+ Session.get("order").name +
-                    "\n\nSurname: "+ Session.get("order").surname +
-                    "\n\nPhone: "+ Session.get("order").phone +
-                    "\n\nNumber Brisboxers: "+ Session.get("order").numberBrisboxers +
-                    "\n\nHours: "+ Session.get("order").hours +
+                    "\n\nDay: "+ Session.get("orderForm").day +
+                    "\n\nName: "+ Session.get("orderForm").name +
+                    "\n\nSurname: "+ Session.get("orderForm").surname +
+                    "\n\nPhone: "+ Session.get("orderForm").phone +
+                    "\n\nNumber Brisboxers: "+ Session.get("orderForm").numberBrisboxers +
+                    "\n\nHours: "+ Session.get("orderForm").hours +
                     "\n\nIf there is a problem with your order, please let us know by responding to this email.\n\n" +
                     "Grettings,thanks again.!\n" +
                     "Brisbox Team";
-                Meteor.call("sendEmail", "cripolgon@gmail.com", "hello@brisbox.com", subjectEnglish,textEnglish);
+                console.log(Session.get("orderForm"));
+                Meteor.call("sendEmail", email, "hello@brisbox.com", subjectEnglish,textEnglish);
                 Router.go('ThanksOrder');
             }
+            Meteor.call("saveOrder", Session.get("orderForm"));
         }
     },
     'click #info-pay ':function(e){
