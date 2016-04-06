@@ -35,8 +35,8 @@ Template.orderForm.events({
 			$('#addressUnloading').prop('required',false);
 		}
 	},
-	'submit .order_form ' : function (event){
-        event.preventDefault();
+	'submit #order-form' : function (event){
+		event.preventDefault();
 		var loading = document.getElementById('loading').checked;
 		var unloading = document.getElementById('unloading').checked;
 		if(loading == false && unloading == false){
@@ -59,24 +59,8 @@ Template.orderForm.events({
 			email: document.getElementById("email").value,
 			brisboxers: []
 		};
-		Session.set("orderForm",'');
 		Session.set("orderForm",orderForm);
-		Meteor.call("saveOrder", orderForm);
-        Router.go('order-checkout', null, {query:
-            'addressLoading=' + orderForm.addressLoading
-                + '&' + 'addressUnloading=' + orderForm.addressUnloading
-                + '&' + 'zip=' + orderForm.zip
-                + '&' + 'loading=' + orderForm.loading
-                + '&' + 'unloading=' + orderForm.unloading
-                + '&' + 'comments=' + orderForm.comments
-                + '&' + 'numberBrisboxers=' + orderForm.numberBrisboxers
-                + '&' + 'hours=' + orderForm.hours
-                + '&' + 'day=' + orderForm.day
-                + '&' + 'name=' + orderForm.name
-                + '&' + 'surname=' + orderForm.surname
-                + '&' + 'phone=' + orderForm.phone
-                + '&' + 'email=' + orderForm.email
-        });
+		Router.go("order-checkout");
 	}
 });
 
