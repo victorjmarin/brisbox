@@ -20,7 +20,7 @@ Template.menu.onRendered(function () {
 );
 
 
-getUserLanguage = function () {
+/* getUserLanguage = function () {
     return "es";
 };
 
@@ -34,3 +34,4 @@ Meteor.startup(function () {
             console.log(error_message);
         });
 });
+*/
