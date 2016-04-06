@@ -100,7 +100,6 @@ Meteor.methods({
                 surname: doc.surname,
                 phone: doc.phone,
                 zip: doc.zip,
-                contactEmail: doc.email,
                 howHearAboutUs: doc.howHearAboutUs
             }
         });

@@ -278,17 +278,15 @@
       "image": {
         "label": "Image profile"
       },
-      "checkTerms": {
-        "label": "Accept"
-      },
       "wrongPassword": "Passwords mismatch",
-      "termsRequired": "Terms and conditions must be accepted"
+      "emailNotStudent": "Email must be an U.S. or U.P.O. university."
     }
   },
   "simpleschema": {
     "messages": {
       "regEx phone": "Invalid Phone",
       "wrongPassword": "Passwords mismatch",
+      "emailNotStudent": "Email must be an U.S. or U.P.O. university.",
       "required": "[label] is required",
       "minString": "[label] must be at least [min] characters",
       "maxString": "[label] cannot exceed [max] characters",
