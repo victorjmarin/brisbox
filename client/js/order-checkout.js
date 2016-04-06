@@ -27,6 +27,9 @@ Template.orderCheckout.helpers({
         var order = Session.get("order");
         return order.numberBrisboxers * order.hours * 20 + " €";
     },
+    address: function(){
+        return Session.get("orderForm").addressLoading;
+    }
 });
 
 Template.orderCheckout.onRendered(function() {

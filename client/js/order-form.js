@@ -47,7 +47,7 @@ Template.orderForm.events({
 			$('.errorAddress').css('visibility','visible');
 			return false;
 		}
-		var orderForm = ({
+		var orderForm = {
 			addressLoading: document.getElementById("addressLoading").value,
 			addressUnloading: document.getElementById("addressUnloading").value,
 			zip: document.getElementById("zip").value,
@@ -62,7 +62,9 @@ Template.orderForm.events({
 			phone: document.getElementById("phone").value,
 			email: document.getElementById("email").value,
 			brisboxers: []
-		});
+		};
+		Session.set("orderForm",'');
+		Session.set("orderForm",orderForm);
 		Meteor.call("saveOrder", orderForm);
 	}
 });
