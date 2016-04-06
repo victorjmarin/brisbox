@@ -2,7 +2,7 @@ var Future = Npm.require('fibers/future');
 
 Meteor.methods({
     'chargeCard': function (stripeToken, amountForm) {
-        var stripeKey = Meteor.settings.private.stripe.testSecretKey;
+        var stripeKey = 'sk_test_u6R8UmdlKfuIUYvpVWuWOkEx';
         var Stripe = StripeAPI(stripeKey);
 
         var future = new Future();
