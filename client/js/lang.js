@@ -17,7 +17,7 @@ changeLang = function (toLocale) {
             $('.toast').remove();
             var msg = TAPi18n.__('lang_changed');
             var undo = TAPi18n.__('undo');
-            Materialize.toast('<span class="truncate">' + msg + '</span><a class="btn-flat orange-text" onclick="changeLang(\'' + currentLocale + '\')"><strong>' + undo + '</stron><a>', 2700);
+            Materialize.toast('<b><span class="truncate">' + msg + '</span></b><a class="btn-flat orange-text" onclick="changeLang(\'' + currentLocale + '\')"><b>' + undo + '</b><a>', 2700);
         }
     });
 }
