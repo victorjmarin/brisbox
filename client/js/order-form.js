@@ -1,14 +1,7 @@
 function getParameterByName(variable) {
-	var query = window.location.search.substring(1);
-	var vars = query.split("&");
-	for (var i=0; i < vars.length; i++) {
-		var pair = vars[i].split("=");
-		if(pair[0] == variable) {
-			return pair[1];
-		}
-	}
-	return false;
+    return Router.current().params.query[variable]
 }
+
 Template.orderForm.onRendered(function (){
 	$('#divAddressUnLoading').css('display','none');
 	$('#divAddressLoading').css('display','none');
@@ -43,6 +36,7 @@ Template.orderForm.events({
 		}
 	},
 	'submit .order_form ' : function (event){
+        event.preventDefault();
 		var loading = document.getElementById('loading').checked;
 		var unloading = document.getElementById('unloading').checked;
 		if(loading == false && unloading == false){
@@ -68,6 +62,21 @@ Template.orderForm.events({
 		Session.set("orderForm",'');
 		Session.set("orderForm",orderForm);
 		Meteor.call("saveOrder", orderForm);
+        Router.go('order-checkout', null, {query:
+            'addressLoading=' + orderForm.addressLoading
+                + '&' + 'addressUnloading=' + orderForm.addressUnloading
+                + '&' + 'zip=' + orderForm.zip
+                + '&' + 'loading=' + orderForm.loading
+                + '&' + 'unloading=' + orderForm.unloading
+                + '&' + 'comments=' + orderForm.comments
+                + '&' + 'numberBrisboxers=' + orderForm.numberBrisboxers
+                + '&' + 'hours=' + orderForm.hours
+                + '&' + 'day=' + orderForm.day
+                + '&' + 'name=' + orderForm.name
+                + '&' + 'surname=' + orderForm.surname
+                + '&' + 'phone=' + orderForm.phone
+                + '&' + 'email=' + orderForm.email
+        });
 	}
 });
 

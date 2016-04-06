@@ -1,160 +1,167 @@
 Meteor.startup(function () {
     // code to run on server at startup
-    process.env.MAIL_URL = 'smtp://hello@brisbox.com:Estuforce2.0@smtp.1and1.com:587';
+    var smtp = {
+        username: Meteor.settings.mail.user,   // eg: server@gentlenode.com
+        password: Meteor.settings.mail.password, // eg: 3eeP1gtizk5eziohfervU
+        server: 'smtp.1and1.com',  // eg: mail.gandi.net
+        port: 587
+    }
+    process.env.MAIL_URL = 'smtp://' + encodeURIComponent(smtp.username) + ':' + encodeURIComponent(smtp.password) + '@' + encodeURIComponent(smtp.server) + ':' + smtp.port;
+
     if (Meteor.users.find().count() === 0) {
         loadAdmins();
         loadBrisboxers();
     }
-    if(Orders.find().count() === 0){
+    if (Orders.find().count() === 0) {
         loadOrders();
     }
-    if(Zips.find().count() === 0){
+    if (Zips.find().count() === 0) {
         loadZips();
     }
 });
 
 
-function loadAdmins(){
+function loadAdmins() {
     var id_admin = Accounts.createUser({
-            username: 'admin',
-            email: 'admin@gmail.com',
-            password: 'croqueta1',
-        });
+        username: 'admin',
+        email: 'admin@gmail.com',
+        password: 'croqueta1'
+    });
     Roles.addUsersToRoles(id_admin, ['admin']);
 }
 
-function loadBrisboxers(){
+function loadBrisboxers() {
     var id_brisboxer1 = Accounts.createUser({
-            username: 'brisboxer1',
-            email: 'brisboxer1@alum.us.es',
-            password: 'brisboxer1',
-        });
-        Roles.addUsersToRoles(id_brisboxer1, ['brisboxer']);
-        Meteor.users.update(id_brisboxer1, {
-            $set: {
-                accepted: true,
-                verified: true,
-            }
-        });
+        username: 'brisboxer1',
+        email: 'brisboxer1@alum.us.es',
+        password: 'brisboxer1'
+    });
+    Roles.addUsersToRoles(id_brisboxer1, ['brisboxer']);
+    Meteor.users.update(id_brisboxer1, {
+        $set: {
+            accepted: true,
+            verified: true
+        }
+    });
 
-        var id_brisboxer2 = Accounts.createUser({
-            username: 'brisboxer2',
-            email: 'brisboxer2@alum.us.es',
-            password: 'brisboxer2',
-        });
-        Roles.addUsersToRoles(id_brisboxer2, ['brisboxer']);
-        Meteor.users.update(id_brisboxer2, {
-            $set: {
-                accepted: true,
-                verified: true,
-            }
-        });
+    var id_brisboxer2 = Accounts.createUser({
+        username: 'brisboxer2',
+        email: 'brisboxer2@alum.us.es',
+        password: 'brisboxer2'
+    });
+    Roles.addUsersToRoles(id_brisboxer2, ['brisboxer']);
+    Meteor.users.update(id_brisboxer2, {
+        $set: {
+            accepted: true,
+            verified: true
+        }
+    });
 
-        var id_brisboxer3 = Accounts.createUser({
-            username: 'brisboxer3',
-            email: 'brisboxer3@alum.us.es',
-            password: 'brisboxer3',
-        });
-        Roles.addUsersToRoles(id_brisboxer3, ['brisboxer']);
-        Meteor.users.update(id_brisboxer3, {
-            $set: {
-                accepted: true,
-                verified: true,
-            }
-        });
+    var id_brisboxer3 = Accounts.createUser({
+        username: 'brisboxer3',
+        email: 'brisboxer3@alum.us.es',
+        password: 'brisboxer3'
+    });
+    Roles.addUsersToRoles(id_brisboxer3, ['brisboxer']);
+    Meteor.users.update(id_brisboxer3, {
+        $set: {
+            accepted: true,
+            verified: true
+        }
+    });
 
-        var id_brisboxer4 = Accounts.createUser({
-            username: 'brisboxer4',
-            email: 'brisboxer4@alum.us.es',
-            password: 'brisboxer4',
-        });
-        Roles.addUsersToRoles(id_brisboxer4, ['brisboxer']);
-        Meteor.users.update(id_brisboxer4, {
-            $set: {
-                accepted: true,
-                verified: true,
-            }
-        });
+    var id_brisboxer4 = Accounts.createUser({
+        username: 'brisboxer4',
+        email: 'brisboxer4@alum.us.es',
+        password: 'brisboxer4'
+    });
+    Roles.addUsersToRoles(id_brisboxer4, ['brisboxer']);
+    Meteor.users.update(id_brisboxer4, {
+        $set: {
+            accepted: true,
+            verified: true
+        }
+    });
 
-        var id_brisboxer5 = Accounts.createUser({
-            username: 'brisboxer5',
-            email: 'brisboxer5@alum.us.es',
-            password: 'brisboxer5',
-        });
-        Roles.addUsersToRoles(id_brisboxer5, ['brisboxer']);
-        Meteor.users.update(id_brisboxer5, {
-            $set: {
-                accepted: false,
-                verified: true,
-            }
-        });
+    var id_brisboxer5 = Accounts.createUser({
+        username: 'brisboxer5',
+        email: 'brisboxer5@alum.us.es',
+        password: 'brisboxer5'
+    });
+    Roles.addUsersToRoles(id_brisboxer5, ['brisboxer']);
+    Meteor.users.update(id_brisboxer5, {
+        $set: {
+            accepted: false,
+            verified: true
+        }
+    });
 
-        var id_brisboxer6 = Accounts.createUser({
-            username: 'brisboxer6',
-            email: 'brisboxer6@alum.us.es',
-            password: 'brisboxer6',
-        });
-        Roles.addUsersToRoles(id_brisboxer6, ['brisboxer']);
-        Meteor.users.update(id_brisboxer6, {
-            $set: {
-                accepted: false,
-                verified: false,
-            }
-        });
+    var id_brisboxer6 = Accounts.createUser({
+        username: 'brisboxer6',
+        email: 'brisboxer6@alum.us.es',
+        password: 'brisboxer6'
+    });
+    Roles.addUsersToRoles(id_brisboxer6, ['brisboxer']);
+    Meteor.users.update(id_brisboxer6, {
+        $set: {
+            accepted: false,
+            verified: false
+        }
+    });
 
-        var id_brisboxer7 = Accounts.createUser({
-            username: 'brisboxer7',
-            email: 'brisboxer7@alum.us.es',
-            password: 'brisboxer7',
-        });
-        Roles.addUsersToRoles(id_brisboxer7, ['brisboxer']);
-        Meteor.users.update(id_brisboxer7, {
-            $set: {
-                accepted: false,
-            }
-        });
+    var id_brisboxer7 = Accounts.createUser({
+        username: 'brisboxer7',
+        email: 'brisboxer7@alum.us.es',
+        password: 'brisboxer7'
+    });
+    Roles.addUsersToRoles(id_brisboxer7, ['brisboxer']);
+    Meteor.users.update(id_brisboxer7, {
+        $set: {
+            accepted: false
+        }
+    });
 
-        var id_brisboxer8 = Accounts.createUser({
-            username: 'brisboxer8',
-            email: 'brisboxer8@alum.us.es',
-            password: 'brisboxer8',
-        });
-        Roles.addUsersToRoles(id_brisboxer8, ['brisboxer']);
-        Meteor.users.update(id_brisboxer8, {
-            $set: {
-                verified: true,
-                accepted: false,
-            }
-        });
+    var id_brisboxer8 = Accounts.createUser({
+        username: 'brisboxer8',
+        email: 'brisboxer8@alum.us.es',
+        password: 'brisboxer8'
+    });
+    Roles.addUsersToRoles(id_brisboxer8, ['brisboxer']);
+    Meteor.users.update(id_brisboxer8, {
+        $set: {
+            verified: true,
+            accepted: false
+        }
+    });
 
-        var id_brisboxer9 = Accounts.createUser({
-            username: 'brisboxer9',
-            email: 'brisboxer9@alum.us.es',
-            password: 'brisboxer9',
-        });
-        Roles.addUsersToRoles(id_brisboxer9, ['brisboxer']);
-        Meteor.users.update(id_brisboxer9, {
-            $set: {
-                verified: true,
-                accepted: true,
-            }
-        });
+    var id_brisboxer9 = Accounts.createUser({
+        username: 'brisboxer9',
+        email: 'brisboxer9@alum.us.es',
+        password: 'brisboxer9'
+    });
+    Roles.addUsersToRoles(id_brisboxer9, ['brisboxer']);
+    Meteor.users.update(id_brisboxer9, {
+        $set: {
+            verified: true,
+            accepted: true
+        }
+    });
 
-        var id_brisboxer10 = Accounts.createUser({
-            username: 'brisboxer10',
-            email: 'brisboxer10@alum.us.es',
-            password: 'brisboxer10',
-        });
-        Roles.addUsersToRoles(id_brisboxer10, ['brisboxer']);
-        Meteor.users.update(id_brisboxer10, {
-            $set: {
-                verified: true,
-                accepted: true,
-            }
-        });
+    var id_brisboxer10 = Accounts.createUser({
+        username: 'brisboxer10',
+        email: 'brisboxer10@alum.us.es',
+        password: 'brisboxer10'
+    });
+    Roles.addUsersToRoles(id_brisboxer10, ['brisboxer']);
+    Meteor.users.update(id_brisboxer10, {
+        $set: {
+            verified: true,
+            accepted: true
+        }
+    });
 }
 
-function loadZips(){
+function loadZips() {
     Zips.insert({
         code: "41000"
     });
@@ -166,7 +173,8 @@ function loadZips(){
     });
     Zips.insert({
         code: "41003"
-    });Zips.insert({
+    });
+    Zips.insert({
         code: "41004"
     });
     Zips.insert({
@@ -189,7 +197,8 @@ function loadZips(){
     });
     Zips.insert({
         code: "41011"
-    });Zips.insert({
+    });
+    Zips.insert({
         code: "41012"
     });
     Zips.insert({
@@ -226,7 +235,7 @@ function loadZips(){
     });
 }
 
-function loadOrders(){
+function loadOrders() {
     var brisboxer1 = Meteor.users.findOne({username: 'brisboxer1'});
     var brisboxer2 = Meteor.users.findOne({username: 'brisboxer2'});
     var brisboxer3 = Meteor.users.findOne({username: 'brisboxer3'});
@@ -246,7 +255,9 @@ function loadOrders(){
         comments: 'comments1',
         typeMove: 'load',
         date: new Date('2016-07-03'),
-        brisboxers: [{_id: brisboxer2._id, username: brisboxer2.username}]
+        brisboxers: [
+            {_id: brisboxer2._id, username: brisboxer2.username}
+        ]
     });
     Orders.insert({
         name: 'nameTest',
@@ -261,7 +272,10 @@ function loadOrders(){
         comments: 'comments2',
         typeMove: 'load',
         date: new Date('2016-06-20'),
-        brisboxers: [{_id: brisboxer2._id, username: brisboxer2.username}, {_id: brisboxer3._id, username: brisboxer3.username}]
+        brisboxers: [
+            {_id: brisboxer2._id, username: brisboxer2.username},
+            {_id: brisboxer3._id, username: brisboxer3.username}
+        ]
     });
     Orders.insert({
         name: 'nameTest',
@@ -276,7 +290,9 @@ function loadOrders(){
         comments: 'comments3',
         typeMove: 'unload',
         date: new Date('2016-08-04'),
-        brisboxers: [{_id: brisboxer1._id, username: brisboxer1.username}]
+        brisboxers: [
+            {_id: brisboxer1._id, username: brisboxer1.username}
+        ]
     });
     Orders.insert({
         name: 'nameTest',
@@ -291,7 +307,12 @@ function loadOrders(){
         comments: 'comments4',
         typeMove: 'unload',
         date: new Date('2016-07-01'),
-        brisboxers: [{_id: brisboxer2._id, username: brisboxer2.username}, {_id: brisboxer3._id, username: brisboxer3.username}, {_id: brisboxer4._id, username: brisboxer4.username}, {_id: brisboxer5._id, username: brisboxer5.username}]
+        brisboxers: [
+            {_id: brisboxer2._id, username: brisboxer2.username},
+            {_id: brisboxer3._id, username: brisboxer3.username},
+            {_id: brisboxer4._id, username: brisboxer4.username},
+            {_id: brisboxer5._id, username: brisboxer5.username}
+        ]
     });
 
     Orders.insert({
@@ -307,7 +328,7 @@ function loadOrders(){
         comments: 'commentsAlpha',
         typeMove: 'unload',
         date: new Date('2016-07-01'),
-        brisboxers: [],
+        brisboxers: []
     });
 
     Orders.insert({
@@ -323,7 +344,7 @@ function loadOrders(){
         comments: 'commentsBeta',
         typeMove: 'unload',
         date: new Date('2016-07-01'),
-        brisboxers: [],
+        brisboxers: []
     });
 
     Orders.insert({
@@ -339,7 +360,7 @@ function loadOrders(){
         comments: 'commentsGamma',
         typeMove: 'load',
         date: new Date('2016-07-01'),
-        brisboxers: [],
+        brisboxers: []
     });
 
     Orders.insert({
@@ -347,7 +368,7 @@ function loadOrders(){
         surname: 'surnameTeta',
         phone: '441112223',
         email: 'emailTeta@gmail.com',
-        numberBrisboxers: 3, 
+        numberBrisboxers: 3,
         zip: '41900',
         addressLoading: 'teta',
         addressUnloading: '',
@@ -355,7 +376,7 @@ function loadOrders(){
         comments: 'commentsTeta',
         typeMove: 'load',
         date: new Date('2016-07-01'),
-        brisboxers: [],
+        brisboxers: []
     });
 
     Orders.insert({
@@ -363,7 +384,7 @@ function loadOrders(){
         surname: 'surnameEpsilon',
         phone: '441112223',
         email: 'emailEpsilon@gmail.com',
-        numberBrisboxers: 2, 
+        numberBrisboxers: 2,
         zip: '41900',
         addressLoading: 'epsilon',
         addressUnloading: '',
@@ -371,6 +392,6 @@ function loadOrders(){
         comments: 'commentsEpsilon',
         typeMove: 'load',
         date: new Date('2016-07-01'),
-        brisboxers: [],
+        brisboxers: []
     });
 }

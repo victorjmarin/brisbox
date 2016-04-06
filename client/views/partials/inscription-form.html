@@ -7,14 +7,14 @@
                 <fieldset>
                     <legend>{{_ "personal-info"}}</legend>
                     <div class="block-izquierda">
-                        <div class="info-text">
+                        <div class="info-text" style="font-weight: 400;font-size: 95%">
                             {{_ "account-info-text"}}
                         </div>
                         <div class="input-field col s6 obligatory">
-                            {{> afQuickField name='name'}}
+                            {{> afQuickField name='name' class="validate"}}
                         </div>
                         <div class="input-field col s6 obligatory">
-                            {{> afQuickField name='surname'}}
+                            {{> afQuickField name='surname' class="validate"}}
                         </div>
                         <div class="input-field col s6 obligatory">
                             {{> afQuickField name='phone' type="tel" class="validate"}}
@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     <div class="block-derecha">
-                        <div class="info-text">
+                        <div class="info-text" style="font-weight: 400;font-size: 95%">
                             {{_ "image-profile-text"}}
                         </div>
                         <div class="image-input">
