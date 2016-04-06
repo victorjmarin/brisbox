@@ -13,7 +13,7 @@
         </div>
         <div class="footer-cr-bg" style="padding: 1px;">
             <div class="container">
-                <div class="row">
+                <div class="row" style="margin-bottom: 0px;">
                     <p class="white-text center" style="font-size: 90%">&copy; 2016 brisbox</p>
                 </div>
             </div>
@@ -50,6 +50,7 @@
                     <div class="col s12 center-align">
                         <h5 class="white-text proxima"
                             style="color: black !important;margin-bottom: 35px;">{{_ "modal_order"}}</h5>
+
                         <div class="col s12 center-align">
                             <div style="display:inline-block;margin-bottom: 10px;">
                                 <input pattern=".{5,}" required type="zip" maxlength="5" class="form-zip" name="zip"
@@ -94,6 +95,8 @@
         <ul class="">
             <li><a href="{{pathFor 'AboutUs'}}" class="grey-text text-lighten-1">{{_ "footer_about"}}</a>
             </li>
+            <li><a href="{{pathFor 'Faq'}}" class="grey-text text-lighten-1">FAQ</a>
+            </li>
             <li><a href="{{pathFor 'join-us'}}" class="grey-text text-lighten-1">{{_ "footer_join_us"}}</a>
             </li>
             <script>
@@ -116,6 +119,7 @@
                     <div class="col s12 center-align">
                         <h5 class="white-text proxima"
                             style="color: black !important;margin-bottom: 35px;">{{_ "modal_order"}}</h5>
+
                         <div class="col s12 center-align">
                             <div style="display:inline-block;margin-bottom: 10px;">
                                 <input pattern=".{5,}" required type="zip" maxlength="5" class="form-zip" name="zip"
