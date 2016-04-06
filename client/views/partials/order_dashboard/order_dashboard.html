@@ -12,7 +12,12 @@
             <span class="order_dashboard_section_title">{{_ "order_dashboard_order_info_title"}}</span>
             <span class="flow-text"> <b>{{_ "order_dashboard_city"}}:</b> {{email}}</span>
             <span class="flow-text"> <b>{{_ "order_dashboard_zip"}}:</b> {{zip}}</span>
-            <span class="flow-text"> <b>{{_ "order_dashboard_address"}}:</b> {{email}}</span>
+            {{#if addressLoading}}
+                <span class="flow-text"> <b>{{_ "order_dashboard_address_loading"}}:</b> {{addressLoading}}</span>
+            {{/if}}
+            {{#if addressUnloading}}
+                <span class="flow-text"> <b>{{_ "order_dashboard_address_unloading"}}:</b> {{addressUnloading}}</span>
+            {{/if}}
             <span class="flow-text"> <b>{{_ "order_dashboard_day"}}:</b> {{prettifyDate date}}</span>
             <span class="flow-text"> <b>{{_ "order_dashboard_hour"}}:</b> {{hour}}</span>
             <span class="flow-text"> <b>{{_ "order_dashboard_number_of_brisboxers"}}:</b> {{numberBrisboxers}}</span>
