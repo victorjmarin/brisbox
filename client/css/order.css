@@ -118,7 +118,10 @@ Arreglar los problemas en los datos reflejados de order checkout
     -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
-
+.checkbox-orange[type="checkbox"].filled-in:checked + label:after{
+    border: 2px solid #ef6c00;
+    background-color: #ef6c00;
+}
 #comments{
     height: 80px;
     padding: 6px 12px;

@@ -13,6 +13,8 @@ Template.orderForm.onRendered(function (){
 	$('#divAddressUnLoading').css('display','none');
 	$('#divAddressLoading').css('display','none');
 });
+
+
 Template.orderForm.events({
 	'click #loading': function(event){
 		var loading = document.getElementById('loading').checked;
@@ -47,13 +49,13 @@ Template.orderForm.events({
 			$('.errorAddress').css('visibility','visible');
 			return false;
 		}
-		var orderForm = ({
+		var orderForm = {
 			addressLoading: document.getElementById("addressLoading").value,
 			addressUnloading: document.getElementById("addressUnloading").value,
 			zip: document.getElementById("zip").value,
 			loading: document.getElementById("loading").value,
 			unloading: document.getElementById("unloading").value,
-			comments: document.getElementById("comments").value,
+			comments: document.getElementById("comments1").value,
 			numberBrisboxers: document.getElementById("numberBrisboxers").value,
 			hours: document.getElementById("hours").value,
 			day: document.getElementById("day").value,
@@ -62,7 +64,9 @@ Template.orderForm.events({
 			phone: document.getElementById("phone").value,
 			email: document.getElementById("email").value,
 			brisboxers: []
-		});
+		};
+		Session.set("orderForm",'');
+		Session.set("orderForm",orderForm);
 		Meteor.call("saveOrder", orderForm);
 	}
 });

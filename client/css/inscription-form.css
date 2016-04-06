@@ -1,4 +1,6 @@
-
+label.active{
+    color:#ef6c00;
+}
 .inscription-form {
     width: 70%;
     margin: 0 auto;

@@ -9,7 +9,7 @@
   "home_help": "¿Cómo podemos ayudarte?",
   "home_loading": "CARGA",
   "home_unloading": "DESCARGA",
-  "home_placing": "COLOCACION",
+  "home_placing": "COLOCAR",
   "home_loading_text": "Podemos ayudarte cargando o trasladando tus cosas a un camión...",
   "home_unloading_text": "...ayudarte descargándolas o trasladando desde el camión a tu casa...",
   "home_placing_text": "...y podemos ayudarte a colocarlas, montar/desmontar eventos, organizar el garaje, o incluso mover algo a la acera",
@@ -143,6 +143,7 @@
   "order-unloading": "Descarga",
   "order-form_day": "Día",
   "order-form_errorAddress":"Debe seleccionar un tipo de mudanza.",
+  "order-form_errorTerms":"Debe aceptar los términos de uso.",
   "error_zip": "El código postal debe ser de Sevilla",
 
   "email_verified": "Verificación de email",
