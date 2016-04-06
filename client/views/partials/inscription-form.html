@@ -1,5 +1,7 @@
 <template name="inscriptionForm">
     <div class="inscription-form">
+        <h4 class="header bold">{{_ "registration_header"}}</h4>
+        <h5 class="header">{{_ "registration_subheader"}}</h5>
         <div class="section">
             {{#autoForm schema="SchemaInscription" id="inscriptionForm" type="method" meteormethod="createBrisboxer"}}
                 <fieldset>
@@ -9,10 +11,10 @@
                             {{_ "account-info-text"}}
                         </div>
                         <div class="input-field col s6 obligatory">
-                            {{> afQuickField name='name' class="validate"}}
+                            {{> afQuickField name='name'}}
                         </div>
                         <div class="input-field col s6 obligatory">
-                            {{> afQuickField name='surname' class="validate"}}
+                            {{> afQuickField name='surname'}}
                         </div>
                         <div class="input-field col s6 obligatory">
                             {{> afQuickField name='phone' type="tel" class="validate"}}
@@ -60,7 +62,7 @@
                             <div class="col s6 m6">
                                 <input type="checkbox" name="checkTerms" id="checkTerms" required
                                        class="checkTerms filled-in checkbox-orange col s12 m6"/>
-                                <label for="checkTerms">{{_ "agree"}}</label>
+                                <label for="checkTerms">{{_ "agree_form"}}</label>
                                 <div class="col s6 m6"  id="errorTerms">
                                 <p class="custom-validation-error">{{_ "order-form_errorTerms"}}</p>
                                 </div>

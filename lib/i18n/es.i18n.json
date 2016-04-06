@@ -2,7 +2,7 @@
   "lang_changed": "Idioma cambiado",
   "undo": "Deshacer",
   "welcome": "Bienvenido",
-  "layout_login_link": "Login brisboxer",
+  "layout_login_link": "Iniciar sesión",
   "modal_order": "Introduce tu código postal para empezar con el formulario.",
   "home_title": "Ayuda económica y práctica para tus mudanzas",
   "home_order": "Comenzar",
@@ -98,7 +98,7 @@
   "submit": "Enviar",
   "account-info-text": "Compartiremos su nombre con los clientes y usaremos su dirección de correo electrónico y teléfono para mantener el contacto con usted.",
   "image-profile-text": "Asegúrese de elegir una foto profesional en la que esté solo. Esta foto será enviada a sus clientes, ¡asegúrese de elegir la mejor!",
-  "login_title": "Entrar",
+  "login_title": "Iniciar sesión",
   "login_username": "Usuario",
   "login_password": "Contraseña",
   "login_error_credentials_wrong": "Usuario y/o contraseña erronea",
@@ -186,6 +186,10 @@
   "my_orders": "Mis pedidos",
 
   "agree": "Acepto",
+  "agree_form": "He leído y acepto los Términos y Condiciones.",
+
+  "registration_header": "Hazte brisboxer",
+  "registration_subheader": "Ayuda a la gente con su mudanza y gana hasta 12€/h",
 
   "terms_header": "TERMS OF SERVICE",
   "terms1": "1. CONTRACTUAL RELATIONSHIP",

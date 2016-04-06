@@ -2,7 +2,7 @@
   "lang_changed": "Language changed",
   "undo": "Undo",
   "welcome": "Welcome",
-  "layout_login_link": "Brisboxer login",
+  "layout_login_link": "Sign in",
   "modal_order": "Enter your zip code to start with the form.",
   "home_title": "Affordable, convenient moving help",
   "home_order": "Get started",
@@ -31,7 +31,7 @@
   "menu_about": "About us",
   "menu_faq": "FAQ",
   "menu_stripe": "Stripe",
-  "menu_apply": "Become a brisboxer",
+  "menu_apply": "Work with us",
   "about_us_header": "About us",
   "about_us_vjm": "Student at the University of Seville",
   "about_us_rdr": "Student at the University of Seville",
@@ -115,7 +115,7 @@
   "submit": "Submit",
   "account-info-text": "We will share your name with customers and use your email address and phone number to stay in touch with you.",
   "image-profile-text": "Be sure to choose a professional photo of you alone. If accepted, this picture will be sent to your customers, so make sure it's a good one!",
-  "login_title": "Login",
+  "login_title": "Sign in",
   "login_username": "Username",
   "login_password": "Password",
   "login_error_credentials_wrong": "Wrong username or password ",
@@ -189,7 +189,11 @@
 
   "my_orders": "My orders",
 
-  "agree": "Agree",
+  "agree": "I agree",
+  "agree_form": "I have read and agree to the Terms and Conditions.",
+
+  "registration_header": "Become a brisboxer",
+  "registration_subheader": "Help people move and earn up to 12€/h",
 
   "terms_header": "TERMS OF SERVICE",
   "terms1": "1. CONTRACTUAL RELATIONSHIP",
