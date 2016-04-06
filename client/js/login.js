@@ -11,6 +11,7 @@ Template.login.events({
                     Session.set('alert', null);
                     $('#login-access').removeClass('login-open').addClass('login-close');
                     setTimeout(function(){ Session.set('showLoginModal', false); }, 300);
+                    Materialize.toast('<b>' + TAPi18n.__("login_success") + '</b>', 2700);
                 }
             });
         }else{

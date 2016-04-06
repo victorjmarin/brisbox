@@ -4,11 +4,13 @@ Template.userMenu.events({
     },
     'click #logout': function(event){
   		$('#user-menu').trigger('mouseleave');
-  		setTimeout(function(){
-  			Meteor.logout();
-  			Router.go("/");
-		}, 180); 
-    }
+  			Meteor.logout(function(err) {
+                if (!err) {
+                    Router.go("/");
+                    Materialize.toast('<b>' + TAPi18n.__("logout_success") + '</b>', 2700);
+                }
+            });
+		}
 });
 
 Template.userMenu.helpers({

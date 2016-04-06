@@ -99,6 +99,8 @@
   "account-info-text": "Compartiremos su nombre con los clientes y usaremos su dirección de correo electrónico y teléfono para mantener el contacto con usted.",
   "image-profile-text": "Asegúrese de elegir una foto profesional en la que esté solo. Esta foto será enviada a sus clientes, ¡asegúrese de elegir la mejor!",
   "login_title": "Iniciar sesión",
+  "login_success": "Autenticado con éxito",
+  "logout_success": "Sesión cerrada",
   "login_username": "Usuario",
   "login_password": "Contraseña",
   "login_error_credentials_wrong": "Usuario y/o contraseña erronea",
