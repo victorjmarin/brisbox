@@ -265,17 +265,15 @@
       "image": {
         "label": "Imagen de perfil"
       },
-      "checkTerms": {
-        "label": "Aceptar"
-      },
-      "wrongPassword": "las constraseñas no coinciden",
-      "termsRequired": "Los términos y condiciones tienen que ser aceptados"
+      "wrongPassword": "Las constraseñas no coinciden",
+      "emailNotStudent": "El email debe ser de las universidades U.S. o U.P.O."
     }
   },
   "simpleschema": {
     "messages": {
       "regEx phone": "Teléfono invalido",
       "wrongPassword": "Las contraseñas no coinciden",
+      "emailNotStudent": "El email debe ser de las universidades U.S. o U.P.O.",
       "required": "[label] es obligatorio",
       "minString": "[label] tiene que tener por lo menos [min] caracteres",
       "maxString": "[label] no puede tener mas de [max] caracteres",

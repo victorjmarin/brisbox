@@ -31,7 +31,8 @@
                             {{_ "image-profile-text"}}
                         </div>
                         <div class="image-input">
-                           <center><img src="/placeholder.png" height="auto" width="90%" style="max-width: 310px"></center>
+                            <center><img src="/placeholder.png" height="auto" width="90%" style="max-width: 310px">
+                            </center>
                         </div>
                     </div>
                 </fieldset>
@@ -43,12 +44,13 @@
                             {{> afQuickField name='username' class="validate"}}
                         </div>
                         <div class="input-field col s6 obligatory">
-                            {{> afQuickField name='confirmPass' type='password' class="validate"}}
+                            {{> afQuickField name='password' type='password' class="validate"}}
                         </div>
+
                     </div>
                     <div class="block-derecha">
                         <div class="input-field col s6 obligatory">
-                            {{> afQuickField name='password' type='password' class="validate"}}
+                            {{> afQuickField name='confirmPass' type='password' class="validate"}}
                         </div>
                         <div class="input-field col s6">
                             {{> afQuickField type="text" name='howHearAboutUs' class="validate materialize-textarea"}}
@@ -63,15 +65,15 @@
                                 <input type="checkbox" name="checkTerms" id="checkTerms" required
                                        class="checkTerms filled-in checkbox-orange col s12 m6"/>
                                 <label for="checkTerms">{{_ "agree_form"}}</label>
-                                <div class="col s6 m6"  id="errorTerms">
-                                <p class="custom-validation-error">{{_ "order-form_errorTerms"}}</p>
+                                <div class="col s6 m6" id="errorTerms">
+                                    <p class="custom-validation-error">{{_ "order-form_errorTerms"}}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <script>
-                        $(document).ready(function(){
+                        $(document).ready(function () {
                             $('.modal-trigger').leanModal();
                         });
                     </script>
@@ -108,13 +110,15 @@
                             <p>{{_ "termsFinal"}}</p>
                         </div>
                         <div class="modal-footer">
-                            <a href="#" class="modal-action modal-close waves-effect waves-orange btn-flat">{{_ "agree"}}</a>
+                            <a href="#"
+                               class="modal-action modal-close waves-effect waves-orange btn-flat">{{_ "agree"}}</a>
                         </div>
                     </div>
 
                 </fieldset>
                 <div class="centrar">
-                    <button type="submit" id="submit" class="btn btn-primary orange darken-3 waves-button-input caret">{{_ "submit"}}</button>
+                    <button type="submit" id="submit"
+                            class="btn btn-primary orange darken-3 waves-button-input caret">{{_ "submit"}}</button>
                 </div>
             {{/autoForm}}
         </div>

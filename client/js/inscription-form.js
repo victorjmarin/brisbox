@@ -3,7 +3,7 @@ AutoForm.addHooks(['inscriptionForm'], {
         Router.go("/welcome-view");
     },
     onError: function (formType, result) {
-        console.log("inscription-form error!")
+        console.log(result.toString());
     }
 });
 
