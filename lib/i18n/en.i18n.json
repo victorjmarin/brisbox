@@ -250,7 +250,7 @@
   "email": "Email",
   "phone": "Phone",
   "brisboxer_doesnt_founded": "Brisboxer doesn't founded",
-
+  "verified": "Verified",
   "schemas": {
     "inscription": {
       "username": {
