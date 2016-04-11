@@ -40,12 +40,15 @@ function loadBrisboxers() {
     Meteor.users.update(id_brisboxer1, {
         $set: {
             accepted: true,
-            verified: true
+            verified: true,
+            name: "brisboxerName1",
+            surname: "brisboxerSurname1",
+            phone: "111112221",
+            zip: "41001",
         }
     });
-
     var id_brisboxer2 = Accounts.createUser({
-        username: 'brisboxer2',
+       username: 'brisboxer2',
         email: 'brisboxer2@alum.us.es',
         password: 'brisboxer2'
     });
@@ -53,7 +56,12 @@ function loadBrisboxers() {
     Meteor.users.update(id_brisboxer2, {
         $set: {
             accepted: true,
-            verified: true
+            verified: true,
+            name: "brisboxerName2",
+            surname: "brisboxerSurname2",
+            phone: "222221112",
+            zip: "41002",
+        
         }
     });
 
@@ -66,7 +74,11 @@ function loadBrisboxers() {
     Meteor.users.update(id_brisboxer3, {
         $set: {
             accepted: true,
-            verified: true
+            verified: true,
+            name: "brisboxerName3",
+            surname: "brisboxerSurname3",
+            phone: "331112223",
+            zip: "41002",
         }
     });
 
@@ -79,7 +91,12 @@ function loadBrisboxers() {
     Meteor.users.update(id_brisboxer4, {
         $set: {
             accepted: true,
-            verified: true
+            verified: true,
+            name: "brisboxerName4",
+            surname: "brisboxerSurname4",
+            phone: "444111112",
+            zip: "41002",
+        
         }
     });
 
@@ -92,7 +109,11 @@ function loadBrisboxers() {
     Meteor.users.update(id_brisboxer5, {
         $set: {
             accepted: false,
-            verified: true
+            verified: true,
+            name: "brisboxerName5",
+            surname: "brisboxerSurname5",
+            phone: "555112225",
+            zip: "41001",
         }
     });
 
@@ -105,7 +126,11 @@ function loadBrisboxers() {
     Meteor.users.update(id_brisboxer6, {
         $set: {
             accepted: false,
-            verified: false
+            verified: false,
+            name: "brisboxerName6",
+            surname: "brisboxerSurname6",
+            phone: "662223332",
+            zip: "41002",
         }
     });
 
@@ -117,7 +142,11 @@ function loadBrisboxers() {
     Roles.addUsersToRoles(id_brisboxer7, ['brisboxer']);
     Meteor.users.update(id_brisboxer7, {
         $set: {
-            accepted: false
+            accepted: false,
+            name: "brisboxerName7",
+            surname: "brisboxerSurname7",
+            phone: "677776667",
+            zip: "41002",
         }
     });
 
@@ -130,7 +159,11 @@ function loadBrisboxers() {
     Meteor.users.update(id_brisboxer8, {
         $set: {
             verified: true,
-            accepted: false
+            accepted: false,
+            name: "brisboxerName8",
+            surname: "brisboxerSurname8",
+            phone: "668888881",
+            zip: "41003",
         }
     });
 
@@ -143,7 +176,12 @@ function loadBrisboxers() {
     Meteor.users.update(id_brisboxer9, {
         $set: {
             verified: true,
-            accepted: true
+            accepted: true,
+            name: "brisboxerName9",
+            surname: "brisboxerSurname9",
+            phone: "699991119",
+            zip: "41003",
+        
         }
     });
 
@@ -156,7 +194,11 @@ function loadBrisboxers() {
     Meteor.users.update(id_brisboxer10, {
         $set: {
             verified: true,
-            accepted: true
+            accepted: true,
+            name: "brisboxerName10",
+            surname: "brisboxerSurname10",
+            phone: "610101010",
+            zip: "41005",
         }
     });
 }

@@ -230,6 +230,9 @@
   "order_dashboard_hour": "Hora",
   "order_dashboard_number_of_brisboxers": "Nº de brisboxers",
   "order_dashboard_estimate_hours": "Horas estimadas",
+
+  "brisboxer_details": "Detalles del brisboxer",
+
   "schemas": {
     "inscription": {
       "username": {
