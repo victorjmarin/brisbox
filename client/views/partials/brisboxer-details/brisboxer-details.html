@@ -47,6 +47,19 @@
 						{{profile.phone}}
 					</div>
 				</div>
+				<div class="col s12 m6 l8 row valign-wrapper">
+					<div class="col s3 m3 l3">
+						{{_ "verified"}}
+					</div>
+					<div class="col s9 m9 l9">
+						{{#if verified}}
+							<i class="material-icons green-text verified-i ">verified_user</i>
+						{{else}}
+							<i class="material-icons red-text verified-i">verified_user</i>
+						{{/if}}
+					</div>
+				</div>
+				
 			</div>
 		{{else}}
 			<div class="row center-align">
