@@ -249,7 +249,8 @@
   "username": "Username",
   "email": "Email",
   "phone": "Phone",
-  
+  "brisboxer_doesnt_founded": "Brisboxer doesn't founded",
+
   "schemas": {
     "inscription": {
       "username": {

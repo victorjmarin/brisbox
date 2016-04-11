@@ -1,50 +1,57 @@
 <template name="brisboxerDetails">
     <div id="details-brisboxer-main" class="container">
 		<h4 class="header">{{_ "brisboxer_details"}}</h4>
-		<div class="row">
-			<div class="col s12 m6 l4 valign-wrapper">
-				<img src="/placeholder.png" class="circle" style="margin-right: auto;margin-left: auto;"/>
+
+		{{#if exists}}
+			<div class="row">
+				<div class="col s12 m6 l4 valign-wrapper">
+					<img src="/placeholder.png" class="circle" style="margin-right: auto;margin-left: auto;"/>
+				</div>
+				<div class="col s12 m6 l8 row valign-wrapper">
+					<div class="col s3 m3 l3">
+						{{_ "name"}}
+					</div>
+					<div class="col s9 m9 l9">
+						{{profile.name}}
+					</div>
+				</div>
+				<div class="col s12 m6 l8 row valign-wrapper">
+					<div class="col s3 m3 l3">
+						{{_ "surname"}}
+					</div>
+					<div class="col s9 m9 l9">
+						{{profile.surname}}
+					</div>
+				</div>
+				<div class="col s12 m6 l8 row valign-wrapper">
+					<div class="col s3 m3 l3">
+						{{_ "username"}}
+					</div>
+					<div class="col s9 m9 l9">
+						{{username}}
+					</div>
+				</div>
+				<div class="col s12 m6 l8 row valign-wrapper">
+					<div class="col s3 m3 l3">
+						{{_ "email"}}
+					</div>
+					<div class="col s9 m9 l9">
+						{{email}}
+					</div>
+				</div>
+				<div class="col s12 m6 l8 row valign-wrapper">
+					<div class="col s3 m3 l3">
+						{{_ "phone"}}
+					</div>
+					<div class="col s9 m9 l9">
+						{{profile.phone}}
+					</div>
+				</div>
 			</div>
-			<div class="col s12 m6 l8 row valign-wrapper">
-				<div class="col s3 m3 l3">
-					{{_ "name"}}
-				</div>
-				<div class="col s9 m9 l9">
-					{{profile.name}}
-				</div>
+		{{else}}
+			<div class="row center-align">
+				<h5 class="red-text">{{_ "brisboxer_doesnt_founded"}}</h5>
 			</div>
-			<div class="col s12 m6 l8 row valign-wrapper">
-				<div class="col s3 m3 l3">
-					{{_ "surname"}}
-				</div>
-				<div class="col s9 m9 l9">
-					{{profile.surname}}
-				</div>
-			</div>
-			<div class="col s12 m6 l8 row valign-wrapper">
-				<div class="col s3 m3 l3">
-					{{_ "username"}}
-				</div>
-				<div class="col s9 m9 l9">
-					{{username}}
-				</div>
-			</div>
-			<div class="col s12 m6 l8 row valign-wrapper">
-				<div class="col s3 m3 l3">
-					{{_ "email"}}
-				</div>
-				<div class="col s9 m9 l9">
-					{{email}}
-				</div>
-			</div>
-			<div class="col s12 m6 l8 row valign-wrapper">
-				<div class="col s3 m3 l3">
-					{{_ "phone"}}
-				</div>
-				<div class="col s9 m9 l9">
-					{{profile.phone}}
-				</div>
-			</div>
-		</div>
+		{{/if}}
 	</div>
 </template>
