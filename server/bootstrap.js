@@ -32,173 +32,180 @@ function loadAdmins() {
 
 function loadBrisboxers() {
     var id_brisboxer1 = Accounts.createUser({
-        username: 'brisboxer1',
-        email: 'brisboxer1@alum.us.es',
-        password: 'brisboxer1'
+        username: 'brisboxer1', password: 'brisboxer1', email: 'brisboxer1@alum.us.es',
+        profile: {
+            name: "brisboxerName1",
+            surname: "brisboxerSurname1",
+            phone: "111112221",
+            zip: "41001",
+            howHearAboutUs: "HowHear1"
+        }
     });
     Roles.addUsersToRoles(id_brisboxer1, ['brisboxer']);
     Meteor.users.update(id_brisboxer1, {
         $set: {
             accepted: true,
-            verified: true,
-            name: "brisboxerName1",
-            surname: "brisboxerSurname1",
-            phone: "111112221",
-            zip: "41001",
+            verified: true
         }
     });
     var id_brisboxer2 = Accounts.createUser({
-       username: 'brisboxer2',
-        email: 'brisboxer2@alum.us.es',
-        password: 'brisboxer2'
+        username: 'brisboxer2', password: 'brisboxer2', email: 'brisboxer2@alum.us.es',
+        profile: {
+            name: "brisboxerName2",
+            surname: "brisboxerSurname2",
+            phone: "222222222",
+            zip: "41001",
+            howHearAboutUs: "HowHear2"
+        }
     });
     Roles.addUsersToRoles(id_brisboxer2, ['brisboxer']);
     Meteor.users.update(id_brisboxer2, {
         $set: {
             accepted: true,
-            verified: true,
-            name: "brisboxerName2",
-            surname: "brisboxerSurname2",
-            phone: "222221112",
-            zip: "41002",
-        
+            verified: true
         }
     });
 
     var id_brisboxer3 = Accounts.createUser({
-        username: 'brisboxer3',
-        email: 'brisboxer3@alum.us.es',
-        password: 'brisboxer3'
+        username: 'brisboxer3', password: 'brisboxer3', email: 'brisboxer3@alum.us.es',
+        profile: {
+            name: "brisboxerName3",
+            surname: "brisboxerSurname3",
+            phone: "333111223",
+            zip: "41001",
+            howHearAboutUs: "HowHear3"
+        }
     });
     Roles.addUsersToRoles(id_brisboxer3, ['brisboxer']);
     Meteor.users.update(id_brisboxer3, {
         $set: {
             accepted: true,
-            verified: true,
-            name: "brisboxerName3",
-            surname: "brisboxerSurname3",
-            phone: "331112223",
-            zip: "41002",
+            verified: true
         }
     });
 
     var id_brisboxer4 = Accounts.createUser({
-        username: 'brisboxer4',
-        email: 'brisboxer4@alum.us.es',
-        password: 'brisboxer4'
+        username: 'brisboxer4', password: 'brisboxer4', email: 'brisboxer4@alum.us.es',
+        profile: {
+            name: "brisboxerName4",
+            surname: "brisboxerSurname4",
+            phone: "441112224",
+            zip: "41001",
+            howHearAboutUs: "HowHear4"
+        }
     });
     Roles.addUsersToRoles(id_brisboxer4, ['brisboxer']);
     Meteor.users.update(id_brisboxer4, {
         $set: {
             accepted: true,
-            verified: true,
-            name: "brisboxerName4",
-            surname: "brisboxerSurname4",
-            phone: "444111112",
-            zip: "41002",
-        
+            verified: true
         }
     });
 
     var id_brisboxer5 = Accounts.createUser({
-        username: 'brisboxer5',
-        email: 'brisboxer5@alum.us.es',
-        password: 'brisboxer5'
+        username: 'brisboxer5', password: 'brisboxer5', email: 'brisboxer5@alum.us.es',
+        profile: {
+            name: "brisboxerName5",
+            surname: "brisboxerSurname5",
+            phone: "551112225",
+            zip: "41003",
+            howHearAboutUs: "HowHear5"
+        }
     });
     Roles.addUsersToRoles(id_brisboxer5, ['brisboxer']);
     Meteor.users.update(id_brisboxer5, {
         $set: {
             accepted: false,
-            verified: true,
-            name: "brisboxerName5",
-            surname: "brisboxerSurname5",
-            phone: "555112225",
-            zip: "41001",
+            verified: true
         }
     });
 
     var id_brisboxer6 = Accounts.createUser({
-        username: 'brisboxer6',
-        email: 'brisboxer6@alum.us.es',
-        password: 'brisboxer6'
+        username: 'brisboxer6', password: 'brisboxer6', email: 'brisboxer6@alum.us.es',
+        profile: {
+            name: "brisboxerName6",
+            surname: "brisboxerSurname6",
+            phone: "666112226",
+            zip: "41003",
+            howHearAboutUs: "HowHear6"
+        }
     });
     Roles.addUsersToRoles(id_brisboxer6, ['brisboxer']);
     Meteor.users.update(id_brisboxer6, {
         $set: {
             accepted: false,
-            verified: false,
-            name: "brisboxerName6",
-            surname: "brisboxerSurname6",
-            phone: "662223332",
-            zip: "41002",
+            verified: false
         }
     });
 
     var id_brisboxer7 = Accounts.createUser({
-        username: 'brisboxer7',
-        email: 'brisboxer7@alum.us.es',
-        password: 'brisboxer7'
+        username: 'brisboxer7', password: 'brisboxer7', email: 'brisboxer7@alum.us.es',
+        profile: {
+            name: "brisboxerName7",
+            surname: "brisboxerSurname7",
+            phone: "677776777",
+            zip: "41003",
+            howHearAboutUs: "HowHear7"
+        }
     });
     Roles.addUsersToRoles(id_brisboxer7, ['brisboxer']);
     Meteor.users.update(id_brisboxer7, {
         $set: {
-            accepted: false,
-            name: "brisboxerName7",
-            surname: "brisboxerSurname7",
-            phone: "677776667",
-            zip: "41002",
+            accepted: false
         }
     });
 
     var id_brisboxer8 = Accounts.createUser({
-        username: 'brisboxer8',
-        email: 'brisboxer8@alum.us.es',
-        password: 'brisboxer8'
+        username: 'brisboxer8', password: 'brisboxer8', email: 'brisboxer8@alum.us.es',
+        profile: {
+            name: "brisboxerName8",
+            surname: "brisboxerSurname8",
+            phone: "688886888",
+            zip: "41004",
+            howHearAboutUs: "HowHear8"
+        }
     });
     Roles.addUsersToRoles(id_brisboxer8, ['brisboxer']);
     Meteor.users.update(id_brisboxer8, {
         $set: {
             verified: true,
-            accepted: false,
-            name: "brisboxerName8",
-            surname: "brisboxerSurname8",
-            phone: "668888881",
-            zip: "41003",
+            accepted: false
         }
     });
 
     var id_brisboxer9 = Accounts.createUser({
-        username: 'brisboxer9',
-        email: 'brisboxer9@alum.us.es',
-        password: 'brisboxer9'
+        username: 'brisboxer9', password: 'brisboxer9', email: 'brisboxer9@alum.us.es',
+        profile: {
+            name: "brisboxerName9",
+            surname: "brisboxerSurname9",
+            phone: "966669998",
+            zip: "41001",
+            howHearAboutUs: "HowHear9"
+        }
     });
     Roles.addUsersToRoles(id_brisboxer9, ['brisboxer']);
     Meteor.users.update(id_brisboxer9, {
         $set: {
             verified: true,
-            accepted: true,
-            name: "brisboxerName9",
-            surname: "brisboxerSurname9",
-            phone: "699991119",
-            zip: "41003",
-        
+            accepted: true
         }
     });
 
     var id_brisboxer10 = Accounts.createUser({
-        username: 'brisboxer10',
-        email: 'brisboxer10@alum.us.es',
-        password: 'brisboxer10'
+        username: 'brisboxer10', password: 'brisboxer10', email: 'brisboxer10@alum.us.es',
+        profile: {
+            name: "brisboxerName10",
+            surname: "brisboxerSurname10",
+            phone: "910101010",
+            zip: "41004",
+            howHearAboutUs: "HowHear10"
+        }
     });
     Roles.addUsersToRoles(id_brisboxer10, ['brisboxer']);
     Meteor.users.update(id_brisboxer10, {
         $set: {
             verified: true,
-            accepted: true,
-            name: "brisboxerName10",
-            surname: "brisboxerSurname10",
-            phone: "610101010",
-            zip: "41005",
+            accepted: true
         }
     });
 }

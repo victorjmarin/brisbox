@@ -244,7 +244,12 @@
   "order_dashboard_estimate_hours": "Estimate hours",
 
   "brisboxer_details": "Brisboxer details",
-
+  "name": "Name",
+  "surname": "Surname",
+  "username": "Username",
+  "email": "Email",
+  "phone": "Phone",
+  
   "schemas": {
     "inscription": {
       "username": {

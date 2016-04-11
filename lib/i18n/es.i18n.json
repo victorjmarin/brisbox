@@ -232,6 +232,11 @@
   "order_dashboard_estimate_hours": "Horas estimadas",
 
   "brisboxer_details": "Detalles del brisboxer",
+  "name": "Nombre",
+  "surname": "Apellidos",
+  "username": "Usuario",
+  "email": "Correo electrónico",
+  "phone": "Teléfono",
 
   "schemas": {
     "inscription": {
