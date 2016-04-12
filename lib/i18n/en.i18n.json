@@ -243,6 +243,10 @@
   "order_dashboard_number_of_brisboxers": "Nº of brisboxers",
   "order_dashboard_estimate_hours": "Estimate hours",
 
+  "order_deleted" : "Order deleted",
+  "order_deleted_success" : "Your order has been deleted. Thanks for your trust.",
+
+
   "schemas": {
     "inscription": {
       "username": {

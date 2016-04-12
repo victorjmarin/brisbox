@@ -121,5 +121,41 @@ Meteor.methods({
             verified: true
         }
     });
+    },
+
+    'sendOrderCreatedEmail': function (correo, orderId) {
+        this.unblock();
+        var pedidoId = Orders.get(orderId);
+        var token = (order[0].phone*71)+(order[0].zip*31);
+        var urlDashboardOrder = "sitioDondeEsteAlojado/"+pedidoId
+        var urlDeleteOrder = "sitioDondeEsteAlojado/order-delete/"+pedidoId+"/"+token;
+        var currentLocale = TAPi18next.lng();
+        if(currentLocale=="es"){
+            var subject = "";
+            var text="";
+        }
+        if(currentLocale=="en"){
+            var subject = "";
+            var text="";
+        }
+        console.log("*** sendOrderCreatedEmail ***");
+        Email.send({
+            from: 'hello@brisbox.com',
+            subject: subject,
+            text: text,
+            to: correo
+        });
+    },
+
+    'deleteOrderMethod': function(orderId, token){
+        var order = Orders.find(orderId);
+        var tokenInt=token*1;
+        if(order[0]._id==orderId){
+            console.log("*** ORDER ENCONTRADA ***");
+            if((order[0].phone*71)+(order[0].zip*31)==tokenInt){
+                console.log("*** TOKEN CORRECTO ***");
+                Orders.delete(orderId);
+            }
+        }
     }
 });
