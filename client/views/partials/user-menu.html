@@ -17,6 +17,9 @@
                     <i class="material-icons">search</i>
                 </a>
                 {{/if}}
+                <a id="my-details" class="btn-floating btn-large indigo" href="{{ pathFor 'brisboxer-details' _id=currentUser._id }}">
+                    <i class="material-icons">account_circle</i>
+                </a>
                 {{/if}}
 
                 {{#if isInRole 'admin'}}

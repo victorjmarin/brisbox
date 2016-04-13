@@ -230,6 +230,17 @@
   "order_dashboard_hour": "Hora",
   "order_dashboard_number_of_brisboxers": "Nº de brisboxers",
   "order_dashboard_estimate_hours": "Horas estimadas",
+
+  "brisboxer_details": "Detalles del brisboxer",
+  "name": "Nombre",
+  "surname": "Apellidos",
+  "username": "Usuario",
+  "email": "Correo electrónico",
+  "phone": "Teléfono",
+  "brisboxer_doesnt_founded": "Brisboxer no encontrado",
+  "verified": "Verificado",
+  "accepted": "Aceptado",
+
   "schemas": {
     "inscription": {
       "username": {

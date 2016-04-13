@@ -243,6 +243,17 @@
   "order_dashboard_number_of_brisboxers": "Nº of brisboxers",
   "order_dashboard_estimate_hours": "Estimate hours",
 
+  "brisboxer_details": "Brisboxer details",
+  "name": "Name",
+  "surname": "Surname",
+  "username": "Username",
+  "email": "Email",
+  "phone": "Phone",
+  "brisboxer_doesnt_founded": "Brisboxer doesn't founded",
+  "verified": "Verified",
+  "accepted": "Accepted",
+
+
   "schemas": {
     "inscription": {
       "username": {
