@@ -57,8 +57,8 @@
                         </div>
                     </div>
                     <div class="block-debajo">
-                        <div class="input-field col s6 checkTerms obligatory">
-                            <a class="waves-effect waves-light modal-trigger" href="#checkModal1">
+                        <div class="input-field col s6 checkTerms">
+                            <a class="waves-effect waves-light" id="openModalTerms" href="#">
                                 {{_ "terms"}}
                             </a>
                             <div class="col s6 m6">
@@ -71,12 +71,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <script>
-                        $(document).ready(function () {
-                            $('.modal-trigger').leanModal();
-                        });
-                    </script>
 
                     <div id="checkModal1" class="modal">
                         <div class="row terms_header">
@@ -109,9 +103,13 @@
                             <p> ... </p>
                             <p>{{_ "termsFinal"}}</p>
                         </div>
-                        <div class="modal-footer">
-                            <a href="#"
-                               class="modal-action modal-close waves-effect waves-orange btn-flat">{{_ "agree"}}</a>
+                        <div style="text-align: center">
+                            <div class="modal-footer">
+                                <a id="accept_terms" href="#"
+                                   class="modal-action modal-close waves-effect waves-orange btn-flat" style="float:none">{{_ "agree"}}</a>
+                                <a id="refuse_terms" href="#"
+                                   class="modal-action modal-close waves-effect waves-orange btn-flat" style="float:none">{{_ "refuse"}}</a>
+                            </div>
                         </div>
                     </div>
 
