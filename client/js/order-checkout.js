@@ -8,18 +8,27 @@ Template.orderCheckout.events({
 });
 
 Template.orderCheckout.helpers({
-    order: function(){
-        return Session.get("orderForm");
+    day: function(){
+        return sessionStorage.getItem("day");
+    },
+    phone: function(){
+        return sessionStorage.getItem("phone");
+    },
+    addressLoading: function(){
+        return sessionStorage.getItem("addressLoading");
+    },
+    addressUnloading: function(){
+        return sessionStorage.getItem("addressUnloading");
     },
     cost: function() {
-        var order = Session.get("orderForm");
-        return order.numberBrisboxers * order.hours * 20 + " €";
+        return sessionStorage.getItem("numberBrisboxers") * sessionStorage.getItem("hours") * 20 + " €";
     }
 });
 
 Template.orderCheckout.onRendered(function() {
-    var addressLoading = Session.get("orderForm").addressLoading;
-    var addressUnloading = Session.get("orderForm").addressUnloading;
+    var addressLoading = sessionStorage.getItem("addressLoading");
+    var addressUnloading = sessionStorage.getItem("addressUnloading");
+    console.log(addressLoading);
     if(addressLoading!=null){
         $('.checkout-loading').css('visibility','visible');
     }

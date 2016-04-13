@@ -59,7 +59,19 @@ Template.orderForm.events({
 			email: document.getElementById("email").value,
 			brisboxers: []
 		};
-		Session.set("orderForm",orderForm);
+		sessionStorage.setItem("addressLoading",orderForm.addressLoading);
+		sessionStorage.setItem("addressLoading",orderForm.addressLoading);
+		sessionStorage.setItem("zip",orderForm.zip);
+		sessionStorage.setItem("loading",orderForm.loading);
+		sessionStorage.setItem("unloading",orderForm.unloading);
+		sessionStorage.setItem("comments",orderForm.comments);
+		sessionStorage.setItem("numberBrisboxers",orderForm.numberBrisboxers);
+		sessionStorage.setItem("hours",orderForm.hours);
+		sessionStorage.setItem("day",orderForm.day);
+		sessionStorage.setItem("name",orderForm.name);
+		sessionStorage.setItem("surname",orderForm.surname);
+		sessionStorage.setItem("phone",orderForm.phone);
+		sessionStorage.setItem("email",orderForm.email);
 		Router.go("order-checkout");
 	}
 });

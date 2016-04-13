@@ -1,6 +1,5 @@
 function cost() {
-    var order = Session.get("orderForm");
-    return order.numberBrisboxers * order.hours * 20 + " €";
+    return sessionStorage.getItem("numberBrisboxers") * sessionStorage.getItem("hours") * 20 + " €";
 }
 
 Template.stripe_form.onRendered(function () {
@@ -63,18 +62,16 @@ Template.stripe_form.events({
         });
         if(Session.get("stripe_error") == null){
             var currentLocale = TAPi18next.lng();
-            var addressLoading = Session.get("orderForm").addressLoading;
-            var addressUnloading = Session.get("orderForm").addressUnloading;
-            var email = Session.get("orderForm").email;
-            console.log(email);
+            var addressLoading = sessionStorage.getItem("addressLoading");
+            var addressUnloading = sessionStorage.getItem("addressUnloading");
+            var email = sessionStorage.getItem("email");
             if(currentLocale == "es"){
-                if(Session.get("orderForm").loading!="on"){
+                if(sessionStorage.getItem("loading")!="on"){
                     addressLoading = "No se ha solicitado carga.";
                 }
-                if(Session.get("orderForm").unloading!="on"){
+                if(sessionStorage.getItem("unloading")!="on"){
                     addressUnloading = "No se ha solicitado descarga.";
                 }
-                console.log(email);
                 var subjectSpanish = "Resumen pedido";
                 var textSpanish =
                     "¡Gracias por dejarnos ayudarte con la mudanza!\n\n" +
@@ -82,16 +79,15 @@ Template.stripe_form.events({
                     "\n\nCoste estimado: "+ cost() +
                     "\n\nDirección de carga: "+ addressLoading +
                     "\n\nDirección de descarga: "+ addressUnloading +
-                    "\n\nDía: "+ Session.get("orderForm").day +
-                    "\n\nNombre: "+ Session.get("orderForm").name +
-                    "\n\nApellidos: "+ Session.get("orderForm").surname +
-                    "\n\nTeléfono: "+ Session.get("orderForm").phone +
-                    "\n\nNumero de brisboxers: "+ Session.get("orderForm").numberBrisboxers +
-                    "\n\nHoras: "+ Session.get("orderForm").hours +
+                    "\n\nDía: "+ sessionStorage.getItem("day") +
+                    "\n\nNombre: "+ sessionStorage.getItem("name") +
+                    "\n\nApellidos: "+ sessionStorage.getItem("surname") +
+                    "\n\nTeléfono: "+ sessionStorage.getItem("phone") +
+                    "\n\nNumero de brisboxers: "+ sessionStorage.getItem("numberBrisboxers") +
+                    "\n\nHoras: "+ sessionStorage.getItem("hours") +
                     "\n\nSi hay algun problema con tu pedido, comunicanoslo respondiendo a este correo.\n\n" +
                     "Un saludo,¡y gracias de nuevo!\n" +
                     "El equipo de Brisbox";
-                Meteor.call("sendEmail", email, "hello@brisbox.com", subjectSpanish, textSpanish);
                 Router.go('ThanksOrder');
             }else{
                 if(addressLoading!="on"){
@@ -107,16 +103,15 @@ Template.stripe_form.events({
                     "\n\nEstimated cost: "+ cost() +
                     "\n\nAddress loading: "+ addressLoading +
                     "\n\nAddress unloading: "+ addressUnloading +
-                    "\n\nDay: "+ Session.get("orderForm").day +
-                    "\n\nName: "+ Session.get("orderForm").name +
-                    "\n\nSurname: "+ Session.get("orderForm").surname +
-                    "\n\nPhone: "+ Session.get("orderForm").phone +
-                    "\n\nNumber Brisboxers: "+ Session.get("orderForm").numberBrisboxers +
-                    "\n\nHours: "+ Session.get("orderForm").hours +
+                    "\n\nDay: "+ sessionStorage.getItem("day") +
+                    "\n\nName: "+ sessionStorage.getItem("name") +
+                    "\n\nSurname: "+ sessionStorage.getItem("surname") +
+                    "\n\nPhone: "+ sessionStorage.getItem("phone") +
+                    "\n\nNumber Brisboxers: "+ sessionStorage.getItem("numberBrisboxers") +
+                    "\n\nHours: "+ sessionStorage.getItem("hours") +
                     "\n\nIf there is a problem with your order, please let us know by responding to this email.\n\n" +
                     "Grettings,thanks again.!\n" +
                     "Brisbox Team";
-                console.log(Session.get("orderForm"));
                 Meteor.call("sendEmail", email, "hello@brisbox.com", subjectEnglish,textEnglish);
                 Router.go('ThanksOrder');
             }
