@@ -52,7 +52,7 @@ Meteor.methods({
         Orders.insert(orderForm);
     },
 
-    'prueba': function(text){
+    'prueba': function (text) {
         console.log(text);
     },
 
@@ -115,28 +115,29 @@ Meteor.methods({
         }
     },
 
-    'verificaEmailDesdeCorreo': function(){
+    'verificaEmailDesdeCorreo': function () {
         Meteor.users.update(Meteor.userId(), {
-        $set: {
-            verified: true
-        }
-    });
+            $set: {
+                verified: true
+            }
+        });
     },
-
     'sendOrderCreatedEmail': function (correo, orderId) {
         this.unblock();
-        var pedidoId = Orders.get(orderId);
-        var token = (order[0].phone*71)+(order[0].zip*31);
-        var urlDashboardOrder = "sitioDondeEsteAlojado/"+pedidoId
-        var urlDeleteOrder = "sitioDondeEsteAlojado/order-delete/"+pedidoId+"/"+token;
+        var pedido = Orders.get(orderId);
+        var user = Meteor.users.findUserByEmail(correo);
+        var pedidoIdCodificado = pedido._id * 31;
+        var token = (pedido.phone * 71) + (pedido.zip * 31);
+        var urlDashboardOrder = Router.current().route.path() + "/order_dashboard/" + pedidoIdCodificado
+        var urlDeleteOrder = Router.current().route.path() + "/cancel-order/" + pedidoIdCodificado + "/" + token;
         var currentLocale = TAPi18next.lng();
-        if(currentLocale=="es"){
-            var subject = "";
-            var text="";
+        if (currentLocale == "es") {
+            var subject = "[BRISBOX] ¡Su pedido ha sido registrado!";
+            var text = "Hola " + user.name + " su pedido ha sido registrado en el sistema.\nPulse en el siguiente enlace para acceder al estado actual de su pedido:\n" + urlDashboardOrder + " \n\nSi desea cancelar el pedido sólo tiene que hacer click en el siguiente enlace:\n" + urlDeleteOrder + "\n\n Un saludo del equipo de Brisbox.";
         }
-        if(currentLocale=="en"){
-            var subject = "";
-            var text="";
+        if (currentLocale == "en") {
+            var subject = "[BRISBOX] Your order has been registered!";
+            var text = "Hello " + user.name + " your order has been registered on the system.\nClick on the next link to see the actual status of your order:\n" + urlDashboardOrder + " \n\nIf you want to cancel your order, you just have to click on the next link:\n" + urlDeleteOrder + "\n\n Greetings for the Brisbox Team.";
         }
         console.log("*** sendOrderCreatedEmail ***");
         Email.send({
@@ -147,15 +148,27 @@ Meteor.methods({
         });
     },
 
-    'deleteOrderMethod': function(orderId, token){
-        var order = Orders.find(orderId);
-        var tokenInt=token*1;
-        if(order[0]._id==orderId){
-            console.log("*** ORDER ENCONTRADA ***");
-            if((order[0].phone*71)+(order[0].zip*31)==tokenInt){
+    'deleteOrderMethod': function (orderId, token) {
+        var res = "NOTCANCELED";
+        var orderIdDecodificado = (orderId*1)/31;
+        var order = Orders.find(orderIdDecodificado);
+        var tokenInt = token * 1;
+        if (order._id == orderIdDecodificado) {
+            console.log("*** PEDIDO ENCONTRADO ***");
+            if ((order[0].phone * 71) + (order[0].zip * 31) == tokenInt) {
                 console.log("*** TOKEN CORRECTO ***");
-                Orders.delete(orderId);
+                Orders.update(orderIdDecodificado, {
+                    $set: {
+                        canceled: true
+                    }
+                });
+                Orders.delete(orderIdDecodificado);
+                res = "CANCELED";
             }
+        }else{
+            console.log("*** PEDIDO NO ENCONTRADO ***");
+            res = "NOTFOUND";
         }
+        return res;
     }
 });

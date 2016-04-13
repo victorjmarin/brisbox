@@ -243,9 +243,16 @@
   "order_dashboard_number_of_brisboxers": "Nº of brisboxers",
   "order_dashboard_estimate_hours": "Estimate hours",
 
-  "order_deleted" : "Order deleted",
+  "order_deleted" : "Order canceled",
   "order_deleted_success" : "Your order has been deleted. Thanks for your trust.",
-
+  "order_deleted_failed" : "Cancel order failed",
+  "order_deleted_failed_body" : "There was an error cancelling your order. Please try again later.",
+  "order_not_found" : "Order not found",
+  "order_not_found_body1" : "Your order isn't found on the system. If you thing that was an error, please contact with Brisbox Team. If you have an email client, click on ",
+  "order_not_found_body2" : " if don't, you can always can contact us clicking on ",
+  "order_not_found_body3" : " \nThanks for use our services.",
+  "send_mail_to_Brisbox" : "Send an Email",
+  "return_to_main_page": "Return to main page.",
 
   "schemas": {
     "inscription": {
