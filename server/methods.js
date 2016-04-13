@@ -48,7 +48,25 @@ Meteor.methods({
         });
     },
 
-    'saveOrder': function (orderForm) {
+    'saveOrder': function (addressLoading, addressUnloading, zip, loading, unloading, comments, numberBrisboxers, hours,
+                           startMoment, day, name, surname, phone, email) {
+        var orderForm = {
+            addressLoading: addressLoading,
+            addressUnloading: addressUnloading,
+            zip: zip,
+            loading: loading,
+            unloading: unloading,
+            comments: comments,
+            numberBrisboxers: numberBrisboxers,
+            hours: hours,
+            startMoment: startMoment,
+            day: day,
+            name: name,
+            surname: surname,
+            phone: phone,
+            email: email,
+            brisboxers: []
+        };
         Orders.insert(orderForm);
     },
 

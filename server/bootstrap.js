@@ -213,23 +213,18 @@ function loadZips() {
     Zips.insert({
         code: "41016"
     });
-
     Zips.insert({
         code: "41017"
     });
-
     Zips.insert({
         code: "41018"
     });
-
     Zips.insert({
         code: "41019"
     });
-
     Zips.insert({
         code: "41020"
     });
-
     Zips.insert({
         code: "41092"
     });
@@ -252,6 +247,7 @@ function loadOrders() {
         addressLoading: 'Test1',
         addressUnloading: '',
         hours: 2,
+        startMoment: '12:00 PM',
         comments: 'comments1',
         typeMove: 'load',
         date: new Date('2016-07-03'),
@@ -269,6 +265,7 @@ function loadOrders() {
         addressLoading: 'Test2',
         addressUnloading: '',
         hours: 1,
+        startMoment: '12:00 PM',
         comments: 'comments2',
         typeMove: 'load',
         date: new Date('2016-06-20'),
@@ -287,6 +284,7 @@ function loadOrders() {
         addressLoading: 'Test3',
         addressUnloading: '',
         hours: 2,
+        startMoment: '12:00 PM',
         comments: 'comments3',
         typeMove: 'unload',
         date: new Date('2016-08-04'),
@@ -304,6 +302,7 @@ function loadOrders() {
         addressLoading: 'Test3',
         addressUnloading: '',
         hours: 1,
+        startMoment: '12:00 PM',
         comments: 'comments4',
         typeMove: 'unload',
         date: new Date('2016-07-01'),
@@ -325,6 +324,7 @@ function loadOrders() {
         addressLoading: 'alpha',
         addressUnloading: '',
         hours: 1,
+        startMoment: '12:00 PM',
         comments: 'commentsAlpha',
         typeMove: 'unload',
         date: new Date('2016-07-01'),
@@ -341,6 +341,7 @@ function loadOrders() {
         addressLoading: 'beta',
         addressUnloading: '',
         hours: 1,
+        startMoment: '12:00 PM',
         comments: 'commentsBeta',
         typeMove: 'unload',
         date: new Date('2016-07-01'),
@@ -357,6 +358,7 @@ function loadOrders() {
         addressLoading: 'gamma',
         addressUnloading: '',
         hours: 1,
+        startMoment: '12:00 PM',
         comments: 'commentsGamma',
         typeMove: 'load',
         date: new Date('2016-07-01'),
@@ -373,6 +375,7 @@ function loadOrders() {
         addressLoading: 'teta',
         addressUnloading: '',
         hours: 1,
+        startMoment: '12:00 PM',
         comments: 'commentsTeta',
         typeMove: 'load',
         date: new Date('2016-07-01'),
@@ -389,6 +392,7 @@ function loadOrders() {
         addressLoading: 'epsilon',
         addressUnloading: '',
         hours: 1,
+        startMoment: '12:00 PM',
         comments: 'commentsEpsilon',
         typeMove: 'load',
         date: new Date('2016-07-01'),

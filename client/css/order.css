@@ -102,7 +102,7 @@ Arreglar los problemas en los datos reflejados de order checkout
     margin-left: 2px;
 }
 
-#day{
+#day, #startMoment{
     height: 34px;
     padding: 6px 12px;
     font-size: 14px;

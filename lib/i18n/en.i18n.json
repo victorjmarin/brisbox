@@ -148,6 +148,7 @@
   "order-loading": "Loading",
   "order-unloading": "Unloading",
   "order-form_day": "Day",
+  "order-form_startMoment": "Start moment",
   "order-form_errorAddress":"Must choose a type move.",
   "order-form_errorTerms":"Must accept our terms.",
   "error_zip": "ZIP must be in Seville",

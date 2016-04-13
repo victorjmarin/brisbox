@@ -28,7 +28,6 @@ Template.orderCheckout.helpers({
 Template.orderCheckout.onRendered(function() {
     var addressLoading = sessionStorage.getItem("addressLoading");
     var addressUnloading = sessionStorage.getItem("addressUnloading");
-    console.log(addressLoading);
     if(addressLoading!=null){
         $('.checkout-loading').css('visibility','visible');
     }

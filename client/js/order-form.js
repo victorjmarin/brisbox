@@ -5,6 +5,7 @@ function getParameterByName(variable) {
 Template.orderForm.onRendered(function (){
 	$('#divAddressUnLoading').css('display','none');
 	$('#divAddressLoading').css('display','none');
+	this.$('.timepicker').timepicker();
 });
 
 
@@ -52,6 +53,7 @@ Template.orderForm.events({
 			comments: document.getElementById("comments1").value,
 			numberBrisboxers: document.getElementById("numberBrisboxers").value,
 			hours: document.getElementById("hours").value,
+			startMoment: document.getElementById("startMoment").value,
 			day: document.getElementById("day").value,
 			name: document.getElementById("name").value,
 			surname: document.getElementById("surname").value,
@@ -59,6 +61,7 @@ Template.orderForm.events({
 			email: document.getElementById("email").value,
 			brisboxers: []
 		};
+		Session.set("orderForm", orderForm);
 		sessionStorage.setItem("addressLoading",orderForm.addressLoading);
 		sessionStorage.setItem("addressLoading",orderForm.addressLoading);
 		sessionStorage.setItem("zip",orderForm.zip);
@@ -67,6 +70,7 @@ Template.orderForm.events({
 		sessionStorage.setItem("comments",orderForm.comments);
 		sessionStorage.setItem("numberBrisboxers",orderForm.numberBrisboxers);
 		sessionStorage.setItem("hours",orderForm.hours);
+		sessionStorage.setItem("startMoment",orderForm.startMoment);
 		sessionStorage.setItem("day",orderForm.day);
 		sessionStorage.setItem("name",orderForm.name);
 		sessionStorage.setItem("surname",orderForm.surname);

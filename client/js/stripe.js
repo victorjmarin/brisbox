@@ -64,12 +64,23 @@ Template.stripe_form.events({
             var currentLocale = TAPi18next.lng();
             var addressLoading = sessionStorage.getItem("addressLoading");
             var addressUnloading = sessionStorage.getItem("addressUnloading");
+            var zip = sessionStorage.getItem("zip");
+            var loading = sessionStorage.getItem("loading");
+            var unloading = sessionStorage.getItem("unloading");
+            var comments = sessionStorage.getItem("comments");
+            var numberBrisboxers = sessionStorage.getItem("numberBrisboxers");
+            var hours = sessionStorage.getItem("hours");
+            var startMoment = sessionStorage.getItem("startMoment");
+            var day = sessionStorage.getItem("day");
+            var name = sessionStorage.getItem("name");
+            var surname = sessionStorage.getItem("surname");
+            var phone = sessionStorage.getItem("phone");
             var email = sessionStorage.getItem("email");
             if(currentLocale == "es"){
-                if(sessionStorage.getItem("loading")!="on"){
+                if(loading!="on"){
                     addressLoading = "No se ha solicitado carga.";
                 }
-                if(sessionStorage.getItem("unloading")!="on"){
+                if(unloading!="on"){
                     addressUnloading = "No se ha solicitado descarga.";
                 }
                 var subjectSpanish = "Resumen pedido";
@@ -79,21 +90,23 @@ Template.stripe_form.events({
                     "\n\nCoste estimado: "+ cost() +
                     "\n\nDirección de carga: "+ addressLoading +
                     "\n\nDirección de descarga: "+ addressUnloading +
-                    "\n\nDía: "+ sessionStorage.getItem("day") +
-                    "\n\nNombre: "+ sessionStorage.getItem("name") +
-                    "\n\nApellidos: "+ sessionStorage.getItem("surname") +
-                    "\n\nTeléfono: "+ sessionStorage.getItem("phone") +
-                    "\n\nNumero de brisboxers: "+ sessionStorage.getItem("numberBrisboxers") +
-                    "\n\nHoras: "+ sessionStorage.getItem("hours") +
+                    "\n\nDía: "+ day +
+                    "\n\nHora del pedido: "+ startMoment +
+                    "\n\nNombre: "+ name +
+                    "\n\nApellidos: "+ surname +
+                    "\n\nTeléfono: "+ phone +
+                    "\n\nNumero de brisboxers: "+ numberBrisboxers +
+                    "\n\nHoras: "+ hours +
                     "\n\nSi hay algun problema con tu pedido, comunicanoslo respondiendo a este correo.\n\n" +
                     "Un saludo,¡y gracias de nuevo!\n" +
                     "El equipo de Brisbox";
+                Meteor.call("sendEmail", email, "hello@brisbox.com", subjectSpanish,textSpanish);
                 Router.go('ThanksOrder');
             }else{
-                if(addressLoading!="on"){
+                if(loading!="on"){
                     addressLoading = "No request load.";
                 }
-                if(addressUnloading!="on"){
+                if(unloading!="on"){
                     addressUnloading = "No request unload.";
                 }
                 var subjectEnglish = "Summary order";
@@ -103,19 +116,21 @@ Template.stripe_form.events({
                     "\n\nEstimated cost: "+ cost() +
                     "\n\nAddress loading: "+ addressLoading +
                     "\n\nAddress unloading: "+ addressUnloading +
-                    "\n\nDay: "+ sessionStorage.getItem("day") +
-                    "\n\nName: "+ sessionStorage.getItem("name") +
-                    "\n\nSurname: "+ sessionStorage.getItem("surname") +
-                    "\n\nPhone: "+ sessionStorage.getItem("phone") +
-                    "\n\nNumber Brisboxers: "+ sessionStorage.getItem("numberBrisboxers") +
-                    "\n\nHours: "+ sessionStorage.getItem("hours") +
+                    "\n\nDay: "+ day +
+                    "\n\nStart moment: "+ startMoment +
+                    "\n\nName: "+ name +
+                    "\n\nSurname: "+ surname +
+                    "\n\nPhone: "+ phone +
+                    "\n\nNumber Brisboxers: "+ numberBrisboxers +
+                    "\n\nHours: "+ hours +
                     "\n\nIf there is a problem with your order, please let us know by responding to this email.\n\n" +
                     "Grettings,thanks again.!\n" +
                     "Brisbox Team";
                 Meteor.call("sendEmail", email, "hello@brisbox.com", subjectEnglish,textEnglish);
                 Router.go('ThanksOrder');
             }
-            Meteor.call("saveOrder", Session.get("orderForm"));
+            Meteor.call("saveOrder", addressLoading, addressUnloading, zip, loading, unloading, comments, numberBrisboxers, hours,
+                startMoment, day, name, surname, phone, email);
         }
     },
     'click #info-pay ':function(e){
