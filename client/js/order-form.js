@@ -5,6 +5,8 @@ function getParameterByName(variable) {
 Template.orderForm.onRendered(function (){
 	$('#divAddressUnLoading').css('display','none');
 	$('#divAddressLoading').css('display','none');
+	$('.modal').closeModal();
+	$('.lean-overlay').remove();
 	this.$('.timepicker').timepicker();
 });
 
@@ -61,7 +63,6 @@ Template.orderForm.events({
 			email: document.getElementById("email").value,
 			brisboxers: []
 		};
-		Session.set("orderForm", orderForm);
 		sessionStorage.setItem("addressLoading",orderForm.addressLoading);
 		sessionStorage.setItem("addressLoading",orderForm.addressLoading);
 		sessionStorage.setItem("zip",orderForm.zip);

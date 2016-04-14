@@ -1,5 +1,15 @@
 Meteor.subscribe("zipsAll");
 
+Template.pageFooter.onRendered(function () {
+    $(document).ready(function () {
+        $('.modal-trigger').leanModal({
+            complete: function () {
+                $('.lean-overlay').remove();
+            }
+        });
+    });
+});
+
 Template.pageFooter.events({
     'submit .zip_form ' : function (event){
         event.preventDefault();
@@ -15,5 +25,8 @@ Template.pageFooter.events({
             return false;
         }
         Router.go('order', null, {query: 'zip=' + zip});
+    },
+    'click .checkModal': function (event) {
+        $('#checkModal').openModal({dismissible: false})
     }
 });

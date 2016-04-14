@@ -230,6 +230,12 @@ function loadZips() {
     });
 }
 
+function loadPromotion(){
+    Promotions.insert({
+       code: "probrisbox"
+    });
+}
+
 function loadOrders() {
     var brisboxer1 = Meteor.users.findOne({username: 'brisboxer1'});
     var brisboxer2 = Meteor.users.findOne({username: 'brisboxer2'});

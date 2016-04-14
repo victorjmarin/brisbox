@@ -2,6 +2,11 @@ Meteor.subscribe("zipsAll");
 
 Template.home.onRendered(function () {
     $('.tooltipped').tooltip({delay: 50});
+    $(document).ready(function(){
+        $('.slider').slider({full_width: true});
+        $('.slider').attr('style','');
+        $('.slides').attr('style','');
+    });
 });
 
 Template.home.events({

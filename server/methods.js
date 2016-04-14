@@ -67,7 +67,11 @@ Meteor.methods({
             email: email,
             brisboxers: []
         };
-        Orders.insert(orderForm);
+        Orders.insert(orderForm, function (err, callback) {
+            if (!err) {
+                Meteor.call('sendOrderCreatedEmail', callback);
+            }
+        });
     },
 
     'prueba': function(text){

@@ -1,3 +1,5 @@
+Meteor.subscribe("findCodePromotion");
+
 function cost() {
     return sessionStorage.getItem("numberBrisboxers") * sessionStorage.getItem("hours") * 20 + " €";
 }
@@ -37,6 +39,18 @@ Template.stripe_form.events({
         }
         Session.set("stripe_error", null);
 
+        var currentLocale = TAPi18next.lng();
+        var codePromotion = document.getElementById("promotion").value;
+        var codePromotionResult = Promotions.findOne({code: codePromotion});
+        if(codePromotionResult == null){
+            if(currentLocale == "es"){
+                Materialize.toast("El código promocional no es correcto, lo sentimos.");
+            }else{
+                Materialize.toast("Promotion code is not correct, sorry.");
+            }
+        }else{
+            amountForm = 1;
+        }
         Stripe.card.createToken({
             number: ccNum,
             cvc: cvc,
@@ -44,10 +58,7 @@ Template.stripe_form.events({
             exp_year: expYr
         }, function(status, response) {
 
-            if(amountForm < 50){
-                var code = "invalid_amount";
-                Session.set("stripe_error", code);
-            }else if(status != 200){
+            if(status != 200){
                 var code = response.error.code;
                 Session.set("stripe_error", code);
             }else {
@@ -61,7 +72,6 @@ Template.stripe_form.events({
             }
         });
         if(Session.get("stripe_error") == null){
-            var currentLocale = TAPi18next.lng();
             var addressLoading = sessionStorage.getItem("addressLoading");
             var addressUnloading = sessionStorage.getItem("addressUnloading");
             var zip = sessionStorage.getItem("zip");

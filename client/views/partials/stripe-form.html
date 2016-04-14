@@ -25,9 +25,13 @@
                                         <label id="expMonth-stripe" for="exp-month">{{_ "stripe_expiration_month"}}</label>
                                     </div>
                                     <div class="input-field col s6 m6">
-                                        <input class="validate" required type="number" min="2016" max="2030" maxlength="4" data-stripe="exp-year" id="exp-year" {{disabled}}/>
+                                        <input class="validate" required type="number" min="2017" max="2030" maxlength="4" data-stripe="exp-year" id="exp-year" {{disabled}}/>
                                         <label id="expYear-stripe" for="exp-year">{{_ "stripe_expiration_year"}}</label>
                                     </div>
+                                </div>
+                                <div id="info-stripe" class="input-field col s12 m12">
+                                    <input class="validate" type="text" id="promotion" {{disabled}}/>
+                                    <label id="promotion-stripe" for="promotion">{{_ "stripe_promotion"}}</label>
                                 </div>
                                 <div id="info-stripe" class="input-field col s12 m12" style="display:none">
                                     <input  type="text" readonly="true" data-stripe="amount" id="amount" {{disabled}}/>
@@ -44,11 +48,15 @@
             <ul id="info-pay" class="collapsible" >
                 <li>
                     <div class="collapsible-header"><i class="material-icons">comment</i>{{_ "info_book"}}</div>
-                    <div class="collapsible-body"><p>{{_ "info_money"}}.</p></div>
+                    <div class="collapsible-body"><p>{{_ "info_money"}}</p></div>
                 </li>
                 <li>
                     <div class="collapsible-header"><i class="material-icons">payment</i>{{_ "why_stripe"}}</div>
-                    <div class="collapsible-body"><p>{{_ "info_stripe"}}.</p></div>
+                    <div class="collapsible-body"><p>{{_ "info_stripe"}}</p></div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">redeem</i>{{_ "why_promotion"}}</div>
+                    <div class="collapsible-body"><p>{{_ "info_promotion"}}</p></div>
                 </li>
             </ul>
         </div>
