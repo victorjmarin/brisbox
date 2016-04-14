@@ -17,9 +17,27 @@ Template.inscriptionForm.events({
             $('#errorTerms').css('display','none');
             return true;
         }
+    },
+    'click #accept_terms': function (event) {
+        document.getElementById("checkTerms").checked = true;
+    },
+    'click #refuse_terms': function (event) {
+        document.getElementById("checkTerms").checked = false;
+    },
+    'click #openModalTerms': function (event) {
+        $('#checkModal1').openModal({dismissible: false})
     }
+
 });
 
 Template.inscriptionForm.onRendered(function (){
     $('#errorTerms').css('display','none');
+
+    $(document).ready(function () {
+        $('.modal-trigger').leanModal({
+            complete: function () {
+                $('.lean-overlay').remove();
+            }
+        });
+    });
 });
