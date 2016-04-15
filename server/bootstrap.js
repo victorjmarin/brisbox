@@ -1,4 +1,4 @@
-/**Meteor.startup(function () {
+Meteor.startup(function () {
     // code to run on server at startup
     var smtp = {
         username: Meteor.settings.mail.user,   // eg: server@gentlenode.com
@@ -19,7 +19,6 @@
         loadZips();
     }
 });
-*/
 
 function loadAdmins() {
     var id_admin = Accounts.createUser({
