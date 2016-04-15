@@ -18,12 +18,7 @@
     margin-top: 10px;
 
 }
-/*
-Tareas: Comprobar si está en Sevilla el código postal
-Coger la dirección y que te la ponga en el Mapa
-Arreglar los problemas en los datos reflejados de order checkout
 
-*/
 .section{
     border-right: 20px;
     border-left: 20px;
@@ -102,7 +97,7 @@ Arreglar los problemas en los datos reflejados de order checkout
     margin-left: 2px;
 }
 
-#day{
+#day, #startMoment{
     height: 34px;
     padding: 6px 12px;
     font-size: 14px;

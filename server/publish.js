@@ -25,3 +25,7 @@ Meteor.publish('myOrders', function(){
 Meteor.publish('zipsAll',function(){
 	return Zips.find();
 });
+
+Meteor.publish('findCodePromotion', function(){
+	return Promotions.find();
+});

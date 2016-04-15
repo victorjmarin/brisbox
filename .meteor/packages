@@ -32,3 +32,5 @@ email
 standard-minifier-css
 standard-minifier-js
 check
+tsega:bootstrap3-datetimepicker
+jplack:bootstrap-timepicker

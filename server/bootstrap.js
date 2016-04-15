@@ -1,11 +1,11 @@
-Meteor.startup(function () {
+/**Meteor.startup(function () {
     // code to run on server at startup
     var smtp = {
         username: Meteor.settings.mail.user,   // eg: server@gentlenode.com
         password: Meteor.settings.mail.password, // eg: 3eeP1gtizk5eziohfervU
         server: 'smtp.1and1.com',  // eg: mail.gandi.net
         port: 587
-    }
+    };
     process.env.MAIL_URL = 'smtp://' + encodeURIComponent(smtp.username) + ':' + encodeURIComponent(smtp.password) + '@' + encodeURIComponent(smtp.server) + ':' + smtp.port;
 
     if (Meteor.users.find().count() === 0) {
@@ -19,7 +19,7 @@ Meteor.startup(function () {
         loadZips();
     }
 });
-
+*/
 
 function loadAdmins() {
     var id_admin = Accounts.createUser({
@@ -262,25 +262,26 @@ function loadZips() {
     Zips.insert({
         code: "41016"
     });
-
     Zips.insert({
         code: "41017"
     });
-
     Zips.insert({
         code: "41018"
     });
-
     Zips.insert({
         code: "41019"
     });
-
     Zips.insert({
         code: "41020"
     });
-
     Zips.insert({
         code: "41092"
+    });
+}
+
+function loadPromotion(){
+    Promotions.insert({
+       code: "probrisbox"
     });
 }
 
@@ -301,6 +302,7 @@ function loadOrders() {
         addressLoading: 'Test1',
         addressUnloading: '',
         hours: 2,
+        startMoment: '12:00 PM',
         canceled: false,
         comments: 'comments1',
         typeMove: 'load',
@@ -319,6 +321,7 @@ function loadOrders() {
         addressLoading: 'Test2',
         addressUnloading: '',
         hours: 1,
+        startMoment: '12:00 PM',
         canceled: false,
         comments: 'comments2',
         typeMove: 'load',
@@ -338,6 +341,7 @@ function loadOrders() {
         addressLoading: 'Test3',
         addressUnloading: '',
         hours: 2,
+        startMoment: '12:00 PM',
         canceled: false,
         comments: 'comments3',
         typeMove: 'unload',
@@ -356,6 +360,7 @@ function loadOrders() {
         addressLoading: 'Test3',
         addressUnloading: '',
         hours: 1,
+        startMoment: '12:00 PM',
         canceled: false,
         comments: 'comments4',
         typeMove: 'unload',
@@ -378,6 +383,7 @@ function loadOrders() {
         addressLoading: 'alpha',
         addressUnloading: '',
         hours: 1,
+        startMoment: '12:00 PM',
         canceled: false,
         comments: 'commentsAlpha',
         typeMove: 'unload',
@@ -395,6 +401,7 @@ function loadOrders() {
         addressLoading: 'beta',
         addressUnloading: '',
         hours: 1,
+        startMoment: '12:00 PM',
         canceled: false,
         comments: 'commentsBeta',
         typeMove: 'unload',
@@ -412,6 +419,7 @@ function loadOrders() {
         addressLoading: 'gamma',
         addressUnloading: '',
         hours: 1,
+        startMoment: '12:00 PM',
         canceled: false,
         comments: 'commentsGamma',
         typeMove: 'load',
@@ -429,6 +437,7 @@ function loadOrders() {
         addressLoading: 'teta',
         addressUnloading: '',
         hours: 1,
+        startMoment: '12:00 PM',
         canceled: false,
         comments: 'commentsTeta',
         typeMove: 'load',
@@ -446,6 +455,7 @@ function loadOrders() {
         addressLoading: 'epsilon',
         addressUnloading: '',
         hours: 1,
+        startMoment: '12:00 PM',
         canceled: false,
         comments: 'commentsEpsilon',
         typeMove: 'load',
