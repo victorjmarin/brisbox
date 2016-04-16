@@ -37,7 +37,6 @@ Template.stripe_form.events({
         if(!amountForm){
             amountForm = Meteor.settings.public.reserveAmount;
         }
-        console.log(amountForm);
         Session.set("stripe_error", null);
 
         var currentLocale = TAPi18next.lng();
@@ -98,17 +97,18 @@ Template.stripe_form.events({
                 var textSpanish =
                     "¡Gracias por dejarnos ayudarte con la mudanza!\n\n" +
                     "En este correo se recoge un breve resumen de tu pedido." +
-                    "\n\nCoste estimado: "+ cost() +
-                    "\n\nDirección de carga: "+ addressLoading +
-                    "\n\nDirección de descarga: "+ addressUnloading +
-                    "\n\nDía: "+ day +
-                    "\n\nHora del pedido: "+ startMoment +
-                    "\n\nNombre: "+ name +
-                    "\n\nApellidos: "+ surname +
-                    "\n\nTeléfono: "+ phone +
-                    "\n\nNumero de brisboxers: "+ numberBrisboxers +
-                    "\n\nHoras: "+ hours +
-                    "\n\nSi hay algun problema con tu pedido, comunicanoslo respondiendo a este correo.\n\n" +
+                    "\nCoste estimado: "+ cost() +
+                    "\nDirección de carga: "+ addressLoading +
+                    "\nDirección de descarga: "+ addressUnloading +
+                    "\nDía: "+ day +
+                    "\nHora del pedido: "+ startMoment +
+                    "\nNombre: "+ name +
+                    "\nApellidos: "+ surname +
+                    "\nComentarios: "+ comments +
+                    "\nTeléfono: "+ phone +
+                    "\nNumero de brisboxers: "+ numberBrisboxers +
+                    "\nHoras: "+ hours +
+                    "\nSi hay algun problema con tu pedido, comunicanoslo respondiendo a este correo.\n\n" +
                     "Un saludo,¡y gracias de nuevo!\n" +
                     "El equipo de Brisbox";
                 Meteor.call("sendEmailToUser", email, subjectSpanish,textSpanish);
@@ -124,17 +124,18 @@ Template.stripe_form.events({
                 var textEnglish =
                     "Thanks for letting us help with the move!\n\n" +
                     "In this email a brief summary of your order is collected." +
-                    "\n\nEstimated cost: "+ cost() +
-                    "\n\nAddress loading: "+ addressLoading +
-                    "\n\nAddress unloading: "+ addressUnloading +
-                    "\n\nDay: "+ day +
-                    "\n\nStart moment: "+ startMoment +
-                    "\n\nName: "+ name +
-                    "\n\nSurname: "+ surname +
-                    "\n\nPhone: "+ phone +
-                    "\n\nNumber Brisboxers: "+ numberBrisboxers +
-                    "\n\nHours: "+ hours +
-                    "\n\nIf there is a problem with your order, please let us know by responding to this email.\n\n" +
+                    "\nEstimated cost: "+ cost() +
+                    "\nAddress loading: "+ addressLoading +
+                    "\nAddress unloading: "+ addressUnloading +
+                    "\nDay: "+ day +
+                    "\nStart moment: "+ startMoment +
+                    "\nName: "+ name +
+                    "\nSurname: "+ surname +
+                    "\nComments: "+ comments +
+                    "\nPhone: "+ phone +
+                    "\nNumber Brisboxers: "+ numberBrisboxers +
+                    "\nHours: "+ hours +
+                    "\nIf there is a problem with your order, please let us know by responding to this email.\n\n" +
                     "Grettings,thanks again.!\n" +
                     "Brisbox Team";
                 Meteor.call("sendEmailToUser", email, subjectEnglish,textEnglish);

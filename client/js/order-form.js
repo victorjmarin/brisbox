@@ -144,7 +144,7 @@ Template.orderForm.events({
 			brisboxers: []
 		};
 		sessionStorage.setItem("addressLoading",orderForm.addressLoading);
-		sessionStorage.setItem("addressLoading",orderForm.addressLoading);
+		sessionStorage.setItem("addressUnloading",orderForm.addressUnloading);
 		sessionStorage.setItem("zip",orderForm.zip);
 		sessionStorage.setItem("loading",orderForm.loading);
 		sessionStorage.setItem("unloading",orderForm.unloading);

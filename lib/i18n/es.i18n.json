@@ -148,7 +148,6 @@
   "order-unloading": "Descarga",
   "order-form_day": "Día",
   "order-form_startMoment": "Hora de comienzo",
-  "order-form_errorAddress": "Debe seleccionar un tipo de mudanza.",
   "order-form_errorTerms": "Debe aceptar los términos de uso.",
   "error_zip": "El código postal debe ser de Sevilla",
   "email_verified": "Verificación de email",
