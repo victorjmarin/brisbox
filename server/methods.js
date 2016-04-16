@@ -174,6 +174,7 @@ Meteor.methods({
 
     'createBrisboxer': function (doc) {
         check(doc, SchemaInscription);
+        var outerMethod = this;
         Meteor.call('createBrisboxerNoRole', doc, function (err, userId) {
             if (err) { // TODO: Simulate transaction and delete inscription form
                 console.log(err);
@@ -184,7 +185,7 @@ Meteor.methods({
                         verified: false
                     }
                 });
-                this.unblock();
+                outerMethod.unblock();
                 Accounts.sendVerificationEmail(userId);
             }
         });
