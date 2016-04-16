@@ -37,40 +37,41 @@ Template.stripe_form.events({
         if(!amountForm){
             amountForm = Meteor.settings.public.reserveAmount;
         }
+        console.log(amountForm);
         Session.set("stripe_error", null);
 
         var currentLocale = TAPi18next.lng();
         var codePromotion = document.getElementById("promotion").value;
         var codePromotionResult = Promotions.findOne({code: codePromotion});
-        if(codePromotionResult == null){
-            if(currentLocale == "es"){
-                Materialize.toast("El código promocional no es correcto, lo sentimos.");
-            }else{
-                Materialize.toast("Promotion code is not correct, sorry.");
+        if(codePromotionResult == null) {
+            if(codePromotion!=""){
+                if (currentLocale == "es") {
+                    Materialize.toast("El código promocional no es correcto, lo sentimos.");
+                }else{
+                    Materialize.toast("Promotion code is not correct, sorry.");
+                }
             }
-        }else{
-            amountForm = 1;
-        }
-        Stripe.card.createToken({
-            number: ccNum,
-            cvc: cvc,
-            exp_month: expMo,
-            exp_year: expYr
-        }, function(status, response) {
+            Stripe.card.createToken({
+                number: ccNum,
+                cvc: cvc,
+                exp_month: expMo,
+                exp_year: expYr
+            }, function(status, response) {
 
-            if(status != 200){
-                var code = response.error.code;
-                Session.set("stripe_error", code);
-            }else {
-                stripeToken = response.id;
-                Meteor.call('chargeCard', stripeToken, amountForm, function(error, succeed){
-                    if(error){
-                        var code = error.reason;
-                        Session.set("stripe_error", code);
-                    }
-                });
-            }
-        });
+                if(status != 200){
+                    var code = response.error.code;
+                    Session.set("stripe_error", code);
+                }else {
+                    stripeToken = response.id;
+                    Meteor.call('chargeCard', stripeToken, amountForm, function(error, succeed){
+                        if(error){
+                            var code = error.reason;
+                            Session.set("stripe_error", code);
+                        }
+                    });
+                }
+            });
+        }
         if(Session.get("stripe_error") == null){
             var addressLoading = sessionStorage.getItem("addressLoading");
             var addressUnloading = sessionStorage.getItem("addressUnloading");
@@ -87,10 +88,10 @@ Template.stripe_form.events({
             var phone = sessionStorage.getItem("phone");
             var email = sessionStorage.getItem("email");
             if(currentLocale == "es"){
-                if(loading!="on"){
+                if(addressLoading==null){
                     addressLoading = "No se ha solicitado carga.";
                 }
-                if(unloading!="on"){
+                if(addressUnloading==null){
                     addressUnloading = "No se ha solicitado descarga.";
                 }
                 var subjectSpanish = "Resumen pedido";
@@ -110,13 +111,13 @@ Template.stripe_form.events({
                     "\n\nSi hay algun problema con tu pedido, comunicanoslo respondiendo a este correo.\n\n" +
                     "Un saludo,¡y gracias de nuevo!\n" +
                     "El equipo de Brisbox";
-                Meteor.call("sendEmail", email, "hello@brisbox.com", subjectSpanish,textSpanish);
+                Meteor.call("sendEmailToUser", email, subjectSpanish,textSpanish);
                 Router.go('ThanksOrder');
             }else{
-                if(loading!="on"){
+                if(addressLoading==null){
                     addressLoading = "No request load.";
                 }
-                if(unloading!="on"){
+                if(addressUnloading==null){
                     addressUnloading = "No request unload.";
                 }
                 var subjectEnglish = "Summary order";
@@ -136,7 +137,7 @@ Template.stripe_form.events({
                     "\n\nIf there is a problem with your order, please let us know by responding to this email.\n\n" +
                     "Grettings,thanks again.!\n" +
                     "Brisbox Team";
-                Meteor.call("sendEmail", email, "hello@brisbox.com", subjectEnglish,textEnglish);
+                Meteor.call("sendEmailToUser", email, subjectEnglish,textEnglish);
                 Router.go('ThanksOrder');
             }
             Meteor.call("saveOrder", addressLoading, addressUnloading, zip, loading, unloading, comments, numberBrisboxers, hours,

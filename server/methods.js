@@ -168,10 +168,6 @@ Meteor.methods({
         });
     },
 
-    'prueba': function (text) {
-        console.log(text);
-    },
-
     'createBrisboxer': function (doc) {
         check(doc, SchemaInscription);
         Meteor.call('createBrisboxerNoRole', doc, function (err, userId) {

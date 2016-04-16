@@ -107,6 +107,8 @@
   "order-checkout_hour": "Hour",
   "order-checkout_day": "Day",
   "order-checkout_stripe": "Bank data",
+  "order-errorAddress":"Choose a address.",
+  "order-errorDay":"Day can't be in past.",
   "info_money": "To order will be charged an amount equal to 5 €. This amount will be deducted later the total cost of the service.",
   "info_book": "Cost 5 € / order",
   "why_stripe": " Why do you use Stripe?",

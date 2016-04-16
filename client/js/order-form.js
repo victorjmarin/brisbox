@@ -2,6 +2,86 @@ function getParameterByName(variable) {
     return Router.current().params.query[variable]
 }
 
+function validate_day_address(loading, unloading, day){
+	var dayMonthYear = day.split(" ");
+	var today = new Date();
+	var monthToday = today.getMonth()+1;
+	var months = {
+		"January," : 1,
+		"February," : 2,
+		"March," : 3,
+		"April," : 4,
+		"May," : 5,
+		"June," : 6,
+		"July," : 7,
+		"August," : 8,
+		"September," : 9,
+		"October," : 10,
+		"November," : 11,
+		"December," : 12
+	};
+	if(loading == true || unloading == true){
+		$('.errorAddress').css('visibility','hidden');
+		if(day == ""){
+			$('.errorDay').css('visibility','visible');
+			return false;
+		}
+	}
+	if(dayMonthYear[2] > today.getFullYear()){
+		$('.errorDay').css('visibility','hidden');
+	}
+	if(dayMonthYear[2] == today.getFullYear()){
+		if(months[dayMonthYear[1]] > monthToday){
+			$('.errorDay').css('visibility','hidden');
+		}
+		if(months[dayMonthYear[1]] == monthToday){
+			if(dayMonthYear[0] > today.getDate()){
+				$('.errorDay').css('visibility','hidden');
+			}
+		}
+	}
+	if(loading == false && unloading == false){
+		$('.errorAddress').css('visibility','visible');
+		if(day == ""){
+			$('.errorDay').css('visibility','visible');
+			return false;
+		}
+		if(dayMonthYear[2] < today.getFullYear()){
+			$('.errorDay').css('visibility','visible');
+			return false;
+		}
+		if(dayMonthYear[2] == today.getFullYear()){
+			if(months[dayMonthYear[1]] < monthToday){
+				$('.errorDay').css('visibility','visible');
+				return false;
+			}
+			if(months[dayMonthYear[1]] == monthToday){
+				if(dayMonthYear[0] <= today.getDate()){
+					$('.errorDay').css('visibility','visible');
+					return false;
+				}
+			}
+		}
+		return false;
+	}
+	if(dayMonthYear[2] < today.getFullYear()){
+		$('.errorDay').css('visibility','visible');
+		return false;
+	}
+	if(dayMonthYear[2] == today.getFullYear()){
+		if(months[dayMonthYear[1]] < monthToday){
+			$('.errorDay').css('visibility','visible');
+			return false;
+		}
+		if(months[dayMonthYear[1]] == monthToday){
+			if(dayMonthYear[0] <= today.getDate()){
+				$('.errorDay').css('visibility','visible');
+				return false;
+			}
+		}
+	}
+}
+
 Template.orderForm.onRendered(function (){
 	$('#divAddressUnLoading').css('display','none');
 	$('#divAddressLoading').css('display','none');
@@ -42,8 +122,8 @@ Template.orderForm.events({
 		event.preventDefault();
 		var loading = document.getElementById('loading').checked;
 		var unloading = document.getElementById('unloading').checked;
-		if(loading == false && unloading == false){
-			$('.errorAddress').css('visibility','visible');
+		var day = document.getElementById('day').value;
+		if(validate_day_address(loading, unloading, day)==false){
 			return false;
 		}
 		var orderForm = {
