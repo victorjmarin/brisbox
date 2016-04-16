@@ -3,7 +3,7 @@ Meteor.startup(function () {
     var smtp = {
         username: Meteor.settings.mail.user,   // eg: server@gentlenode.com
         password: Meteor.settings.mail.password, // eg: 3eeP1gtizk5eziohfervU
-        server: 'smtp.1and1.com',  // eg: mail.gandi.net
+        server: 'smtp.mailgun.org',  // eg: mail.gandi.net
         port: 587
     };
     process.env.MAIL_URL = 'smtp://' + encodeURIComponent(smtp.username) + ':' + encodeURIComponent(smtp.password) + '@' + encodeURIComponent(smtp.server) + ':' + smtp.port;
