@@ -29,6 +29,7 @@ Template.login.events({
         }
     }
 });
+
 Template.login.helpers({
     'hasErrors': function(){
         return Session.get("alert") != null;
@@ -36,7 +37,8 @@ Template.login.helpers({
     'alert': function(){
         return Session.get("alert");
     }
-})
+});
+
 Template.login.onRendered(function(){
     $('#login-access').addClass('login-open');
     $('#login-overlay').css('display', 'block');
@@ -44,4 +46,4 @@ Template.login.onRendered(function(){
 	$('#login-access').css('display', 'block');
 
     $('#login-content').delay(150).slideDown("slow");
-})
+});
