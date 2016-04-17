@@ -88,7 +88,8 @@ Meteor.methods({
                 Roles.addUsersToRoles(userId, ['brisboxer']);
                 Meteor.users.update(userId, {
                     $set: {
-                        verified: false
+                        verified: false,
+                        assessments: []
                     }
                 });
                 outerMethod.unblock();
