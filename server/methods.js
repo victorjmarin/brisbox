@@ -79,13 +79,11 @@ Meteor.methods({
         Meteor.call('createBrisboxerNoRole', doc, function (err, userId) {
             if (err) { // TODO: Simulate transaction and delete inscription form
                 console.log("error en server");
+                console.log(err);
             } else {
                 Roles.addUsersToRoles(userId, ['brisboxer']);
-                Meteor.users.update(userId, {
-                    $set: {
-                        verified: false
-                    }
-                });
+                console.log(userId);
+
                 this.unblock();
                 Accounts.sendVerificationEmail(userId);
             }
@@ -93,20 +91,17 @@ Meteor.methods({
     },
 
     'createBrisboxerNoRole': function (doc) {
-        try{
-            return Accounts.createUser({
-                username: doc.username, password: doc.password, email: doc.email,
-                profile: {
-                    name: doc.name,
-                    surname: doc.surname,
-                    phone: doc.phone,
-                    zip: doc.zip,
-                    howHearAboutUs: doc.howHearAboutUs
-                }
-            });
-        } catch (error) {
-            throw new Meteor.Error("Server error", error);
-        }
+
+        return Accounts.createUser({
+            username: doc.username, password: doc.password, email: doc.email,
+            profile: {
+                name: doc.name,
+                surname: doc.surname,
+                phone: doc.phone,
+                zip: doc.zip,
+                howHearAboutUs: doc.howHearAboutUs
+            }
+        });
     },**/
 
    'createBrisboxer': function (doc) {
@@ -114,7 +109,7 @@ Meteor.methods({
        check(doc, SchemaInscription);
        try{
            var userId = Accounts.createUser({
-               username: doc.username, password: doc.password, email: doc.email,
+               username: doc.username, password: doc.password,
                profile: {
                    name: doc.name,
                    surname: doc.surname,
@@ -123,11 +118,10 @@ Meteor.methods({
                    howHearAboutUs: doc.howHearAboutUs
                }
            });
-
+           Accounts.addEmail(userId, doc.email);
        } catch (error) {
            throw new Meteor.Error("Server error", error);
        }
-
 
        Roles.addUsersToRoles(userId, ['brisboxer']);
        Meteor.users.update(userId, {
