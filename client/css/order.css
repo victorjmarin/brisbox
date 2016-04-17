@@ -144,3 +144,9 @@
     font-size: 1rem;
     text-align: center !important;
 }
+
+@media (max-width: 800px){
+    #thanksOrder{
+        text-align:center;
+    }
+}

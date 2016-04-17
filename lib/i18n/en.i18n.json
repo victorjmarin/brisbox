@@ -145,6 +145,8 @@
   "order-form_zip": "ZIP Code",
   "order-form_addressLoading": "Address loading",
   "order-form_addressUnloading": "Address unloading",
+  "order-form_portalLoading": "Loading portal",
+  "order-form_portalUnloading": "Unloading portal",
   "order-form_hours": "Hours",
   "order-form_numberBrisboxers": "Brisboxers",
   "order-form_comments": "Comments",

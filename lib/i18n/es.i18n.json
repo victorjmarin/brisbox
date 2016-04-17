@@ -139,6 +139,8 @@
   "order-form_zip": "Código postal",
   "order-form_addressLoading": "Dirección de carga",
   "order-form_addressUnloading": "Dirección de descarga",
+  "order-form_portalLoading": "Portal de carga",
+  "order-form_portalUnloading": "Portal de descarga",
   "order-form_hours": "Horas",
   "order-form_numberBrisboxers": "Brisboxers",
   "order-form_comments": "Comentarios",

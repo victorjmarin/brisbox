@@ -3,93 +3,56 @@ function getParameterByName(variable) {
 }
 
 function validate_day_address(loading, unloading, day){
-	var dayMonthYear = day.split(" ");
 	var today = new Date();
-	var monthToday = today.getMonth()+1;
-	var months = {
-		"January," : 1,
-		"February," : 2,
-		"March," : 3,
-		"April," : 4,
-		"May," : 5,
-		"June," : 6,
-		"July," : 7,
-		"August," : 8,
-		"September," : 9,
-		"October," : 10,
-		"November," : 11,
-		"December," : 12
-	};
+	console.log(day);
+	var validate_day = day.getTime()<=today.getTime();
 	if(loading == true || unloading == true){
 		$('.errorAddress').css('visibility','hidden');
-		if(day == ""){
+		if(day == "Invalid Date"){
 			$('.errorDay').css('visibility','visible');
 			return false;
-		}
-	}
-	if(dayMonthYear[2] > today.getFullYear()){
-		$('.errorDay').css('visibility','hidden');
-	}
-	if(dayMonthYear[2] == today.getFullYear()){
-		if(months[dayMonthYear[1]] > monthToday){
+		}else if(validate_day){
+			$('.errorDay').css('visibility','visible');
+			return false;
+		}else{
 			$('.errorDay').css('visibility','hidden');
-		}
-		if(months[dayMonthYear[1]] == monthToday){
-			if(dayMonthYear[0] > today.getDate()){
-				$('.errorDay').css('visibility','hidden');
-			}
 		}
 	}
 	if(loading == false && unloading == false){
 		$('.errorAddress').css('visibility','visible');
-		if(day == ""){
+		if(day =="Invalid Date"){
 			$('.errorDay').css('visibility','visible');
 			return false;
 		}
-		if(dayMonthYear[2] < today.getFullYear()){
+		if(validate_day){
 			$('.errorDay').css('visibility','visible');
 			return false;
-		}
-		if(dayMonthYear[2] == today.getFullYear()){
-			if(months[dayMonthYear[1]] < monthToday){
-				$('.errorDay').css('visibility','visible');
-				return false;
-			}
-			if(months[dayMonthYear[1]] == monthToday){
-				if(dayMonthYear[0] <= today.getDate()){
-					$('.errorDay').css('visibility','visible');
-					return false;
-				}
-			}
+		}else{
+			$('.errorDay').css('visibility','hidden');
 		}
 		return false;
-	}
-	if(dayMonthYear[2] < today.getFullYear()){
-		$('.errorDay').css('visibility','visible');
-		return false;
-	}
-	if(dayMonthYear[2] == today.getFullYear()){
-		if(months[dayMonthYear[1]] < monthToday){
-			$('.errorDay').css('visibility','visible');
-			return false;
-		}
-		if(months[dayMonthYear[1]] == monthToday){
-			if(dayMonthYear[0] <= today.getDate()){
-				$('.errorDay').css('visibility','visible');
-				return false;
-			}
-		}
 	}
 }
 
 Template.orderForm.onRendered(function (){
 	$('#divAddressUnLoading').css('display','none');
 	$('#divAddressLoading').css('display','none');
+	$('#divPortalLoading').css('display','none');
+	$('#divPortalUnloading').css('display','none');
 	$('.modal').closeModal();
 	$('.lean-overlay').remove();
-	this.$('.timepicker').timepicker();
+	$('.datepicker').pickadate({
+		selectMonths: true, // Creates a dropdown to control month
+		selectYears: 15 // Creates a dropdown of 15 years to control year
+	});
+	var zip = getParameterByName("zip");
+	if(zip != null){
+		Session.set("zip", zip);
+		document.getElementById("label-zip").className = "active";
+	}else{
+		document.getElementById("label-zip").className = "";
+	}
 });
-
 
 Template.orderForm.events({
 	'click #loading': function(event){
@@ -97,12 +60,18 @@ Template.orderForm.events({
 		if(loading == true){
 			$('#divAddressLoading').css('display','block');
 			$('#divAddressLoading').css('visibility','visible');
+			$('#divPortalLoading').css('display','block');
+			$('#divPortalLoading').css('visibility','visible');
 			$('#addressLoading').prop('required',true);
+			$('#portalLoading').prop('required',true);
 		}
 		if(loading==false){
 			$('#divAddressLoading').css('display','none');
 			$('#divAddressLoading').css('visibility','hidden');
+			$('#divPortalLoading').css('display','none');
+			$('#divPortalLoading').css('visibility','hidden');
 			$('#addressLoading').prop('required',false);
+			$('#portalLoading').prop('required',false);
 		}
 	},
 	'click #unloading': function(event){
@@ -110,25 +79,33 @@ Template.orderForm.events({
 		if(unloading == true){
 			$('#divAddressUnLoading').css('display','block');
 			$('#divAddressUnLoading').css('visibility','visible');
+			$('#divPortalUnloading').css('display','block');
+			$('#divPortalUnloading').css('visibility','visible');
 			$('#addressUnloading').prop('required',true);
+			$('#portalUnloading').prop('required',true);
 		}
 		if(unloading == false){
 			$('#divAddressUnLoading').css('display','none');
 			$('#divAddressUnLoading').css('visibility','hidden');
+			$('#divPortalUnloading').css('display','none');
+			$('#divPortalUnloading').css('visibility','hidden');
 			$('#addressUnloading').prop('required',false);
+			$('#portalUnloading').prop('required',false);
 		}
 	},
 	'submit #order-form' : function (event){
 		event.preventDefault();
 		var loading = document.getElementById('loading').checked;
 		var unloading = document.getElementById('unloading').checked;
-		var day = document.getElementById('day').value;
+		var day = new Date(document.getElementById('day').value);
 		if(validate_day_address(loading, unloading, day)==false){
 			return false;
 		}
 		var orderForm = {
 			addressLoading: document.getElementById("addressLoading").value,
 			addressUnloading: document.getElementById("addressUnloading").value,
+			portalLoading: document.getElementById("portalLoading").value,
+			portalUnloading: document.getElementById("portalUnloading").value,
 			zip: document.getElementById("zip").value,
 			loading: document.getElementById("loading").value,
 			unloading: document.getElementById("unloading").value,
@@ -145,6 +122,8 @@ Template.orderForm.events({
 		};
 		sessionStorage.setItem("addressLoading",orderForm.addressLoading);
 		sessionStorage.setItem("addressUnloading",orderForm.addressUnloading);
+		sessionStorage.setItem("portalLoading",orderForm.portalLoading);
+		sessionStorage.setItem("portalUnloading",orderForm.portalUnloading);
 		sessionStorage.setItem("zip",orderForm.zip);
 		sessionStorage.setItem("loading",orderForm.loading);
 		sessionStorage.setItem("unloading",orderForm.unloading);
@@ -168,13 +147,6 @@ Template.orderForm.onRendered(function() {
 		selectMonths: true, // Creates a dropdown to control month
 		selectYears: 15 // Creates a dropdown of 15 years to control year
 	});
-	var zip = getParameterByName("zip");
-	if(zip != null){
-		Session.set("zip", zip);
-		document.getElementById("label-zip").className = "active";
-	}else{
-		document.getElementById("label-zip").className = "";
-	}
 });
 
 Template.orderForm.helpers({

@@ -74,6 +74,8 @@ Template.stripe_form.events({
         if(Session.get("stripe_error") == null){
             var addressLoading = sessionStorage.getItem("addressLoading");
             var addressUnloading = sessionStorage.getItem("addressUnloading");
+            var portalLoading = sessionStorage.getItem("portalLoading");
+            var portalUnloading = sessionStorage.getItem("portalUnloading");
             var zip = sessionStorage.getItem("zip");
             var loading = sessionStorage.getItem("loading");
             var unloading = sessionStorage.getItem("unloading");
@@ -87,19 +89,21 @@ Template.stripe_form.events({
             var phone = sessionStorage.getItem("phone");
             var email = sessionStorage.getItem("email");
             if(currentLocale == "es"){
-                if(addressLoading==null){
+                if(addressLoading==""){
                     addressLoading = "No se ha solicitado carga.";
+                    portalLoading = "No se ha solicitado carga.";
                 }
-                if(addressUnloading==null){
+                if(addressUnloading==""){
                     addressUnloading = "No se ha solicitado descarga.";
+                    portalUnloading = "No se ha solicitado descarga.";
                 }
-                var subjectSpanish = "Resumen pedido";
+                var subjectSpanish = "[BRISBOX] Resumen pedido";
                 var textSpanish =
                     "¡Gracias por dejarnos ayudarte con la mudanza!\n\n" +
                     "En este correo se recoge un breve resumen de tu pedido." +
                     "\nCoste estimado: "+ cost() +
-                    "\nDirección de carga: "+ addressLoading +
-                    "\nDirección de descarga: "+ addressUnloading +
+                    "\nDirección de carga: "+ addressLoading + ", Portal de carga: " + portalLoading +
+                    "\nDirección de descarga: "+ addressUnloading + ", Portal de descarga: " + portalUnloading +
                     "\nDía: "+ day +
                     "\nHora del pedido: "+ startMoment +
                     "\nNombre: "+ name +
@@ -114,19 +118,21 @@ Template.stripe_form.events({
                 Meteor.call("sendEmailToUser", email, subjectSpanish,textSpanish);
                 Router.go('ThanksOrder');
             }else{
-                if(addressLoading==null){
+                if(addressLoading==""){
                     addressLoading = "No request load.";
+                    portalLoading = "No request load.";
                 }
-                if(addressUnloading==null){
+                if(addressUnloading==""){
                     addressUnloading = "No request unload.";
+                    portalUnloading = "No request unload.";
                 }
-                var subjectEnglish = "Summary order";
+                var subjectEnglish = "[BRISBOX] Summary order";
                 var textEnglish =
                     "Thanks for letting us help with the move!\n\n" +
                     "In this email a brief summary of your order is collected." +
                     "\nEstimated cost: "+ cost() +
-                    "\nAddress loading: "+ addressLoading +
-                    "\nAddress unloading: "+ addressUnloading +
+                    "\nAddress loading: "+ addressLoading + ", Loading portal: " + portalLoading +
+                    "\nAddress unloading: "+ addressUnloading + ", Unloading portal: " + portalUnloading +
                     "\nDay: "+ day +
                     "\nStart moment: "+ startMoment +
                     "\nName: "+ name +
@@ -141,8 +147,8 @@ Template.stripe_form.events({
                 Meteor.call("sendEmailToUser", email, subjectEnglish,textEnglish);
                 Router.go('ThanksOrder');
             }
-            Meteor.call("saveOrder", addressLoading, addressUnloading, zip, loading, unloading, comments, numberBrisboxers, hours,
-                startMoment, day, name, surname, phone, email);
+            Meteor.call("saveOrder", addressLoading, addressUnloading, portalLoading, portalUnloading, zip, loading, unloading, comments, numberBrisboxers, hours,
+                startMoment, new Date(day), name, surname, phone, email);
         }
     },
     'click #info-pay ':function(e){
