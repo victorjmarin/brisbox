@@ -42,38 +42,40 @@ Template.stripe_form.events({
         var currentLocale = TAPi18next.lng();
         var codePromotion = document.getElementById("promotion").value;
         var codePromotionResult = Promotions.findOne({code: codePromotion});
-        if(codePromotionResult == null){
-            if(currentLocale == "es"){
-                Materialize.toast("El código promocional no es correcto, lo sentimos.");
-            }else{
-                Materialize.toast("Promotion code is not correct, sorry.");
+        if(codePromotionResult == null) {
+            if(codePromotion!=""){
+                if (currentLocale == "es") {
+                    Materialize.toast("El código promocional no es correcto, lo sentimos.");
+                }else{
+                    Materialize.toast("Promotion code is not correct, sorry.");
+                }
             }
-        }else{
-            amountForm = 1;
-        }
-        Stripe.card.createToken({
-            number: ccNum,
-            cvc: cvc,
-            exp_month: expMo,
-            exp_year: expYr
-        }, function(status, response) {
+            Stripe.card.createToken({
+                number: ccNum,
+                cvc: cvc,
+                exp_month: expMo,
+                exp_year: expYr
+            }, function(status, response) {
 
-            if(status != 200){
-                var code = response.error.code;
-                Session.set("stripe_error", code);
-            }else {
-                stripeToken = response.id;
-                Meteor.call('chargeCard', stripeToken, amountForm, function(error, succeed){
-                    if(error){
-                        var code = error.reason;
-                        Session.set("stripe_error", code);
-                    }
-                });
-            }
-        });
+                if(status != 200){
+                    var code = response.error.code;
+                    Session.set("stripe_error", code);
+                }else {
+                    stripeToken = response.id;
+                    Meteor.call('chargeCard', stripeToken, amountForm, function(error, succeed){
+                        if(error){
+                            var code = error.reason;
+                            Session.set("stripe_error", code);
+                        }
+                    });
+                }
+            });
+        }
         if(Session.get("stripe_error") == null){
             var addressLoading = sessionStorage.getItem("addressLoading");
             var addressUnloading = sessionStorage.getItem("addressUnloading");
+            var portalLoading = sessionStorage.getItem("portalLoading");
+            var portalUnloading = sessionStorage.getItem("portalUnloading");
             var zip = sessionStorage.getItem("zip");
             var loading = sessionStorage.getItem("loading");
             var unloading = sessionStorage.getItem("unloading");
@@ -87,60 +89,66 @@ Template.stripe_form.events({
             var phone = sessionStorage.getItem("phone");
             var email = sessionStorage.getItem("email");
             if(currentLocale == "es"){
-                if(loading!="on"){
+                if(addressLoading==""){
                     addressLoading = "No se ha solicitado carga.";
+                    portalLoading = "No se ha solicitado carga.";
                 }
-                if(unloading!="on"){
+                if(addressUnloading==""){
                     addressUnloading = "No se ha solicitado descarga.";
+                    portalUnloading = "No se ha solicitado descarga.";
                 }
-                var subjectSpanish = "Resumen pedido";
+                var subjectSpanish = "[BRISBOX] Resumen pedido";
                 var textSpanish =
                     "¡Gracias por dejarnos ayudarte con la mudanza!\n\n" +
                     "En este correo se recoge un breve resumen de tu pedido." +
-                    "\n\nCoste estimado: "+ cost() +
-                    "\n\nDirección de carga: "+ addressLoading +
-                    "\n\nDirección de descarga: "+ addressUnloading +
-                    "\n\nDía: "+ day +
-                    "\n\nHora del pedido: "+ startMoment +
-                    "\n\nNombre: "+ name +
-                    "\n\nApellidos: "+ surname +
-                    "\n\nTeléfono: "+ phone +
-                    "\n\nNumero de brisboxers: "+ numberBrisboxers +
-                    "\n\nHoras: "+ hours +
-                    "\n\nSi hay algun problema con tu pedido, comunicanoslo respondiendo a este correo.\n\n" +
+                    "\nCoste estimado: "+ cost() +
+                    "\nDirección de carga: "+ addressLoading + ", Portal de carga: " + portalLoading +
+                    "\nDirección de descarga: "+ addressUnloading + ", Portal de descarga: " + portalUnloading +
+                    "\nDía: "+ day +
+                    "\nHora del pedido: "+ startMoment +
+                    "\nNombre: "+ name +
+                    "\nApellidos: "+ surname +
+                    "\nComentarios: "+ comments +
+                    "\nTeléfono: "+ phone +
+                    "\nNumero de brisboxers: "+ numberBrisboxers +
+                    "\nHoras: "+ hours +
+                    "\nSi hay algun problema con tu pedido, comunicanoslo respondiendo a este correo.\n\n" +
                     "Un saludo,¡y gracias de nuevo!\n" +
                     "El equipo de Brisbox";
-                Meteor.call("sendEmail", email, "hello@brisbox.com", subjectSpanish,textSpanish);
+                Meteor.call("sendEmailToUser", email, subjectSpanish,textSpanish);
                 Router.go('ThanksOrder');
             }else{
-                if(loading!="on"){
+                if(addressLoading==""){
                     addressLoading = "No request load.";
+                    portalLoading = "No request load.";
                 }
-                if(unloading!="on"){
+                if(addressUnloading==""){
                     addressUnloading = "No request unload.";
+                    portalUnloading = "No request unload.";
                 }
-                var subjectEnglish = "Summary order";
+                var subjectEnglish = "[BRISBOX] Summary order";
                 var textEnglish =
                     "Thanks for letting us help with the move!\n\n" +
                     "In this email a brief summary of your order is collected." +
-                    "\n\nEstimated cost: "+ cost() +
-                    "\n\nAddress loading: "+ addressLoading +
-                    "\n\nAddress unloading: "+ addressUnloading +
-                    "\n\nDay: "+ day +
-                    "\n\nStart moment: "+ startMoment +
-                    "\n\nName: "+ name +
-                    "\n\nSurname: "+ surname +
-                    "\n\nPhone: "+ phone +
-                    "\n\nNumber Brisboxers: "+ numberBrisboxers +
-                    "\n\nHours: "+ hours +
-                    "\n\nIf there is a problem with your order, please let us know by responding to this email.\n\n" +
+                    "\nEstimated cost: "+ cost() +
+                    "\nAddress loading: "+ addressLoading + ", Loading portal: " + portalLoading +
+                    "\nAddress unloading: "+ addressUnloading + ", Unloading portal: " + portalUnloading +
+                    "\nDay: "+ day +
+                    "\nStart moment: "+ startMoment +
+                    "\nName: "+ name +
+                    "\nSurname: "+ surname +
+                    "\nComments: "+ comments +
+                    "\nPhone: "+ phone +
+                    "\nNumber Brisboxers: "+ numberBrisboxers +
+                    "\nHours: "+ hours +
+                    "\nIf there is a problem with your order, please let us know by responding to this email.\n\n" +
                     "Grettings,thanks again.!\n" +
                     "Brisbox Team";
-                Meteor.call("sendEmail", email, "hello@brisbox.com", subjectEnglish,textEnglish);
+                Meteor.call("sendEmailToUser", email, subjectEnglish,textEnglish);
                 Router.go('ThanksOrder');
             }
-            Meteor.call("saveOrder", addressLoading, addressUnloading, zip, loading, unloading, comments, numberBrisboxers, hours,
-                startMoment, day, name, surname, phone, email);
+            Meteor.call("saveOrder", addressLoading, addressUnloading, portalLoading, portalUnloading, zip, loading, unloading, comments, numberBrisboxers, hours,
+                startMoment, new Date(day), name, surname, phone, email);
         }
     },
     'click #info-pay ':function(e){

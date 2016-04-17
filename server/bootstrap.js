@@ -17,6 +17,9 @@ Meteor.startup(function () {
     if (Zips.find().count() === 0) {
         loadZips();
     }
+    if (Promotions.find()=== 0){
+        loadPromotion();
+    }
 });
 
 function loadAdmins() {

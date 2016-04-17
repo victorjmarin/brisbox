@@ -7,6 +7,7 @@ aldeed:collection2-core@1.1.1
 aldeed:schema-deny@1.0.1
 aldeed:schema-index@1.0.1
 aldeed:simple-schema@1.5.3
+aldeed:template-extension@3.4.3
 allow-deny@1.0.3
 autopublish@1.0.6
 autoupdate@1.2.7
@@ -55,6 +56,8 @@ iron:location@1.0.11
 iron:middleware-stack@1.1.0
 iron:router@1.0.12
 iron:url@1.0.11
+jeremy:geocomplete@1.6.5_12
+jplack:bootstrap-timepicker@0.2.2
 jquery@1.11.7
 launch-screen@1.0.10
 livedata@1.0.17
@@ -102,6 +105,7 @@ tap:i18n@1.8.0
 templating@1.1.8
 templating-tools@1.0.3
 tracker@1.0.12
+tsega:bootstrap3-datetimepicker@4.17.37_1
 ui@1.0.10
 underscore@1.0.7
 url@1.0.8

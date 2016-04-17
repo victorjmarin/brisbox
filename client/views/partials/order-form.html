@@ -25,14 +25,25 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="divAddressLoading" class="addressLoading input-field col s12 m12">
-                            <input id="addressLoading" name="addressLoading" type="text" class="form-control">
-                            <label for="addressLoading">{{_ "order-form_addressLoading"}}</label>
+                        <div>
+                            <div id="divAddressLoading" class="addressLoading input-field col s12 m8">
+                                <input id="addressLoading" name="addressLoading" type="text" class="form-control">
+                                <label for="addressLoading">{{_ "order-form_addressLoading"}}</label>
+                            </div>
+                            <div id="divPortalLoading" class="portalLoading input-field col s12 m4">
+                                <input id="portalLoading" name="portalLoading" type="text" class="form-control">
+                                <label for="portalLoading">{{_ "order-form_portalLoading"}}</label>
+                            </div>
                         </div>
-                        <div id="divAddressUnLoading" class="addressUnloading input-field col s12 m12">
-                            <input id="addressUnloading" name="addressUnloading" type="text" class="form-control">
-                            <label for="addressUnloading">{{_ "order-form_addressUnloading"}}</label>
-                            <label class="errorAddress">{{_ "order-form_errorAddress"}}</label>
+                        <div>
+                            <div id="divAddressUnLoading" class="addressUnloading input-field col s12 m8">
+                                <input id="addressUnloading" name="addressUnloading" type="text" class="form-control">
+                                <label for="addressUnloading">{{_ "order-form_addressUnloading"}}</label>
+                            </div>
+                            <div id="divPortalUnloading" class="portalUnloading input-field col s12 m4">
+                                <input id="portalUnloading" name="portalUnloading" type="text" class="form-control">
+                                <label for="portalUnloading">{{_ "order-form_portalUnloading"}}</label>
+                            </div>
                         </div>
                         <div class="order-info col s12 m12">
                             <legend id="legend">{{_ "order-more-info_header"}}</legend>
@@ -63,7 +74,7 @@
                                            for="startMoment">{{_ "order-form_startMoment"}}</label>
                                 </div>
                                 <div class="input-field col s6 m6">
-                                    <input id="day" type="time" name="day" required
+                                    <input id="day" type="date" name="day" required
                                            class="datepicker form-control col s12 m12">
                                     <label id="label_day" class="col s10 m10" for="day">{{_ "order-form_day"}}</label>
                                 </div>
@@ -88,6 +99,8 @@
                                 <label id="label_email" for="email">{{_ "order-form_email"}}</label>
                             </div>
                         </div>
+                        <p class="errorDay">{{_ "order-errorDay"}}</p>
+                        <p class="errorAddress">{{_ "order-errorAddress"}}</p>
                         <div class="input-field col s12 center-align">
                             <button type="submit" class="btn btn-primary waves-button-input orange darken-3 caret">{{_ "order-submit"}}</button>
                         </div>
@@ -95,7 +108,7 @@
                 </form>
             </div>
 
-            <div class="map-container col s12 m6 hide-on-small-only">
+                <div class="map-container col s12 m6 hide-on-small-only">
                 {{> googleMap name="exampleMap" options=exampleMapOptions}}
             </div>
         </div>

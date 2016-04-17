@@ -47,11 +47,13 @@ Meteor.methods({
         });
     },
 
-    'saveOrder': function (addressLoading, addressUnloading, zip, loading, unloading, comments, numberBrisboxers, hours,
+    'saveOrder': function (addressLoading, addressUnloading, portalLoading, portalUnloading, zip, loading, unloading, comments, numberBrisboxers, hours,
                            startMoment, day, name, surname, phone, email) {
         var orderForm = {
             addressLoading: addressLoading,
             addressUnloading: addressUnloading,
+            portalLoading: portalLoading,
+            portalUnloading: portalUnloading,
             zip: zip,
             loading: loading,
             unloading: unloading,
@@ -74,10 +76,6 @@ Meteor.methods({
         });
     },
 
-    'prueba': function (text) {
-        console.log(text);
-    },
-
     'sendEmail': function (to, from, subject, text) {
         check([to, from, subject, text], [String]);
 
@@ -95,8 +93,7 @@ Meteor.methods({
         });
     },
 
-   /**'createBrisboxer': function (doc) {
-
+   'createBrisboxer': function (doc) {
         check(doc, SchemaInscription);
         var outerMethod = this;
         Meteor.call('createBrisboxerNoRole', doc, function (err, userId) {
@@ -129,7 +126,7 @@ Meteor.methods({
                 howHearAboutUs: doc.howHearAboutUs
             }
         });
-    },**/
+    },
 
    'createBrisboxer': function (doc) {
 

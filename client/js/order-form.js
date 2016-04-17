@@ -2,14 +2,57 @@ function getParameterByName(variable) {
     return Router.current().params.query[variable]
 }
 
+function validate_day_address(loading, unloading, day){
+	var today = new Date();
+	console.log(day);
+	var validate_day = day.getTime()<=today.getTime();
+	if(loading == true || unloading == true){
+		$('.errorAddress').css('visibility','hidden');
+		if(day == "Invalid Date"){
+			$('.errorDay').css('visibility','visible');
+			return false;
+		}else if(validate_day){
+			$('.errorDay').css('visibility','visible');
+			return false;
+		}else{
+			$('.errorDay').css('visibility','hidden');
+		}
+	}
+	if(loading == false && unloading == false){
+		$('.errorAddress').css('visibility','visible');
+		if(day =="Invalid Date"){
+			$('.errorDay').css('visibility','visible');
+			return false;
+		}
+		if(validate_day){
+			$('.errorDay').css('visibility','visible');
+			return false;
+		}else{
+			$('.errorDay').css('visibility','hidden');
+		}
+		return false;
+	}
+}
+
 Template.orderForm.onRendered(function (){
 	$('#divAddressUnLoading').css('display','none');
 	$('#divAddressLoading').css('display','none');
+	$('#divPortalLoading').css('display','none');
+	$('#divPortalUnloading').css('display','none');
 	$('.modal').closeModal();
 	$('.lean-overlay').remove();
-	this.$('.timepicker').timepicker();
+	$('.datepicker').pickadate({
+		selectMonths: true, // Creates a dropdown to control month
+		selectYears: 15 // Creates a dropdown of 15 years to control year
+	});
+	var zip = getParameterByName("zip");
+	if(zip != null){
+		Session.set("zip", zip);
+		document.getElementById("label-zip").className = "active";
+	}else{
+		document.getElementById("label-zip").className = "";
+	}
 });
-
 
 Template.orderForm.events({
 	'click #loading': function(event){
@@ -17,12 +60,18 @@ Template.orderForm.events({
 		if(loading == true){
 			$('#divAddressLoading').css('display','block');
 			$('#divAddressLoading').css('visibility','visible');
+			$('#divPortalLoading').css('display','block');
+			$('#divPortalLoading').css('visibility','visible');
 			$('#addressLoading').prop('required',true);
+			$('#portalLoading').prop('required',true);
 		}
 		if(loading==false){
 			$('#divAddressLoading').css('display','none');
 			$('#divAddressLoading').css('visibility','hidden');
+			$('#divPortalLoading').css('display','none');
+			$('#divPortalLoading').css('visibility','hidden');
 			$('#addressLoading').prop('required',false);
+			$('#portalLoading').prop('required',false);
 		}
 	},
 	'click #unloading': function(event){
@@ -30,25 +79,33 @@ Template.orderForm.events({
 		if(unloading == true){
 			$('#divAddressUnLoading').css('display','block');
 			$('#divAddressUnLoading').css('visibility','visible');
+			$('#divPortalUnloading').css('display','block');
+			$('#divPortalUnloading').css('visibility','visible');
 			$('#addressUnloading').prop('required',true);
+			$('#portalUnloading').prop('required',true);
 		}
 		if(unloading == false){
 			$('#divAddressUnLoading').css('display','none');
 			$('#divAddressUnLoading').css('visibility','hidden');
+			$('#divPortalUnloading').css('display','none');
+			$('#divPortalUnloading').css('visibility','hidden');
 			$('#addressUnloading').prop('required',false);
+			$('#portalUnloading').prop('required',false);
 		}
 	},
 	'submit #order-form' : function (event){
 		event.preventDefault();
 		var loading = document.getElementById('loading').checked;
 		var unloading = document.getElementById('unloading').checked;
-		if(loading == false && unloading == false){
-			$('.errorAddress').css('visibility','visible');
+		var day = new Date(document.getElementById('day').value);
+		if(validate_day_address(loading, unloading, day)==false){
 			return false;
 		}
 		var orderForm = {
 			addressLoading: document.getElementById("addressLoading").value,
 			addressUnloading: document.getElementById("addressUnloading").value,
+			portalLoading: document.getElementById("portalLoading").value,
+			portalUnloading: document.getElementById("portalUnloading").value,
 			zip: document.getElementById("zip").value,
 			loading: document.getElementById("loading").value,
 			unloading: document.getElementById("unloading").value,
@@ -64,7 +121,9 @@ Template.orderForm.events({
 			brisboxers: []
 		};
 		sessionStorage.setItem("addressLoading",orderForm.addressLoading);
-		sessionStorage.setItem("addressLoading",orderForm.addressLoading);
+		sessionStorage.setItem("addressUnloading",orderForm.addressUnloading);
+		sessionStorage.setItem("portalLoading",orderForm.portalLoading);
+		sessionStorage.setItem("portalUnloading",orderForm.portalUnloading);
 		sessionStorage.setItem("zip",orderForm.zip);
 		sessionStorage.setItem("loading",orderForm.loading);
 		sessionStorage.setItem("unloading",orderForm.unloading);
@@ -88,13 +147,6 @@ Template.orderForm.onRendered(function() {
 		selectMonths: true, // Creates a dropdown to control month
 		selectYears: 15 // Creates a dropdown of 15 years to control year
 	});
-	var zip = getParameterByName("zip");
-	if(zip != null){
-		Session.set("zip", zip);
-		document.getElementById("label-zip").className = "active";
-	}else{
-		document.getElementById("label-zip").className = "";
-	}
 });
 
 Template.orderForm.helpers({
