@@ -1,9 +1,9 @@
 Meteor.startup(function () {
     // code to run on server at startup
     var smtp = {
-        username: 'hello@brisbox.com',   // eg: server@gentlenode.com
-        password: 'Estuforce20', // eg: 3eeP1gtizk5eziohfervU
-        server: 'smtp.mailgun.org',  // eg: mail.gandi.net
+        username: Meteor.settings.mail.user,
+        password: Meteor.settings.password,
+        server: 'smtp.gmail.com',
         port: 587
     };
     process.env.MAIL_URL = 'smtp://' + encodeURIComponent(smtp.username) + ':' + encodeURIComponent(smtp.password) + '@' + encodeURIComponent(smtp.server) + ':' + smtp.port;
