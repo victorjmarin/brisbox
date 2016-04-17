@@ -1,13 +1,12 @@
 Meteor.startup(function () {
     // code to run on server at startup
     var smtp = {
-        username: Meteor.settings.mail.user,   // eg: server@gentlenode.com
-        password: Meteor.settings.mail.password, // eg: 3eeP1gtizk5eziohfervU
+        username: 'hello@brisbox.com',   // eg: server@gentlenode.com
+        password: 'Estuforce20', // eg: 3eeP1gtizk5eziohfervU
         server: 'smtp.mailgun.org',  // eg: mail.gandi.net
         port: 587
     };
     process.env.MAIL_URL = 'smtp://' + encodeURIComponent(smtp.username) + ':' + encodeURIComponent(smtp.password) + '@' + encodeURIComponent(smtp.server) + ':' + smtp.port;
-
     if (Meteor.users.find().count() === 0) {
         loadAdmins();
         loadBrisboxers();
