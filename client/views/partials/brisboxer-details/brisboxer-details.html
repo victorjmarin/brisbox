@@ -82,9 +82,9 @@
 	</div>
 
 	{{#if exists}}
-	<div class="row" id="assessments-container">
-		<div id="asessment-all" class="col s12 orange center-align white-text">
-			<div id="assessment-title">
+	<div id="assessments-container">
+		<div id="asessment-all" class="orange center-align white-text">
+			<div id="assessment-title" style="padding-top: 15px;">
 				<h2>{{_ "valoration"}}</h2>
 			</div>
 			<div id="assessment-average-div" style="font-size: 700%; font-weight: 100;">
@@ -92,9 +92,19 @@
 			</div>
 		</div>
 
-		<div id="assessment-table" class="col s12">
-
-
+		<div id="assessment-table" class="container">
+			{{#each assessments}}
+				<div class="card grey lighten-5">
+					<div class="card-content row">
+						<div class="col s1 amber-text text-darken-3">
+							{{rating}}
+						</div>
+						<div class="col s11">
+							{{comments}}
+						</div>
+					</div>
+				</div>
+			{{/each}}
 		</div>
 	</div>
 	{{/if}}
