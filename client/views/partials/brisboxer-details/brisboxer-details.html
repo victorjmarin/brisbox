@@ -3,7 +3,7 @@
 		<h4 class="header">{{_ "brisboxer_details"}}</h4>
 
 		{{#if exists}}
-			<div class="row valign-wrapper">
+			<div class="row">
 				<div class="col s12 m6 l4 valign-wrapper">
 					<img src="/placeholder.png" class="circle" style="margin-right: auto;margin-left: auto;"/>
 				</div>
@@ -74,21 +74,23 @@
 					</div>
 				</div>
 			</div>
-
-			<div class="row valign-wrapper" id="assessments-container">
-				<div id="asessment-all" class="col s12 orange center-align white-text">
-					<h1>7,5</h1>
-				</div>
-
-				<div id="assessment-table" class="col s12">
-
-
-				</div>
-			</div>
 		{{else}}
 			<div class="row center-align">
 				<h5 class="red-text">{{_ "brisboxer_doesnt_founded"}}</h5>
 			</div>
 		{{/if}}
 	</div>
+
+	{{#if exists}}
+	<div class="row" id="assessments-container">
+		<div id="asessment-all" class="col s12 orange center-align white-text">
+			<h1>7,5</h1>
+		</div>
+
+		<div id="assessment-table" class="col s12">
+
+
+		</div>
+	</div>
+	{{/if}}
 </template>
