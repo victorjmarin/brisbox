@@ -270,9 +270,6 @@
       "phone": {
         "label": "Teléfono"
       },
-      "email": {
-        "label": "Correo electrónico"
-      },
       "password": {
         "label": "Contraseña"
       },
@@ -282,7 +279,7 @@
       "zip": {
         "label": "Código postal"
       },
-      "emailSchool": {
+      "email": {
         "label": "Correo universitario"
       },
       "howHearAboutUs": {
@@ -290,16 +287,18 @@
       },
       "image": {
         "label": "Imagen de perfil"
-      },
-      "wrongPassword": "Las constraseñas no coinciden",
-      "emailNotStudent": "El email debe ser de las universidades U.S. o U.P.O."
+      }
     }
   },
   "simpleschema": {
     "messages": {
+      "notUnique username": "El nombre de usuario ya existe",
+      "notUnique email": "El correo electrónico ya existe",
+      "server error": "Error de servidor",
       "regEx phone": "Teléfono invalido",
       "wrongPassword": "Las contraseñas no coinciden",
       "emailNotStudent": "El email debe ser de las universidades U.S. o U.P.O.",
+      "wrongZip": "El código postal debe pertenecer a Sevilla",
       "required": "[label] es obligatorio",
       "minString": "[label] tiene que tener por lo menos [min] caracteres",
       "maxString": "[label] no puede tener mas de [max] caracteres",
