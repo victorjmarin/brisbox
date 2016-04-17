@@ -281,9 +281,7 @@
       },
       "image": {
         "label": "Imagen de perfil"
-      },
-      "wrongPassword": "Las constraseñas no coinciden",
-      "emailNotStudent": "El email debe ser de las universidades U.S. o U.P.O."
+      }
     }
   },
   "simpleschema": {
@@ -294,6 +292,7 @@
       "regEx phone": "Teléfono invalido",
       "wrongPassword": "Las contraseñas no coinciden",
       "emailNotStudent": "El email debe ser de las universidades U.S. o U.P.O.",
+      "wrongZip": "El código postal debe pertenecer a Sevilla",
       "required": "[label] es obligatorio",
       "minString": "[label] tiene que tener por lo menos [min] caracteres",
       "maxString": "[label] no puede tener mas de [max] caracteres",

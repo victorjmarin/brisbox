@@ -297,9 +297,7 @@
       },
       "image": {
         "label": "Image profile"
-      },
-      "wrongPassword": "Passwords mismatch",
-      "emailNotStudent": "Email must be an U.S. or U.P.O. university."
+      }
     }
   },
   "simpleschema": {
@@ -310,6 +308,7 @@
       "regEx phone": "Invalid Phone",
       "wrongPassword": "Passwords mismatch",
       "emailNotStudent": "Email must be an U.S. or U.P.O. university.",
+      "wrongZip": "ZIP Code must be a Seville ZIP",
       "required": "[label] is required",
       "minString": "[label] must be at least [min] characters",
       "maxString": "[label] cannot exceed [max] characters",

@@ -1,3 +1,5 @@
+Meteor.subscribe("zipsAll");
+
 AutoForm.hooks({
     inscriptionForm: {
         before: {
@@ -12,14 +14,10 @@ AutoForm.hooks({
         },
         onError: function (formType, error) {
             if (error.errorType && error.errorType === 'Meteor.Error' && error.reason.reason.startsWith("Email")) {
-                console.log("Email duplicado");
-                console.log(error.reason);
                 this.addStickyValidationError('email', "notUnique email");
                 AutoForm.validateField(this.formId, 'email');
             }
             if (error.errorType && error.errorType === 'Meteor.Error' && error.reason.reason.startsWith("Username")) {
-                console.log("Username duplicado");
-                console.log(error.reason);
                 this.addStickyValidationError('username', "notUnique username");
                 AutoForm.validateField(this.formId, 'username');
             }

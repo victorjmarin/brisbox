@@ -231,7 +231,7 @@ Meteor.methods({
        var outerMethod = this;
        try{
            var userId = Accounts.createUser({
-               username: doc.username, password: doc.password,
+               username: doc.username, password: doc.password, email: doc.email,
                profile: {
                    name: doc.name,
                    surname: doc.surname,
@@ -240,7 +240,6 @@ Meteor.methods({
                    howHearAboutUs: doc.howHearAboutUs
                }
            });
-           Accounts.addEmail(userId, doc.email);
        } catch (error) {
            throw new Meteor.Error("Server error", error);
        }
