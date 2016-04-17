@@ -78,12 +78,32 @@ Meteor.methods({
         console.log(text);
     },
 
-    'createBrisboxer': function (doc) {
+    'sendEmail': function (to, from, subject, text) {
+        check([to, from, subject, text], [String]);
+
+        console.log(process.env.MAIL_URL);
+
+        // Let other method calls from the same client start running,
+        // without waiting for the email sending to complete.
+        this.unblock();
+
+        Email.send({
+            to: to,
+            from: from,
+            subject: subject,
+            text: text
+        });
+    },
+
+   /**'createBrisboxer': function (doc) {
+
         check(doc, SchemaInscription);
         var outerMethod = this;
         Meteor.call('createBrisboxerNoRole', doc, function (err, userId) {
             if (err) { // TODO: Simulate transaction and delete inscription form
+                console.log("error en server");
                 console.log(err);
+                throw new Meteor.Error("Server error", err);
             } else {
                 Roles.addUsersToRoles(userId, ['brisboxer']);
                 Meteor.users.update(userId, {
@@ -95,10 +115,10 @@ Meteor.methods({
                 Accounts.sendVerificationEmail(userId);
             }
         });
-
     },
 
     'createBrisboxerNoRole': function (doc) {
+
         return Accounts.createUser({
             username: doc.username, password: doc.password, email: doc.email,
             profile: {
@@ -109,8 +129,36 @@ Meteor.methods({
                 howHearAboutUs: doc.howHearAboutUs
             }
         });
+    },**/
 
-    },
+   'createBrisboxer': function (doc) {
+
+       check(doc, SchemaInscription);
+       var outerMethod = this;
+       try{
+           var userId = Accounts.createUser({
+               username: doc.username, password: doc.password, email: doc.email,
+               profile: {
+                   name: doc.name,
+                   surname: doc.surname,
+                   phone: doc.phone,
+                   zip: doc.zip,
+                   howHearAboutUs: doc.howHearAboutUs
+               }
+           });
+       } catch (error) {
+           throw new Meteor.Error("Server error", error);
+       }
+
+       Roles.addUsersToRoles(userId, ['brisboxer']);
+       Meteor.users.update(userId, {
+           $set: {
+               verified: false
+           }
+       });
+       outerMethod.unblock();
+       Accounts.sendVerificationEmail(userId);
+   },
 
     'joinOrder': function (order) {
         var user = Meteor.user();

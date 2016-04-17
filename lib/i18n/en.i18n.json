@@ -283,9 +283,6 @@
       "phone": {
         "label": "Phone"
       },
-      "email": {
-        "label": "Contact Email"
-      },
       "password": {
         "label": "Password"
       },
@@ -303,16 +300,18 @@
       },
       "image": {
         "label": "Image profile"
-      },
-      "wrongPassword": "Passwords mismatch",
-      "emailNotStudent": "Email must be an U.S. or U.P.O. university."
+      }
     }
   },
   "simpleschema": {
     "messages": {
+      "notUnique username": "Username already exists",
+      "notUnique email": "Email already exists",
+      "server error": "Server error",
       "regEx phone": "Invalid Phone",
       "wrongPassword": "Passwords mismatch",
       "emailNotStudent": "Email must be an U.S. or U.P.O. university.",
+      "wrongZip": "ZIP Code must be a Seville ZIP",
       "required": "[label] is required",
       "minString": "[label] must be at least [min] characters",
       "maxString": "[label] cannot exceed [max] characters",
