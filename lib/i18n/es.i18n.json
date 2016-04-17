@@ -245,9 +245,6 @@
       "phone": {
         "label": "Teléfono"
       },
-      "email": {
-        "label": "Correo electrónico"
-      },
       "password": {
         "label": "Contraseña"
       },
@@ -257,7 +254,7 @@
       "zip": {
         "label": "Código postal"
       },
-      "emailSchool": {
+      "email": {
         "label": "Correo universitario"
       },
       "howHearAboutUs": {
@@ -272,6 +269,9 @@
   },
   "simpleschema": {
     "messages": {
+      "notUnique username": "El nombre de usuario ya existe",
+      "notUnique email": "El correo electrónico ya existe",
+      "server error": "Error de servidor",
       "regEx phone": "Teléfono invalido",
       "wrongPassword": "Las contraseñas no coinciden",
       "emailNotStudent": "El email debe ser de las universidades U.S. o U.P.O.",
