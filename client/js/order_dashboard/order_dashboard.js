@@ -8,3 +8,11 @@ Template.registerHelper("prettifyDate", function(date) {
     result = curr_date + "/" + curr_month + "/" + curr_year;
     return result;
 });
+
+Template.registerHelper("calculateCost", function(numBrisboxers, hours) {
+    return numBrisboxers * hours * 20 + " €";
+});
+
+function cost() {
+
+}
