@@ -74,10 +74,6 @@ Meteor.methods({
         });
     },
 
-    'prueba': function (text) {
-        console.log(text);
-    },
-
     'createBrisboxer': function (doc) {
         check(doc, SchemaInscription);
         var outerMethod = this;
