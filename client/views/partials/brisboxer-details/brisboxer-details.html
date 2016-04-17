@@ -84,7 +84,12 @@
 	{{#if exists}}
 	<div class="row" id="assessments-container">
 		<div id="asessment-all" class="col s12 orange center-align white-text">
-			<h1>7,5</h1>
+			<div id="assessment-title">
+				<h2>{{_ "valoration"}}</h2>
+			</div>
+			<div id="assessment-average-div" style="font-size: 700%; font-weight: 100;">
+				<span id="assessment-avg"></span>
+			</div>
 		</div>
 
 		<div id="assessment-table" class="col s12">
