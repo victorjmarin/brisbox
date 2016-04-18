@@ -1,39 +1,42 @@
 Template.orderCheckout.events({
-    'click #showStripeModal': function(){
+    'click #showStripeModal': function () {
         Session.set('showStripeModal', true);
     },
-    'click #buttom-next': function(event){
+    'click #buttom-next': function (event) {
+        $('#buttom-next').attr('disabled',true);
+        $('#stripe-submit').attr('enabled',false);
         Session.set("enableStripeForm", true);
     }
 });
 
 Template.orderCheckout.helpers({
-    day: function(){
+    day: function () {
         return sessionStorage.getItem("day");
     },
-    phone: function(){
+    phone: function () {
         return sessionStorage.getItem("phone");
     },
-    addressLoading: function(){
+    addressLoading: function () {
         return sessionStorage.getItem("addressLoading");
     },
-    addressUnloading: function(){
+    addressUnloading: function () {
         return sessionStorage.getItem("addressUnloading");
     },
-    cost: function() {
+    cost: function () {
         return sessionStorage.getItem("numberBrisboxers") * sessionStorage.getItem("hours") * 20 + " €";
     }
 });
 
-Template.orderCheckout.onRendered(function() {
+Template.orderCheckout.onRendered(function () {
     var addressLoading = sessionStorage.getItem("addressLoading");
     var addressUnloading = sessionStorage.getItem("addressUnloading");
-    if(addressLoading!=null){
-        $('.checkout-loading').css('visibility','visible');
+    if (addressLoading != null) {
+        $('.checkout-loading').css('visibility', 'visible');
     }
-    if(addressUnloading!=null){
-        $('.checkout-unloading').css('visibility','visible');
+    if (addressUnloading != null) {
+        $('.checkout-unloading').css('visibility', 'visible');
     }
+    $('#stripe-submit').attr('disabled',true);
 });
 
 

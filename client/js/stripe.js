@@ -45,9 +45,9 @@ Template.stripe_form.events({
         if(codePromotionResult == null) {
             if(codePromotion!=""){
                 if (currentLocale == "es") {
-                    Materialize.toast("El código promocional no es correcto, lo sentimos.");
+                    Materialize.toast("El código promocional no es correcto, lo sentimos.", 2000);
                 }else{
-                    Materialize.toast("Promotion code is not correct, sorry.");
+                    Materialize.toast("Promotion code is not correct, sorry.", 2000);
                 }
             }
             Stripe.card.createToken({
