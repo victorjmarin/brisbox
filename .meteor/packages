@@ -35,3 +35,6 @@ check
 tsega:bootstrap3-datetimepicker
 jplack:bootstrap-timepicker
 jeremy:geocomplete
+meteorhacks:ssr
+auweb:server-session
+u2622:persistent-session
