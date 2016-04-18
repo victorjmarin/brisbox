@@ -237,6 +237,7 @@
   "order_dashboard_number_of_brisboxers": "Nº de brisboxers",
   "order_dashboard_estimate_hours": "Horas estimadas",
   "order_dashboard_estimate_cost": "Coste estimado",
+  "order_dashboard_left": "Dejaste el pedido",
   "brisboxer_details": "Detalles del brisboxer",
   "name": "Nombre",
   "surname": "Apellidos",

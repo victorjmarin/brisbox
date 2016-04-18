@@ -11,6 +11,7 @@
         padding-left: 2px;
         border: 1px solid;
         margin-bottom: 1%;
+        position: relative;
     }
 }
 
@@ -27,6 +28,7 @@
         border: 1px solid;
         margin-bottom: 1%;
         width: 500px;
+        position: relative;
     }
 }
 .info {
@@ -80,4 +82,10 @@
 .order_dashboard_section_title{
     font-weight: bold;
     font-size: xx-large;
+}
+
+.clear-icon {
+    position: absolute;
+    right: -20px;
+    top: -20px;
 }

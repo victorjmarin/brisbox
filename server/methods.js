@@ -223,6 +223,25 @@ Meteor.methods({
     'deCodificaString': function (codificado) {
         var decodedString = Base64.decode(codificado);
         return decodedString;
+    },
+    'updateLastLeftOfBrisboxer': function (brisboxer_id) {
+        if (Meteor.userId() === brisboxer_id) {
+            Meteor.users.update({"_id" :brisboxer_id }, {
+                    $set: {
+                        "lastLeft": new Date()
+                    }
+                },
+                {upsert:false,
+                    multi:true});
+        }
+    },
+    'updateBrisboxersOfOrder': function (order_id, brisboxers, brisboxer_id) {
+        //TODO Hay que comprobar que se puede realizar
+        Orders.update(order_id, {
+            $set: {
+                brisboxers: brisboxers
+            }
+        });
     }
 
 });
