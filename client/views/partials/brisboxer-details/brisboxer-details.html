@@ -3,7 +3,7 @@
 		<h4 class="header">{{_ "brisboxer_details"}}</h4>
 
 		{{#if exists}}
-			<div class="row valign-wrapper">
+			<div class="row">
 				<div class="col s12 m6 l4 valign-wrapper">
 					<img src="/placeholder.png" class="circle" style="margin-right: auto;margin-left: auto;"/>
 				</div>
@@ -80,4 +80,32 @@
 			</div>
 		{{/if}}
 	</div>
+
+	{{#if exists}}
+	<div id="assessments-container">
+		<div id="asessment-all" class="orange center-align white-text">
+			<div id="assessment-title" style="padding-top: 15px;">
+				<h2>{{_ "valoration"}}</h2>
+			</div>
+			<div id="assessment-average-div" style="font-size: 700%; font-weight: 100;">
+				<span id="assessment-avg"></span>
+			</div>
+		</div>
+
+		<div id="assessment-table" class="container">
+			{{#each assessments}}
+				<div class="card grey lighten-5">
+					<div class="card-content row">
+						<div class="col s1 amber-text text-darken-3">
+							{{rating}}
+						</div>
+						<div class="col s11">
+							{{comments}}
+						</div>
+					</div>
+				</div>
+			{{/each}}
+		</div>
+	</div>
+	{{/if}}
 </template>

@@ -46,7 +46,21 @@ function loadBrisboxers() {
     Meteor.users.update(id_brisboxer1, {
         $set: {
             accepted: true,
-            verified: true
+            verified: true,
+            assessments: [
+                {
+                    comments: "Nice",
+                    rating: 8
+                },
+                {
+                    comments: "Not bad",
+                    rating: 6
+                },
+                {
+                    comments: "A perfect brisboxer",
+                    rating: 10
+                }
+            ]
         }
     });
     var id_brisboxer2 = Accounts.createUser({
@@ -63,7 +77,13 @@ function loadBrisboxers() {
     Meteor.users.update(id_brisboxer2, {
         $set: {
             accepted: true,
-            verified: true
+            verified: true,
+            assessments: [
+                {
+                    comments: "Not bad",
+                    rating: 6
+                }
+            ]
         }
     });
 
@@ -81,7 +101,8 @@ function loadBrisboxers() {
     Meteor.users.update(id_brisboxer3, {
         $set: {
             accepted: true,
-            verified: true
+            verified: true,
+            assessments: []
         }
     });
 
@@ -99,7 +120,17 @@ function loadBrisboxers() {
     Meteor.users.update(id_brisboxer4, {
         $set: {
             accepted: true,
-            verified: true
+            verified: true,
+            assessments: [
+                {
+                    comments: "Horrible",
+                    rating: 1
+                },
+                {
+                    comments: "Tssss",
+                    rating: 4
+                }
+            ]
         }
     });
 
@@ -117,7 +148,8 @@ function loadBrisboxers() {
     Meteor.users.update(id_brisboxer5, {
         $set: {
             accepted: false,
-            verified: true
+            verified: true,
+             assessments: []
         }
     });
 
@@ -135,7 +167,9 @@ function loadBrisboxers() {
     Meteor.users.update(id_brisboxer6, {
         $set: {
             accepted: false,
-            verified: false
+            verified: false,
+            assessments: []
+
         }
     });
 
@@ -152,7 +186,8 @@ function loadBrisboxers() {
     Roles.addUsersToRoles(id_brisboxer7, ['brisboxer']);
     Meteor.users.update(id_brisboxer7, {
         $set: {
-            accepted: false
+            accepted: false,
+            assessments: []
         }
     });
 
@@ -170,7 +205,8 @@ function loadBrisboxers() {
     Meteor.users.update(id_brisboxer8, {
         $set: {
             verified: true,
-            accepted: false
+            accepted: false,
+            assessments: []
         }
     });
 
@@ -188,7 +224,8 @@ function loadBrisboxers() {
     Meteor.users.update(id_brisboxer9, {
         $set: {
             verified: true,
-            accepted: true
+            accepted: true,
+            assessments: []
         }
     });
 
@@ -206,7 +243,8 @@ function loadBrisboxers() {
     Meteor.users.update(id_brisboxer10, {
         $set: {
             verified: true,
-            accepted: true
+            accepted: true,
+            assessments: []
         }
     });
 }
