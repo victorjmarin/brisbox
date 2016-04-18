@@ -94,41 +94,6 @@ Meteor.methods({
     },
 
    'createBrisboxer': function (doc) {
-        check(doc, SchemaInscription);
-        var outerMethod = this;
-        Meteor.call('createBrisboxerNoRole', doc, function (err, userId) {
-            if (err) { // TODO: Simulate transaction and delete inscription form
-                console.log("error en server");
-                console.log(err);
-                throw new Meteor.Error("Server error", err);
-            } else {
-                Roles.addUsersToRoles(userId, ['brisboxer']);
-                Meteor.users.update(userId, {
-                    $set: {
-                        verified: false
-                    }
-                });
-                outerMethod.unblock();
-                Accounts.sendVerificationEmail(userId);
-            }
-        });
-    },
-
-    'createBrisboxerNoRole': function (doc) {
-
-        return Accounts.createUser({
-            username: doc.username, password: doc.password, email: doc.email,
-            profile: {
-                name: doc.name,
-                surname: doc.surname,
-                phone: doc.phone,
-                zip: doc.zip,
-                howHearAboutUs: doc.howHearAboutUs
-            }
-        });
-    },
-
-   'createBrisboxer': function (doc) {
 
        check(doc, SchemaInscription);
        var outerMethod = this;
@@ -146,13 +111,8 @@ Meteor.methods({
        } catch (error) {
            throw new Meteor.Error("Server error", error);
        }
-
        Roles.addUsersToRoles(userId, ['brisboxer']);
-       Meteor.users.update(userId, {
-           $set: {
-               verified: false
-           }
-       });
+
        outerMethod.unblock();
        Accounts.sendVerificationEmail(userId);
    },
@@ -166,13 +126,6 @@ Meteor.methods({
         }
     },
 
-    'verificaEmailDesdeCorreo': function () {
-        Meteor.users.update(Meteor.userId(), {
-            $set: {
-                verified: true
-            }
-        });
-    },
     'sendOrderCreatedEmail': function (orderId) {
         var pedidoIdCodificado = Meteor.call('codificaString', orderId);
         var pedido = Orders.findOne({"_id":orderId});
