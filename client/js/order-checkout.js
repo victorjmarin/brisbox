@@ -4,7 +4,7 @@ Template.orderCheckout.events({
     },
     'click #buttom-next': function (event) {
         $('#buttom-next').attr('disabled',true);
-        $('#stripe-submit').attr('enabled',false);
+        $('#stripe-submit').attr('disabled',false);
         Session.set("enableStripeForm", true);
     }
 });

@@ -6,7 +6,7 @@ Meteor.startup(function () {
         server: 'smtp.gmail.com',
         port: 587
     };
-    process.env.MAIL_URL = 'smtp://' + smtp.username + ':' + encodeURIComponent(smtp.password) + '@' + encodeURIComponent(smtp.server) + ':' + smtp.port;
+    process.env.MAIL_URL = 'smtp://' + encodeURIComponent(smtp.username) + ':' + encodeURIComponent(smtp.password) + '@' + encodeURIComponent(smtp.server) + ':' + smtp.port;
     if (Meteor.users.find().count() === 0) {
         loadAdmins();
         loadBrisboxers();

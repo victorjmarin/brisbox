@@ -77,6 +77,10 @@ Template.orderForm.onRendered(function () {
             selectYears: 15 // Creates a dropdown of 15 years to control year
         });
     }
+    $('#startMoment').lolliclock({
+        autoclose: false,
+        hour24:false
+    });
     var zip = getParameterByName("zip");
     if (zip != null) {
         Session.set("zip", zip);
