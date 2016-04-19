@@ -4,6 +4,7 @@ Template.BrisboxerAssessmentRow.events({
         _id = this._id;
         var comments = document.getElementById("br-comments-"+_id).value;
         var rating = document.getElementById("rating-"+_id).value;
+        var orderId = Session.get("orderId");
         var error = false;
         if (comments == "") {
             var text = "Cannot be blank";
@@ -34,8 +35,7 @@ Template.BrisboxerAssessmentRow.events({
         }
 
         if (error == false) {
-            Meteor.call("", comments, rating, usuario);
-            Router.go('/');
+            Meteor.call("assessBrisboxer", orderId, this._id, comments, rating);
         }
     }
 });

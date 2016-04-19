@@ -223,6 +223,29 @@ Meteor.methods({
     'deCodificaString': function (codificado) {
         var decodedString = Base64.decode(codificado);
         return decodedString;
+    },
+    'assessBrisboxer': function(orderId, brisboxerId, comments, rating){
+        var order = Orders.findOne({_id: orderId, "brisboxers._id": brisboxerId});
+        var correct = false;
+        for(b of order.brisboxers){
+            if(b._id == brisboxerId){
+                if(b.assessed){
+                    break;
+                }else{
+                    correct = true;
+                    break;
+                }
+            }
+        }
+        if(correct){
+            console.log("Updating Order");
+            Orders.update({_id: orderId, "brisboxers._id": brisboxerId}, {$set: {"brisboxers.$.assessed": true}});
+            console.log("Updating user");
+            Meteor.users.update(brisboxerId, 
+                {$push: {assessments: {comments: comments, rating: rating}}});
+        }
+        console.log(order);
+        //Meteor.users.update({_id: brisboxerId._id}, {$push: {brisboxers: {_id: user._id, username: user.username, assessed: false}}});
     }
 
 });
