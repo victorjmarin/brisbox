@@ -226,22 +226,36 @@ Meteor.methods({
     },
     'updateLastLeftOfBrisboxer': function (brisboxer_id) {
         if (Meteor.userId() === brisboxer_id) {
-            Meteor.users.update({"_id" :brisboxer_id }, {
-                    $set: {
-                        "lastLeft": new Date()
-                    }
-                },
-                {upsert:false,
-                    multi:true});
+            var id = {'_id' : brisboxer_id };
+            var update = {
+                '$set': { 'profile.lastLeft': new Date() }
+            };
+
+            Meteor.users.update(brisboxer_id, update);
         }
     },
-    'updateBrisboxersOfOrder': function (order_id, brisboxers, brisboxer_id) {
-        //TODO Hay que comprobar que se puede realizar
-        Orders.update(order_id, {
-            $set: {
-                brisboxers: brisboxers
+    'updateBrisboxersOfOrder': function (order_id,  id) {
+        if(id === Meteor.userId()) {
+            var order = Orders.findOne({_id: order_id});
+            var brisboxers = order.brisboxers;
+            var index = null;
+            for (i = 0; i < brisboxers.length; i++) {
+                var entry = brisboxers[i];
+                if (Meteor.userId() === id && entry._id === id) {
+                    index = brisboxers.indexOf(entry);
+                    break;
+                }
             }
-        });
+            if (index > -1) {
+                brisboxers.splice(index, 1);
+            }
+            return Orders.update(order_id, {
+                $set: {
+                    brisboxers: brisboxers
+                }
+            });
+
+        }
     }
 
 });
