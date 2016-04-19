@@ -5,9 +5,13 @@
             <h2 style="padding-top: 3%">{{_ "assessment_header"}}</h2>
 
             <p class="flow-text">{{_ "assessment_body"}}</p>
+            
+            {{#each order.brisboxers}}
+                {{> BrisboxerAssessmentRow}}
+            {{/each}}
 
-            <form class="col s12" style="padding-bottom: 10%">
-
+            <!--<form class="col s12" style="padding-bottom: 10%">
+                
                 <div class="row">
                     <div class="input-field col s7">
                         <div class="hide-on-small-only">
@@ -44,7 +48,7 @@
                 </div>
                 <input type="button" id="send" name="send" class="btn proxima bold orange darken-3" value="{{_ "assessment_send"}}"
                        style="margin-top: 3%; margin-left: 2%"/>
-            </form>
+            </form>-->
         </div>
     </div>
 </template>
