@@ -45,8 +45,6 @@ function loadBrisboxers() {
     Roles.addUsersToRoles(id_brisboxer1, ['brisboxer']);
     Meteor.users.update(id_brisboxer1, {
         $set: {
-            accepted: true,
-            verified: true,
             assessments: [
                 {
                     comments: "Nice",
@@ -60,7 +58,9 @@ function loadBrisboxers() {
                     comments: "A perfect brisboxer",
                     rating: 10
                 }
-            ]
+            ],
+            "emails.0.verified": true,
+            accepted: true
         }
     });
     var id_brisboxer2 = Accounts.createUser({
@@ -76,14 +76,14 @@ function loadBrisboxers() {
     Roles.addUsersToRoles(id_brisboxer2, ['brisboxer']);
     Meteor.users.update(id_brisboxer2, {
         $set: {
-            accepted: true,
-            verified: true,
             assessments: [
                 {
                     comments: "Not bad",
                     rating: 6
                 }
-            ]
+            ],
+            "emails.0.verified": false,
+            accepted: true
         }
     });
 
@@ -100,9 +100,8 @@ function loadBrisboxers() {
     Roles.addUsersToRoles(id_brisboxer3, ['brisboxer']);
     Meteor.users.update(id_brisboxer3, {
         $set: {
-            accepted: true,
-            verified: true,
-            assessments: []
+            "emails.0.verified": true,
+            accepted: true
         }
     });
 
@@ -119,8 +118,6 @@ function loadBrisboxers() {
     Roles.addUsersToRoles(id_brisboxer4, ['brisboxer']);
     Meteor.users.update(id_brisboxer4, {
         $set: {
-            accepted: true,
-            verified: true,
             assessments: [
                 {
                     comments: "Horrible",
@@ -130,7 +127,9 @@ function loadBrisboxers() {
                     comments: "Tssss",
                     rating: 4
                 }
-            ]
+            ],
+            "emails.0.verified": false,
+            accepted: true
         }
     });
 
@@ -147,9 +146,9 @@ function loadBrisboxers() {
     Roles.addUsersToRoles(id_brisboxer5, ['brisboxer']);
     Meteor.users.update(id_brisboxer5, {
         $set: {
-            accepted: false,
-            verified: true,
-             assessments: []
+             assessments: [],
+            "emails.0.verified": true,
+            accepted: false
         }
     });
 
@@ -166,10 +165,9 @@ function loadBrisboxers() {
     Roles.addUsersToRoles(id_brisboxer6, ['brisboxer']);
     Meteor.users.update(id_brisboxer6, {
         $set: {
-            accepted: false,
-            verified: false,
-            assessments: []
-
+            assessments: [],
+            "emails.0.verified": false,
+            accepted: false
         }
     });
 
@@ -186,8 +184,9 @@ function loadBrisboxers() {
     Roles.addUsersToRoles(id_brisboxer7, ['brisboxer']);
     Meteor.users.update(id_brisboxer7, {
         $set: {
-            accepted: false,
-            assessments: []
+            assessments: [],
+            "emails.0.verified": true,
+            accepted: false
         }
     });
 
@@ -204,9 +203,9 @@ function loadBrisboxers() {
     Roles.addUsersToRoles(id_brisboxer8, ['brisboxer']);
     Meteor.users.update(id_brisboxer8, {
         $set: {
-            verified: true,
-            accepted: false,
-            assessments: []
+            assessments: [],
+            "emails.0.verified": false,
+            accepted: false
         }
     });
 
@@ -223,9 +222,9 @@ function loadBrisboxers() {
     Roles.addUsersToRoles(id_brisboxer9, ['brisboxer']);
     Meteor.users.update(id_brisboxer9, {
         $set: {
-            verified: true,
-            accepted: true,
-            assessments: []
+            assessments: [],
+            "emails.0.verified": true,
+            accepted: true
         }
     });
 
@@ -242,9 +241,9 @@ function loadBrisboxers() {
     Roles.addUsersToRoles(id_brisboxer10, ['brisboxer']);
     Meteor.users.update(id_brisboxer10, {
         $set: {
-            verified: true,
-            accepted: true,
-            assessments: []
+            assessments: [],
+            "emails.0.verified": false,
+            accepted: true
         }
     });
 }

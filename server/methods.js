@@ -93,28 +93,6 @@ Meteor.methods({
         });
     },
 
-   'createBrisboxer': function (doc) {
-        check(doc, SchemaInscription);
-        var outerMethod = this;
-        Meteor.call('createBrisboxerNoRole', doc, function (err, userId) {
-            if (err) { // TODO: Simulate transaction and delete inscription form
-                console.log("error en server");
-                console.log(err);
-                throw new Meteor.Error("Server error", err);
-            } else {
-                Roles.addUsersToRoles(userId, ['brisboxer']);
-                Meteor.users.update(userId, {
-                    $set: {
-                        verified: false,
-                        assessments: []
-                    }
-                });
-                outerMethod.unblock();
-                Accounts.sendVerificationEmail(userId);
-            }
-        });
-    },
-
     'createBrisboxerNoRole': function (doc) {
 
         return Accounts.createUser({
@@ -130,7 +108,6 @@ Meteor.methods({
     },
 
    'createBrisboxer': function (doc) {
-
        check(doc, SchemaInscription);
        var outerMethod = this;
        try{
@@ -147,11 +124,10 @@ Meteor.methods({
        } catch (error) {
            throw new Meteor.Error("Server error", error);
        }
-
        Roles.addUsersToRoles(userId, ['brisboxer']);
        Meteor.users.update(userId, {
            $set: {
-               verified: false
+               assessments: []
            }
        });
        outerMethod.unblock();
@@ -167,13 +143,6 @@ Meteor.methods({
         }
     },
 
-    'verificaEmailDesdeCorreo': function () {
-        Meteor.users.update(Meteor.userId(), {
-            $set: {
-                verified: true
-            }
-        });
-    },
     'sendOrderCreatedEmail': function (orderId) {
         var pedidoIdCodificado = Meteor.call('codificaString', orderId);
         var pedido = Orders.findOne({"_id":orderId});

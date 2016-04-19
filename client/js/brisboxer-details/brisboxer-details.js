@@ -4,6 +4,9 @@ Template.brisboxerDetails.helpers({
     },
     exists: function(){
     	return this._id != undefined;
+    },
+    verified: function(){
+        return this.emails[0].verified;
     }
 });
 

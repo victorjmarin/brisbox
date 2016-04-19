@@ -4,7 +4,6 @@
 AccountController = RouteController.extend({
     verifyEmail: function () {
         Accounts.verifyEmail(this.params.token, function () {
-            Meteor.call('verificaEmailDesdeCorreo');
             Router.go('AccountVerified');
         });
     }
