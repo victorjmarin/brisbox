@@ -238,14 +238,17 @@ Meteor.methods({
             }
         }
         if(correct){
+            console.log(orderId);
+            console.log(brisboxerId);
+            console.log(comments);
+            console.log(rating);
             console.log("Updating Order");
             Orders.update({_id: orderId, "brisboxers._id": brisboxerId}, {$set: {"brisboxers.$.assessed": true}});
             console.log("Updating user");
-            Meteor.users.update(brisboxerId, 
+            console.log(Meteor.users.find().fetch()[0]);
+            Meteor.users.update({_id: brisboxerId}, 
                 {$push: {assessments: {comments: comments, rating: rating}}});
         }
-        console.log(order);
-        //Meteor.users.update({_id: brisboxerId._id}, {$push: {brisboxers: {_id: user._id, username: user.username, assessed: false}}});
     }
 
 });

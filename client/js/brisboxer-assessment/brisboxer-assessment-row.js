@@ -3,7 +3,7 @@ Template.BrisboxerAssessmentRow.events({
         e.preventDefault();
         _id = this._id;
         var comments = document.getElementById("br-comments-"+_id).value;
-        var rating = document.getElementById("rating-"+_id).value;
+        var rating = parseInt(document.getElementById("rating-"+_id).value);
         var orderId = Session.get("orderId");
         var error = false;
         if (comments == "") {
