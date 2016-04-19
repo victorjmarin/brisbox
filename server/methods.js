@@ -49,6 +49,7 @@ Meteor.methods({
 
     'saveOrder': function (addressLoading, addressUnloading, portalLoading, portalUnloading, zip, loading, unloading, comments, numberBrisboxers, hours,
                            startMoment, day, name, surname, phone, email) {
+        var cancelationCode = Random.hexString(6);
         var orderForm = {
             addressLoading: addressLoading,
             addressUnloading: addressUnloading,
@@ -66,12 +67,13 @@ Meteor.methods({
             surname: surname,
             phone: phone,
             email: email,
+            cancelationCode: cancelationCode,
             canceled: false,
             brisboxers: []
         };
         Orders.insert(orderForm, function (err, callback) {
             if (!err) {
-                Meteor.call('sendOrderCreatedEmail', callback);
+                Meteor.call('sendOrderCreatedEmail', callback, cancelationCode);
             }
         });
     },
@@ -107,32 +109,32 @@ Meteor.methods({
         });
     },
 
-   'createBrisboxer': function (doc) {
-       check(doc, SchemaInscription);
-       var outerMethod = this;
-       try{
-           var userId = Accounts.createUser({
-               username: doc.username, password: doc.password, email: doc.email,
-               profile: {
-                   name: doc.name,
-                   surname: doc.surname,
-                   phone: doc.phone,
-                   zip: doc.zip,
-                   howHearAboutUs: doc.howHearAboutUs
-               }
-           });
-       } catch (error) {
-           throw new Meteor.Error("Server error", error);
-       }
-       Roles.addUsersToRoles(userId, ['brisboxer']);
-       Meteor.users.update(userId, {
-           $set: {
-               assessments: []
-           }
-       });
-       outerMethod.unblock();
-       Accounts.sendVerificationEmail(userId);
-   },
+    'createBrisboxer': function (doc) {
+        check(doc, SchemaInscription);
+        var outerMethod = this;
+        try {
+            var userId = Accounts.createUser({
+                username: doc.username, password: doc.password, email: doc.email,
+                profile: {
+                    name: doc.name,
+                    surname: doc.surname,
+                    phone: doc.phone,
+                    zip: doc.zip,
+                    howHearAboutUs: doc.howHearAboutUs
+                }
+            });
+        } catch (error) {
+            throw new Meteor.Error("Server error", error);
+        }
+        Roles.addUsersToRoles(userId, ['brisboxer']);
+        Meteor.users.update(userId, {
+            $set: {
+                assessments: []
+            }
+        });
+        outerMethod.unblock();
+        Accounts.sendVerificationEmail(userId);
+    },
 
     'joinOrder': function (order) {
         var user = Meteor.user();
@@ -143,20 +145,24 @@ Meteor.methods({
         }
     },
 
-    'sendOrderCreatedEmail': function (orderId) {
+    'sendOrderCreatedEmail': function (orderId, cancelationCode) {
         var pedidoIdCodificado = Meteor.call('codificaString', orderId);
-        var pedido = Orders.findOne({"_id":orderId});
+        var pedido = Orders.findOne({"_id": orderId});
         var token = (parseInt(pedido.phone) * 71) + (parseInt(pedido.zip) * 31);
-        var urlDashboardOrder = process.env.ROOT_URL+ "order_dashboard/" + pedidoIdCodificado;
-        var urlDeleteOrder = process.env.ROOT_URL + "cancel-order/" + pedidoIdCodificado + "/" + token;
+        var hostname = process.env.ROOT_URL;
+        if (hostname.substring(hostname.length - 1, hostname.length) != "/") {
+            hostname += "/";
+        }
+        var urlDashboardOrder = hostname + "order_dashboard/" + pedidoIdCodificado;
+        var urlDeleteOrder = hostname + "cancel-order/" + pedidoIdCodificado + "/" + token;
         var currentLocale = TAPi18next.lng();
         if (currentLocale == "es") {
             var subject = "[BRISBOX] ¡Su pedido ha sido registrado!";
-            var text = "Hola " + pedido.name + " su pedido ha sido registrado en el sistema.\nPulse en el siguiente enlace para acceder al estado actual de su pedido:\n" + urlDashboardOrder + " \n\nSi desea cancelar el pedido sólo tiene que hacer click en el siguiente enlace:\n" + urlDeleteOrder + "\n\n Un saludo del equipo de Brisbox.";
+            var text = "Hola " + pedido.name + " su pedido ha sido registrado en el sistema.\nPulse en el siguiente enlace para acceder al estado actual de su pedido:\n" + urlDashboardOrder + " \n\nSi desea cancelar el pedido sólo tiene que hacer click en el siguiente enlace:\n" + urlDeleteOrder + "\n\nCódigo de cancelación: " + cancelationCode + "\n\nUn saludo del equipo de Brisbox.";
         }
         if (currentLocale == "en") {
             var subject = "[BRISBOX] Your order has been registered!";
-            var text = "Hello " + pedido.name + " your order has been registered on the system.\nClick on the next link to see the actual status of your order:\n" + urlDashboardOrder + " \n\nIf you want to cancel your order, you just have to click on the next link:\n" + urlDeleteOrder + "\n\n Greetings for the Brisbox Team.";
+            var text = "Hello " + pedido.name + " your order has been registered on the system.\nClick on the next link to see the actual status of your order:\n" + urlDashboardOrder + " \n\nIf you want to cancel your order, you just have to click on the next link:\n" + urlDeleteOrder + "\n\nCancelation code: " + cancelationCode + "\n\nGreetings for the Brisbox Team.";
         }
         Meteor.call('sendEmailToUser', pedido.email, subject, text);
     },
@@ -170,12 +176,7 @@ Meteor.methods({
             if (order._id == orderIdDecodificado) {
                 if ((parseInt(order.phone) * 71) + (parseInt(order.zip) * 31) == tokenInt) {
                     console.log("*** TOKEN CORRECTO ***");
-                    Orders.update(orderIdDecodificado, {
-                        $set: {
-                            canceled: true
-                        }
-                    });
-                    res = "CANCELED";
+                    res = "TOCANCEL";
                 } else {
                     res = "NOTCANCELED";
                 }
@@ -185,13 +186,33 @@ Meteor.methods({
         }
         return res;
     },
+
+    'cancelOrder': function (orderIdCodificado, cancelationCode) {
+        var res = false;
+        var orderIdDecodificado = Meteor.call('deCodificaString', orderIdCodificado);
+        var order = Orders.findOne({"_id": orderIdDecodificado});
+        if (Orders.find({"_id": orderIdDecodificado}).count() == 1) {
+            if (order.cancelationCode == cancelationCode) {
+                Orders.update(orderIdDecodificado, {
+                    $set: {
+                        canceled: true
+                    }
+                });
+                res = true;
+            }
+        }
+        return res;
+    },
+
     'codificaString': function (noCodificado) {
         var encodedString = Base64.encode(noCodificado);
         return encodedString;
-    },
+    }
+    ,
     'deCodificaString': function (codificado) {
         var decodedString = Base64.decode(codificado);
         return decodedString;
     }
 
-});
+})
+;
