@@ -41,3 +41,9 @@ Template.BrisboxerAssessment.events({
 Template.BrisboxerAssessment.onRendered(function () {
     $('textarea#br-comments').characterCounter();
 });
+
+Template.BrisboxerAssessment.helpers({
+    "order": function(){
+        return this;
+    }
+})

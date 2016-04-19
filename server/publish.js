@@ -29,3 +29,7 @@ Meteor.publish('zipsAll',function(){
 Meteor.publish('findCodePromotion', function(){
 	return Promotions.find();
 });
+
+Meteor.publish('oneOrder', function(_id){
+	return Orders.find({_id: _id});
+});
