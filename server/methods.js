@@ -162,7 +162,7 @@ Meteor.methods({
         var user = Meteor.user();
         if (Roles.userIsInRole(user._id, ['brisboxer']) && user.accepted) {
             if (order.numberBrisboxers > order.brisboxers.length) {
-                Orders.update({_id: order._id}, {$push: {brisboxers: {_id: user._id, username: user.username}}});
+                Orders.update({_id: order._id}, {$push: {brisboxers: {_id: user._id, username: user.username, assessed: false}}});
             }
         }
     },
