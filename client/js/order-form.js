@@ -4,7 +4,6 @@ function getParameterByName(variable) {
 
 function validate_day_address(loading, unloading, day) {
     var today = new Date();
-    console.log(day);
     var validate_day = day.getTime() <= today.getTime();
     if (loading == true || unloading == true) {
         $('.errorAddress').css('visibility', 'hidden');
@@ -34,6 +33,13 @@ function validate_day_address(loading, unloading, day) {
     }
 }
 
+Meteor.startup(function() {
+    GoogleMaps.load({
+        key: 'AIzaSyAfk4ikNH05OssyWavDvWImWFsf6oVXzzQ',
+        libraries: 'places'
+    });
+});
+
 Template.orderForm.onRendered(function () {
     $('#divAddressUnLoading').css('display', 'none');
     $('#divAddressLoading').css('display', 'none');
@@ -60,7 +66,8 @@ Template.orderForm.onRendered(function () {
             selectMonths: true, // Creates a dropdown to control month
             selectYears: 15 // Creates a dropdown of 15 years to control year
         });
-    } else if (currentLocale == 'en') {
+    }
+    if (currentLocale == 'en') {
         $('#day').pickadate({
             monthsFull: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
             monthsShort: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
@@ -183,14 +190,18 @@ Template.orderForm.events({
 ;
 
 
-Template.orderForm.onRendered(function () {
-    GoogleMaps.load();
-});
 
 Template.orderForm.helpers({
+    exampleMap: function(){
+        if(GoogleMaps.loaded()){
+            return "exampleMap"
+        }
+    },
     exampleMapOptions: function () {
         // Make sure the maps API has loaded
         if (GoogleMaps.loaded()) {
+            $("#addressLoading").geocomplete();
+            $("#addressUnloading").geocomplete();
             // Map initialization options
             return {
                 center: new google.maps.LatLng(37.389434, -5.984706),
@@ -204,13 +215,3 @@ Template.orderForm.helpers({
     }
 });
 
-Template.orderForm.onCreated(function () {
-    // We can use the `ready` callback to interact with the map API once the map is ready.
-    GoogleMaps.ready('exampleMap', function (map) {
-        // Add a marker to the map once it's ready
-        var marker = new google.maps.Marker({
-            position: map.options.center,
-            map: map.instance
-        });
-    });
-});
