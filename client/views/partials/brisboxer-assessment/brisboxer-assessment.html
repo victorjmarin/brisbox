@@ -1,0 +1,13 @@
+<template name="BrisboxerAssessment">
+
+    <div class="container">
+        <div class="row">
+            <h2 style="padding-top: 3%">{{_ "assessment_header"}}</h2>
+
+            <p class="flow-text">{{_ "assessment_body"}}</p>
+            {{#each order.brisboxers}}
+                {{> BrisboxerAssessmentRow}}
+            {{/each}}
+        </div>
+    </div>
+</template>

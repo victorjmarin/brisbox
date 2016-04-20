@@ -346,7 +346,7 @@ function loadOrders() {
         typeMove: 'load',
         date: new Date('2016-07-03'),
         brisboxers: [
-            {_id: brisboxer2._id, username: brisboxer2.username}
+            {_id: brisboxer2._id, username: brisboxer2.username, assessed: false}
         ]
     });
     Orders.insert({
@@ -365,8 +365,8 @@ function loadOrders() {
         typeMove: 'load',
         date: new Date('2016-06-20'),
         brisboxers: [
-            {_id: brisboxer2._id, username: brisboxer2.username},
-            {_id: brisboxer3._id, username: brisboxer3.username}
+            {_id: brisboxer2._id, username: brisboxer2.username, assessed: false},
+            {_id: brisboxer3._id, username: brisboxer3.username, assessed: false}
         ]
     });
     Orders.insert({
@@ -385,7 +385,7 @@ function loadOrders() {
         typeMove: 'unload',
         date: new Date('2016-08-04'),
         brisboxers: [
-            {_id: brisboxer1._id, username: brisboxer1.username}
+            {_id: brisboxer1._id, username: brisboxer1.username, assessed: false}
         ]
     });
     Orders.insert({
@@ -404,10 +404,10 @@ function loadOrders() {
         typeMove: 'unload',
         date: new Date('2016-07-01'),
         brisboxers: [
-            {_id: brisboxer2._id, username: brisboxer2.username},
-            {_id: brisboxer3._id, username: brisboxer3.username},
-            {_id: brisboxer4._id, username: brisboxer4.username},
-            {_id: brisboxer5._id, username: brisboxer5.username}
+            {_id: brisboxer2._id, username: brisboxer2.username, assessed: false},
+            {_id: brisboxer3._id, username: brisboxer3.username, assessed: false},
+            {_id: brisboxer4._id, username: brisboxer4.username, assessed: false},
+            {_id: brisboxer5._id, username: brisboxer5.username, assessed: false}
         ]
     });
 

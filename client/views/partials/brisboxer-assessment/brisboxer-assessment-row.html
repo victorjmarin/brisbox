@@ -1,0 +1,66 @@
+<template name="BrisboxerAssessmentRow">
+            <form class="col s12" style="padding-bottom: 10%">
+                {{orderId}}
+                <div class="row card">
+                    <div class="card-content row">
+                        <div class="col m2 s12 row center-align">
+                            <div class="col s12">
+                                <img src="/placeholder.png" class="circle responsive-img" style="margin-right: auto;margin-left: auto"/>
+                            </div>
+                            {{username}}
+                        </div>
+                            {{#unless assessed}}
+                            <div class="col s10 row">
+                                <div class="row">
+                                    <div class="input-field col s7">
+                                        <div class="hide-on-small-only">
+                                            <i class="material-icons prefix">mode_edit</i>
+                                            <textarea rows="1" id="br-comments-{{_id}}" name="comments" class="materialize-textarea"
+                                                      length="140"></textarea>
+                                            <label for="br-comments" style="padding-left: 2%">{{_ "assessment_comments"}}</label>
+                                        </div>
+                                        <div class="hide-on-med-and-up">
+                                            <textarea rows="1" id="br-comments-{{_id}}" name="comments" class="materialize-textarea"
+                                                      length="140"></textarea>
+                                            <label for="br-comments" style="padding-left: 2%">{{_ "assessment_comments"}}</label>
+                                        </div>
+                                    </div>
+                                    <div class="input-field col s5">
+                                        <div class="hide-on-small-only offset-s1">
+                                            <i class="material-icons">grade</i>
+                                            <span class="flow-text" for="rating"
+                                                  style="margin-left: 1%">{{_ "assessment_rating"}}</span>
+                                            <p class="range-field">
+                                                <input class="s5" type="range" id="rating-{{_id}}" min="1" max="10" name="rating"/>
+                                            </p>
+                                        </div>
+                                        <div class="hide-on-med-and-up">
+                                            <span class="flow-text" for="rating"
+                                                  style="margin-left: 1%">{{_ "assessment_rating"}}</span>
+                                            <p class="range-field">
+                                                <input class="s4" type="range" id="rating-{{_id}}" min="1" max="10" name="rating"/>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <span class="col s7 custom-validation-error" id="errorComments-{{_id}}"></span>
+                                    <span class="col s4 offset-s1 custom-validation-error" id="errorRating-{{_id}}"></span>
+                                </div>
+                                <div class="row">
+                                    <input type="button" id="send" name="send" class="btn proxima bold orange darken-3" value="{{_ "assessment_send"}}"
+                                        style="margin-top: 3%; margin-left: 2%"/>
+                                </div>
+
+                            </div>
+                            {{/unless}}
+                            {{#if assessed}}
+                                <div class="valign-wrapper col s10 center-align">
+                                    <div>
+                                        <i class="material-icons green-text" style="font-size: 6em;">check_circle</i>
+                                    </div>
+                                </div>
+                            {{/if}}
+                    </div>
+                </div>
+                
+            </form>
+</template>

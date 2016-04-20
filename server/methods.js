@@ -140,7 +140,7 @@ Meteor.methods({
         var user = Meteor.user();
         if (Roles.userIsInRole(user._id, ['brisboxer']) && user.accepted) {
             if (order.numberBrisboxers > order.brisboxers.length) {
-                Orders.update({_id: order._id}, {$push: {brisboxers: {_id: user._id, username: user.username}}});
+                Orders.update({_id: order._id}, {$push: {brisboxers: {_id: user._id, username: user.username, assessed: false}}});
             }
         }
     },
@@ -212,6 +212,32 @@ Meteor.methods({
     'deCodificaString': function (codificado) {
         var decodedString = Base64.decode(codificado);
         return decodedString;
+    },
+    'assessBrisboxer': function(orderId, brisboxerId, comments, rating){
+        var order = Orders.findOne({_id: orderId, "brisboxers._id": brisboxerId});
+        var correct = false;
+        for(b of order.brisboxers){
+            if(b._id == brisboxerId){
+                if(b.assessed){
+                    break;
+                }else{
+                    correct = true;
+                    break;
+                }
+            }
+        }
+        if(correct){
+            console.log(orderId);
+            console.log(brisboxerId);
+            console.log(comments);
+            console.log(rating);
+            console.log("Updating Order");
+            Orders.update({_id: orderId, "brisboxers._id": brisboxerId}, {$set: {"brisboxers.$.assessed": true}});
+            console.log("Updating user");
+            console.log(Meteor.users.find().fetch()[0]);
+            Meteor.users.update({_id: brisboxerId}, 
+                {$push: {assessments: {comments: comments, rating: rating}}});
+        }
     }
 
 })
