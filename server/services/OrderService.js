@@ -8,14 +8,11 @@ OrderService = {
         return order.numberBrisboxers > order.brisboxers.length;
     },
     joinOrder: function (order, brisboxer) {
-        if (UserService.isAccepted(brisboxer)) {
-            if (this.needsMoreBrisboxers(order)) {
-                var updatedOrder = OrderRepo.addBrisboxer(order, brisboxer);
-                if (!this.needsMoreBrisboxers(updatedOrder)) {
-                    var captain = this.selectCaptain(updatedOrder);
-                    MailService.notifyCaptain(captain);
-                }
-            }
+        var result = order;
+        if (!UserService.isAccepted(brisboxer) || !this.needsMoreBrisboxers(order)) {
+            throw new Meteor.Error("notAcceptedOrFullOrder");
         }
+        result = OrderRepo.addBrisboxer(order, brisboxer);
+        return result;
     }
 };
