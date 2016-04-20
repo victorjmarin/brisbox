@@ -200,13 +200,13 @@ Template.orderForm.helpers({
     exampleMapOptions: function () {
         // Make sure the maps API has loaded
         if (GoogleMaps.loaded()) {
-            $("#addressLoading").geocomplete();
-            $("#addressUnloading").geocomplete();
-            // Map initialization options
-            return {
-                center: new google.maps.LatLng(37.389434, -5.984706),
-                zoom: 13
-            };
+            if($("#addressLoading").focusin()){
+                $("#addressUnloading").focusout();
+            }
+            $("#addressLoading").geocomplete({ map: "#exampleMap"});
+            $("#addressUnloading").geocomplete({ map: "#exampleMap"});
+            document.getElementById("label-addressLoading").className = "active";
+            document.getElementById("label-addressUnloading").className = "active";
         }
     },
     zip: function () {
