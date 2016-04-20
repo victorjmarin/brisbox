@@ -3,8 +3,10 @@
  */
 CancelOrderController = RouteController.extend({
     orderCancel: function () {
-        Meteor.call('deleteOrderMethod', this.params.ord, this.params.token, function( error, response ) {
-            if (response == "CANCELED") {
+        var idCodificado=this.params.ord;
+        Meteor.call('deleteOrderMethod', idCodificado, this.params.token, function( error, response ) {
+            if (response == "TOCANCEL") {
+                sessionStorage.setItem("ord", idCodificado);
                 Router.go('OrderCancel');
             }
             if (response == "NOTCANCELED") {

@@ -2,10 +2,23 @@
     <div class="container">
         <div class="section scrollspy">
             <div class="row">
-                <h4 class="header">{{_ "order_deleted"}}</h4>
+                <h4 class="header">{{_ "order_canceling"}}</h4>
             </div>
             <div class="row">
-                <p>{{_ "order_deleted_success"}}</p>
+                <p>{{_ "enter-cancelation-code"}}</p>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <input id="cancelationCode" type="text" required class="form-control col s12 m6">
+                    <label id="label_cancelation" for="cancelationCode"
+                           class=" col s6 m6">{{_ "cancel-form-code"}}</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <button type="button" id="cancel"
+                            class="btn btn-primary waves-button-input orange darken-3 caret">{{_ "cancel-submit"}}</button>
+                </div>
             </div>
             <div class="row">
                 <a href="/">{{_ "return_to_main_page"}}</a>
