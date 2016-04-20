@@ -387,5 +387,8 @@
     "email_validation_first_p": "Thank you for your interest in helping make moves a little less stressing :)",
     "email_validation_second_p": "Please, click <a href='%s'>this link</a> to verify your email address.",
     "email_validation_third_p": "Once you've verified it, we will get in touch with you in order to activate your account. From that moment on, you will be able to see the moves available and start working on those which are convenient for you.",
-    "email_validation_signature": "Sincerely,<br>Brisbox Team"
+    "email_validation_signature": "Sincerely,<br>Brisbox Team",
+    // Validation email
+    "email_captain_subject": "You are the captain!",
+    "email_captain_title": "YARRR, captain!"
 }

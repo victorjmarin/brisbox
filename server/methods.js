@@ -107,47 +107,43 @@ Meteor.methods({
         });
     },
 
-   'createBrisboxer': function (doc) {
-       check(doc, SchemaInscription);
-       var outerMethod = this;
-       try{
-           var userId = Accounts.createUser({
-               username: doc.username, password: doc.password, email: doc.email,
-               profile: {
-                   name: doc.name,
-                   surname: doc.surname,
-                   phone: doc.phone,
-                   zip: doc.zip,
-                   howHearAboutUs: doc.howHearAboutUs
-               }
-           });
-       } catch (error) {
-           throw new Meteor.Error("Server error", error);
-       }
-       Roles.addUsersToRoles(userId, ['brisboxer']);
-       Meteor.users.update(userId, {
-           $set: {
-               assessments: []
-           }
-       });
-       outerMethod.unblock();
-       Accounts.sendVerificationEmail(userId);
-   },
+    'createBrisboxer': function (doc) {
+        check(doc, SchemaInscription);
+        var outerMethod = this;
+        try {
+            var userId = Accounts.createUser({
+                username: doc.username, password: doc.password, email: doc.email,
+                profile: {
+                    name: doc.name,
+                    surname: doc.surname,
+                    phone: doc.phone,
+                    zip: doc.zip,
+                    howHearAboutUs: doc.howHearAboutUs
+                }
+            });
+        } catch (error) {
+            throw new Meteor.Error("Server error", error);
+        }
+        Roles.addUsersToRoles(userId, ['brisboxer']);
+        Meteor.users.update(userId, {
+            $set: {
+                assessments: []
+            }
+        });
+        outerMethod.unblock();
+        Accounts.sendVerificationEmail(userId);
+    },
 
     'joinOrder': function (order) {
-        var user = Meteor.user();
-        if (Roles.userIsInRole(user._id, ['brisboxer']) && user.accepted) {
-            if (order.numberBrisboxers > order.brisboxers.length) {
-                Orders.update({_id: order._id}, {$push: {brisboxers: {_id: user._id, username: user.username}}});
-            }
-        }
+        var principal = UserService.principal();
+        OrderService.joinOrder(order, principal);
     },
 
     'sendOrderCreatedEmail': function (orderId) {
         var pedidoIdCodificado = Meteor.call('codificaString', orderId);
-        var pedido = Orders.findOne({"_id":orderId});
+        var pedido = Orders.findOne({"_id": orderId});
         var token = (parseInt(pedido.phone) * 71) + (parseInt(pedido.zip) * 31);
-        var urlDashboardOrder = process.env.ROOT_URL+ "order_dashboard/" + pedidoIdCodificado;
+        var urlDashboardOrder = process.env.ROOT_URL + "order_dashboard/" + pedidoIdCodificado;
         var urlDeleteOrder = process.env.ROOT_URL + "cancel-order/" + pedidoIdCodificado + "/" + token;
         var currentLocale = TAPi18next.lng();
         if (currentLocale == "es") {

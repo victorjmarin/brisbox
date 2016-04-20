@@ -370,5 +370,8 @@
     "email_validation_first_p": "Gracias por tu interés en ayudar a hacer las mudanzas algo más llevaderas :)",
     "email_validation_second_p": "Por favor, haz click en <a href='%s'>este enlace</a> para verificar tu correo.",
     "email_validation_third_p": "Una vez validado, nos pondremos en contacto contigo y procederemos a activar tu cuenta para que puedas ver las mudanzas disponibles y trabajar en las que te convenga.",
-    "email_validation_signature": "Un saludo,<br>Equipo Brisbox"
+    "email_validation_signature": "Un saludo,<br>Equipo Brisbox",
+    // Validation email
+    "email_captain_subject": "¡Eres el capitán!",
+    "email_captain_title": "¡YARRR, capitán!"
 }

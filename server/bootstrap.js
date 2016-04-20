@@ -83,7 +83,7 @@ function loadBrisboxers() {
                 }
             ],
             "emails.0.verified": false,
-            accepted: true
+            accepted: false
         }
     });
 
