@@ -381,14 +381,18 @@
             }
         }
     },
+    "email_signature": "Sincerely,<br>Brisbox Team",
     // Validation email
     "email_validation_subject": "Just one step away!",
     "email_validation_title": "Welcome aboard, %s!",
     "email_validation_first_p": "Thank you for your interest in helping make moves a little less stressing :)",
     "email_validation_second_p": "Please, click <a href='%s'>this link</a> to verify your email address.",
     "email_validation_third_p": "Once you've verified it, we will get in touch with you in order to activate your account. From that moment on, you will be able to see the moves available and start working on those which are convenient for you.",
-    "email_validation_signature": "Sincerely,<br>Brisbox Team",
     // Validation email
     "email_captain_subject": "You are the captain!",
-    "email_captain_title": "YARRR, captain!"
+    "email_captain_title": "YARRR, captain!",
+    "email_captain_first_p": "Your experience in the battlefield has granted you the captaincy. Lead your fellow brisboxers to an efficient and satisfying move!",
+    "email_captain_second_p": "As a captain, you must manage the team and let the customer know when you get to the destination. You must also confirm the total time worked for us to charge the customer the right amount.",
+    "email_captain_third_p": "You can see a summary of the order <a href='%s'>here</a>.",
+    "email_captain_fourth_p": "To learn more about being a captain, visit <a href='%s'>this link</a>."
 }

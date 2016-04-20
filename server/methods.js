@@ -139,7 +139,7 @@ Meteor.methods({
         var updatedOrder = OrderService.joinOrder(order, principal);
         if (!OrderService.needsMoreBrisboxers(updatedOrder)) {
             var captain = OrderService.selectCaptain(updatedOrder);
-            MailService.notifyCaptain(captain);
+            MailService.notifyCaptain(updatedOrder, captain);
         }
     },
 
@@ -155,7 +155,7 @@ Meteor.methods({
             var text = "Hola " + pedido.name + " su pedido ha sido registrado en el sistema.\nPulse en el siguiente enlace para acceder al estado actual de su pedido:\n" + urlDashboardOrder + " \n\nSi desea cancelar el pedido sólo tiene que hacer click en el siguiente enlace:\n" + urlDeleteOrder + "\n\n Un saludo del equipo de Brisbox.";
         }
         if (currentLocale == "en") {
-            var subject = "[BRISBOX] Your or der has been registered!";
+            var subject = "[BRISBOX] Your order has been registered!";
             var text = "Hello " + pedido.name + " your order has been registered on the system.\nClick on the next link to see the actual status of your order:\n" + urlDashboardOrder + " \n\nIf you want to cancel your order, you just have to click on the next link:\n" + urlDeleteOrder + "\n\n Greetings for the Brisbox Team.";
         }
         Meteor.call('sendEmailToUser', pedido.email, subject, text);
