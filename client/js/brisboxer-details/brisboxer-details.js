@@ -20,21 +20,45 @@ Template.brisboxerDetails.onRendered(function(){
 
 			if(assessments.length > 0){
 					var $el = $("#assessment-avg"),
+					$circle =$("#circle-avg"),
+					$bar = $(".bar"),
+					$fill = $(".fill"),
 			        value = getAssessmentAvg(assessments);
-			    $({percentage: 0}).stop(true).animate({percentage: value}, {
-			        duration : 4000,
-			        easing: "easeOutExpo",
-			        step: function () {
-			            // percentage with 1 decimal;
-			            var percentageVal = Math.round(this.percentage * 10) / 10;
-			            
-			            $el.text(percentageVal);
-			        }
-			    }).promise().done(function () {
-			        // hard set the value after animation is done to be
-			        // sure the value is correct
-			        $el.text(value);
-			    });
+
+			        $bar.css("border-color", "red");
+			        $fill.css("border-color", "red");
+			
+					$({percentage: 0}).stop(true).animate({percentage: value}, {
+				        duration : 4000,
+				        easing: "easeOutExpo",
+				        step: function () {
+				            // percentage with 1 decimal;
+				            var percentageVal = Math.round(this.percentage * 10) / 10;
+				            $circle.removeClass();
+				        	$circle.addClass("c100" + " big" + " p"+(percentageVal*10))
+				            $el.text(percentageVal);
+				            if(percentageVal < 3){
+				           		$bar.css("border-color", "red");
+				        		$fill.css("border-color", "red");
+				        		$(".c100:hover > span").css("color", "red");
+				        		$(".c100 > span").css("color", "red");
+				            }else if(percentageVal >=3 && percentageVal < 6){
+				            	$bar.css("border-color", "yellow");
+				        		$fill.css("border-color", "yellow");
+				        		$(".c100:hover > span").css("color", "yellow");
+				        		$(".c100 > span").css("color", "yellow");
+				            }else{
+				            	$bar.css("border-color", "#64dd17");
+				        		$fill.css("border-color", "#64dd17");
+				        		$(".c100:hover > span").css("color", "#64dd17");
+				        		$(".c100 > span").css("color", "#64dd17");
+				            }
+			        	}
+			   		}).promise().done(function () {
+				        // hard set the value after animation is done to be
+				        // sure the value is correct
+				        $el.text(value);
+			   	 	});
 			}else{
 				var $el = $("#assessment-avg");
 				$el.text("-");
