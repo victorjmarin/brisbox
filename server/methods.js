@@ -137,20 +137,6 @@ Meteor.methods({
     },
 
     'joinOrder': function (order) {
-        var user = Meteor.user();
-        if (Roles.userIsInRole(user._id, ['brisboxer']) && user.accepted) {
-            if (order.numberBrisboxers > order.brisboxers.length) {
-                Orders.update({_id: order._id}, {
-                    $push: {
-                        brisboxers: {
-                            _id: user._id,
-                            username: user.username,
-                            assessed: false
-                        }
-                    }
-                });
-            }
-        }
         var principal = UserService.principal();
         var updatedOrder = OrderService.joinOrder(order, principal);
         if (!OrderService.needsMoreBrisboxers(updatedOrder)) {
