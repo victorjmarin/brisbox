@@ -140,8 +140,22 @@ Meteor.methods({
         var user = Meteor.user();
         if (Roles.userIsInRole(user._id, ['brisboxer']) && user.accepted) {
             if (order.numberBrisboxers > order.brisboxers.length) {
-                Orders.update({_id: order._id}, {$push: {brisboxers: {_id: user._id, username: user.username, assessed: false}}});
+                Orders.update({_id: order._id}, {
+                    $push: {
+                        brisboxers: {
+                            _id: user._id,
+                            username: user.username,
+                            assessed: false
+                        }
+                    }
+                });
             }
+        }
+        var principal = UserService.principal();
+        var updatedOrder = OrderService.joinOrder(order, principal);
+        if (!OrderService.needsMoreBrisboxers(updatedOrder)) {
+            var captain = OrderService.selectCaptain(updatedOrder);
+            MailService.notifyCaptain(updatedOrder, captain);
         }
     },
 
@@ -216,9 +230,9 @@ Meteor.methods({
     'assessBrisboxer': function(orderId, brisboxerId, comments, rating){
         var order = Orders.findOne({_id: orderId, "brisboxers._id": brisboxerId});
         var correct = false;
-        for(b of order.brisboxers){
-            if(b._id == brisboxerId){
-                if(b.assessed){
+        for(var b in order.brisboxers){
+            if(order.brisboxers[b]._id == brisboxerId){
+                if(order.brisboxers[b].assessed){
                     break;
                 }else{
                     correct = true;
