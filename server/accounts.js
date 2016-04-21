@@ -2,35 +2,17 @@
  * Created by blezerd on 14/03/16.
  */
 Accounts.config({sendVerificationEmail: true, forbidClientAccountCreation: false, loginExpirationInDays: 10});
-Accounts.emailTemplates.siteName = "BRISBOX";
+Accounts.emailTemplates.siteName = "Brisbox";
 Accounts.emailTemplates.from = "Brisbox <hello@brisbox.com>";
 Accounts.emailTemplates.verifyEmail.subject = function (user) {
-    var currentLocale = TAPi18next.lng();
-    var respuesta;
-    if (currentLocale == "en")
-        respuesta = "Just one step away! ";
-    if (currentLocale == "es")
-        respuesta = "¡Sólo un paso más! ";
-    return respuesta;
+    var currentLang = ServerSession.get("currentLang");
+    return TAPi18n.__("email_validation_subject", null, currentLang);
 };
-Accounts.emailTemplates.verifyEmail.text = function (user, url) {
+Accounts.emailTemplates.verifyEmail.html = function (user, url) {
     var url = url.replace('#/', '');
-    var currentLocale = TAPi18next.lng();
-    var respuesta;
-    if (currentLocale == "en")
-        respuesta = "Hi " + user.profile.name + "!\n\n" +
-            "Thank you for your interest in helping make moves a little less stressing :)\n\n" +
-            "Click the link below to verify your email address " + url +"." +
-            "\n\nOnce you've verified it, we will get in touch with you in order to activate your account. From that moment on, you will be able to see the moves available and start working on those which are convenient for you.\n\n" +
-            "Sincerely,\n" +
-            "Brisbox Team";
-    if (currentLocale == "es")
-        respuesta = "¡Hola " + user.profile.name + "!\n\n" +
-            "Gracias por tu interés en ayudar a hacer las mudanzas algo más llevaderas :)\n\n" +
-            "Haz click en el siguiente enlace para validar tu email " + url +"." +
-            "\n\nUna vez validado, nos pondremos en contacto contigo y procederemos a activar tu cuenta" +
-            " para que puedas ver las mudanzas disponibles y trabajar en las que te convenga.\n\n" +
-            "Un saludo,\n" +
-            "El equipo de Brisbox";
-    return respuesta;
+    var currentLang = ServerSession.get("currentLang");
+    Template.registerHelper('_', TAPi18n.__.bind(TAPi18n));
+    TAPi18next.setLng(currentLang);
+    SSR.compileTemplate('verificationEmail', Assets.getText('verification-email.html'));
+    return SSR.render("verificationEmail", {user: user, url: url, lng: currentLang});
 };

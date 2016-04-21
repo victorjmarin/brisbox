@@ -4,33 +4,42 @@ Template.brisboxerDetails.helpers({
     },
     exists: function(){
     	return this._id != undefined;
+    },
+    verified: function(){
+        return this.emails[0].verified;
     }
 });
 
 Template.brisboxerDetails.onRendered(function(){
-	var assessments = this.data.assessments;
+	var self = this;
 
-	if(assessments.length > 0){
-			var $el = $("#assessment-avg"),
-	        value = getAssessmentAvg(assessments);
-	    $({percentage: 0}).stop(true).animate({percentage: value}, {
-	        duration : 4000,
-	        easing: "easeOutExpo",
-	        step: function () {
-	            // percentage with 1 decimal;
-	            var percentageVal = Math.round(this.percentage * 10) / 10;
-	            
-	            $el.text(percentageVal);
-	        }
-	    }).promise().done(function () {
-	        // hard set the value after animation is done to be
-	        // sure the value is correct
-	        $el.text(value);
-	    });
-	}else{
-		var $el = $("#assessment-avg");
-		$el.text("-");
-	}
+    this.autorun(function(a) {
+        var data = Template.currentData(self.view);
+        if(!data) return;
+		var assessments = data.assessments;
+
+			if(assessments.length > 0){
+					var $el = $("#assessment-avg"),
+			        value = getAssessmentAvg(assessments);
+			    $({percentage: 0}).stop(true).animate({percentage: value}, {
+			        duration : 4000,
+			        easing: "easeOutExpo",
+			        step: function () {
+			            // percentage with 1 decimal;
+			            var percentageVal = Math.round(this.percentage * 10) / 10;
+			            
+			            $el.text(percentageVal);
+			        }
+			    }).promise().done(function () {
+			        // hard set the value after animation is done to be
+			        // sure the value is correct
+			        $el.text(value);
+			    });
+			}else{
+				var $el = $("#assessment-avg");
+				$el.text("-");
+			}
+    });
 	
 });
 
