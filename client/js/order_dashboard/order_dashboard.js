@@ -12,7 +12,3 @@ Template.registerHelper("prettifyDate", function(date) {
 Template.registerHelper("calculateCost", function(numBrisboxers, hours) {
     return numBrisboxers * hours * 20 + " €";
 });
-
-function cost() {
-
-}

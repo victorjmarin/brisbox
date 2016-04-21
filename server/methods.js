@@ -227,20 +227,20 @@ Meteor.methods({
         var decodedString = Base64.decode(codificado);
         return decodedString;
     },
-    'assessBrisboxer': function(orderId, brisboxerId, comments, rating){
+    'assessBrisboxer': function (orderId, brisboxerId, comments, rating) {
         var order = Orders.findOne({_id: orderId, "brisboxers._id": brisboxerId});
         var correct = false;
-        for(var b in order.brisboxers){
-            if(order.brisboxers[b]._id == brisboxerId){
-                if(order.brisboxers[b].assessed){
+        for (var b in order.brisboxers) {
+            if (order.brisboxers[b]._id == brisboxerId) {
+                if (order.brisboxers[b].assessed) {
                     break;
-                }else{
+                } else {
                     correct = true;
                     break;
                 }
             }
         }
-        if(correct){
+        if (correct) {
             console.log(orderId);
             console.log(brisboxerId);
             console.log(comments);
@@ -249,8 +249,41 @@ Meteor.methods({
             Orders.update({_id: orderId, "brisboxers._id": brisboxerId}, {$set: {"brisboxers.$.assessed": true}});
             console.log("Updating user");
             console.log(Meteor.users.find().fetch()[0]);
-            Meteor.users.update({_id: brisboxerId}, 
+            Meteor.users.update({_id: brisboxerId},
                 {$push: {assessments: {comments: comments, rating: rating}}});
+        }
+    },
+    'updateLastLeftOfBrisboxer': function (brisboxer_id) {
+        if (Meteor.userId() === brisboxer_id) {
+            var id = {'_id': brisboxer_id};
+            var update = {
+                '$set': {'profile.lastLeft': new Date()}
+            };
+
+            Meteor.users.update(brisboxer_id, update);
+        }
+    },
+    'updateBrisboxersOfOrder': function (order_id, id) {
+        if (id === Meteor.userId()) {
+            var order = Orders.findOne({_id: order_id});
+            var brisboxers = order.brisboxers;
+            var index = null;
+            for (i = 0; i < brisboxers.length; i++) {
+                var entry = brisboxers[i];
+                if (Meteor.userId() === id && entry._id === id) {
+                    index = brisboxers.indexOf(entry);
+                    break;
+                }
+            }
+            if (index > -1) {
+                brisboxers.splice(index, 1);
+            }
+            return Orders.update(order_id, {
+                $set: {
+                    brisboxers: brisboxers
+                }
+            });
+
         }
     }
 
