@@ -2,7 +2,7 @@ Meteor.startup(function () {
     // code to run on server at startup
     var smtp = {
         username: Meteor.settings.mail.user,
-        password: Meteor.settings.password,
+        password: Meteor.settings.mail.password,
         server: 'smtp.gmail.com',
         port: 587
     };
