@@ -251,6 +251,7 @@
   "verified": "Verified",
   "accepted": "Accepted",
   "valoration": "Valoration",
+  "score": "Score",
   "order_deleted": "Order canceled",
   "order_deleted_success": "Your order has been deleted. Thanks for your trust.",
   "order_deleted_failed": "Cancel order failed",
