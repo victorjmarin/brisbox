@@ -62,7 +62,7 @@ Template.brisboxerDetails.onRendered(function(){
 			   	 	});
 			}else{
 				var $el = $("#assessment-avg");
-				$el.text("-");
+				$el.text("N/A");
 			}
     });
 	
