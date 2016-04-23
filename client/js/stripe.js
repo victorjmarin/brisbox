@@ -42,7 +42,6 @@ Template.stripe_form.events({
         var currentLocale = TAPi18next.lng();
         var codePromotion = document.getElementById("promotion").value;
         var codePromotionResult = Promotions.findOne({code: codePromotion});
-        console.log(codePromotionResult);
         if(codePromotionResult == null) {
             if(codePromotion!=""){
                 if (currentLocale == "es") {
