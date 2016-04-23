@@ -1,18 +1,29 @@
 MailService = {
-    notifyCaptain: function (order, captain) {
-        var currentLang = ServerSession.get("currentLang")
+    send: function (subjectKey, htmlTemplate, params, to) {
+        var templateId = "templateId";
+        currentLang = ServerSession.get("currentLang");
         TAPi18next.setLng(currentLang)
         Template.registerHelper('_', TAPi18n.__.bind(TAPi18n))
-        SSR.compileTemplate('captainEmail', Assets.getText('captain-email.html'));
-        var dashboardUrl = process.env.ROOT_URL + "order_dashboard/" + Base64.encode(order._id);
-        var faqUrl = process.env.ROOT_URL + "faq#captain";
-        var subject = TAPi18n.__("email_captain_subject", null, currentLang);
-        var body = SSR.render("captainEmail", {dashboardUrl: dashboardUrl, faqUrl: faqUrl, lng: currentLang});
+        SSR.compileTemplate(templateId, Assets.getText(htmlTemplate + '.html'));
+        var subject = TAPi18n.__(subjectKey, null, currentLang);
+        params.lng = currentLang;
+        var body = SSR.render(templateId, params);
         Email.send({
             from: "Brisbox <hello@brisbox.com>",
             subject: subject,
             html: body,
-            to: captain.emails[0].address
+            to: to
         });
+    },
+    notifyCaptain: function (order, captain) {
+        var dashboardUrl = Helpers.Url.forPath("order_dashboard/" + Base64.encode(order._id));
+        var faqUrl = Helpers.Url.forPath("faq#captain");
+        var params = {
+            dashboardUrl: dashboardUrl,
+            faqUrl: faqUrl
+        };
+        var captainAddress = captain.emails[0].address;
+        this.send("email_captain_subject", "captain-email", params, captainAddress);
     }
-};
+}
+;
