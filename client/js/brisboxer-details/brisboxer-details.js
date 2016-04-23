@@ -48,10 +48,11 @@ Template.brisboxerDetails.onRendered(function(){
 				        		$(".c100:hover > span").css("color", "yellow");
 				        		$(".c100 > span").css("color", "yellow");
 				            }else{
-				            	$bar.css("border-color", "#55ba12");
-				        		$fill.css("border-color", "#55ba12");
-				        		$(".c100:hover > span").css("color", "#55ba12");
-				        		$(".c100 > span").css("color", "#55ba12");
+				            	var green = "#558b2f"
+				            	$bar.css("border-color", green);
+				        		$fill.css("border-color", green);
+				        		$(".c100:hover > span").css("color", green);
+				        		$(".c100 > span").css("color", green);
 				            }
 			        	}
 			   		}).promise().done(function () {
