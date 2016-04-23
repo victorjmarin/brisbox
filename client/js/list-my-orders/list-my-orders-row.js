@@ -9,6 +9,6 @@ Template.listMyOrdersRow.helpers({
 
 Template.listMyOrdersRow.events({
     'click #dashboard': function () {
-        location.href="order_dashboard/"+Base64.encode(this._id);
+        Router.go('order_dashboard', {_id: Base64.encode(this._id)});
     }
 });
