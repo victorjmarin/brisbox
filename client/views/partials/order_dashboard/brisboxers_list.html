@@ -2,12 +2,17 @@
     {{#each brisboxers}}
         <div class="brisboxer-info center-align">
             <div class="image-div">
-                <img src="/ab.png" />
+                <img src="/placeholder.png" />
             </div>
             <div class="name-and-vote-div">
                 <span class="flow-text"> <b>{{_ "order_dashboard_name"}}:</b> {{username}}</span>
-                <span class="order_dashboard_vote green-text">10</span>
+                <span class="order_dashboard_vote orange-text">10</span>
             </div>
+            {{#if isThisBrisboxer _id}}
+                <a id="leave-order" class="btn-floating btn-small red clear-icon" data-id='{{_id}}'>
+                    <i class="material-icons">clear</i>
+                </a>
+            {{/if}}
         </div>
     {{/each}}
 </template>

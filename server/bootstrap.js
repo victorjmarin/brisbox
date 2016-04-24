@@ -83,7 +83,7 @@ function loadBrisboxers() {
                 }
             ],
             "emails.0.verified": false,
-            accepted: true
+            accepted: false
         }
     });
 
@@ -100,6 +100,16 @@ function loadBrisboxers() {
     Roles.addUsersToRoles(id_brisboxer3, ['brisboxer']);
     Meteor.users.update(id_brisboxer3, {
         $set: {
+            assessments: [
+                {
+                    comments: "Awesome",
+                    rating: 10
+                },
+                {
+                    comments: "Perfect!",
+                    rating: 9
+                }
+            ],
             "emails.0.verified": true,
             accepted: true
         }

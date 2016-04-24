@@ -42,3 +42,4 @@ random
 cfs:standard-packages
 cfs:gridfs
 fraviemor:autoform-file
+meteorhacks:subs-manager

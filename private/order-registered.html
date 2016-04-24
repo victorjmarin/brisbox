@@ -1,4 +1,4 @@
-<template name="verificationEmail">
+<template name="captainEmail">
     <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -104,17 +104,17 @@
 
                             <div class="title"
                                  style="font-family:Helvetica, Arial, sans-serif;font-size:18px;font-weight:600;color:#374550">
-                                {{ _ "email_validation_title" user.profile.name }}
+                                {{ _ "email_order_registered_title" name }}
                             </div>
                             <br>
 
                             <div class="body-text"
                                  style="font-family:Helvetica, Arial, sans-serif;font-size:14px;line-height:20px;text-align:left;color:#333333">
-                                {{ _ "email_validation_first_p" lng }}
+                                {{ _ "email_order_registered_first_p" lng }}
                                 <br><br>
-                                {{{ _ "email_validation_second_p" url }}}
+                                {{{ _ "email_order_registered_second_p" dashboardUrl }}}
                                 <br><br>
-                                {{ _ "email_validation_third_p" lng }}
+                                {{{ _ "email_order_registered_third_p" cancelOrderUrl }}}<b style="font-size: 110%;">{{cancelCode}}</b>
                                 <br><br>
 
                                 {{{ _ "email_signature" lng }}}
