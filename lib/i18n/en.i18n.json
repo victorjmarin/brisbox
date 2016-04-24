@@ -265,6 +265,8 @@
   "order_not_found_body3": " \nThanks for use our services.",
   "send_mail_to_Brisbox": "Send an Email",
   "return_to_main_page": "Return to main page.",
+  "acces_denied":"Access Denied",
+  "access_denied_body":"We are sorry, you don't have enough access to this site",
   "schemas": {
     "inscription": {
       "username": {

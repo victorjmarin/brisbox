@@ -261,6 +261,8 @@
   "order_not_found_body3": " Muchas gracias por usar nuestros servicios.",
   "send_mail_to_Brisbox": "Enviar un email",
   "return_to_main_page": "Ir a la página principal",
+  "acces_denied":"Acceso denegado",
+  "access_denied_body":"Lo sentimos, no dispone de suficientes permisos como para acceder a esta página.",
   "schemas": {
     "inscription": {
       "username": {
