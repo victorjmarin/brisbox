@@ -375,11 +375,17 @@
   "email_validation_first_p": "Gracias por tu interés en ayudar a hacer las mudanzas algo más llevaderas :)",
   "email_validation_second_p": "Por favor, haz click en <a href='%s'>este enlace</a> para verificar tu correo.",
   "email_validation_third_p": "Una vez validado, nos pondremos en contacto contigo y procederemos a activar tu cuenta para que puedas ver las mudanzas disponibles y trabajar en las que te convenga.",
-  // Validation email
+  // Captain email
   "email_captain_subject": "¡Eres el capitán!",
   "email_captain_title": "¡YARRR, capitán!",
   "email_captain_first_p": "Tu experiencia en el campo de batalla te ha galardonado la capitanía. ¡Conduce a tus compañeros brisboxers hacia una mudanza eficiente y satisfactoria!",
   "email_captain_second_p": "Como capitán, deberás organizar al equipo y contactar con el cliente una vez que lleguéis al lugar de trabajo. También deberás confirmar el tiempo total trabajado con él para que se efectúe el cobro.",
   "email_captain_third_p": "Puedes ver el resumen del pedido <a href='%s'>aquí</a>.",
-  "email_captain_fourth_p": "Para más información acerca de ser capitán, visita <a href='%s'>este enlace</a>."
+  "email_captain_fourth_p": "Para más información acerca de ser capitán, visita <a href='%s'>este enlace</a>.",
+  // Order registered
+  "email_order_registered_subject": "Su pedido ha sido registrado",
+  "email_order_registered_title": "Gracias, %s",
+  "email_order_registered_first_p": "Tu pedido ha sido registrado en el sistema. Tan pronto como el número de brisboxers solicitado haya sido cubierto te lo notificaremos.",
+  "email_order_registered_second_p": "Para acceder al panel de control de tu pedido y llevar un seguimiento de él, haz click <a href='%s'>aquí</a>.",
+  "email_order_registered_third_p": "Puedes cancelar tu pedido con hasta 24h. de antelación desde <a href='%s'>este enlace</a> introduciendo el siguiente código: "
 }
