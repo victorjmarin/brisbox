@@ -18,7 +18,7 @@ Meteor.publish('brisboxers', function () {
 Meteor.publish('ordersAvailable', function () {
     var user_id = this.userId;
     if (!user_id) {
-        user_id = -1;
+        throw new Meteor.Error("forbidden");
     }
     //La sentencia $where ejecuta Javascript. Bajo rendimiento con muchos registros.
     //La unica forma de solucionar el rendimiento es añadir dato derivado persistido que indique que el order está ya asignado completamente.
@@ -31,7 +31,7 @@ Meteor.publish('ordersAvailable', function () {
 Meteor.publish('myOrders', function () {
     var user_id = this.userId;
     if (!user_id) {
-        user_id = -1;
+        throw new Meteor.Error("forbidden");
     }
     return Orders.find({"brisboxers._id": user_id});
 });
