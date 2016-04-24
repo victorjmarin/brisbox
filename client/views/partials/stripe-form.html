@@ -29,22 +29,30 @@
                                         <label id="expYear-stripe" for="exp-year">{{_ "stripe_expiration_year"}}</label>
                                     </div>
                                 </div>
+                                {{#if isCreation}}
                                 <div id="info-stripe" class="input-field col s12 m12">
                                     <input class="validate form-control" type="text" id="promotion" {{disabled}}/>
                                     <label id="promotion-stripe" for="promotion">{{_ "stripe_promotion"}}</label>
                                 </div>
+                                {{/if}}
                                 <div id="info-stripe" class="input-field col s12 m12" style="display:none">
                                     <input  class="form-control" type="text" readonly="true" data-stripe="amount" id="amount" {{disabled}}/>
                                     <label class="active" id="amount-stripe" for="amount">{{_ "stripe_amount"}}</label>
                                 </div>
                                 <div id="info-stripe" class="input-field col s12 center-align">
-                                    <button name="submit" id="stripe-submit" type="submit" class="btn waves-effect waves-light orange darken-3 white-text" {{disabled}}>{{_ "stripe_submit"}}
+                                    <button name="submit" id="stripe-submit" type="submit" class="btn waves-effect waves-light orange darken-3 white-text" {{disabled}}>
+                                        {{#if isCreation}}
+                                            {{_ "stripe_submit"}}
+                                        {{else}}
+                                            {{_ "payment_confirmation_stripe_submit"}}
+                                        {{/if}}
                                     </button>
                                 </div>
                         </div>
                     </div>
                 </form>
             </div>
+            {{#if isCreation}}
             <ul id="info-pay" class="collapsible" >
                 <li>
                     <div class="collapsible-header"><i class="material-icons">comment</i>{{_ "info_book"}}</div>
@@ -59,6 +67,7 @@
                     <div class="collapsible-body"><p>{{_ "info_promotion"}}</p></div>
                 </li>
             </ul>
+            {{/if}}
         </div>
     </div>
 </template>

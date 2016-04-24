@@ -1,0 +1,149 @@
+@-webkit-keyframes anim-open {
+    0% { opacity: 0; -webkit-transform: scale3d(1.1, 1.1, 1.1); z-index: 2; }
+    100% { opacity: 1; -webkit-transform: scale3d(1, 1, 1); z-index: 2; }
+}
+
+@-moz-keyframes anim-open {
+    0% { opacity: 0; -moz-transform: scale3d(1.1, 1.1, 1.1); z-index: 2; }
+    100% { opacity: 1; -moz-transform: scale3d(1, 1, 1); z-index: 2; }
+}
+@keyframes anim-open {
+    0% { opacity: 0; -webkit-transform: scale3d(1.1, 1.1, 1.1); transform: scale3d(1.1, 1.1, 1.1); -moz-transform: scale3d(1.1, 1.1, 1.1); z-index: 2;}
+    100% { opacity: 1; -webkit-transform: scale3d(1, 1, 1); transform: scale3d(1, 1, 1); -moz-transform: scale3d(1, 1, 1);z-index: 2; }
+}
+
+@-webkit-keyframes anim-close {
+    0% { opacity: 1; }
+    100% { opacity: 0; -webkit-transform: scale3d(0.9, 0.9, 1); }
+}
+@-moz-keyframes anim-close {
+    0% { opacity: 1; }
+    100% { opacity: 0; -moz-transform: scale3d(0.9, 0.9, 1); }
+}
+@keyframes anim-close {
+    0% { opacity: 1; }
+    100% { opacity: 0; -webkit-transform: scale3d(0.9, 0.9, 1); transform: scale3d(0.9, 0.9, 1); -moz-transform: scale3d(0.9, 0.9, 1); }
+}
+
+.validarl{
+    color: #ee6c00;
+}
+
+#payment-overlay{
+    background: url(lgnoverlyback.png) repeat,-webkit-linear-gradient(80deg, #612301, #000000);
+    background: url(lgnoverlyback.png) repeat,-o-linear-gradient(80deg, #612301, #000000);
+    background: url(lgnoverlyback.png) repeat,linear-gradient(170deg, #612301, #000000);
+    opacity: 0.9;
+    z-index: 998;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    will-change: opacity;
+    display: none;
+}
+
+#payment-main{
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+#payment-access{
+    display: none;
+    margin: 15% auto;
+    width: 50%;
+    z-index: 1050;
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+}
+.payment-open{
+    animation-name: anim-open;
+    animation-duration: 0.5s;
+}
+.payment-close{
+    animation-name: anim-close;
+    animation-duration: 0.3s;
+}
+
+#payment-content{
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+#payment-title{
+    margin-bottom: 0 !important;
+}
+
+#payment-title-header{
+    background: #ee6c00; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #ee6c00 0%, #dd6000 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #ee6c00 0%,#dd6000 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #ee6c00 0%,#dd6000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee6c00', endColorstr='#dd6000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+@media (max-width: 601px) {
+    #login-access{width: 85%;}
+}
+
+#loginform{
+    z-index: 50;
+}
+
+#payment-input-fields{
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #f9f9f9 57%, #ede8e8 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ffffff 0%,#f9f9f9 57%,#ede8e8 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ffffff 0%,#f9f9f9 57%,#ede8e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ede8e8',GradientType=0 ); /* IE6-9 */
+    margin-top: 0 !important;
+    -webkit-border-bottom-right-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding-top: 20px;
+    padding-bottom: 25px;
+}
+#payment-error{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+    animation-name: anim-open;
+    animation-duration: 0.4s;
+    -webkit-border-bottom-right-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+
+}
+
+.hidden {
+    display: none;
+}
+
+.payment-confirmation-stripe{
+    background-color: white;
+    padding-bottom: 10px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+}
