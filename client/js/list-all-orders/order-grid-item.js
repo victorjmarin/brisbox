@@ -1,8 +1,8 @@
 Template.orderGridItem.helpers({
-    left: function(){
-        return this.numberBrisboxers - this.brisboxers.length ;
+    left: function () {
+        return this.numberBrisboxers - this.brisboxers.length;
     },
-    dateFormat: function(){
+    dateFormat: function () {
         return this.date.toLocaleString();
     },
     estimatedEarnings: function () {
@@ -11,7 +11,7 @@ Template.orderGridItem.helpers({
 });
 
 Template.orderGridItem.events({
-    'click .join': function(event) {
+    'click .join': function (event) {
         Meteor.call("joinOrder", this);
     }
 });

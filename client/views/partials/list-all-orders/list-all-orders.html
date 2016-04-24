@@ -16,9 +16,7 @@
         </div>
 
         <div class="row isotope">
-            {{#each orders}}
-                {{> orderGridItem}}
-            {{/each}}
+            {{> reactiveBlockGrid cursor=orders template='orderGridItem' transitionDuration='0.5s' layoutMode='masonry' gutter=30 columnWidth=328}}
         </div>
 
     </div>

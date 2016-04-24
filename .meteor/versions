@@ -10,6 +10,7 @@ aldeed:simple-schema@1.5.3
 aldeed:template-extension@3.4.3
 allow-deny@1.0.3
 amplify@1.0.0
+arcjet:radioactive@1.0.2
 autoupdate@1.2.7
 auweb:server-session@0.0.11
 babel-compiler@6.6.1
@@ -59,6 +60,7 @@ iron:router@1.0.12
 iron:url@1.0.11
 isotope:isotope@2.1.0_1
 jeremy:geocomplete@1.6.5_12
+jorisroling:isotope@1.0.14
 jplack:bootstrap-timepicker@0.2.2
 jquery@1.11.7
 launch-screen@1.0.10
@@ -82,7 +84,9 @@ modules-runtime@0.6.2
 momentjs:moment@2.12.0
 mongo@1.1.6
 mongo-id@1.0.3
+mquandalle:jade@0.4.1
 mrgalaxy:stripe@2.2.2
+mrt:jquery-imagesloaded@0.0.2
 npm-bcrypt@0.7.8_2
 npm-mongo@1.4.42
 observe-sequence@1.0.10
@@ -100,6 +104,8 @@ routepolicy@1.0.9
 service-configuration@1.0.8
 session@1.1.4
 sha@1.0.6
+shcherbin:imagesloaded@3.1.8
+smeevil:reactive-block-grid@1.0.3
 spacebars@1.0.10
 spacebars-compiler@1.0.10
 srp@1.0.7

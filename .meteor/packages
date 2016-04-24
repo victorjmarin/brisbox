@@ -40,4 +40,6 @@ auweb:server-session
 u2622:persistent-session
 random
 meteorhacks:subs-manager
-isotope:isotope
+jorisroling:isotope
+arcjet:radioactive
+smeevil:reactive-block-grid
