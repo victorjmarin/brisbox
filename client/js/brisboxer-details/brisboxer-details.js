@@ -17,8 +17,7 @@ Template.brisboxerDetails.onRendered(function(){
         var data = Template.currentData(self.view);
         if(!data) return;
 		var assessments = data.assessments;
-
-			if(assessments.length > 0){
+			if(assessments != undefined && assessments.length > 0){
 					var $el = $("#assessment-avg"),
 					$circle =$("#circle-avg"),
 					$bar = $(".bar"),
