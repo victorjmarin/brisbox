@@ -383,7 +383,7 @@
   "email_captain_third_p": "Puedes ver el resumen del pedido <a href='%s'>aquí</a>.",
   "email_captain_fourth_p": "Para más información acerca de ser capitán, visita <a href='%s'>este enlace</a>.",
   // Order registered
-  "email_order_registered_subject": "Su pedido ha sido registrado",
+  "email_order_registered_subject": "Tu pedido ha sido registrado",
   "email_order_registered_title": "Gracias, %s",
   "email_order_registered_first_p": "Tu pedido ha sido registrado en el sistema. Tan pronto como el número de brisboxers solicitado haya sido cubierto te lo notificaremos.",
   "email_order_registered_second_p": "Para acceder al panel de control de tu pedido y llevar un seguimiento de él, haz click <a href='%s'>aquí</a>.",
