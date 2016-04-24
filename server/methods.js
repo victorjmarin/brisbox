@@ -38,7 +38,6 @@ Meteor.methods({
         });
     },
     'sendEmailToUser': function (correo, subject, text) {
-        console.log("*** sendEmailToUser ***");
         Email.send({
             from: 'hello@brisbox.com',
             subject: subject,
@@ -152,7 +151,6 @@ Meteor.methods({
         if (Orders.find({"_id": orderIdDecodificado}).count() == 1) {
             if (order._id == orderIdDecodificado) {
                 if ((parseInt(order.phone) * 71) + (parseInt(order.zip) * 31) == tokenInt) {
-                    console.log("*** TOKEN CORRECTO ***");
                     res = "TOCANCEL";
                 } else {
                     res = "NOTCANCELED";
@@ -204,14 +202,7 @@ Meteor.methods({
             }
         }
         if (correct) {
-            console.log(orderId);
-            console.log(brisboxerId);
-            console.log(comments);
-            console.log(rating);
-            console.log("Updating Order");
             Orders.update({_id: orderId, "brisboxers._id": brisboxerId}, {$set: {"brisboxers.$.assessed": true}});
-            console.log("Updating user");
-            console.log(Meteor.users.find().fetch()[0]);
             Meteor.users.update({_id: brisboxerId},
                 {$push: {assessments: {comments: comments, rating: rating}}});
         }

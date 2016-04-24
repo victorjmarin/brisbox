@@ -1,5 +1,4 @@
 Meteor.publish('brisboxers', function () {
-    console.log(this.user)
     if (!this.userId) {
         this.ready();
         return;
@@ -51,6 +50,6 @@ Meteor.publish('findCodePromotion', function () {
     return Promotions.find();
 });
 
-Meteor.publish('oneOrder', function(_id){
-	return Orders.find({_id: _id});
+Meteor.publish('oneOrder', function (_id) {
+    return Orders.find({_id: _id});
 });
