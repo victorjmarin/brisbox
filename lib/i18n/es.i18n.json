@@ -246,7 +246,7 @@
   "brisboxer_doesnt_founded": "Brisboxer no encontrado",
   "verified": "Verificado",
   "accepted": "Aceptado",
-  "valoration": "Valoración",
+  "score": "Puntuación",
   "order_deleted": "Pedido cancelado",
   "order_deleted_success": "Su pedido ha sido eliminado. Gracias por confiar en nosotros.",
   "order_deleted_failed": "Cancelación de pedido fallida",
