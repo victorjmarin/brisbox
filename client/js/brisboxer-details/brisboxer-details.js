@@ -63,6 +63,8 @@ Template.brisboxerDetails.onRendered(function(){
 			}else{
 				var $el = $("#assessment-avg");
 				$el.text("N/A");
+				$(".c100:hover > span").css("color", "orange");
+				$(".c100 > span").css("color", "white");
 			}
     });
 	
