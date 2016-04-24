@@ -39,3 +39,6 @@ meteorhacks:ssr
 auweb:server-session
 u2622:persistent-session
 random
+cfs:standard-packages
+cfs:gridfs
+fraviemor:autoform-file

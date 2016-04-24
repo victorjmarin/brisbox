@@ -31,8 +31,10 @@
                             {{_ "image-profile-text"}}
                         </div>
                         <div class="image-input">
-                            <center><img src="/placeholder.png" height="auto" width="90%" style="max-width: 310px">
-                            </center>
+                            <!--<center><img src="/placeholder.png" height="auto" width="90%" style="max-width: 310px">
+                            </center>-->
+                           {{> afQuickField name="image" class="validate" collection="images"}}
+
                         </div>
                     </div>
                 </fieldset>
@@ -123,4 +125,8 @@
     </div>
 </template>
 
+<template name="imagePreview">
+    <a href="{{file.url}}">{{file.original.name}}</a>
+    <img alt=”{{file.original.name}}” src=”{{file.url}}” height="auto" width="90%" style="max-width: 310px">
+</template>
 
