@@ -390,5 +390,6 @@
   "payment_confirmation_confirm": "Confirmar",
   "payment_confirmation_paied": "Pedido pagado correctamente",
   "payment_confirmation_button": "Pago",
-  "payment_confirmation_stripe_submit": "Confirmar el pago"
+  "payment_confirmation_stripe_submit": "Confirmar el pago",
+  "payment_confirmation_cancel": "Cancelar"
 }

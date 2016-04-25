@@ -13,12 +13,12 @@
                         <div class="input-field col s12 z-depth-3" id="payment-input-fields">
                             <div class="input-field col s12">
                                 <i class="material-icons prefix orange-text">account_circle</i>
-                                <input id="real_num_brisboxers" type="number" class="form-control">
+                                <input id="real_num_brisboxers" type="number" class="form-control" min="0" />
                                 <label for="real_num_brisboxers">{{_ "payment_confirmation_real_num_brisboxers"}}</label>
                             </div>
                             <div class="input-field col s12">
                                 <i class="material-icons prefix orange-text">query_builder</i>
-                                <input id="real_num_hours" type="number" class="form-control">
+                                <input id="real_num_hours" type="number" class="form-control" min="0" />
                                 <label for="real_num_hours">{{_ "payment_confirmation_real_num_hours"}}</label>
                             </div>
                             <div class="input-field col s12">
@@ -28,6 +28,8 @@
                             </div>
                             <div class="input-field col s12 center-align">
                                 <button type="button" id="confirmation_button" class="waves-effect waves-light btn orange darken-3 z-depth-1 caret bold">{{_ "payment_confirmation_confirm"}}
+                                </button>
+                                <button type="button" id="cancel_button" class="waves-effect waves-light btn orange darken-3 z-depth-1 caret bold">{{_ "payment_confirmation_cancel"}}
                                 </button>
                             </div>
                         </div>

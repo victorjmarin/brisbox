@@ -395,5 +395,6 @@
   "payment_confirmation_confirm": "Confirm",
   "payment_confirmation_paied": "Order paied successfully",
   "payment_confirmation_button": "Payment",
-  "payment_confirmation_stripe_submit": "Confirm payment"
+  "payment_confirmation_stripe_submit": "Confirm payment",
+  "payment_confirmation_cancel": "Cancel"
 }

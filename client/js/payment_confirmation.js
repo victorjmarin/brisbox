@@ -35,8 +35,22 @@ Template.payment_confirmation.events({
             Session.set("enableStripeForm", true);
             Session.set("isCreation", false);
         }
+    },
+    'click #cancel_button':function(e){
+        closeModal();
+    },
+    'click #payment-overlay': function(e){
+        closeModal();
     }
 });
+
+function closeModal(){
+    $('#payment-form').removeClass("hidden");
+    Session.set("step1", false);
+    Session.set("enableStripeForm", false);
+    Session.set("isCreation", false);
+    Session.set('showPaymentConfirmationModal', false);
+}
 
 function updateCost(){
     var brisboxers = $('#real_num_brisboxers').val();
