@@ -7,7 +7,14 @@ Template.brisboxerDetails.helpers({
     },
     verified: function(){
         return this.emails[0].verified;
-    }
+    },
+	imageProfile: function() {
+		if (this.profile.image != null){
+			return "/cfs/files/images/".concat(this.profile.image);
+		} else {
+			return "/placeholder.png";
+		}
+	}
 });
 
 Template.brisboxerDetails.onRendered(function(){
