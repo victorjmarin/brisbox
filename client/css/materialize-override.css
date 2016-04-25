@@ -5,3 +5,20 @@
 .switch label input[type=checkbox]:checked + .lever {
     background-color: #c7a284;
 }
+
+input[type=range] + .thumb {
+    background-color: #bc7500;
+}
+
+input[type=range] + .thumb .value {
+    color: #bc7500;
+}
+input[type=range]::-webkit-slider-thumb {
+    background-color: #bc7500;
+}
+input[type=range]::-moz-range-thumb {
+    background: #bc7500;
+}
+input[type=range]::-ms-thumb {
+    background: #bc7500;
+}
