@@ -90,7 +90,7 @@ Template.stripe_form.events({
             var phone = sessionStorage.getItem("phone");
             var email = sessionStorage.getItem("email");
             Meteor.call("saveOrder", addressLoading, addressUnloading, portalLoading, portalUnloading, zip, loading, unloading, comments, numberBrisboxers, hours,
-                startMoment, new Date(day), name, surname, phone, email, function (error) {
+                startMoment, day, name, surname, phone, email, function (error) {
                     if (!error) {
                         Router.go('ThanksOrder');
                     }

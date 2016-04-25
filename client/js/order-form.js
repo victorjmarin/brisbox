@@ -1,3 +1,5 @@
+Meteor.subscribe("zipsAll");
+
 function getParameterByName(variable) {
     return Router.current().params.query[variable]
 }
@@ -33,11 +35,33 @@ function validate_day_address(loading, unloading, day) {
     }
 }
 
-Template.orderForm.onRendered(function () {
+function validate_zip(zipValue){
+    var zipResult = Zips.findOne({code: zipValue});
+    if (typeof zipResult == 'undefined') {
+        $('.errorZip').css('visibility', 'visible');
+        return false;
+    }else{
+        $('.errorZip').css('visibility', 'hidden');
+    }
+}
+
+Meteor.startup(function() {
+    GoogleMaps.load({
+        key: 'AIzaSyAfk4ikNH05OssyWavDvWImWFsf6oVXzzQ',
+        libraries: 'places'
+    });
+});
+
+Template.orderForm.onRendered(function (){
+    if(sessionStorage.getItem("first-access") == "false"){
+        location.reload();
+        sessionStorage.setItem("first-access", true);
+    }
     $('#divAddressUnLoading').css('display', 'none');
     $('#divAddressLoading').css('display', 'none');
     $('#divPortalLoading').css('display', 'none');
     $('#divPortalUnloading').css('display', 'none');
+    document.getElementById("label-zip").className = "active";
     $('.modal').closeModal();
     $('.lean-overlay').remove();
     var tomorrow = new Date();
@@ -80,13 +104,6 @@ Template.orderForm.onRendered(function () {
         autoclose: false,
         hour24:false
     });
-    var zip = getParameterByName("zip");
-    if (zip != null) {
-        Session.set("zip", zip);
-        document.getElementById("label-zip").className = "active";
-    } else {
-        document.getElementById("label-zip").className = "";
-    }
 });
 
 Template.orderForm.events({
@@ -134,10 +151,16 @@ Template.orderForm.events({
         var unloading = document.getElementById('unloading').checked;
         var dia = document.getElementById('day').value.split("/");
         var diaFormateado = new Date();
+        var zip = getParameterByName("zip");
+        var zipValue = document.getElementById('zip').value;
         diaFormateado.setDate(dia[0]);
         diaFormateado.setMonth(dia[1]);
         diaFormateado.setFullYear(dia[2]);
         var day = new Date(diaFormateado);
+        if(validate_zip(zipValue) == false){
+            return false;
+        }
+
         if (validate_day_address(loading, unloading, day) == false) {
             return false;
         }
@@ -149,11 +172,11 @@ Template.orderForm.events({
             zip: document.getElementById("zip").value,
             loading: document.getElementById("loading").value,
             unloading: document.getElementById("unloading").value,
-            comments: document.getElementById("comments1").value,
+            comments: document.getElementById("comments").value,
             numberBrisboxers: document.getElementById("numberBrisboxers").value,
             hours: document.getElementById("hours").value,
             startMoment: document.getElementById("startMoment").value,
-            day: document.getElementById("day").value,
+            day: day,
             name: document.getElementById("name").value,
             surname: document.getElementById("surname").value,
             phone: document.getElementById("phone").value,
@@ -176,40 +199,29 @@ Template.orderForm.events({
         sessionStorage.setItem("surname", orderForm.surname);
         sessionStorage.setItem("phone", orderForm.phone);
         sessionStorage.setItem("email", orderForm.email);
+        sessionStorage.setItem("day-order-checkout", document.getElementById("day").value);
         Router.go("order-checkout");
     }
-})
-;
-
-
-Template.orderForm.onRendered(function () {
-    GoogleMaps.load();
 });
 
 Template.orderForm.helpers({
+    disabled: function(){
+        return "disabled";
+    },
     exampleMapOptions: function () {
         // Make sure the maps API has loaded
         if (GoogleMaps.loaded()) {
-            // Map initialization options
-            return {
-                center: new google.maps.LatLng(37.389434, -5.984706),
-                zoom: 13
-            };
+            if($("#addressLoading").focusin()){
+                $("#addressUnloading").focusout();
+            }
+            $("#addressLoading").geocomplete({ map: "#exampleMap"});
+            $("#addressUnloading").geocomplete({ map: "#exampleMap"});
+            document.getElementById("label-addressLoading").className = "active";
+            document.getElementById("label-addressUnloading").className = "active";
         }
     },
     zip: function () {
-        var zip = Session.get("zip");
+        var zip = sessionStorage.getItem("zipTemporaly");
         return zip;
     }
-});
-
-Template.orderForm.onCreated(function () {
-    // We can use the `ready` callback to interact with the map API once the map is ready.
-    GoogleMaps.ready('exampleMap', function (map) {
-        // Add a marker to the map once it's ready
-        var marker = new google.maps.Marker({
-            position: map.options.center,
-            map: map.instance
-        });
-    });
 });

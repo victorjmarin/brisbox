@@ -1,6 +1,7 @@
 Meteor.subscribe("zipsAll");
 
 Template.home.onRendered(function () {
+    sessionStorage.setItem("first-access", false);
     $('.tooltipped').tooltip({delay: 50});
     $(document).ready(function(){
         $('.slider').slider({full_width: true});
@@ -23,6 +24,7 @@ Template.home.events({
             }
             return false;
         }
+        sessionStorage.setItem("zipTemporaly", zip);
         Router.go('order', null, {query: 'zip=' + zip});
     }
 });
