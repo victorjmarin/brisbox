@@ -91,6 +91,7 @@
     "order-checkout_stripe": "Datos bancarios",
     "order-errorAddress": "Seleccione como mínimo una dirección.",
     "order-errorDay": "El día no puede ser del pasado.",
+    "order-errorZip": "El código postal debe ser de Sevilla.",
     "why_promotion": "¿Teneis una promoción?",
     "info_promotion": "¡Sí!, nosotros tenemos una promoción para ti, si introduces el código correcto se te restarán los 5€ que te comentamos anteriormente. Presta atención, tan solo tienes una oportunidad de introducir correctamente el código.",
     "info_money": "Para realizar el pedido se le cobrará una cantidad igual a 5 €. Esta cantidad será descontada posteriormente del coste total del servicio.",
@@ -381,5 +382,7 @@
     "email_captain_first_p": "Tu experiencia en el campo de batalla te ha galardonado la capitanía. ¡Conduce a tus compañeros brisboxers hacia una mudanza eficiente y satisfactoria!",
     "email_captain_second_p": "Como capitán, deberás organizar al equipo y contactar con el cliente una vez que lleguéis al lugar de trabajo. También deberás confirmar el tiempo total trabajado con él para que se efectúe el cobro.",
     "email_captain_third_p": "Puedes ver el resumen del pedido <a href='%s'>aquí</a>.",
-    "email_captain_fourth_p": "Para más información acerca de ser capitán, visita <a href='%s'>este enlace</a>."
+    "email_captain_fourth_p": "Para más información acerca de ser capitán, visita <a href='%s'>este enlace</a>.",
+    "message-not_found": "Parece que no podemos encontrar la página que está buscando.",
+    "title-not_found": "Oops! Error 404"
 }

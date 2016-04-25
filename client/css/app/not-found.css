@@ -1,0 +1,17 @@
+#message-image{
+    padding: 0 15% 0 15%;
+}
+
+#not-found-container{
+    background-color: rgb(250, 249, 240);
+    max-width: 100% !important;
+}
+
+@media (max-width: 800px) {
+    #image-not-found{
+        display:none;
+    }
+    #not-found-container{
+        margin-right: 0px;
+    }
+}

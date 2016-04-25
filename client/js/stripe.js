@@ -149,7 +149,7 @@ Template.stripe_form.events({
                 Router.go('ThanksOrder');
             }
             Meteor.call("saveOrder", addressLoading, addressUnloading, portalLoading, portalUnloading, zip, loading, unloading, comments, numberBrisboxers, hours,
-                startMoment, new Date(day), name, surname, phone, email);
+                startMoment, day, name, surname, phone, email);
         }
     },
     'click #info-pay ':function(e){
