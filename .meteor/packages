@@ -41,5 +41,5 @@ u2622:persistent-session
 random
 cfs:standard-packages
 cfs:gridfs
-fraviemor:autoform-file
+brisbox:autoform-file
 meteorhacks:subs-manager

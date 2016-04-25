@@ -57,7 +57,3 @@ Meteor.publish('oneOrder', function(_id){
 Meteor.publish('images', function() {
     return Images.find();
 });
-
-Meteor.publish('oneOrder', function (_id) {
-    return Orders.find({_id: _id});
-});
