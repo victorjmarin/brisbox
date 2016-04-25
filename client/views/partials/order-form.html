@@ -33,7 +33,8 @@
                                     <input id="portalLoading" name="portalLoading" type="text" class="form-control">
                                     <label for="portalLoading">{{_ "order-form_portalLoading"}}</label>
                                 </div>
-                            </div>
+                        </div>
+                        <div>
                             <div>
                                 <div id="divAddressUnLoading" class="padding-solution addressUnloading input-field col s12 m8">
                                     <input id="addressUnloading" name="addressUnloading" type="text" class="form-control">
@@ -100,17 +101,18 @@
                                 <label id="label_email" for="email">{{_ "order-form_email"}}</label>
                             </div>
                         </div>
-                        <p class="errorDay">{{_ "order-errorDay"}}</p>
-                        <p class="errorAddress">{{_ "order-errorAddress"}}</p>
-                        <p class="errorZip">{{_ "order-errorZip"}}</p>
-                        <div class="input-field col s12 center-align">
-                            <button type="submit" class="btn btn-primary waves-button-input orange darken-3 caret">{{_ "order-submit"}}</button>
+                            <p class="errorDay">{{_ "order-errorDay"}}</p>
+                            <p class="errorAddress">{{_ "order-errorAddress"}}</p>
+                            <p class="errorZip">{{_ "order-errorZip"}}</p>
+                            <div class="input-field col s12 center-align">
+                                <button type="submit" class="btn btn-primary waves-button-input orange darken-3 caret">{{_ "order-submit"}}</button>
+                            </div>
                         </div>
                     </div>
                 </form>
             </div>
 
-                <div id="exampleMap" class="map-container z-depth-1  col s12 m6 hide-on-small-only">
+            <div id="exampleMap" class="map-container z-depth-1  col s12 m6 hide-on-small-only">
                 {{> googleMap name="exampleMap" options=exampleMapOptions}}
             </div>
         </div>

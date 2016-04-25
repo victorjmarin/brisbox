@@ -83,8 +83,7 @@ Template.orderForm.onRendered(function (){
             selectMonths: true, // Creates a dropdown to control month
             selectYears: 15 // Creates a dropdown of 15 years to control year
         });
-    }
-    if (currentLocale == 'en') {
+    } else if (currentLocale == 'en') {
         $('#day').pickadate({
             monthsFull: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
             monthsShort: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
@@ -212,13 +211,11 @@ Template.orderForm.helpers({
     exampleMapOptions: function () {
         // Make sure the maps API has loaded
         if (GoogleMaps.loaded()) {
-            if($("#addressLoading").focusin()){
-                $("#addressUnloading").focusout();
-            }
-            $("#addressLoading").geocomplete({ map: "#exampleMap"});
-            $("#addressUnloading").geocomplete({ map: "#exampleMap"});
-            document.getElementById("label-addressLoading").className = "active";
-            document.getElementById("label-addressUnloading").className = "active";
+            // Map initialization options
+            return {
+                center: new google.maps.LatLng(37.389434, -5.984706),
+                zoom: 13
+            };
         }
     },
     zip: function () {
@@ -227,3 +224,13 @@ Template.orderForm.helpers({
     }
 });
 
+Template.orderForm.onCreated(function () {
+    // We can use the `ready` callback to interact with the map API once the map is ready.
+    GoogleMaps.ready('exampleMap', function (map) {
+        // Add a marker to the map once it's ready
+        var marker = new google.maps.Marker({
+            position: map.options.center,
+            map: map.instance
+        });
+    });
+});

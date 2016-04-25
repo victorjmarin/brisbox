@@ -251,7 +251,7 @@
   "brisboxer_doesnt_founded": "Brisboxer doesn't founded",
   "verified": "Verified",
   "accepted": "Accepted",
-  "valoration": "Valoration",
+  "score": "Score",
   "order_deleted": "Order canceled",
   "order_deleted_success": "Your order has been deleted. Thanks for your trust.",
   "order_deleted_failed": "Cancel order failed",
@@ -266,6 +266,8 @@
   "order_not_found_body3": " \nThanks for use our services.",
   "send_mail_to_Brisbox": "Send an Email",
   "return_to_main_page": "Return to main page.",
+  "acces_denied":"Access Denied",
+  "access_denied_body":"We are sorry, you don't have enough access to this site",
   "schemas": {
     "inscription": {
       "username": {
@@ -371,23 +373,29 @@
           "exp": "SimpleSchema.RegEx.Id",
           "msg": "[label] must be a valid alphanumeric ID"
         }
-      },
-      "email_signature": "Sincerely,<br>Brisbox Team",
-      // Validation email
-      "email_validation_subject": "Just one step away!",
-      "email_validation_title": "Welcome aboard, %s!",
-      "email_validation_first_p": "Thank you for your interest in helping make moves a little less stressing :)",
-      "email_validation_second_p": "Please, click <a href='%s'>this link</a> to verify your email address.",
-      "email_validation_third_p": "Once you've verified it, we will get in touch with you in order to activate your account. From that moment on, you will be able to see the moves available and start working on those which are convenient for you.",
-      // Validation email
-      "email_captain_subject": "You are the captain!",
-      "email_captain_title": "YARRR, captain!",
-      "email_captain_first_p": "Your experience in the battlefield has granted you the captaincy. Lead your fellow brisboxers to an efficient and satisfying move!",
-      "email_captain_second_p": "As a captain, you must manage the team and let the customer know when you get to the destination. You must also confirm the total time worked for us to charge the customer the right amount.",
-      "email_captain_third_p": "You can see a summary of the order <a href='%s'>here</a>.",
-      "email_captain_fourth_p": "To learn more about being a captain, visit <a href='%s'>this link</a>."
+      }
     }
   },
   "message-not_found": "We can't seem to find the page you're looking for.",
   "title-not_found": "Oops! 404 Error"
+  "email_signature": "Sincerely,<br>Brisbox Team",
+  // Validation email
+  "email_validation_subject": "Just one step away!",
+  "email_validation_title": "Welcome aboard, %s!",
+  "email_validation_first_p": "Thank you for your interest in helping make moves a little less stressing :)",
+  "email_validation_second_p": "Please, click <a href='%s'>this link</a> to verify your email address.",
+  "email_validation_third_p": "Once you've verified it, we will get in touch with you in order to activate your account. From that moment on, you will be able to see the moves available and start working on those which are convenient for you.",
+  // Captain email
+  "email_captain_subject": "You are the captain!",
+  "email_captain_title": "YARRR, captain!",
+  "email_captain_first_p": "Your experience in the battlefield has granted you the captaincy. Lead your fellow brisboxers to an efficient and satisfying move!",
+  "email_captain_second_p": "As a captain, you must manage the team and let the customer know when you get to the destination. You must also confirm the total time worked for us to charge the customer the right amount.",
+  "email_captain_third_p": "You can see a summary of the order <a href='%s'>here</a>.",
+  "email_captain_fourth_p": "To learn more about being a captain, visit <a href='%s'>this link</a>.",
+  // Order registered
+  "email_order_registered_subject": "Your order has been registered",
+  "email_order_registered_title": "Thank you, %s",
+  "email_order_registered_first_p": "Your order has been sucessfully registered. We will notify you as soon as the requested number of brisboxers has been met.",
+  "email_order_registered_second_p": "To access the dashboard and track the status of your order, click <a href='%s'>here</a>.",
+  "email_order_registered_third_p": "You can cancel your order up to 24h. before it takes place by visiting <a href='%s'>this link</a> and using the following code: "
 }

@@ -100,6 +100,16 @@ function loadBrisboxers() {
     Roles.addUsersToRoles(id_brisboxer3, ['brisboxer']);
     Meteor.users.update(id_brisboxer3, {
         $set: {
+            assessments: [
+                {
+                    comments: "Awesome",
+                    rating: 10
+                },
+                {
+                    comments: "Perfect!",
+                    rating: 9
+                }
+            ],
             "emails.0.verified": true,
             accepted: true
         }
@@ -345,7 +355,6 @@ function loadOrders() {
         comments: 'comments1',
         typeMove: 'load',
         date: new Date('2016-07-03'),
-        cancelationCode: "cancelthat1",
         brisboxers: [
             {_id: brisboxer2._id, username: brisboxer2.username, assessed: false}
         ]
@@ -365,7 +374,6 @@ function loadOrders() {
         comments: 'comments2',
         typeMove: 'load',
         date: new Date('2016-06-20'),
-        cancelationCode: "cancelthat2",
         brisboxers: [
             {_id: brisboxer2._id, username: brisboxer2.username, assessed: false},
             {_id: brisboxer3._id, username: brisboxer3.username, assessed: false}
@@ -386,7 +394,6 @@ function loadOrders() {
         comments: 'comments3',
         typeMove: 'unload',
         date: new Date('2016-08-04'),
-        cancelationCode: "cancelthat3",
         brisboxers: [
             {_id: brisboxer1._id, username: brisboxer1.username, assessed: false}
         ]
@@ -406,7 +413,6 @@ function loadOrders() {
         comments: 'comments4',
         typeMove: 'unload',
         date: new Date('2016-07-01'),
-        cancelationCode: "cancelthat4",
         brisboxers: [
             {_id: brisboxer2._id, username: brisboxer2.username, assessed: false},
             {_id: brisboxer3._id, username: brisboxer3.username, assessed: false},
@@ -430,7 +436,6 @@ function loadOrders() {
         comments: 'commentsAlpha',
         typeMove: 'unload',
         date: new Date('2016-07-01'),
-        cancelationCode: "cancelthat5",
         brisboxers: []
     });
 
@@ -449,7 +454,6 @@ function loadOrders() {
         comments: 'commentsBeta',
         typeMove: 'unload',
         date: new Date('2016-07-01'),
-        cancelationCode: "cancelthat6",
         brisboxers: []
     });
 
@@ -468,7 +472,6 @@ function loadOrders() {
         comments: 'commentsGamma',
         typeMove: 'load',
         date: new Date('2016-07-01'),
-        cancelationCode: "cancelthat7",
         brisboxers: []
     });
 
@@ -487,7 +490,6 @@ function loadOrders() {
         comments: 'commentsTeta',
         typeMove: 'load',
         date: new Date('2016-07-01'),
-        cancelationCode: "cancelthat8",
         brisboxers: []
     });
 
@@ -506,7 +508,6 @@ function loadOrders() {
         comments: 'commentsEpsilon',
         typeMove: 'load',
         date: new Date('2016-07-01'),
-        cancelationCode: "cancelthat9",
         brisboxers: []
     });
 
@@ -524,7 +525,6 @@ function loadOrders() {
         comments: 'commentsCancelada',
         typeMove: 'load',
         date: new Date('2016-07-01'),
-        cancelationCode: "cancelthat10",
         brisboxers: []
     });
     Orders.insert({
@@ -541,7 +541,6 @@ function loadOrders() {
         comments: 'commentsCancelada',
         typeMove: 'unload',
         date: new Date('2016-07-01'),
-        cancelationCode: "cancelthat11",
         brisboxers: []
     });
 }
