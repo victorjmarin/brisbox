@@ -4,7 +4,6 @@ function getParameterByName(variable) {
 
 function validate_day_address(loading, unloading, day) {
     var today = new Date();
-    console.log(day);
     var validate_day = day.getTime() <= today.getTime();
     if (loading == true || unloading == true) {
         $('.errorAddress').css('visibility', 'hidden');
