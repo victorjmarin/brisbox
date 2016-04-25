@@ -377,7 +377,7 @@
     }
   },
   "message-not_found": "We can't seem to find the page you're looking for.",
-  "title-not_found": "Oops! 404 Error"
+  "title-not_found": "Oops! 404 Error",
   "email_signature": "Sincerely,<br>Brisbox Team",
   // Validation email
   "email_validation_subject": "Just one step away!",
