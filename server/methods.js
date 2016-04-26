@@ -240,6 +240,16 @@ Meteor.methods({
             });
 
         }
+    },
+    'updateBrisboxerDetails': function(name, surname, phone){
+        return Meteor.users.update(this._id, {
+            $set: {
+                "profile.name" : name,
+                "profile.surname" : surname,
+                "profile.phone" : phone,
+            }
+        });
+
     }
 
 })
