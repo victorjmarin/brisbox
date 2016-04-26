@@ -408,5 +408,5 @@
   "email_order_registered_title": "Thank you, %s",
   "email_order_registered_first_p": "Your order has been sucessfully registered. We will notify you as soon as the requested number of brisboxers has been met.",
   "email_order_registered_second_p": "To access the dashboard and track the status of your order, click <a href='%s'>here</a>.",
-  "email_order_registered_third_p": "You can cancel your order up to 24h. before it takes place by visiting <a href='%s'>this link</a> and using the following code: ",
+  "email_order_registered_third_p": "You can cancel your order up to 12h. before it takes place by visiting <a href='%s'>this link</a> and using the following code: "
 }
