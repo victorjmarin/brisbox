@@ -145,6 +145,9 @@
     .map-container{
         display:none;
     }
+    .loading, .unloading{
+        position: inherit !important;
+    }
 }
 
 .padding-solution{
