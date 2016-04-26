@@ -242,7 +242,8 @@ Meteor.methods({
         }
     },
     'updateBrisboxerDetails': function(name, surname, phone){
-        return Meteor.users.update(this._id, {
+        var currentUserId = Meteor.userId();
+        return Meteor.users.update(currentUserId, {
             $set: {
                 "profile.name" : name,
                 "profile.surname" : surname,

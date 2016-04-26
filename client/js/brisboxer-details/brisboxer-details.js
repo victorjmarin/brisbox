@@ -100,15 +100,13 @@ Template.brisboxerDetails.events({
         var surname = $('#edit_brisboxer_surname').val();
         var phone = $('#edit_brisboxer_phone').val();
 
-        var currentBrisboxer = Meteor.user();
-
         Meteor.call('updateBrisboxerDetails', name, surname, phone,function(err, res){
             if(res){
                 Materialize.toast(TAPi18n.__('brisboxer_details_ok'), 4000) // 4000 is the duration of the toast
             }
         });
 
-		Session.set('editBrisboxer', true);
+		Session.set('editBrisboxer', false);
 	}
 	,
 	'click #cancel_button': function(event){
