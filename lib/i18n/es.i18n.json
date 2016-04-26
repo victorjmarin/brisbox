@@ -389,5 +389,8 @@
   "email_order_registered_title": "Gracias, %s",
   "email_order_registered_first_p": "Tu pedido ha sido registrado en el sistema. Tan pronto como el número de brisboxers solicitado haya sido cubierto te lo notificaremos.",
   "email_order_registered_second_p": "Para acceder al panel de control de tu pedido y llevar un seguimiento de él, haz click <a href='%s'>aquí</a>.",
-  "email_order_registered_third_p": "Puedes cancelar tu pedido con hasta 24h. de antelación desde <a href='%s'>este enlace</a> introduciendo el siguiente código: "
+  "email_order_registered_third_p": "Puedes cancelar tu pedido con hasta 24h. de antelación desde <a href='%s'>este enlace</a> introduciendo el siguiente código: ",
+  "message-not_found": "Parece que no podemos encontrar la página que está buscando.",
+  "title-not_found": "Oops! Error 404",
+  "order-form_location": "Introduce una ubicación"
 }
