@@ -16,6 +16,25 @@ Template.registerHelper("calculateCost", function(numBrisboxers, hours) {
     return numBrisboxers * hours * 20 + " €";
 });
 
+Template.order_dashboard.helpers({
+    'isBrisboxerInOrder': function(){
+        var brisboxers = this.brisboxers;
+        var currentUserId = Meteor.userId();
+        var result = true;
+        if(currentUserId === null){
+            return result;
+        }
+        for(i = 0; i < brisboxers.length; i++) {
+            var entry = brisboxers[i];
+            if (entry._id === currentUserId) {
+                result = false;
+                break;
+            }
+        }
+        return Meteor.userId() === id
+    }
+});
+
 Template.order_dashboard.events({
     'click .confirm-payment': function(e){
         Session.set('showPaymentConfirmationModal', true);
