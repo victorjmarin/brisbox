@@ -263,6 +263,9 @@
   "return_to_main_page": "Ir a la página principal",
   "acces_denied":"Acceso denegado",
   "access_denied_body":"Lo sentimos, no dispone de suficientes permisos como para acceder a esta página.",
+  "order_dashboard_emptyBrisboxer": "Lo sentimos no hay ningun brisboxer apuntado todavía",
+  "order_dashboard_payment": "Pagar",
+  "order_dashboard_cancel": "Cancelar",
   "schemas": {
     "inscription": {
       "username": {

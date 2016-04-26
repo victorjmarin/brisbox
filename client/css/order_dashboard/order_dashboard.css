@@ -1,20 +1,21 @@
-@media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    .main-container{
-        font-size: x-large;
-        font-weight: normal;
-        margin: 1% 5%;
-        color: rgba(0, 0, 0, 0.85);
+@media only screen and (max-width: 900px) {
+    #customer{
+        float:none;
     }
-    .brisboxer-info{
-        border-radius: 5px;
-        padding-left: 2px;
-        border: 1px solid;
-        margin-bottom: 2%;
-        position: relative;
+    #brisboxers{
+        float:none;
+    }
+    #mapa{
+        float:none;
     }
 }
-
+@media only screen and (max-width: 1300px) {
+    #cancelar{
+        margin-top: 60px;
+        margin-left: 0px;
+        float:none;
+    }
+}
 @media only screen and (min-width: 768px) {
     .main-container {
         font-size: x-large;
@@ -22,22 +23,36 @@
         margin: 1% 5%;
         color: rgba(0, 0, 0, 0.85);
     }
-    .brisboxer-info{
-        border-radius: 5px;
-        padding-left: 2px;
-        border: 1px solid;
-        margin-bottom: 2%;
-        width: 500px;
-        position: relative;
-    }
 }
-.info {
-    border-radius: 5px;
-    border: 2px solid #ddd;
-    margin-bottom: 5px;
+#customer{
+    float:left;
 }
-.customer-info{
+#brisboxers{
+    float:left;
+}
+#mapa{
+    float:left;
+}
+.customer-info, .brib-info{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #ef6c00;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    min-width: 235px;
+}
+.brib-info{
+    min-width: 215px;
+}
+.mapita {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    min-height: 525px;
     height: 100%;
+    min-width: 235px;
 }
 
 .customer-info span{
@@ -48,19 +63,33 @@
     height: 100%;
 }
 
-.order-info span{
+.order-info span.title{
 	display: block;
+    font-style: oblique;
+    color:orange;
 }
-
+.brisboxers-buttons{
+    position: absolute;
+    bottom:20px;
+}
 .brisboxers-info{
+    position: relative;
     height: 100%;
-    border-radius: 5px;
-    border: 2px solid #ddd;
-    margin-bottom: 5px;
+    width: 50%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: 2px solid #ef6c00;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    min-height: 525px;
+    min-width: 235px;
 }
 
-.brisboxers-info span{
+.brisboxers-info span.title{
 	display: block;
+    font-style: oblique;
+    color:orange;
 }
 .image-div{
     vertical-align: top;
