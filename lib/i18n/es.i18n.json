@@ -246,7 +246,7 @@
   "brisboxer_doesnt_founded": "Brisboxer no encontrado",
   "verified": "Verificado",
   "accepted": "Aceptado",
-  "valoration": "Valoración",
+  "score": "Puntuación",
   "order_deleted": "Pedido cancelado",
   "order_deleted_success": "Su pedido ha sido eliminado. Gracias por confiar en nosotros.",
   "order_deleted_failed": "Cancelación de pedido fallida",
@@ -261,6 +261,8 @@
   "order_not_found_body3": " Muchas gracias por usar nuestros servicios.",
   "send_mail_to_Brisbox": "Enviar un email",
   "return_to_main_page": "Ir a la página principal",
+  "acces_denied":"Acceso denegado",
+  "access_denied_body":"Lo sentimos, no dispone de suficientes permisos como para acceder a esta página.",
   "schemas": {
     "inscription": {
       "username": {
@@ -368,21 +370,9 @@
       }
     }
   },
-  "email_signature": "Un saludo,<br>Equipo Brisbox",
-  // Validation email
-  "email_validation_subject": "¡Sólo un paso más!",
-  "email_validation_title": "¡Bienvenido a bordo, %s!",
-  "email_validation_first_p": "Gracias por tu interés en ayudar a hacer las mudanzas algo más llevaderas :)",
-  "email_validation_second_p": "Por favor, haz click en <a href='%s'>este enlace</a> para verificar tu correo.",
-  "email_validation_third_p": "Una vez validado, nos pondremos en contacto contigo y procederemos a activar tu cuenta para que puedas ver las mudanzas disponibles y trabajar en las que te convenga.",
-  // Validation email
-  "email_captain_subject": "¡Eres el capitán!",
-  "email_captain_title": "¡YARRR, capitán!",
-  "email_captain_first_p": "Tu experiencia en el campo de batalla te ha galardonado la capitanía. ¡Conduce a tus compañeros brisboxers hacia una mudanza eficiente y satisfactoria!",
-  "email_captain_second_p": "Como capitán, deberás organizar al equipo y contactar con el cliente una vez que lleguéis al lugar de trabajo. También deberás confirmar el tiempo total trabajado con él para que se efectúe el cobro.",
-  "email_captain_third_p": "Puedes ver el resumen del pedido <a href='%s'>aquí</a>.",
-  "email_captain_fourth_p": "Para más información acerca de ser capitán, visita <a href='%s'>este enlace</a>.",
-
+  "order-form_location": "Introduce una ubicación",
+  "message-not_found": "Parece que no podemos encontrar la página que está buscando.",
+  "title-not_found": "Oops! Error 404",
   //Order payment confirmation
   "payment_confirmation_real_num_brisboxers": "¿Cuántos Brisboxers?",
   "payment_confirmation_real_num_hours": "¿Horas invertidas?",
@@ -391,5 +381,26 @@
   "payment_confirmation_paied": "Pedido pagado correctamente",
   "payment_confirmation_button": "Pago",
   "payment_confirmation_stripe_submit": "Confirmar el pago",
-  "payment_confirmation_cancel": "Cancelar"
+  "payment_confirmation_cancel": "Cancelar",
+
+  "email_signature": "Un saludo,<br>Equipo Brisbox",
+  // Validation email
+  "email_validation_subject": "¡Sólo un paso más!",
+  "email_validation_title": "¡Bienvenido a bordo, %s!",
+  "email_validation_first_p": "Gracias por tu interés en ayudar a hacer las mudanzas algo más llevaderas :)",
+  "email_validation_second_p": "Por favor, haz click en <a href='%s'>este enlace</a> para verificar tu correo.",
+  "email_validation_third_p": "Una vez validado, nos pondremos en contacto contigo y procederemos a activar tu cuenta para que puedas ver las mudanzas disponibles y trabajar en las que te convenga.",
+  // Captain email
+  "email_captain_subject": "¡Eres el capitán!",
+  "email_captain_title": "¡YARRR, capitán!",
+  "email_captain_first_p": "Tu experiencia en el campo de batalla te ha galardonado la capitanía. ¡Conduce a tus compañeros brisboxers hacia una mudanza eficiente y satisfactoria!",
+  "email_captain_second_p": "Como capitán, deberás organizar al equipo y contactar con el cliente una vez que lleguéis al lugar de trabajo. También deberás confirmar el tiempo total trabajado con él para que se efectúe el cobro.",
+  "email_captain_third_p": "Puedes ver el resumen del pedido <a href='%s'>aquí</a>.",
+  "email_captain_fourth_p": "Para más información acerca de ser capitán, visita <a href='%s'>este enlace</a>.",
+  // Order registered
+  "email_order_registered_subject": "Tu pedido ha sido registrado",
+  "email_order_registered_title": "Gracias, %s",
+  "email_order_registered_first_p": "Tu pedido ha sido registrado en el sistema. Tan pronto como el número de brisboxers solicitado haya sido cubierto te lo notificaremos.",
+  "email_order_registered_second_p": "Para acceder al panel de control de tu pedido y llevar un seguimiento de él, haz click <a href='%s'>aquí</a>.",
+  "email_order_registered_third_p": "Puedes cancelar tu pedido con hasta 24h. de antelación desde <a href='%s'>este enlace</a> introduciendo el siguiente código: ",
 }

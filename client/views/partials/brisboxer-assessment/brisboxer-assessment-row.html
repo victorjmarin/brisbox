@@ -13,32 +13,32 @@
                             <div class="col s10 row">
                                 <div class="row">
                                     <div class="input-field col s7">
-                                        <div class="hide-on-small-only">
-                                            <i class="material-icons prefix">mode_edit</i>
-                                            <textarea rows="1" id="br-comments-{{_id}}" name="comments" class="materialize-textarea"
+                                        <div class="hide-on-small-only input-field">
+                                            <i class="material-icons prefix orange-text">mode_edit</i>
+                                            <label for="br-comments-{{_id}}" id="label_comments" style="padding-left: 2%">{{_ "assessment_comments"}}</label>
+                                            <textarea rows="1" id="br-comments-{{_id}}" name="comments" class="materialize-textarea form-control comments"
                                                       length="140"></textarea>
-                                            <label for="br-comments" style="padding-left: 2%">{{_ "assessment_comments"}}</label>
                                         </div>
-                                        <div class="hide-on-med-and-up">
-                                            <textarea rows="1" id="br-comments-{{_id}}" name="comments" class="materialize-textarea"
+                                        <div class="hide-on-med-and-up input-field">
+                                            <label for="br-comments-{{_id}}" id = "label_comments" style="padding-left: 2%">{{_ "assessment_comments"}}</label>
+                                            <textarea rows="1" id="br-comments-{{_id}}" name="comments" class="materialize-textarea form-control comments"
                                                       length="140"></textarea>
-                                            <label for="br-comments" style="padding-left: 2%">{{_ "assessment_comments"}}</label>
                                         </div>
                                     </div>
-                                    <div class="input-field col s5">
-                                        <div class="hide-on-small-only offset-s1">
-                                            <i class="material-icons">grade</i>
-                                            <span class="flow-text" for="rating"
+                                    <div class="col s5">
+                                        <div class="input-field hide-on-small-only offset-s1">
+                                            <i class="material-icons orange-text">grade</i>
+                                            <span class="flow-text orange-text" for="rating-{{_id}}"
                                                   style="margin-left: 1%">{{_ "assessment_rating"}}</span>
-                                            <p class="range-field">
-                                                <input class="s5" type="range" id="rating-{{_id}}" min="1" max="10" name="rating"/>
+                                            <p class="range-field range-orange">
+                                                <input class="s5 orange orange-text" type="range" id="rating-{{_id}}" min="1" max="10" name="rating"/>
                                             </p>
                                         </div>
-                                        <div class="hide-on-med-and-up">
-                                            <span class="flow-text" for="rating"
+                                        <div class="input-field hide-on-med-and-up">
+                                            <span class="flow-text orange-text" for="rating-{{_id}}"
                                                   style="margin-left: 1%">{{_ "assessment_rating"}}</span>
                                             <p class="range-field">
-                                                <input class="s4" type="range" id="rating-{{_id}}" min="1" max="10" name="rating"/>
+                                                <input class="s4 orange orange-text" type="range" id="rating-{{_id}}" min="1" max="10" name="rating"/>
                                             </p>
                                         </div>
                                     </div>
@@ -55,7 +55,7 @@
                             {{#if assessed}}
                                 <div class="valign-wrapper col s10 center-align">
                                     <div>
-                                        <i class="material-icons green-text" style="font-size: 6em;">check_circle</i>
+                                        <i class="material-icons orange-text" style="font-size: 8em;">check_circle</i>
                                     </div>
                                 </div>
                             {{/if}}

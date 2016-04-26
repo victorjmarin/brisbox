@@ -27,12 +27,12 @@
                         </div>
                     </div>
                     <div class="block-derecha">
-                        <div class="info-text" style="font-weight: 400;font-size: 95%">
+                        <div class="info-text" style="font-weight: 400;font-size: 95%; margin-bottom:20px">
                             {{_ "image-profile-text"}}
                         </div>
-                        <div class="image-input">
-                            <center><img src="/placeholder.png" height="auto" width="90%" style="max-width: 310px">
-                            </center>
+                        <div class="image-input" style="margin:auto;display:table">
+                           {{> afQuickField name="image" class="validate" collection="images"}}
+
                         </div>
                     </div>
                 </fieldset>
@@ -123,4 +123,7 @@
     </div>
 </template>
 
+<template name="imagePreview">
+    <img alt={{file.original.name}} src={{file.url}} height="auto" width="90%" style="max-width: 310px">
+</template>
 

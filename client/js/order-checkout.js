@@ -13,7 +13,7 @@ Template.orderCheckout.events({
 
 Template.orderCheckout.helpers({
     day: function () {
-        return sessionStorage.getItem("day");
+        return sessionStorage.getItem("day-order-checkout");
     },
     phone: function () {
         return sessionStorage.getItem("phone");

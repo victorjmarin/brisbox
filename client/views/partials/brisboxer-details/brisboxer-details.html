@@ -5,7 +5,7 @@
 		{{#if exists}}
 			<div class="row">
 				<div class="col s12 m6 l4 valign-wrapper">
-					<img src="/placeholder.png" class="circle" style="margin-right: auto;margin-left: auto;"/>
+					<img src={{imageProfile}} class="circle" height="auto" width="90%" style="margin-right: auto;margin-left: auto;"/>
 				</div>
 				<div class="col s12 m6 l8">
 					<div class="row valign-wrapper">
@@ -83,12 +83,19 @@
 
 	{{#if exists}}
 	<div id="assessments-container">
-		<div id="asessment-all" class="orange center-align white-text">
-			<div id="assessment-title" style="padding-top: 15px;">
-				<h2>{{_ "valoration"}}</h2>
+		<div id="asessment-all" class="orange lighten-2 center-align white-text">
+			<div id="assessment-title" class="row" style="padding-top: 15px; font-weight: bold;">
+				<h2>{{_ "score"}}</h2>
 			</div>
-			<div id="assessment-average-div" style="font-size: 700%; font-weight: 100;">
-				<span id="assessment-avg"></span>
+			<div id="assessment-average-div" class="row" style="font-size: 700%; font-weight: 100; display:inline-block;">
+            	<div class="c100 big" id="circle-avg">
+                    <span id="assessment-avg"></span>
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill"></div>
+                    </div>
+                </div>
+                
 			</div>
 		</div>
 

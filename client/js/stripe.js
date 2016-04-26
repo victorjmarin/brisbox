@@ -12,23 +12,23 @@ Template.stripe_form.onRendered(function () {
 });
 
 Template.stripe_form.helpers({
-    stripe_error: function() {
+    stripe_error: function () {
         return Session.get("stripe_error");
     },
-    disabled: function(){
-        if (Session.get("enableStripeForm")){
+    disabled: function () {
+        if (Session.get("enableStripeForm")) {
             return "";
-        }else{
+        } else {
             return "disabled";
         }
     },
-    isCreation: function(){
+    isCreation: function () {
         return Session.get('isCreation');
     }
 });
 
 Template.stripe_form.events({
-    'submit .stripe-form': function(e) {
+    'submit .stripe-form': function (e) {
         e.preventDefault();
 
         ccNum = $('#number').val();
@@ -37,19 +37,19 @@ Template.stripe_form.events({
         expYr = $('#exp-year').val();
         amountForm = $('#amount').val();
 
-        if(!amountForm && !Session.get("isCreation")){
+        if (!amountForm && !Session.get("isCreation")) {
             amountForm = Session.get("finalCost") * 100
-        }else if(!amountForm){
+        } else if (!amountForm) {
             amountForm = Meteor.settings.public.reserveAmount;
         }
         Session.set("stripe_error", null);
 
         var currentLocale = TAPi18next.lng();
         var promotion = $('#promotion');
-        if(promotion.length != 0){
+        if (promotion.length != 0) {
             var codePromotion = promotion.val();
             var codePromotionResult = Promotions.findOne({code: codePromotion});
-            if(codePromotionResult == null) {
+            if (codePromotionResult == null) {
                 if (codePromotion != "") {
                     if (currentLocale == "es") {
                         Materialize.toast("El código promocional no es correcto, lo sentimos.", 2000);
@@ -64,15 +64,15 @@ Template.stripe_form.events({
             cvc: cvc,
             exp_month: expMo,
             exp_year: expYr
-        }, function(status, response) {
+        }, function (status, response) {
 
-            if(status != 200){
+            if (status != 200) {
                 var code = response.error.code;
                 Session.set("stripe_error", code);
-            }else {
+            } else {
                 stripeToken = response.id;
-                Meteor.call('chargeCard', stripeToken, amountForm, function(error, succeed){
-                    if(error){
+                Meteor.call('chargeCard', stripeToken, amountForm, function (error, succeed) {
+                    if (error) {
                         var code = error.reason;
                         Session.set("stripe_error", code);
                     }
@@ -81,8 +81,8 @@ Template.stripe_form.events({
         });
 
 
-        if(Session.get("stripe_error") == null){
-            if(Session.get("isCreation")){
+        if (Session.get("stripe_error") == null) {
+            if (Session.get("isCreation")) {
                 var addressLoading = sessionStorage.getItem("addressLoading");
                 var addressUnloading = sessionStorage.getItem("addressUnloading");
                 var portalLoading = sessionStorage.getItem("portalLoading");
@@ -99,68 +99,29 @@ Template.stripe_form.events({
                 var surname = sessionStorage.getItem("surname");
                 var phone = sessionStorage.getItem("phone");
                 var email = sessionStorage.getItem("email");
-                if(currentLocale == "es"){
-                    if(addressLoading==""){
+                if (currentLocale == "es") {
+                    if (addressLoading == "") {
                         addressLoading = "No se ha solicitado carga.";
                         portalLoading = "No se ha solicitado carga.";
                     }
-                    if(addressUnloading==""){
+                    if (addressUnloading == "") {
                         addressUnloading = "No se ha solicitado descarga.";
                         portalUnloading = "No se ha solicitado descarga.";
                     }
-                    var subjectSpanish = "[BRISBOX] Resumen pedido";
-                    var textSpanish =
-                        "¡Gracias por dejarnos ayudarte con la mudanza!\n\n" +
-                        "En este correo se recoge un breve resumen de tu pedido." +
-                        "\nCoste estimado: "+ cost() +
-                        "\nDirección de carga: "+ addressLoading + ", Portal de carga: " + portalLoading +
-                        "\nDirección de descarga: "+ addressUnloading + ", Portal de descarga: " + portalUnloading +
-                        "\nDía: "+ day +
-                        "\nHora del pedido: "+ startMoment +
-                        "\nNombre: "+ name +
-                        "\nApellidos: "+ surname +
-                        "\nComentarios: "+ comments +
-                        "\nTeléfono: "+ phone +
-                        "\nNumero de brisboxers: "+ numberBrisboxers +
-                        "\nHoras: "+ hours +
-                        "\nSi hay algun problema con tu pedido, comunicanoslo respondiendo a este correo.\n\n" +
-                        "Un saludo,¡y gracias de nuevo!\n" +
-                        "El equipo de Brisbox";
-                    Meteor.call("sendEmailToUser", email, subjectSpanish,textSpanish);
-                    Router.go('ThanksOrder');
-                }else{
-                    if(addressLoading==""){
+                } else {
+                    if (addressLoading == "") {
                         addressLoading = "No request load.";
                         portalLoading = "No request load.";
                     }
-                    if(addressUnloading==""){
+                    if (addressUnloading == "") {
                         addressUnloading = "No request unload.";
                         portalUnloading = "No request unload.";
                     }
-                    var subjectEnglish = "[BRISBOX] Summary order";
-                    var textEnglish =
-                        "Thanks for letting us help with the move!\n\n" +
-                        "In this email a brief summary of your order is collected." +
-                        "\nEstimated cost: "+ cost() +
-                        "\nAddress loading: "+ addressLoading + ", Loading portal: " + portalLoading +
-                        "\nAddress unloading: "+ addressUnloading + ", Unloading portal: " + portalUnloading +
-                        "\nDay: "+ day +
-                        "\nStart moment: "+ startMoment +
-                        "\nName: "+ name +
-                        "\nSurname: "+ surname +
-                        "\nComments: "+ comments +
-                        "\nPhone: "+ phone +
-                        "\nNumber Brisboxers: "+ numberBrisboxers +
-                        "\nHours: "+ hours +
-                        "\nIf there is a problem with your order, please let us know by responding to this email.\n\n" +
-                        "Grettings,thanks again.!\n" +
-                        "Brisbox Team";
-                    Meteor.call("sendEmailToUser", email, subjectEnglish,textEnglish);
-                    Router.go('ThanksOrder');
                 }
+                Router.go('ThanksOrder');
                 Meteor.call("saveOrder", addressLoading, addressUnloading, portalLoading, portalUnloading, zip, loading, unloading, comments, numberBrisboxers, hours,
                     startMoment, new Date(day), name, surname, phone, email);
-            }else{
+            } else {
                 $('#payment-access').addClass('payment-close');
                 $('#payment-overlay').css('display', 'none');
                 $('#payment-main').css('display', 'none');
@@ -169,11 +130,12 @@ Template.stripe_form.events({
                 Materialize.toast(TAPi18n.__('payment_confirmation_paied'), 4000) // 4000 is the duration of the toast
             }
         }
-    },
-    'click #info-pay ':function(e){
-        $(document).ready(function(){
+    }
+    ,
+    'click #info-pay ': function (e) {
+        $(document).ready(function () {
             $('.collapsible').collapsible({
-                accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+                accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
             });
         });
     }
