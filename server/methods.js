@@ -118,7 +118,8 @@ Meteor.methods({
                     surname: doc.surname,
                     phone: doc.phone,
                     zip: doc.zip,
-                    howHearAboutUs: doc.howHearAboutUs
+                    howHearAboutUs: doc.howHearAboutUs,
+                    image: doc.image
                 }
             });
         } catch (error) {
