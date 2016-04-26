@@ -17,21 +17,11 @@ Template.registerHelper("calculateCost", function(numBrisboxers, hours) {
 });
 
 Template.order_dashboard.helpers({
-    'isBrisboxerInOrder': function(){
+    'notInOrder': function(){
         var brisboxers = this.brisboxers;
-        var currentUserId = Meteor.userId();
-        var result = true;
-        if(currentUserId === null){
-            return result;
-        }
-        for(i = 0; i < brisboxers.length; i++) {
-            var entry = brisboxers[i];
-            if (entry._id === currentUserId) {
-                result = false;
-                break;
-            }
-        }
-        return Meteor.userId() === id
+        var brisboxersIds = _.pluck(brisboxers, "_id");
+        var result = !_.contains(brisboxersIds, Meteor.userId());
+        return result;
     }
 });
 
