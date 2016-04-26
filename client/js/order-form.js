@@ -214,7 +214,10 @@ Template.orderForm.helpers({
             if($("#addressLoading").focusin()){
                 $("#addressUnloading").focusout();
             }
-            $("#addressLoading").geocomplete({ map: "#exampleMap"});
+            $("#addressLoading").geocomplete({ map: "#exampleMap", mapOptions:{
+                center: new google.maps.LatLng(37.3914105564361,-5.9591776906),
+                zoom: 12
+            }});
             $("#addressUnloading").geocomplete({ map: "#exampleMap"});
             document.getElementById("label-addressLoading").className = "active";
             document.getElementById("label-addressUnloading").className = "active";
