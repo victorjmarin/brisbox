@@ -37,5 +37,13 @@ MailService = {
             cancelCode: cancelCode
         };
         this.send("email_order_registered_subject", "order-registered", params, order.email);
+    },
+    brisboxerComplete: function (order) {
+        var encodedOrderId = Base64.encode(order._id);
+        var dashboardUrl = Helpers.Url.forPath("order_dashboard/" + encodedOrderId);
+        var params = {
+            dashboardUrl: dashboardUrl
+        };
+        this.send("email_brisboxer_complete_subject", "brisboxer-complete-email", params, order.email);
     }
 };
