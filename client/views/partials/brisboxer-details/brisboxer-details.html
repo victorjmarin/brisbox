@@ -86,17 +86,19 @@
 					</div>
 				</div>
 			</div>
-            <div class="center-align detail-buttons">
-                {{#if editBrisboxer}}
-                    <button id="save_button" type="button" class="waves-effect waves-light btn orange darken-3 z-depth-1 bold">{{_ "brisboxer_details_save"}}
-                    </button>
-                    <button id="cancel_button" type="button" class="waves-effect waves-light btn orange darken-3 z-depth-1 bold">{{_ "brisboxer_details_cancel"}}
-                    </button>
-                {{else}}
-                    <button id="edit_button" type="button" class="waves-effect waves-light btn orange darken-3 z-depth-1 bold">{{_ "brisboxer_details_edit"}}
-                    </button>
-                {{/if}}
-            </div>
+            {{#if isCurrentUser _id}}
+                <div class="center-align detail-buttons">
+                    {{#if editBrisboxer}}
+                        <button id="save_button" type="button" class="waves-effect waves-light btn orange darken-3 z-depth-1 bold">{{_ "brisboxer_details_save"}}
+                        </button>
+                        <button id="cancel_button" type="button" class="waves-effect waves-light btn orange darken-3 z-depth-1 bold">{{_ "brisboxer_details_cancel"}}
+                        </button>
+                    {{else}}
+                        <button id="edit_button" type="button" class="waves-effect waves-light btn orange darken-3 z-depth-1 bold">{{_ "brisboxer_details_edit"}}
+                        </button>
+                    {{/if}}
+                </div>
+            {{/if}}
 		{{else}}
 			<div class="row center-align">
 				<h5 class="red-text">{{_ "brisboxer_doesnt_founded"}}</h5>
