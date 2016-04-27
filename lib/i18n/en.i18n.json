@@ -109,6 +109,7 @@
   "order-checkout_stripe": "Bank data",
   "order-errorAddress": "Choose a address.",
   "order-errorDay": "Day can't be in past.",
+  "order-errorZip": "ZIP must be in Seville.",
   "info_money": "To order will be charged an amount equal to 5 €. This amount will be deducted later the total cost of the service.",
   "info_book": "Cost 5 € / order",
   "why_stripe": " Why do you use Stripe?",
@@ -185,8 +186,10 @@
   "address": "Address",
   "date": "Date",
   "numberBrisboxers": "Number brisboxers",
-  "left": "Left",
-  "hours": "Hours",
+  "spots_left": "1 spot left",
+  "spots_left_plural": "__count__ spots left",
+  "hours": "__count__ hour",
+  "hours_plural": "__count__ hours",
   "join": "Join",
   "dashboard": "Dashboard",
   "my_orders": "My orders",
@@ -234,8 +237,8 @@
   "order_dashboard_email": "Email",
   "order_dashboard_city": "City",
   "order_dashboard_zip": "ZIP",
-  "order_dashboard_address_loading": "Load Addres",
-  "order_dashboard_address_unloading": "Unload Addres",
+  "order_dashboard_address_loading": "Load Address",
+  "order_dashboard_address_unloading": "Unload Address",
   "order_dashboard_day": "Day",
   "order_dashboard_hour": "Hour",
   "order_dashboard_number_of_brisboxers": "Nº of brisboxers",
@@ -267,6 +270,10 @@
   "return_to_main_page": "Return to main page.",
   "acces_denied":"Access Denied",
   "access_denied_body":"We are sorry, you don't have enough access to this site",
+  "order_dashboard_emptyBrisboxer": "We are sorry, there aren't any brisboxer inscribed yet.",
+  "order_dashboard_payment": "Pay",
+  "order_dashboard_cancel": "Cancel",
+  "go_back": "Go Back",
   "schemas": {
     "inscription": {
       "username": {
@@ -375,6 +382,20 @@
       }
     }
   },
+  "order-form_location": "Enter a location",
+  "message-not_found": "We can't seem to find the page you're looking for.",
+  "title-not_found": "Oops! 404 Error",
+
+  //Order payment confirmation
+  "payment_confirmation_real_num_brisboxers": "How many Brisboxers?",
+  "payment_confirmation_real_num_hours": "Hours spent?",
+  "payment_confirmation_total": "Final price",
+  "payment_confirmation_confirm": "Confirm",
+  "payment_confirmation_paied": "Order paied successfully",
+  "payment_confirmation_button": "Payment",
+  "payment_confirmation_stripe_submit": "Confirm payment",
+  "payment_confirmation_cancel": "Cancel",
+
   "email_signature": "Sincerely,<br>Brisbox Team",
   // Validation email
   "email_validation_subject": "Just one step away!",
@@ -395,10 +416,15 @@
   "email_order_registered_first_p": "Your order has been sucessfully registered. We will notify you as soon as the requested number of brisboxers has been met.",
   "email_order_registered_second_p": "To access the dashboard and track the status of your order, click <a href='%s'>here</a>.",
   "email_order_registered_third_p": "You can cancel your order up to 24h. before it takes place by visiting <a href='%s'>this link</a> and using the following code: ",
+  // Brisboxers complete
+  "email_brisboxer_complete_subject": "Ready to go",
+  "email_brisboxer_complete_title": "We are all set!",
+  "email_brisboxer_complete_first_p": "The requested number of brisboxers for your move has been met. The captain will get in touch with you on move day to tell you when they are there.",
+  "email_brisboxer_complete_second_p": "Remember that you can check the <a href='%s'>dashboard</a> anytime to see the status of your order. But don't worry, we will inform you may a brisboxer drop out.",
+  "email_brisboxer_complete_third_p": "Thank you for trusting us and happy move!",
 
-  "brisboxer_details_ok": "Brisboxer modified successfully",
+  "brisboxer_details_ok": "Profile updated successfully",
   "brisboxer_details_save": "Save",
   "brisboxer_details_cancel": "Cancel",
-  "brisboxer_details_edit": "Edit"
-
+  "brisboxer_details_edit": "Edit profile"
 }

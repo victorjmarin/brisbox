@@ -1,17 +1,18 @@
 <template name="brisboxerDetails">
     <div id="details-brisboxer-main" class="container">
-		<h4 class="header">{{_ "brisboxer_details"}}</h4>
+        <h4 class="header">{{_ "brisboxer_details"}}</h4>
 
-		{{#if exists}}
-			<div class="row">
-				<div class="col s12 m6 l4 valign-wrapper">
-					<img src={{imageProfile}} class="circle" height="auto" width="90%" style="margin-right: auto;margin-left: auto;"/>
-				</div>
-				<div class="col s12 m6 l8">
-					<div class="row valign-wrapper">
-						<div class="col s3 m3 l3">
-							{{_ "name"}}:
-						</div>
+        {{#if exists}}
+            <div class="row">
+                <div class="col s12 m6 l4 valign-wrapper">
+                    <img src={{imageProfile}} class="circle" height="auto" width="90%"
+                         style="margin-right: auto;margin-left: auto;"/>
+                </div>
+                <div class="col s12 m6 l8">
+                    <div class="row valign-wrapper">
+                        <div class="col s3 m3 l3">
+                            {{_ "name"}}:
+                        </div>
                         {{#if editBrisboxer}}
                             <input id="edit_brisboxer_name" value="{{profile.name}}"/>
                         {{else}}
@@ -19,11 +20,11 @@
                                 {{profile.name}}
                             </div>
                         {{/if}}
-					</div>
-					<div class="row valign-wrapper">
-						<div class="col s3 m3 l3">
-							{{_ "surname"}}:
-						</div>
+                    </div>
+                    <div class="row valign-wrapper">
+                        <div class="col s3 m3 l3">
+                            {{_ "surname"}}:
+                        </div>
                         {{#if editBrisboxer}}
                             <input id="edit_brisboxer_surname" value="{{profile.surname}}"/>
                         {{else}}
@@ -31,27 +32,27 @@
                                 {{profile.surname}}
                             </div>
                         {{/if}}
-					</div>
-					<div class="row valign-wrapper">
-						<div class="col s3 m3 l3">
-							{{_ "username"}}:
-						</div>
-						<div class="col s9 m9 l9">
-							{{username}}
-						</div>
-					</div>
-					<div class="row valign-wrapper">
-						<div class="col s3 m3 l3">
-							{{_ "email"}}:
-						</div>
-						<div class="col s9 m9 l9">
-							{{email}}
-						</div>
-					</div>
-					<div class="row valign-wrapper">
-						<div class="col s3 m3 l3">
-							{{_ "phone"}}:
-						</div>
+                    </div>
+                    <div class="row valign-wrapper">
+                        <div class="col s3 m3 l3">
+                            {{_ "username"}}:
+                        </div>
+                        <div class="col s9 m9 l9">
+                            {{username}}
+                        </div>
+                    </div>
+                    <div class="row valign-wrapper">
+                        <div class="col s3 m3 l3">
+                            {{_ "email"}}:
+                        </div>
+                        <div class="col s9 m9 l9">
+                            {{email}}
+                        </div>
+                    </div>
+                    <div class="row valign-wrapper">
+                        <div class="col s3 m3 l3">
+                            {{_ "phone"}}:
+                        </div>
                         {{#if editBrisboxer}}
                             <input id="edit_brisboxer_phone" value="{{profile.phone}}"/>
                         {{else}}
@@ -59,85 +60,89 @@
                                 {{profile.phone}}
                             </div>
                         {{/if}}
-					</div>
-					<div class="row valign-wrapper">
-						<div class="col s3 m3 l3">
-							{{_ "verified"}}:
-						</div>
-						<div class="col s9 m9 l9">
-							{{#if verified}}
-								<i class="material-icons green-text verified-i ">verified_user</i>
-							{{else}}
-								<i class="material-icons red-text verified-i">verified_user</i>
-							{{/if}}
-						</div>
-					</div>
-					<div class="row valign-wrapper">
-						<div class="col s3 m3 l3">
-							{{_ "accepted"}}:
-						</div>
-						<div class="col s9 m9 l9">
-							{{#if accepted}}
-								<i class="material-icons green-text verified-i ">verified_user</i>
-							{{else}}
-								<i class="material-icons red-text verified-i">verified_user</i>
-							{{/if}}
-						</div>
-					</div>
-				</div>
-			</div>
+                    </div>
+                    <div class="row valign-wrapper">
+                        <div class="col s3 m3 l3">
+                            {{_ "verified"}}:
+                        </div>
+                        <div class="col s9 m9 l9">
+                            {{#if verified}}
+                                <i class="material-icons green-text verified-i ">verified_user</i>
+                            {{else}}
+                                <i class="material-icons red-text verified-i">verified_user</i>
+                            {{/if}}
+                        </div>
+                    </div>
+                    <div class="row valign-wrapper">
+                        <div class="col s3 m3 l3">
+                            {{_ "accepted"}}:
+                        </div>
+                        <div class="col s9 m9 l9">
+                            {{#if accepted}}
+                                <i class="material-icons green-text verified-i ">verified_user</i>
+                            {{else}}
+                                <i class="material-icons red-text verified-i">verified_user</i>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
             {{#if isCurrentUser _id}}
                 <div class="center-align detail-buttons">
                     {{#if editBrisboxer}}
-                        <button id="save_button" type="button" class="waves-effect waves-light btn orange darken-3 z-depth-1 bold">{{_ "brisboxer_details_save"}}
+                        <button id="save_button" type="button"
+                                class="waves-effect waves-light btn orange darken-3 z-depth-1 bold">{{_ "brisboxer_details_save"}}
                         </button>
-                        <button id="cancel_button" type="button" class="waves-effect waves-light btn orange darken-3 z-depth-1 bold">{{_ "brisboxer_details_cancel"}}
+                        <button id="cancel_button" type="button"
+                                class="waves-effect waves-light btn orange darken-3 z-depth-1 bold">{{_ "brisboxer_details_cancel"}}
                         </button>
                     {{else}}
-                        <button id="edit_button" type="button" class="waves-effect waves-light btn orange darken-3 z-depth-1 bold">{{_ "brisboxer_details_edit"}}
+                        <button id="edit_button" type="button"
+                                class="waves-effect waves-light btn orange darken-3 z-depth-1 bold">{{_ "brisboxer_details_edit"}}
                         </button>
                     {{/if}}
                 </div>
             {{/if}}
-		{{else}}
-			<div class="row center-align">
-				<h5 class="red-text">{{_ "brisboxer_doesnt_founded"}}</h5>
-			</div>
-		{{/if}}
-	</div>
+        {{else}}
+            <div class="row center-align">
+                <h5 class="red-text">{{_ "brisboxer_doesnt_founded"}}</h5>
+            </div>
+        {{/if}}
+    </div>
 
-	{{#if exists}}
-	<div id="assessments-container">
-		<div id="asessment-all" class="orange lighten-2 center-align white-text">
-			<div id="assessment-title" class="row" style="padding-top: 15px; font-weight: bold;">
-				<h2>{{_ "score"}}</h2>
-			</div>
-			<div id="assessment-average-div" class="row" style="font-size: 700%; font-weight: 100; display:inline-block;">
-            	<div class="c100 big" id="circle-avg">
-                    <span id="assessment-avg"></span>
-                    <div class="slice">
-                        <div class="bar"></div>
-                        <div class="fill"></div>
-                    </div>
+    {{#if exists}}
+        <div id="assessments-container">
+            <div id="asessment-all" class="orange lighten-2 center-align white-text">
+                <div id="assessment-title" class="row" style="padding-top: 15px; font-weight: bold;">
+                    <h2>{{_ "score"}}</h2>
                 </div>
-                
-			</div>
-		</div>
+                <div id="assessment-average-div" class="row"
+                     style="font-size: 700%; font-weight: 100; display:inline-block;">
+                    <div class="c100 big" id="circle-avg">
+                        <span id="assessment-avg"></span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
+                    </div>
 
-		<div id="assessment-table" class="container">
-			{{#each assessments}}
-				<div class="card grey lighten-5">
-					<div class="card-content row">
-						<div class="col s1 amber-text text-darken-3">
-							{{rating}}
-						</div>
-						<div class="col s11">
-							{{comments}}
-						</div>
-					</div>
-				</div>
-			{{/each}}
-		</div>
-	</div>
-	{{/if}}
+                </div>
+            </div>
+
+            <div id="assessment-table" class="container">
+                {{#each assessments}}
+                    <div class="card grey lighten-5">
+                        <div class="card-content row">
+                            <div class="col s1 amber-text text-darken-3">
+                                {{rating}}
+                            </div>
+                            <div class="col s11">
+                                {{comments}}
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    {{/if}}
 </template>

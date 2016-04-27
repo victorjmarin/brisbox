@@ -181,8 +181,10 @@
   "address": "Dirección",
   "date": "Fecha",
   "numberBrisboxers": "Número de brisboxers",
-  "left": "Restantes",
-  "hours": "Horas",
+  "spots_left": "1 sitio libre",
+  "spots_left_plural": "__count__ sitios libres",
+  "hours": "__count__ hora",
+  "hours_plural": "__count__ horas",
   "join": "Unirse",
   "dashboard": "Cuadro de mandos",
   "my_orders": "Mis pedidos",
@@ -263,6 +265,10 @@
   "return_to_main_page": "Ir a la página principal",
   "acces_denied":"Acceso denegado",
   "access_denied_body":"Lo sentimos, no dispone de suficientes permisos como para acceder a esta página.",
+  "order_dashboard_emptyBrisboxer": "Lo sentimos no hay ningun brisboxer apuntado todavía",
+  "order_dashboard_payment": "Pagar",
+  "order_dashboard_cancel": "Cancelar",
+  "go_back": "Atrás",
   "schemas": {
     "inscription": {
       "username": {
@@ -370,6 +376,20 @@
       }
     }
   },
+  "order-form_location": "Introduce una ubicación",
+  "message-not_found": "Parece que no podemos encontrar la página que está buscando.",
+  "title-not_found": "Oops! Error 404",
+
+  //Order payment confirmation
+  "payment_confirmation_real_num_brisboxers": "¿Cuántos Brisboxers?",
+  "payment_confirmation_real_num_hours": "¿Horas invertidas?",
+  "payment_confirmation_total": "Precio Final",
+  "payment_confirmation_confirm": "Confirmar",
+  "payment_confirmation_paied": "Pedido pagado correctamente",
+  "payment_confirmation_button": "Pago",
+  "payment_confirmation_stripe_submit": "Confirmar el pago",
+  "payment_confirmation_cancel": "Cancelar",
+
   "email_signature": "Un saludo,<br>Equipo Brisbox",
   // Validation email
   "email_validation_subject": "¡Sólo un paso más!",
@@ -390,9 +410,15 @@
   "email_order_registered_first_p": "Tu pedido ha sido registrado en el sistema. Tan pronto como el número de brisboxers solicitado haya sido cubierto te lo notificaremos.",
   "email_order_registered_second_p": "Para acceder al panel de control de tu pedido y llevar un seguimiento de él, haz click <a href='%s'>aquí</a>.",
   "email_order_registered_third_p": "Puedes cancelar tu pedido con hasta 24h. de antelación desde <a href='%s'>este enlace</a> introduciendo el siguiente código: ",
+  // Brisboxers complete
+  "email_brisboxer_complete_subject": "Estamos preparados",
+  "email_brisboxer_complete_title": "¡Todo listo!",
+  "email_brisboxer_complete_first_p": "Se ha satisfecho el número de brisboxers solicitado. El capitán se pondrá en contacto contigo el día de la mudanza para avisarte cuando lleguen.",
+  "email_brisboxer_complete_second_p": "Recuerda que puedes comprobar el <a href='%s'>dashboard</a> en cualquier momento para ver el estado de tu pedido. Pero no te preocupes, te informaremos en caso de que algún brisboxer abandone el pedido ",
+  "email_brisboxer_complete_third_p": "¡Gracias por confiar en nosotros y feliz mudanza!",
 
-  "brisboxer_details_ok": "Brisboxer modificado correctamente",
+  "brisboxer_details_ok": "Perfil actualizado correctamente",
   "brisboxer_details_save": "Guardar",
   "brisboxer_details_cancel": "Cancelar",
-  "brisboxer_details_edit": "Editar"
+  "brisboxer_details_edit": "Editar perfil"
 }

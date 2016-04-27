@@ -2,7 +2,7 @@ var Future = Npm.require('fibers/future');
 
 Meteor.methods({
     'chargeCard': function (stripeToken, amountForm) {
-        var stripeKey = 'sk_test_u6R8UmdlKfuIUYvpVWuWOkEx';
+        var stripeKey = Meteor.settings.private.stripe.testSecretKey;
         var Stripe = StripeAPI(stripeKey);
 
         var future = new Future();
@@ -141,6 +141,7 @@ Meteor.methods({
         if (!OrderService.needsMoreBrisboxers(updatedOrder)) {
             var captain = OrderService.selectCaptain(updatedOrder);
             MailService.notifyCaptain(updatedOrder, captain);
+            MailService.brisboxerComplete(updatedOrder);
         }
     },
     
@@ -171,7 +172,8 @@ Meteor.methods({
             if (order.cancelationCode == cancelationCode) {
                 Orders.update(orderIdDecodificado, {
                     $set: {
-                        canceled: true
+                        canceled: true,
+                        brisboxers: []
                     }
                 });
                 res = true;
