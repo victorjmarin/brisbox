@@ -398,5 +398,18 @@
   "email_order_registered_first_p": "Your order has been sucessfully registered. We will notify you as soon as the requested number of brisboxers has been met.",
   "email_order_registered_second_p": "To access the dashboard and track the status of your order, click <a href='%s'>here</a>.",
   "email_order_registered_third_p": "You can cancel your order up to 24h. before it takes place by visiting <a href='%s'>this link</a> and using the following code: ",
-  "order-form_location": "Enter a location"
+  "order-form_location": "Enter a location",
+  "order-form_validate-zip": "Insert a ZIP Code",
+  "order-form_validate-addressLoading": "Insert a loading address",
+  "order-form_validate-addressUnloading": "Insert a unloading address",
+  "order-form_validate-portalLoading": "Insert a unloading portal",
+  "order-form_validate-portalUnloading": "Insert a loading portal",
+  "order-form_validate-numberBrisboxers": "Insert a number brisboxers" ,
+  "order-form_validate-hours": "Insert a hour",
+  "order-form_validate-day": "Insert a day" ,
+  "order-form_validate-startMoment": "Insert a start moment",
+  "order-form_validate-name": "Insert your name",
+  "order-form_validate-surname": "Insert your surname",
+  "order-form_validate-phone": "Insert your phone",
+  "order-form_validate-email": "Insert your email"
 }

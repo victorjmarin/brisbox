@@ -392,5 +392,18 @@
   "email_order_registered_third_p": "Puedes cancelar tu pedido con hasta 24h. de antelación desde <a href='%s'>este enlace</a> introduciendo el siguiente código: ",
   "message-not_found": "Parece que no podemos encontrar la página que está buscando.",
   "title-not_found": "Oops! Error 404",
-  "order-form_location": "Introduce una ubicación"
+  "order-form_location": "Introduce una ubicación",
+  "order-form_validate-zip": "Introduce un código postal",
+  "order-form_validate-addressLoading": "Introduce una dirección de carga",
+  "order-form_validate-addressUnloading": "Introduce una dirección de descarga",
+  "order-form_validate-portalLoading": "Introduce el portal de la dirección de carga",
+  "order-form_validate-portalUnloading": "Introduce el portal de la dirección de descarga" ,
+  "order-form_validate-numberBrisboxers": "Introduce el número de brisboxers" ,
+  "order-form_validate-hours": "Introduce una hora",
+  "order-form_validate-day": "Indica el día" ,
+  "order-form_validate-startMoment": "Indica el momento de la mudanza",
+  "order-form_validate-name": "Introduce tu nombre",
+  "order-form_validate-surname": "Introduce tus apellidos",
+  "order-form_validate-phone": "Introduce tu teléfono movil",
+  "order-form_validate-email": "Introduce tu correo electrónico"
 }

@@ -7,7 +7,9 @@
                         <legend id="legend-orderHeader" class="col s12 m12">{{_ "order-form_header"}}</legend>
                         <div class="order-info col s12 m12">
                             <div class="padding-solution input-field col s12 m12">
-                                <input id="zip" {{disabled}} required value="{{zip}}" name="zip" type="text"
+                                <input oninvalid="setCustomValidity('{{_ "order-form_validate-zip"}}')"
+                                       onchange="try{setCustomValidity('')}catch(e){}"
+                                       id="zip" {{disabled}} required value="{{zip}}" name="zip" type="text"
                                        class="zip form-control">
                                 <label id="label-zip" for="zip" class="active">{{_ "order-form_zip"}}</label>
                             </div>
@@ -26,22 +28,30 @@
                             </div>
                             <div>
                                 <div id="divAddressLoading" class="padding-solution addressLoading input-field col s12 m8" >
-                                    <input id="addressLoading" name="addressLoading" type="text" class="form-control" placeholder="{{_ "order-form_location"}}">
+                                    <input oninvalid="setCustomValidity('{{_ "order-form_validate-addressLoading"}}')"
+                                           onchange="try{setCustomValidity('')}catch(e){}"
+                                           id="addressLoading" name="addressLoading" type="text" class="form-control" placeholder="{{_ "order-form_location"}}">
                                     <label id="label-addressLoading" for="addressLoading">{{_ "order-form_addressLoading"}}</label>
                                 </div>
                                 <div id="divPortalLoading" class="padding-solution portalLoading input-field col s12 m4">
-                                    <input id="portalLoading" name="portalLoading" type="text" class="form-control">
+                                    <input oninvalid="setCustomValidity('{{_ "order-form_validate-portalLoading"}}')"
+                                           onchange="try{setCustomValidity('')}catch(e){}"
+                                           id="portalLoading" name="portalLoading" type="text" class="form-control">
                                     <label for="portalLoading">{{_ "order-form_portalLoading"}}</label>
                                 </div>
                         </div>
                         <div>
                             <div>
                                 <div id="divAddressUnLoading" class="padding-solution addressUnloading input-field col s12 m8">
-                                    <input id="addressUnloading" name="addressUnloading" type="text" class="form-control" placeholder="{{_ "order-form_location"}}">
+                                    <input oninvalid="setCustomValidity('{{_ "order-form_validate-addressUnloading"}}')"
+                                           onchange="try{setCustomValidity('')}catch(e){}"
+                                           id="addressUnloading" name="addressUnloading" type="text" class="form-control" placeholder="{{_ "order-form_location"}}">
                                     <label id="label-addressUnloading" for="addressUnloading">{{_ "order-form_addressUnloading"}}</label>
                                 </div>
                                 <div id="divPortalUnloading" class="padding-solution portalUnloading input-field col s12 m4">
-                                    <input id="portalUnloading" name="portalUnloading" type="text" class="form-control">
+                                    <input oninvalid="setCustomValidity('{{_ "order-form_validate-portalUnloading"}}')"
+                                           onchange="try{setCustomValidity('')}catch(e){}"
+                                           id="portalUnloading" name="portalUnloading" type="text" class="form-control">
                                     <label for="portalUnloading">{{_ "order-form_portalUnloading"}}</label>
                                 </div>
                             </div>
@@ -55,28 +65,36 @@
                             </div>
                             <div class="padding-solution input-field col s12 m12">
                                 <div class="padding-solution input-field col s6 m6">
-                                    <input id="numberBrisboxers" required name="numberBrisboxers" type="number" min="1" max="6"
+                                    <input oninvalid="setCustomValidity('{{_ "order-form_validate-numberBrisboxers"}}')"
+                                           onchange="try{setCustomValidity('')}catch(e){}"
+                                           id="numberBrisboxers" required name="numberBrisboxers" type="number" min="1" max="6"
                                            class="numberBrisboxers form-control">
                                     <label id="label_numberBrisboxers" class="col s6 m6"
                                            for="numberBrisboxers">{{_ "order-form_numberBrisboxers"}}</label>
                                 </div>
                                 <div class="padding-solution input-field col s6 m6">
-                                    <input id="hours" type="number" required name="hours" min="1" max="12"
+                                    <input oninvalid="setCustomValidity('{{_ "order-form_validate-hours"}}')"
+                                           onchange="try{setCustomValidity('')}catch(e){}"
+                                           id="hours" type="number" required name="hours" min="1" max="12"
                                            class="hours form-control">
                                     <label id="label_hours" class="col s6 m6"
                                            for="hours">{{_ "order-form_hours"}}</label>
                                 </div>
                             </div>
-                            <div class="input-field col s12 m12">
+                            <div class="padding-solution input-field col s12 m12">
                                 <div class="padding-solution input-field col s6 m6">
-                                    <input id="day" type="date" name="day" required
+                                    <input oninvalid="setCustomValidity('{{_ "order-form_validate-day"}}')"
+                                           onchange="try{setCustomValidity('')}catch(e){}"
+                                           id="day" type="date" name="day" required
                                            class="datepicker form-control col s12 m12">
-                                    <label id="label_day" class="col s10 m10" for="day">{{_ "order-form_day"}}</label>
+                                    <label id="label_day" class="col s12 m10" for="day">{{_ "order-form_day"}}</label>
                                 </div>
                                 <div class="padding-solution input-field col s6 m6">
-                                    <input id="startMoment" type="text" required name="startMoment"
+                                    <input oninvalid="setCustomValidity('{{_ "order-form_validate-startMoment"}}')"
+                                           onchange="try{setCustomValidity('')}catch(e){}"
+                                           id="startMoment" type="text" required name="startMoment"
                                            class="timepicker form-control col s12 m12">
-                                    <label id="label_startMoment" class="col s6 m6"
+                                    <label id="label_startMoment" class="col s12 m6"
                                            for="startMoment">{{_ "order-form_startMoment"}}</label>
                                 </div>
 
@@ -85,19 +103,26 @@
                         <div class="order-info col s12 m12">
                             <legend>{{_ "order-form-info_contact"}}</legend>
                             <div class="padding-solution input-field col s12 m12">
-                                <input id="name" type="text" required class="name form-control">
+                                <input  oninvalid="setCustomValidity('{{_ "order-form_validate-name"}}')"
+                                        onchange="try{setCustomValidity('')}catch(e){}"  id="name" type="text" required class="name form-control">
                                 <label id="label_name" for="name">{{_ "order-form_name"}}</label>
                             </div>
                             <div class="padding-solution input-field col s12 m12">
-                                <input type="text" id="surname" required class="surname form-control">
+                                <input oninvalid="setCustomValidity('{{_ "order-form_validate-surname"}}')"
+                                       onchange="try{setCustomValidity('')}catch(e){}"
+                                       type="text" id="surname" required class="surname form-control">
                                 <label id="label_surname" for="surname">{{_ "order-form_surname"}}</label>
                             </div>
                             <div class="padding-solution input-field col s12 m12">
-                                <input id="phone" type="tel" name="phone" required class="phone form-control">
+                                <input oninvalid="setCustomValidity('{{_ "order-form_validate-phone"}}')"
+                                       onchange="try{setCustomValidity('')}catch(e){}"
+                                       id="phone" type="tel" name="phone" required class="phone form-control">
                                 <label id="label_phone" for="phone">{{_ "order-form_phone"}}</label>
                             </div>
                             <div class="padding-solution input-field col s12 m12">
-                                <input id="email" type="email" required class="email form-control">
+                                <input oninvalid="setCustomValidity('{{_ "order-form_validate-email"}}')"
+                                       onchange="try{setCustomValidity('')}catch(e){}"
+                                       id="email" type="email" required class="email form-control">
                                 <label id="label_email" for="email">{{_ "order-form_email"}}</label>
                             </div>
                         </div>
