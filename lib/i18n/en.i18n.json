@@ -376,8 +376,19 @@
       }
     }
   },
+  "order-form_location": "Enter a location",
   "message-not_found": "We can't seem to find the page you're looking for.",
   "title-not_found": "Oops! 404 Error",
+  //Order payment confirmation
+  "payment_confirmation_real_num_brisboxers": "How many Brisboxers?",
+  "payment_confirmation_real_num_hours": "Hours spent?",
+  "payment_confirmation_total": "Final price",
+  "payment_confirmation_confirm": "Confirm",
+  "payment_confirmation_paied": "Order paied successfully",
+  "payment_confirmation_button": "Payment",
+  "payment_confirmation_stripe_submit": "Confirm payment",
+  "payment_confirmation_cancel": "Cancel",
+
   "email_signature": "Sincerely,<br>Brisbox Team",
   // Validation email
   "email_validation_subject": "Just one step away!",
@@ -397,6 +408,5 @@
   "email_order_registered_title": "Thank you, %s",
   "email_order_registered_first_p": "Your order has been sucessfully registered. We will notify you as soon as the requested number of brisboxers has been met.",
   "email_order_registered_second_p": "To access the dashboard and track the status of your order, click <a href='%s'>here</a>.",
-  "email_order_registered_third_p": "You can cancel your order up to 24h. before it takes place by visiting <a href='%s'>this link</a> and using the following code: ",
-  "order-form_location": "Enter a location"
+  "email_order_registered_third_p": "You can cancel your order up to 12h. before it takes place by visiting <a href='%s'>this link</a> and using the following code: "
 }
