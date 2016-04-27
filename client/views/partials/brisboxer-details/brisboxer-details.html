@@ -12,17 +12,25 @@
 						<div class="col s3 m3 l3">
 							{{_ "name"}}:
 						</div>
-						<div class="col s9 m9 l9">
-							{{profile.name}}
-						</div>
+                        {{#if editBrisboxer}}
+                            <input id="edit_brisboxer_name" value="{{profile.name}}"/>
+                        {{else}}
+                            <div class="col s9 m9 l9">
+                                {{profile.name}}
+                            </div>
+                        {{/if}}
 					</div>
 					<div class="row valign-wrapper">
 						<div class="col s3 m3 l3">
 							{{_ "surname"}}:
 						</div>
-						<div class="col s9 m9 l9">
-							{{profile.surname}}
-						</div>
+                        {{#if editBrisboxer}}
+                            <input id="edit_brisboxer_surname" value="{{profile.surname}}"/>
+                        {{else}}
+                            <div class="col s9 m9 l9">
+                                {{profile.surname}}
+                            </div>
+                        {{/if}}
 					</div>
 					<div class="row valign-wrapper">
 						<div class="col s3 m3 l3">
@@ -44,9 +52,13 @@
 						<div class="col s3 m3 l3">
 							{{_ "phone"}}:
 						</div>
-						<div class="col s9 m9 l9">
-							{{profile.phone}}
-						</div>
+                        {{#if editBrisboxer}}
+                            <input id="edit_brisboxer_phone" value="{{profile.phone}}"/>
+                        {{else}}
+                            <div class="col s9 m9 l9">
+                                {{profile.phone}}
+                            </div>
+                        {{/if}}
 					</div>
 					<div class="row valign-wrapper">
 						<div class="col s3 m3 l3">
@@ -74,6 +86,17 @@
 					</div>
 				</div>
 			</div>
+            <div class="center-align detail-buttons">
+                {{#if editBrisboxer}}
+                    <button id="save_button" type="button" class="waves-effect waves-light btn orange darken-3 z-depth-1 bold">{{_ "brisboxer_details_save"}}
+                    </button>
+                    <button id="cancel_button" type="button" class="waves-effect waves-light btn-flat bold">{{_ "brisboxer_details_cancel"}}
+                    </button>
+                {{else}}
+                    <button id="edit_button" type="button" class="waves-effect waves-light btn orange darken-3 z-depth-1 bold">{{_ "brisboxer_details_edit"}}
+                    </button>
+                {{/if}}
+            </div>
 		{{else}}
 			<div class="row center-align">
 				<h5 class="red-text">{{_ "brisboxer_doesnt_founded"}}</h5>
@@ -95,7 +118,7 @@
                         <div class="fill"></div>
                     </div>
                 </div>
-                
+
 			</div>
 		</div>
 
