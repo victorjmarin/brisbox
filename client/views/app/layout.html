@@ -15,6 +15,10 @@
             {{> login}}
         {{/if}}
 
+        {{#if showPaymentConfirmationModal }}
+            {{> payment_confirmation}}
+        {{/if}}
+
         <main class="Site-content">
             {{> yield}}
         </main>

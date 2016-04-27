@@ -2,7 +2,7 @@ var Future = Npm.require('fibers/future');
 
 Meteor.methods({
     'chargeCard': function (stripeToken, amountForm) {
-        var stripeKey = 'sk_test_u6R8UmdlKfuIUYvpVWuWOkEx';
+        var stripeKey = Meteor.settings.private.stripe.testSecretKey;
         var Stripe = StripeAPI(stripeKey);
 
         var future = new Future();
@@ -241,6 +241,17 @@ Meteor.methods({
             });
 
         }
+    },
+    'updateBrisboxerDetails': function(name, surname, phone){
+        var currentUserId = Meteor.userId();
+        return Meteor.users.update(currentUserId, {
+            $set: {
+                "profile.name" : name,
+                "profile.surname" : surname,
+                "profile.phone" : phone,
+            }
+        });
+
     }
 
 })
