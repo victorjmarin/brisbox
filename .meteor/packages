@@ -38,8 +38,11 @@ meteorhacks:ssr
 auweb:server-session
 u2622:persistent-session
 random
+cfs:standard-packages
+cfs:gridfs
 meteorhacks:subs-manager
 jorisroling:isotope
 arcjet:radioactive
 smeevil:reactive-block-grid
 rzymek:moment-locale-es
+fraviemor:autoform-file

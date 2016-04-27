@@ -2,7 +2,7 @@ var Future = Npm.require('fibers/future');
 
 Meteor.methods({
     'chargeCard': function (stripeToken, amountForm) {
-        var stripeKey = 'sk_test_u6R8UmdlKfuIUYvpVWuWOkEx';
+        var stripeKey = Meteor.settings.private.stripe.testSecretKey;
         var Stripe = StripeAPI(stripeKey);
 
         var future = new Future();
@@ -38,7 +38,6 @@ Meteor.methods({
         });
     },
     'sendEmailToUser': function (correo, subject, text) {
-        console.log("*** sendEmailToUser ***");
         Email.send({
             from: 'hello@brisbox.com',
             subject: subject,
@@ -71,18 +70,17 @@ Meteor.methods({
             canceled: false,
             brisboxers: []
         };
-        Orders.insert(orderForm, function (err, callback) {
+        Orders.insert(orderForm, function (err, orderId) {
             if (!err) {
-                Meteor.call('sendOrderCreatedEmail', callback, cancelationCode);
+                var order = Orders.findOne({"_id": orderId});
+                MailService.orderRegistered(order, cancelationCode);
             }
         });
     },
 
     'sendEmail': function (to, from, subject, text) {
         check([to, from, subject, text], [String]);
-
-        console.log(process.env.MAIL_URL);
-
+        
         // Let other method calls from the same client start running,
         // without waiting for the email sending to complete.
         this.unblock();
@@ -120,7 +118,8 @@ Meteor.methods({
                     surname: doc.surname,
                     phone: doc.phone,
                     zip: doc.zip,
-                    howHearAboutUs: doc.howHearAboutUs
+                    howHearAboutUs: doc.howHearAboutUs,
+                    image: doc.image
                 }
             });
         } catch (error) {
@@ -142,31 +141,10 @@ Meteor.methods({
         if (!OrderService.needsMoreBrisboxers(updatedOrder)) {
             var captain = OrderService.selectCaptain(updatedOrder);
             MailService.notifyCaptain(updatedOrder, captain);
+            MailService.brisboxerComplete(updatedOrder);
         }
     },
-
-    'sendOrderCreatedEmail': function (orderId, cancelationCode) {
-        var pedidoIdCodificado = Meteor.call('codificaString', orderId);
-        var pedido = Orders.findOne({"_id": orderId});
-        var token = (parseInt(pedido.phone) * 71) + (parseInt(pedido.zip) * 31);
-        var hostname = process.env.ROOT_URL;
-        if (hostname.substring(hostname.length - 1, hostname.length) != "/") {
-            hostname += "/";
-        }
-        var urlDashboardOrder = hostname + "order_dashboard/" + pedidoIdCodificado;
-        var urlDeleteOrder = hostname + "cancel-order/" + pedidoIdCodificado + "/" + token;
-        var currentLocale = TAPi18next.lng();
-        if (currentLocale == "es") {
-            var subject = "[BRISBOX] ¡Su pedido ha sido registrado!";
-            var text = "Hola " + pedido.name + " su pedido ha sido registrado en el sistema.\nPulse en el siguiente enlace para acceder al estado actual de su pedido:\n" + urlDashboardOrder + " \n\nSi desea cancelar el pedido sólo tiene que hacer click en el siguiente enlace:\n" + urlDeleteOrder + "\n\nCódigo de cancelación: " + cancelationCode + "\n\nUn saludo del equipo de Brisbox.";
-        }
-        if (currentLocale == "en") {
-            var subject = "[BRISBOX] Your order has been registered!";
-            var text = "Hello " + pedido.name + " your order has been registered on the system.\nClick on the next link to see the actual status of your order:\n" + urlDashboardOrder + " \n\nIf you want to cancel your order, you just have to click on the next link:\n" + urlDeleteOrder + "\n\nCancelation code: " + cancelationCode + "\n\nGreetings for the Brisbox Team.";
-        }
-        Meteor.call('sendEmailToUser', pedido.email, subject, text);
-    },
-
+    
     'deleteOrderMethod': function (orderIdCodificado, token) {
         var res = "NOTCANCELED";
         var orderIdDecodificado = Meteor.call('deCodificaString', orderIdCodificado);
@@ -175,7 +153,6 @@ Meteor.methods({
         if (Orders.find({"_id": orderIdDecodificado}).count() == 1) {
             if (order._id == orderIdDecodificado) {
                 if ((parseInt(order.phone) * 71) + (parseInt(order.zip) * 31) == tokenInt) {
-                    console.log("*** TOKEN CORRECTO ***");
                     res = "TOCANCEL";
                 } else {
                     res = "NOTCANCELED";
@@ -227,14 +204,7 @@ Meteor.methods({
             }
         }
         if (correct) {
-            console.log(orderId);
-            console.log(brisboxerId);
-            console.log(comments);
-            console.log(rating);
-            console.log("Updating Order");
             Orders.update({_id: orderId, "brisboxers._id": brisboxerId}, {$set: {"brisboxers.$.assessed": true}});
-            console.log("Updating user");
-            console.log(Meteor.users.find().fetch()[0]);
             Meteor.users.update({_id: brisboxerId},
                 {$push: {assessments: {comments: comments, rating: rating}}});
         }
@@ -271,6 +241,17 @@ Meteor.methods({
             });
 
         }
+    },
+    'updateBrisboxerDetails': function(name, surname, phone){
+        var currentUserId = Meteor.userId();
+        return Meteor.users.update(currentUserId, {
+            $set: {
+                "profile.name" : name,
+                "profile.surname" : surname,
+                "profile.phone" : phone,
+            }
+        });
+
     }
 
 })

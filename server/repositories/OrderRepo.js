@@ -1,4 +1,7 @@
 OrderRepo = {
+    findOne: function (order) {
+        return Orders.findOne(order._id);
+    },
     addBrisboxer: function (order, brisboxer) {
         Orders.update(
             {
@@ -6,7 +9,7 @@ OrderRepo = {
             },
             {
                 $push: {
-                    brisboxers: {_id: brisboxer._id, username: brisboxer.username}
+                    brisboxers: {_id: brisboxer._id, username: brisboxer.username, assessed: false}
                 }
             });
         return Orders.findOne(order._id);
