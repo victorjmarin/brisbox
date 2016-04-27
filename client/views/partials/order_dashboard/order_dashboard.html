@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="col s4 m4 brisboxers-info" id="brisboxers">
-                <div class="col s12 m12 brib-info">
+                <div class="col s12 m12">
                     <span class="order_dashboard_section_title title flow-text">{{_ "order_dashboard_brisboxers_info_title"}}</span>
                     {{#if notEmpty brisboxers}}
                         {{> brisboxers_list}}
@@ -65,7 +65,7 @@
                         {{#if orderDay day}}
                             {{#if notInOrder }}
                                 <button name="submit" id="confirm-order-payment" type="button"
-                                        class="btn waves-effect waves-light orange darken-3 white-text confirm-payment">{{_ "payment_confirmation_button"}}
+                                        class="btn btn-primary waves-effect waves-light orange darken-3 white-text confirm-payment">{{_ "payment_confirmation_button"}}
                                 </button>
                             {{/if}}
                         {{else}}

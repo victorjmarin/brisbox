@@ -45,7 +45,6 @@
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
-    border: 2px solid #ef6c00;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 30px;
@@ -75,7 +74,6 @@
 
 .order-info span.title {
     display: block;
-    font-style: oblique;
     color: orange;
 }
 
@@ -90,7 +88,6 @@
     width: 50%;
     margin-bottom: 10px;
     margin-top: 10px;
-    border: 2px solid #ef6c00;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 30px;
@@ -101,19 +98,13 @@
 .brisboxer-inf {
     position: relative;
     height: 100%;
-    margin-left: 10%;
     width: 80%;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     margin-top: 10px;
-    border: 2px solid #ef6c00;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
 }
 
 .brisboxers-info span.title {
     display: block;
-    font-style: oblique;
     color: orange;
 }
 
