@@ -242,8 +242,8 @@
   "order_dashboard_day": "Day",
   "order_dashboard_hour": "Hour",
   "order_dashboard_number_of_brisboxers": "Nº of brisboxers",
-  "order_dashboard_estimate_hours": "Estimate hours",
-  "order_dashboard_estimate_cost": "Estimate cost",
+  "order_dashboard_estimate_hours": "Estimated hours",
+  "order_dashboard_estimate_cost": "Estimated cost",
   "brisboxer_details": "Brisboxer details",
   "name": "Name",
   "surname": "Surname",
@@ -260,6 +260,7 @@
   "order_deleted_failed_body": "There was an error cancelling your order. Please try again later.",
   "order_not_found": "Order not found",
   "order_canceling": "Cancel your order",
+  "order_leave": "Leave",
   "enter-cancelation-code": "Please search on your email the cancelation code and write it on the input field.",
   "cancel-form-code": "Cancelation Code",
   "cancel-submit": "Cancel Order",
@@ -272,7 +273,8 @@
   "access_denied_body":"We are sorry, you don't have enough access to this site",
   "order_dashboard_emptyBrisboxer": "We are sorry, there aren't any brisboxer inscribed yet.",
   "order_dashboard_payment": "Pay",
-  "order_dashboard_cancel": "Cancel",
+  "order_dashboard_cancel": "Cancel order",
+  "order_dashboard_left": "You have left the order",
   "go_back": "Go Back",
   "schemas": {
     "inscription": {

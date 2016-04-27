@@ -22,7 +22,6 @@
 
 @media only screen and (min-width: 768px) {
     .main-container {
-        font-size: x-large;
         font-weight: normal;
         margin: 1% 5%;
         color: rgba(0, 0, 0, 0.85);
@@ -45,9 +44,7 @@
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
+    border: 2px solid #ededed;
     min-width: 235px;
 }
 
@@ -58,7 +55,6 @@
 .mapita {
     width: 100%;
     margin-top: 10px;
-    margin-bottom: 10px;
     min-height: 525px;
     height: 100%;
     min-width: 235px;
@@ -77,28 +73,20 @@
     color: orange;
 }
 
-.brisboxers-buttons {
-    position: absolute;
-    bottom: 20px;
-}
-
 .brisboxers-info {
     position: relative;
     height: 100%;
     width: 50%;
     margin-bottom: 10px;
     margin-top: 10px;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
-    min-height: 525px;
+    border: 2px solid #ededed;
+
     min-width: 235px;
 }
 
 .brisboxer-inf {
     position: relative;
     height: 100%;
-    width: 80%;
     margin-bottom: 30px;
     margin-top: 10px;
 }

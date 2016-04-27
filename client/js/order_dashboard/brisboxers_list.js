@@ -7,12 +7,11 @@ Template.brisboxers_list.helpers({
     }
 });
 Template.brisboxers_list.events({
-    'click .clear-icon': function (e){
+    'click #leave-order': function (e){
         e.preventDefault();
 
         var id = e.currentTarget.getAttribute('data-id');
         var order_id = Session.get('order_id');
-
 
        Meteor.call('updateBrisboxersOfOrder', order_id, id, function(err, res){
            if(res){
