@@ -370,6 +370,10 @@
       }
     }
   },
+  "message-not_found": "Parece que no podemos encontrar la página que está buscando.",
+  "title-not_found": "Oops! Error 404",
+  "order-form_location": "Introduce una ubicación"
+  
   "email_signature": "Un saludo,<br>Equipo Brisbox",
   // Validation email
   "email_validation_subject": "¡Sólo un paso más!",
@@ -395,4 +399,5 @@
   "brisboxer_details_save": "Guardar",
   "brisboxer_details_cancel": "Cancelar",
   "brisboxer_details_edit": "Editar perfil"
+
 }

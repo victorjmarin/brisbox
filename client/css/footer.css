@@ -5,3 +5,9 @@
 .footer-cr-bg {
     background-color: #594B31;
 }
+
+@media (max-width: 800px){
+    #modal1{
+        height: 40% !important;
+    }
+}

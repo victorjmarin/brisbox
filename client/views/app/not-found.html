@@ -1,10 +1,14 @@
 <template name="notFound">
 
-    <div class="container">
+    <div id="not-found-container">
         <div class="row">
-            <div class="col s12">
-                <div class="center-align" style="font-size: 18pt; color: #999; margin-top: 25%">
-                    404. Oops, the route could not be found.
+            <div id="message-image" class="col s12">
+                <h1>{{_ "title-not_found"}}</h1>
+                <div class="col s12 m6 center-align" style="font-size: 18pt; color: #999; margin-top: 10%;">
+                    <h4>{{_ "message-not_found"}}</h4>
+                </div>
+                <div id="image-not-found" class="col s12 m6">
+                    <img src="/image_404.png">
                 </div>
             </div>
         </div>

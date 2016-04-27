@@ -4,62 +4,63 @@
             <div class="col s12 m6">
                 <form class="order_form col s12" id="order-form">
                     <div class="col s12 m12">
-                        <legend class="col s12 m12">{{_ "order-form_header"}}</legend>
+                        <legend id="legend-orderHeader" class="col s12 m12">{{_ "order-form_header"}}</legend>
                         <div class="order-info col s12 m12">
-                            <div class="input-field col s12 m12">
-                                <input id="zip" required value="{{zip}}" name="zip" type="text"
+                            <div class="padding-solution input-field col s12 m12">
+                                <input id="zip" {{disabled}} required value="{{zip}}" name="zip" type="text"
                                        class="zip form-control">
                                 <label id="label-zip" for="zip" class="active">{{_ "order-form_zip"}}</label>
                             </div>
-                            <div class="col s12 m12">
-                                <label id="label_typeMove" class="col s12 m12" for="typeMove">{{_ "order-form_typeMove"}}</label>
-                                <div class="col s6 m6">
+                            <div class="padding-solution col s12 m12">
+                                <label id="label_typeMove" class="padding-solution col s12 m12" for="typeMove">{{_ "order-form_typeMove"}}</label>
+                                <div class="padding-solution col s6 m6">
                                     <input type="checkbox" id="loading" name="loading"
                                            class="loading filled-in checkbox-orange col s12 m6"/>
                                     <label for="loading" class="typeMove">{{_ "order-loading"}}</label>
                                 </div>
-                                <div class="col s6 m6">
+                                <div class="padding-solution col s6 m6">
                                     <input type="checkbox" id="unloading" name="unloading"
                                            class="unloading filled-in checkbox-orange col s12 m6"/>
                                     <label for="unloading" class="typeMove">{{_ "order-unloading"}}</label>
                                 </div>
                             </div>
+                            <div>
+                                <div id="divAddressLoading" class="padding-solution addressLoading input-field col s12 m8" >
+                                    <input id="addressLoading" name="addressLoading" type="text" class="form-control" placeholder="{{_ "order-form_location"}}">
+                                    <label id="label-addressLoading" for="addressLoading">{{_ "order-form_addressLoading"}}</label>
+                                </div>
+                                <div id="divPortalLoading" class="padding-solution portalLoading input-field col s12 m4">
+                                    <input id="portalLoading" name="portalLoading" type="text" class="form-control">
+                                    <label for="portalLoading">{{_ "order-form_portalLoading"}}</label>
+                                </div>
                         </div>
                         <div>
-                            <div id="divAddressLoading" class="addressLoading input-field col s12 m8">
-                                <input id="addressLoading" name="addressLoading" type="text" class="form-control">
-                                <label for="addressLoading">{{_ "order-form_addressLoading"}}</label>
-                            </div>
-                            <div id="divPortalLoading" class="portalLoading input-field col s12 m4">
-                                <input id="portalLoading" name="portalLoading" type="text" class="form-control">
-                                <label for="portalLoading">{{_ "order-form_portalLoading"}}</label>
-                            </div>
-                        </div>
-                        <div>
-                            <div id="divAddressUnLoading" class="addressUnloading input-field col s12 m8">
-                                <input id="addressUnloading" name="addressUnloading" type="text" class="form-control">
-                                <label for="addressUnloading">{{_ "order-form_addressUnloading"}}</label>
-                            </div>
-                            <div id="divPortalUnloading" class="portalUnloading input-field col s12 m4">
-                                <input id="portalUnloading" name="portalUnloading" type="text" class="form-control">
-                                <label for="portalUnloading">{{_ "order-form_portalUnloading"}}</label>
+                            <div>
+                                <div id="divAddressUnLoading" class="padding-solution addressUnloading input-field col s12 m8">
+                                    <input id="addressUnloading" name="addressUnloading" type="text" class="form-control" placeholder="{{_ "order-form_location"}}">
+                                    <label id="label-addressUnloading" for="addressUnloading">{{_ "order-form_addressUnloading"}}</label>
+                                </div>
+                                <div id="divPortalUnloading" class="padding-solution portalUnloading input-field col s12 m4">
+                                    <input id="portalUnloading" name="portalUnloading" type="text" class="form-control">
+                                    <label for="portalUnloading">{{_ "order-form_portalUnloading"}}</label>
+                                </div>
                             </div>
                         </div>
                         <div class="order-info col s12 m12">
                             <legend id="legend">{{_ "order-more-info_header"}}</legend>
-                            <div class="input-field col s12 m12">
-                                <textarea type="text" id="comments1" class="comments materialize-textarea col s12 m12 form-control"></textarea>
+                            <div class="padding-solution input-field col s12 m12">
+                                <textarea type="text" id="comments" class="comments materialize-textarea col s12 m12 form-control"></textarea>
                                 <label id="label_comments" class="col s12 m12"
                                        for="comments1">{{_ "order-form_comments"}}</label>
                             </div>
-                            <div class="input-field col s12 m12">
-                                <div class="input-field col s6 m6">
+                            <div class="padding-solution input-field col s12 m12">
+                                <div class="padding-solution input-field col s6 m6">
                                     <input id="numberBrisboxers" required name="numberBrisboxers" type="number" min="1" max="6"
                                            class="numberBrisboxers form-control">
                                     <label id="label_numberBrisboxers" class="col s6 m6"
                                            for="numberBrisboxers">{{_ "order-form_numberBrisboxers"}}</label>
                                 </div>
-                                <div class="input-field col s6 m6">
+                                <div class="padding-solution input-field col s6 m6">
                                     <input id="hours" type="number" required name="hours" min="1" max="12"
                                            class="hours form-control">
                                     <label id="label_hours" class="col s6 m6"
@@ -67,12 +68,12 @@
                                 </div>
                             </div>
                             <div class="input-field col s12 m12">
-                                <div class="input-field col s6 m6">
+                                <div class="padding-solution input-field col s6 m6">
                                     <input id="day" type="date" name="day" required
                                            class="datepicker form-control col s12 m12">
                                     <label id="label_day" class="col s10 m10" for="day">{{_ "order-form_day"}}</label>
                                 </div>
-                                <div class="input-field col s6 m6">
+                                <div class="padding-solution input-field col s6 m6">
                                     <input id="startMoment" type="text" required name="startMoment"
                                            class="timepicker form-control col s12 m12">
                                     <label id="label_startMoment" class="col s6 m6"
@@ -83,33 +84,35 @@
                         </div>
                         <div class="order-info col s12 m12">
                             <legend>{{_ "order-form-info_contact"}}</legend>
-                            <div class="input-field col s12 m12">
+                            <div class="padding-solution input-field col s12 m12">
                                 <input id="name" type="text" required class="name form-control">
                                 <label id="label_name" for="name">{{_ "order-form_name"}}</label>
                             </div>
-                            <div class="input-field col s12 m12">
+                            <div class="padding-solution input-field col s12 m12">
                                 <input type="text" id="surname" required class="surname form-control">
                                 <label id="label_surname" for="surname">{{_ "order-form_surname"}}</label>
                             </div>
-                            <div class="input-field col s12 m12">
+                            <div class="padding-solution input-field col s12 m12">
                                 <input id="phone" type="tel" name="phone" required class="phone form-control">
                                 <label id="label_phone" for="phone">{{_ "order-form_phone"}}</label>
                             </div>
-                            <div class="input-field col s12 m12">
+                            <div class="padding-solution input-field col s12 m12">
                                 <input id="email" type="email" required class="email form-control">
                                 <label id="label_email" for="email">{{_ "order-form_email"}}</label>
                             </div>
                         </div>
-                        <p class="errorDay">{{_ "order-errorDay"}}</p>
-                        <p class="errorAddress">{{_ "order-errorAddress"}}</p>
-                        <div class="input-field col s12 center-align">
-                            <button type="submit" class="btn btn-primary waves-button-input orange darken-3 caret">{{_ "order-submit"}}</button>
+                            <p class="errorDay">{{_ "order-errorDay"}}</p>
+                            <p class="errorAddress">{{_ "order-errorAddress"}}</p>
+                            <p class="errorZip">{{_ "order-errorZip"}}</p>
+                            <div class="input-field col s12 center-align">
+                                <button type="submit" class="btn btn-primary waves-button-input orange darken-3 caret">{{_ "order-submit"}}</button>
+                            </div>
                         </div>
                     </div>
                 </form>
             </div>
 
-                <div class="map-container col s12 m6 hide-on-small-only">
+            <div id="exampleMap" class="map-container z-depth-1  col s12 m6 hide-on-small-only">
                 {{> googleMap name="exampleMap" options=exampleMapOptions}}
             </div>
         </div>
