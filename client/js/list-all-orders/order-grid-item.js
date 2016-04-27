@@ -20,6 +20,9 @@ Template.orderGridItem.helpers({
                 zoom: 17
             };
         }
+    },
+    render: function () {
+        return Session.get("render");
     }
 });
 
@@ -30,9 +33,13 @@ Template.orderGridItem.events({
 });
 
 Template.orderGridItem.onRendered(function () {
+    Session.set("render", false);
     GoogleMaps.load({
         key: 'AIzaSyAfk4ikNH05OssyWavDvWImWFsf6oVXzzQ'
     });
+    setTimeout(function () {
+        Session.set("render", true);
+    }, 1);
 });
 
 Template.orderGridItem.onCreated(function () {

@@ -6,7 +6,9 @@
 
             <div style="height:280px;width:100%;background:#e8ddbd;position:relative;">
 
-                {{> googleMap name=_id options=mapOptions}}
+                {{#if render}}
+                    {{> googleMap name=_id options=mapOptions}}
+                {{/if}}
 
                 <div style="position:absolute;top:8px;left:8px;color:#fff;font-weight: normal;font-size:110%;">
                     <div>
