@@ -163,7 +163,7 @@ Template.order_dashboard.events({
 Template.registerHelper("orderDay", function (date) {
     var hoy = new Date();
     var diaPedidoSub1 = date.setTime(date.getTime() - 86400000);
-    return diaPedidoSub1.before(hoy);
+    return diaPedidoSub1.getTime()>hoy.getTime();
 });
 
 Template.order_dashboard.events({

@@ -101,6 +101,10 @@
     display: inline-block;
 }
 
+.image-div:hover {
+    cursor:hand;
+}
+
 .imag {
     margin-bottom: 5px;
 }

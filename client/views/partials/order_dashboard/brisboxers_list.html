@@ -1,15 +1,15 @@
 <template name="brisboxers_list">
     {{#each brisboxers}}
         <div class="brisboxer-inf">
-            <div class="image-div" style="float:left;margin-right:15px;">
-                <img class="circle imag" src="/placeholder.png"/>
-            </div>
+            <a href="{{ pathFor 'brisboxer-details' _id=this._id }}"><div class="image-div" style="float:left;margin-right:15px;">
+                <img class="circle imag" src="{{imageProfile _id}}"/>
+            </div></a>
             <div class="name-and-vote-div">
                 <span class="flow-text"> <b>{{_ "order_dashboard_name"}}:</b> {{username}}</span>
             </div>
             <div>
                 <span class="flow-text"><b>{{_ "score"}}:</b><span
-                        class="order_dashboard_vote orange-text"> 10</span></span>
+                        class="order_dashboard_vote orange-text"> {{score _id}}</span></span>
             </div>
             {{#if isThisBrisboxer _id}}
                 <div style="position:absolute;right:0;top:20px">
