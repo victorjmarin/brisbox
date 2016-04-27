@@ -17,7 +17,7 @@ Template.myOrdersItem.helpers({
             return {
                 disableDefaultUI: true,
                 center: new google.maps.LatLng(37.3914105564361, -5.9591776906),
-                zoom: 12
+                zoom: 17
             };
         }
     }
@@ -36,20 +36,21 @@ Template.myOrdersItem.onRendered(function () {
 });
 
 Template.myOrdersItem.onCreated(function () {
-    GoogleMaps.ready('map', function (map) {
+    var data = this.data;
+    GoogleMaps.ready(data._id, function (map) {
         var geocoder = new google.maps.Geocoder();
-        var address = "Madrid";
+        var address = data.addressLoading + " " + data.zip;
         geocoder.geocode({'address': address}, function (results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
                 var latitude = results[0].geometry.location.lat();
                 var longitude = results[0].geometry.location.lng();
                 var latLng = new google.maps.LatLng(latitude, longitude);
                 map.instance.setCenter(latLng);
+                var marker = new google.maps.Marker({
+                    position: latLng,
+                    map: map.instance
+                });
             }
-        });
-        var marker = new google.maps.Marker({
-            position: map.options.center,
-            map: map.instance
         });
     });
 });
