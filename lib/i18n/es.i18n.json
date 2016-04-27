@@ -391,8 +391,8 @@
   "email_order_registered_second_p": "Para acceder al panel de control de tu pedido y llevar un seguimiento de él, haz click <a href='%s'>aquí</a>.",
   "email_order_registered_third_p": "Puedes cancelar tu pedido con hasta 24h. de antelación desde <a href='%s'>este enlace</a> introduciendo el siguiente código: ",
 
-  "brisboxer_details_ok": "Brisboxer modificado correctamente",
+  "brisboxer_details_ok": "Perfil actualizado correctamente",
   "brisboxer_details_save": "Guardar",
   "brisboxer_details_cancel": "Cancelar",
-  "brisboxer_details_edit": "Editar"
+  "brisboxer_details_edit": "Editar perfil"
 }
