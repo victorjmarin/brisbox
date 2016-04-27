@@ -141,6 +141,7 @@ Meteor.methods({
         if (!OrderService.needsMoreBrisboxers(updatedOrder)) {
             var captain = OrderService.selectCaptain(updatedOrder);
             MailService.notifyCaptain(updatedOrder, captain);
+            MailService.brisboxerComplete(updatedOrder);
         }
     },
     

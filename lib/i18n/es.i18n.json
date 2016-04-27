@@ -373,6 +373,7 @@
   "order-form_location": "Introduce una ubicación",
   "message-not_found": "Parece que no podemos encontrar la página que está buscando.",
   "title-not_found": "Oops! Error 404",
+
   //Order payment confirmation
   "payment_confirmation_real_num_brisboxers": "¿Cuántos Brisboxers?",
   "payment_confirmation_real_num_hours": "¿Horas invertidas?",
@@ -403,6 +404,12 @@
   "email_order_registered_first_p": "Tu pedido ha sido registrado en el sistema. Tan pronto como el número de brisboxers solicitado haya sido cubierto te lo notificaremos.",
   "email_order_registered_second_p": "Para acceder al panel de control de tu pedido y llevar un seguimiento de él, haz click <a href='%s'>aquí</a>.",
   "email_order_registered_third_p": "Puedes cancelar tu pedido con hasta 24h. de antelación desde <a href='%s'>este enlace</a> introduciendo el siguiente código: ",
+  // Brisboxers complete
+  "email_brisboxer_complete_subject": "Estamos preparados",
+  "email_brisboxer_complete_title": "¡Todo listo!",
+  "email_brisboxer_complete_first_p": "Se ha satisfecho el número de brisboxers solicitado. El capitán se pondrá en contacto contigo el día de la mudanza para avisarte cuando lleguen.",
+  "email_brisboxer_complete_second_p": "Recuerda que puedes comprobar el <a href='%s'>dashboard</a> en cualquier momento para ver el estado de tu pedido. Pero no te preocupes, te informaremos en caso de que algún brisboxer abandone el pedido ",
+  "email_brisboxer_complete_third_p": "¡Gracias por confiar en nosotros y feliz mudanza!",
 
   "brisboxer_details_ok": "Perfil actualizado correctamente",
   "brisboxer_details_save": "Guardar",
