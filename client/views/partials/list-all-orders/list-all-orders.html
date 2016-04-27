@@ -5,18 +5,10 @@
             <div class="col l6">
                 <h4 class="header">Orders</h4>
             </div>
-            <div class="col l6">
-                <ul id="filter-list">
-                    <li><a id="byDuration" href="#">By duration</a></li>
-                    <li><a id="byLeft" href="#">By spots left</a></li>
-                    <li><a id="random" href="#">Random</a></li>
-                    <li><a id="original" href="#">Original</a></li>
-                </ul>
-            </div>
         </div>
 
         <div class="row isotope">
-            {{> reactiveBlockGrid cursor=orders template='orderGridItem' transitionDuration='0.5s' layoutMode='masonry' gutter=30 columnWidth=328}}
+            {{> reactiveBlockGrid cursor=orders template='orderGridItem' transitionDuration='0.5s' gutter=30 columnWidth=328}}
         </div>
 
     </div>
