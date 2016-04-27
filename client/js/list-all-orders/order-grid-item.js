@@ -21,6 +21,10 @@ Template.orderGridItem.helpers({
             };
         }
     },
+    comments: function () {
+        var result = !this.comments ? TAPi18n.__("no_comments") : this.comments;
+        return result;
+    },
     render: function () {
         return Session.get("render");
     }
