@@ -36,7 +36,7 @@ Template.orderGridItem.onRendered(function () {
 });
 
 Template.orderGridItem.onCreated(function () {
-    GoogleMaps.ready('map', function (map) {
+    GoogleMaps.ready(this.data._id, function (map) {
         var geocoder = new google.maps.Geocoder();
         var address = "Madrid";
         geocoder.geocode({'address': address}, function (results, status) {
