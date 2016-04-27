@@ -4,7 +4,7 @@ Template.myOrdersItem.helpers({
     },
     dateFormat: function () {
         var locale = TAPi18n.getLanguage();
-        return moment(this.date).locale(locale).format('L');
+        return moment(this.day).locale(locale).format('L');
     },
     timeFormat: function () {
         return this.startMoment;
