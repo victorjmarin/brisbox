@@ -24,9 +24,10 @@ Template.pageFooter.events({
             }
             return false;
         }
+        sessionStorage.setItem("zipTemporaly", zip);
         Router.go('order', null, {query: 'zip=' + zip});
     },
-    'click .checkModal': function (event) {
-        $('#checkModal').openModal({dismissible: false})
+    'click .modal1': function (event) {
+        $('#modal1').openModal({dismissible: false})
     }
 });

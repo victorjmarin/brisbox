@@ -3,62 +3,82 @@
         <legend id="legend-stripe">{{_ "order-checkout_stripe"}} </legend>
         <div id="stripe-access">
             <div class="row row-stripe-form">
-                <form class="stripe-form col s12 m12" id="payment-form" >
+                <form class="padding-solution stripe-form col s12 m12" id="payment-form">
                        <span class="payment-errors">
                            {{#if stripe_error}}
                                {{_ stripe_error}}
                            {{/if}}
                        </span>
                     <div clas="row">
-                        <div class="input-field col s12" id="stripe-input-fields">
-                                <div id="info-stripe" class="input-field col s12 m12">
-                                    <input class="validate form-control" required type="text" maxlength="16" data-stripe="number" id="number" {{disabled}}/>
-                                    <label id="number-stripe" for="number">{{_ "stripe_card_number"}}</label>
+                        <div class="padding-solution input-field col s12" id="stripe-input-fields">
+                            <div id="info-stripe" class="padding-solution input-field col s12 m12">
+                                <input class="validate form-control" required type="text" maxlength="16"
+                                       data-stripe="number" id="number" {{disabled}}/>
+                                <label id="number-stripe" for="number">{{_ "stripe_card_number"}}</label>
+                            </div>
+                            <div id="info-stripe" class="padding-solution input-field col s12 m12">
+                                <input class="validate form-control" required type="text" maxlength="3"
+                                       data-stripe="cvc" id="cvc" {{disabled}}/>
+                                <label id="cvc-stripe" for="cvc">{{_ "stripe_cvc"}}</label>
+                            </div>
+                            <div id="info-stripe" class="padding-solution input-field col s12 m12">
+                                <div class="padding-solution input-field col s6 m6">
+                                    <input class="validate form-control" required type="number" min="1" max="12"
+                                           maxlength="2" data-stripe="exp-month" id="exp-month" {{disabled}}/>
+                                    <label id="expMonth-stripe" for="exp-month">{{_ "stripe_expiration_month"}}</label>
                                 </div>
-                                <div id="info-stripe" class="input-field col s12 m12">
-                                    <input class="validate form-control" required type="text" maxlength="3" data-stripe="cvc" id="cvc" {{disabled}}/>
-                                    <label id="cvc-stripe" for="cvc">{{_ "stripe_cvc"}}</label>
+                                <div class="padding-solution input-field col s6 m6">
+                                    <input class="validate form-control" required type="number" min="2016" max="2030"
+                                           maxlength="4" data-stripe="exp-year" id="exp-year" {{disabled}}/>
+                                    <label id="expYear-stripe" for="exp-year">{{_ "stripe_expiration_year"}}</label>
                                 </div>
-                                <div id="info-stripe" class="input-field col s12 m12">
-                                    <div class="input-field col s6 m6">
-                                        <input class="validate form-control" required type="number" min="1" max="12" maxlength="2" data-stripe="exp-month" id="exp-month" {{disabled}}/>
-                                        <label id="expMonth-stripe" for="exp-month">{{_ "stripe_expiration_month"}}</label>
-                                    </div>
-                                    <div class="input-field col s6 m6">
-                                        <input class="validate form-control" required type="number" min="2016" max="2030" maxlength="4" data-stripe="exp-year" id="exp-year" {{disabled}}/>
-                                        <label id="expYear-stripe" for="exp-year">{{_ "stripe_expiration_year"}}</label>
-                                    </div>
-                                </div>
-                                <div id="info-stripe" class="input-field col s12 m12">
+                            </div>
+                            {{#if isCreation}}
+                                <div id="info-stripe" class="padding-solution input-field col s12 m12">
                                     <input class="validate form-control" type="text" id="promotion" {{disabled}}/>
                                     <label id="promotion-stripe" for="promotion">{{_ "stripe_promotion"}}</label>
                                 </div>
-                                <div id="info-stripe" class="input-field col s12 m12" style="display:none">
-                                    <input  class="form-control" type="text" readonly="true" data-stripe="amount" id="amount" {{disabled}}/>
-                                    <label class="active" id="amount-stripe" for="amount">{{_ "stripe_amount"}}</label>
-                                </div>
-                                <div id="info-stripe" class="input-field col s12 center-align">
-                                    <button name="submit" id="stripe-submit" type="submit" class="btn waves-effect waves-light orange darken-3 white-text" {{disabled}}>{{_ "stripe_submit"}}
+                            {{/if}}
+                            <div id="info-stripe" class="padding-solution input-field col s12 m12" style="display:none">
+                                <input class="form-control" type="text" readonly="true" data-stripe="amount"
+                                       id="amount" {{disabled}}/>
+                                <label class="active" id="amount-stripe" for="amount">{{_ "stripe_amount"}}</label>
+                            </div>
+                            <div id="info-stripe" class="padding-solution input-field col s12 center-align">
+                                {{#if isCreation}}
+                                    <button name="submit" id="stripe-submit" type="submit"
+                                            class="btn waves-effect waves-light orange darken-3 white-text" {{disabled}}>
+                                        {{_ "stripe_submit"}}
                                     </button>
-                                </div>
+                                {{else}}
+                                    <button name="submit" id="stripe-submit" type="submit"
+                                            class="btn waves-effect waves-light orange darken-3 white-text" {{disabled}}>
+                                        {{_ "payment_confirmation_stripe_submit"}}</button>
+                                    <button type="button" id="cancel_button"
+                                            class="waves-effect waves-light btn-flat bold">{{_ "payment_confirmation_cancel"}}
+                                    </button>
+                                {{/if}}
+                            </div>
                         </div>
                     </div>
                 </form>
             </div>
-            <ul id="info-pay" class="collapsible" >
-                <li>
-                    <div class="collapsible-header"><i class="material-icons">comment</i>{{_ "info_book"}}</div>
-                    <div class="collapsible-body"><p>{{_ "info_money"}}</p></div>
-                </li>
-                <li>
-                    <div class="collapsible-header"><i class="material-icons">payment</i>{{_ "why_stripe"}}</div>
-                    <div class="collapsible-body"><p>{{_ "info_stripe"}}</p></div>
-                </li>
-                <li>
-                    <div class="collapsible-header"><i class="material-icons">redeem</i>{{_ "why_promotion"}}</div>
-                    <div class="collapsible-body"><p>{{_ "info_promotion"}}</p></div>
-                </li>
-            </ul>
+            {{#if isCreation}}
+                <ul id="info-pay" class="collapsible">
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">comment</i>{{_ "info_book"}}</div>
+                        <div class="collapsible-body"><p>{{_ "info_money"}}</p></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">payment</i>{{_ "why_stripe"}}</div>
+                        <div class="collapsible-body"><p>{{_ "info_stripe"}}</p></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">redeem</i>{{_ "why_promotion"}}</div>
+                        <div class="collapsible-body"><p>{{_ "info_promotion"}}</p></div>
+                    </li>
+                </ul>
+            {{/if}}
         </div>
     </div>
 </template>

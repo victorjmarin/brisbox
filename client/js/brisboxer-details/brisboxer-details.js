@@ -5,14 +5,25 @@ Template.brisboxerDetails.helpers({
     exists: function(){
     	return this._id != undefined;
     },
-    verified: function(){
-        return this.emails[0].verified;
-    }
+	verified: function(){
+		return this.emails[0].verified;
+	},
+	editBrisboxer: function(){
+		return Session.get('editBrisboxer');
+	},
+	imageProfile: function() {
+		if (this.profile.image != null){
+			return "/cfs/files/images/".concat(this.profile.image);
+		} else {
+			return "/placeholder.png";
+		}
+	}
 });
 
 Template.brisboxerDetails.onRendered(function(){
 	var self = this;
 
+	Session.set('editBrisboxer', false);
     this.autorun(function(a) {
         var data = Template.currentData(self.view);
         if(!data) return;
@@ -78,3 +89,28 @@ function getAssessmentAvg(assessments){
 	res = Math.round(res*100) / 100;
 	return res;
 }
+Template.brisboxerDetails.events({
+	'click #edit_button': function(event){
+		event.preventDefault();
+		Session.set('editBrisboxer', true);
+	},
+	'click #save_button': function(event){
+		event.preventDefault();
+        var name = $('#edit_brisboxer_name').val();
+        var surname = $('#edit_brisboxer_surname').val();
+        var phone = $('#edit_brisboxer_phone').val();
+
+        Meteor.call('updateBrisboxerDetails', name, surname, phone,function(err, res){
+            if(res){
+                Materialize.toast(TAPi18n.__('brisboxer_details_ok'), 4000) // 4000 is the duration of the toast
+            }
+        });
+
+		Session.set('editBrisboxer', false);
+	}
+	,
+	'click #cancel_button': function(event){
+		event.preventDefault();
+		Session.set('editBrisboxer', false);
+	}
+});
