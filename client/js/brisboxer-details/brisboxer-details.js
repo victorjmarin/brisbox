@@ -11,6 +11,9 @@ Template.brisboxerDetails.helpers({
 	editBrisboxer: function(){
 		return Session.get('editBrisboxer');
 	},
+	isCurrentUser:function(id){
+		return	Meteor.userId() === id;
+	},
 	imageProfile: function() {
 		if (this.profile.image != null){
 			return "/cfs/files/images/".concat(this.profile.image);
