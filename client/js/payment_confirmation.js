@@ -7,7 +7,7 @@ Template.payment_confirmation.onRendered(function(){
     $('#payment-overlay').css('display', 'block');
     $('#payment-main').css('display', 'block');
     $('#payment-access').css('display', 'block');
-    $('#payment-form').removeClass("hidden");
+    $('#payment-form').removeClass("payment-hidden");
 
     $('#payment-content').delay(150).slideDown("slow");
     Session.set("finalCost", 0);
@@ -30,7 +30,7 @@ Template.payment_confirmation.events({
         var brisboxers = $('#real_num_brisboxers').val();
         var hours = $('#real_num_hours').val();
         if(Session.get('finalCost') > 0 || brisboxers < 0 || hours < 0){
-            $('#payment-form').addClass("hidden");
+            $('#payment-form').addClass("payment-hidden");
             Session.set("step1", true);
             Session.set("enableStripeForm", true);
             Session.set("isCreation", false);
@@ -45,7 +45,7 @@ Template.payment_confirmation.events({
 });
 
 function closeModal(){
-    $('#payment-form').removeClass("hidden");
+    $('#payment-form').removeClass("payment-hidden");
     Session.set("step1", false);
     Session.set("enableStripeForm", false);
     Session.set("isCreation", false);
