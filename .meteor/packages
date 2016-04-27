@@ -14,7 +14,6 @@ tracker                 # Meteor's client-side reactive programming library
 
 es5-shim                # ECMAScript 5 compatibility for older browsers.
 ecmascript              # Enable ECMAScript2015+ syntax in app code
-insecure                # Allow all DB writes from clients (for prototyping)
 iron:router
 accounts-password
 materialize:materialize
@@ -42,4 +41,8 @@ random
 cfs:standard-packages
 cfs:gridfs
 meteorhacks:subs-manager
+jorisroling:isotope
+arcjet:radioactive
+smeevil:reactive-block-grid
+rzymek:moment-locale-es
 fraviemor:autoform-file
