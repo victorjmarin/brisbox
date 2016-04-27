@@ -354,7 +354,7 @@ function loadOrders() {
         canceled: false,
         comments: 'comments1',
         typeMove: 'load',
-        date: new Date('2016-07-03'),
+        day: new Date('2016-01-03'),
         brisboxers: [
             {_id: brisboxer2._id, username: brisboxer2.username, assessed: false}
         ]
@@ -373,7 +373,7 @@ function loadOrders() {
         canceled: false,
         comments: 'comments2',
         typeMove: 'load',
-        date: new Date('2016-06-20'),
+        day: new Date('2016-06-20'),
         brisboxers: [
             {_id: brisboxer2._id, username: brisboxer2.username, assessed: false},
             {_id: brisboxer3._id, username: brisboxer3.username, assessed: false}
@@ -393,7 +393,7 @@ function loadOrders() {
         canceled: false,
         comments: 'comments3',
         typeMove: 'unload',
-        date: new Date('2016-08-04'),
+        day: new Date('2016-08-04'),
         brisboxers: [
             {_id: brisboxer1._id, username: brisboxer1.username, assessed: false}
         ]
@@ -412,7 +412,7 @@ function loadOrders() {
         canceled: false,
         comments: 'comments4',
         typeMove: 'unload',
-        date: new Date('2016-07-01'),
+        day: new Date('2016-07-01'),
         brisboxers: [
             {_id: brisboxer2._id, username: brisboxer2.username, assessed: false},
             {_id: brisboxer3._id, username: brisboxer3.username, assessed: false},
@@ -435,7 +435,7 @@ function loadOrders() {
         canceled: false,
         comments: 'commentsAlpha',
         typeMove: 'unload',
-        date: new Date('2016-07-01'),
+        day: new Date('2016-07-01'),
         brisboxers: []
     });
 
@@ -453,7 +453,7 @@ function loadOrders() {
         canceled: false,
         comments: 'commentsBeta',
         typeMove: 'unload',
-        date: new Date('2016-07-01'),
+        day: new Date('2016-07-01'),
         brisboxers: []
     });
 
@@ -471,7 +471,7 @@ function loadOrders() {
         canceled: false,
         comments: 'commentsGamma',
         typeMove: 'load',
-        date: new Date('2016-07-01'),
+        day: new Date('2016-07-01'),
         brisboxers: []
     });
 
@@ -489,7 +489,7 @@ function loadOrders() {
         canceled: false,
         comments: 'commentsTeta',
         typeMove: 'load',
-        date: new Date('2016-07-01'),
+        day: new Date('2016-07-01'),
         brisboxers: []
     });
 
@@ -507,7 +507,7 @@ function loadOrders() {
         canceled: false,
         comments: 'commentsEpsilon',
         typeMove: 'load',
-        date: new Date('2016-07-01'),
+        day: new Date('2016-07-01'),
         brisboxers: []
     });
 
@@ -524,7 +524,7 @@ function loadOrders() {
         canceled: true,
         comments: 'commentsCancelada',
         typeMove: 'load',
-        date: new Date('2016-07-01'),
+        day: new Date('2016-07-01'),
         brisboxers: []
     });
     Orders.insert({
@@ -540,7 +540,7 @@ function loadOrders() {
         canceled: true,
         comments: 'commentsCancelada',
         typeMove: 'unload',
-        date: new Date('2016-07-01'),
+        day: new Date('2016-07-01'),
         brisboxers: []
     });
 }

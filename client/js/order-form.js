@@ -176,7 +176,7 @@ Template.orderForm.events({
             numberBrisboxers: document.getElementById("numberBrisboxers").value,
             hours: document.getElementById("hours").value,
             startMoment: document.getElementById("startMoment").value,
-            day: day,
+            day: diaFormateado,
             name: document.getElementById("name").value,
             surname: document.getElementById("surname").value,
             phone: document.getElementById("phone").value,
