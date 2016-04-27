@@ -12,6 +12,10 @@ Template.registerHelper("replaceSpace", function (string) {
     return string.split(' ').join('+');
 });
 
+Template.registerHelper("notEmpty", function (brisboxers) {
+    return brisboxers.length>0
+});
+
 Template.registerHelper("calculateCost", function (numBrisboxers, hours) {
     return numBrisboxers * hours * 20 + " €";
 });

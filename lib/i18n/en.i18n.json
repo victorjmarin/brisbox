@@ -270,6 +270,7 @@
   "order_dashboard_emptyBrisboxer": "We are sorry, there aren't any brisboxer inscribed yet.",
   "order_dashboard_payment": "Pay",
   "order_dashboard_cancel": "Cancel",
+  "go_back": "Go Back",
   "schemas": {
     "inscription": {
       "username": {

@@ -32,7 +32,7 @@
             <div class="col s4 m4 brisboxers-info" id="brisboxers">
                 <div class="col s12 m12 brib-info">
                     <span class="order_dashboard_section_title title flow-text">{{_ "order_dashboard_brisboxers_info_title"}}</span>
-                    {{#if brisboxers_list.count}}
+                    {{#if notEmpty brisboxers}}
                         {{> brisboxers_list}}
                     {{else}}
                         <p>{{_ "order_dashboard_emptyBrisboxer"}}</p>
@@ -44,34 +44,32 @@
                 <div class="col s12 m12 brisboxers-buttons">
                     <div class="col s4 m5 hide-on-med-and-down">
                         {{#if orderDay day}}
-                            <button class="btn orange" name="submit"
+                            <button class="btn btn-primary waves-button-input orange darken-3" name="submit"
                                     id="confirm-order-payment">{{_ "order_dashboard_payment"}}</button>
                         {{else}}
-                            <button class="btn" id="pay" disabled>{{_ "order_dashboard_payment"}}</button>
+                            <button class="btn btn-primary waves-button-input orange darken-3" id="pay" disabled>{{_ "order_dashboard_payment"}}</button>
                         {{/if}}
                     </div>
-                    <div class="col s4 m5 hide-on-med-and-down" id="cancelar">
-                        <button class="btn deep-orange" id="cancel">{{_ "order_dashboard_cancel"}}</button>
+                    <div class="col s4 m6 hide-on-med-and-down" id="cancelar">
+                        <button class="waves-effect waves-orange waves-ripple btn-flat" id="cancel">{{_ "order_dashboard_cancel"}}</button>
                     </div>
-                    <div class="col s12 m6 hide-on-large-only">
+                    <div class="col s12 m6 hide-on-large-only bold">
                         {{#if orderDay day}}
-                            <button name="submit" class="btn orange waves-orange flow-text"
+                            <button name="submit" class="btn btn-primary waves-button-input orange darken-3"
                                     id="confirm-order-payment">{{_ "order_dashboard_payment"}}</button>
                         {{else}}
-                            <button class="btn row" disabled>{{_ "order_dashboard_payment"}}</button>
+                            <button class="btn btn-primary waves-button-input orange darken-3" disabled>{{_ "order_dashboard_payment"}}</button>
                         {{/if}}
-                        <button class="btn deep-orange waves-orange flow-text"
+                        <button class="waves-effect waves-orange waves-ripple btn-flat"
                                 id="cancel">{{_ "order_dashboard_cancel"}}</button>
                     </div>
                 </div>
             </div>
             <div class="col s4 m4 order-info" id="mapa">
                 <div class="mapita col s12 m12 hide-on-small-only customer-info left">
-                    <iframe
-                            width="100%"
-                            height="100%"
+                    <iframe class="mapita"
                             frameborder="0" style="border:0"
-                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDYFp3bwLCX0jHLq0S27Odu1Pb8mLSEHfU&q={{#if addressLoading}}{{replaceSpace addressLoading}}{{else}}{{addressUnloading}}{{/if}}&attribution_source=Google+Maps+Embed+API">
+                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDYFp3bwLCX0jHLq0S27Odu1Pb8mLSEHfU&q={{#if addressLoading}}{{replaceSpace addressLoading}}{{else}}{{replaceSpace addressUnloading}}{{/if}}&attribution_source=Google+Maps+Embed+API">
                     </iframe>
                 </div>
             </div>

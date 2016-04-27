@@ -5,3 +5,16 @@
 .switch label input[type=checkbox]:checked + .lever {
     background-color: #c7a284;
 }
+
+.waves-effect.waves-teal .waves-ripple {
+    background-color: rgba(255, 152, 0, 0.7);
+}
+
+button{
+    background-color: transparent;
+}
+
+button:focus {
+    outline: none;
+    background-color: transparent;
+}
