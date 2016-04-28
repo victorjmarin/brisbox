@@ -1,13 +1,15 @@
 <template name="ThanksEmail">
-    <div class="container">
-        <div class="section scrollspy">
-            <div class="row">
-                <h4 class="header">{{_ "thanks_Email"}}</h4>
+    <div id="thanksEmail-container" class="container section">
+        <div class="row thanksEmail">
+            <h4 class="header-thanksEmail"><p>{{_ "thanks_Email"}}</p></h4>
+        </div>
+        <div class="row thanksEmail_body">
+            <div class="col s12 m6">
+                <p>{{_ "thanks_Email_body"}}</p>
             </div>
-            <div class="row">
-               <p>{{_ "thanks_Email_body"}}</p>
+            <div class="col s12 m6">
+                <img src="/registration.gif">
             </div>
         </div>
     </div>
-
 </template>

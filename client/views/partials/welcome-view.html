@@ -1,15 +1,19 @@
 <template name="welcome-view">
-    <div id="welcome-main">
-        <div id="welcome-container" class="container section">
-            <div class="row welcome_header">
-                <h4 class="header">{{_ "welcome_header"}}</h4>
-            </div>
-            <div class="row welcome_body">
+    <div id="welcome-container" class="container section">
+        <div class="row welcome_header">
+            <h4 class="header-thanksEmail"><p>{{_ "welcome_header"}}</p></h4>
+        </div>
+        <div class="row welcome_body">
+            <div class="col s12 m6">
                 <p>{{_ "welcome1"}}</p>
+                <br>
                 <p>{{_ "welcome2"}}</p>
+                <br>
                 <h5>{{_ "welcome3"}}</h5>
             </div>
-            <img src="/mover.png" height="auto" width="90%" style="max-width: 250px; float:left; margin-bottom: 15px;">
+            <div class="col s12 m6">
+                <img src="/mover.png">
+            </div>
         </div>
     </div>
 </template>
