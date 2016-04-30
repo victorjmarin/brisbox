@@ -113,7 +113,9 @@
             </div>
 
             <div id="exampleMap" class="map-container z-depth-1  col s12 m6 hide-on-small-only">
-                {{> googleMap name="exampleMap" options=exampleMapOptions}}
+                {{#if render}}
+                    {{> googleMap name=exampleMap options=exampleMapOptions}}
+                {{/if}}
             </div>
         </div>
     </div>

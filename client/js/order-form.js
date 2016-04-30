@@ -45,18 +45,13 @@ function validate_zip(zipValue){
     }
 }
 
-Meteor.startup(function() {
-    GoogleMaps.load({
-        key: 'AIzaSyAfk4ikNH05OssyWavDvWImWFsf6oVXzzQ',
-        libraries: 'places'
-    });
-});
-
 Template.orderForm.onRendered(function (){
-    if(sessionStorage.getItem("first-access") == "false"){
+    Session.set("render", false);
+
+    /*if(sessionStorage.getItem("first-access") == "false"){
         location.reload();
         sessionStorage.setItem("first-access", true);
-    }
+    }*/
     $('#divAddressUnLoading').css('display', 'none');
     $('#divAddressLoading').css('display', 'none');
     $('#divPortalLoading').css('display', 'none');
@@ -104,6 +99,16 @@ Template.orderForm.onRendered(function (){
         autoclose: false,
         hour24:false
     });
+
+
+    GoogleMaps.load({
+        key: 'AIzaSyAfk4ikNH05OssyWavDvWImWFsf6oVXzzQ',
+        libraries: 'places'
+    });
+    setTimeout(function () {
+        console.log("RENDERING");
+        Session.set("render", true);
+    }, 100);
 });
 
 Template.orderForm.events({
@@ -226,5 +231,8 @@ Template.orderForm.helpers({
     zip: function () {
         var zip = sessionStorage.getItem("zipTemporaly");
         return zip;
+    },
+    render: function () {
+        return Session.get("render");
     }
 });
