@@ -1,17 +1,22 @@
 <template name="brisboxers_list">
     {{#each brisboxers}}
-        <div class="brisboxer-info center-align">
-            <div class="image-div">
-                <img src="/placeholder.png" />
+        <div class="brisboxer-inf">
+            <div class="image-div" style="float:left;margin-right:15px;">
+                <img class="circle imag" src="/placeholder.png"/>
             </div>
             <div class="name-and-vote-div">
                 <span class="flow-text"> <b>{{_ "order_dashboard_name"}}:</b> {{username}}</span>
-                <span class="order_dashboard_vote orange-text">10</span>
+            </div>
+            <div>
+                <span class="flow-text"><b>{{_ "score"}}:</b><span
+                        class="order_dashboard_vote orange-text"> 10</span></span>
             </div>
             {{#if isThisBrisboxer _id}}
-                <a id="leave-order" class="btn-floating btn-small red clear-icon" data-id='{{_id}}'>
-                    <i class="material-icons">clear</i>
-                </a>
+                <div style="position:absolute;right:0;top:20px">
+                    <button id="leave-order" data-id='{{_id}}' class="bold btn waves-effect waves-light red"
+                            type="submit"
+                            name="action">{{_ "order_leave" }}</button>
+                </div>
             {{/if}}
         </div>
     {{/each}}

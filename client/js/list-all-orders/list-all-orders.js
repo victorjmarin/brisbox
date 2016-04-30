@@ -5,6 +5,6 @@ Template.listAllOrders.helpers({
             $where: "this.brisboxers.length < this.numberBrisboxers",
             "brisboxers._id": {$ne: user_id},
             "canceled": {$ne: true}
-        });
+        }, {sort: {hours: -1}});
     }
 });

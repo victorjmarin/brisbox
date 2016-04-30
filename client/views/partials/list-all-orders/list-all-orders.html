@@ -1,22 +1,16 @@
-<Template name="listAllOrders">
-	<div id="lao-main" class="section">
-		<h4 class="header">Orders</h4>
-		<table class="flatTable">
-		  <tr class="headingTr">
-		    <td>{{_ "address"}}</td>
-		    <td>{{_ "date"}}</td>
-		    <td>{{_ "numberBrisboxers"}}</td>
-		    <td>{{_ "left"}}</td>
-		    <td>{{_ "hours"}}</td>
-		    <td>{{_ "join"}}</td>
-		  </tr>
-		  
-		  {{#each orders}}
-		  	{{> listAllOrdersRow}}
-		  {{/each}}
+<template name="listAllOrders">
+    <div id="lao-main" class="container">
 
-		</table>
+        <div class="row">
+            <div class="col l6">
+                <h4 class="header">{{_ "orders" }}</h4>
+            </div>
+        </div>
 
-	</div>
-	
-</Template>
+        <div class="row isotope">
+            {{> reactiveBlockGrid cursor=orders template='orderGridItem' transitionDuration='0.5s' gutter=30 columnWidth=328}}
+        </div>
+
+    </div>
+
+</template>

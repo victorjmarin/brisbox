@@ -172,7 +172,8 @@ Meteor.methods({
             if (order.cancelationCode == cancelationCode) {
                 Orders.update(orderIdDecodificado, {
                     $set: {
-                        canceled: true
+                        canceled: true,
+                        brisboxers: []
                     }
                 });
                 res = true;
