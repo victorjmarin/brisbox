@@ -429,8 +429,13 @@
   // Brisboxer left
   "email_brisboxer_left_subject": "A brisboxer has left",
   "email_brisboxer_left_title": "Ouch...",
-  "email_brisboxer_left_first_p": "Unfortunately, a brisboxer had to leave your order. But do not despair, we will list your order again for someone to fill in.",
+  "email_brisboxer_left_first_p": "Unfortunately, a brisboxer had to leave your order. But don't worry, we will list your order again for someone to fill in.",
   "email_brisboxer_left_second_p": "We will notify you as soon as your brisboxer team is complete again. Nonetheless, we remind you that you can check the status of your order in the <a href='%s'>dashboard</a> anytime.",
+  // Order canceled
+  "email_order_canceled_subject": "Order canceled",
+  "email_order_canceled_title": "What a bummer.",
+  "email_order_canceled_first_p": "The <a href='%s'>order</a> you were going to work in has been canceled by the customer. But do not despair, you can always look for another one that fits your schedule too.",
+  "email_order_canceled_second_p": "Sorry for the inconvenience.",
 
   "brisboxer_details_ok": "Profile updated successfully",
   "brisboxer_details_save": "Save",

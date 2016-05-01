@@ -425,6 +425,11 @@
   "email_brisboxer_left_title": "Vaya...",
   "email_brisboxer_left_first_p": "Desafortunadamente, un brisboxer tuvo que abandonar tu pedido. No te preocupes, volveremos a listar tu pedido para que alguien ocupe su sitio.",
   "email_brisboxer_left_second_p": "Te notificaremos cuando tu equipo de brisboxers este completo de nuevo. No obstante, te recordamos que puedes consultar el estado de tu pedido en el <a href='%s'>dashboard</a> en cualquier momento.",
+  // Order canceled
+  "email_order_canceled_subject": "Pedido cancelado",
+  "email_order_canceled_title": "Qué fastidio.",
+  "email_order_canceled_first_p": "El <a href='%s'>pedido</a> en el que ibas a trabajar ha sido cancelado por el cliente. Pero no te preocupes, siempre puedes buscar otro que se ajuste a tu horario también.",
+  "email_order_canceled_second_p": "Sentimos el inconveniente.",
 
   "brisboxer_details_ok": "Perfil actualizado correctamente",
   "brisboxer_details_save": "Guardar",

@@ -179,7 +179,9 @@ Meteor.methods({
                     }
                 });
                 res = true;
-                MailService.orderCanceled(order);
+                Meteor.defer(function () {
+                    MailService.orderCanceled(order);
+                });
             }
         }
         return res;
