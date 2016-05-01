@@ -426,6 +426,11 @@
   "email_brisboxer_complete_first_p": "The requested number of brisboxers for your move has been met. The captain will get in touch with you on move day to tell you when they are there.",
   "email_brisboxer_complete_second_p": "Remember that you can check the <a href='%s'>dashboard</a> anytime to see the status of your order. But don't worry, we will inform you may a brisboxer drop out.",
   "email_brisboxer_complete_third_p": "Thank you for trusting us and happy move!",
+  // Brisboxer left
+  "email_brisboxer_left_subject": "A brisboxer has left",
+  "email_brisboxer_left_title": "Ouch...",
+  "email_brisboxer_left_first_p": "Unfortunately, a brisboxer had to leave your order. But do not despair, we will list your order again for someone to fill in.",
+  "email_brisboxer_left_second_p": "We will notify you as soon as your brisboxer team is complete again. Nonetheless, we remind you that you can check the status of your order in the <a href='%s'>dashboard</a> anytime.",
 
   "brisboxer_details_ok": "Profile updated successfully",
   "brisboxer_details_save": "Save",

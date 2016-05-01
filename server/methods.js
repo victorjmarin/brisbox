@@ -80,7 +80,7 @@ Meteor.methods({
 
     'sendEmail': function (to, from, subject, text) {
         check([to, from, subject, text], [String]);
-        
+
         // Let other method calls from the same client start running,
         // without waiting for the email sending to complete.
         this.unblock();
@@ -144,7 +144,7 @@ Meteor.methods({
             MailService.brisboxerComplete(updatedOrder);
         }
     },
-    
+
     'deleteOrderMethod': function (orderIdCodificado, token) {
         var res = "NOTCANCELED";
         var orderIdDecodificado = Meteor.call('deCodificaString', orderIdCodificado);
@@ -177,6 +177,7 @@ Meteor.methods({
                     }
                 });
                 res = true;
+                MailService.orderCanceled(order);
             }
         }
         return res;
@@ -223,6 +224,11 @@ Meteor.methods({
     'updateBrisboxersOfOrder': function (order_id, id) {
         if (id === Meteor.userId()) {
             var order = Orders.findOne({_id: order_id});
+            Meteor.defer(function () {
+                if (!OrderService.needsMoreBrisboxers(order)) {
+                    MailService.brisboxerLeft(order);
+                }
+            });
             var brisboxers = order.brisboxers;
             var index = null;
             for (i = 0; i < brisboxers.length; i++) {
@@ -243,13 +249,13 @@ Meteor.methods({
 
         }
     },
-    'updateBrisboxerDetails': function(name, surname, phone){
+    'updateBrisboxerDetails': function (name, surname, phone) {
         var currentUserId = Meteor.userId();
         return Meteor.users.update(currentUserId, {
             $set: {
-                "profile.name" : name,
-                "profile.surname" : surname,
-                "profile.phone" : phone,
+                "profile.name": name,
+                "profile.surname": surname,
+                "profile.phone": phone,
             }
         });
 

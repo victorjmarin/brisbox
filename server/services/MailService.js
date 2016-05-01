@@ -45,5 +45,16 @@ MailService = {
             dashboardUrl: dashboardUrl
         };
         this.send("email_brisboxer_complete_subject", "brisboxer-complete-email", params, order.email);
+    },
+    brisboxerLeft: function (order) {
+        var encodedOrderId = Base64.encode(order._id);
+        var dashboardUrl = Helpers.Url.forPath("order_dashboard/" + encodedOrderId);
+        var params = {
+            dashboardUrl: dashboardUrl
+        };
+        this.send("email_brisboxer_left_subject", "brisboxer-left-email", params, order.email);
+    },
+    orderCanceled: function (order) {
+        
     }
 };

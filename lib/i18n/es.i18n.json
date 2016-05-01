@@ -420,6 +420,11 @@
   "email_brisboxer_complete_first_p": "Se ha satisfecho el número de brisboxers solicitado. El capitán se pondrá en contacto contigo el día de la mudanza para avisarte cuando lleguen.",
   "email_brisboxer_complete_second_p": "Recuerda que puedes comprobar el <a href='%s'>dashboard</a> en cualquier momento para ver el estado de tu pedido. Pero no te preocupes, te informaremos en caso de que algún brisboxer abandone el pedido ",
   "email_brisboxer_complete_third_p": "¡Gracias por confiar en nosotros y feliz mudanza!",
+  // Brisboxer left
+  "email_brisboxer_left_subject": "Un brisboxer dejó el pedido",
+  "email_brisboxer_left_title": "Vaya...",
+  "email_brisboxer_left_first_p": "Desafortunadamente, un brisboxer tuvo que abandonar tu pedido. No te preocupes, volveremos a listar tu pedido para que alguien ocupe su sitio.",
+  "email_brisboxer_left_second_p": "Te notificaremos cuando tu equipo de brisboxers este completo de nuevo. No obstante, te recordamos que puedes consultar el estado de tu pedido en el <a href='%s'>dashboard</a> en cualquier momento.",
 
   "brisboxer_details_ok": "Perfil actualizado correctamente",
   "brisboxer_details_save": "Guardar",
