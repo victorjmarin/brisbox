@@ -224,11 +224,11 @@ Meteor.methods({
     'updateBrisboxersOfOrder': function (order_id, id) {
         if (id === Meteor.userId()) {
             var order = Orders.findOne({_id: order_id});
-            Meteor.defer(function () {
-                if (!OrderService.needsMoreBrisboxers(order)) {
+            if (!OrderService.needsMoreBrisboxers(order)) {
+                Meteor.defer(function () {
                     MailService.brisboxerLeft(order);
-                }
-            });
+                });
+            }
             var brisboxers = order.brisboxers;
             var index = null;
             for (i = 0; i < brisboxers.length; i++) {
