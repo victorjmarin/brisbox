@@ -75,6 +75,11 @@ Template.stripe_form.events({
                     if (error) {
                         var code = error.reason;
                         Session.set("stripe_error", code);
+                    }else{
+                        if(!Session.get("isCreation")){
+                            var order_id = Session.get("order_id");
+                            Meteor.call('updateOrdersCountToBrisboxersInOrder', order_id);
+                        }
                     }
                 });
             }

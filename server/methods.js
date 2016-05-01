@@ -263,6 +263,28 @@ Meteor.methods({
             }
         });
 
+    },
+    'updateOrdersCountToBrisboxersInOrder': function(order_id){
+        var order = Orders.findOne({_id: order_id});
+        if(order){
+            var brisboxers = order.brisboxers;
+            for (i = 0; i < brisboxers.length; i++) {
+                var entry = brisboxers[i];
+                var brisboxer = Meteor.users.findOne({_id: entry._id});
+                if(brisboxer.profile.completedOrders != null){
+                    brisboxer.profile.completedOrders++;
+                }else{
+                    brisboxer.profile.completedOrders = 1;
+                }
+                Meteor.users.update(entry._id, {
+                    $set: {
+                        "profile.completedOrders" : brisboxer.profile.completedOrders
+                    }
+                },
+                { upsert : true}
+                );
+            }
+        }
     }
 
 })
