@@ -416,13 +416,13 @@
   "email_captain_fourth_p": "To learn more about being a captain, visit <a href='%s'>this link</a>.",
   // Order registered
   "email_order_registered_subject": "Your order has been registered",
-  "email_order_registered_title": "Thank you, %s",
+  "email_order_registered_title": "Thank you, %s.",
   "email_order_registered_first_p": "Your order has been sucessfully registered. We will notify you as soon as the requested number of brisboxers has been met.",
   "email_order_registered_second_p": "To access the dashboard and track the status of your order, click <a href='%s'>here</a>.",
   "email_order_registered_third_p": "You can cancel your order up to 24h. before it takes place by visiting <a href='%s'>this link</a> and using the following code: ",
   // Brisboxers complete
-  "email_brisboxer_complete_subject": "Ready to go",
-  "email_brisboxer_complete_title": "We are all set!",
+  "email_brisboxer_complete_subject": "Ready to go!",
+  "email_brisboxer_complete_title": "We are all set.",
   "email_brisboxer_complete_first_p": "The requested number of brisboxers for your move has been met. The captain will get in touch with you on move day to tell you when they are there.",
   "email_brisboxer_complete_second_p": "Remember that you can check the <a href='%s'>dashboard</a> anytime to see the status of your order. But don't worry, we will inform you may a brisboxer drop out.",
   "email_brisboxer_complete_third_p": "Thank you for trusting us and happy move!",
