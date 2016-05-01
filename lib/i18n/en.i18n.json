@@ -114,7 +114,7 @@
   "info_book": "Cost 5 € / order",
   "why_stripe": " Why do you use Stripe?",
   "why_promotion": "Do you have a promotion?",
-  "info_promotion": "Yes !, we have a promotion for you, if you enter the correct code will be deducted 5 € in your move. Be careful, just have a chance to enter the code correctly.",
+  "info_promotion": "Yes !, we have a promotion for you, if you enter the correct code will be deducted from the € 5 booking order.",
   "info_stripe": "We decided to use as payment gateway as this service Stripe charges less interest to our customers. It is planned to use Paypal.",
   "account-info": "Account information",
   "personal-info": "Personal information",
@@ -433,5 +433,10 @@
   "brisboxer_details_ok": "Profile updated successfully",
   "brisboxer_details_save": "Save",
   "brisboxer_details_cancel": "Cancel",
-  "brisboxer_details_edit": "Edit profile"
+  "brisboxer_details_edit": "Edit profile",
+
+  "stripe-form_validate-number": "Insert your number account",
+  "stripe-form_validate-cvc": "Insert your CVC" ,
+  "stripe-form_validate-month": "Indicates the expiration year",
+  "stripe-form_validate-year": "Indicates the expiration month"
 }
