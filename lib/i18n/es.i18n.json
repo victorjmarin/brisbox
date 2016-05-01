@@ -414,6 +414,7 @@
   "email_order_registered_first_p": "Tu pedido ha sido registrado en el sistema. Tan pronto como el número de brisboxers solicitado haya sido cubierto te lo notificaremos.",
   "email_order_registered_second_p": "Para acceder al panel de control de tu pedido y llevar un seguimiento de él, haz click <a href='%s'>aquí</a>.",
   "email_order_registered_third_p": "Puedes cancelar tu pedido con hasta 24h. de antelación desde <a href='%s'>este enlace</a> introduciendo el siguiente código: ",
+  "email_order_registered_fourth_p": "Este código también le servirá para modificar su pedido en el caso de que lo necesite.",
   // Brisboxers complete
   "email_brisboxer_complete_subject": "Estamos preparados",
   "email_brisboxer_complete_title": "¡Todo listo!",

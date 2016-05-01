@@ -48,7 +48,7 @@ Meteor.methods({
 
     'saveOrder': function (addressLoading, addressUnloading, portalLoading, portalUnloading, zip, loading, unloading, comments, numberBrisboxers, hours,
                            startMoment, day, name, surname, phone, email) {
-        var cancelationCode = Random.hexString(6);
+        var superCode = Random.hexString(6);
         var orderForm = {
             addressLoading: addressLoading,
             addressUnloading: addressUnloading,
@@ -66,14 +66,14 @@ Meteor.methods({
             surname: surname,
             phone: phone,
             email: email,
-            cancelationCode: cancelationCode,
+            superCode: superCode,
             canceled: false,
             brisboxers: []
         };
         Orders.insert(orderForm, function (err, orderId) {
             if (!err) {
                 var order = Orders.findOne({"_id": orderId});
-                MailService.orderRegistered(order, cancelationCode);
+                MailService.orderRegistered(order, superCode);
             }
         });
     },
@@ -169,7 +169,7 @@ Meteor.methods({
         var orderIdDecodificado = Meteor.call('deCodificaString', orderIdCodificado);
         var order = Orders.findOne({"_id": orderIdDecodificado});
         if (Orders.find({"_id": orderIdDecodificado}).count() == 1) {
-            if (order.cancelationCode == cancelationCode) {
+            if (order.superCode == cancelationCode) {
                 Orders.update(orderIdDecodificado, {
                     $set: {
                         canceled: true,
