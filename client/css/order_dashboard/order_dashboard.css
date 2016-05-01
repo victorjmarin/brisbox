@@ -52,12 +52,10 @@
     min-width: 215px;
 }
 
-.mapita {
+.dashmap {
+    position: relative; 
     width: 100%;
-    margin-top: 10px;
-    min-height: 525px;
-    height: 100%;
-    min-width: 235px;
+    height: 500px;
 }
 
 .customer-info span {

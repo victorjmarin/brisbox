@@ -44,14 +44,12 @@
 
             </div>
             <div class="col s4 m4 order-info" id="mapa">
-                <div class="mapita col s12 m12 hide-on-small-only customer-info left">
-                    <iframe class="mapita"
-                            frameborder="0" style="border:0"
-                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDYFp3bwLCX0jHLq0S27Odu1Pb8mLSEHfU&q={{#if addressLoading}}{{replaceSpace addressLoading}}{{else}}{{replaceSpace addressUnloading}}{{/if}}+{{zip}}&attribution_source=Google+Maps+Embed+API">
-                    </iframe>
+                <div class="dashmap col s12 m12 hide-on-small-only customer-info left">
+                   {{> googleMap name="dashmap" options=mapOptions}}
                 </div>
             </div>
         </div>
+        
         <div class="col s12 m12">
             <div class="col s4 m2 hide-on-med-and-down">
                 {{#if orderDay day}}
@@ -90,6 +88,7 @@
                         id="cancel">{{_ "order_dashboard_cancel"}}</button>
             </div>
         </div>
+        
     </div>
 
 </template>
