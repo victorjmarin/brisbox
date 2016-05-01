@@ -1,23 +1,25 @@
 <template name="brisboxers_list">
     {{#each brisboxers}}
-        <div class="brisboxer-inf">
-            <a href="{{ pathFor 'brisboxer-details' _id=this._id }}"><div class="image-div" style="float:left;margin-right:15px;">
-                <img class="circle imag" src="{{imageProfile _id}}"/>
-            </div></a>
-            <div class="name-and-vote-div">
-                <span class="flow-text"> <b>{{_ "order_dashboard_name"}}:</b> {{username}}</span>
-            </div>
-            <div>
+        <a class="no-style-anchor" href="{{ pathFor 'brisboxer-details' _id=this._id }}">
+            <div class="brisboxer-inf">
+                <div class="image-div" style="float:left;margin-right:15px;">
+                    <img class="circle imag" src="{{imageProfile _id}}"/>
+                </div>
+                <div class="name-and-vote-div">
+                    <span class="flow-text"> <b>{{_ "order_dashboard_name"}}:</b> {{username}}</span>
+                </div>
+                <div>
                 <span class="flow-text"><b>{{_ "score"}}:</b><span
                         class="order_dashboard_vote orange-text"> {{score _id}}</span></span>
-            </div>
-            {{#if isThisBrisboxer _id}}
-                <div >
-                    <button id="leave-order" data-id='{{_id}}' class="bold btn waves-effect waves-light red"
-                            type="submit"
-                            name="action">{{_ "order_leave" }}</button>
                 </div>
-            {{/if}}
-        </div>
+                {{#if isThisBrisboxer _id}}
+                    <div>
+                        <button id="leave-order" data-id='{{_id}}' class="bold btn waves-effect waves-light red"
+                                type="submit"
+                                name="action">{{_ "order_leave" }}</button>
+                    </div>
+                {{/if}}
+            </div>
+        </a>
     {{/each}}
 </template>

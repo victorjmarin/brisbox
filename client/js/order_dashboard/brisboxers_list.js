@@ -42,9 +42,5 @@ Template.brisboxers_list.events({
        });
 
        Meteor.call('updateLastLeftOfBrisboxer', Meteor.userId());
-    },
-    'click #briboxerGo':function (e){
-        var id = e.currentTarget.getAttribute('data-id');
-        Router.go('brisboxerDetails', {_id:id});
     }
 });
