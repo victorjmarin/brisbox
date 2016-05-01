@@ -1,30 +1,37 @@
 /**
  * Created by Antonio on 06/04/2016.
  */
-Template.registerHelper("prettifyDate", function (date) {
-    var curr_date = date.getDate();
-    var curr_month = date.getMonth() + 1;
-    var curr_year = date.getFullYear();
-    result = curr_date + "/" + curr_month + "/" + curr_year;
-    return result;
-});
-Template.registerHelper("replaceSpace", function (string) {
-    return string.split(' ').join('+');
-});
-
-Template.registerHelper("notEmpty", function (brisboxers) {
-    return brisboxers.length>0
-});
-
-Template.registerHelper("calculateCost", function (numBrisboxers, hours) {
-    return numBrisboxers * hours * 20 + " €";
-});
 
 Template.order_dashboard.helpers({
-    'notInOrder': function(){
+    notInOrder: function(){
         var brisboxers = this.brisboxers;
         var brisboxersIds = _.pluck(brisboxers, "_id");
         var result = !_.contains(brisboxersIds, Meteor.userId());
+        return result;
+    },
+    mapOptions: function () {
+        if (GoogleMaps.loaded()) {
+            return {
+                disableDefaultUI: true,
+                center: new google.maps.LatLng(37.3914105564361, -5.9591776906),
+                zoom: 17
+            };
+        }
+    },
+    calculateCost: function (numBrisboxers, hours) {
+        return numBrisboxers * hours * 20 + " €";
+    },
+    notEmpty: function (brisboxers) {
+        return brisboxers.length>0
+    },
+    replaceSpace: function (string) {
+        return string.split(' ').join('+');
+    },
+    prettifyDate: function (date) {
+        var curr_date = date.getDate();
+        var curr_month = date.getMonth() + 1;
+        var curr_year = date.getFullYear();
+        result = curr_date + "/" + curr_month + "/" + curr_year;
         return result;
     }
 });
@@ -160,6 +167,13 @@ Template.order_dashboard.events({
         }
     }
 });
+
+Template.order_dashboard.onRendered(function () {
+    GoogleMaps.load({
+        key: 'AIzaSyAfk4ikNH05OssyWavDvWImWFsf6oVXzzQ'
+    });
+});
+
 Template.registerHelper("orderDay", function (date) {
     var hoy = new Date();
     var diaPedidoSub1 = date.setTime(date.getTime() - 86400000);
@@ -173,4 +187,24 @@ Template.order_dashboard.events({
             token: ((parseInt(this.phone) * 71) + (parseInt(this.zip) * 31))
         });
     }
+});
+
+Template.order_dashboard.onCreated(function () {
+    var data = this.data;
+    GoogleMaps.ready("dashmap", function (map) {
+        var geocoder = new google.maps.Geocoder();
+        var address = data.addressLoading + " " + data.zip;
+        geocoder.geocode({'address': address}, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                var latitude = results[0].geometry.location.lat();
+                var longitude = results[0].geometry.location.lng();
+                var latLng = new google.maps.LatLng(latitude, longitude);
+                map.instance.setCenter(latLng);
+                var marker = new google.maps.Marker({
+                    position: latLng,
+                    map: map.instance
+                });
+            }
+        });
+    });
 });
