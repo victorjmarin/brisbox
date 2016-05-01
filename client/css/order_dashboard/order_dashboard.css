@@ -85,7 +85,7 @@
 .brisboxer-inf {
     position: relative;
     height: 100%;
-    margin-bottom: 30px;
+    padding-bottom: 30px;
     margin-top: 10px;
 }
 
@@ -97,6 +97,10 @@
 .image-div {
     vertical-align: top;
     display: inline-block;
+}
+
+.image-div:hover {
+    cursor:hand;
 }
 
 .imag {
@@ -136,4 +140,9 @@
 
 #leave-order {
     margin-top: 10px;
+}
+
+.no-style-anchor {
+    color: inherit;
+    text-decoration: none;
 }
