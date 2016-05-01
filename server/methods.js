@@ -140,8 +140,10 @@ Meteor.methods({
         var updatedOrder = OrderService.joinOrder(order, principal);
         if (!OrderService.needsMoreBrisboxers(updatedOrder)) {
             var captain = OrderService.selectCaptain(updatedOrder);
-            MailService.notifyCaptain(updatedOrder, captain);
-            MailService.brisboxerComplete(updatedOrder);
+            Meteor.defer(function () {
+                MailService.notifyCaptain(updatedOrder, captain);
+                MailService.brisboxerComplete(updatedOrder);
+            });
         }
     },
 
