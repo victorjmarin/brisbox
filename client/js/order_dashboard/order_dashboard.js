@@ -50,10 +50,16 @@ Template.order_dashboard.onRendered(function () {
 
 Template.registerHelper("orderDay", function (date) {
     var hoy = new Date();
-    var diaPedidoSub1 = date.setTime(date.getTime() - 86400000);
-    return diaPedidoSub1.getTime()>hoy.getTime();
+    var diaPedidoSub1 = new Date();
+    diaPedidoSub1.setTime(date.getTime());
+    return hoy.getTime()-diaPedidoSub1.getTime()>0;
 });
-
+Template.registerHelper("orderCancel", function (date) {
+    var hoy = new Date();
+    var diaPedidoSub12H = new Date();
+    diaPedidoSub12H.setTime(date.getTime() - 43200000);
+    return hoy.getTime()-diaPedidoSub12H.getTime()<0;
+});
 Template.order_dashboard.events({
     'click #cancel': function (event) {
         Router.go('cancel-order', {

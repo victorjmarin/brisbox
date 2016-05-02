@@ -1,6 +1,8 @@
 /**
  * Created by Antonio on 18/04/2016.
  */
+Meteor.subscribe("brisboxersOrder");
+
 Template.brisboxers_list.helpers({
     'isThisBrisboxer': function(id){
         return Meteor.userId() === id;
