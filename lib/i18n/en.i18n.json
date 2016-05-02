@@ -195,6 +195,7 @@
   "dashboard": "Dashboard",
   "orders": "Orders",
   "my_orders": "My orders",
+  "my_orders_empty": "You have not joined any order yet. Search through the <a href='/list-all-orders'>available orders</a> to get going.",
   "agree": "I agree",
   "refuse": "I refuse",
   "agree_form": "I have read and agree to the Terms and Conditions.",

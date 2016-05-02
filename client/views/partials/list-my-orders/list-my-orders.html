@@ -12,6 +12,10 @@
             {{> reactiveBlockGrid cursor=orders template='myOrdersItem' transitionDuration='0.5s' gutter=30 columnWidth=328}}
         </div>
 
+        {{#unless orders.count}}
+            <div class="row flow-text">{{{_ "my_orders_empty"}}}</div>
+        {{/unless}}
+
     </div>
 
 </Template>

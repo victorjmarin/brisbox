@@ -190,6 +190,7 @@
   "dashboard": "Cuadro de mandos",
   "orders": "Pedidos",
   "my_orders": "Mis pedidos",
+  "my_orders_empty": "No te has unido a ningún pedido todavía. Echa un vistazo a los <a href='/list-all-orders'>pedidos disponibles</a> para comenzar.",
   "agree": "Acepto",
   "refuse": "Rechazo",
   "agree_form": "He leído y acepto los Términos y Condiciones.",
