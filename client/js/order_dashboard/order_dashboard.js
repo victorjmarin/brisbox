@@ -66,6 +66,11 @@ Template.order_dashboard.events({
             ord: Base64.encode(this._id),
             token: ((parseInt(this.phone) * 71) + (parseInt(this.zip) * 31))
         });
+    },
+    'click #edit-order': function(e){
+        Router.go('edit-order', {
+            ord: Base64.encode(this._id)
+        });
     }
 });
 

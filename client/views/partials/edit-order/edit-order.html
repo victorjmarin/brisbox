@@ -1,0 +1,68 @@
+<template name="EditOrder">
+    <div class="container">
+        <form class="row" id="edit-order-form">
+            <div class="col s12 m6">
+                <div class="container">
+                    <div class="row">
+                        <h4 class="header">{{_ "edit-order"}}</h4>
+                    </div>
+                    {{#if cannotEdit}}
+                        <p class="red-text">{{_ "edit-order-error"}}</p>
+
+                    {{else}}
+                        <div class="row" id="code-row">
+                            <div class="input-field col s12">
+                                <input id="code" type="text" required class="form-control col s12">
+                                <label id="label_code" for="supercode"
+                                       class=" col s12">{{_ "edit-order-code"}}</label>
+                            </div>
+                        </div>
+                        {{#if canEditDate}}
+                        <div class="row" id="date-row">
+                            <div class="input-field col s6 m6">
+                                <input id="day" type="date" name="day" required
+                                     class="datepicker form-control col s12">
+                                <label id="label_day" class="col s12" for="day">{{_ "order-form_day"}}</label>
+                            </div>
+                            <div class="input-field col s6 m6">
+                                <input id="startMoment" type="text" required name="startMoment"
+                                    class="timepicker form-control col s12">
+                                <label id="label_startMoment" class="col s12"
+                                    for="startMoment">{{_ "order-form_startMoment"}}</label>
+                            </div>
+                        </div>
+                        {{/if}}
+                        {{#if canEditHours}}
+                        <div class="row" id="hours-row">
+                            <div class="input-field col s12 m12">
+                               <input oninvalid="setCustomValidity('{{_ "order-form_validate-hours"}}')"
+                                    onchange="try{setCustomValidity('')}catch(e){}"
+                                    id="hours" type="number" required name="hours" min="{{hours}}" max="12"
+                                    class="hours form-control">
+                                <label id="label_hours" class="col s6 m6"
+                                    for="hours">{{_ "order-form_hours"}}</label>
+                            </div>
+                        </div>
+                        {{/if}}
+                    
+                    {{/if}}
+
+                    <div id="codeError" class="red-text" style="display: none;">
+                        {{_ "edit-order-invalidCode"}}
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            {{#unless cannotEdit}}
+                                <button type="submit" id="cancel"
+                                        class="btn btn-primary waves-button-input orange darken-3">{{_ "submit"}}</button>
+                            {{/unless}}
+                            <button type="button" id="dashboard"
+                                    class="waves-effect waves-orange waves-ripple btn-flat">{{_ "go_back"}}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</template>

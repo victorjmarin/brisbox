@@ -286,7 +286,22 @@ Meteor.methods({
                 );
             }
         }
+    },
+    'checkOrderCode': function (order_id, code) {
+        var res = false;
+        var order = Orders.findOne({"_id": order_id});
+        if (Orders.find({"_id": order_id}).count() == 1) {
+            if (order.superCode == code) {
+                res = true;
+            }
+        }
+        return res;
+    },
+    'editOrder': function(order_id, data){
+        console.log(data);
+        console.log(Orders.findOne({"_id": order_id}));
+        console.log(Orders.update({_id: order_id}, {$set: {hours: 5}}));
+        return true;
     }
 
-})
-;
+});
