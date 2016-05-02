@@ -13,12 +13,10 @@
                     <span class="flow-text"> <b>{{_ "order_dashboard_city"}}:</b> Sevilla</span>
                     <span class="flow-text"> <b>{{_ "order_dashboard_zip"}}:</b> {{zip}}</span>
                     {{#if addressLoading}}
-                        <span class="flow-text"> <b>{{_ "order_dashboard_address_loading"}}
-                            :</b> {{addressLoading}}</span>
+                        <span class="flow-text"> <b>{{_ "order_dashboard_address_loading"}}:</b> {{addressLoading}}</span>
                     {{/if}}
                     {{#if addressUnloading}}
-                        <span class="flow-text"> <b>{{_ "order_dashboard_address_unloading"}}
-                            :</b> {{addressUnloading}}</span>
+                        <span class="flow-text"> <b>{{_ "order_dashboard_address_unloading"}}:</b> {{addressUnloading}}</span>
                     {{/if}}
                     <span class="flow-text"> <b>{{_ "order_dashboard_day"}}:</b> {{prettifyDate day}}</span>
                     <span class="flow-text"> <b>{{_ "order_dashboard_hour"}}:</b> {{startMoment}}</span>
@@ -35,7 +33,7 @@
                     {{#if notEmpty brisboxers}}
                         {{> brisboxers_list}}
                     {{else}}
-                        <p>{{_ "order_dashboard_emptyBrisboxer"}}</p>
+                        <span class="flow-text">{{_ "order_dashboard_emptyBrisboxer"}}</span>
                     {{/if}}
                     {{#if canceled}}
                         <h4 class="deep-orange flow-text">{{_ "order_deleted"}}</h4>
@@ -44,14 +42,12 @@
 
             </div>
             <div class="col s4 m4 order-info" id="mapa">
-                <div class="mapita col s12 m12 hide-on-small-only customer-info left">
-                    <iframe class="mapita"
-                            frameborder="0" style="border:0"
-                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDYFp3bwLCX0jHLq0S27Odu1Pb8mLSEHfU&q={{#if addressLoading}}{{replaceSpace addressLoading}}{{else}}{{replaceSpace addressUnloading}}{{/if}}+{{zip}}&attribution_source=Google+Maps+Embed+API">
-                    </iframe>
+                <div class="dashmap col s12 m12 hide-on-small-only customer-info left">
+                   {{> googleMap name="dashmap" options=mapOptions}}
                 </div>
             </div>
         </div>
+        
         <div class="col s12 m12">
             <div class="col s4 m2 hide-on-med-and-down">
                 {{#if orderDay day}}
@@ -61,17 +57,17 @@
                         </button>
                     {{/if}}
                 {{else}}
-                    {{#if notInOrder }}
-                        <button name="submit" id="confirm-order-payment" type="button"
-                                class="bold btn waves-effect waves-light orange darken-3 white-text confirm-payment">{{_ "payment_confirmation_button"}}
-                        </button>
+                    {{#if orderCancel day}}
+                        {{#if notInOrder }}
+                            <div class="col s4 m6 hide-on-med-and-down" id="cancelar">
+                                <button class="bold waves-effect waves-orange waves-ripple btn-flat"
+                                        id="cancel">{{_ "order_dashboard_cancel"}}</button>
+                            </div>
+                        {{/if}}
                     {{/if}}
                 {{/if}}
             </div>
-            <div class="col s4 m6 hide-on-med-and-down" id="cancelar">
-                <button class="bold waves-effect waves-orange waves-ripple btn-flat"
-                        id="cancel">{{_ "order_dashboard_cancel"}}</button>
-            </div>
+
             <div class="col s12 m2 hide-on-large-only bold">
                 {{#if orderDay day}}
                     {{#if notInOrder }}
@@ -80,16 +76,18 @@
                         </button>
                     {{/if}}
                 {{else}}
-                    {{#if notInOrder }}
-                        <button name="submit" id="confirm-order-payment" type="button"
-                                class="bold btn waves-effect waves-light orange darken-3 white-text confirm-payment">{{_ "payment_confirmation_button"}}
-                        </button>
+                    {{#if orderCancel day}}
+                        {{#if notInOrder }}
+                            <div class="col s4 m6 hide-on-med-and-down" id="cancelar">
+                                <button class="waves-effect waves-orange waves-ripple btn-flat"
+                                        id="cancel">{{_ "order_dashboard_cancel"}}</button>
+                            </div>
+                        {{/if}}
                     {{/if}}
                 {{/if}}
-                <button class="waves-effect waves-orange waves-ripple btn-flat"
-                        id="cancel">{{_ "order_dashboard_cancel"}}</button>
             </div>
         </div>
+        
     </div>
 
 </template>

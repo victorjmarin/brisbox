@@ -19,5 +19,8 @@ OrderService = {
         }
         result = OrderRepo.addBrisboxer(order, brisboxer);
         return result;
+    },
+    setCaptain: function (order, brisboxer) {
+        OrderRepo.setCaptain(order, brisboxer);
     }
 };

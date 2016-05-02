@@ -80,7 +80,7 @@ Meteor.methods({
 
     'sendEmail': function (to, from, subject, text) {
         check([to, from, subject, text], [String]);
-        
+
         // Let other method calls from the same client start running,
         // without waiting for the email sending to complete.
         this.unblock();
@@ -140,11 +140,14 @@ Meteor.methods({
         var updatedOrder = OrderService.joinOrder(order, principal);
         if (!OrderService.needsMoreBrisboxers(updatedOrder)) {
             var captain = OrderService.selectCaptain(updatedOrder);
-            MailService.notifyCaptain(updatedOrder, captain);
-            MailService.brisboxerComplete(updatedOrder);
+            OrderService.setCaptain(updatedOrder, captain);
+            Meteor.defer(function () {
+                MailService.notifyCaptain(updatedOrder, captain);
+                MailService.brisboxerComplete(updatedOrder);
+            });
         }
     },
-    
+
     'deleteOrderMethod': function (orderIdCodificado, token) {
         var res = "NOTCANCELED";
         var orderIdDecodificado = Meteor.call('deCodificaString', orderIdCodificado);
@@ -177,6 +180,9 @@ Meteor.methods({
                     }
                 });
                 res = true;
+                Meteor.defer(function () {
+                    MailService.orderCanceled(order);
+                });
             }
         }
         return res;
@@ -223,6 +229,11 @@ Meteor.methods({
     'updateBrisboxersOfOrder': function (order_id, id) {
         if (id === Meteor.userId()) {
             var order = Orders.findOne({_id: order_id});
+            if (!OrderService.needsMoreBrisboxers(order)) {
+                Meteor.defer(function () {
+                    MailService.brisboxerLeft(order);
+                });
+            }
             var brisboxers = order.brisboxers;
             var index = null;
             for (i = 0; i < brisboxers.length; i++) {
@@ -243,16 +254,38 @@ Meteor.methods({
 
         }
     },
-    'updateBrisboxerDetails': function(name, surname, phone){
+    'updateBrisboxerDetails': function (name, surname, phone) {
         var currentUserId = Meteor.userId();
         return Meteor.users.update(currentUserId, {
             $set: {
-                "profile.name" : name,
-                "profile.surname" : surname,
-                "profile.phone" : phone,
+                "profile.name": name,
+                "profile.surname": surname,
+                "profile.phone": phone,
             }
         });
 
+    },
+    'updateOrdersCountToBrisboxersInOrder': function(order_id){
+        var order = Orders.findOne({_id: order_id});
+        if(order){
+            var brisboxers = order.brisboxers;
+            for (i = 0; i < brisboxers.length; i++) {
+                var entry = brisboxers[i];
+                var brisboxer = Meteor.users.findOne({_id: entry._id});
+                if(brisboxer.profile.completedOrders != null){
+                    brisboxer.profile.completedOrders++;
+                }else{
+                    brisboxer.profile.completedOrders = 1;
+                }
+                Meteor.users.update(entry._id, {
+                    $set: {
+                        "profile.completedOrders" : brisboxer.profile.completedOrders
+                    }
+                },
+                { upsert : true}
+                );
+            }
+        }
     }
 
 })

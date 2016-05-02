@@ -30,24 +30,14 @@ Template.stripe_form.helpers({
 Template.stripe_form.events({
     'submit .stripe-form': function (e) {
         e.preventDefault();
-
         ccNum = $('#number').val();
         cvc = $('#cvc').val();
         expMo = $('#exp-month').val();
         expYr = $('#exp-year').val();
-        amountForm = $('#amount').val();
-
-        if (!amountForm && !Session.get("isCreation")) {
-            amountForm = Session.get("finalCost") * 100
-        } else if (!amountForm) {
-            amountForm = Meteor.settings.public.reserveAmount;
-        }
-        Session.set("stripe_error", null);
 
         var currentLocale = TAPi18next.lng();
-        var promotion = $('#promotion');
-        if (promotion.length != 0) {
-            var codePromotion = promotion.val();
+        var codePromotion = $('#promotion').val();
+        if (codePromotion.length != 0) {
             var codePromotionResult = Promotions.findOne({code: codePromotion});
             if (codePromotionResult == null) {
                 if (codePromotion != "") {
@@ -56,8 +46,18 @@ Template.stripe_form.events({
                     } else {
                         Materialize.toast("Promotion code is not correct, sorry.", 2000);
                     }
+                    return false;
                 }
             }
+        }else{
+            amountForm = $('#amount').val();
+
+            if (!amountForm && !Session.get("isCreation")) {
+                amountForm = Session.get("finalCost") * 100
+            } else if (!amountForm) {
+                amountForm = Meteor.settings.public.reserveAmount;
+            }
+            Session.set("stripe_error", null);
         }
         Stripe.card.createToken({
             number: ccNum,
@@ -75,11 +75,15 @@ Template.stripe_form.events({
                     if (error) {
                         var code = error.reason;
                         Session.set("stripe_error", code);
+                    }else{
+                        if(!Session.get("isCreation")){
+                            var order_id = Session.get("order_id");
+                            Meteor.call('updateOrdersCountToBrisboxersInOrder', order_id);
+                        }
                     }
                 });
             }
         });
-
 
         if (Session.get("stripe_error") == null) {
             if (Session.get("isCreation")) {
@@ -127,7 +131,7 @@ Template.stripe_form.events({
                 $('#payment-main').css('display', 'none');
                 $('#payment-access').css('display', 'none');
                 $('#payment-form').addClass("hidden");
-                Materialize.toast(TAPi18n.__('payment_confirmation_paied'), 4000) // 4000 is the duration of the toast
+                Materialize.toast(TAPi18n.__('payment_confirmation_paied'), 4000);// 4000 is the duration of the toast
             }
         }
     }

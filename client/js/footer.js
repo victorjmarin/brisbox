@@ -14,7 +14,7 @@ Template.pageFooter.events({
     'submit .zip_form ' : function (event){
         event.preventDefault();
         var lng = TAPi18next.lng();
-        var zip = document.getElementById('inputZipFooter').value;
+        var zip = document.getElementById('inputZipFooterMobile').value;
         var zipResult = Zips.findOne({code: zip});
         if(zipResult == null){
             if(lng == "es"){

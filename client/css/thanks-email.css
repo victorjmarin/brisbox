@@ -1,4 +1,4 @@
-.welcome_header{
+.header-thanksEmail{
     font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -7,20 +7,20 @@
     margin-bottom: 18px;
 }
 
-.welcome_body{
+.thanksEmail_body{
     font-size: 1.2em !important;
     font-weight: normal !important;
     margin-top: -5%;
 }
 
-.welcome_body p{
+.thanksEmail_body p{
     text-align: justify;
     margin-top: 80px;
 }
 
 @media(max-width: 600px){
 
-    .welcome_header{
+    .header-thanksEmail{
         font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
         font-style: normal;
         font-weight: 400;
@@ -29,17 +29,17 @@
         text-align: center;
     }
 
-    .welcome_body{
-        font-size: 1em !important;
-        font-weight: normal !important;
-    }
-
-    .welcome_body p, .welcome_body h5{
+    .thanksEmail_body p{
         text-align: justify;
         margin-top: -20px;
     }
 
-    .welcome_body img{
+    .thanksEmail_body{
+        font-size: 1em !important;
+        font-weight: normal !important;
+    }
+
+    .thanksEmail_body img{
         max-width: 300px;
         margin: 1% 0 0 15%;
     }

@@ -13,5 +13,15 @@ OrderRepo = {
                 }
             });
         return Orders.findOne(order._id);
+    },
+    setCaptain: function (order, brisboxer) {
+        Orders.update(
+            {
+                _id: order._id,
+                "brisboxers._id": brisboxer._id
+            },
+            {
+                $set: {"brisboxers.$.captain": true}
+            });
     }
 };

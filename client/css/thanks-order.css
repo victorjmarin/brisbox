@@ -1,4 +1,4 @@
-.welcome_header{
+.header-thanksOrder{
     font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -7,20 +7,25 @@
     margin-bottom: 18px;
 }
 
-.welcome_body{
+.thanksOrder_body{
     font-size: 1.2em !important;
     font-weight: normal !important;
     margin-top: -5%;
 }
 
-.welcome_body p{
+.thanksOrder_body p{
     text-align: justify;
     margin-top: 80px;
 }
 
-@media(max-width: 600px){
+.thanksOrder_body img{
+    max-width: 430px;
+    margin-top:-50px
+}
 
-    .welcome_header{
+@media(max-width: 800px){
+
+    .header-thanksOrder{
         font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
         font-style: normal;
         font-weight: 400;
@@ -29,18 +34,18 @@
         text-align: center;
     }
 
-    .welcome_body{
-        font-size: 1em !important;
-        font-weight: normal !important;
-    }
-
-    .welcome_body p, .welcome_body h5{
+    .thanksOrder_body p{
         text-align: justify;
         margin-top: -20px;
     }
 
-    .welcome_body img{
+    .thanksOrder_body{
+        font-size: 1em !important;
+        font-weight: normal !important;
+    }
+
+    .thanksOrder_body img{
         max-width: 300px;
-        margin: 1% 0 0 15%;
+        margin: auto;
     }
 }
