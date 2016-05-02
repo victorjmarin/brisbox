@@ -18,3 +18,22 @@ Template.Faq.events({
 		}
 	}
 });
+
+Template.Faq.onRendered(function(){
+	var id_question = getIdQuestionByURL();
+	if(id_question != null){
+		$i = $(id_question + " > .faqs-answer");
+		if($i.css("display") == "none"){
+			$i.slideDown("fast");
+		}
+	}
+});
+
+function getIdQuestionByURL(){
+	var url = window.location.href;
+	var id_question = url.match(/#(\w+)/g);
+	if (id_question == null || id_question.length != 1){
+		return null;
+	}
+	return id_question[0];
+}
