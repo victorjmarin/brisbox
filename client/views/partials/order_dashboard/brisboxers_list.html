@@ -3,7 +3,7 @@
         <a class="no-style-anchor" href="{{ pathFor 'brisboxer-details' _id=this._id }}">
             <div class="brisboxer-inf">
                 <div class="image-div" style="float:left;margin-right:15px;">
-                    <img class="circle imag" src="{{imageProfile _id}}"/>
+                    <img alt="captain" class="circle imag {{#if captain}}pic-border{{/if}}" src="{{imageProfile _id}}"/>
                 </div>
                 <div class="name-and-vote-div">
                     <span class="flow-text"> <b>{{_ "order_dashboard_name"}}:</b> {{username}}</span>
@@ -12,6 +12,9 @@
                 <span class="flow-text"><b>{{_ "score"}}:</b><span
                         class="order_dashboard_vote orange-text"> {{score _id}}</span></span>
                 </div>
+                {{#if captain}}
+                    <span class="flow-text"><a href="{{pathFor route="Faq" hash="captain"}}">{{_ "order_dashboard_captain"}}</a></span>
+                {{/if}}
                 {{#if isThisBrisboxer _id}}
                     <div>
                         <button id="leave-order" data-id='{{_id}}' class="bold btn waves-effect waves-light red"

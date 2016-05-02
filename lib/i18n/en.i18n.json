@@ -246,6 +246,7 @@
   "order_dashboard_number_of_brisboxers": "Nº of brisboxers",
   "order_dashboard_estimate_hours": "Estimated hours",
   "order_dashboard_estimate_cost": "Estimated cost",
+  "order_dashboard_captain": "The captain",
   "brisboxer_details": "Brisboxer details",
   "name": "Name",
   "surname": "Surname",
