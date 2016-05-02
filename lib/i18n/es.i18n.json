@@ -451,6 +451,8 @@
   "brisboxer_details_save": "Guardar",
   "brisboxer_details_cancel": "Cancelar",
   "brisboxer_details_edit": "Editar perfil",
+  "brisboxer_details_comments": "Lo que dicen los clientes",
+
   "stripe-form_validate-number": "Introduce tu número de cuenta",
   "stripe-form_validate-cvc": "Introduce el CVC" ,
   "stripe-form_validate-month": "Indica el mes de expiración",
