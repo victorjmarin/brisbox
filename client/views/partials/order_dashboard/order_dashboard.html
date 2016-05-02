@@ -33,7 +33,7 @@
                     {{#if notEmpty brisboxers}}
                         {{> brisboxers_list}}
                     {{else}}
-                        <p>{{_ "order_dashboard_emptyBrisboxer"}}</p>
+                        <span class="flow-text">{{_ "order_dashboard_emptyBrisboxer"}}</span>
                     {{/if}}
                     {{#if canceled}}
                         <h4 class="deep-orange flow-text">{{_ "order_deleted"}}</h4>
