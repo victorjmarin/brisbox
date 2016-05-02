@@ -463,5 +463,6 @@
   "edit-order": "Editar pedido",
   "edit-order-code": "Código",
   "edit-order-error": "Ups! Parece que actualmente no puede editarse el pedido. Recuerda que debe pasar la fecha del pedido para poder editarlo.",
-  "edit-order-invalidCode": "Código no válido"
+  "edit-order-invalidCode": "Código no válido",
+  "edit-order-error": "Oops! Se ha producido un error"
 }

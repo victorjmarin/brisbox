@@ -56,9 +56,7 @@
                         <button name="submit" id="confirm-order-payment" type="button"
                                 class="bold btn waves-effect waves-light orange darken-3 white-text confirm-payment">{{_ "payment_confirmation_button"}}
                         </button>
-                        <button name="submit" id="confirm-order-payment" type="button"
-                                class="bold btn waves-effect waves-light orange darken-3 white-text confirm-payment">{{_ "payment_confirmation_button"}}
-                        </button>
+                        <button id="edit-order" class="waves-effect waves-light btn grey light-2"><i class="material-icons">mode_edit</i></button>
                     {{/if}}
                 {{else}}
                     {{#if orderCancel day}}
@@ -70,11 +68,7 @@
                         {{/if}}
                     {{/if}}
                 {{/if}}
-
-                 <!--{{#if orderDay day}}
-                    <a class="waves-effect waves-light btn grey light-2"><i class="material-icons">mode_edit</i></a>
-                 {{/if}}-->
-                <a id="edit-order" class="waves-effect waves-light btn grey light-2"><i class="material-icons">mode_edit</i></a>
+                
             </div>
 
             <div class="col s12 m2 hide-on-large-only bold">
@@ -83,6 +77,7 @@
                         <button name="submit" id="confirm-order-payment" type="button"
                                 class="bold btn btn-primary waves-effect waves-light orange darken-3 white-text confirm-payment">{{_ "payment_confirmation_button"}}
                         </button>
+                        <button id="edit-order" class="waves-effect waves-light btn grey light-2"><i class="material-icons">mode_edit</i></button>
                     {{/if}}
                 {{else}}
                     {{#if orderCancel day}}

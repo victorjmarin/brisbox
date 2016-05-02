@@ -470,5 +470,6 @@
   "edit-order": "Edit order",
   "edit-order-code": "Code",
   "edit-order-error": "Oops! It seems that currently can not edit the order. Remember that it must pass the order date for editing.",
-  "edit-order-invalidCode": "Invalid code"
+  "edit-order-invalidCode": "Invalid code",
+  "edit-order-error": "Oops! An error has ocurred"
 }

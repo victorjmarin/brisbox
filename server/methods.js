@@ -298,10 +298,7 @@ Meteor.methods({
         return res;
     },
     'editOrder': function(order_id, data){
-        console.log(data);
-        console.log(Orders.findOne({"_id": order_id}));
-        console.log(Orders.update({_id: order_id}, {$set: {hours: 5}}));
-        return true;
+        return Orders.update({_id: order_id}, {$set: data});
     }
 
 });
