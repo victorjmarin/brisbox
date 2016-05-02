@@ -194,6 +194,7 @@
   "no_comments": "No comment was made.",
   "dashboard": "Dashboard",
   "orders": "Orders",
+  "orders_join": "You have joined the order",
   "my_orders": "My orders",
   "my_orders_empty": "You have not joined any order yet. Search through the <a href='/list-all-orders'>available orders</a> to get going.",
   "agree": "I agree",

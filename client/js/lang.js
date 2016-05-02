@@ -14,7 +14,7 @@ changeLang = function (toLocale) {
             var undo = TAPi18n.__('undo');
             Session.setPersistent("currentLang", toLocale);
             ServerSession.set("currentLang", toLocale);
-            Materialize.toast('<b><span class="truncate">' + msg + '</span></b><a class="btn-flat orange-text" onclick="changeLang(\'' + currentLocale + '\')"><b>' + undo + '</b><a>', 2700);
+            Materialize.toast('<b><span class="truncate">' + msg + '</span></b>', 2700);
         }
     });
 }

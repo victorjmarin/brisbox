@@ -38,7 +38,7 @@ Template.brisboxers_list.events({
 
        Meteor.call('updateBrisboxersOfOrder', order_id, id, function(err, res){
            if(res){
-               Materialize.toast(TAPi18n.__('order_dashboard_left'), 4000) // 4000 is the duration of the toast
+               Materialize.toast("<b>" + TAPi18n.__('order_dashboard_left') + "</b>", 2700);
            }
        });
 

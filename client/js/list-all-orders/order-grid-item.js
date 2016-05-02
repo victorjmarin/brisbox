@@ -32,7 +32,11 @@ Template.orderGridItem.helpers({
 
 Template.orderGridItem.events({
     'click .join': function (event) {
-        Meteor.call("joinOrder", this);
+        Meteor.call("joinOrder", this, function (err) {
+            if (!err) {
+                Materialize.toast("<b>" + TAPi18n.__("orders_join") + "</b>", 2700);
+            }
+        });
     }
 });
 
