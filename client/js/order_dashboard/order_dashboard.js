@@ -37,7 +37,7 @@ Template.order_dashboard.helpers({
 });
 
 Template.order_dashboard.events({
-    'click .confirm-payment': function(e){
+    'click #confirm-order-payment': function(e){
         Session.set('showPaymentConfirmationModal', true);
     }
 });
