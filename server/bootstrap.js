@@ -398,7 +398,7 @@ function loadOrders() {
         day: new Date('2016-08-04'),
         cancelationCode: "cancelthat3",
         brisboxers: [
-            {_id: brisboxer1._id, username: brisboxer1.username, assessed: false}
+            {_id: brisboxer1._id, username: brisboxer1.username, assessed: false, captain: true}
         ]
     });
     Orders.insert({
@@ -421,7 +421,7 @@ function loadOrders() {
             {_id: brisboxer2._id, username: brisboxer2.username, assessed: false},
             {_id: brisboxer3._id, username: brisboxer3.username, assessed: false},
             {_id: brisboxer4._id, username: brisboxer4.username, assessed: false},
-            {_id: brisboxer5._id, username: brisboxer5.username, assessed: false}
+            {_id: brisboxer5._id, username: brisboxer5.username, assessed: false, captain: true}
         ]
     });
 
