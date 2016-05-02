@@ -19,6 +19,23 @@ Meteor.publish('brisboxers', function () {
     });
 });
 
+Meteor.publish('brisboxer', function (brisboxerId) {
+    return Meteor.users.find(brisboxerId, {
+        fields: {
+            _id: 1,
+            username: 1,
+            emails: 1,
+            profile: 1,
+            accepted: 1,
+            name: 1,
+            surname: 1,
+            phone: 1,
+            zip: 1,
+            assessments: 1
+        }
+    });
+});
+
 Meteor.publish('brisboxersOrder', function () {
     return Meteor.users.find({roles: "brisboxer"}, {
         fields: {

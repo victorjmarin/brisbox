@@ -13,12 +13,10 @@
                     <span class="flow-text"> <b>{{_ "order_dashboard_city"}}:</b> Sevilla</span>
                     <span class="flow-text"> <b>{{_ "order_dashboard_zip"}}:</b> {{zip}}</span>
                     {{#if addressLoading}}
-                        <span class="flow-text"> <b>{{_ "order_dashboard_address_loading"}}
-                            :</b> {{addressLoading}}</span>
+                        <span class="flow-text"> <b>{{_ "order_dashboard_address_loading"}}:</b> {{addressLoading}}</span>
                     {{/if}}
                     {{#if addressUnloading}}
-                        <span class="flow-text"> <b>{{_ "order_dashboard_address_unloading"}}
-                            :</b> {{addressUnloading}}</span>
+                        <span class="flow-text"> <b>{{_ "order_dashboard_address_unloading"}}:</b> {{addressUnloading}}</span>
                     {{/if}}
                     <span class="flow-text"> <b>{{_ "order_dashboard_day"}}:</b> {{prettifyDate day}}</span>
                     <span class="flow-text"> <b>{{_ "order_dashboard_hour"}}:</b> {{startMoment}}</span>
@@ -35,7 +33,7 @@
                     {{#if notEmpty brisboxers}}
                         {{> brisboxers_list}}
                     {{else}}
-                        <p>{{_ "order_dashboard_emptyBrisboxer"}}</p>
+                        <span class="flow-text">{{_ "order_dashboard_emptyBrisboxer"}}</span>
                     {{/if}}
                     {{#if canceled}}
                         <h4 class="deep-orange flow-text">{{_ "order_deleted"}}</h4>

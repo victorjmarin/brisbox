@@ -140,6 +140,7 @@ Meteor.methods({
         var updatedOrder = OrderService.joinOrder(order, principal);
         if (!OrderService.needsMoreBrisboxers(updatedOrder)) {
             var captain = OrderService.selectCaptain(updatedOrder);
+            OrderService.setCaptain(updatedOrder, captain);
             Meteor.defer(function () {
                 MailService.notifyCaptain(updatedOrder, captain);
                 MailService.brisboxerComplete(updatedOrder);
