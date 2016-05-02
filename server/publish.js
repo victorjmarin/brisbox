@@ -19,6 +19,18 @@ Meteor.publish('brisboxers', function () {
     });
 });
 
+Meteor.publish('brisboxersOrder', function () {
+    return Meteor.users.find({roles: "brisboxer"}, {
+        fields: {
+            _id: 1,
+            username: 1,
+            profile: 1,
+            name: 1,
+            assessments: 1
+        }
+    });
+});
+
 Meteor.publish('ordersAvailable', function () {
     var user_id = this.userId;
     if (!user_id) {
