@@ -91,8 +91,8 @@
   "processing_error": "An error occurred while processing the card",
   "faqs_question_six": "I'm not sure of the date of my move. Can I also make a reservation?",
   "faqs_answer_six": "Of course! You are free to set the date or cancel it free of charge.",
-  "faqs_question_seven": "How far in advance should I make a reservation?",
-  "faqs_answer_seven": "Normal in removals is 5 days. But this is very inflexible! If you need help to load or unload your things tomorrow it wouldn't serve you! With us, with a minimum 24 hours you can have a brisboxer ready to help you in your task.",
+  "faqs_question_seven": "Who is a captain?",
+  "faqs_answer_seven": "A captain is a role assigned to the best experience brisboxer. The captain must contact with the client and make that all the order process goes amazing!",
   "order-form_header": "Do you need do a move?",
   "order-form_next": "Everything's OK",
   "order-more-info_header": "Details about your move",
@@ -470,5 +470,6 @@
   "edit-order": "Edit order",
   "edit-order-code": "Code",
   "edit-order-error": "Oops! It seems that currently can not edit the order. Remember that it must pass the order date for editing.",
-  "edit-order-invalidCode": "Invalid code"
+  "edit-order-invalidCode": "Invalid code",
+  "edit-order-error": "Oops! An error has ocurred"
 }

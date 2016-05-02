@@ -74,8 +74,8 @@
   "privacy_fifteen": "Los usuarios deberán garantizar la veracidad, exactitud, autenticidad y vigencia de los datos de carácter personal que les hayan sido recogidos.",
   "faqs_question_six": "No estoy muy seguro de la fecha de mi mudanza. ¿Puedo realizar una reserva igualmente?",
   "faqs_answer_six": "¡Por supuesto! Es libre de reajustar la fecha o de cancelarla libre de cargos.",
-  "faqs_question_seven": "¿Con cuanta antelacion debo realizar una reserva?",
-  "faqs_answer_seven": "Lo normal en las mudanzas es de 5 dias. ¡Pero esto es muy inflexible! ¡Si necesita ayuda mañana para descargar o cargar cosas no le serviria! Con nosotros, con un minimo de 24 horas podras tener a un brisboxer listo para ayudarte en tu tarea.",
+  "faqs_question_seven": "Quien es el capitan?",
+  "faqs_answer_seven": "El capitan es un rol asignado al brisboxer con mayor experiencia. El capitan debe hacer que todo el proceso vaya estupendamente!",
   "order-form_next": "Correcto",
   "order-more-info_header": "Detalles del pedido",
   "order-help": "¿Cómo podemos ayudarte?",
@@ -463,5 +463,6 @@
   "edit-order": "Editar pedido",
   "edit-order-code": "Código",
   "edit-order-error": "Ups! Parece que actualmente no puede editarse el pedido. Recuerda que debe pasar la fecha del pedido para poder editarlo.",
-  "edit-order-invalidCode": "Código no válido"
+  "edit-order-invalidCode": "Código no válido",
+  "edit-order-error": "Oops! Se ha producido un error"
 }

@@ -15,7 +15,6 @@ Template.EditOrder.helpers({
 
 function canEditHours(data){
      var hoy = new Date();
-     return true;
      return hoy.getTime()-data.day.getTime()>0;
 }
 
@@ -29,7 +28,8 @@ Template.EditOrder.events({
         $("#codeError").css("display", "none");
         event.preventDefault();
         var code = event.target.code.value;
-        var res = Meteor.call("checkOrderCode", this._id, code, function (error, response) {
+        var order_id = this._id
+        var res = Meteor.call("checkOrderCode", order_id, code, function (error, response) {
             if(response){
                 var data = {};
                 if(event.target.day){
@@ -38,17 +38,25 @@ Template.EditOrder.events({
                 if(event.target.hours){
                     data["hours"] = parseInt(event.target.hours.value);
                 }
-                Meteor.call("editOrder", this._id, data, function(error, response) {
+                if(event.target.startMoment){
+                    data["startMoment"] = event.target.startMoment.value;
+                }
+                Meteor.call("editOrder", order_id, data, function(error, response) {
                     if(response){
-                        console.log("PERFECT!");
+                        Router.go('order_dashboard', {_id: Base64.encode(order_id)});
+                    }else{
+                         $("#error").css("display", "inline");
                     }
-                })
-                console.log(data);
+                });
             }else{
                 $("#codeError").css("display", "inline");
             }
         });
         return false;
+    },
+    'click #dashboard': function (event) {
+        var orderIdCodificado = Base64.encode(this._id);
+        Router.go('order_dashboard', {_id: orderIdCodificado});
 
     }
 });
