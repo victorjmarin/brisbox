@@ -114,7 +114,7 @@
   "info_book": "Cost 5 € / order",
   "why_stripe": " Why do you use Stripe?",
   "why_promotion": "Do you have a promotion?",
-  "info_promotion": "Yes !, we have a promotion for you, if you enter the correct code will be deducted 5 € in your move. Be careful, just have a chance to enter the code correctly.",
+  "info_promotion": "Yes !, we have a promotion for you, if you enter the correct code will be deducted from the € 5 booking order.",
   "info_stripe": "We decided to use as payment gateway as this service Stripe charges less interest to our customers. It is planned to use Paypal.",
   "account-info": "Account information",
   "personal-info": "Personal information",
@@ -170,7 +170,7 @@
   "contact_us_form": "If you don't have an email client, don't worry, you can also complete this form and we will contact you as soon as possible",
   "thanks_Email": "Email sent.",
   "thanks_Email_body": "Thanks you for sending us an email. You will receive response as fast as posible",
-  "thanks_Order": "Order sent.",
+  "thanks_Order": "Order sent correctly!",
   "thanks_Order_body": "Thanks for trusting us. Our Brisboxers will contact you shortly.",
   "contact_us_form_name": "Name",
   "contact_us_form_email": "Email",
@@ -386,7 +386,6 @@
       }
     }
   },
-  "order-form_location": "Enter a location",
   "message-not_found": "We can't seem to find the page you're looking for.",
   "title-not_found": "Oops! 404 Error",
 
@@ -420,6 +419,20 @@
   "email_order_registered_first_p": "Your order has been sucessfully registered. We will notify you as soon as the requested number of brisboxers has been met.",
   "email_order_registered_second_p": "To access the dashboard and track the status of your order, click <a href='%s'>here</a>.",
   "email_order_registered_third_p": "You can cancel your order up to 24h. before it takes place by visiting <a href='%s'>this link</a> and using the following code: ",
+  "order-form_location": "Enter a location",
+  "order-form_validate-zip": "Insert a ZIP Code",
+  "order-form_validate-addressLoading": "Insert a loading address",
+  "order-form_validate-addressUnloading": "Insert a unloading address",
+  "order-form_validate-portalLoading": "Insert a unloading portal",
+  "order-form_validate-portalUnloading": "Insert a loading portal",
+  "order-form_validate-numberBrisboxers": "Insert a number brisboxers" ,
+  "order-form_validate-hours": "Insert a hour",
+  "order-form_validate-day": "Insert a day" ,
+  "order-form_validate-startMoment": "Insert a start moment",
+  "order-form_validate-name": "Insert your name",
+  "order-form_validate-surname": "Insert your surname",
+  "order-form_validate-phone": "Insert your phone",
+  "order-form_validate-email": "Insert your email",
   // Brisboxers complete
   "email_brisboxer_complete_subject": "Ready to go!",
   "email_brisboxer_complete_title": "We are all set.",
@@ -440,5 +453,10 @@
   "brisboxer_details_ok": "Profile updated successfully",
   "brisboxer_details_save": "Save",
   "brisboxer_details_cancel": "Cancel",
-  "brisboxer_details_edit": "Edit profile"
+  "brisboxer_details_edit": "Edit profile",
+
+  "stripe-form_validate-number": "Insert your number account",
+  "stripe-form_validate-cvc": "Insert your CVC" ,
+  "stripe-form_validate-month": "Indicates the expiration year",
+  "stripe-form_validate-year": "Indicates the expiration month"
 }

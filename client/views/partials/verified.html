@@ -1,13 +1,15 @@
 <template name="AccountVerified">
-    <div class="container">
-        <div class="section scrollspy">
-            <div class="row">
-                <h4 class="header">{{_ "email_verified"}}</h4>
-            </div>
-            <div class="row">
+    <div id="verified-container" class="container section">
+        <div class="row verified">
+            <h4 class="header-verified"><p>{{_ "email_verified"}}</p></h4>
+        </div>
+        <div class="row verified_body">
+            <div class="col s12 m6">
                 <p>{{_ "email_verified_Success"}}</p>
+            </div>
+            <div class="col s12 m6">
+                <img src="/email.png">
             </div>
         </div>
     </div>
-
 </template>
