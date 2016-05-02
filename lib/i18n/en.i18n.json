@@ -457,7 +457,8 @@
   "brisboxer_details_save": "Save",
   "brisboxer_details_cancel": "Cancel",
   "brisboxer_details_edit": "Edit profile",
-  "brisboxer_details_comments": "What customers say",
+  "brisboxer_details_comments": "What our customers say",
+  "brisboxer_details_empty_assessment": "The brisboxer doesn't have any assessment yet.",
 
   "stripe-form_validate-number": "Insert your number account",
   "stripe-form_validate-cvc": "Insert your CVC" ,

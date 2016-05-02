@@ -140,10 +140,12 @@
                                 <b>{{rating}}</b>
                             </div>
                             <div class="col s11">
-                               {{comments}}
+                                {{comments}}
                             </div>
                         </div>
                     </div>
+                {{else}}
+                    <span class="flow-text">{{_ "brisboxer_details_empty_assessment"}}</span>
                 {{/each}}
             </div>
         </div>
