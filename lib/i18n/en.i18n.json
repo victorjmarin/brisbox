@@ -463,5 +463,7 @@
   "stripe-form_validate-number": "Insert your number account",
   "stripe-form_validate-cvc": "Insert your CVC" ,
   "stripe-form_validate-month": "Indicates the expiration year",
-  "stripe-form_validate-year": "Indicates the expiration month"
+  "stripe-form_validate-year": "Indicates the expiration month",
+
+  "stripe_card_advice":"Brisbox don't save your's credit card information. This information will be ask later for more payments"
 }

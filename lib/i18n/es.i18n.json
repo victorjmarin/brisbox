@@ -457,5 +457,7 @@
   "stripe-form_validate-number": "Introduce tu número de cuenta",
   "stripe-form_validate-cvc": "Introduce el CVC" ,
   "stripe-form_validate-month": "Indica el mes de expiración",
-  "stripe-form_validate-year": "Indica el año de expiración"
+  "stripe-form_validate-year": "Indica el año de expiración",
+
+  "stripe_card_advice":"Brisbox no almacenará los datos de su tarjeta de crédito. Se le preguntará de nuevo para posteriores pagos"
 }

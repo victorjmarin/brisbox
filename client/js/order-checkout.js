@@ -8,6 +8,11 @@ Template.orderCheckout.events({
         $('#stripe-submit').attr('disabled',false);
         Session.set("enableStripeForm", true);
         Session.set("isCreation", true);
+        $("#form-stripe").css("background-color","transparent");
+        var heightStripeForm = $("#form-stripe").css('height');
+        $("#budget").css("height",heightStripeForm);
+        $("#budget").css("background-color","lightgray");
+        $(".formu").css("color","#ef6c00");
     }
 });
 
@@ -38,8 +43,13 @@ Template.orderCheckout.onRendered(function () {
     if (addressUnloading != null) {
         $('.checkout-unloading').css('visibility', 'visible');
     }
+    $(".formu").css("color","gray");
     $('#stripe-submit').attr('disabled',true);
     Session.set("isCreation", true);
+    $("#form-stripe").css("background-color","lightgray");
+    var heightStripeForm = $("#form-stripe").css('height');
+    $("#budget").css("height",heightStripeForm);
+    $("#budget").css("background-color","transparent");
 });
 
 
