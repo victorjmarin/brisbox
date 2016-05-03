@@ -457,5 +457,11 @@
   "stripe-form_validate-number": "Introduce tu número de cuenta",
   "stripe-form_validate-cvc": "Introduce el CVC" ,
   "stripe-form_validate-month": "Indica el mes de expiración",
-  "stripe-form_validate-year": "Indica el año de expiración"
+  "stripe-form_validate-year": "Indica el año de expiración",
+
+  "order_dashboard_status": "Estado",
+  "order_dashboard_status_searching_birsboxers": "Buscando Brisboxers",
+  "order_dashboard_status_canceled": "Cancelado",
+  "order_dashboard_status_paid": "Pagado",
+  "order_dashboard_status_prepared": "Listo"
 }
