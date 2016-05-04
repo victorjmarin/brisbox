@@ -465,5 +465,8 @@
   "stripe-form_validate-number": "Insert your number account",
   "stripe-form_validate-cvc": "Insert your CVC" ,
   "stripe-form_validate-month": "Indicates the expiration year",
-  "stripe-form_validate-year": "Indicates the expiration month"
+  "stripe-form_validate-year": "Indicates the expiration month",
+
+  "loading": "loading",
+  "unloading": "unloading"
 }
