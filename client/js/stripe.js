@@ -7,7 +7,6 @@ function cost() {
 Template.stripe_form.onRendered(function () {
     var stripeKey = Meteor.settings.public.stripe.testPublishableKey;
     Stripe.setPublishableKey(stripeKey);
-
     Session.set("stripe_error", null);
 });
 
@@ -49,7 +48,7 @@ Template.stripe_form.events({
                     return false;
                 }
             }
-        }else{
+        } else {
             amountForm = $('#amount').val();
 
             if (!amountForm && !Session.get("isCreation")) {
@@ -75,8 +74,8 @@ Template.stripe_form.events({
                     if (error) {
                         var code = error.reason;
                         Session.set("stripe_error", code);
-                    }else{
-                        if(!Session.get("isCreation")){
+                    } else {
+                        if (!Session.get("isCreation")) {
                             var order_id = Session.get("order_id");
                             Meteor.call('updateOrdersCountToBrisboxersInOrder', order_id);
                         }
@@ -135,13 +134,5 @@ Template.stripe_form.events({
                 Router.go("finished-order", {_id: Base64.encode(this._id)});
             }
         }
-    }
-    ,
-    'click #info-pay ': function (e) {
-        $(document).ready(function () {
-            $('.collapsible').collapsible({
-                accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-            });
-        });
     }
 });
