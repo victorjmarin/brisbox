@@ -143,11 +143,11 @@
   "order-form_email": "Email",
   "order-form_zip": "ZIP Code",
   "order-form_addressLoading": "Loading address",
-  "order-form_addressUnloading": "Address unloading",
+  "order-form_addressUnloading": "Unloading address",
   "order-form_portalLoading": "Loading portal",
   "order-form_portalUnloading": "Unloading portal",
   "order-form_hours": "Hours",
-  "order-form_numberBrisboxers": "Brisboxers",
+  "order-form_numberBrisboxers": "# of brisboxers",
   "order-form_comments": "Comments",
   "order-form_typeMove": "Type move",
   "order-form_cost": "Estimated cost",
@@ -245,7 +245,7 @@
   "order_dashboard_address_unloading": "Unload Address",
   "order_dashboard_day": "Day",
   "order_dashboard_hour": "Hour",
-  "order_dashboard_number_of_brisboxers": "Nº of brisboxers",
+  "order_dashboard_number_of_brisboxers": "# brisboxers",
   "order_dashboard_estimate_hours": "Estimated hours",
   "order_dashboard_estimate_cost": "Estimated cost",
   "order_dashboard_captain": "The captain",
@@ -466,5 +466,8 @@
   "stripe-form_validate-number": "Insert your number account",
   "stripe-form_validate-cvc": "Insert your CVC" ,
   "stripe-form_validate-month": "Indicates the expiration year",
-  "stripe-form_validate-year": "Indicates the expiration month"
+  "stripe-form_validate-year": "Indicates the expiration month",
+
+  "loading": "loading",
+  "unloading": "unloading"
 }

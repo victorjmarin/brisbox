@@ -34,3 +34,8 @@ button:focus {
     outline: none;
     background-color: transparent;
 }
+
+[type="radio"]:checked + label:after {
+    border-color: #ef6c00;
+    background: #ef6c00;
+}

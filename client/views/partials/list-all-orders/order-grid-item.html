@@ -12,7 +12,7 @@
 
                 <div style="position:absolute;top:8px;left:8px;color:#fff;font-weight: normal;font-size:110%;">
                     <div>
-                        <span style="padding:0px 4px;background:#4f4f4f;"><b>{{addressLoading}}</b></span>
+                        <span style="padding:0px 4px;background:#4f4f4f;"><b>{{address}}</b></span>
                     </div>
                     <div>
                         <span style="padding:0px 4px;background:#4f4f4f;font-size:85%;"><b>{{zip}}</b></span>
@@ -35,7 +35,7 @@
                     {{dateFormat}} <span style="font-weight:400">@</span> {{timeFormat}}
                 </div>
                 <div>
-                    {{_ "hours" count=hours}}
+                    {{_ "hours" count=hours}} {{_ loadUnloadText}}
                 </div>
             </div>
 
