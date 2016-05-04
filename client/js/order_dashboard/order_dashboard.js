@@ -33,6 +33,9 @@ Template.order_dashboard.helpers({
         var curr_year = date.getFullYear();
         result = curr_date + "/" + curr_month + "/" + curr_year;
         return result;
+    },
+    notPaid: function(){
+        return this.paidDate == null;
     }
 });
 
@@ -46,6 +49,8 @@ Template.order_dashboard.onRendered(function () {
     GoogleMaps.load({
         key: 'AIzaSyAfk4ikNH05OssyWavDvWImWFsf6oVXzzQ'
     });
+
+    discount = Orders.findOne({_id: Session.get("order_id")}).discount/100;
 });
 
 Template.registerHelper("orderDay", function (date) {

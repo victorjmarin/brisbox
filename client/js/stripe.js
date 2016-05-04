@@ -37,7 +37,11 @@ Template.stripe_form.events({
 
         var currentLocale = TAPi18next.lng();
         var codePromotion = $('#promotion').val();
+
+        //Just warning
         if (codePromotion && codePromotion.length != 0) {
+            var currentLocale = TAPi18next.lng();
+            codePromotion = codePromotion.toLowerCase();
             var codePromotionResult = Promotions.findOne({code: codePromotion});
             if (codePromotionResult == null) {
                 if (codePromotion != "") {
@@ -46,19 +50,19 @@ Template.stripe_form.events({
                     } else {
                         Materialize.toast("Promotion code is not correct, sorry.", 2000);
                     }
-                    return false;
                 }
             }
-        }else{
-            amountForm = $('#amount').val();
-
-            if (!amountForm && !Session.get("isCreation")) {
-                amountForm = Session.get("finalCost") * 100
-            } else if (!amountForm) {
-                amountForm = Meteor.settings.public.reserveAmount;
-            }
-            Session.set("stripe_error", null);
         }
+
+        amountForm = $('#amount').val();
+
+        if (!amountForm && !Session.get("isCreation")) {
+            amountForm = Session.get("finalCost") * 100
+        } else if (!amountForm) {
+            amountForm = Meteor.settings.public.reserveAmount;
+        }
+        Session.set("stripe_error", null);
+
         Stripe.card.createToken({
             number: ccNum,
             cvc: cvc,
@@ -103,6 +107,7 @@ Template.stripe_form.events({
                 var surname = sessionStorage.getItem("surname");
                 var phone = sessionStorage.getItem("phone");
                 var email = sessionStorage.getItem("email");
+                /*
                 if (currentLocale == "es") {
                     if (addressLoading == "") {
                         addressLoading = "No se ha solicitado carga.";
@@ -122,9 +127,10 @@ Template.stripe_form.events({
                         portalUnloading = "No request unload.";
                     }
                 }
+                */
                 Router.go('ThanksOrder');
                 Meteor.call("saveOrder", addressLoading, addressUnloading, portalLoading, portalUnloading, zip, loading, unloading, comments, numberBrisboxers, hours,
-                    startMoment, new Date(day), name, surname, phone, email);
+                    startMoment, new Date(day), name, surname, phone, email, codePromotion);
             } else {
                 $('#payment-access').addClass('payment-close');
                 $('#payment-overlay').css('display', 'none');

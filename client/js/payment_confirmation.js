@@ -1,7 +1,6 @@
 /**
  * Created by Antonio on 23/04/2016.
  */
-
 Template.payment_confirmation.onRendered(function(){
     $('#payment-access').addClass('payment-open');
     $('#payment-overlay').css('display', 'block');
@@ -11,6 +10,7 @@ Template.payment_confirmation.onRendered(function(){
 
     $('#payment-content').delay(150).slideDown("slow");
     Session.set("finalCost", 0);
+    Session.set("cost", 0);
     Session.set("step1", false);
 });
 
@@ -56,14 +56,31 @@ function updateCost(){
     var brisboxers = $('#real_num_brisboxers').val();
     var hours = $('#real_num_hours').val();
 
-    var finalCost = brisboxers * hours * 20;
+    var cost = brisboxers * hours * 20;
+
+    if(!cost || cost < 0){
+        cost = 0;
+    }
+
+    var finalCost = cost - discount;
+
     if(!finalCost || finalCost < 0){
         finalCost = 0;
     }
+    Session.set("cost", cost);
     Session.set("finalCost", finalCost);
 }
 
 Template.payment_confirmation.helpers({
+    'cost': function(){
+        return Session.get('cost');
+    },
+    'discount': function(){
+        return discount;
+    },
+    'hasDiscount': function(){
+        return discount && discount > 0;
+    },
     'finalCost': function(){
         return Session.get('finalCost');
     },

@@ -147,3 +147,9 @@
     -moz-border-radius:3px;
     border-radius:3px;
 }
+
+.payment_confirmation_border_bottom{
+    width: 30%;
+    border-bottom: 1px solid;
+    border-bottom-color: #E16200;
+}

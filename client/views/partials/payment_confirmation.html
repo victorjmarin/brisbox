@@ -22,8 +22,19 @@
                                 <label for="real_num_hours">{{_ "payment_confirmation_real_num_hours"}}</label>
                             </div>
                             <div class="input-field col s12">
+                                {{#if hasDiscount}}
+                                    <div class="payment_confirmation_border_bottom">
+                                        <span>
+                                            {{_ "payment_confirmation_total"}}: {{ cost }} &euro;
+                                        </span>
+                                        <br />
+                                        <span>
+                                            {{_ "payment_confirmation_discount"}}: -{{ discount }} &euro;
+                                        </span>
+                                    </div>
+                                {{/if}}
                                 <span>
-                                    {{_ "payment_confirmation_total"}}: {{ finalCost }} &euro;
+                                    {{_ "payment_confirmation_final"}}: {{ finalCost }} &euro;
                                 </span>
                             </div>
                             <div class="input-field col s12 center-align">

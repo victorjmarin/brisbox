@@ -145,7 +145,7 @@
     .map-container{
         display:none;
     }
-    .loading, .unloading{
+    .order-type{
         position: inherit !important;
     }
 }

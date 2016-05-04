@@ -47,8 +47,16 @@ Meteor.methods({
     },
 
     'saveOrder': function (addressLoading, addressUnloading, portalLoading, portalUnloading, zip, loading, unloading, comments, numberBrisboxers, hours,
-                           startMoment, day, name, surname, phone, email) {
+                           startMoment, day, name, surname, phone, email, codePromotion, status) {
         var cancelationCode = Random.hexString(6);
+        var discount = 0;
+        if (codePromotion && codePromotion.length != 0) {
+            var codePromotionResult = Promotions.findOne({code: codePromotion});
+            if (codePromotionResult != null) {
+               discount = 500;
+            }
+        }
+
         var orderForm = {
             addressLoading: addressLoading,
             addressUnloading: addressUnloading,
@@ -68,7 +76,9 @@ Meteor.methods({
             email: email,
             cancelationCode: cancelationCode,
             canceled: false,
-            brisboxers: []
+            brisboxers: [],
+            discount:discount,
+            status: status
         };
         Orders.insert(orderForm, function (err, orderId) {
             if (!err) {
@@ -285,6 +295,7 @@ Meteor.methods({
                 { upsert : true}
                 );
             }
+            Orders.update({_id: order_id}, {$set: {"paidDate": new Date()}}, { upsert : true});
         }
     }
 
