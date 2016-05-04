@@ -465,6 +465,12 @@
   "stripe-form_validate-month": "Indicates the expiration year",
   "stripe-form_validate-year": "Indicates the expiration month",
 
+  "order_dashboard_status": "Status",
+  "order_dashboard_status_searching_birsboxers": "Searching Brisboxers",
+  "order_dashboard_status_canceled": "Canceled",
+  "order_dashboard_status_paid": "Paid",
+  "order_dashboard_status_prepared": "Ready",
+
   "finished_Order": "That's all, folks!",
   "finished_Order_body": "Hopefully it was a satisfactory experience.",
   "finished_Order_assessment": "In order to improve our services, we would like you to take a moment and rate our brisboxers. We really appreciate your feedback.",
