@@ -1,6 +1,6 @@
 <template name="orderCheckout">
-        <div class="row row-order-checkout">
-            <div id="budget" class="col s12 m6">
+        <div class="row row-order-checkout" style="margin-top: 20px;">
+            <div id="budget" class="col s12 m6 checkout-column">
                     <div class="container">
                         <legend id="legend-checkout">{{_ "order-checkout_header"}}</legend>
                         <div class="order-info col s12 m12">
@@ -49,7 +49,7 @@
                     </div>
             </div>
 
-            <div id="form-stripe" class="stripeForm col s12 m6">
+            <div id="form-stripe" class="stripeForm col s12 m6 checkout-column">
                 {{>stripe_form}}
             </div>
 
