@@ -37,7 +37,7 @@ Template.stripe_form.events({
 
         var currentLocale = TAPi18next.lng();
         var codePromotion = $('#promotion').val();
-        if (codePromotion.length != 0) {
+        if (codePromotion && codePromotion.length != 0) {
             var codePromotionResult = Promotions.findOne({code: codePromotion});
             if (codePromotionResult == null) {
                 if (codePromotion != "") {
