@@ -397,6 +397,7 @@
   "payment_confirmation_real_num_hours": "Hours spent?",
   "payment_confirmation_total": "Total price",
   "payment_confirmation_discount": "Dicount",
+  "payment_confirmation_booking": "Booking",
   "payment_confirmation_final": "Final price",
   "payment_confirmation_confirm": "Confirm",
   "payment_confirmation_paied": "Order paied successfully",

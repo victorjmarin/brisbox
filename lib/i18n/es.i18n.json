@@ -388,6 +388,7 @@
   "payment_confirmation_real_num_hours": "¿Horas invertidas?",
   "payment_confirmation_total": "Precio Total",
   "payment_confirmation_discount": "Descuento",
+  "payment_confirmation_booking": "Reserva",
   "payment_confirmation_final": "Precio Final",
   "payment_confirmation_confirm": "Confirmar",
   "payment_confirmation_paied": "Pedido pagado correctamente",

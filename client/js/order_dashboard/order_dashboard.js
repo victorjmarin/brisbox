@@ -49,8 +49,10 @@ Template.order_dashboard.onRendered(function () {
     GoogleMaps.load({
         key: 'AIzaSyAfk4ikNH05OssyWavDvWImWFsf6oVXzzQ'
     });
-
-    discount = Orders.findOne({_id: Session.get("order_id")}).discount/100;
+    discount = 0;
+    var order = Orders.findOne({_id: Session.get("order_id")});
+    if(order.discount)
+        discount = order.discount/100;
 });
 
 Template.registerHelper("orderDay", function (date) {

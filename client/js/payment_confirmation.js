@@ -61,8 +61,8 @@ function updateCost(){
     if(!cost || cost < 0){
         cost = 0;
     }
-
-    var finalCost = cost - discount;
+    var booking = Meteor.settings.public.reserveAmount/100;
+    var finalCost = cost - discount - booking;
 
     if(!finalCost || finalCost < 0){
         finalCost = 0;
@@ -86,5 +86,8 @@ Template.payment_confirmation.helpers({
     },
     'step1': function(){
         return Session.get('step1');
+    },
+    booking: function(){
+        return Meteor.settings.public.reserveAmount/100;
     }
 });
