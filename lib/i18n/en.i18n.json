@@ -179,7 +179,7 @@
   "contact_us_form_send": "Send",
   "terms": "Terms and Conditions",
   "assessment_header": "Did you enjoy the move?",
-  "assessment_body": "We want your opinion about our brisboxers and the company. Here you can express yourself, adding a few comments about how the move went, how did this brisboxer developed and the rating.",
+  "assessment_body": "We want to know your opinion about our brisboxers. Here you can express yourself, rating and adding a few comments about how each one performed.",
   "assessment_comments": "Your comments",
   "assessment_rating": "Rating",
   "assessment_send": "Send",
@@ -463,5 +463,10 @@
   "stripe-form_validate-number": "Insert your number account",
   "stripe-form_validate-cvc": "Insert your CVC" ,
   "stripe-form_validate-month": "Indicates the expiration year",
-  "stripe-form_validate-year": "Indicates the expiration month"
+  "stripe-form_validate-year": "Indicates the expiration month",
+
+  "finished_Order": "That's all, folks!",
+  "finished_Order_body": "Hopefully it was a satisfactory experience.",
+  "finished_Order_assessment": "In order to improve our services, we would like you to take a moment and rate our brisboxers. We really appreciate your feedback.",
+  "assess_them": "Assess brisboxers"
 }

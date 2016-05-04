@@ -15,7 +15,7 @@ Template.brisboxerDetails.helpers({
 		return	Meteor.userId() === id;
 	},
 	imageProfile: function() {
-		if (this.profile.image != null){
+		if (this.profile.image && this.profile.image != null){
 			return "/cfs/files/images/".concat(this.profile.image);
 		} else {
 			return "/placeholder.png";
