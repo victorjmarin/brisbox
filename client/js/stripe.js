@@ -7,11 +7,6 @@ function cost() {
 Template.stripe_form.onRendered(function () {
     var stripeKey = Meteor.settings.public.stripe.testPublishableKey;
     Stripe.setPublishableKey(stripeKey);
-    $(document).ready(function () {
-        $('.collapsible').collapsible({
-            accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-        });
-    });
     Session.set("stripe_error", null);
 });
 
