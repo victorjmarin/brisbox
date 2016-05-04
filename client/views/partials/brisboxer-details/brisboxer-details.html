@@ -100,12 +100,23 @@
                         <button id="edit_button" type="button"
                                 class="waves-effect waves-light btn orange darken-3 z-depth-1 bold">{{_ "brisboxer_details_edit"}}
                         </button>
-                        <a class="waves-effect waves-light waves-orange btn-flat" href="{{ pathFor 'monthly-stats' _id=this._id }}">
+                        <a class="waves-effect waves-light waves-orange btn-flat"
+                           href="{{ pathFor 'monthly-stats' _id=this._id }}">
                             <i class="material-icons left">assessment</i>
                             {{_ "monthly_stats_title"}}
                         </a>
                     {{/if}}
                 </div>
+            {{else}}
+                {{#if isAdmin}}
+                    <div class="center-align detail-buttons">
+                        <a class="waves-effect waves-light btn orange darken-3"
+                           href="{{ pathFor 'monthly-stats' _id=this._id }}">
+                            <i class="material-icons left">assessment</i>
+                            {{_ "monthly_stats_title"}}
+                        </a>
+                    </div>
+                {{/if}}
             {{/if}}
         {{else}}
             <div class="row center-align">
