@@ -240,7 +240,7 @@
   "order_dashboard_address_unloading": "Dirección Desempaquetado",
   "order_dashboard_day": "Día",
   "order_dashboard_hour": "Hora",
-  "order_dashboard_number_of_brisboxers": "Nº de brisboxers",
+  "order_dashboard_number_of_brisboxers": "# brisboxers",
   "order_dashboard_estimate_hours": "Horas estimadas",
   "order_dashboard_estimate_cost": "Coste estimado",
   "order_dashboard_captain": "El capitán",
