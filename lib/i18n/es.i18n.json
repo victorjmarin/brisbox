@@ -457,5 +457,10 @@
   "stripe-form_validate-number": "Introduce tu número de cuenta",
   "stripe-form_validate-cvc": "Introduce el CVC" ,
   "stripe-form_validate-month": "Indica el mes de expiración",
-  "stripe-form_validate-year": "Indica el año de expiración"
+  "stripe-form_validate-year": "Indica el año de expiración",
+
+  "finished_Order": "Pedido finalizado",
+  "finished_Order_body": "Esperamos que la experiencia durante su pedido haya sido satisfactoria.",
+  "finished_Order_assessment": "Para mejorar nuestros servicios le ofrecemos un enlace donde podrá valorar a los brisboxers que le ayudaron",
+  "assess_them": "Valóralos"
 }

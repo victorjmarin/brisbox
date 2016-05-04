@@ -463,5 +463,10 @@
   "stripe-form_validate-number": "Insert your number account",
   "stripe-form_validate-cvc": "Insert your CVC" ,
   "stripe-form_validate-month": "Indicates the expiration year",
-  "stripe-form_validate-year": "Indicates the expiration month"
+  "stripe-form_validate-year": "Indicates the expiration month",
+
+  "finished_Order": "Finished order",
+  "finished_Order_body": "Hopefully that was satisfactory experience.",
+  "finished_Order_assessment": "To improve our services we offer a link where you can appreciate the brisboxers who helped you",
+  "assess_them": "Assess them"
 }
