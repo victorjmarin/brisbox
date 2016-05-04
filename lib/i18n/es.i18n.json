@@ -142,7 +142,7 @@
   "order-form_portalLoading": "Portal de carga",
   "order-form_portalUnloading": "Portal de descarga",
   "order-form_hours": "Horas",
-  "order-form_numberBrisboxers": "Brisboxers",
+  "order-form_numberBrisboxers": "# de brisboxers",
   "order-form_comments": "Comentarios",
   "order-form_typeMove": "Tipo de encargo",
   "order-form_cost": "Coste estimado",
