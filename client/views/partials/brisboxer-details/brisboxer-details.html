@@ -148,6 +148,12 @@
                     <span class="flow-text">{{_ "brisboxer_details_empty_assessment"}}</span>
                 {{/each}}
             </div>
+            <div class="center-align detail-buttons">
+                <a class="waves-effect waves-light btn-large orange" href="{{ pathFor 'monthly-stats' _id=currentUser._id }}">
+                    <i class="material-icons left">assessment</i>
+                    {{_ "monthly_stats_title"}}
+                </a>
+            </div>
         </div>
     {{/if}}
 </template>
