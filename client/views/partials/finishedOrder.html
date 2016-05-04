@@ -1,12 +1,17 @@
 <template name="FinishedOrder">
     <div id="finished-container" class="container section">
-        <div class="row finishedOrder">
-            <h4 class="header"><p>{{_ "finished_Order"}}</p></h4>
+        <div class="row">
+            <div class="col s12">
+                <h3 class="header">{{_ "finished_Order"}}</h3>
+            </div>
         </div>
         <div class="row thanksOrder_body">
             <div class="col s12 m6">
                 <p>{{_ "finished_Order_body"}}</p>
-                <p>{{_ "finished_Order_assessment"}}: <a href="{{pathFor 'BrisboxerAssessment' _id}}">{{_ "assess_them"}}</a></p>
+                <p>{{_ "finished_Order_assessment"}}</p>
+                <button class="btn waves-effect orange bold waves-light btn-default btn-large" id="assess_btn" type="submit"
+                        name="action">{{_ "assess_them"}}
+                </button>
             </div>
             <div class="col s12 m6">
                 <img src="/hand.png">

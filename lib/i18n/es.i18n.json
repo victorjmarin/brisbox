@@ -459,8 +459,8 @@
   "stripe-form_validate-month": "Indica el mes de expiración",
   "stripe-form_validate-year": "Indica el año de expiración",
 
-  "finished_Order": "Pedido finalizado",
-  "finished_Order_body": "Esperamos que la experiencia durante su pedido haya sido satisfactoria.",
-  "finished_Order_assessment": "Para mejorar nuestros servicios le ofrecemos un enlace donde podrá valorar a los brisboxers que le ayudaron",
-  "assess_them": "Valóralos"
+  "finished_Order": "¡Eso es todo, amigos!",
+  "finished_Order_body": "Esperamos que haya sido una experiencia satisfactoria.",
+  "finished_Order_assessment": "Para mejorar nuestro servicio, nos gustaría que dedicaras un momento a puntuar a nuestros brisboxers. Tenemos muy en cuenta tu opinión.",
+  "assess_them": "Valorar brisboxers"
 }
