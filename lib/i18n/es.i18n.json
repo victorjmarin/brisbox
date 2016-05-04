@@ -454,8 +454,8 @@
   "brisboxer_details_comments": "Lo que dicen nuestros clientes",
   "brisboxer_details_empty_assessment": "El brisboxer no ha recibido ninguna valoración todavía.",
 
-  "monthly_stats": "Estadísticas mensuales de",
-  "monthly_stats_title": "Estadísticas mensuales",
+  "monthly_stats": "Estadística mensual de",
+  "monthly_stats_title": "Estadística mensual",
 
   "stripe-form_validate-number": "Introduce tu número de cuenta",
   "stripe-form_validate-cvc": "Introduce el CVC" ,
