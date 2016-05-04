@@ -23,10 +23,10 @@
                             </div>
                             <div class="input-field col s12">
                                 <div class="payment_confirmation_border_bottom">
+                                    <span>
+                                        {{_ "payment_confirmation_total"}}: {{ cost }} &euro;
+                                    </span>
                                     {{#if hasDiscount}}
-                                        <span>
-                                            {{_ "payment_confirmation_total"}}: {{ cost }} &euro;
-                                        </span>
                                         <br />
                                         <span>
                                             {{_ "payment_confirmation_discount"}}: -{{ discount }} &euro;
