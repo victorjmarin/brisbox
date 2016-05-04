@@ -460,6 +460,9 @@
   "brisboxer_details_comments": "What our customers say",
   "brisboxer_details_empty_assessment": "The brisboxer doesn't have any assessment yet.",
 
+  "monthly_stats": "Monthly stats for",
+  "monthly_stats_title": "Monthly stats",
+
   "stripe-form_validate-number": "Insert your number account",
   "stripe-form_validate-cvc": "Insert your CVC" ,
   "stripe-form_validate-month": "Indicates the expiration year",
