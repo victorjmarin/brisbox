@@ -83,12 +83,12 @@
   "order-form-info_contact": "Información de contacto",
   "order-submit": "Enviar",
   "order-choose_option": "Elige tu opción",
-  "order-checkout_header": "Presupuesto final",
+  "order-checkout_header": "Resumen del pedido",
   "order-checkout_totalMoney": "Total estimado",
   "order-checkout_address": "Dirección",
   "order-checkout_hour": "Hora",
   "order-checkout_day": "Día",
-  "order-checkout_stripe": "Datos bancarios",
+  "order-checkout_stripe": "Datos de facturación",
   "order-errorAddress": "Seleccione como mínimo una dirección.",
   "order-errorDay": "El día no puede ser del pasado.",
   "why_promotion": "¿Teneis una promoción?",
@@ -459,5 +459,5 @@
   "stripe-form_validate-month": "Indica el mes de expiración",
   "stripe-form_validate-year": "Indica el año de expiración",
 
-  "stripe_card_advice":"Brisbox no almacenará los datos de su tarjeta de crédito. Se le preguntará de nuevo para posteriores pagos"
+  "stripe_card_advice":"Brisbox no almacena los datos de tu tarjeta de crédito. Por ello se te volverán a pedir al realizar el pago final."
 }

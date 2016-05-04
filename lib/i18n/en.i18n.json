@@ -101,12 +101,12 @@
   "order-form-info_contact": "Contact info",
   "order-submit": "Submit",
   "order-choose_option": "Choose your option",
-  "order-checkout_header": "Final budget",
+  "order-checkout_header": "Order summary",
   "order-checkout_totalMoney": "Estimated Total",
   "order-checkout_address": "Due Now",
   "order-checkout_hour": "Hour",
   "order-checkout_day": "Day",
-  "order-checkout_stripe": "Bank data",
+  "order-checkout_stripe": "Billing info",
   "order-errorAddress": "Choose a address.",
   "order-errorDay": "Day can't be in past.",
   "order-errorZip": "ZIP must be in Seville.",
@@ -465,5 +465,5 @@
   "stripe-form_validate-month": "Indicates the expiration year",
   "stripe-form_validate-year": "Indicates the expiration month",
 
-  "stripe_card_advice":"Brisbox don't save your's credit card information. This information will be ask later for more payments"
+  "stripe_card_advice":"Brisbox does not store your credit card information. That is why we will ask for it again for the final payment."
 }
