@@ -275,7 +275,7 @@
   "send_mail_to_Brisbox": "Send an Email",
   "return_to_main_page": "Return to main page.",
   "acces_denied":"Access Denied",
-  "access_denied_body":"We are sorry, you don't have enough access to this site",
+  "access_denied_body":"We are sorry, you don't have enough access to this site.",
   "order_dashboard_emptyBrisboxer": "We are sorry, there are no brisboxers yet.",
   "order_dashboard_payment": "Pay",
   "order_dashboard_cancel": "Cancel order",
