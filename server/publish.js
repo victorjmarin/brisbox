@@ -81,7 +81,12 @@ Meteor.publish('findCodePromotion', function () {
 });
 
 Meteor.publish('oneOrder', function (_id) {
-    return Orders.find({_id: _id});
+    var orders = Orders.find(_id);
+    var brisbIds = _.map(orders.fetch()[0].brisboxers, function (b) {
+        return b._id;
+    });
+    var brisboxers = Meteor.users.find({_id: {$in: brisbIds}})
+    return [orders, brisboxers];
 });
 
 Meteor.publish('images', function () {

@@ -1,4 +1,5 @@
 <template name="orderCheckout">
+
         <div class="row row-order-checkout" style="margin-top: 20px;">
             <div id="budget" class="col s12 m6 checkout-column">
                     <div class="container">
@@ -25,6 +26,7 @@
                                     {{cost}}
                                 </div>
                             </div>
+                            {{#if addressLoading}}
                             <div id="info-budget" class="checkout-loading col s12 m12">
                                 <i class="small material-icons col s2 m2">location_on</i>
                                 <label  id="text-budget" class="col s10 m4 formu" for="addressLoading">{{_ "order-form_addressLoading"}}</label>
@@ -32,6 +34,8 @@
                                     {{addressLoading}}
                                 </div>
                             </div>
+                            {{/if}}
+                            {{#if addressUnloading}}
                             <div id="info-budget" class="checkout-unloading col s12 m12">
                                 <i class="small material-icons col s2 m2">location_on</i>
                                 <label  id="text-budget" class="col s10 m4 formu" for="addressUnloading">{{_ "order-form_addressUnloading"}}</label>
@@ -39,8 +43,9 @@
                                     {{addressUnloading}}
                                 </div>
                             </div>
+                            {{/if}}
                             <br>
-                            <div class="input-field col s12 center-align">
+                            <div class="input-field col s12 center-align"  style="margin-top: 35px;">
                                 <button id="buttom-next" class="btn waves-effect waves-light orange darken-3 white-text" type="button">
                                     {{_ "order-form_next"}}
                                 </button>

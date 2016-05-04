@@ -36,7 +36,7 @@ Template.stripe_form.events({
 
         var currentLocale = TAPi18next.lng();
         var codePromotion = $('#promotion').val();
-        if (codePromotion.length != 0) {
+        if (codePromotion && codePromotion.length != 0) {
             var codePromotionResult = Promotions.findOne({code: codePromotion});
             if (codePromotionResult == null) {
                 if (codePromotion != "") {
@@ -131,6 +131,7 @@ Template.stripe_form.events({
                 $('#payment-access').css('display', 'none');
                 $('#payment-form').addClass("hidden");
                 Materialize.toast(TAPi18n.__('payment_confirmation_paied'), 4000);// 4000 is the duration of the toast
+                Router.go("finished-order", {_id: Base64.encode(this._id)});
             }
         }
     }

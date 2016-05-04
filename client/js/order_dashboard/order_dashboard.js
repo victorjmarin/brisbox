@@ -33,6 +33,17 @@ Template.order_dashboard.helpers({
         var curr_year = date.getFullYear();
         result = curr_date + "/" + curr_month + "/" + curr_year;
         return result;
+    },
+    status: function(){
+        var result = "order_dashboard_status_searching_birsboxers";
+        if(this.canceled){
+            result = "order_dashboard_status_canceled";
+        }else if(this.paidDate != null){
+            result = "order_dashboard_status_paid";
+        }else if(this.brisboxers.length === this.numberBrisboxers){
+            result = "order_dashboard_status_prepared";
+        }
+        return result;
     }
 });
 
