@@ -456,9 +456,10 @@
 
   "monthly_stats": "Estadística mensual de",
   "monthly_stats_title": "Estadística mensual",
+  "monthly_stats_desc": "Las estadísticas se calculan en base al mes actual. Te pagaremos puntualmente la cantidad correspondiente a cada mes a comienzos del próximo.",
   "monthly_stats_orders": "pedidos completados",
-  "monthly_stats_total_hours": "horas totales",
-  "monthly_stats_captain_hours": "horas como capitán",
+  "monthly_stats_total_hours": "en total",
+  "monthly_stats_captain_hours": "como capitán",
   "monthly_stats_earned": "ganados",
 
   "stripe-form_validate-number": "Introduce tu número de cuenta",

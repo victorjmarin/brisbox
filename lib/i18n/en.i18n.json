@@ -462,9 +462,10 @@
 
   "monthly_stats": "Monthly stats for",
   "monthly_stats_title": "Monthly stats",
-  "monthly_stats_orders": "completed orders",
-  "monthly_stats_total_hours": "hours in total",
-  "monthly_stats_captain_hours": "h. as a captain",
+  "monthly_stats_desc": "Stats are calculated on a monthly basis. You will be timely paid the corresponding amount for each month by the start of the next one.",
+  "monthly_stats_orders": "orders completed",
+  "monthly_stats_total_hours": "in total",
+  "monthly_stats_captain_hours": "as a captain",
   "monthly_stats_earned": "earned",
 
   "stripe-form_validate-number": "Insert your number account",
