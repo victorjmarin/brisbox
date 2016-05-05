@@ -19,7 +19,7 @@ Template.order_dashboard.helpers({
         }
     },
     calculateCost: function (numBrisboxers, hours) {
-        return numBrisboxers * hours * 20 + " €";
+        return numBrisboxers * hours * 20 + "€";
     },
     notEmpty: function (brisboxers) {
         return brisboxers.length > 0

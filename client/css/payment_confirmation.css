@@ -149,7 +149,6 @@
 }
 
 .payment_confirmation_border_bottom{
-    width: 30%;
-    border-bottom: 1px solid;
+    border-bottom: 2px solid;
     border-bottom-color: #E16200;
 }
