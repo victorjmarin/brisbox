@@ -83,12 +83,12 @@
   "order-form-info_contact": "Información de contacto",
   "order-submit": "Enviar",
   "order-choose_option": "Elige tu opción",
-  "order-checkout_header": "Presupuesto final",
+  "order-checkout_header": "Resumen del pedido",
   "order-checkout_totalMoney": "Total estimado",
   "order-checkout_address": "Dirección",
   "order-checkout_hour": "Hora",
   "order-checkout_day": "Día",
-  "order-checkout_stripe": "Datos bancarios",
+  "order-checkout_stripe": "Datos de facturación",
   "order-errorAddress": "Seleccione como mínimo una dirección.",
   "order-errorDay": "El día no puede ser del pasado.",
   "why_promotion": "¿Tenéis algún descuento?",
@@ -240,11 +240,11 @@
   "order_dashboard_address_unloading": "Dirección Desempaquetado",
   "order_dashboard_day": "Día",
   "order_dashboard_hour": "Hora",
-  "order_dashboard_number_of_brisboxers": "# brisboxers",
+  "order_dashboard_number_of_brisboxers": "# de brisboxers",
   "order_dashboard_estimate_hours": "Horas estimadas",
   "order_dashboard_estimate_cost": "Coste estimado",
   "order_dashboard_captain": "El capitán",
-  "brisboxer_details": "Detalles del brisboxer",
+  "brisboxer_details": "Perfil del brisboxer",
   "name": "Nombre",
   "surname": "Apellidos",
   "username": "Usuario",
@@ -415,7 +415,7 @@
   "email_order_registered_title": "Gracias, %s.",
   "email_order_registered_first_p": "Tu pedido ha sido registrado en el sistema. Tan pronto como el número de brisboxers solicitado haya sido cubierto te lo notificaremos.",
   "email_order_registered_second_p": "Para acceder al panel de control de tu pedido y llevar un seguimiento de él, haz click <a href='%s'>aquí</a>.",
-  "email_order_registered_third_p": "Puedes cancelar tu pedido con hasta 24h. de antelación desde <a href='%s'>este enlace</a> introduciendo el siguiente código: ",
+  "email_order_registered_third_p": "Puedes cancelar tu pedido con hasta 12h. de antelación desde <a href='%s'>este enlace</a> introduciendo el siguiente código: ",
   "message-not_found": "Parece que no podemos encontrar la página que está buscando.",
   "title-not_found": "Oops! Error 404",
   "order-form_location": "Introduce una ubicación",
@@ -463,5 +463,18 @@
   "stripe-form_validate-year": "Indica el año de expiración",
 
   "loading": "cargando",
-  "unloading": "descargando"
+  "unloading": "descargando",
+
+  "stripe_card_advice":"Brisbox no almacena los datos de tu tarjeta de crédito. Por ello se vuelven a pedir al realizar el pago final.",
+
+  "order_dashboard_status": "Estado",
+  "order_dashboard_status_searching_birsboxers": "Buscando brisboxers",
+  "order_dashboard_status_canceled": "Cancelado",
+  "order_dashboard_status_paid": "Pagado",
+  "order_dashboard_status_prepared": "Listo",
+
+  "finished_Order": "¡Eso es todo, amigos!",
+  "finished_Order_body": "Esperamos que haya sido una experiencia satisfactoria.",
+  "finished_Order_assessment": "Para mejorar nuestro servicio, nos gustaría que dedicaras un momento a puntuar a nuestros brisboxers. Tenemos muy en cuenta tu opinión.",
+  "assess_them": "Valorar brisboxers"
 }

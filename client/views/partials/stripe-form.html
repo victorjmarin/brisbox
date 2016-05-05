@@ -1,6 +1,6 @@
 <template name="stripe_form">
     <div id="stripe-main" class="container">
-        <legend id="legend-stripe">{{_ "order-checkout_stripe"}} </legend>
+        <legend id="legend-stripe" style="padding-top: 20px;">{{_ "order-checkout_stripe"}} </legend>
         <div id="stripe-access">
             <div class="row row-stripe-form">
                 <form class="padding-solution stripe-form col s12 m12" id="payment-form">
@@ -11,6 +11,7 @@
                        </span>
                     <div clas="row">
                         <div class="padding-solution input-field col s12" id="stripe-input-fields">
+                            <p>{{_ "stripe_card_advice"}}</p>
                             <div id="info-stripe" class="padding-solution input-field col s12 m12">
                                 <input oninvalid="setCustomValidity('{{_ "stripe-form_validate-number"}}')"
                                        onchange="try{setCustomValidity('')}catch(e){}"

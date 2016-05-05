@@ -3,7 +3,7 @@
  */
 
 Template.order_dashboard.helpers({
-    notInOrder: function(){
+    notInOrder: function () {
         var brisboxers = this.brisboxers;
         var brisboxersIds = _.pluck(brisboxers, "_id");
         var result = !_.contains(brisboxersIds, Meteor.userId());
@@ -22,7 +22,7 @@ Template.order_dashboard.helpers({
         return numBrisboxers * hours * 20 + " €";
     },
     notEmpty: function (brisboxers) {
-        return brisboxers.length>0
+        return brisboxers.length > 0
     },
     replaceSpace: function (string) {
         return string.split(' ').join('+');
@@ -34,13 +34,24 @@ Template.order_dashboard.helpers({
         result = curr_date + "/" + curr_month + "/" + curr_year;
         return result;
     },
-    notPaid: function(){
+    notPaid: function () {
         return this.paidDate == null;
+    },
+    status: function () {
+        var result = "order_dashboard_status_searching_birsboxers";
+        if (this.canceled) {
+            result = "order_dashboard_status_canceled";
+        } else if (this.paidDate != null) {
+            result = "order_dashboard_status_paid";
+        } else if (this.brisboxers.length === this.numberBrisboxers) {
+            result = "order_dashboard_status_prepared";
+        }
+        return result;
     }
 });
 
 Template.order_dashboard.events({
-    'click .confirm-payment': function(e){
+    'click .confirm-payment': function (e) {
         Session.set('showPaymentConfirmationModal', true);
     }
 });
@@ -51,21 +62,21 @@ Template.order_dashboard.onRendered(function () {
     });
     discount = 0;
     var order = Orders.findOne({_id: Session.get("order_id")});
-    if(order.discount)
-        discount = order.discount/100;
+    if (order.discount)
+        discount = order.discount / 100;
 });
 
 Template.registerHelper("orderDay", function (date) {
     var hoy = new Date();
     var diaPedidoSub1 = new Date();
     diaPedidoSub1.setTime(date.getTime());
-    return hoy.getTime()-diaPedidoSub1.getTime()>0;
+    return hoy.getTime() - diaPedidoSub1.getTime() > 0;
 });
 Template.registerHelper("orderCancel", function (date) {
     var hoy = new Date();
     var diaPedidoSub12H = new Date();
     diaPedidoSub12H.setTime(date.getTime() - 43200000);
-    return hoy.getTime()-diaPedidoSub12H.getTime()<0;
+    return hoy.getTime() - diaPedidoSub12H.getTime() < 0;
 });
 Template.order_dashboard.events({
     'click #cancel': function (event) {
