@@ -1,0 +1,43 @@
+<Template name="monthlyStats">
+    <div id="ab-main" class="section">
+        <div class="container">
+            <h4 class="header">{{_ "monthly_stats"}} <b>{{month}}</b></h4>
+            <h5>{{_ "monthly_stats_desc"}}</h5>
+            <div class="row flow-text" style="text-align:center;margin-top: 80px;">
+                <div class="col l3 s12" style="margin-bottom: 30px;">
+                    <div style="margin-bottom: 10px;"><i class="fa fa-archive grey-text" style="font-size: 7em;"
+                                                         aria-hidden="true"></i></div>
+                    <div style="font-size: 140%"><span
+                            style="font-size: 170%;">{{completedOrders}}</span>
+                        <div>{{_ "monthly_stats_orders"}}</div>
+                    </div>
+                </div>
+                <div class="col l3 s12" style="margin-bottom: 30px;">
+                    <div style="margin-bottom: 10px;"><i class="fa fa-clock-o fa-5x grey-text" style="font-size: 7em;"
+                                                         aria-hidden="true"></i></div>
+                    <div style="font-size: 140%"><span
+                            style="font-size: 180%;">{{totalHours}}h.</span>
+                        <div>{{_ "monthly_stats_total_hours"}}</div>
+                    </div>
+                </div>
+                <div class="col l3 s12" style="margin-bottom: 30px;">
+                    <div style="margin-bottom: 10px;"><i class="fa fa-hand-o-right fa-5x grey-text"
+                                                         style="font-size: 7em;" aria-hidden="true"></i></div>
+                    <div style="font-size: 140%">
+                        <span
+                                style="font-size: 180%;">{{captainHours}}h.</span>
+                        <div>{{_ "monthly_stats_captain_hours"}}</div>
+                    </div>
+                </div>
+                <div class="col l3 s12" style="margin-bottom: 30px;">
+                    <div style="margin-bottom: 10px;"><i class="fa fa-money fa-5x grey-text" style="font-size: 7em;"
+                                                         aria-hidden="true"></i></div>
+                    <div style="font-size: 140%">
+                        <span style="font-weight: 600;font-size: 180%;">{{earned}}€</span>
+                        <div>{{_ "monthly_stats_earned"}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</Template>

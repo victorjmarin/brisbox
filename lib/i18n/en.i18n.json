@@ -275,7 +275,7 @@
   "send_mail_to_Brisbox": "Send an Email",
   "return_to_main_page": "Return to main page.",
   "acces_denied":"Access Denied",
-  "access_denied_body":"We are sorry, you don't have enough access to this site",
+  "access_denied_body":"We are sorry, you don't have enough access to this site.",
   "order_dashboard_emptyBrisboxer": "We are sorry, there are no brisboxers yet.",
   "order_dashboard_payment": "Pay",
   "order_dashboard_cancel": "Cancel order",
@@ -459,6 +459,14 @@
   "brisboxer_details_edit": "Edit profile",
   "brisboxer_details_comments": "What our customers say",
   "brisboxer_details_empty_assessment": "The brisboxer doesn't have any assessment yet.",
+
+  "monthly_stats": "Monthly stats for",
+  "monthly_stats_title": "Monthly stats",
+  "monthly_stats_desc": "Stats are calculated on a monthly basis. You will be timely paid the corresponding amount for each month by the start of the next one.",
+  "monthly_stats_orders": "orders completed",
+  "monthly_stats_total_hours": "in total",
+  "monthly_stats_captain_hours": "as a captain",
+  "monthly_stats_earned": "earned",
 
   "stripe-form_validate-number": "Insert your number account",
   "stripe-form_validate-cvc": "Insert your CVC" ,
