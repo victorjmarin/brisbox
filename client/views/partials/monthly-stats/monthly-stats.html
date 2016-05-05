@@ -2,42 +2,24 @@
     <div id="ab-main" class="section">
         <div class="container">
             <h4 class="header">{{_ "monthly_stats"}} {{month}}</h4>
-                <table class="striped">
-                    <tbody class="orange-striped table-stats">
-                        <tr>
-                            <span>
-                                12
-                            </span>
-                            <p>
-                                Horas trabajadas
-                            </p>
-                        </tr>
-                        <tr>
-                            <span>
-                                7.3
-                            </span>
-                            <p>
-                                Valoración media
-                            </p>
-                        </tr>
-                        <tr>
-                            <span>
-                                5
-                            </span>
-                            <p>
-                                Número de pedidos
-                            </p>
-                        </tr>
-                        <tr>
-                            <span>
-                                2.4
-                            </span>
-                            <p>
-                                Horas/Pedido
-                            </p>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="row flow-text" style="text-align:center;margin-top: 80px;">
+                <div class="col l3 s12" style="margin-bottom: 30px;">
+                    <div style="margin-bottom: 10px;"><i class="fa fa-archive grey-text" style="font-size: 7em;" aria-hidden="true"></i></div>
+                    <span style="font-size: 140%">{{completedOrders}} {{_ "monthly_stats_orders"}}</span>
+                </div>
+                <div class="col l3 s12" style="margin-bottom: 30px;">
+                    <div style="margin-bottom: 10px;"><i class="fa fa-clock-o fa-5x grey-text" style="font-size: 7em;" aria-hidden="true"></i></div>
+                    <span style="font-size: 140%">{{totalHours}} {{_ "monthly_stats_total_hours"}}</span>
+                </div>
+                <div class="col l3 s12" style="margin-bottom: 30px;">
+                    <div style="margin-bottom: 10px;"><i class="fa fa-hand-o-right fa-5x grey-text" style="font-size: 7em;" aria-hidden="true"></i></div>
+                    <span style="font-size: 140%">{{captainHours}} {{_ "monthly_stats_captain_hours"}}</span>
+                </div>
+                <div class="col l3 s12" style="margin-bottom: 30px;">
+                    <div style="margin-bottom: 10px;"><i class="fa fa-eur fa-5x grey-text" style="font-size: 7em;" aria-hidden="true"></i></div>
+                    <span style="font-size: 140%">{{earned}}€ {{_ "monthly_stats_earned"}}</span>
+                </div>
+            </div>
         </div>
     </div>
 </Template>

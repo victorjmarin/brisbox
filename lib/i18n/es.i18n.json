@@ -456,6 +456,10 @@
 
   "monthly_stats": "Estadística mensual de",
   "monthly_stats_title": "Estadística mensual",
+  "monthly_stats_orders": "pedidos completados",
+  "monthly_stats_total_hours": "horas totales",
+  "monthly_stats_captain_hours": "horas como capitán",
+  "monthly_stats_earned": "ganados",
 
   "stripe-form_validate-number": "Introduce tu número de cuenta",
   "stripe-form_validate-cvc": "Introduce el CVC" ,

@@ -265,27 +265,54 @@ Meteor.methods({
         });
 
     },
-    'updateOrdersCountToBrisboxersInOrder': function(order_id){
+    'updateOrdersCountToBrisboxersInOrder': function (order_id) {
         var order = Orders.findOne({_id: order_id});
-        if(order){
+        if (order) {
             var brisboxers = order.brisboxers;
             for (i = 0; i < brisboxers.length; i++) {
                 var entry = brisboxers[i];
                 var brisboxer = Meteor.users.findOne({_id: entry._id});
-                if(brisboxer.profile.completedOrders != null){
+                if (brisboxer.profile.completedOrders != null) {
                     brisboxer.profile.completedOrders++;
-                }else{
+                } else {
                     brisboxer.profile.completedOrders = 1;
                 }
                 Meteor.users.update(entry._id, {
-                    $set: {
-                        "profile.completedOrders" : brisboxer.profile.completedOrders
-                    }
-                },
-                { upsert : true}
+                        $set: {
+                            "profile.completedOrders": brisboxer.profile.completedOrders
+                        }
+                    },
+                    {upsert: true}
                 );
             }
         }
+    },
+    'monthly-stats': function (brisboxerId) {
+        var orders = Orders.find({paidDate: {$exists: true}, "brisboxers._id": brisboxerId});
+        var completedOrders = orders.count();
+        var fetchedOrders = orders.fetch();
+        var allBrisboxers = _.flatten(_.map(fetchedOrders, function (order) {
+            _.map(order.brisboxers, function (b) {
+                b.hours = order.hours
+            })
+            return order.brisboxers;
+        }));
+        var captaincies = _.filter(allBrisboxers, function (brisboxer) {
+            return brisboxer._id == brisboxerId && brisboxer.captain == true;
+        });
+        var captainHours = _.reduce(captaincies, function (memo, cap) {
+            return memo + cap.hours;
+        }, 0);
+        var normalHours = _.reduce(fetchedOrders, function (memo, order) {
+                return memo + order.hours;
+            }, 0) - captainHours;
+        var earned = 12 * captainHours + 10 * normalHours;
+        return {
+            completedOrders: completedOrders,
+            captainHours: captainHours,
+            totalHours: captainHours + normalHours,
+            earned: earned
+        };
     }
 
 })
