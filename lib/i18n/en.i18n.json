@@ -143,11 +143,11 @@
   "order-form_email": "Email",
   "order-form_zip": "ZIP Code",
   "order-form_addressLoading": "Loading address",
-  "order-form_addressUnloading": "Address unloading",
+  "order-form_addressUnloading": "Unloading address",
   "order-form_portalLoading": "Loading portal",
   "order-form_portalUnloading": "Unloading portal",
   "order-form_hours": "Hours",
-  "order-form_numberBrisboxers": "Brisboxers",
+  "order-form_numberBrisboxers": "# of brisboxers",
   "order-form_comments": "Comments",
   "order-form_typeMove": "Move type",
   "order-form_cost": "Estimated cost",
@@ -245,7 +245,7 @@
   "order_dashboard_address_unloading": "Unload Address",
   "order_dashboard_day": "Date",
   "order_dashboard_hour": "Time",
-  "order_dashboard_number_of_brisboxers": "Nº of brisboxers",
+  "order_dashboard_number_of_brisboxers": "# of brisboxers",
   "order_dashboard_estimate_hours": "Estimated hours",
   "order_dashboard_estimate_cost": "Estimated cost",
   "order_dashboard_captain": "The captain",
@@ -395,9 +395,12 @@
   //Order payment confirmation
   "payment_confirmation_real_num_brisboxers": "How many Brisboxers?",
   "payment_confirmation_real_num_hours": "Hours spent?",
-  "payment_confirmation_total": "Final price",
+  "payment_confirmation_total": "Total price",
+  "payment_confirmation_discount": "Discount",
+  "payment_confirmation_booking": "Reservation fee",
+  "payment_confirmation_final": "Final price",
   "payment_confirmation_confirm": "Confirm",
-  "payment_confirmation_paied": "Order paied successfully",
+  "payment_confirmation_paied": "Order successfully paid",
   "payment_confirmation_button": "Payment",
   "payment_confirmation_stripe_submit": "Confirm payment",
   "payment_confirmation_cancel": "Cancel",
@@ -473,10 +476,14 @@
   "stripe-form_validate-month": "Indicates the expiration year",
   "stripe-form_validate-year": "Indicates the expiration month",
 
-  "stripe_card_advice":"Brisbox does not store your credit card information. That is why we will ask for it again for the final payment.",
+
+  "loading": "loading",
+  "unloading": "unloading",
+
+  "stripe_card_advice":"Brisbox does not store your credit card information. That is why we ask for it again in the final payment.",
 
   "order_dashboard_status": "Status",
-  "order_dashboard_status_searching_birsboxers": "Searching Brisboxers",
+  "order_dashboard_status_searching_birsboxers": "Searching brisboxers",
   "order_dashboard_status_canceled": "Canceled",
   "order_dashboard_status_paid": "Paid",
   "order_dashboard_status_prepared": "Ready",
@@ -485,4 +492,5 @@
   "finished_Order_body": "Hopefully it was a satisfactory experience.",
   "finished_Order_assessment": "In order to improve our services, we would like you to take a moment and rate our brisboxers. We really appreciate your feedback.",
   "assess_them": "Assess brisboxers"
+
 }

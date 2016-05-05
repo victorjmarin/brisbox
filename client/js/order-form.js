@@ -107,23 +107,43 @@ Template.orderForm.onRendered(function (){
 });
 
 Template.orderForm.events({
-    'click #loading': function (event) {
+    'click .order-type': function (event) {
         var loading = document.getElementById('loading').checked;
-        if (loading == true) {
-            $('#divAddressLoading').css('display', 'block');
-            $('#divAddressLoading').css('visibility', 'visible');
-            $('#divPortalLoading').css('display', 'block');
-            $('#divPortalLoading').css('visibility', 'visible');
-            $('#addressLoading').prop('required', true);
-            $('#portalLoading').prop('required', true);
-        }
-        if (loading == false) {
+        var unloading = document.getElementById('unloading').checked;
+
+        if (unloading == true) {
+            //Unloading show
+            $('#divAddressUnLoading').css('display', 'block');
+            $('#divAddressUnLoading').css('visibility', 'visible');
+            $('#divPortalUnloading').css('display', 'block');
+            $('#divPortalUnloading').css('visibility', 'visible');
+            $('#addressUnloading').prop('required', true);
+            $('#portalUnloading').prop('required', true);
+
+            //Loading hidden
             $('#divAddressLoading').css('display', 'none');
             $('#divAddressLoading').css('visibility', 'hidden');
             $('#divPortalLoading').css('display', 'none');
             $('#divPortalLoading').css('visibility', 'hidden');
             $('#addressLoading').prop('required', false);
             $('#portalLoading').prop('required', false);
+        }
+        if (unloading == false) {
+            //Unloading hidden
+            $('#divAddressUnLoading').css('display', 'none');
+            $('#divAddressUnLoading').css('visibility', 'hidden');
+            $('#divPortalUnloading').css('display', 'none');
+            $('#divPortalUnloading').css('visibility', 'hidden');
+            $('#addressUnloading').prop('required', false);
+            $('#portalUnloading').prop('required', false);
+
+            //Loading show
+            $('#divAddressLoading').css('display', 'block');
+            $('#divAddressLoading').css('visibility', 'visible');
+            $('#divPortalLoading').css('display', 'block');
+            $('#divPortalLoading').css('visibility', 'visible');
+            $('#addressLoading').prop('required', true);
+            $('#portalLoading').prop('required', true);
         }
     },
     'click #unloading': function (event) {

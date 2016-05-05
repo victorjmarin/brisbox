@@ -10,7 +10,7 @@
                 </div>
                 <div class="col s12 m12 customer-info">
                     <span class="order_dashboard_section_title title flow-text">{{_ "order_dashboard_order_info_title"}}</span>
-                    <span class="flow-text"> <b>{{_ "order_dashboard_status"}}:</b> {{_ status}}</span>
+                    <span class="flow-text"> <b>{{_ "order_dashboard_status"}}:</b> <a href="{{pathFor "Faq" hash="status"}}" style="font-size: 100%">{{_ status}}</a></span>
                     <span class="flow-text"> <b>{{_ "order_dashboard_zip"}}:</b> {{zip}}</span>
                     {{#if addressLoading}}
                         <span class="flow-text"> <b>{{_ "order_dashboard_address_loading"}}:</b> {{addressLoading}}</span>
@@ -47,47 +47,48 @@
                 </div>
             </div>
         </div>
-        
-        <div class="col s12 m12">
-            <div class="col s4 m2 hide-on-med-and-down">
-                {{#if orderDay day}}
-                    {{#if notInOrder }}
-                        <button name="submit" id="confirm-order-payment" type="button"
-                                class="bold btn waves-effect waves-light orange darken-3 white-text confirm-payment">{{_ "payment_confirmation_button"}}
-                        </button>
-                    {{/if}}
-                {{else}}
-                    {{#if orderCancel day}}
+        {{#if notPaid}}
+            <div class="col s12 m12">
+                <div class="col s4 m2 hide-on-med-and-down">
+                    {{#if orderDay day}}
                         {{#if notInOrder }}
-                            <div class="col s4 m6 hide-on-med-and-down" id="cancelar">
-                                <button class="bold waves-effect waves-orange waves-ripple btn-flat"
-                                        id="cancel">{{_ "order_dashboard_cancel"}}</button>
-                            </div>
+                            <button name="submit" id="confirm-order-payment" type="button"
+                                    class="bold btn waves-effect waves-light orange darken-3 white-text confirm-payment">{{_ "payment_confirmation_button"}}
+                            </button>
+                        {{/if}}
+                    {{else}}
+                        {{#if orderCancel day}}
+                            {{#if notInOrder }}
+                                <div class="col s4 m6 hide-on-med-and-down" id="cancelar">
+                                    <button class="bold waves-effect waves-orange waves-ripple btn-flat"
+                                            id="cancel">{{_ "order_dashboard_cancel"}}</button>
+                                </div>
+                            {{/if}}
                         {{/if}}
                     {{/if}}
-                {{/if}}
-            </div>
+                </div>
 
-            <div class="col s12 m2 hide-on-large-only bold">
-                {{#if orderDay day}}
-                    {{#if notInOrder }}
-                        <button name="submit" id="confirm-order-payment" type="button"
-                                class="bold btn btn-primary waves-effect waves-light orange darken-3 white-text confirm-payment">{{_ "payment_confirmation_button"}}
-                        </button>
-                    {{/if}}
-                {{else}}
-                    {{#if orderCancel day}}
+                <div class="col s12 m2 hide-on-large-only bold">
+                    {{#if orderDay day}}
                         {{#if notInOrder }}
-                            <div class="col s4 m6 hide-on-med-and-down" id="cancelar">
-                                <button class="waves-effect waves-orange waves-ripple btn-flat"
-                                        id="cancel">{{_ "order_dashboard_cancel"}}</button>
-                            </div>
+                            <button name="submit" id="confirm-order-payment" type="button"
+                                    class="bold btn btn-primary waves-effect waves-light orange darken-3 white-text confirm-payment">{{_ "payment_confirmation_button"}}
+                            </button>
+                        {{/if}}
+                    {{else}}
+                        {{#if orderCancel day}}
+                            {{#if notInOrder }}
+                                <div class="col s4 m6 hide-on-med-and-down" id="cancelar">
+                                    <button class="waves-effect waves-orange waves-ripple btn-flat"
+                                            id="cancel">{{_ "order_dashboard_cancel"}}</button>
+                                </div>
+                            {{/if}}
                         {{/if}}
                     {{/if}}
-                {{/if}}
+                </div>
+
             </div>
-        </div>
-        
+        {{/if}}
     </div>
 
 </template>
