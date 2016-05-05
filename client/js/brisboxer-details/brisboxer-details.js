@@ -1,30 +1,31 @@
 Template.brisboxerDetails.helpers({
-    email: function () {
-        return this.emails[0].address;
-    },
-    exists: function () {
-        return this._id != undefined;
-    },
-    verified: function () {
-        return this.emails[0].verified;
-    },
-    editBrisboxer: function () {
-        return Session.get('editBrisboxer');
-    },
-    isCurrentUser: function (id) {
-        return Meteor.userId() === id;
-    },
-    imageProfile: function () {
-        if (this.profile.image != null) {
-            return "/cfs/files/images/".concat(this.profile.image);
-        } else {
-            return "/placeholder.png";
+        email: function () {
+            return this.emails[0].address;
+        },
+        exists: function () {
+            return this._id != undefined;
+        },
+        verified: function () {
+            return this.emails[0].verified;
+        },
+        editBrisboxer: function () {
+            return Session.get('editBrisboxer');
+        },
+        isCurrentUser: function (id) {
+            return Meteor.userId() === id;
+        },
+        imageProfile: function () {
+            if (this.profile.image != null) {
+                return "/cfs/files/images/".concat(this.profile.image);
+            } else {
+                return "/placeholder.png";
+            }
+        },
+        isAdmin: function () {
+            return Roles.userIsInRole(Meteor.user(), ['admin']);
         }
-    },
-    isAdmin: function () {
-        return Roles.userIsInRole(Meteor.user(), ['admin']);
     }
-});
+);
 
 Template.brisboxerDetails.onRendered(function () {
     var self = this;
