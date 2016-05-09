@@ -497,6 +497,9 @@
   "finished_Order_body": "Hopefully it was a satisfactory experience.",
   "finished_Order_assessment": "In order to improve our services, we would like you to take a moment and rate our brisboxers. We really appreciate your feedback.",
   "assess_them": "Assess brisboxers",
-  "order_dashboar_extra-hours_pending": "Your request will be evaluated by the captain."
+  "order_dashboar_extra-hours_pending": "Your request will be evaluated by the captain.",
+
+  "cancelcode_success": "Correct code!",
+  "cancelcode_failed": "Ups! Wrong code"
 
 }

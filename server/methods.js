@@ -330,6 +330,15 @@ Meteor.methods({
             totalHours: captainHours + normalHours,
             earned: earned
         };
+    },
+
+    "checkCancelCode": function(order_id, cancelCode){
+        var res = false;
+        var order = Orders.findOne({"_id": order_id});
+        if(order){
+            res = order.cancelationCode == cancelCode;
+        }
+        return res;
     }
 
 })
