@@ -1,6 +1,4 @@
-/**
- * Created by Antonio on 06/04/2016.
- */
+Meteor.subscribe("extra_hoursAll");
 
 Template.order_dashboard.helpers({
     notInOrder: function () {
@@ -47,12 +45,38 @@ Template.order_dashboard.helpers({
             result = "order_dashboard_status_prepared";
         }
         return result;
+    },
+    extra_hours: function () {
+        var order = Orders.findOne({_id: Session.get("order_id")});
+        var extra_hoursResult = ExtraHours.findOne({orderId: order._id});
+        sessionStorage.setItem("extra_hoursResult", extra_hoursResult);
+        if(extra_hoursResult != null){
+            return extra_hoursResult.extra_hours;
+        }
     }
 });
 
 Template.order_dashboard.events({
     'click .confirm-payment': function (e) {
         Session.set('showPaymentConfirmationModal', true);
+    },
+    'submit .confirm-extra_hours': function (e) {
+        event.preventDefault();
+        var extra_hours = document.getElementById('extraHours').value;
+        var order = Orders.findOne({_id: Session.get("order_id")});
+        var extra_hoursForm = {
+            extra_hours: extra_hours,
+            accepted: null,
+            orderId: order._id
+        };
+        Meteor.call("createExtraHours", extra_hoursForm);
+        location.reload();
+    },
+    'click #cancel': function (event) {
+        Router.go('cancel-order', {
+            ord: Base64.encode(this._id),
+            token: ((parseInt(this.phone) * 71) + (parseInt(this.zip) * 31))
+        });
     }
 });
 
@@ -62,8 +86,21 @@ Template.order_dashboard.onRendered(function () {
     });
     discount = 0;
     var order = Orders.findOne({_id: Session.get("order_id")});
-    if (order.discount)
+    if (order.discount) {
         discount = order.discount / 100;
+    }
+    $('.confirm-extra_hours').css('display', 'none');
+    $('#no-accepted').css('display', 'block');
+    $('#accepted').css('display', 'none');
+    if(sessionStorage.getItem("extra_hoursResult") == 'undefined'){
+        $('.confirm-extra_hours').css('display', 'block');
+        $('#accepted').css('display', 'none');
+        $('#no-accepted').css('display', 'none');
+    }
+    if(sessionStorage.getItem("extra_hoursResult").accepted){
+        $('#no-accepted').css('display', 'none');
+        $('#accepted').css('display', 'block');
+    }
 });
 
 Template.registerHelper("orderDay", function (date) {
@@ -77,14 +114,6 @@ Template.registerHelper("orderCancel", function (date) {
     var diaPedidoSub12H = new Date();
     diaPedidoSub12H.setTime(date.getTime() - 43200000);
     return hoy.getTime() - diaPedidoSub12H.getTime() < 0;
-});
-Template.order_dashboard.events({
-    'click #cancel': function (event) {
-        Router.go('cancel-order', {
-            ord: Base64.encode(this._id),
-            token: ((parseInt(this.phone) * 71) + (parseInt(this.zip) * 31))
-        });
-    }
 });
 
 Template.order_dashboard.onCreated(function () {
