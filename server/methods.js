@@ -147,6 +147,8 @@ Meteor.methods({
 
     'createExtraHours': function (extra_hoursForm) {
         ExtraHours.insert(extra_hoursForm);
+
+        //TODO:AQUI DEBERA ENVIARSE EL CORREO AL CAPITAN
     },
 
     'joinOrder': function (order) {

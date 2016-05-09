@@ -47,12 +47,14 @@ Template.order_dashboard.helpers({
         return result;
     },
     extra_hours: function () {
-        var order = Orders.findOne({_id: Session.get("order_id")});
-        var extra_hoursResult = ExtraHours.findOne({orderId: order._id});
-        sessionStorage.setItem("extra_hoursResult", extra_hoursResult);
-        if(extra_hoursResult != null){
-            return extra_hoursResult.extra_hours;
-        }
+        var order_id = this._id;
+        var extra_hoursResult = ExtraHours.find({orderId: order_id, accepted: "accepted"}).fetch();
+        return calculateExtraHours(extra_hoursResult);
+    },
+    canAddHours: function (){
+        var order_id = this._id;
+        var extra_hoursResult = ExtraHours.find({orderId: order_id, accepted: "pending"}).fetch();
+        return extra_hoursResult.length == 0;
     }
 });
 
@@ -61,16 +63,15 @@ Template.order_dashboard.events({
         Session.set('showPaymentConfirmationModal', true);
     },
     'submit .confirm-extra_hours': function (e) {
-        event.preventDefault();
+        e.preventDefault();
         var extra_hours = document.getElementById('extraHours').value;
         var order = Orders.findOne({_id: Session.get("order_id")});
         var extra_hoursForm = {
-            extra_hours: extra_hours,
-            accepted: null,
-            orderId: order._id
+            extra_hours: parseInt(extra_hours),
+            orderId: order._id,
+            accepted: "pending"
         };
         Meteor.call("createExtraHours", extra_hoursForm);
-        location.reload();
     },
     'click #cancel': function (event) {
         Router.go('cancel-order', {
@@ -88,18 +89,6 @@ Template.order_dashboard.onRendered(function () {
     var order = Orders.findOne({_id: Session.get("order_id")});
     if (order.discount) {
         discount = order.discount / 100;
-    }
-    $('.confirm-extra_hours').css('display', 'none');
-    $('#no-accepted').css('display', 'block');
-    $('#accepted').css('display', 'none');
-    if(sessionStorage.getItem("extra_hoursResult") == 'undefined'){
-        $('.confirm-extra_hours').css('display', 'block');
-        $('#accepted').css('display', 'none');
-        $('#no-accepted').css('display', 'none');
-    }
-    if(sessionStorage.getItem("extra_hoursResult").accepted){
-        $('#no-accepted').css('display', 'none');
-        $('#accepted').css('display', 'block');
     }
 });
 
@@ -135,3 +124,12 @@ Template.order_dashboard.onCreated(function () {
         });
     });
 });
+
+function calculateExtraHours(extra_hours){
+    var res = 0;
+    for(var i = 0; i<extra_hours.length;i++){
+        console.log(extra_hours[i]);
+        res = res + extra_hours[i].extra_hours;
+    }
+    return res;
+}
