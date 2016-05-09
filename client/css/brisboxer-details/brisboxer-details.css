@@ -1,3 +1,16 @@
 .detail-buttons{
     margin: 30px 0;
 }
+
+.spinner-orange, .spinner-orange-only {
+    border-color: #ef6c00 !important;
+}
+
+.circle {
+    border-radius: 30% !important;
+}
+
+.autoMargin {
+    margin-left: auto;
+    margin-right: auto;
+}

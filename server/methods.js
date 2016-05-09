@@ -331,7 +331,6 @@ Meteor.methods({
             earned: earned
         };
     },
-
     "checkCancelCode": function(order_id, cancelCode){
         var res = false;
         var order = Orders.findOne({"_id": order_id});
@@ -339,7 +338,12 @@ Meteor.methods({
             res = order.cancelationCode == cancelCode;
         }
         return res;
+    },
+    'updateProfileImage': function (imageId, id) {
+        Meteor.users.update({_id: id}, {
+            $set: {
+                "profile.image":imageId
+            }
+        });
     }
-
-})
-;
+});

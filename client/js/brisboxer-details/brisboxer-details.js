@@ -119,5 +119,76 @@ Template.brisboxerDetails.events({
     'click #cancel_button': function (event) {
         event.preventDefault();
         Session.set('editBrisboxer', false);
-    }
+    },
+    'change #upload_image': function(event, template) {
+        event.preventDefault();
+        $('#ImageSync').addClass('active');
+        if (this.profile.image != null) {
+            Images.remove({_id:this.profile.image}, function (err, result) {
+                if (err) {
+                    console.log("Error removing oldImage");
+                    console.log(err);
+                }
+            });
+        }
+        FS.Utility.eachFile(event, function(file) {
+            Images.insert(file, function (err, fileObj) {
+                if (err){
+                    console.log("Error inserting newImage");
+                    console.log(err);
+                } else {
+                    var cursor = Images.find(fileObj._id);
+                    var liveQuery = cursor.observe({
+                        changed: function(newImage, oldImage) {
+                            if (newImage.isUploaded()) {
+                                liveQuery.stop();
+                                var imageId = fileObj._id;
+                                var id = Meteor.userId();
+                                Meteor.setTimeout(timeout, 3000);
+                                function timeout(){
+
+                                }
+                                Meteor.call('updateProfileImage', imageId, id, function(err){
+                                    if (err){
+                                        console.log("Error updating profileImage");
+                                        console.log(err);
+                                    } else {
+                                        $('#ImageSync').removeClass('active');
+                                    };
+                                });
+                            }
+                        }
+                    })
+                }
+            });
+        });
+    },
+    'click #remove_image': function (event) {
+        event.preventDefault();
+        $('#ImageSync').addClass('active');
+        if (this.profile.image != null) {
+            Images.remove({_id:this.profile.image}, function (err, result) {
+                if (err) {
+                    console.log("Error removing oldImage");
+                    console.log(err);
+                }
+            });
+        }
+        var imageId = null;
+        var id = Meteor.userId();
+        Meteor.setTimeout(timeout, 3000);
+        function timeout(){
+            var id = 20;
+        }
+        Meteor.call('updateProfileImage', imageId, id, function(err){
+            if (err){
+                console.log("Error updating profileImage");
+                console.log(err);
+            } else {
+                $('#ImageSync').removeClass('active');
+            };
+        });
+
+    },
+
 });
