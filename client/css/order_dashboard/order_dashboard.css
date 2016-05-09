@@ -40,7 +40,7 @@
     float: left;
 }
 
-.customer-info, .brib-info {
+.customer-info, .brib-info, .extra-hours{
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
