@@ -400,6 +400,7 @@
   "payment_confirmation_real_num_brisboxers": "How many Brisboxers?",
   "payment_confirmation_real_num_hours": "Hours spent?",
   "payment_confirmation_total": "Total price",
+  "payment_confirmation_extra_hours": "Extra hours",
   "payment_confirmation_discount": "Discount",
   "payment_confirmation_booking": "Reservation fee",
   "payment_confirmation_final": "Final price",

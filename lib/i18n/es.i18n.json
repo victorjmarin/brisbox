@@ -391,6 +391,7 @@
   "payment_confirmation_real_num_brisboxers": "¿Cuántos Brisboxers?",
   "payment_confirmation_real_num_hours": "¿Horas invertidas?",
   "payment_confirmation_total": "Precio Total",
+  "payment_confirmation_extra_hours": "Horas extras",
   "payment_confirmation_discount": "Descuento",
   "payment_confirmation_booking": "Reserva",
   "payment_confirmation_final": "Precio Final",
