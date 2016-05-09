@@ -12,12 +12,6 @@
                     {{#if isCurrentUser _id}}
                         {{#if editBrisboxer}}
                             <div class="row valign-wrapper">
-                                <div class="file-field input-field autoMargin">
-                                    <div class="waves-effect waves-light btn orange darken-3 z-depth-1 bold">
-                                        <span>{{_ "brisboxer_details_change_image"}}</span>
-                                        <input type="file" id="upload_image">
-                                    </div>
-                                </div>
                                 <div class="preloader-wrapper" id="ImageSync">
                                     <div class="spinner-layer spinner-orange-only">
                                         <div class="circle-clipper left">
@@ -29,8 +23,14 @@
                                     </div>
                                     </div>
                                 </div>
+                                <div class="file-field input-field">
+                                    <div class="waves-effect waves-light btn orange darken-3 z-depth-1 bold">
+                                        <span>{{_ "brisboxer_details_change_image"}}</span>
+                                        <input type="file" id="upload_image">
+                                    </div>
+                                </div>
                                 <button id="remove_image" type="button"
-                                        class="waves-effect waves-light btn orange darken-3 z-depth-1 bold input-field autoMargin">
+                                        class="waves-effect waves-light btn-flat bold input-field">
                                     {{_ "brisboxer_details_remove_image"}}
                                 </button>
                             </div>
@@ -123,7 +123,7 @@
                                 class="waves-effect waves-light btn orange darken-3 z-depth-1 bold">{{_ "brisboxer_details_save"}}
                         </button>
                         <button id="cancel_button" type="button"
-                                class="waves-effect waves-light btn orange darken-3 z-depth-1 bold">{{_ "brisboxer_details_cancel"}}
+                                class="waves-effect waves-light btn-flat bold">{{_ "brisboxer_details_cancel"}}
                         </button>
                     {{else}}
                         <button id="edit_button" type="button"
