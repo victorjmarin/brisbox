@@ -456,6 +456,8 @@
   "brisboxer_details_edit": "Editar perfil",
   "brisboxer_details_comments": "Lo que dicen nuestros clientes",
   "brisboxer_details_empty_assessment": "El brisboxer no ha recibido ninguna valoración todavía.",
+  "brisboxer_details_change_image": "Cambiar",
+  "brisboxer_details_remove_image": "Eliminar",
 
   "monthly_stats": "Estadística mensual de",
   "monthly_stats_title": "Estadística mensual",

@@ -324,7 +324,13 @@ Meteor.methods({
             totalHours: captainHours + normalHours,
             earned: earned
         };
+    },
+    'updateProfileImage': function (imageId, id) {
+        Meteor.users.update({_id: id}, {
+            $set: {
+                "profile.image":imageId
+            }
+        });
     }
-
 })
 ;
