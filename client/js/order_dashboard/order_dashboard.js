@@ -74,9 +74,9 @@ Template.registerHelper("orderDay", function (date) {
 });
 Template.registerHelper("orderCancel", function (date) {
     var hoy = new Date();
-    var diaPedidoSub12H = new Date();
-    diaPedidoSub12H.setTime(date.getTime() - 43200000);
-    return hoy.getTime() - diaPedidoSub12H.getTime() < 0;
+    var diaPedidoSub24H = new Date();
+    diaPedidoSub24H.setTime(date.getTime() - 86400000);
+    return hoy.getTime() - diaPedidoSub24H.getTime() < 0;
 });
 Template.order_dashboard.events({
     'click #cancel': function (event) {
