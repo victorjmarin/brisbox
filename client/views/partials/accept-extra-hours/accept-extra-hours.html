@@ -1,0 +1,27 @@
+<template name="acceptExtraHours">
+    <div class="container">
+        <div class="section scrollspy">
+            <div class="row">
+                <h4 class="header">{{_ "extra_hours_header"}}</h4>
+            </div>
+            <div class="row">
+                <p>{{_ "extra_hours_choose"}}</p>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <input id="cancelationCode" type="text" required class="form-control col s12 m6">
+                    <label id="label_cancelation" for="cancelationCode"
+                           class=" col s6 m6">{{_ "cancel-form-code"}}</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <button type="button" id="cancel"
+                            class="btn btn-primary waves-button-input orange darken-3">{{_ "cancel-submit"}}</button>
+                    <button type="button" id="dashboard"
+                            class="waves-effect waves-orange waves-ripple btn-flat">{{_ "go_back"}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -491,6 +491,11 @@
   "finished_Order": "That's all, folks!",
   "finished_Order_body": "Hopefully it was a satisfactory experience.",
   "finished_Order_assessment": "In order to improve our services, we would like you to take a moment and rate our brisboxers. We really appreciate your feedback.",
-  "assess_them": "Assess brisboxers"
+  "assess_them": "Assess brisboxers",
 
+  //Accept extra hours
+  "extra_hours_header": "Accept extra hours",
+  "extra_hours_choose": "Please, choose if you want accept the required extra hours.",
+  "extra_hours_accept": "Accept",
+  "extra_hours_deny": "Deny"
 }

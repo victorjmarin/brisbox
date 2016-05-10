@@ -177,6 +177,22 @@ Meteor.methods({
         return res;
     },
 
+    'acceptExtraHours': function (extraHoursIdCodificado) {
+        var res = "NOTFOUND";
+        var extraHoursIdDecodificado = Base64.decode(extraHoursIdCodificado);
+        var extraHours = ExtraHours.findOne({"_id": extraHoursIdDecodificado});
+        if (ExtraHours.find({"_id":extraHoursIdDecodificado}).count() == 1) {
+            if (extraHours.accepted == "pending"){
+                res = "ACCEPT_EXTRA_HOURS";
+            } else if (extraHours.accepted == "accepted" || extraHours.accepted == "rejected"){
+                res = "ALREADY_CHOSED";
+            }
+        } else {
+            res = "NOTFOUND";
+        }
+        return res;
+    },
+
     'cancelOrder': function (orderIdCodificado, cancelationCode) {
         var res = false;
         var orderIdDecodificado = Meteor.call('deCodificaString', orderIdCodificado);
