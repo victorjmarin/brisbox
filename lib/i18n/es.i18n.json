@@ -488,7 +488,11 @@
 
   //Accept extra hours
   "extra_hours_header": "Aceptar horas extras",
-  "extra_hours_choose": "Por favor, seleccione si quiere aceptar las horas extras propuestas.",
-  "extra_hours_accept": "Aceptar",
-  "extra_hours_deny": "Rechazar"
+  "extra_hours_choose": "Por favor, indique si quiere aceptar las horas extras propuestas.",
+  "extra_hours_accept": "Aceptar __hours__ horas extras",
+  "extra_hours_deny": "Rechazar",
+  "extra_hours_failed": "¿Otra vez por aquí?",
+  "extra_hours_failed_body": "Ha ocurrido un error en la aceptación de horas extras. La aceptación o rechazo de estas horas extras ya ha sido realizada.",
+  "extra_hours_not_found": "Petición de horas extras no encontrada",
+  "extra_hours_found_body1": "Tu petición de horas extras no ha sido encontrada en el sistema. Si cree que ha sido un error, por favor póngase en contacto con el equipo de Brisbox. Si dispone de un cliente de correo, pulse en "
 }

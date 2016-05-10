@@ -177,7 +177,7 @@ Meteor.methods({
         return res;
     },
 
-    'acceptExtraHours': function (extraHoursIdCodificado) {
+    'acceptExtraHoursController': function (extraHoursIdCodificado) {
         var res = "NOTFOUND";
         var extraHoursIdDecodificado = Base64.decode(extraHoursIdCodificado);
         var extraHours = ExtraHours.findOne({"_id": extraHoursIdDecodificado});
@@ -191,6 +191,24 @@ Meteor.methods({
             res = "NOTFOUND";
         }
         return res;
+    },
+
+    'acceptExtraHours': function (extraHoursIdDecodificado) {
+        var extraHours = ExtraHours.findOne({"_id": extraHoursIdDecodificado});
+        ExtraHours.update(extraHoursIdDecodificado, {
+            $set: {
+                accepted: "accepted"
+            }
+        });
+    },
+
+    'rejectExtraHours': function (extraHoursIdDecodificado) {
+        var extraHours = ExtraHours.findOne({"_id": extraHoursIdDecodificado});
+        ExtraHours.update(extraHoursIdDecodificado, {
+            $set: {
+                accepted: "rejected"
+            }
+        });
     },
 
     'cancelOrder': function (orderIdCodificado, cancelationCode) {

@@ -496,6 +496,10 @@
   //Accept extra hours
   "extra_hours_header": "Accept extra hours",
   "extra_hours_choose": "Please, choose if you want accept the required extra hours.",
-  "extra_hours_accept": "Accept",
-  "extra_hours_deny": "Deny"
+  "extra_hours_accept": "Accept __hours__ extra hours",
+  "extra_hours_deny": "Deny",
+  "extra_hours_failed": "Again here?",
+  "extra_hours_failed_body": "An error occurred while accepting extra hours. The decision about this extra hours has already been done",
+  "extra_hours_not_found": "Extra hours request not found",
+  "extra_hours_found_body1": "Your extra hours request isn't found on the system. If you thing that was an error, please contact with Brisbox Team. If you have an email client, click on "
 }

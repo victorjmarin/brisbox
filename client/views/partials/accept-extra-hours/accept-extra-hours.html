@@ -9,18 +9,15 @@
             </div>
             <div class="row">
                 <div class="input-field col s12 m6">
-                    <input id="cancelationCode" type="text" required class="form-control col s12 m6">
-                    <label id="label_cancelation" for="cancelationCode"
-                           class=" col s6 m6">{{_ "cancel-form-code"}}</label>
+                    <button type="button" id="accept"
+                            class="btn btn-primary waves-button-input orange darken-3"><i class="material-icons left">alarm_on</i>{{_ "extra_hours_accept" hours=extra_hours}}</button>
+                    <button type="button" id="reject"
+                            class="btn btn-primary waves-button-input orange darken-3"><i class="material-icons left">alarm_off</i>{{_ "extra_hours_deny"}}</button>
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s12 m6">
-                    <button type="button" id="cancel"
-                            class="btn btn-primary waves-button-input orange darken-3">{{_ "cancel-submit"}}</button>
-                    <button type="button" id="dashboard"
-                            class="waves-effect waves-orange waves-ripple btn-flat">{{_ "go_back"}}</button>
-                </div>
+                <button type="button" id="dashboard"
+                        class="waves-effect waves-orange waves-ripple btn-flat">{{_ "go_back"}}</button>
             </div>
         </div>
     </div>
