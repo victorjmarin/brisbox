@@ -337,10 +337,9 @@ function loadPromotion(){
 }
 
 function loadExtraHours(){
-    var order1 = Orders.findOne({_id: 'DLstynyf3uZsE8LFL'});
-    var order2 = Orders.findOne({_id: 'QeMqkD2yLpxeKBKQc'});
-    var order3 = Orders.findOne({_id: 'ijcwLCQrvLHoHSLC4'});
-    var orderGamma = Orders.findOne({_id: '9S4EbJ3K3YWfdSwgY'});
+    var order1 = Orders.findOne({phone: '000000000'});
+    var order2 = Orders.findOne({_id: '333333333'});
+    var order3 = Orders.findOne({_id: '111111111'});
 
     ExtraHours.insert({
         extra_hours: 2,
@@ -358,12 +357,6 @@ function loadExtraHours(){
         extra_hours: 4,
         accepted: null,
         orderId : order3._id
-    });
-
-    ExtraHours.insert({
-        extra_hours: 1,
-        accepted: null,
-        orderId : orderGamma._id
     });
 }
 
