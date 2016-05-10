@@ -2,7 +2,7 @@
  * Created by Fran Viejo on 10/05/2016.
  */
 
-Template.OrderCancel.events({
+Template.acceptExtraHours.events({
 
     'click #accept': function (event) {
         event.preventDefault();
@@ -35,3 +35,14 @@ Template.OrderCancel.events({
         Router.go('order_dashboard', {_id: this.orderId});
     }
 });
+
+Template.acceptExtraHours.onRendered(function(){
+    var self = this;
+
+    this.autorun(function (a) {
+        var data = Template.currentData(self.view);
+        if (data == "extraHoursNotFound"){
+            Router.go('extraHoursNotFound');
+        }
+    });
+})
