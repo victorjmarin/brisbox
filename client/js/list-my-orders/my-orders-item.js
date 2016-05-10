@@ -25,6 +25,21 @@ Template.myOrdersItem.helpers({
         var result = !this.comments ? TAPi18n.__("no_comments") : this.comments;
         return result;
     },
+    address: function () {
+        var result = this.addressLoading;
+        if (!result) {
+            result = this.addressUnloading;
+        }
+        return result;
+    },
+    loadUnloadText: function () {
+        var result = "loading";
+        var loading = this.addressLoading;
+        if (!loading) {
+            result = "unloading";
+        }
+        return result;
+    },
     render: function () {
         return Session.get("render");
     }

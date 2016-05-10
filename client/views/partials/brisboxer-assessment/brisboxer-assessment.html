@@ -1,10 +1,10 @@
 <template name="BrisboxerAssessment">
 
     <div class="container">
-        <div class="row">
+        <div class="row" style="margin-bottom: 20px;">
             <h2 style="padding-top: 3%">{{_ "assessment_header"}}</h2>
 
-            <p class="flow-text">{{_ "assessment_body"}}</p>
+            <p class="flow-text" style="margin-bottom: 40px;">{{_ "assessment_body"}}</p>
             {{#each order.brisboxers}}
                 {{> BrisboxerAssessmentRow}}
             {{/each}}
