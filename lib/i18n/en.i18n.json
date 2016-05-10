@@ -481,14 +481,12 @@
   "stripe-form_validate-month": "Indicates the expiration year",
   "stripe-form_validate-year": "Indicates the expiration month",
 
-<<<<<<< HEAD
   "edit_day": "Edit day",
   "edit-order": "Edit order",
   "edit-order-code": "Code",
   "edit-order-error": "Oops! It seems that currently can not edit the order. Remember that it must pass the order date for editing.",
   "edit-order-invalidCode": "Invalid code",
-  "edit-order-error": "Oops! An error has ocurred"
-=======
+  "edit-order-error": "Oops! An error has ocurred",
 
   "loading": "loading",
   "unloading": "unloading",
@@ -505,6 +503,4 @@
   "finished_Order_body": "Hopefully it was a satisfactory experience.",
   "finished_Order_assessment": "In order to improve our services, we would like you to take a moment and rate our brisboxers. We really appreciate your feedback.",
   "assess_them": "Assess brisboxers"
-
->>>>>>> master
 }

@@ -32,19 +32,6 @@
                             </div>
                         </div>
                         {{/if}}
-                        {{#if canEditHours}}
-                        <div class="row" id="hours-row">
-                            <div class="input-field col s12 m12">
-                               <input oninvalid="setCustomValidity('{{_ "order-form_validate-hours"}}')"
-                                    onchange="try{setCustomValidity('')}catch(e){}"
-                                    id="hours" type="number" required name="hours" min="{{hours}}" max="12"
-                                    class="hours form-control">
-                                <label id="label_hours" class="col s6 m6"
-                                    for="hours">{{_ "order-form_hours"}}</label>
-                            </div>
-                        </div>
-                        {{/if}}
-                    
                     {{/if}}
 
                     <div id="codeError" class="red-text" style="display: none;">

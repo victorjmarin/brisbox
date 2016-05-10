@@ -5,18 +5,10 @@ Template.EditOrder.helpers({
     canEditDate: function(){
         return canEditDate(this);
     },
-    canEditHours: function(){
-        return canEditHours(this);
-    },
     cannotEdit: function(){
-        return !canEditDate(this) && !canEditHours(this);
+        return !canEditDate(this);
     }
 });
-
-function canEditHours(data){
-     var hoy = new Date();
-     return hoy.getTime()-data.day.getTime()>0;
-}
 
 function canEditDate(data){
     var hoy = new Date();
@@ -33,10 +25,12 @@ Template.EditOrder.events({
             if(response){
                 var data = {};
                 if(event.target.day){
-                    data["day"] = new Date(event.target.day.value);
-                }
-                if(event.target.hours){
-                    data["hours"] = parseInt(event.target.hours.value);
+                    var dia = event.target.day.value.split("/");
+                    var diaFormateado = new Date();
+                    diaFormateado.setDate(dia[0]);
+                    diaFormateado.setMonth(parseInt(dia[1])-1);
+                    diaFormateado.setFullYear(dia[2]);
+                    data["day"] = diaFormateado;
                 }
                 if(event.target.startMoment){
                     data["startMoment"] = event.target.startMoment.value;

@@ -50,14 +50,14 @@
         {{#if notPaid}}
             <div class="col s12 m12">
                 <div class="col s4 m2 hide-on-med-and-down">
-                    {{#if orderDay day}}
+                    <!--{{#if orderDay day}}-->
                         {{#if notInOrder }}
                             <button name="submit" id="confirm-order-payment" type="button"
                                     class="bold btn waves-effect waves-light orange darken-3 white-text confirm-payment">{{_ "payment_confirmation_button"}}
                             </button>
                             <button id="edit-order" class="waves-effect waves-orange btn-flat bold">{{_ "order_dashboard_edit"}}</button>
                         {{/if}}
-                    {{else}}
+                    <!--{{else}}
                         {{#if orderCancel day}}
                             {{#if notInOrder }}
                                 <div class="col s4 m6 hide-on-med-and-down" id="cancelar">
@@ -66,7 +66,7 @@
                                 </div>
                             {{/if}}
                         {{/if}}
-                    {{/if}}
+                    {{/if}}-->
                 </div>
 
                 <div class="col s12 m2 hide-on-large-only bold">
