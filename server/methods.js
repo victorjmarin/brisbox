@@ -145,6 +145,10 @@ Meteor.methods({
         Accounts.sendVerificationEmail(userId);
     },
 
+    'createExtraHours': function (extra_hoursForm) {
+        ExtraHours.insert(extra_hoursForm);
+    },
+
     'joinOrder': function (order) {
         var principal = UserService.principal();
         var updatedOrder = OrderService.joinOrder(order, principal);

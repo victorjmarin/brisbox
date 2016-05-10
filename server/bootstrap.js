@@ -20,6 +20,9 @@ Meteor.startup(function () {
     if (Promotions.find().count()=== 0){
         loadPromotion();
     }
+    if (ExtraHours.find().count()=== 0){
+        loadExtraHours();
+    }
 });
 
 function loadAdmins() {
@@ -330,6 +333,30 @@ function loadZips() {
 function loadPromotion(){
     Promotions.insert({
        code: "probrisbox"
+    });
+}
+
+function loadExtraHours(){
+    var order1 = Orders.findOne({phone: '000000000'});
+    var order2 = Orders.findOne({_id: '333333333'});
+    var order3 = Orders.findOne({_id: '111111111'});
+
+    ExtraHours.insert({
+        extra_hours: 2,
+        accepted: null,
+        orderId : order1._id
+    });
+
+    ExtraHours.insert({
+        extra_hours: 2,
+        accepted: null,
+        orderId : order2._id
+    });
+
+    ExtraHours.insert({
+        extra_hours: 4,
+        accepted: null,
+        orderId : order3._id
     });
 }
 
