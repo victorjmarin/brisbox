@@ -20,6 +20,9 @@ Meteor.startup(function () {
     if (Promotions.find().count()=== 0){
         loadPromotion();
     }
+    if (ExtraHours.find().count()=== 0){
+        //loadExtraHours();
+    }
 });
 
 function loadAdmins() {
@@ -332,6 +335,37 @@ function loadPromotion(){
        code: "probrisbox"
     });
 }
+
+/*function loadExtraHours(){
+    var order1 = Orders.findOne({_id: 'DLstynyf3uZsE8LFL'});
+    var order2 = Orders.findOne({_id: 'QeMqkD2yLpxeKBKQc'});
+    var order3 = Orders.findOne({_id: 'ijcwLCQrvLHoHSLC4'});
+    var orderGamma = Orders.findOne({_id: '9S4EbJ3K3YWfdSwgY'});
+
+    ExtraHours.insert({
+        extra_hours: 2,
+        accepted: "pending",
+        orderId : order1._id
+    });
+
+    ExtraHours.insert({
+        extra_hours: 2,
+        accepted: "pending",
+        orderId : order2._id
+    });
+
+    ExtraHours.insert({
+        extra_hours: 4,
+        accepted: "pending",
+        orderId : order3._id
+    });
+
+    ExtraHours.insert({
+        extra_hours: 1,
+        accepted: "pending",
+        orderId : orderGamma._id
+    });
+}*/
 
 function loadOrders() {
     var brisboxer1 = Meteor.users.findOne({username: 'brisboxer1'});

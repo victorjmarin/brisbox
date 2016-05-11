@@ -144,6 +144,12 @@ Meteor.methods({
         Accounts.sendVerificationEmail(userId);
     },
 
+    'createExtraHours': function (extra_hoursForm) {
+        ExtraHours.insert(extra_hoursForm);
+
+        //TODO:AQUI DEBERA ENVIARSE EL CORREO AL CAPITAN
+    },
+
     'joinOrder': function (order) {
         var principal = UserService.principal();
         var updatedOrder = OrderService.joinOrder(order, principal);
@@ -336,6 +342,14 @@ Meteor.methods({
             totalHours: captainHours + normalHours,
             earned: earned
         };
+    },
+    "checkCancelCode": function(order_id, cancelCode){
+        var res = false;
+        var order = Orders.findOne({"_id": order_id});
+        if(order){
+            res = order.cancelationCode == cancelCode;
+        }
+        return res;
     },
     'updateProfileImage': function (imageId, id) {
         Meteor.users.update({_id: id}, {

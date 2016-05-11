@@ -234,6 +234,9 @@
   "order_dashboard_customer_info_title": "Customer Info",
   "order_dashboard_order_info_title": "Order Info",
   "order_dashboard_brisboxers_info_title": "Brisboxers Info",
+  "order_dashboard_order_extra-hours_title": "Increase hours",
+  "order_dashboard_order_extra-hours_no-accepted": "Awaiting acceptance",
+  "order_dashboard_order_extra-hours_accepted": "Accepted!",
   "order_dashboard_resume_info_title": "Order Summary",
   "order_dashboard_name": "Name",
   "order_dashboard_surname": "Surname",
@@ -249,6 +252,7 @@
   "order_dashboard_estimate_hours": "Estimated hours",
   "order_dashboard_estimate_cost": "Estimated cost",
   "order_dashboard_captain": "The captain",
+  "order_dashboard_extra-hours": "Extra hours",
   "order_dashboard_edit": "Reschedule",
   "brisboxer_details": "Brisboxer profile",
   "name": "Name",
@@ -435,7 +439,8 @@
   "order-form_validate-portalLoading": "Insert a unloading portal",
   "order-form_validate-portalUnloading": "Insert a loading portal",
   "order-form_validate-numberBrisboxers": "Insert a number brisboxers" ,
-  "order-form_validate-hours": "Insert a start time",
+  "order-form_validate-hours": "Insert a hour",
+  "order-form_validate-extras_hours": "Insert an extra hours",
   "order-form_validate-day": "Insert a date" ,
   "order-form_validate-startMoment": "Insert a start time",
   "order-form_validate-name": "Insert your name",
@@ -502,5 +507,9 @@
   "finished_Order": "That's all, folks!",
   "finished_Order_body": "Hopefully it was a satisfactory experience.",
   "finished_Order_assessment": "In order to improve our services, we would like you to take a moment and rate our brisboxers. We really appreciate your feedback.",
-  "assess_them": "Assess brisboxers"
+  "assess_them": "Assess brisboxers",
+  "order_dashboar_extra-hours_pending": "Your request will be evaluated by the captain.",
+
+  "cancelcode_success": "Correct code!",
+  "cancelcode_failed": "Ups! Wrong code"
 }

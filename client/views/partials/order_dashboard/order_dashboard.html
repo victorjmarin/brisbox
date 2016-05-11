@@ -26,6 +26,36 @@
                     <span class="flow-text"> <b>{{_ "order_dashboard_estimate_cost"}}
                         :</b> {{calculateCost numberBrisboxers hours}}</span>
                 </div>
+                <div class="col s12 m12 extra-hours" style="display: block;">
+                    <span class="order_dashboard_section_title title flow-text">{{_ "order_dashboard_order_extra-hours_title"}}</span>
+                    <span id="value_extra_hours" class="flow-text" style="display: block;"> <b>{{_ "order_dashboard_extra-hours"}}:</b> {{extra_hours}}</span>
+                    
+                    {{#if isCustomerVerified}}
+
+                        {{#if canAddHours}}
+                            <form class="confirm-extra_hours" style="display: block;">
+                                <div class="input-field">
+                                    <input oninvalid="setCustomValidity('{{_ "order-form_validate-hours"}}')"
+                                           onchange="try{setCustomValidity('')}catch(e){}"
+                                           id="extraHours" type="number" required name="extraHours" min="1" max="12"
+                                           class="hours form-control">
+                                    <label id="label_hours" class="col s6 m6"
+                                           for="extraHours">{{_ "order-form_hours"}}</label>
+                                </div>
+                                <div class="input-field col s12 center-align" style="padding-bottom: 5px;">
+                                    <button type="submit" class="btn btn-primary waves-button-input orange darken-3 caret">{{_ "order-submit"}}</button>
+                                </div>
+                            </form>
+                        {{else}}
+                            <span class="flow-text">{{_ "order_dashboar_extra-hours_pending"}}</span>
+                        {{/if}}
+
+                    {{else}}
+                            {{#unless currentUser}}
+                                {{> CancelCodeLogin}}
+                            {{/unless}}
+                    {{/if}}
+                </div>
             </div>
             <div class="col s4 m4 brisboxers-info" id="brisboxers">
                 <div class="col s12 m12">
@@ -39,7 +69,6 @@
                         <h4 class="deep-orange flow-text">{{_ "order_deleted"}}</h4>
                     {{/if}}
                 </div>
-
             </div>
             <div class="col s4 m4 order-info" id="mapa">
                 <div class="dashmap col s12 m12 hide-on-small-only customer-info left">

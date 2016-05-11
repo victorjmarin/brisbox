@@ -76,6 +76,10 @@ Meteor.publish('zipsAll', function () {
     return Zips.find();
 });
 
+Meteor.publish('extra_hoursAll', function () {
+    return ExtraHours.find();
+});
+
 Meteor.publish('findCodePromotion', function () {
     return Promotions.find();
 });
