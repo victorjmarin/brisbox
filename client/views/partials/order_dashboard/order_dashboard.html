@@ -48,18 +48,25 @@
             </div>
         </div>
         {{#if notPaid}}
-            <div class="col s12 m12">
-                <div class="col s4 m2 hide-on-med-and-down">
+            <div class="col s12">
+                <div class="col s4 row hide-on-med-and-down">
                     {{#if orderDay day}}
                         {{#if notInOrder }}
-                            <button name="submit" id="confirm-order-payment" type="button"
-                                    class="bold btn waves-effect waves-light orange darken-3 white-text confirm-payment">{{_ "payment_confirmation_button"}}
-                            </button>
+                            <div class="col s6">
+                                <button name="submit" id="confirm-order-payment" type="button"
+                                        class="bold btn waves-effect waves-light orange darken-3 white-text confirm-payment">{{_ "payment_confirmation_button"}}
+                                </button>
+                            </div>
+                            <div class="col s6">
+                                {{#unless orderFull}
+                                <button id="edit-order" class="waves-effect waves-orange btn-flat bold" style="margin-top:15px;margin-bottom: 15px;">{{_ "order_dashboard_edit"}}</button>
+                                {{/unless}}
+                            </div>
                         {{/if}}
                     {{else}}
                         {{#if orderCancel day}}
                             {{#if notInOrder }}
-                                <div class="col s4 m6 hide-on-med-and-down" id="cancelar">
+                                <div class="col s4 m12 hide-on-med-and-down" id="cancelar">
                                     <button class="bold waves-effect waves-orange waves-ripple btn-flat"
                                             id="cancel">{{_ "order_dashboard_cancel"}}</button>
                                 </div>
@@ -68,17 +75,24 @@
                     {{/if}}
                 </div>
 
-                <div class="col s12 m2 hide-on-large-only bold">
+                <div class="col s12 hide-on-large-only bold">
                     {{#if orderDay day}}
                         {{#if notInOrder }}
-                            <button name="submit" id="confirm-order-payment" type="button"
-                                    class="bold btn btn-primary waves-effect waves-light orange darken-3 white-text confirm-payment">{{_ "payment_confirmation_button"}}
-                            </button>
+                            <div class="col s6">
+                                <button name="submit" id="confirm-order-payment" type="button"
+                                        class="bold btn waves-effect waves-light orange darken-3 white-text confirm-payment">{{_ "payment_confirmation_button"}}
+                                </button>
+                            </div>
+                            <div class="col s6">
+                                {{#unless orderFull}
+                                <button id="edit-order" class="waves-effect waves-orange btn-flat bold" style="margin-top:15px;margin-bottom: 15px;">{{_ "order_dashboard_edit"}}</button>
+                                {{/unless}}
+                            </div>
                         {{/if}}
                     {{else}}
                         {{#if orderCancel day}}
                             {{#if notInOrder }}
-                                <div class="col s4 m6 hide-on-med-and-down" id="cancelar">
+                                <div class="col s4 m12 hide-on-med-and-down" id="cancelar">
                                     <button class="waves-effect waves-orange waves-ripple btn-flat"
                                             id="cancel">{{_ "order_dashboard_cancel"}}</button>
                                 </div>

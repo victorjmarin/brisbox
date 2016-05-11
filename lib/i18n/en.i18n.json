@@ -249,6 +249,7 @@
   "order_dashboard_estimate_hours": "Estimated hours",
   "order_dashboard_estimate_cost": "Estimated cost",
   "order_dashboard_captain": "The captain",
+  "order_dashboard_edit": "Reschedule",
   "brisboxer_details": "Brisboxer profile",
   "name": "Name",
   "surname": "Surname",
@@ -260,13 +261,13 @@
   "accepted": "Accepted",
   "score": "Score",
   "order_deleted": "Order canceled",
-  "order_deleted_success": "Your order has been deleted. Thanks for your trust.",
+  "order_deleted_success": "We are sorry to hear that, but your order has been successfully canceled. We hope to see you back soon!",
   "order_deleted_failed": "Cancel order failed",
   "order_deleted_failed_body": "There was an error cancelling your order. Please try again later.",
   "order_not_found": "Order not found",
   "order_canceling": "Cancel your order",
   "order_leave": "Leave",
-  "enter-cancelation-code": "Please search on your email the cancelation code and write it on the input field.",
+  "enter-cancelation-code": "Please type in the code we emailed you at the moment of placing the order.",
   "cancel-form-code": "Cancelation Code",
   "cancel-submit": "Cancel Order",
   "order_not_found_body1": "Your order isn't found on the system. If you thing that was an error, please contact with Brisbox Team. If you have an email client, click on ",
@@ -425,6 +426,8 @@
   "email_order_registered_first_p": "Your order has been sucessfully registered. We will notify you as soon as the requested number of brisboxers has been met.",
   "email_order_registered_second_p": "To access the dashboard and track the status of your order, click <a href='%s'>here</a>.",
   "email_order_registered_third_p": "You can cancel your order up to 24h. before it takes place by visiting <a href='%s'>this link</a> and using the following code: ",
+  "email_order_registered_fourth_p": "This code will also serve to modify your order if you need it.",
+  
   "order-form_location": "Enter a location",
   "order-form_validate-zip": "Insert a ZIP Code",
   "order-form_validate-addressLoading": "Insert a loading address",
@@ -478,6 +481,12 @@
   "stripe-form_validate-month": "Indicates the expiration year",
   "stripe-form_validate-year": "Indicates the expiration month",
 
+  "edit_day": "Edit day",
+  "edit-order": "Reschedule order",
+  "edit-order-code": "Code",
+  "edit-order-error": "Oops! It seems that currently can not edit the order. Remember that it must pass the order date for editing.",
+  "edit-order-invalidCode": "Invalid code",
+  "edit-order-error": "Oops! An error has ocurred",
 
   "loading": "loading",
   "unloading": "unloading",
@@ -494,5 +503,4 @@
   "finished_Order_body": "Hopefully it was a satisfactory experience.",
   "finished_Order_assessment": "In order to improve our services, we would like you to take a moment and rate our brisboxers. We really appreciate your feedback.",
   "assess_them": "Assess brisboxers"
-
 }
