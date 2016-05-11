@@ -47,6 +47,9 @@ Template.order_dashboard.helpers({
             result = "order_dashboard_status_prepared";
         }
         return result;
+    },
+    orderFull: function () {
+        return this.brisboxers.length === this.numberBrisboxers;
     }
 });
 
