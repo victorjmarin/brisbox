@@ -12,7 +12,7 @@
                     <div class="row" id="payment-content" style="display: none;">
                         <div class="input-field col s12 z-depth-3" id="payment-input-fields">
 
-                            <div class="input-field col s8">
+                            <div class="input-field col s8 flow-text">
                                 <div class="payment_confirmation_border_bottom">
                                     <span>
                                         {{_ "payment_confirmation_total"}}: {{ cost }}&euro;
@@ -35,7 +35,7 @@
                                     </div>
                                 </div>
                                 <span>
-                                    {{_ "payment_confirmation_final"}}: {{ finalCost }}&euro;
+                                    {{_ "payment_confirmation_final"}}: <b>{{ finalCost }}&euro;</b>
                                 </span>
                             </div>
                             <div class="input-field col s12 center-align">
