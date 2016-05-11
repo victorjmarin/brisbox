@@ -25,7 +25,7 @@ MailService = {
         var captainAddress = captain.emails[0].address;
         this.send("email_captain_subject", "captain-email", params, captainAddress);
     },
-    orderRegistered: function (order, cancelCode) {
+    orderRegistered: function (order, superCode) {
         var encodedOrderId = Base64.encode(order._id);
         var token = (parseInt(order.phone) * 71) + (parseInt(order.zip) * 31);
         var dashboardUrl = Helpers.Url.forPath("order_dashboard/" + encodedOrderId);
@@ -34,7 +34,7 @@ MailService = {
             name: order.name,
             dashboardUrl: dashboardUrl,
             cancelOrderUrl: cancelOrderUrl,
-            cancelCode: cancelCode
+            superCode: superCode
         };
         this.send("email_order_registered_subject", "order-registered", params, order.email);
     },

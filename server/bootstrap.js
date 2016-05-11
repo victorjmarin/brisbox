@@ -389,7 +389,7 @@ function loadOrders() {
         comments: 'Bajar electrodomésticos desde un tercero.',
         typeMove: 'load',
         day: new Date('2016-07-03'),
-        cancelationCode: "cancelthat1",
+        superCode: "cancelthat1",
         brisboxers: [
             {_id: brisboxer2._id, username: brisboxer2.username, assessed: false}
         ]
@@ -409,7 +409,7 @@ function loadOrders() {
         comments: 'Subir muebles.',
         typeMove: 'load',
         day: new Date('2016-06-20'),
-        cancelationCode: "cancelthat2",
+        superCode: "cancelthat2",
         brisboxers: [
             {_id: brisboxer2._id, username: brisboxer2.username, assessed: false},
             {_id: brisboxer3._id, username: brisboxer3.username, assessed: false}
@@ -430,7 +430,7 @@ function loadOrders() {
         comments: 'Dificil acceso',
         typeMove: 'unload',
         day: new Date('2016-08-04'),
-        cancelationCode: "cancelthat3",
+        superCode: "cancelthat3",
         brisboxers: [
             {_id: brisboxer1._id, username: brisboxer1.username, assessed: false, captain: true}
         ]
@@ -450,7 +450,7 @@ function loadOrders() {
         comments: 'Piso grande. Muchos muebles a bajar.',
         typeMove: 'unload',
         day: new Date('2016-07-01'),
-        cancelationCode: "cancelthat4",
+        superCode: "cancelthat4",
         brisboxers: [
             {_id: brisboxer2._id, username: brisboxer2.username, assessed: false},
             {_id: brisboxer3._id, username: brisboxer3.username, assessed: false},
@@ -474,7 +474,7 @@ function loadOrders() {
         comments: 'Llamar al móvil para confirmar.',
         typeMove: 'unload',
         day: new Date('2016-07-01'),
-        cancelationCode: "cancelthat5",
+        superCode: "cancelthat5",
         brisboxers: []
     });
 
@@ -493,7 +493,7 @@ function loadOrders() {
         comments: 'Bajar tres mesas desde un cuarto.',
         typeMove: 'unload',
         day: new Date('2016-07-01'),
-        cancelationCode: "cancelthat6",
+        superCode: "cancelthat6",
         brisboxers: []
     });
 
@@ -512,7 +512,7 @@ function loadOrders() {
         comments: '',
         typeMove: 'load',
         day: new Date('2016-07-01'),
-        cancelationCode: "cancelthat7",
+        superCode: "cancelthat7",
         brisboxers: []
     });
 
@@ -531,7 +531,7 @@ function loadOrders() {
         comments: 'Mover unos muebles de un piso al de abajo.',
         typeMove: 'load',
         day: new Date('2016-07-01'),
-        cancelationCode: "cancelthat8",
+        superCode: "cancelthat8",
         brisboxers: []
     });
 
@@ -550,7 +550,7 @@ function loadOrders() {
         comments: 'Piso pequeño.',
         typeMove: 'load',
         day: new Date('2016-07-01'),
-        cancelationCode: "cancelthat9",
+        superCode: "cancelthat9",
         brisboxers: []
     });
 
@@ -568,7 +568,7 @@ function loadOrders() {
         comments: 'Día no muy seguro.',
         typeMove: 'load',
         day: new Date('2016-07-01'),
-        cancelationCode: "cancelthat10",
+        superCode: "cancelthat10",
         brisboxers: []
     });
     Orders.insert({
@@ -585,7 +585,7 @@ function loadOrders() {
         comments: 'Posiblemente la cancele.',
         typeMove: 'unload',
         day: new Date('2016-07-01'),
-        cancelationCode: "cancelthat11",
+        superCode: "cancelthat11",
         brisboxers: []
     });
 }

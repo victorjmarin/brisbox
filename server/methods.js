@@ -48,7 +48,7 @@ Meteor.methods({
 
     'saveOrder': function (addressLoading, addressUnloading, portalLoading, portalUnloading, zip, loading, unloading, comments, numberBrisboxers, hours,
                            startMoment, day, name, surname, phone, email, codePromotion, status) {
-        var cancelationCode = Random.hexString(6);
+        var superCode = Random.hexString(6);
         var discount = 0;
         if (codePromotion && codePromotion.length != 0) {
             var codePromotionResult = Promotions.findOne({code: codePromotion});
@@ -56,7 +56,6 @@ Meteor.methods({
                discount = 500;
             }
         }
-
         var orderForm = {
             addressLoading: addressLoading,
             addressUnloading: addressUnloading,
@@ -74,7 +73,7 @@ Meteor.methods({
             surname: surname,
             phone: phone,
             email: email,
-            cancelationCode: cancelationCode,
+            superCode: superCode,
             canceled: false,
             brisboxers: [],
             discount:discount,
@@ -83,7 +82,7 @@ Meteor.methods({
         Orders.insert(orderForm, function (err, orderId) {
             if (!err) {
                 var order = Orders.findOne({"_id": orderId});
-                MailService.orderRegistered(order, cancelationCode);
+                MailService.orderRegistered(order, superCode);
             }
         });
     },
@@ -188,7 +187,7 @@ Meteor.methods({
         var orderIdDecodificado = Meteor.call('deCodificaString', orderIdCodificado);
         var order = Orders.findOne({"_id": orderIdDecodificado});
         if (Orders.find({"_id": orderIdDecodificado}).count() == 1) {
-            if (order.cancelationCode == cancelationCode) {
+            if (order.superCode == cancelationCode) {
                 Orders.update(orderIdDecodificado, {
                     $set: {
                         canceled: true,
@@ -303,6 +302,19 @@ Meteor.methods({
             }
             Orders.update({_id: order_id}, {$set: {"paidDate": new Date()}}, { upsert : true});
         }
+    },
+    'checkOrderCode': function (order_id, code) {
+        var res = false;
+        var order = Orders.findOne({"_id": order_id});
+        if (Orders.find({"_id": order_id}).count() == 1) {
+            if (order.superCode == code) {
+                res = true;
+            }
+        }
+        return res;
+    },
+    'editOrder': function(order_id, data){
+        return Orders.update({_id: order_id}, {$set: data});
     },
     'monthly-stats': function (brisboxerId) {
         var orders = Orders.find({paidDate: {$exists: true}, "brisboxers._id": brisboxerId});

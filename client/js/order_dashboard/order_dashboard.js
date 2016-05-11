@@ -56,8 +56,11 @@ Template.order_dashboard.helpers({
         var extra_hoursResult = ExtraHours.find({orderId: order_id, accepted: "pending"}).fetch();
         return extra_hoursResult.length == 0;
     },
-    isCustomerVerified: function(){
-        return Session.get("cancelcodelogin");
+    isCustomerVerified: function() {
+        return Session.get("cancelcodelogin")
+    },
+    orderFull: function () {
+        return this.brisboxers.length === this.numberBrisboxers;
     }
 });
 
@@ -106,6 +109,20 @@ Template.registerHelper("orderCancel", function (date) {
     var diaPedidoSub24H = new Date();
     diaPedidoSub24H.setTime(date.getTime() - 86400000);
     return hoy.getTime() - diaPedidoSub24H.getTime() < 0;
+});
+
+Template.order_dashboard.events({
+    'click #cancel': function (event) {
+        Router.go('cancel-order', {
+            ord: Base64.encode(this._id),
+            token: ((parseInt(this.phone) * 71) + (parseInt(this.zip) * 31))
+        });
+    },
+    'click #edit-order': function(e){
+        Router.go('edit-order', {
+            ord: Base64.encode(this._id)
+        });
+    }
 });
 
 Template.order_dashboard.onCreated(function () {
