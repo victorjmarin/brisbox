@@ -48,8 +48,8 @@
             </div>
         </div>
         {{#if notPaid}}
-            <div class="col s12 m12">
-                <div class="col s4 m2 row hide-on-med-and-down">
+            <div class="col s12">
+                <div class="col s4 row hide-on-med-and-down">
                     {{#if orderDay day}}
                         {{#if notInOrder }}
                             <div class="col s6">
@@ -64,7 +64,7 @@
                     {{else}}
                         {{#if orderCancel day}}
                             {{#if notInOrder }}
-                                <div class="col s4 m6 hide-on-med-and-down" id="cancelar">
+                                <div class="col s4 m12 hide-on-med-and-down" id="cancelar">
                                     <button class="bold waves-effect waves-orange waves-ripple btn-flat"
                                             id="cancel">{{_ "order_dashboard_cancel"}}</button>
                                 </div>
@@ -73,7 +73,7 @@
                     {{/if}}
                 </div>
 
-                <div class="col s12 m2 hide-on-large-only bold">
+                <div class="col s12 hide-on-large-only bold">
                     {{#if orderDay day}}
                         {{#if notInOrder }}
                             <div class="col s6">
@@ -88,7 +88,7 @@
                     {{else}}
                         {{#if orderCancel day}}
                             {{#if notInOrder }}
-                                <div class="col s4 m6 hide-on-med-and-down" id="cancelar">
+                                <div class="col s4 m12 hide-on-med-and-down" id="cancelar">
                                     <button class="waves-effect waves-orange waves-ripple btn-flat"
                                             id="cancel">{{_ "order_dashboard_cancel"}}</button>
                                 </div>

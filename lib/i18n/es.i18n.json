@@ -244,7 +244,7 @@
   "order_dashboard_estimate_hours": "Horas estimadas",
   "order_dashboard_estimate_cost": "Coste estimado",
   "order_dashboard_captain": "El capitán",
-  "order_dashboard_edit": "Editar pedido",
+  "order_dashboard_edit": "Reprogramar",
   "brisboxer_details": "Perfil del brisboxer",
   "name": "Nombre",
   "surname": "Apellidos",
@@ -475,7 +475,7 @@
   "stripe-form_validate-year": "Indica el año de expiración",
 
   "edit_day": "Editar dia",
-  "edit-order": "Editar pedido",
+  "edit-order": "Reprogramar día",
   "edit-order-code": "Código",
   "edit-order-error": "Ups! Parece que actualmente no puede editarse el pedido. Recuerda que debe pasar la fecha del pedido para poder editarlo.",
   "edit-order-invalidCode": "Código no válido",

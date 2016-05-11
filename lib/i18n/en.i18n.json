@@ -249,7 +249,7 @@
   "order_dashboard_estimate_hours": "Estimated hours",
   "order_dashboard_estimate_cost": "Estimated cost",
   "order_dashboard_captain": "The captain",
-  "order_dashboard_edit": "Edit order",
+  "order_dashboard_edit": "Reschedule",
   "brisboxer_details": "Brisboxer profile",
   "name": "Name",
   "surname": "Surname",
@@ -482,7 +482,7 @@
   "stripe-form_validate-year": "Indicates the expiration month",
 
   "edit_day": "Edit day",
-  "edit-order": "Edit order",
+  "edit-order": "Reschedule order",
   "edit-order-code": "Code",
   "edit-order-error": "Oops! It seems that currently can not edit the order. Remember that it must pass the order date for editing.",
   "edit-order-invalidCode": "Invalid code",
