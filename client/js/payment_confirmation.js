@@ -58,7 +58,7 @@ function closeModal(){
 
 function getExtraHoursCost(){
     var totalExtraHours = 0;
-    var extraHours = ExtraHours.find({"orderId" : Session.get("order_id"), "accepted" : true}).fetch();
+    var extraHours = ExtraHours.find({"orderId" : Session.get("order_id"), "accepted" : "accepted"}).fetch();
     for(var i = 0; i < extraHours.length; i++){
         var extra = extraHours[i];
         totalExtraHours += extra.extra_hours;
@@ -86,7 +86,7 @@ Template.payment_confirmation.helpers({
         return Meteor.settings.public.reserveAmount/100;
     },
     'hasExtraHours' : function(){
-        var extraHours = ExtraHours.find({"orderId" : Session.get("order_id"), "accepted" : true}).fetch();
+        var extraHours = ExtraHours.find({"orderId" : Session.get("order_id"), "accepted" : "accepted"}).fetch();
         return extraHours.length != 0;
     },
     'extraHours' : function(){
