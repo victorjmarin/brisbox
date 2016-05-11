@@ -336,11 +336,12 @@ function loadPromotion(){
     });
 }
 
+
 /*function loadExtraHours(){
-    var order1 = Orders.findOne({_id: 'DLstynyf3uZsE8LFL'});
-    var order2 = Orders.findOne({_id: 'QeMqkD2yLpxeKBKQc'});
-    var order3 = Orders.findOne({_id: 'ijcwLCQrvLHoHSLC4'});
-    var orderGamma = Orders.findOne({_id: '9S4EbJ3K3YWfdSwgY'});
+    var order1 = Orders.findOne({_id: 'LRGPzn3eX7wRB7rnG'});
+    var order2 = Orders.findOne({_id: '8MpsK9EbmKxykefRD'});
+    var order3 = Orders.findOne({_id: 'LqPDNj3QGjF7xj9hW'});
+    var orderGamma = Orders.findOne({_id: '6ixWLJqrBw6H6RdNT'});
 
     ExtraHours.insert({
         extra_hours: 2,
