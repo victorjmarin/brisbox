@@ -56,7 +56,7 @@ Template.order_dashboard.helpers({
         var extra_hoursResult = ExtraHours.find({orderId: order_id, accepted: "pending"}).fetch();
         return extra_hoursResult.length == 0;
     },
-    isCustomer: function(){
+    isCustomerVerified: function(){
         return Session.get("cancelcodelogin");
     }
 });
