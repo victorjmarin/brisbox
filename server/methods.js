@@ -144,17 +144,20 @@ Meteor.methods({
         Accounts.sendVerificationEmail(userId);
     },
 
-    'createExtraHours': function (extra_hoursForm) {
-        ExtraHours.insert(extra_hoursForm);
-
-        //TODO:AQUI DEBERA ENVIARSE EL CORREO AL CAPITAN
+    'createExtraHours': function (extra_hoursForm, order) {
+        var id = ExtraHours.insert(extra_hoursForm);
+        var captain = OrderService.findCaptain(order);
+        if (captain == null) {
+            captain = OrderService.determineCaptain(order);
+        }
+        MailService.extraHours(id, extra_hoursForm, captain);
     },
 
     'joinOrder': function (order) {
         var principal = UserService.principal();
         var updatedOrder = OrderService.joinOrder(order, principal);
         if (!OrderService.needsMoreBrisboxers(updatedOrder)) {
-            var captain = OrderService.selectCaptain(updatedOrder);
+            var captain = OrderService.determineCaptain(updatedOrder);
             OrderService.setCaptain(updatedOrder, captain);
             Meteor.defer(function () {
                 MailService.notifyCaptain(updatedOrder, captain);

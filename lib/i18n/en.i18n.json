@@ -464,6 +464,11 @@
   "email_order_canceled_title": "What a bummer.",
   "email_order_canceled_first_p": "The <a href='%s'>order</a> you were going to work in has been canceled by the customer. But do not despair, you can always look for another one that fits your schedule too.",
   "email_order_canceled_second_p": "Sorry for the inconvenience.",
+  // Extra hours request
+  "extra_hours_subject": "Request for extra hours",
+  "extra_hours_title": "A little longer?",
+  "extra_hours_first_p": "You are doing great, so great that the customer requests more of your time.",
+  "extra_hours_second_p": "As a captain, you must discuss with your team if you want to work any longer that was expected at first. Once you have come to a conclusion, head to <a href='%s'>this link</a> to accept or reject their offer.",
 
   "brisboxer_details_ok": "Profile updated successfully",
   "brisboxer_details_save": "Save",

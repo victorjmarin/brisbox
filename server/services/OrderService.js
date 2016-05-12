@@ -1,5 +1,14 @@
 OrderService = {
-    selectCaptain: function (order) {
+    findCaptain: function (order) {
+        var captain = null;
+        _.each(order.brisboxers, function (b) {
+            if (b.captain == true) {
+                captain = Meteor.users.findOne(b._id);
+            }
+        })
+        return captain;
+    },
+    determineCaptain: function (order) {
         var brisboxersIds = _.pluck(order.brisboxers, "_id");
         var result = UserRepo.findFirstIn(brisboxersIds, {completedOrders: -1});
         return result;

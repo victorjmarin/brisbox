@@ -65,5 +65,13 @@ MailService = {
         _.each(emails, function (email) {
             self.send("email_order_canceled_subject", "order-canceled-email", params, email);
         });
+    },
+    extraHours: function (id, extraHours, captain) {
+        var acceptUrl = Helpers.Url.forPath("accept-extra-hours/" + Base64.encode(id));
+        var params = {
+            acceptUrl: acceptUrl
+        };
+        var captainAddress = captain.emails[0].address;
+        this.send("extra_hours_subject", "extra-hours-email", params, captainAddress);
     }
 };
