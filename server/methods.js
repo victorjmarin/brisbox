@@ -382,9 +382,9 @@ Meteor.methods({
     },
     "checkCancelCode": function(order_id, cancelCode){
         var res = false;
-        var order = Orders.findOne({"_id": order_id});
+        var order = Orders.findOne(order_id);
         if(order){
-            res = order.cancelationCode == cancelCode;
+            res = order.superCode == cancelCode;
         }
         return res;
     },
