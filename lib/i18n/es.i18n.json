@@ -267,7 +267,7 @@
   "order_canceling": "Cancelar pedido",
   "order_leave": "Salir",
   "enter-cancelation-code": "Por favor introduce el código que te enviamos por email cuando hiciste el pedido.",
-  "cancel-form-code": "Código de cancelación",
+  "cancel-form-code": "Código maestro",
   "cancel-submit": "Cancelar pedido",
   "order_not_found_body1": "Su pedido no ha sido encontrado en el sistema. Si cree que ha sido un error, por favor póngase en contacto con el equipo de Brisbox. Si dispone de un cliente de correo, pulse en ",
   "order_not_found_body2": " si no dispone de cliente de correo, siempre puede contactar con nosotros a través de la página de ",
@@ -392,6 +392,7 @@
   "payment_confirmation_real_num_brisboxers": "¿Cuántos Brisboxers?",
   "payment_confirmation_real_num_hours": "¿Horas invertidas?",
   "payment_confirmation_total": "Precio Total",
+  "payment_confirmation_extra_hours": "Horas extras",
   "payment_confirmation_discount": "Descuento",
   "payment_confirmation_booking": "Reserva",
   "payment_confirmation_final": "Precio Final",
@@ -504,5 +505,16 @@
   "order_dashboar_extra-hours_pending": "Su petición será evaluada por el capitán.",
 
   "cancelcode_success": "Código correcto",
-  "cancelcode_failed": "Código erroneo"
+  "cancelcode_failed": "Código erroneo",
+
+  //Accept extra hours
+  "extra_hours_header": "Aceptar horas extras",
+  "extra_hours_choose": "Por favor, indique si quiere aceptar las horas extras propuestas.",
+  "extra_hours_accept": "Aceptar __hours__ horas extras",
+  "extra_hours_deny": "Rechazar horas extras",
+  "extra_hours_failed": "¿Otra vez por aquí?",
+  "extra_hours_failed_body": "Ha ocurrido un error en la aceptación de horas extras. La aceptación o rechazo de estas horas extras ya ha sido realizada.",
+  "extra_hours_not_found": "Petición de horas extras no encontrada",
+  "extra_hours_not_found_body0": "Tu petición de horas extras no ha sido encontrada en el sistema. Puede deberse a que no ha accedido desde el enlace facilitado en el correo o que ya haya respondido a esta petición.",
+  "extra_hours_found_body1": "Si cree que ha sido un error, por favor póngase en contacto con el equipo de Brisbox. Si dispone de un cliente de correo, pulse en "
 }

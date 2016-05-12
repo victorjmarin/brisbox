@@ -182,6 +182,40 @@ Meteor.methods({
         return res;
     },
 
+    'acceptExtraHoursController': function (extraHoursIdCodificado) {
+        var res = "NOTFOUND";
+        var extraHoursIdDecodificado = Base64.decode(extraHoursIdCodificado);
+        var extraHours = ExtraHours.findOne({"_id": extraHoursIdDecodificado});
+        if (ExtraHours.find({"_id":extraHoursIdDecodificado}).count() == 1) {
+            if (extraHours.accepted == "pending"){
+                res = "ACCEPT_EXTRA_HOURS";
+            } else if (extraHours.accepted == "accepted" || extraHours.accepted == "rejected"){
+                res = "ALREADY_CHOSED";
+            }
+        } else {
+            res = "NOTFOUND";
+        }
+        return res;
+    },
+
+    'acceptExtraHours': function (extraHoursIdDecodificado) {
+        var extraHours = ExtraHours.findOne({"_id": extraHoursIdDecodificado});
+        ExtraHours.update(extraHoursIdDecodificado, {
+            $set: {
+                accepted: "accepted"
+            }
+        });
+    },
+
+    'rejectExtraHours': function (extraHoursIdDecodificado) {
+        var extraHours = ExtraHours.findOne({"_id": extraHoursIdDecodificado});
+        ExtraHours.update(extraHoursIdDecodificado, {
+            $set: {
+                accepted: "rejected"
+            }
+        });
+    },
+
     'cancelOrder': function (orderIdCodificado, cancelationCode) {
         var res = false;
         var orderIdDecodificado = Meteor.call('deCodificaString', orderIdCodificado);
