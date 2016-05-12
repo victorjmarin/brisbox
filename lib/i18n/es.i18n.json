@@ -505,5 +505,16 @@
   "order_dashboar_extra-hours_pending": "Su petición será evaluada por el capitán.",
 
   "cancelcode_success": "Código correcto",
-  "cancelcode_failed": "Código erroneo"
+  "cancelcode_failed": "Código erroneo",
+
+  //Accept extra hours
+  "extra_hours_header": "Aceptar horas extras",
+  "extra_hours_choose": "Por favor, indique si quiere aceptar las horas extras propuestas.",
+  "extra_hours_accept": "Aceptar __hours__ horas extras",
+  "extra_hours_deny": "Rechazar horas extras",
+  "extra_hours_failed": "¿Otra vez por aquí?",
+  "extra_hours_failed_body": "Ha ocurrido un error en la aceptación de horas extras. La aceptación o rechazo de estas horas extras ya ha sido realizada.",
+  "extra_hours_not_found": "Petición de horas extras no encontrada",
+  "extra_hours_not_found_body0": "Tu petición de horas extras no ha sido encontrada en el sistema. Puede deberse a que no ha accedido desde el enlace facilitado en el correo o que ya haya respondido a esta petición.",
+  "extra_hours_found_body1": "Si cree que ha sido un error, por favor póngase en contacto con el equipo de Brisbox. Si dispone de un cliente de correo, pulse en "
 }

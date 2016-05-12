@@ -1,0 +1,24 @@
+<template name="acceptExtraHours">
+    <div class="container">
+        <div class="section scrollspy">
+            <div class="row">
+                <h4 class="header">{{_ "extra_hours_header"}}</h4>
+            </div>
+            <div class="row">
+                <p class="flow-text">{{_ "extra_hours_choose"}}</p>
+            </div>
+            <div class="row" style="margin-bottom: 60px;">
+                <div class="input-field col s12 m6">
+                    <button type="button" id="accept"
+                            class="btn btn-large btn-primary waves-button-input orange darken-3"><i class="material-icons left">alarm_on</i>{{_ "extra_hours_accept" hours=extra_hours}}</button>
+                    <button type="button" id="reject"
+                            class="btn-flat waves-button-input"><i class="material-icons left">alarm_off</i>{{_ "extra_hours_deny"}}</button>
+                </div>
+            </div>
+            <div class="row">
+                <button type="button" id="dashboard"
+                        class="waves-effect waves-orange waves-ripple btn-flat">{{_ "go_back"}}</button>
+            </div>
+        </div>
+    </div>
+</template>

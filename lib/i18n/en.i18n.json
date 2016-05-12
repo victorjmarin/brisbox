@@ -512,5 +512,16 @@
   "order_dashboar_extra-hours_pending": "Your request will be evaluated by the captain.",
 
   "cancelcode_success": "Correct code!",
-  "cancelcode_failed": "Ups! Wrong code"
+  "cancelcode_failed": "Oops! Wrong code",
+
+  //Accept extra hours
+  "extra_hours_header": "Accept extra hours",
+  "extra_hours_choose": "Please, choose if the team wants to accept the requested extra hours or not.",
+  "extra_hours_accept": "Accept __hours__ extra hours",
+  "extra_hours_deny": "Reject extra hours",
+  "extra_hours_failed": "Again here?",
+  "extra_hours_failed_body": "An error occurred while accepting extra hours. The decision about this extra hours has already been done",
+  "extra_hours_not_found": "Extra hours request not found",
+  "extra_hours_not_found_body0": "Your extra hours request isn't found on the system. This would be because you have not accessed from link adjunt to email sent before or you have already answered to this request.",
+  "extra_hours_found_body1": "If you thing that was an error, please contact with Brisbox Team. If you have an email client, click on "
 }
