@@ -77,7 +77,7 @@ Template.order_dashboard.events({
             orderId: order._id,
             accepted: "pending"
         };
-        Meteor.call("createExtraHours", extra_hoursForm);
+        Meteor.call("createExtraHours", extra_hoursForm, order);
     },
     'click #cancel': function (event) {
         Router.go('cancel-order', {

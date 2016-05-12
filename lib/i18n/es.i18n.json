@@ -457,6 +457,11 @@
   "email_order_canceled_title": "Qué fastidio.",
   "email_order_canceled_first_p": "El <a href='%s'>pedido</a> en el que ibas a trabajar ha sido cancelado por el cliente. Pero no te preocupes, siempre puedes buscar otro que se ajuste a tu horario también.",
   "email_order_canceled_second_p": "Sentimos el inconveniente.",
+  // Extra hours request
+  "extra_hours_subject": "Petición de horas extras",
+  "extra_hours_title": "¿Un rato más?",
+  "extra_hours_first_p": "Lo estáis haciendo genial, tan bien que el cliente quiere que estéis más tiempo con él.",
+  "extra_hours_second_p": "Como capitán, debes decidir junto a tu grupo si queréis trabajar más tiempo del que estaba previsto inicialmente. Una vez que lo tengáis claro, accede a <a href='%s'>este enlace</a> para aceptar o rechazar la oferta.",
 
   "brisboxer_details_ok": "Perfil actualizado correctamente",
   "brisboxer_details_save": "Guardar",
