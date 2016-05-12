@@ -28,7 +28,7 @@
                 </div>
                 <div class="col s12 m12 extra-hours" style="display: block;">
                     <span class="order_dashboard_section_title title flow-text">{{_ "order_dashboard_order_extra-hours_title"}}</span>
-                    <span id="value_extra_hours" class="flow-text" style="display: block;"> <b>{{_ "order_dashboard_extra-hours"}}:</b> {{extra_hours}}</span>
+                    <span id="value_extra_hours" class="flow-text" style="display: block;"> <b>{{_ "order_dashboard_extra-hours"}}:</b> {{extra_hours}} @ 23&euro;/h</span>
                     
                     {{#if isCustomerVerified}}
 
@@ -43,7 +43,7 @@
                                            for="extraHours">{{_ "order-form_hours"}}</label>
                                 </div>
                                 <div class="input-field col s12 center-align" style="padding-bottom: 5px;">
-                                    <button type="submit" class="btn btn-primary waves-button-input orange darken-3 caret">{{_ "order-submit"}}</button>
+                                    <button type="submit" class="btn btn-primary waves-button-input orange darken-3 bold">{{_ "order-submit"}}</button>
                                 </div>
                             </form>
                         {{else}}
